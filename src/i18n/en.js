@@ -865,4 +865,8 @@ export default {
   "Eco-friendly mining",
   "Our miners and cooling systems are powered by the best monocrystalline solar panels thus environment-friendly and very profitable."
 ],
+"home_comment": [
+  "What users say about us",
+  "Many people trust us, here are the words of some of them."
+],
 }

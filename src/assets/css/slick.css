@@ -201,11 +201,11 @@
 }
 
 .swiper-pagination {
-  position: absolute;
   text-align: center;
   transition: opacity .3s;
   transform: translateZ(0);
-  z-index: 10
+  z-index: 10;
+  width:100%;
 }
 
 .swiper-pagination.swiper-pagination-hidden {
@@ -254,7 +254,8 @@
   display: inline-block;
   border-radius: 50%;
   background: #000;
-  opacity: .2
+  opacity: .2;
+  margin: 0 4px;
 }
 
 button.swiper-pagination-bullet {

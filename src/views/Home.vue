@@ -299,7 +299,7 @@
         <section  class="section transaction pt-0">
           <div class="container">
                <div class="row is-justify-space-around el-row--flex"> 
-                  <div class="el-col-xs-24 el-col-sm-8 ml-5 mr-5">
+                  <div class="el-col-xs-24 el-col-sm-8">
                     <div class="col-item">
                       <div class="item-head fw-bold fs-5 mx-auto"><span data-v-89578fbc="">{{$t('latest[1]')}}</span></div>
                       <article class="item-body">
@@ -328,7 +328,7 @@
                       </article>
                     </div>
                   </div>
-                  <div class="el-col-xs-24 el-col-sm-8 ml-5 mr-5">
+                  <div class="el-col-xs-24 el-col-sm-8">
                     <div class="col-item">
                       <div class="item-head fw-bold fs-5 mx-auto"><span data-v-89578fbc="">{{$t('latest[2]')}}</span></div>
                       <article class="item-body">
@@ -362,6 +362,63 @@
         </section>
       </div>
     </section>
+    <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
+              <div class="section-title text-center">
+                <h1 class="title fw-bold">{{$t('home_comment[0]')}}</h1>
+                <div class="para-desc videoDiv text-center mx-auto">
+                  <p>
+                    {{$t('home_comment[1]')}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+              <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
+                <div class="comment_container">
+                  <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
+                      <swiper-slide v-for="i in 10" :key="i">
+                        <div class="comment_card">
+                          <div class="comment_head">
+                            <img src="../../static/img/Agnes Davis.png" alt="">
+                          </div>
+                          <div class="msg mx-auto">
+                            <div class="name fw-bold">Annmarie Garcia</div>
+                            <div class="content">I was sceptical when I learnt about KSD Miner as a platform, I was allayed by speaking to their customer service staff, who were very approachable and answered the questions I asked, I've already tried using it and their professionalism has put me more at ease.</div>
+                          </div>
+                        </div>
+                      </swiper-slide>
+                  </swiper>
+                  <div class="swiper-pagination text-center" slot="pagination"></div>
+                </div>
+              </div>
+              <!-- 第二個評論 -->
+              <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
+                <div class="comment_container">
+                  <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
+                      <swiper-slide v-for="i in 10" :key="i">
+                        <div class="comment_card">
+                          <div class="comment_head">
+                            <img src="../../static/img/Agnes Davis.png" alt="">
+                          </div>
+                          <div class="msg mx-auto">
+                            <div class="name fw-bold">Annmarie Garcia</div>
+                            <div class="content">I was sceptical when I learnt about KSD Miner as a platform, I was allayed by speaking to their customer service staff, who were very approachable and answered the questions I asked, I've already tried using it and their professionalism has put me more at ease.</div>
+                          </div>
+                        </div>
+                      </swiper-slide>
+                  </swiper>
+                  <div class="swiper-pagination text-center" slot="pagination"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
     <div  class="box6">
       <video :src="InitData.setting.up_url + '/upload/KKMiner.mp4?t=2'" muted controls playsinline style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>
     </div>
@@ -595,7 +652,40 @@
         data_total_page:"1",
         // 常见问题选中索引
         fqSelectIndex: 0,
-        fqShowMore: false
+        fqShowMore: false,
+        commenSwiperOptions: {
+          loop: true,
+          speed: 2500,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            stopOnLastSlide: false,
+          },
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          breakpoints: {
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            }
+          }
+        }
       }
     },
 
@@ -1764,6 +1854,43 @@
     max-width: 90%;
     margin: 10px auto;
   }
+  .comment_card{
+    background: -webkit-gradient(linear, left top, left bottom, from(#afceed), to(#3d4355)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(2.95%, #a3631f), color-stop(54.04%, #f9f790), color-stop(105.51%, #a3631f)) border-box;
+    background: linear-gradient(#afceed, #3d4355) padding-box, linear-gradient(180deg, #a3631f 2.95%, #f9f790 54.04%, #a3631f 105.51%) border-box;
+    border: 2px solid transparent;
+    padding: 10px 8px 10px 0;
+    border-radius: 15px;
+    position: relative;
+    margin-left: 32px;
+    position: relative;
+    height: 200px;
+  }
+  .comment_card .comment_head{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6fadf0), to(#7695f9)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(2.95%, #a3631f), color-stop(54.04%, #f9f790), color-stop(105.51%, #a3631f)) border-box;
+    background: linear-gradient(#6fadf0, #7695f9) padding-box, linear-gradient(180deg, #a3631f 2.95%, #f9f790 54.04%, #a3631f 105.51%) border-box;
+    border: 2px solid transparent;
+    margin-left: -32px;
+    left: 0px;
+    top: 10px;
+  }
+  .comment_card .comment_head img{
+    width: 100%;
+    height: 100%;
+  }
+  .comment_card .msg{
+    width: 70%;
+    height: 100%;
+  }
+  .comment_card .msg .name{
+    color: #fff;
+  }
+  .comment_card .msg .content{
+    height: 150px;
+    overflow: hidden;
+  }
 </style>
-
-
