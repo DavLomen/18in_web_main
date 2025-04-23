@@ -10,7 +10,7 @@ export default {
     "No more data",
     "No data"
   ],
-  "upload":[
+  "upload": [
     "Uploading"
   ],
   "login": {
@@ -272,7 +272,7 @@ export default {
     "Registering...",
     "Data loading..."
   ],
-  "messageInfo":[
+  "messageInfo": [
     "You have new news, click here to view",
     "View message",
     "Notice",
@@ -280,7 +280,7 @@ export default {
     "Title",
     "Detail"
   ],
-  "lucky":[
+  "lucky": [
     "Remaining number of draws:",
     "Unfortunately, you did not win the prize! keep working hard~",
     "Winning User Record",
@@ -292,7 +292,7 @@ export default {
     "Sorry, you are not eligible for the lottery!",
     "Turntable of Luck"
   ],
-  "usdt":[
+  "usdt": [
     "Currency",
     "Chain",
     "Wallet address",
@@ -301,12 +301,12 @@ export default {
     "Transaction number(TxID)",
     "Wallet address"
   ],
-  "usdtp":[
+  "usdtp": [
     "Please enter Wallet address",
     "Please select Currency type",
     "Please enter Transaction ID(TxID)"
   ],
-  "foot":[
+  "foot": [
     "{WT} has 6 years of expertise, efficient data centers and advanced infrastructure to ensure stable mining performance and maximum profitability for the benefit of customers. The platform is user-friendly, transparent and fully automated, allowing anyone to mine easily without any technical expertise.",
     "Site Links",
     "Contract",
@@ -320,7 +320,7 @@ export default {
     "Terms of Services",
     "Copyright © 2016-2024 {WT}. All Rights Reserved By <a href=\"{WS}\" class=\"text--base\">{WT}</a>"
   ],
-  "head":[
+  "head": [
     "Home",
     "APP",
     "Sign Up",
@@ -348,7 +348,7 @@ export default {
     "Referrals",
     "Online Users"
   ],
-  "say":[
+  "say": [
     "Amelia",
     "nurse",
     "It is a wonderful company. Looks like I'll do it well. And wait for the profit from it. Please continue like this and move forward",
@@ -360,7 +360,7 @@ export default {
     "{WT} is a serious technology company that helps to mine cryptocurrencies and is engaged into the development of ICO projects.I trust the whole company and wish them a great growth and success.",
     ""
   ],
-  "about":[
+  "about": [
     "About ALL4 Mining",
     "{WT} became a company in the crypto-mining sphere in 2016 in UK. At that time we, a small group of crypto-enthusiasts, decided to establish our first cryptocurrency mining farm, abandoning the then usual mining based on the use of graphics cards in favor of professional equipment-ANTMINER. And now, after some time, we are ready to present to you our experience and efforts - the {WT} cloud mining project.   {WT} allows you to engage in cryptocurrency mining from anywhere in the world, and our main goal is to make cryptocurrency mining accessible to everyone, regardless of the size of the initial contribution, experience, or technical knowledge of the user. We provide an opportunity to mine cryptocurrency (Bitcoin, Ethereum,and Litecoin) using equipment located in our data centers, as well as in the computing centers of our partners.    The maintenance of the mining equipment and technical support of clients is ensured by our company’s experts, whose many years of experience guarantee the safety and reliability of the service. {WT} uses only the most efficient equipment, which not only positively affects mining, but also makes Mining Plan prices one of the most affordable on the market.",
     "Vision And Mission",
@@ -375,7 +375,7 @@ export default {
     "Download PDF",
     "Company Address"
   ],
-  "walletAddress":[
+  "walletAddress": [
     "Wallet Address",
     "Login Password",
     "Payment Password",
@@ -383,14 +383,14 @@ export default {
     "Please enter your wallet address",
     "Submit"
   ],
-  "transaction":[
+  "transaction": [
     "TXID",
     "Transacted",
     "Amount",
     "Post Balance",
     "Wallet Type"
   ],
-  "regLogin":[
+  "regLogin": [
     "Already have an account?",
     "Username",
     "Please input Username",
@@ -408,7 +408,7 @@ export default {
     "Create an account now to start your mining journey",
     "Enter your details to get started."
   ],
-  "product":[
+  "product": [
     "Single Invest Amount",
     "Invest Amount",
     "Invest Period",
@@ -433,13 +433,13 @@ export default {
     "Total revenue",
     "Capital Rebate"
   ],
-  "password":[
+  "password": [
     "Current Password",
     "New Password",
     "Confirm Password",
     "Confirm changes"
   ],
-  "package":[
+  "package": [
     "TXID | Time",
     "Package",
     "Return",
@@ -449,7 +449,7 @@ export default {
     "From Investment",
     "Mining Earnings"
   ],
-  "affliliate":[
+  "affliliate": [
     "Affiliates Program",
     "Sign Up Now",
     "Create an account and get independent referral codes and referral links",
@@ -460,7 +460,7 @@ export default {
     "Join our referral program (Partner Program) and receive a 3% bonus based on your initial investment! You can run it like a boss and start making money without investing a penny. 3% for first-level agents and 1.5% for second-level agents. For example, if someone invests $5,000 in the program using your referral code, you’ll get $150 for free. With unlimited referrals, your earning potential is unlimited! So why wait? Sign up now and start making money by sharing your referral link with friends and family.",
     "JOIN US"
   ],
-  "affiliates":[
+  "affiliates": [
     "Affiliates",
     "Referral Program",
     "Your Email",
@@ -480,7 +480,7 @@ export default {
     "Copy Link",
     "Referral"
   ],
-  "appDown":[
+  "appDown": [
     "START MINING JOURNEY",
     "Explore our one-stop mining services. Use ALL4 Mining and track your mining portfolio anytime, anywhere, providing you with a convenient and simple solution to help you purchase and manage mining plans and increase your profits. Download ALL4 Mining now and easily manage your mining business.",
     "Easily enjoy ALL4 Mining’s one-stop mining service",
@@ -493,7 +493,7 @@ export default {
     "24/7 Chat Support",
     "Contact our customer support with your questions at any time."
   ],
-  "contact":[
+  "contact": [
     "Get in Touch Us",
     "Name",
     "Email",
@@ -509,7 +509,7 @@ export default {
     "Visit us",
     "Visit our office HQ"
   ],
-  "dashboard":[
+  "dashboard": [
     "View All",
     "Available Balance",
     "Total Commission",
@@ -538,10 +538,10 @@ export default {
     "We strongly recommend that you search for the necessary information in the FAQ section. Contact our 24-hour online customer service if you need advice or technical assistance.",
     "Get Support Now"
   ],
-  "faq":[
+  "faq": [
     "Common Problem"
   ],
-  "home":[
+  "home": [
     "The world's leading cryptocurrency cloud mining platform, trusted by 6.5 million customers, provides a full range of cloud mining contracts. Join us and get immediate benefits.",
     "● Sign up now and get a $10 bonus<br>● Get $0.5 for daily check-in<br>● Invite friends to get a permanent 3% reward",
     "Sign Up Now",
@@ -635,7 +635,7 @@ export default {
     "",
     ""
   ],
-  "withdraw":[
+  "withdraw": [
     "Available Balance",
     "Withdrawal method",
     "Amount",
@@ -656,7 +656,7 @@ export default {
     "Expired Orders",
     "Total Orders"
   ],
-  "deposit":[
+  "deposit": [
     "You have requested",
     "Please pay",
     "for successful payment",
@@ -687,7 +687,7 @@ export default {
     "Payment Information",
     "Close"
   ],
-  "productDetail":[
+  "productDetail": [
     "Details",
     "Each account is limited to one purchase per day",
     "Each account can only purchase 1 copy",
@@ -707,7 +707,7 @@ export default {
     "7. Static output is calculated statically based on the current difficulty and fluctuates with the market. When the difficulty goes up or down, it will be lower or higher. Therefore, for informational purposes only, {WT} does not make any promises or guarantees regarding production volumes.",
     "The platform reserves the right of final interpretation of the terms of this contract."
   ],
-  "blog":[
+  "blog": [
     "Recent Blog",
     "Recent Blog Posts",
     "Read More",
@@ -715,26 +715,26 @@ export default {
     "Follow and read the latest blog posts from our website",
     "View all blogs"
   ],
-  "welfare":[
+  "welfare": [
     "Vip Award"
   ],
-  "tips":[
+  "tips": [
     "After successful payment, please save the payment screenshot to your mobile phone and upload the screenshot to the page before submitting the order. If the screenshot is unclear or wrong, the recharge will not be completed."
   ],
-  "next":"Next pay",
-  "placehoder":[
+  "next": "Next pay",
+  "placehoder": [
     "Please enter amount",
     "Please enter payment password",
     "The login password and payment password are recommended to be different, please remember the password."
   ],
-  "dep":[
+  "dep": [
     "Warm reminder: The minimum recharge amount starts at US$100. If you don’t know how to recharge or don’t have the password, you can contact online customer service for help."
   ],
-  "payment":[
+  "payment": [
     "ACCEPT A VARIETY OF PAYMENT METHODS",
     "To ensure convenience for our investors, {WT} provides a diverse range of payment methods for both depositing funds and receiving payments."
   ],
-  "latest":[
+  "latest": [
     "Latest Transaction",
     "Last Deposit",
     "Last Withdraw",
@@ -742,21 +742,21 @@ export default {
     "Amount",
     "Time"
   ],
-  "loginpage":[
+  "loginpage": [
     "Hi, Welcome Back!",
     "Create You Account",
     "We offer the following payment methods.",
     "Accept &amp; Continue",
     "Enter your details to sign in."
   ],
-  "vipfoot":[
+  "vipfoot": [
     "Please consult 7x24 online customer service for details. The final explanation belongs to {WT}."
   ],
-  "power":[
+  "power": [
     "Market computing power",
     "The newly upgraded 2.0 version of new energy \"wind energy\" and \"solar energy\" green cycle power generation experience zero-cost electricity and high returns on mining machine income."
   ],
-  "aboutf":[
+  "aboutf": [
     "Active Members",
     "Support Country",
     "Global minerals",
@@ -776,7 +776,7 @@ export default {
     "Our Team",
     "Our mining team come from in blockchain industry and IT engineers."
   ],
-  "affliate":[
+  "affliate": [
     "Affiliate",
     "Our affiliate program provides numerous benefits.",
     "<p></p><div>We offer an exceptional affiliate program that brings with it numerous advantages.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">NO DEPOSIT NEEDED</span></div><div>You can become an affiliate and take advantage of our program even without making a deposit.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">HIGH COMMISSIONS</span></div><div>For each purchase made by a user referred by you, you will receive a generous referral reward of up to 1.5-3%.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">INSTANT PAYMENTS</span></div><div>We provide instant payouts of referral rewards in cryptocurrency, which are credited to your account balance.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">UNLIMITED EARNING POTENTIAL</span></div><div>There are no limits to the number of referrals you can bring in, so your earning potential is boundless.</div><p></p>",
@@ -793,15 +793,15 @@ export default {
     "Join our referral program (Partner Program) and earn up to 4.5% commission for life! Help your friends make money easily and benefit from our system. Share with friends who want to make money and they'll thank you! <br><br>To get started, sign up for an account and get your own referral link/URL. <br><br>Next, invite new users by sharing your referral link via social media or your own website. You can advertise in any way you like, and your referral link will always be valid. When a new user signs up using your referral link, you'll earn 4.5% of their purchases for life. Run your business like a boss and start earning today!<br>",
     "Join Now"
   ],
-  "cryptocurrency":[
+  "cryptocurrency": [
     "What is cryptocurrency",
     "What is Web3"
   ],
-  "rechargefoot":[
+  "rechargefoot": [
     "Warm reminder: The minimum recharge amount starts at US$100. If you don’t know how to recharge or don’t have the password, you can contact online customer service for help.",
     "Warm reminder: The minimum withdrawal amount starts from $100. If you don’t know how to withdraw money or don’t have a password, you can contact online customer service for help."
   ],
-  "settle":[
+  "settle": [
     "Settle Interests",
     "Every 24 Hours",
     "Daily Income",
@@ -815,21 +815,21 @@ export default {
     "Pay",
     "Sold out at 100%"
   ],
-  "tip100":[
+  "tip100": [
     "Warm reminder: This computing power contract package is limited to one purchase per account.",
     "Warm reminder: This computing power contract package is limited to one purchase per day."
   ],
-  "tutorial":[
+  "tutorial": [
     "Tutorial"
   ],
-  "newHome":[
+  "newHome": [
     "Data Centers All Around the World",
     "Our web hosting, WordPress hosting, and cloud hosting plans offer server locations in: USA, United Kingdom, France, India, Singapore, Indonesia, Brazil, Lithuania, and the Netherlands.",
     "Sales progress",
     "WHY CHOOSE US?",
     ""
   ],
-  "newss":[
+  "newss": [
     "Featured Contracts",
     "Mine easily anytime, anywhere! We take care of the hassle so you can enjoy your mining rewards with peace of mind. Start mining in just a few clicks!",
     "This contract can only be purchased once per day",
@@ -844,58 +844,57 @@ export default {
     "④ Environmentally friendly cloud mining",
     "Our equipment and cooling systems are powered by solar and wind energy,making them both environmentally friendly and highly profitable.",
     "",
-    "",
+    ""
   ],
-  "optional":[
+  "optional": [
     "(optional)"
   ],
-  "ddd":[
+  "ddd": [
     "Daily profit"
   ],
-  "bounty":"Ad Bounty",
-  "more":"Display More",
-  "complete":"completed",
+  "bounty": "Ad Bounty",
+  "more": "Display More",
+  "complete": "completed",
   "cancel": "Cancel",
   "submit": "Submit",
   "confirm": "Confirm",
-// 20250421新增
-"minerWorkText" : [
-  "Create an Account",
-  "Choose the 'Register' option to quickly set up your personal account and get ready to start mining.",
-  "Choose a Plan",
-  "Recharge your account and select the mining plan that best suits your needs.",
-  "Get Output",
-  "Your mining output will be automatically updated in your account every day.",
-  "Withdraw Anytime",
-  "Withdrawals are simple and fast; you can withdraw your account balance at any time, giving you flexible fund management."
-],
-"F&Q": [
-  "Common Problem",
-  "Here you can find the most frequently asked questions during use, If your question is not answered here, please feel free to contact us.",
-  "Click to show more",
-],
-"ChooseUs": [
-  "New state-of-the-art hardware",
-  "We use the newest ASIC and GPU mining gear from Bitmain, Canaan and Nvidia and advanced technologies in our centers.",
-  "Stable profits",
-  "We offer steady fixed income that is automatically deposited into your account every day.",
-  "Fast Regular Payouts",
-  "All withdrawal requests will be automatically processed by the system within five minutes.",
-  "100% Money Security",
-  "Most funds are safely stored in offline, cold wallets. Enhanced security protocols like McAfee® SECURE and Cloudflare® SECURE are also in place to ensure maximum protection.",
-  "Expert team",
-  "Our platform offers cloud mining investment support for everyone, even if you're a beginner, you can quickly get started and benefit from it.",
-  "Eco-friendly mining",
-  "Our miners and cooling systems are powered by the best monocrystalline solar panels thus environment-friendly and very profitable."
-],
-"home_comment": [
-  "What users say about us",
-  "Many people trust us, here are the words of some of them."
-],
-"partners": [
-  "Our Partners",
-],
-  "calculator":[
+  "minerWorkText": [
+    "Create an Account",
+    "Choose the 'Register' option to quickly set up your personal account and get ready to start mining.",
+    "Choose a Plan",
+    "Recharge your account and select the mining plan that best suits your needs.",
+    "Get Output",
+    "Your mining output will be automatically updated in your account every day.",
+    "Withdraw Anytime",
+    "Withdrawals are simple and fast; you can withdraw your account balance at any time, giving you flexible fund management."
+  ],
+  "F&Q": [
+    "Common Problem",
+    "Here you can find the most frequently asked questions during use, If your question is not answered here, please feel free to contact us.",
+    "Click to show more"
+  ],
+  "ChooseUs": [
+    "New state-of-the-art hardware",
+    "We use the newest ASIC and GPU mining gear from Bitmain, Canaan and Nvidia and advanced technologies in our centers.",
+    "Stable profits",
+    "We offer steady fixed income that is automatically deposited into your account every day.",
+    "Fast Regular Payouts",
+    "All withdrawal requests will be automatically processed by the system within five minutes.",
+    "100% Money Security",
+    "Most funds are safely stored in offline, cold wallets. Enhanced security protocols like McAfee® SECURE and Cloudflare® SECURE are also in place to ensure maximum protection.",
+    "Expert team",
+    "Our platform offers cloud mining investment support for everyone, even if you're a beginner, you can quickly get started and benefit from it.",
+    "Eco-friendly mining",
+    "Our miners and cooling systems are powered by the best monocrystalline solar panels thus environment-friendly and very profitable."
+  ],
+  "home_comment": [
+    "What users say about us",
+    "Many people trust us, here are the words of some of them."
+  ],
+  "partners": [
+    "Our Partners"
+  ],
+  "calculator": [
     "Profit Calculator",
     "Calculate your mining income",
     "Contract",
@@ -903,112 +902,111 @@ export default {
     "Total Net Profit",
     "Daily Rate of Profit"
   ],
-  // 评论列表
   "commentList": [
     {
-        "id": '1',
-        "name":'Ceccolini',
-        "text": 'You can easily make money through  ALL4 Mining, and the customer service support is very good'
+      "id": "1",
+      "name": "Ceccolini",
+      "text": "You can easily make money through  ALL4 Mining, and the customer service support is very good"
     },
     {
-        "id": '2',
-        "name":'Baben',
-        "text": 'Buy a contract and receive the profit within 24 hours. When the contract expires, you will receive the principal and can withdraw the money at any time. It is a trustworthy platform.'
+      "id": "2",
+      "name": "Baben",
+      "text": "Buy a contract and receive the profit within 24 hours. When the contract expires, you will receive the principal and can withdraw the money at any time. It is a trustworthy platform."
     },
     {
-        "id": '3',
-        "name":'Xie',
-        "text": 'The platform is easy to operate which is a huge plus for me as a beginner. Their customer support helps.'
+      "id": "3",
+      "name": "Xie",
+      "text": "The platform is easy to operate which is a huge plus for me as a beginner. Their customer support helps."
     },
     {
-        "id": '4',
-        "name":'duer',
-        "text": 'ALL4 Mining offers a comprehensive experience, providing a simplified and secure way to participate in Bitcoin mining.'
+      "id": "4",
+      "name": "duer",
+      "text": "ALL4 Mining offers a comprehensive experience, providing a simplified and secure way to participate in Bitcoin mining."
     },
     {
-        "id": '5',
-        "name":'Luo Luo',
-        "text": 'I verified that  ALL4 Mining is a safe, legal and easy to operate platform'
-    },
-    {   
-        "id": '6',
-        "name":'Leigh Beto',
-        "text": 'When I withdrew my earnings, the platform completed my withdrawal very quickly'
+      "id": "5",
+      "name": "Luo Luo",
+      "text": "I verified that  ALL4 Mining is a safe, legal and easy to operate platform"
     },
     {
-        "id": '7',
-        "name":'Paschen',
-        "text": 'I am very satisfied with the recharge channels of this platform, there are many options'
+      "id": "6",
+      "name": "Leigh Beto",
+      "text": "When I withdrew my earnings, the platform completed my withdrawal very quickly"
     },
     {
-        "id": '8',
-        "name":'齐娜',
-        "text": 'I think this platform is a very good choice. It is easy to operate and deposits and withdrawals are very convenient'
+      "id": "7",
+      "name": "Paschen",
+      "text": "I am very satisfied with the recharge channels of this platform, there are many options"
     },
     {
-        "id": '9',
-        "name":'Victor Gow',
-        "text": 'ALL4 Mining is very simple to operate and can provide real-time income status.'
+      "id": "8",
+      "name": "齐娜",
+      "text": "I think this platform is a very good choice. It is easy to operate and deposits and withdrawals are very convenient"
     },
     {
-        "id": '10',
-        "name":'More',
-        "text": 'I have been following this platform for several years and everything is ok'
+      "id": "9",
+      "name": "Victor Gow",
+      "text": "ALL4 Mining is very simple to operate and can provide real-time income status."
     },
     {
-        "id": '11',
-        "name":'Ardin fever',
-        "text": 'This platform allows you to mine Bitcoin without buying hardware'
+      "id": "10",
+      "name": "More",
+      "text": "I have been following this platform for several years and everything is ok"
     },
     {
-        "id": '12',
-        "name":'Hallsbury',
-        "text": 'I buy a $10,000 contract and withdraw my profits at any time'
+      "id": "11",
+      "name": "Ardin fever",
+      "text": "This platform allows you to mine Bitcoin without buying hardware"
     },
     {
-        "id": '13',
-        "name":'Paul Wei',
-        "text": 'I find it very convenient to purchase mining packages on this platform. You can purchase multiple contracts at once.'
+      "id": "12",
+      "name": "Hallsbury",
+      "text": "I buy a $10,000 contract and withdraw my profits at any time"
     },
     {
-        "id": '14',
-        "name":'Ma Nan',
-        "text": 'At the beginning, I bought a 100 USD contract. When the contract expired, I tried to withdraw the money and it went smoothly. I started buying a 10,000 USD contract.'
+      "id": "13",
+      "name": "Paul Wei",
+      "text": "I find it very convenient to purchase mining packages on this platform. You can purchase multiple contracts at once."
     },
     {
-        "id": '15',
-        "name":'Scutanova',
-        "text": 'There is no need to pay expensive electricity bills and management fees, which is a very good choice for miners'
+      "id": "14",
+      "name": "Ma Nan",
+      "text": "At the beginning, I bought a 100 USD contract. When the contract expired, I tried to withdraw the money and it went smoothly. I started buying a 10,000 USD contract."
     },
     {
-        "id": '16',
-        "name":'Ginny',
-        "text": 'I cashed out $10,000 on the platform without any fees.'
+      "id": "15",
+      "name": "Scutanova",
+      "text": "There is no need to pay expensive electricity bills and management fees, which is a very good choice for miners"
     },
     {
-        "id": '17',
-        "name":'Vitali',
-        "text": 'ALL4 Mining has quality products which include cloud mining, investment portfoli'
+      "id": "16",
+      "name": "Ginny",
+      "text": "I cashed out $10,000 on the platform without any fees."
     },
     {
-        "id": '18',
-        "name":'Kripkov',
-        "text": 'My experience with ALL4 Mining was and is very good, they completed all withdrawals successfully. Among the world mining companies, it is the best.'
+      "id": "17",
+      "name": "Vitali",
+      "text": "ALL4 Mining has quality products which include cloud mining, investment portfoli"
     },
     {
-        "id": '19',
-        "name":'Brenzee',
-        "text": 'I feel good about this app because it...,I feel good about this app because it does great things'
+      "id": "18",
+      "name": "Kripkov",
+      "text": "My experience with ALL4 Mining was and is very good, they completed all withdrawals successfully. Among the world mining companies, it is the best."
     },
     {
-        "id": '20',
-        "name":'Yugoslavia',
-        "text": 'I have never come across such a simple platform where I can easily use the best money making schemes.'
+      "id": "19",
+      "name": "Brenzee",
+      "text": "I feel good about this app because it...,I feel good about this app because it does great things"
     },
     {
-        "id": '21',
-        "name":'Westbeck',
-        "text": 'I really like ALL4 Mining because I am a newbie and it is very easy to get started. It is a great platform for beginners.'
+      "id": "20",
+      "name": "Yugoslavia",
+      "text": "I have never come across such a simple platform where I can easily use the best money making schemes."
+    },
+    {
+      "id": "21",
+      "name": "Westbeck",
+      "text": "I really like ALL4 Mining because I am a newbie and it is very easy to get started. It is a great platform for beginners."
     }
-],
+  ]
 }
