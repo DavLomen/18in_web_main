@@ -1,15 +1,17 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <div  class="app-wrapper register" style="font-size:10px">
-      <div class="container" style="background: url(./static/img/login_bg.png) no-repeat;background-position: center;max-width: 100%;background-size: 100% 100%">
+    <div  class="app-wrapper register" style="font-size:10px;background: url(./static/images/login.jpg) no-repeat;background-position: 100% 100%;max-width: 100%;">
+      <div class="container" >
         <div class="form-box">
           <div class="mt-9 px-4 lg:mt-[60px] lg:mr-[90px] lg:pr-0 lg:pl-10" style="max-width: 500px">
-            <div class="form-title">{{$t('regLogin[14]')}}</div>
-            <p
-              class="bg-clip-text font-helve text-sm mb-0 text-[#1b1b1b] text-opacity-[0.64] leading-[22px] lg:text-base lg:leading-[30px]">
-              {{$t('regLogin[15]')}}</p></div>
+
+            <!--            <p-->
+            <!--              class="bg-clip-text font-helve text-sm mb-0 text-[#1b1b1b] text-opacity-[0.64] leading-[22px] lg:text-base lg:leading-[30px]">-->
+            <!--              {{$t('regLogin[15]')}}</p>-->
+          </div>
           <form class="el-form form el-form--label-top">
+            <h2  class="mb-2" style="width: 100%;text-align: center;">{{$t('regLogin[11]')}}</h2>
             <div class="el-row" style="margin-left: -5px; margin-right: -5px">
               <div
                 class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-12"
@@ -43,7 +45,7 @@
                         v-model.trim="postData.email"
                         type="text"
                         autocomplete="off"
-                        :placeholder="$t('regLogin[4]')"
+                        :placeholder="$t('reg[0]')"
                         class="el-input__inner"
                       />
                     </div>
@@ -166,12 +168,12 @@
               <!--                *{{$t('placehoder[2]')}}-->
               <!--              </div>-->
               <div
-                class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-24"
+                class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-12"
                 style="padding-left: 5px; padding-right: 5px"
               >
                 <div class="el-form-item">
                   <label for="invite_code" class="el-form-item__label"
-                  >{{$t('regLogin[8]')}} <span style="color: red;">{{$t('optional[0]')}}</span></label
+                  >{{$t('regLogin[8]')}}</label
                   >
                   <div class="el-form-item__content">
                     <div class="el-input">
@@ -188,7 +190,7 @@
                 </div>
               </div>
               <div
-                class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-24"
+                class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-12"
                 style="padding-left: 5px; padding-right: 5px"
               >
                 <div class="el-form-item is-required">
@@ -206,33 +208,33 @@
                           class="el-input__inner"
                         />
                       </div>
-                      <img
-                        :src="codeImg" @click="getCode"
-                        class="code-img"
-                      />
+                      <div  class="code-img" @click="getCodes">
+                        <SIdentify :identifyCode="identifyCode" >
+                        </SIdentify>
+                      </div>
                     </div>
 
                   </div>
                 </div>
               </div>
-              <!--              <div-->
-              <!--                class="el-col el-col-24"-->
-              <!--                style="padding-left: 5px; padding-right: 5px"-->
-              <!--              >-->
-              <!--                <div class="el-form-item">-->
+              <div
+                class="el-col el-col-24"
+                style="padding-left: 5px; padding-right: 5px"
+              >
+                <div class="el-form-item">
 
-              <!--                  <div class="el-form-item__content">-->
-              <!--                    <div class="agree-box" style="display:inline-flex;">-->
-              <!--                      <van-checkbox v-model="isAgree" checked-color="rgb(13,110,253)" icon-size="14" shape="square">-->
-              <!--                        {{$t('regLogin[10]')}}-->
-              <!--                      </van-checkbox>-->
-              <!--                      <span class="el-checkbox__label"><span class="agree" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</span> ,-->
-              <!--                      <span class="agree"  @click="$router.push('/article/terms/detail')">{{$t('foot[10]')}}</span></span>-->
-              <!--                    </div>-->
+                  <div class="el-form-item__content" style="display: flex;align-items: center">
+                    <van-checkbox style="display: flex;" v-model="isAgree" checked-color="red" icon-size="20" shape="square">
+                      {{$t('regLogin[15]')}}
+                    </van-checkbox>
+                    <div style="display: inline-block">
+                      <a  href="javascript:;" @click="$router.push('/article/privacy/detail')" style="font-weight: bold;">{{$t('regLogin[16]')}}</a> {{$t('regLogin[17]')}}
+                      <a  href="javascript:;" @click="$router.push('/article/terms/detail')" style="font-weight: bold;">{{$t('regLogin[18]')}}</a>
 
-              <!--                  </div>-->
-              <!--                </div>-->
-              <!--              </div>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div
                 class="el-col el-col-24"
                 style="padding-left: 5px; padding-right: 5px"
@@ -240,7 +242,7 @@
                 <div class="el-form-item">
 
                   <div class="el-form-item__content">
-                    <div class="submit-btn" @click="onSubmit">{{$t('regLogin[11]')}}</div>
+                    <div class="submit-btn btn-dark" style="background: linear-gradient(to right, #2777ed, #00070e);" @click="onSubmit">{{$t('regLogin[19]')}}</div>
 
                   </div>
                 </div>
@@ -261,14 +263,18 @@
 </template>
 
 <script>
+  import SIdentify from "@/components/SIdentify";
+
   export default {
     name: 'Register',
     components: {
-
+      SIdentify
     },
     props: ['recommendId'],
     data() {
       return {
+        identifyCode: "", //密码登录图形验证码
+        identifyCodes: "1234567890abcdefghizklmnopqrstuvwxyz",
         passwords:true,
         re_passwords:true,
         fund_passwords:true,
@@ -314,7 +320,7 @@
         this.postData.dest = data[0].id
       });
 
-      this.getCode();
+      this.getCodes();
 
 
       // this.checkUserAgent();
@@ -327,16 +333,6 @@
 
     },
     mounted() {
-      const html = document.querySelector('html')
-      let fontSize = 13.5 * document.documentElement.clientWidth / 1920;
-      console.log(fontSize)
-      if (fontSize < 10) {
-        fontSize = 10;
-      }
-      if (fontSize > 20) {
-        fontSize = 16;
-      }
-      html.style.fontSize = fontSize + 'px';
     },
     activated() {
 
@@ -355,6 +351,13 @@
       getCode() {
         this.postData.code_rand = new Date().getTime()
         this.codeImg = this.ApiUrl+'/api/Account/code?code_rand='+this.postData.code_rand
+      },
+      getCodes() {
+        let that = this;
+        this.postData.code_rand = new Date().getTime()
+        this.$Model.getCode1(that.postData.code_rand,data=>{
+          that.identifyCode = data.data;
+        });
       },
       onSubmit() {
         if(!this.postData.username){
@@ -474,56 +477,7 @@
 </script>
 
 <style scoped>
-  @media only screen and (max-width: 1024px) {
-    :root {
-      font-size: 10px !important;
-    }
-  }
-  @media only screen and (min-width: 1024px) {
-    :root {
-      font-size: 10px !important;
-    }
-  }
-  @media only screen and (max-width: 1130px) {
-    :root {
-      --headerMenuLinkFs: 16px;
-      --butWidth: 65px;
-      --butHeight: 32px;
-      --butBR: 6px;
-      --butFS: 13px;
-      --butML: 16px;
-      font-size: 10px;
-    }
-  }
-  @media only screen and (min-width:1024px) {
-    html {
-      font-size: 10px
-    }
-    :root {
-      --headerMenuLinkFs: 16px;
-      --butWidth: 65px;
-      --butHeight: 32px;
-      --butBR: 6px;
-      --butFS: 13px;
-      --butML: 16px;
-      font-size: 10px;
-    }
-  }
 
-  @media only screen and (max-width:1024px) {
-    html {
-      font-size: 10px
-    }
-    :root {
-      --headerMenuLinkFs: 16px;
-      --butWidth: 65px;
-      --butHeight: 32px;
-      --butBR: 6px;
-      --butFS: 13px;
-      --butML: 16px;
-      font-size: 10px;
-    }
-  }
   ::-webkit-scrollbar {
     width: 4px;
     height: 5px
@@ -661,24 +615,23 @@
   }
 
   .el-input .el-input__inner {
-    height: 4.5rem;
-    line-height: 4.5rem;
-    padding: 0 2rem;
-    font-family: myFont;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0 0.5rem;
     color: #000;
-    border: 1px solid #d9d9d9!important
+    font-size: 1rem;
+    border: 1px solid #d9d9d9 !important
   }
 
   .el-textarea__inner {
-    font-size: 1.5rem!important;
-    font-family: myFont;
+    font-size: 1rem!important;
     color: #000!important
   }
 
   .el-form-item__label {
-    padding-bottom: 1rem!important;
+    padding-bottom: 0.5rem!important;
     line-height: normal!important;
-    font-size: 1.5rem!important;
+    font-size: 1rem!important;
     color: #000000;
     /*background: linear-gradient(180deg, #B32283 0%, #6C2383 100%);*/
     /*-webkit-background-clip: text;*/
@@ -754,17 +707,17 @@
     }
 
     .container .form-box .form {
-      width: 70rem;
+      width: 38rem;
       box-sizing: border-box;
-      padding: 4rem;
-      border-radius: 1rem;
-      background-color: #fff
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background-color: #eee
     }
 
     .form-title {
       width: 100%;
       margin-bottom: 1.5rem;
-      font-size: 4rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #fff;
       text-align: left;
@@ -772,15 +725,15 @@
     }
     .bg-clip-text {
       font-size: 2rem;
-      color: #fff;
+      color: #000;
     }
     .container .form-box .form .login-link {
       width: 100%;
-      margin-bottom: 5rem;
+      margin-bottom: 1rem;
       line-height: 160%;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: #000;
-      text-align: center;
+      text-align: left;
       word-wrap: break-word
     }
 
@@ -790,7 +743,7 @@
     }
 
     .container .form-box .form .el-form-item {
-      margin-bottom: 2.5rem
+      margin-bottom: 0.5rem
     }
 
     .container .form-box .form .el-input.is-disabled .el-input__inner {
@@ -804,10 +757,8 @@
     }
 
     .container .form-box .form .code-box .code-img {
-      min-width: 13.5rem;
-      max-width: 13.5rem;
-      height: 4.5rem;
-      margin-left: 1rem;
+      height: 2.5rem;
+      margin-left:0.5rem;
       cursor: pointer
     }
 
@@ -822,18 +773,17 @@
 
     .container .form-box .form .submit-btn {
       width: 100%;
-      height: 5rem;
-      line-height: 5rem;
+      height: 3rem;
+      line-height: 3rem;
       box-sizing: border-box;
-      padding: 0 2rem;
+      padding: 0 1rem;
       margin-top: 1rem;
       border-radius: 4px;
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-size: 1.2rem;
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg,#ef991e,#00070e);
       cursor: pointer
     }
   }
@@ -854,7 +804,7 @@
       box-sizing: border-box;
       padding: 2rem;
       border-radius: .8rem;
-      background-color: rgba(255,255,255,0.9)
+      background-color: #eee
     }
 
     .form-title {
@@ -868,16 +818,16 @@
     }
     .bg-clip-text {
       font-size: 1.3rem;
-      color: #eee;
+      color: #000;
     }
     .container .form-box .form .login-link {
       width: 100%;
-      margin-bottom: 3.6rem;
+      margin-bottom: 1rem;
       line-height: 160%;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: #000;
-      text-align: center;
-      word-wrap: break-word
+      text-align: left;
+      word-wrap: break-word;
     }
 
     .container .form-box .form .login-link .link {
@@ -886,7 +836,7 @@
     }
 
     .container .form-box .form .el-form-item {
-      margin-bottom: 2.2rem
+      margin-bottom: 0.5rem
     }
 
     .container .form-box .form .el-input.is-disabled .el-input__inner {
@@ -900,10 +850,8 @@
     }
 
     .container .form-box .form .code-box .code-img {
-      min-width: 13.5rem;
-      max-width: 13.5rem;
-      height: 4.5rem;
-      margin-left: 1rem;
+      height: 3rem;
+      margin-left: 0.5rem;
       cursor: pointer
     }
 
@@ -918,17 +866,16 @@
 
     .container .form-box .form .submit-btn {
       width: 100%;
-      height: 4.6rem;
-      line-height: 4.6rem;
+      height: 3rem;
+      line-height: 3rem;
       box-sizing: border-box;
-      padding: 0 2rem;
+      padding: 0 1rem;
       border-radius: 4px;
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1rem;
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg,#ef991e,#00070e);
       cursor: pointer
     }
   }
@@ -942,5 +889,8 @@
     .pc {
       display: none;
     }
+  }
+  .el-form-item__content {
+    line-height: 1rem;
   }
 </style>

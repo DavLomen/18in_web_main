@@ -1,498 +1,448 @@
 <template>
   <div class="HomePage">
     <Header></Header>
+    <header class="has-header-main" style="background: #fff;">
+      <div  class="hero-wrap hero-wrap-2 section-space" style="position: relative;">
+<!--        <video id="v1" autoplay loop muted>-->
+<!--          <source :src="'./static/images/bg.mp4?t=1'" type="video/mp4"  />-->
+<!--        </video>-->
+        <div  class="container">
+          <div  class="row align-items-center flex-md-row-reverse justify-content-between">
+            <div  class="col-lg-6 col-md-6">
+              <swiper v-if="InitData.bannerList && InitData.bannerList.length>0"
+                :options="swiperOption" ref="mySwiper"
+                class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events banner-slider swiper-button-s3"
+              >
+                <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
+                  <div  class="card">
+                    <div  class="hero-image">
+                      <img :src="InitData.setting.up_url+item" alt="" class="w-100"></div>
+                  </div>
+                </swiper-slide>
+<!--                <swiper-slide>-->
+<!--                  <div  class="card">-->
+<!--                    <div  class="hero-image">-->
+<!--                      <img  :src="'./static/img/banner-1.ba628f1c.jpg'" alt="" class="w-100"></div>-->
+<!--                  </div>-->
+<!--                </swiper-slide>-->
+<!--                <swiper-slide>-->
+<!--                  <div  class="card">-->
+<!--                    <div  class="hero-image">-->
+<!--                      <img  :src="'./static/img/banner-2.c91f96b0.jpg'" alt="" class="w-100"></div>-->
+<!--                  </div>-->
+<!--                </swiper-slide>-->
+<!--                <swiper-slide>-->
+<!--                  <div  class="card">-->
+<!--                    <div  class="hero-image">-->
+<!--                      <img  :src="'./static/img/banner-3.dd9813bd.jpg'" alt="" class="w-100"></div>-->
+<!--                  </div>-->
+<!--                </swiper-slide>-->
+<!--                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" slot="pagination" >-->
+<!--                </div>-->
+              </swiper>
+            </div>
+            <div  class="col-lg-6 col-md-6">
+              <div  class="hero-content pb-0 pt-md-0 pe-lg-4" >
+                <h1  class="hero-title mb-4" >{{$t('home1[0]')}}
+                  <span  class="nfts-word">{{$t('home1[1]')}}</span> {{$t('home1[2]')}}</h1>
+                <p  class="hero-text mb-4 pb-1" style="color:#000;"> {{$t('home1[3]')}}</p>
+                <ul  class="btns-group hero-btns justify-content-md-start justify-content-center">
+                  <li>
+                    <a href="javascript:;" class="btn btn-lg btn-dark" @click="$router.push('/register')">{{$t('header[14]')}}</a>
+                    <a href="javascript:;" class="btn btn-lg btn-dark" @click="$router.push('/login')">{{$t('header[13]')}}</a>
+                  </li>
+                </ul>
+                <p  class="hero-text pb-1" style="color:red;font-size: 1.2rem;">{{$t('home[2]')}}</p>
+<!--                <p  class="hero-text mb-4 pb-1" style="color:red;font-size: 1.2rem;">{{$t('home[1]')}}</p>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div style="width: 100%;">
+      <iframe class="iframe" scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ADOGEUSD%22%2C%22title%22%3A%22Dogecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ALTCUSD%22%2C%22title%22%3A%22Litecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABCHUSD%22%2C%22title%22%3A%22Bitcoin%20Cash%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AADAUSD%22%2C%22title%22%3A%22Cardano%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%2C%22title%22%3A%22XRP%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22normal%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22globalecrypto.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22oxminer.com%2F%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 58px; width: 100%;"></iframe>
+    </div>
     <van-notice-bar color="red" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />
-    <div data-v-473dd3c9="" data-v-46027133="" class="homeBanner home-banner">
-      <section data-v-473dd3c9="" class="hero__slider--section style2">
-        <div data-v-473dd3c9="" class="hometop" style="position: relative;">
-          <div class="video">
-            <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">
-              <source :src="'./static/images/bg.mp4'" type="video/mp4"  />
-            </video>
-          </div>
-
-          <swiper :options="swiperOption1"  class="carousel slide" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">
-            <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
-              <img @click="jumper" :src="InitData.setting.up_url+item" style="width: 100%;height: 100%;">
-            </swiper-slide>
-          </swiper>
-        </div>
-      </section>
-    </div>
-    <iframe class="iframe" scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ADOGEUSD%22%2C%22title%22%3A%22Dogecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ALTCUSD%22%2C%22title%22%3A%22Litecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABCHUSD%22%2C%22title%22%3A%22Bitcoin%20Cash%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AADAUSD%22%2C%22title%22%3A%22Cardano%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%2C%22title%22%3A%22XRP%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22globalecrypto.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22kkminer.top%2F%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 50px; width: 100%;"></iframe>
-
-    <div class="section featured-section">
-      <div class="section__head">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-24 col-xl-12 pl-0 pr-0">
-              <h6 class="mt-0 text-center miner_work_title"> {{$t('home[17]')}}</h6>
-              <h3 class="mb-0 mx-auto text-center t-short-para miner_work_text">
-                  {{$t('home[18]')}}
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div class="container mt-5">
-          <div class="row justify-content-center">
-            <div class="col-md-3 col-xl-24">
-              <div class="miner_work_icon mx-auto">
-                <div class="number fs-5 fw-bold">01</div>
-                <img class="miner_work_image" src="../../static/img/process1.png" alt="">
-              </div>
-              <div class="miner_work_text">
-                <h4 class="label">{{ $t('minerWorkText[0]') }}</h4>
-                <div class="content mb-5">{{ $t('minerWorkText[1]') }}</div>
-              </div>
-            </div>
-            <div class="col-md-3 col-xl-24">
-              <div class="miner_work_icon mx-auto">
-                <div class="number fs-5 fw-bold">02</div>
-                <img class="miner_work_image" src="../../static/img/process2.png" alt="">
-              </div>
-              <div class="miner_work_text">
-                <h4 class="label">{{ $t('minerWorkText[2]') }}</h4>
-                <div class="content mb-5">{{ $t('minerWorkText[3]') }}</div>
-              </div>
-            </div>
-            <div class="col-md-3 col-xl-24">
-              <div class="miner_work_icon mx-auto">
-                <div class="number fs-5 fw-bold">03</div>
-                <img class="miner_work_image" src="../../static/img/process3.png" alt="">
-              </div>
-              <div class="miner_work_text">
-                <h4 class="label">{{ $t('minerWorkText[4]') }}</h4>
-                <div class="content mb-5">{{ $t('minerWorkText[5]') }}</div>
-              </div>
-            </div>
-            <div class="col-md-3 col-xl-24">
-              <div class="miner_work_icon mx-auto">
-                <div class="number fs-5 fw-bold">04</div>
-                <img class="miner_work_image" src="../../static/img/process4.png" alt="">
-              </div>
-              <div class="miner_work_text">
-                <h4 class="label">{{ $t('minerWorkText[6]') }}</h4>
-                <div class="content mb-5">{{ $t('minerWorkText[7]') }}</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="h-[662px] xl:h-[700px]"
+         style="background-image: url('./static/images/blockchain_bg.webp'); background-size: cover; background-position: center center;">
+      <div class="h-full mx-auto max-w-[1200px] px-5 box-content xl:px-8">
+        <div class="flex flex-col h-full max-w-[620px] justify-center"><h3
+          class="font-bold font-helvetica text-[#fff] text-[30px] leading-9 xl:text-[45px] xl:leading-[55px]">
+          {{$t('newhome[0]')}}</h3>
+          <p
+            class="font-roboto-regular mt-6 text-[#fff] text-[14px] leading-[22px] xl:mt-12 xl:text-[16px] xl:leading-[30px]">
+            {{$t('newhome[1]')}}
+          </p></div>
       </div>
     </div>
-    <section class=" featured-section" style="margin-bottom: 0;">
-      <div class="container">
-        <div style="text-align: center">
-          <div class="h-grid-item" >
-            <h2 >{{$t('newss[0]')}}</h2>
-            <p style="margin-bottom: 0;">
-              {{$t('newss[1]')}}
-            </p>
-          </div>
-        </div>
+    <div class="wrapper_A-XAV" style="margin-top: 1rem;">
+      <div class="scheme1_27wht"><div class="scheme1Item_gE_r4 schemeItem1_1L0vC" @click="$router.push('/register')" style="background-image: url(./static/images/ht1.png);background-size: 50px;">
+        {{$t('newhome[2]')}}<br><span style="font-size: 14px;">{{$t('newhome[3]')}}</span>
+      </div> <div class="schemeArrow_2y4_o"></div>
+        <div class="scheme1Item_gE_r4 schemeItem2_12tqw" @click="$router.push('/contracts')" style="background-image: url(./static/images/ht2.png);background-size: 50px;">
+          {{$t('newhome[4]')}}<br><span style="font-size: 14px;">{{$t('newhome[5]')}}</span>
+      </div> <div class="schemeArrow_2y4_o"></div>
+        <div class="scheme1Item_gE_r4 schemeItem3_2eJTU" style="background-image: url(./static/images/ht3.png);background-size: 50px;">
+          {{$t('newhome[6]')}}<br><span style="font-size: 14px;">{{$t('newhome[7]')}}</span>
       </div>
-    </section>
-    <div class="section" style="padding-top: 20px">
-      <div class="container ">
-        <div   class="plan-div" type="plans">
-        <div class="plan-row el-row is-justify-center el-row--flex"
-             style="margin-left: -10px; margin-right: -10px;">
-          <div  class="mt-4 el-col  el-col-xs-24 el-col-sm-12 el-col-md-12 el-col-lg-8" v-for="(item,index) in listData" :key="index"
-                style="padding-left: 10px; padding-right: 10px;">
-<!--          <swiper :options="swiperOption" ref="mySwiper1" class="carousel" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">-->
-<!--            <swiper-slide  v-for="(item,index) in listData" :key="index">-->
-              <div class="card">
-                <div class=" card-body" >
-                  <div class="img-box">
-                    <img
-                      :src="InitData.setting.up_url + item.icon"
-                      class="img" style="width: 100%"
-                    />
-                  </div>
-                  <div class="plan-card__head">
-                    <div class="mt-0 mb-2 text-center text--danger">{{item.title}}</div>
-<!--                    <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">-->
-<!--                      <van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[9]')}}: {{item.miner}}-->
-<!--                    </div>-->
-<!--                    <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">-->
-<!--                      <van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[8]')}}: {{item.hash_power}}-->
-<!--                    </div>-->
-                    <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                      <van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[15]')}}
-                    </div>
-                    <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                      <van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}
-                    </div>
-                    <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                      <van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[0]')}}: {{item.amount}} {{InitData.currency}}
-                    </div>
-                  </div>
-                  <div class="text-left" style="color: #000000;font-weight: bold">
-                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[4]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
-                    <h6 class="mt-0 mb-2 text-left" style="color: #196F3D !important;font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('home[34]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
-                  </div>
-                  <div class="text-left" style="color: #000000;font-weight: bold">
-                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[21]')}}: $ ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
-                  </div>
-                  <div class="text-left" style="color: #000000;font-weight: bold">
-                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[22]')}}: $ {{item.amount}}</h6>
-                  </div>
-                  <div class="text-left" style="color: #000000;font-weight: bold">
-                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('settle[0]')}}: {{item.type==1?$t('product[7]'):$t('product[17]')}}</h6>
-                  </div>
-                  <div class="bonus" v-if="item.amount!=10">
-                    <div class="label">{{$t('product[10]')}}</div>
-                    <ul class="plan-referral justify-content-center mb-2">
-                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                        <span>{{aa}} %</span>
-                        <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
-                      </div>
-                    </ul>
-                  </div>
-                  <div class="bonus" v-else>
-                    <div class="label">{{$t('product[10]')}}</div>
-                    <ul class="plan-referral justify-content-center mb-2">
-                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                        <span>0 %</span>
-                        <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
-                      </div>
-                    </ul>
-                  </div>
-                  <div  class="btn-box">
-                    <button  class="btn btn1" v-if="item.progress<100" @click="$router.push(`/productDetail?id=${item.id}`)">{{$t('settle[4]')}}</button>
-                    <button  class="btn btn2 disable" disable v-if="item.progress>=100">{{$t('product[13]')}}</button>
-                    <button  class="btn btn2" v-else @click="orderNow(item)">{{$t('settle[5]')}}</button>
-                  </div>
-                  <div  class="mt-2 el-row">
-                    <div  class="sold-out-text">{{$t('newHome[2]')}}</div>
-                    <div  class="progress">
-                      <div  role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                            :aria-valuenow="item.progress"
-                            class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
-                            :style="`width: ${item.progress}%;`"><span ><strong >{{item.progress}}%</strong></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-<!--            </swiper-slide>-->
-<!--          </swiper>-->
-<!--          <div class="swiper-button-prev"></div>&lt;!&ndash;左箭头。如果放置在swiper外面，需要自定义样式。&ndash;&gt;-->
-<!--          <div class="swiper-button-next"></div>&lt;!&ndash;右箭头。如果放置在swiper外面，需要自定义样式。&ndash;&gt;-->
-<!--          <div class="swiper-pagination"></div>&lt;!&ndash;分页器。如果放置在swiper外面，需要自定义样式。&ndash;&gt;-->
-          </div>
-        </div>
-        </div>
+<!--        <div class="schemeArrow_2y4_o"></div>-->
+<!--        <div class="scheme1Item_gE_r4 schemeItem4_2VqRj" style="background-image: url(./static/images/schemeItem4.60494d9.svg);">-->
+<!--        Get paid in bitcoins every day<br><span style="font-size: 14px;">Choose your mining contract</span>-->
+<!--      </div>-->
       </div>
     </div>
 
-    <section class="section featured-section">
-      <div class="container">
-        <div style="text-align: center">
-          <div class="h-grid-item" >
-            <h2 class="fw-bold">{{$t('newHome[3]')}}</h2>
-          </div>
-          <div class="el-row">
-            <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
-              <div class="image">
-                <img src="../../static/img/choose_us1.png" alt="">
-              </div>
-              <div class="text mt-3">
-                <h5 class="fw-bold h5">{{ $t('ChooseUs[0]') }}</h5>
-                <p>{{ $t('ChooseUs[1]') }}</p>
-              </div>
-            </div>
-            <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
-              <div class="image">
-                <img src="../../static/img/choose_us21.png" alt="">
-              </div>
-              <div class="text mt-3">
-                <h5 class="fw-bold h5">{{ $t('ChooseUs[2]') }}</h5>
-                <p>{{ $t('ChooseUs[3]') }}</p>
-              </div>
-            </div>
-            <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
-              <div class="image">
-                <img src="../../static/img/choose_us3.png" alt="">
-              </div>
-              <div class="text mt-3">
-                <h5 class="fw-bold h5">{{ $t('ChooseUs[4]') }}</h5>
-                <p>{{ $t('ChooseUs[5]') }}</p>
-              </div>
-            </div>
-            <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
-              <div class="image">
-                <img src="../../static/img/choose_us4.png" alt="">
-              </div>
-              <div class="text mt-3">
-                <h5 class="fw-bold h5">{{ $t('ChooseUs[6]') }}</h5>
-                <p>{{ $t('ChooseUs[7]') }}</p>
-              </div>
-            </div>
-            <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
-              <div class="image">
-                <img src="../../static/img/choose_us5.png" alt="">
-              </div>
-              <div class="text mt-3">
-                <h5 class="fw-bold h5">{{ $t('ChooseUs[8]') }}</h5>
-                <p>{{ $t('ChooseUs[9]') }}</p>
-              </div>
-            </div>
-            <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
-              <div class="image">
-                <img src="../../static/img/choose_us6.png" alt="">
-              </div>
-              <div class="text mt-3">
-                <h5 class="fw-bold h5">{{ $t('ChooseUs[10]') }}</h5>
-                <p>{{ $t('ChooseUs[11]') }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-<!--    <section class="section featured-section">-->
+
+<!--    <section class="section-space trending-section" id="contracts" style="background: rgb(247, 249, 251);">-->
 <!--      <div class="container">-->
-<!--        <div style="text-align: center">-->
-<!--          <div class="h-grid-item" >-->
-<!--            <div>-->
-<!--&lt;!&ndash;              <img :src="`./static/img/bbb-${$i18n.locale}.png`" style="width: 100%">&ndash;&gt;-->
+<!--        <div class="section-head text-center">-->
+<!--          <h2 class="mb-3">{{$t('home1[13]')}}</h2>-->
+<!--          <p>{{$t('home1[14]')}}</p>-->
+<!--        </div>-->
+<!--        <div class="row g-4 gy-md-gs">-->
+<!--          <div class="col-xl-6 col-lg-6 col-sm-12" v-for="(item,index) in listData" :key="index">-->
+<!--            <div  class="product">-->
+<!--              <div  class="row g-3 g-md-6">-->
+<!--                <div  class="el-col-11_5">-->
+<!--                  <div  class="product-image">-->
+<!--                    <img  :src="InitData.setting.up_url + item.icon"  class="product-img-top" alt="" title="">-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div  class="el-col-12_5">-->
+<!--                  <div  class="row g-2 g-md-4" style="width: 100%; height: 100%;">-->
+<!--                    <div  class="col-6 info-item">-->
+<!--                      <div  class="price-title">{{$t('product[2]')}}</div>-->
+<!--                      <div  class="price-value">{{item.cycle}} {{$t('product[18]')}}</div></div>-->
+<!--                    <div  class="col-6 info-item" style="text-align: right;">-->
+<!--                      <div  class="price-title">{{$t('product[0]')}}</div>-->
+<!--                      <div  class="price-value">${{item.amount}}</div></div>-->
+<!--                    <div  class="col-12 info-item">-->
+<!--                      <div  class="price-title">{{$t('product[3]')}}</div>-->
+<!--                      <div  class="price-value">${{(item.daily_rate/100*item.amount).toFixed(2)}}</div></div>-->
+<!--                    <div  class="col-12 info-item">-->
+<!--                      <div  class="price-title">{{item.cycle}} {{$t('product[21]')}}</div>-->
+<!--                      <div  class="price-value">${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div></div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div  class="row g-2 g-md-4">-->
+<!--                <div  class="el-col-11_5 product-title">-->
+<!--                  <div > {{item.title}}</div>-->
+<!--                  <div  class="progress-wrap">-->
+<!--                    <div  class="left">{{$t('product[22]')}}</div>-->
+<!--                    <div  class="right">-->
+<!--                      <div  class="progress-box">-->
+<!--                        <div  class="progress" role="progressbar" aria-label="Animated striped example" :aria-valuenow="item.progress" aria-valuemin="0" aria-valuemax="100">-->
+<!--                          <div  :class="'progress-bar progress-bar-striped progress-bar-animated '+(item.progress>=100?'bar-color_over':'bar-color_proceed')" :style="'width: '+item.progress+'%'">{{item.progress}}%</div></div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div  class="sold-out-content">{{$t('product[23]')}}</div></div>-->
+<!--                <div  class="el-col-12_5">-->
+<!--                  <div  class="product-but d-flex align-items-center">-->
+<!--                    <button  href="javascript:;" @click="orderNow(item)"  class="btn-dark btn" style="opacity: 1;">{{$t('product[24]')}}</button>-->
+<!--                    <button  href="javascript:;" @click="$router.push(`/productDetail?id=${item.id}`)" class="btn-outline-dark btn" style="margin-left: 0.375rem;">{{$t('product[25]')}}</button></div>-->
+<!--                </div>-->
+<!--              </div>-->
 <!--            </div>-->
 <!--          </div>-->
 <!--        </div>-->
 <!--      </div>-->
 <!--    </section>-->
-
-    <div class="section profit-section">
-      <div class="container" style="max-width: 90%;margin: 0 auto;">
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-xl-6">
-            <h2 class="mt-0 text-center title-main">{{$t('calculator[0]')}}</h2>
-            <p class="mb-0 mx-auto text-center t-short-para" style="font-size: 16px;">
-              {{$t('calculator[1]')}}
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="profit-calculator" style="margin: 0 auto;">
-              <div class="el-row g-3">
-                <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                  <div class="form-group">
-                    <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[2]')}}</label>
-                    <!--                            <input readonly @click="selcets = !selcets" name="plan_id" class="form-select form&#45;&#45;select form&#45;&#45;control" v-model="selcett" />-->
-
-                    <!--                            <div v-if="selcets" style="width: 100%" name="plan_id" class="form-select form&#45;&#45;select form&#45;&#45;control">-->
-                    <!--                              <div :value="item.id" v-for="(item,index) in listData" :key="index" @click="handelChange(item)">-->
-                    <!--                                {{item.title}}-->
-                    <!--                              </div>-->
-                    <!--                            </div>-->
-                    <select name="plan_id" style="width: 100%;" class="form-select form--select" v-model="selectM" @change="handelChange">
-                      <option :value="item.id" v-for="(item,index) in listData" :key="index">
-                        {{item.title}}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-                <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                  <div class="form-group">
-                    <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[3]')}}</label>
-                    <input style="width:100%" type="text" v-model="selectP.amount" name="amount" class="form-control form--control" autocomplete="off">
-                    <code class="limit"></code>
-                  </div>
-                </div>
-                <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                  <div class="form-group">
-                    <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[4]')}}</label>
-                    <input style="width: 100%" v-if="selectP.daily_rate !=''" type="text" v-model="((selectP.daily_rate)/100*selectP.amount*selectP.cycle).toFixed(4)" class="form-control form--control" readonly>
-                    <input style="width: 100%" v-else type="text" class="form-control form--control">
-                  </div>
-                  <code class="msg">{{$t('calculator[5]')}}: {{selectP.daily_rate}}%</code>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="section">
+    <div class="section">
       <div class="container">
-        <div class="container">
-          <div class="row justify-content-center">
-            <!-- <div class="col-lg-6 col-md-5" style="overflow: hidden;">
-              <div class="position-relative">
-                <div class="text-center text-md-left"><img :src="'./static/images/ourm.jpg'" alt="" width="95%"
-                                                           class="img-fluid" style="border-radius: 30px;"></div>
+        <div class="row gy-4 gx-3 justify-content-center">
+
+          <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
+            <div class="plan-card" >
+              <div class="img-box">
+                <img
+                  :src="InitData.setting.up_url + item.icon"
+                  class="img" style="width: 100%"
+                />
               </div>
-            </div> -->
-            <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
-              <div class="section-title text-center">
-                <h1 class="title fw-bold">{{$t('F&Q[0]')}}</h1>
-                <div class="para-desc videoDiv text-center mx-auto">
-                  <p>
-                    {{$t('F&Q[1]')}}
-                  </p>
+              <div class="plan-card__head">
+                <div class="mt-0 mb-2 text-center text--danger">{{item.title}}</div>
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[9]')}}: {{item.miner}}
+                </div>
+<!--                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">-->
+<!--                  <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[8]')}}: {{item.hash_power}}-->
+<!--                </div>-->
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[15]')}}
+                </div>
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}
+                </div>
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[0]')}}: {{item.amount}} {{InitData.currency}}
                 </div>
               </div>
-            </div>
-            <div class="el-col-24 el-col-lg-24" v-for="(v,i) in listDataQ" :key="i">
-              <div class="problem_container mb-4 mt-sm-0" v-if="i <= 3 || fqShowMore">
-                <div class="head mb-3">
-                  <div class="left fw-bold">{{ v.title }}</div>
-                  <div class="right" @click="fqSelectIndex = i + 1">
-                    <van-icon color="#662282" :class="fqSelectIndex == i + 1 ? 'rotate' : ''" :name="fqSelectIndex !== i + 1 ? 'plus' : 'minus'" class="fs-5 fw-bold fq_icon"/>
+              <div class="text-left" style="color: #000000;font-weight: bold">
+                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[3]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
+                <h6 class="mt-0 mb-2 text-left" style="color: red !important;font-weight: bold;"><img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[4]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
+              </div>
+              <div class="text-left" style="color: #000000;font-weight: bold">
+                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('settle[0]')}}: {{item.type==1?$t('product[7]'):$t('product[17]')}}</h6>
+              </div>
+              <div class="bonus" v-if="item.amount !=10">
+                <div class="label">{{$t('product[10]')}}</div>
+                <ul class="plan-referral justify-content-center mb-2">
+                  <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
+                    <span>{{aa}} %</span>
+                    <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
                   </div>
-                </div>
-                <div class="content" v-show="fqSelectIndex === i + 1" v-html="v.content"></div>
+                </ul>
               </div>
-            </div>
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 text-center fw-bold" @click="fqShowMore=!fqShowMore">
-                    <span class="fs-5"  v-show="!fqShowMore">{{$t('F&Q[2]')}}</span>
-                    <van-icon name="arrow-down" v-show="!fqShowMore"/>
-                    <van-icon name="arrow-up" v-show="fqShowMore"/>
+              <div v-else style="color:#000;height: 94px;">
+                {{$t('ppp[0]')}}
+              </div>
+              <div class="bonus"  v-else>
+                <div class="label">{{$t('product[10]')}}</div>
+                <ul class="plan-referral justify-content-center mb-2">
+                  <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
+                    <span>0 %</span>
+                    <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
+                  </div>
+                </ul>
+              </div>
+              <div class="mt-1 text-center">
+                <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                  {{$t('product[13]')}}
                 </div>
-            </div>
+                <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                  {{$t('buy[0]')}}                        </a>
+              </div>
+              <div class="mt-2 text-center">
+                <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #62cee7, #00070e)"/>
+              </div>
+              <img v-if="item.progress>=100" :src="'./static/images/out.png?t=1'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section  class="testimonial mt-4">
-      <div  class="container"><h2 class="mt-0 text-center">{{$t('latest[0]')}}</h2>
-        <section  class="section transaction pt-0">
-          <div class="container">
-               <div class="row is-justify-space-around el-row--flex">
-                  <div class="el-col-xs-24 el-col-sm-8">
-                    <div class="col-item">
-                      <div class="item-head fw-bold fs-5 mx-auto"><span data-v-89578fbc="">{{$t('latest[1]')}}</span></div>
-                      <article class="item-body">
-                        <div class="seamless-warp">
-                          <div>
-                            <div style="overflow: hidden;">
-                              <div class="title latest-style el-row--flex is-justify-space-between pl-2 pr-2">
-                                  <div class="user col-4 text-left">{{ $t("latest[3]") }}</div>
-                                  <div class="amt col-4 text-center">{{ $t("latest[4]") }}</div>
-                                  <div class="time col-4 text-center">{{ $t("latest[5]") }}</div>
-                              </div>
-                              <van-swipe id="SwipeList2" style="height: 440px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem" height="90" vertical autoplay="3000" :show-indicators="false" :touchable="false">
-                                <van-swipe-item v-if="item.type==1" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
-                                  <div class="card1">
-                                    <div class="el-row--flex is-justify-space-between">
-                                        <div class="user col-4 text-left fl-wap">{{item.username}}</div>
-                                        <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
-                                        <div class="time col-4 text-right">{{item.time}}</div>
-                                    </div>
-                                  </div>
-                                </van-swipe-item>
-                              </van-swipe>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                    </div>
-                  </div>
-                  <div class="el-col-xs-24 el-col-sm-8">
-                    <div class="col-item">
-                      <div class="item-head fw-bold fs-5 mx-auto"><span data-v-89578fbc="">{{$t('latest[2]')}}</span></div>
-                      <article class="item-body">
-                        <div class="seamless-warp">
-                          <div>
-                            <div style="overflow: hidden;">
-                              <div class="title latest-style el-row--flex is-justify-space-between pl-2 pr-2">
-                                  <div class="user col-4 text-left">{{ $t("latest[3]") }}</div>
-                                  <div class="amt col-4 text-center">{{ $t("latest[4]") }}</div>
-                                  <div class="time col-4 text-center">{{ $t("latest[5]") }}</div>
-                              </div>
-                              <van-swipe id="SwipeList2" style="height: 440px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem" height="90" vertical autoplay="3000" :show-indicators="false" :touchable="false">
-                                <van-swipe-item v-if="item.type==2" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
-                                  <div class="card1">
-                                    <div class="el-row--flex is-justify-space-between">
-                                        <div class="user col-4 text-left fl-wap">{{item.username}}</div>
-                                        <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
-                                        <div class="time col-4 text-right">{{item.time}}</div>
-                                    </div>
-                                  </div>
-                                </van-swipe-item>
-                              </van-swipe>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                    </div>
-                  </div>
-                </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <section class="section">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
-              <div class="section-title text-center">
-                <h1 class="title fw-bold">{{$t('home_comment[0]')}}</h1>
-                <div class="para-desc videoDiv text-center mx-auto">
-                  <p>
-                    {{$t('home_comment[1]')}}
-                  </p>
-                </div>
-              </div>
-            </div>
-            </div>
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-              <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
-                <div class="comment_container">
-                  <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
-                    <swiper-slide v-for="el in commentList.slice(0, 10)" :key="el.id">
-                        <div class="comment_card">
-                          <div class="comment_head">
-                            <img :src="`../../static/img/user/user_${el.id}.png`" alt="">
-                          </div>
-                          <div class="msg mx-auto">
-                            <div class="msg mx-auto">
-                            <div class="name fw-bold">{{el.name}}</div>
-                            <div class="content">{{ el.text }}</div>
-                          </div>
-                          </div>
-                        </div>
-                      </swiper-slide>
-                  </swiper>
-                </div>
-              </div>
-              <!-- 第二個評論 -->
-              <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
-                <div class="comment_container">
-                  <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
-                      <swiper-slide v-for="el in commentList.slice(10)" :key="el.id">
-                        <div class="comment_card">
-                          <div class="comment_head">
-                            <img :src="`../../static/img/user/user_${el.id}.png`" alt="">
-                          </div>
-                          <div class="msg mx-auto">
-                            <div class="name fw-bold">{{el.name}}</div>
-                            <div class="content">{{ el.text }}</div>
-                          </div>
-                        </div>
-                      </swiper-slide>
-                  </swiper>
-                </div>
-              </div>
-            </div>
-        </div>
-      </section>
-    <div  class="box6">
-      <video :src="InitData.setting.up_url + '/upload/KKMiner.mp4?t=2'" muted controls playsinline style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>
     </div>
+    <section style="margin-top: 2rem;">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="mb-3">{{$t('newhome[8]')}}</h2>
+          <p>{{$t('newhome[9]')}}</p>
+        </div>
+      </div>
+    </section>
+    <div class="uk-cn-actions">
+      <div class="uk-grid uk-grid-large uk-child-width-1-3@m" data-uk-grid="">
+        <div class="uk-vix-center uk-first-column">
+          <div class="uk-vix-top">
+            <div class="in-icon-vix">
+              <img :src="'./static/images/ys1.png'">
+            </div>
+          </div>
+          <div class="uk-vix-content">
+            <h4>{{$t('newhome[10]')}}</h4>
+            <p>{{$t('newhome[11]')}}</p>
+          </div>
+        </div>
+        <div class="uk-vix-center">
+          <div class="uk-vix-top">
+            <div class="in-icon-vix">
+              <img :src="'./static/images/ys2.png'">
+            </div>
+          </div>
+          <div class="uk-vix-content">
+            <h4>{{$t('newhome[12]')}}</h4>
+            <p>{{$t('newhome[13]')}}</p>
+          </div>
+        </div>
+        <div class="uk-vix-center">
+          <div class="uk-vix-top">
+            <div class="in-icon-vix">
+              <img :src="'./static/images/ys3.png'">
+            </div>
+          </div>
+          <div class="uk-vix-content">
+            <h4>{{$t('newhome[14]')}}</h4>
+            <p>{{$t('newhome[15]')}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="uk-grid uk-grid-large uk-child-width-1-3@m" data-uk-grid="">
+        <div class="uk-vix-center uk-first-column">
+          <div class="uk-vix-top">
+            <div class="in-icon-vix">
+              <img :src="'./static/images/ys4.png'">
+            </div>
+          </div>
+          <div class="uk-vix-content">
+            <h4>{{$t('newhome[16]')}}</h4>
+            <p>{{$t('newhome[17]')}}</p>
+          </div>
+        </div>
+        <div class="uk-vix-center">
+          <div class="uk-vix-top">
+            <div class="in-icon-vix">
+              <img :src="'./static/images/ys5.png'">
+            </div>
+          </div>
+          <div class="uk-vix-content">
+            <h4>{{$t('newhome[18]')}}</h4>
+            <p>{{$t('newhome[19]')}}</p>
+          </div>
+        </div>
+        <div class="uk-vix-center">
+          <div class="uk-vix-top">
+            <div class="in-icon-vix">
+              <img :src="'./static/images/ys6.png'">
+            </div>
+          </div>
+          <div class="uk-vix-content">
+            <h4>{{$t('newhome[20]')}}</h4>
+            <p>{{$t('newhome[21]')}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--    fundlist-->
+    <section class="transaction py-120" style="margin-top: 4rem;">
+      <div class="container max960">
+        <div class="box-wrapper">
+          <div class="title-main">{{$t('latest[0]')}}</div>
+          <div class="row gy-4">
+            <div class="col-lg-6">
+              <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[1]')}}</h4>
+              <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 90%;margin: 0 auto;">
+                <table class="style-two scroll-table table">
+                  <thead>
+                  <tr>
+                    <th>{{$t('latest[3]')}}</th>
+                    <th>{{$t('latest[4]')}}</th>
+                    <th>{{$t('latest[5]')}}</th>
+                  </tr>
+                  </thead>
+                </table>
+                <article class="item-body">
+                  <div class="seamless-warp"><!----> <!---->
+                    <div>
+                      <div style="overflow: hidden;">
+                        <van-swipe id="SwipeList2" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem" height="60" vertical autoplay="3000" :show-indicators="false" :touchable="false">
+                          <van-swipe-item v-if="item.type==1" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
+                            <div class="card1">
+                              <div class="aaa3 d-flex align-items-center justify-content-between"
+                                   style="padding-top: 2px; padding-bottom: 2px;">
+                                <div class="card__title">
+                                  <div style="display: flex;width: 100%;align-items: center;font-size: 12px;">
+                                    <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
+                                    {{item.username}}
+                                  </div>
+                                </div>
+                                <div class="card__subtitle" style="color: rgb(13,110,253);padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}} {{item.currency}}
+                                </div>
+                                <div class="card__time">{{item.time}}</div>
+                              </div>
+                            </div>
+                          </van-swipe-item>
+                        </van-swipe>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[2]')}}</h4>
+              <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 90%;margin: 0 auto;">
+                <table class="style-two scroll-table table">
+                  <thead>
+                  <tr>
+                    <th>{{$t('latest[3]')}}</th>
+                    <th>{{$t('latest[4]')}}</th>
+                    <th>{{$t('latest[5]')}}</th>
+                  </tr>
+                  </thead>
+                </table>
+                <van-swipe id="SwipeList1" style="width:95%;height: 400px;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem" height="60" vertical autoplay="3000" :show-indicators="false" :touchable="false">
+                  <van-swipe-item v-if="item.type==2" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
+                    <div class="card1">
+                      <div class="aaa3 d-flex align-items-center justify-content-between"
+                           style="padding-top: 2px; padding-bottom: 2px;">
+                        <div class="card__title">
+                          <div style="display: flex;width: 100%;align-items: center;font-size: 12px;align-content: center;">
+                            <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
+                            {{item.username}}
+                          </div>
+                        </div>
+                        <div class="card__subtitle" style="color: rgb(13,110,253);padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}} {{item.currency}}
+                        </div>
+                        <div class="card__time">{{item.time}}</div>
+                      </div>
+                    </div>
+                  </van-swipe-item>
+                </van-swipe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="section faq-section" style="margin-top: 2rem">
+      <div class="container max960">
+        <div class="box7">
+          <div class="">
+            <div class="title">{{$t('faq[0]')}}</div>
+            <div class="faq-list">
+              <div class="faq-item" v-for="(item,index) in listDataQ" :key="index" v-if="index<3">
+                <div @click="showIndex = index"  class="faq-title">
+                  <div class="name">{{item.title}}</div>
+                  <div class="right-icon"><i :class="showIndex==index?'el-icon-minus on':'el-icon-plus'"></i></div>
+                </div>
+                <div class="faq-content" v-show="showIndex==index" v-html="item.content">
+                </div>
+              </div>
+              <div class="faq-item" v-if="showMore && index>=3" v-for="(item,index) in listDataQ" :key="index">
+                <div @click="showIndex = index"  class="faq-title">
+                  <div class="name">{{item.title}}</div>
+                  <div class="right-icon"><i :class="showIndex==index?'el-icon-minus on':'el-icon-plus'"></i></div>
+                </div>
+                <div class="faq-content" v-show="showIndex==index" v-html="item.content">
+                </div>
+              </div>
+
+            </div>
+            <div class="text-center" style="font-size: 1.6rem;margin-top: 2rem;color: #000;" v-if="!showMore" @click="showMore =true">
+              {{$t('clickmore[0]')}}<van-icon name="arrow-down" />
+            </div>
+            <div style="text-align: center;font-size: 2rem;margin-top: 2rem;" v-if="showMore" @click="showMore =false">
+              <van-icon name="arrow-up" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <section style="margin-top: 2rem;">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="mb-3">{{$t('newhome[22]')}}</h2>
+          <div style="color: #000;">{{$t('newhome[23]')}}</div>
+          <div style="color: #000;">{{$t('newhome[24]')}}</div>
+          <div style="color: #000;">{{$t('newhome[25]')}}</div>
+          <div style="color: #000;">{{$t('newhome[26]')}}</div>
+          <img :src="'./static/images/tmp2.png?t=1'" style="width: 100%;">
+        </div>
+      </div>
+    </section>
     <section class="section-space">
       <div class="container">
-        <div class="section-head text-center" style="margin-top:2rem">
-          <h3 class="mb-3">{{$t('payment[0]')}}</h3>
-          <p v-html="$t('payment[1]',{WT:InitData.setting.web_title})"></p>
+        <div class="section-head text-center">
+          <h2 class="mb-3">{{$t('home1[25]')}}</h2>
+          <p v-html="$t('home1[26]',{WT:InitData.setting.web_title})"></p>
         </div>
         <div class="PayJoinSection">
           <div class="wrap">
@@ -523,6 +473,15 @@
                 </svg>
               </div>
               <div class="item">
+                <img :src="'./static/images/DOGE.png'" class="svg-icon">
+              </div>
+              <div class="item">
+                <img :src="'./static/images/SOL.png'" class="svg-icon">
+              </div>
+              <div class="item">
+                <img :src="'./static/images/XRP.png'" class="svg-icon">
+              </div>
+              <div class="item">
                 <svg data-v-cbf2c648="" class="svg-icon" aria-hidden="true">
                   <use data-v-cbf2c648="" xlink:href="#icon-arnkm-c389e"></use>
                 </svg>
@@ -537,192 +496,130 @@
                   <use data-v-cbf2c648="" xlink:href="#icon-Kraken"></use>
                 </svg>
               </div>
+
             </div>
           </div>
-        </div>
-    <!-- Our Partners -->
-    <div class="section featured-section">
-      <div class="section__head">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-24 col-xl-12 pl-0 pr-0">
-              <h6 class="mt-0 text-center miner_work_title"> {{$t('partners[0]')}}</h6>
-            </div>
-          </div>
-          <div class="row partners_list justify-content-between">
-            <div class="el-col-sm-8 el-col-md-4 el-col-xs-12 pl-0 pr-0 mb-5 mt-3" v-for="el in Partners" :key="el.id">
-              <img class="mx-auto" style="width: 70%;" :src="`../../static/img/Partners/${el.id}.${el.type}`" alt="">
-            </div>
-          </div>
-        </div>
-        </div>
         </div>
       </div>
     </section>
-    <!-- Bolg Section -->
-    <section class="section">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
-              <div class="section-title text-center">
-                <h1 class="title fw-bold" style="color: #fba342;">{{$t('blog[3]')}}</h1>
-                <div class="para-desc videoDiv text-center mx-auto">
-                  <p>
-                    {{$t('blog[4]')}}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row blog_list justify-content-between">
-            <div class="el-col-sm-12 el-col-md-8 el-col-xs-24 pl-0 pr-0" v-for="(el, i) in listDataBlog" :key="el.id">
-              <div class="blog_card mb-5 mt-3" v-if="i <= 2" @click.stop="$router.push({
-                path: '/blogDetail',
-                query: {
-                  id: el.id
-                }
-              })">
-                <div class="image">
-                  <img :src="`${ApiUrl}${el.cover_img	}`" alt="">
-                </div>
-                <div class="time">{{el.add_time}}</div>
-                <div class="title">{{ el.title }}</div>
-              </div>
-            </div>
-          </div>
-          <div class="justify-content-between">
-            <div class="to-blog" @click="$router.push({
-              path: '/blog'
-            })">{{$t('blog[5]')}}</div>
+<!--    <section class="section-space" style="background: rgb(247, 249, 251);">-->
+<!--      <div class="container">-->
+<!--        <div class="section-head text-center">-->
+<!--          <h2 class="mb-3" v-html="$t('home1[27]')"></h2>-->
+<!--        </div>-->
+<!--        <div v-html="$t('home1[28]',{WT:InitData.setting.web_title})">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+    <div class="mask" style="display:block;" v-if="showNotice">
+      <div class="modal" style="display:block;">
+        <div class="modal-header">
+          <div class="modal-title">{{msg_title}}</div>
+          <div class="close" @click="showNotice = false"><i class="el-icon-close"></i></div>
+        </div>
+        <div class="modal-body">
+          <div class="payment-info" v-html="msg_content">
           </div>
         </div>
-    </section>
-    <div v-if="showNotice" id="__BVID__247___BV_modal_outer_" style="position: absolute; z-index: 1040;">
-      <div id="__BVID__247" role="dialog" aria-labelledby="__BVID__247___BV_modal_title_"
-           aria-describedby="__BVID__247___BV_modal_body_" class="modal fade show" aria-modal="true"
-           style="display: block;">
-        <div class="modal-dialog modal-md modal-dialog-centered"><span tabindex="0"></span>
-          <div id="__BVID__247___BV_modal_content_" tabindex="-1" class="modal-content">
-            <header id="__BVID__247___BV_modal_header_" class="modal-header"><h5 id="__BVID__247___BV_modal_title_"
-                                                                                 class="modal-title">{{msg_title}}</h5>
-              <button type="button" aria-label="Close" class="close" @click="showNotice = false">×</button>
-            </header>
-            <div id="__BVID__247___BV_modal_body_" class="modal-body">
-              <div class="payment-info" v-html="msg_content">
-              </div>
-            </div>
-            <footer id="__BVID__247___BV_modal_footer_" class="modal-footer">
-              <div  class="w-100" style="text-align: center;">
-                <button @click="showNotice = false" type="button" class="btn ml-2 btn-primary">{{$t('confirm')}}</button>
-              </div>
-            </footer>
-          </div>
-          <span tabindex="0"></span></div>
+        <div class="modal-footer">
+          <div class="confirm-btn" @click="showNotice= false">{{$t('confirm')}}</div>
+        </div>
       </div>
-      <div id="__BVID__247___BV_modal_backdrop_" class="modal-backdrop"></div>
     </div>
-    <div class="mask imageDiv" style="z-index: 111" v-if="showNoticeImg">
+    <div class="mask imageDiv" style="z-index: 111;display:block;" v-if="showNoticeImg">
       <div style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;justify-items: center;">
         <div style="position: relative;">
           <van-image @click="jumpImg" :src="InitData.setting.up_url + imgnotice.cover_img" fit="widthFix"></van-image>
-          <div class="close" @click="showNoticeImg = false" style="position: absolute;right: 0;top: 0rem;z-index: 999;">
-            <van-icon name="cross" size="30" color="#000"/>
+          <div class="close" @click="showNoticeImg = false" style="position: absolute;right: 0;top: 0;z-index: 999;">
+            <van-icon name="cross" size="30" color="#fff"/>
           </div>
         </div>
       </div>
     </div>
-    <div v-if="showDialog" id="123" style="position: absolute; z-index: 1040;">
-      <div id="4325" role="dialog" aria-labelledby="__BVID__247___BV_modal_title_"
-           aria-describedby="__BVID__247___BV_modal_body_" class="modal fade show" aria-modal="true"
-           style="display: block;">
-        <div class="modal-dialog modal-md modal-dialog-centered"><span tabindex="0"></span>
-          <div id="43543" tabindex="-1" class="modal-content">
-            <header id="435" class="modal-header"><h5 id="54654"
-                                                                                 class="modal-title">{{$t('settle[6]')}}</h5>
-              <button type="button" aria-label="Close" class="close" @click="showDialog = false">×</button>
-            </header>
-            <div id="5435" class="modal-body">
-              <div ><!---->
-                <div  class="mb-3 el-row"><label  class="font-weight-bold mb-0"
-                                                  style="font-size: 14px;">{{$t('settle[7]')}}</label>
-                  <div >
-                    <van-stepper :disabled="detailData.id==12 || detailData.id==13" v-model="number" input-width="inherit" button-size="40px"/>
-                  </div>
+    <div class="el-overlay" style="z-index: 2003;" v-if="showDialog">
+      <div role="dialog" aria-modal="true" aria-label="Checkout" aria-describedby="el-id-9097-0" class="el-overlay-dialog">
+        <div class="el-dialog buynow" tabindex="-1">
+          <header class="el-dialog__header">
+            <div  class="dialog-title">{{$t('product[26]')}}</div>
+            <button @click="showDialog = false" aria-label="Close this dialog" class="el-dialog__headerbtn" type="button">
+              <i class="el-icon el-dialog__close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                  <path fill="currentColor" d="M764.288 214.592 512 466.88 259.712 214.592a31.936 31.936 0 0 0-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1 0 45.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0 0 45.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 1 0-45.12-45.184z"></path>
+                </svg>
+              </i>
+            </button>
+          </header>
+          <div id="el-id-9097-0" class="el-dialog__body">
+            <div >
+              <div  class="el-row mb-4">
+                <label  class="font-weight-bold col-12 input_label">{{$t('product[27]')}}</label>
+                <div  class="col-12">
+                  <van-stepper v-model="money" input-width="inherit" button-size="40px" />
                 </div>
-                <div  class="mb-3 el-row"><label  class="font-weight-bold mb-0"
-                                                  style="font-size: 14px;">{{$t('settle[8]')}}</label>
-                  <div  class="el-input is-disabled el-input-group el-input-group--append">
-                    <!----><input type="text" disabled="disabled" readonly v-model="money" autocomplete="off" placeholder="Please input"
-                                  class="el-input__inner"><!----><!---->
-                    <div class="el-input-group__append">
-                      <svg  width="36" height="36" viewBox="0 0 36 36" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M18 36C27.9411 36 36 27.9411 36 18C36 8.05887 27.9411 0 18 0C8.05887 0 0 8.05887 0 18C0 27.9411 8.05887 36 18 36Z"
-                          fill="#00A478"></path>
-                        <path
-                          d="M15.9894 17.4429V13.3308H10.4715V9.72632H25.8894V13.3812H20.3715V17.4429H15.9894Z"
-                          fill="white"></path>
-                        <path  fill-rule="evenodd" clip-rule="evenodd"
-                               d="M8.1 17.7921C8.1 16.4808 12.5118 15.4125 18 15.4125C23.4882 15.4125 27.9 16.4808 27.9 17.7921C27.9 19.1034 23.4882 20.1717 18 20.1717C12.5118 20.1717 8.1 19.1034 8.1 17.7921ZM27.0792 17.7921C26.7201 17.3061 23.7447 15.8013 18 15.8013C12.2553 15.8013 9.2799 17.2575 8.9208 17.7921C9.2799 18.2772 12.2553 19.0062 18 19.0062C23.796 19.0062 26.7201 18.2772 27.0792 17.7921Z"
-                               fill="white"></path>
-                        <path
-                          d="M20.3715 18.7127V15.8696C19.6497 15.8183 18.8766 15.7679 18.1035 15.7679C17.3817 15.7679 16.6608 15.7679 15.9903 15.8183V18.6614C16.6248 18.7613 17.3898 18.7802 18.1035 18.7802C18.8163 18.7802 19.6497 18.7631 20.3715 18.7127ZM18 20.3777C17.2782 20.3777 16.659 20.3579 15.9894 20.3075V27.9017H20.3202V20.2859C19.5984 20.3372 18.7731 20.3777 18 20.3777Z"
-                          fill="white"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div  class="mb-3 el-row"><label  class="font-weight-bold mb-0"
-                                                  style="font-size: 14px;">{{$t('settle[9]')}}</label>
-                  <div  class="el-input el-input--suffix">
-                    <div class="el-input__wrapper" tabindex="-1">
-                      <input class="el-input__inner" v-model="password" :type="showPass?'text':'password'" autocomplete="off" tabindex="0" id="el-id-9097-3">
-                      <span class="el-input__suffix" @click="showPass= !showPass"><span class="el-input__suffix-inner">
+              </div>
+              <div  class="el-row mb-4">
+                <label  class="font-weight-bold input_label">{{$t('product[28]')}}</label>
+                <div  class="el-input el-input--large el-input--suffix">
+                  <div class="el-input__wrapper" tabindex="-1">
+                    <input class="el-input__inner" v-model="password" :type="showPass?'text':'password'" autocomplete="off" tabindex="0" id="el-id-9097-3">
+                    <span class="el-input__suffix" @click="showPass= !showPass"><span class="el-input__suffix-inner">
                       <i v-if="!showPass" class="el-icon el-input__icon el-input__password"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M876.8 156.8c0-9.6-3.2-16-9.6-22.4-6.4-6.4-12.8-9.6-22.4-9.6-9.6 0-16 3.2-22.4 9.6L736 220.8c-64-32-137.6-51.2-224-60.8-160 16-288 73.6-377.6 176C44.8 438.4 0 496 0 512s48 73.6 134.4 176c22.4 25.6 44.8 48 73.6 67.2l-86.4 89.6c-6.4 6.4-9.6 12.8-9.6 22.4 0 9.6 3.2 16 9.6 22.4 6.4 6.4 12.8 9.6 22.4 9.6 9.6 0 16-3.2 22.4-9.6l704-710.4c3.2-6.4 6.4-12.8 6.4-22.4Zm-646.4 528c-76.8-70.4-128-128-153.6-172.8 28.8-48 80-105.6 153.6-172.8C304 272 400 230.4 512 224c64 3.2 124.8 19.2 176 44.8l-54.4 54.4C598.4 300.8 560 288 512 288c-64 0-115.2 22.4-160 64s-64 96-64 160c0 48 12.8 89.6 35.2 124.8L256 707.2c-9.6-6.4-19.2-16-25.6-22.4Zm140.8-96c-12.8-22.4-19.2-48-19.2-76.8 0-44.8 16-83.2 48-112 32-28.8 67.2-48 112-48 28.8 0 54.4 6.4 73.6 19.2L371.2 588.8ZM889.599 336c-12.8-16-28.8-28.8-41.6-41.6l-48 48c73.6 67.2 124.8 124.8 150.4 169.6-28.8 48-80 105.6-153.6 172.8-73.6 67.2-172.8 108.8-284.8 115.2-51.2-3.2-99.2-12.8-140.8-28.8l-48 48c57.6 22.4 118.4 38.4 188.8 44.8 160-16 288-73.6 377.6-176C979.199 585.6 1024 528 1024 512s-48.001-73.6-134.401-176Z"></path><path fill="currentColor" d="M511.998 672c-12.8 0-25.6-3.2-38.4-6.4l-51.2 51.2c28.8 12.8 57.6 19.2 89.6 19.2 64 0 115.2-22.4 160-64 41.6-41.6 64-96 64-160 0-32-6.4-64-19.2-89.6l-51.2 51.2c3.2 12.8 6.4 25.6 6.4 38.4 0 44.8-16 83.2-48 112-32 28.8-67.2 48-112 48Z"></path></svg></i>
                       <i v-else class="el-icon el-input__icon el-input__password"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 160c320 0 512 352 512 352S832 864 512 864 0 512 0 512s192-352 512-352zm0 64c-225.28 0-384.128 208.064-436.8 288 52.608 79.872 211.456 288 436.8 288 225.28 0 384.128-208.064 436.8-288-52.608-79.872-211.456-288-436.8-288zm0 64a224 224 0 1 1 0 448 224 224 0 0 1 0-448zm0 64a160.192 160.192 0 0 0-160 160c0 88.192 71.744 160 160 160s160-71.808 160-160-71.744-160-160-160z"></path></svg></i>
                     </span></span>
-                    </div>
                   </div>
-                </div><!----></div>
-            </div>
-            <footer id="35436" class="modal-footer">
-              <div  class="w-100">
-                <button @click="buyProduct" type="button" class="btn float-left ml-2 btn-primary">{{$t('settle[10]')}}</button>
+                </div>
               </div>
-            </footer>
+            </div>
           </div>
-          <span tabindex="0"></span></div>
+          <footer class="el-dialog__footer">
+            <div  class="row d-md-flex align-items-center justify-content-center justify-content-md-between">
+              <div  class="col-12 col-md-6">
+                <div  class="amount">
+                  <div  class="title">{{$t('product[29]')}}</div>
+                  <div  class="content">= {{detailData.amount*money}} USDT
+                    <svg data-v-cbf2c648=""  class="svg-icon" aria-hidden="true" style="font-size: 19px; margin-left: 12px;">
+                      <use data-v-cbf2c648="" xlink:href="#icon-USDT-TRC20"></use></svg>
+                  </div>
+                </div>
+              </div>
+              <div  class="col-12 col-md-6 mt-5 mt-md-0 d-flex justify-content-center justify-content-md-end">
+                <button  href="javascript:;" class="btn btn-dark" style="width: 211px;" @click="buyProduct">{{$t('buy[0]')}}</button></div>
+            </div>
+          </footer>
+        </div>
       </div>
-      <div id="65765" class="modal-backdrop"></div>
     </div>
     <Footer></Footer>
   </div>
 </template>
 <script>
   import { swiper, swiperSlide } from "vue-awesome-swiper";
-  import common from "../mixins/common";
   import 'swiper/dist/css/swiper.css';
+  // import VueSlickCarousel from 'vue-slick-carousel'
+  // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  // optional style for arrows & dots
+  // import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   export default {
     name: 'Home',
-    mixins: [common],
     inject: ['reloadHtml'],
     components: {
-      swiper, swiperSlide,
+      swiper, swiperSlide
+      // ,VueSlickCarousel
     },
 
     data() {
       return {
+        // startDate: this.$Util.DateFormat('DD-MM-YY',new Date(new Date().getTime() - 24*60*60*1000)),
+        showMore:false,
         selectM:'',
-        number:1,
+        selectP:{},
+        showIndex:0,
+        mouseenter:1,
         detailData:{},
         showDialog:false,
         password:'',
         money:'',
         showPass: false,
-        showMore:false,
-        selectP:{},
-        showIndex:0,
         youtube:'',
         date:'',
         showNotice:false,
@@ -731,9 +628,18 @@
         listData:[],
         swiperOption: {
           loop: true,  // 是否循环轮播
-          loopedSlides:3,
-          slidesPerView: 3,  // 可是区域内可展示多少个块
-          spaceBetween: 10,  // 块之间间隔距离
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            stopOnLastSlide: false,
+          },
+          // loopedSlides:2,
+          // slidesPerView: 2,  // 可是区域内可展示多少个块
+          // spaceBetween: 10,  // 块之间间隔距离
+          // initialSlide:2,  // 默认初始显示块
+          // freeMode: false,
+          // effect : 'coverflow',
+          // 显示分页
           pagination: {
             el: '.swiper-pagination',
             clickable: true
@@ -746,70 +652,77 @@
         },
         swiperOption1: {
           loop: true,  // 是否循环轮播
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-            stopOnLastSlide: false,
-          },
           pagination: {
             el: '.swiper-pagination',
             clickable: true
           },
-          // 设置点击箭头
+          bulletClass :'swiper-pagination-bullet',
+          bulletActiveClass:'my-bullet-active',
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           },
         },
+        swiperOption0: {
+          allowTouchMove: false,
+          direction: "vertical", // 竖向滚动
+          autoHeight: true, // 自适应高度
+          slidesPerView: "auto", // 记得这里写 auto 不要默认写1哦
+          observer: true, //修改swiper自己或子元素时，自动初始化swiper
+          observeParents: true, //修改swiper的父元素时，自动初始化swiper
+          loop: true,
+          freeMode: false,
+          autoplay: {   // 自动轮播
+            delay: 2000,
+            disableOnInteraction: false,
+          },
+        },
+        star:5,
+        settings:{
+          "dots": true,
+          "autoplay": true,
+          "focusOnSelect": true,
+          "infinite": true,
+          "speed": 1000,
+          "slidesToShow": 3,
+          "slidesToScroll": 1,
+          // "centerPadding":'50px',
+          // "centerMode":true,
+        },
+        slickList:[//Eunice Allen,Donna Clark
+          {name:'Henry',head:''},
+          {name:'Orion·Wilson',head:''},
+          {name:'Tony· Bush',head:''},
+          {name:'Millie·Davis',head:''},
+          {name:'Kevin·Adams',head:''},
+          {name:'Gus·Thompson',head:''},
+          {name:'Hank·Thompson',head:''},
+          {name:'ちほり',head:''},
+          {name:'藤田茂',head:''},
+          {name:'Meaning·Edwards',head:''},
+          {name:'Amara·Campbell',head:''},
+          {name:'Bertha·Green',head:''},
+          {name:'Nelson',head:''},
+          {name:'Ella·Baker',head:''},
+          {name:'Samuel',head:''},
+          {name:'Willis·Hill',head:''},
+          {name:'Milagros',head:''},
+          {name:'Arlo·Hernandez',head:''},
+          {name:'Brendan· WALKER',head:''},
+          {name:'Paloma ·Scott',head:''}
+        ],
         intv:null,
         showNoticeImg:false,
         imgnotice:{
           cover_img:""
         },
         listDataQ: [],
-        listDataBlog: [],
         isLoad: false,
         isFinished: false,
         isRefresh: false,
         pageNo: 1,
         data_current_page:"1",
         data_total_page:"1",
-        // 常见问题选中索引
-        fqSelectIndex: 0,
-        fqShowMore: false,
-        commenSwiperOptions: {
-          loop: true,
-          speed: 2500,
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-            stopOnLastSlide: false,
-          },
-          slidesPerView: 3,
-          spaceBetween: 30,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          },
-          breakpoints: {
-            1024: {
-              slidesPerView: 2,
-              spaceBetween: 30
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30
-            },
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20
-            },
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10
-            }
-          }
-        }
       }
     },
 
@@ -817,25 +730,22 @@
       swiper() {
         return this.$refs.mySwiper.swiper;
       },
-      swiper1() {
-        return this.$refs.mySwiper.swiper;
-      },
     },
     watch: {
-      'number'() {
-        this.money=this.number*this.detailData.amount
-      }
     },
     created() {
       let that = this;
+      // let tmpUrl = "https://www.youtube.com/watch?v=eeGRe0B6M10".replace('https:','');
+      // tmpUrl = tmpUrl.replace('watch?v=','embed/')+'?wmode=transparent'
+      // that.youtube = tmpUrl;
       this.loadProudcutList();
       that.$Model.GetBackData(function (data) {
-        if (data.noticelist && data.noticelist.length > 0) {
+        if (data.noticelist&&data.noticelist.length > 0) {
           that.msg_title = data.noticelist[0].title;
           that.msg_content = data.noticelist[0].content;
           that.showNotice = true;
         }
-        if (data.imgnoticeList && data.imgnoticeList.length > 0) {
+        if (data.imgnoticeList&&data.imgnoticeList.length > 0) {
           that.imgnotice = data.imgnoticeList[0];
           that.showNoticeImg = true;
         }
@@ -852,18 +762,24 @@
       }
       var nowDate = date.getFullYear() + seperator + nowMonth + seperator + strDate;
       this.date = nowDate;
-      that.$Model.HasNewMessage(data=>{
-        if (data.data == 1) {
-          that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
-            that.$router.push(`/message`)
-          }, that.$t('messageInfo[1]'));
-        }
-      })
       this.getListData('init');
+
     },
     mounted() {
       let that = this;
-      that.resize();
+      let ww = window.innerWidth;
+      if (ww < 750) {
+        this.settings = {
+          "dots": true,
+          "autoplay": true,
+          "focusOnSelect": true,
+          "infinite": true,
+          "speed": 3000,
+          "slidesToShow": 1,
+          "slidesToScroll": 1,
+        }
+        // this.$refs.slick.reInit();
+      }
       window.onresize = () => {
         that.resize();
       };
@@ -874,9 +790,33 @@
     destroyed() {
     },
     methods: {
-      handelChange() {
-        let id = this.selectM;
-        this.selectP = this.listData.filter(item=>item.id==id)[0];
+      resize() {
+        let that = this;
+        let w = window.innerWidth;
+        if (w < 750) {
+          that.settings = {
+            "dots": true,
+            "autoplay": true,
+            "focusOnSelect": true,
+            "infinite": true,
+            "speed": 3000,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "touchThreshold": 1,
+          };
+          // that.$refs.slick.reInit();
+        } else {
+          that.settings = {
+            "dots": true,
+            "autoplay": true,
+            "focusOnSelect": true,
+            "infinite": true,
+            "speed": 3000,
+            "slidesToShow": 3,
+            "slidesToScroll": 1,
+          };
+          // that.$refs.slick.reInit();
+        }
       },
       buyProduct(){
         if (!this.UserInfo) {
@@ -901,26 +841,6 @@
           }
         });
       },
-      orderNow(item) {
-        this.detailData = item;
-        this.number = 1;
-        this.money = this.detailData.amount;
-        this.showDialog = true;
-      },
-      resize() {
-        let that = this;
-        let w = window.innerWidth;
-        console.log(w)
-        if (w < 750) {
-          that.swiper1.params.loopedSlides = 1;
-          that.swiper1.params.slidesPerView = 1;
-          that.swiper1.params.spaceBetween = 0;
-        } else {
-          that.swiper1.params.loopedSlides = 3;
-          that.swiper1.params.slidesPerView = 3;
-          that.swiper1.params.spaceBetween = 10;
-        }
-      },
       getListData(type) {
         this.isLoad = true
         this.isRefresh = false
@@ -930,7 +850,7 @@
           this.pageNo = 1;
           this.isFinished = false
         }
-        this.$Model.noticeList({gropid: 9,page_no: this.pageNo,page_size:100},data=>{
+        this.$Model.noticeList({gropid: 9,page_no: this.pageNo,page_size:30},data=>{
           this.isLoad = false
           if(data.code==1){
             if(data.info.length<=0){
@@ -955,31 +875,14 @@
             this.isFinished = true
           }
         })
-        this.$Model.noticeList({gropid: 10,page_no: this.pageNo,page_size:6},data=>{
-          this.isLoad = false
-          if(data.code==1){
-            if(data.info.length<=0){
-              this.listDataBlog =[];
-              this.isFinished = true
-            }else {
-              this.data_current_page = data.data_current_page;
-              this.data_total_page = data.data_total_page;
-              this.listDataBlog = data.info;
-              this.isFinished = true
-              if(type=='load'){
-                this.listDataBlog = this.listDataBlog.concat(data.info);
-              }else{
-              }
-            }
-          }else{
-            this.listData = []
-            this.isFinished = true
-          }
-        });
+      },
+      orderNow(item) {
+        this.detailData = item;
+        this.showDialog = true;
       },
       jumper() {
         if (this.UserInfo) {
-          this.$router.push('/dashboard');
+          this.$router.push('/earnings');
         } else {
           this.$router.push('/login');
         }
@@ -1008,9 +911,29 @@
   }
 </script>
 <style scoped>
-  .hero-image img {
-    border-radius: 20px
+  .footer-section::before, .affiliate-wrapper::before, .hover-tab-menu .tab-menu li:nth-child(1) .menu-thumb:after, .hover-tab-menu .tab-menu li:nth-child(3) .menu-thumb:after, .hover-tab-menu::after, .hover-tab-menu::before, .hover-tab-area .tab-area .tab-item, .offer-item .offer-footer::after, .offer-item .offer-body .bal-shape::after, .offer-item .offer-body .bal-shape::before, .offer-item::after, .offer-item::before, .calculate-wrapper::after, .calculate-wrapper::before, .contact-wrapper::before, .contact-wrapper .contact-content a::before {
+    position: absolute;
+    content: '';
   }
+  .preloader, .footer-top, .footer-bottom-area, .footer-top .links, .social-icons, .header-top ul, .header-top ul li, .header-bottom .header-area, .header-bottom .header-area .menu, .menu-item-has-children > a, .banner-content .button-group, .newslater-area, .call-item, .call-button, .call-button .call, .transaction-tab .tab-menu, .transaction-tab .tab-menu li, .affiliate-wrapper, .affiliate-item, .affiliate-item .affiliate-inner, .affiliate-item .affiliate-inner .affiliate-thumb, .feature-item .feature-thumb, .about-item, .counter-item, .counter-item .counter-content .counter-header, .hover-tab-menu .tab-menu li, .ball-group-2, .ball-group-1, .offer-item .offer-header, .offer-item .offer-footer, .offer-item .offer-body, .calculate-wrapper .calculate-area, .calculate-wrapper .calculate-area .calculate-item .tab-menu, .calculate-wrapper .profit-calc, .invest-range-area, .mission-item .mission-thumb, .faq-tab .tab-menu, .why-area, .why-item .why-inner, .how-item .how-thumb-area, .how-item .how-thumb-area .how-thumb, .tot-wrapper, .tot-wrapper .tot-item .counter--item .counter-header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hover-tab .tab-item {
+    display: none;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+  }
+  .tab-item.active {
+    display: block;
+  }
+  /*.hero-image img {*/
+  /*  border-radius: 20px*/
+  /*}*/
 
   .banner-slider.swiper-container {
     margin: 0
@@ -1043,15 +966,11 @@
   }
 
   @media(max-width: 991px) {
-    iframe {
-      height: 78px !important;
-    }
     .hero-wrap-2 {
       padding-top:30px
     }
-    .feature-card {
-      width: 90%;
-      margin: 0 auto;
+    .iframe {
+      height: 78px !important;
     }
   }
 
@@ -1060,7 +979,9 @@
       padding-top:50px
     }
   }
-
+  .modal {
+    left: 25% !important;
+  }
   .hero-btns {
     width: 100%
   }
@@ -1094,13 +1015,7 @@
     font-size: 16px;
     line-height: 1.5
   }
-  .svg-icon {
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-  }
+
   .wrap {
     width: 100%;
     padding: 10px
@@ -1274,43 +1189,6 @@
     height: auto;
     width: auto;
   }
-  .card {
-    overflow: hidden;
-    background: rgba(0,0,0,0);
-  }
-  .el-col-24 {
-    width: 100%;
-  }
-  .el-row:after, .el-row:before {
-    display: table;
-  }
-  .transaction .col-item .item-head {
-    height: 47px;
-    /*background-image: linear-gradient(to right, #36e4f5 0%, #096553 100%);*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .el-col-10 {
-    width: 41.66667%;
-  }
-  .el-row--flex {
-    display: flex;
-  }
-  .el-row--flex.is-justify-space-around {
-    justify-content: space-around;
-  }
-  .transaction .col-item .item-body .card1 {
-    border-bottom: 1px solid #ccc;
-    padding: 7px 0;
-  }
-  .transaction .col-item .item-body {
-    height: 480px;
-    background: #fff;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
-
-    border-radius: 0 0 6px 6px
-  }
   .accordion-body>>>img {
     width: 100% !important;
     max-width: 750px !important;
@@ -1321,115 +1199,690 @@
     max-width: 750px !important;
     height: auto !important;
   }
-  .video-box {
-    z-index: -1;
+  .section-header .cate {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #324fb0;
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 26px;
   }
 
-  .video-box .video-background {
-    position: absolute;
-    left: 50%;
-    top:  50%;
-    /*保证视频内容始终居中*/
-    transform: translate(-50%, -50%);
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*保证视频充满屏幕*/
-    object-fit: cover;
-  }
-  .hero {
+  /*Counter Section Ends Here*/
+  /*How Section Starts Here*/
+  .hover-tab-menu {
+    position: relative;
     overflow: hidden;
   }
-  .plan-card__head {
-    margin-top: 0.5rem;
-    font-weight: bold;
-  }
-  .t-link {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #0a0a1a;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, .08);
-    background: #00FFFF;
-    border: 1px solid #000;
-  }
-  .feature-card {
-    width: 100%;
-    padding: 30px 15px;
+
+  .hover-tab-menu .tab-menu {
     position: relative;
-    border: 1px solid rgba(240, 19, 19, .5);
-    border-radius: 20px;
-    background-color: #fff;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
     z-index: 1;
-    height: 14rem;
-  }
-  .feature-card {
-    border: 1px solid rgba(21, 171, 191, .5019607843137255);
-    margin-top: 10px;
-  }
-  .rounded {
-    border-radius: .25rem !important;
-  }
-  .stat-card__icon {
-    width: 70px;
-    height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-size: 36px;
-    line-height: 1;
-    background-color: #f01313;
-    color: #fff;
-  }
-  .icon {
-    position: relative;
-    display: inline-block;
-  }
-  .icon--sqr {
-    border-radius: 5px;
-    text-align: center;
-  }
-  .icon--md {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 32px;
-  }
-  .feature-card__icon {
-    background: #f01313;
-    color: #fff;
-  }
-  .feature-card__icon, .stat-card__icon {
-    background: #fff !important;
-  }
-  .la, .lab, .lad, .lal, .lar, .las {
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-    }
-  .feature-card__icon-float {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-size: clamp(4rem,8vw + 1rem,8rem);
-    line-height: 1;
-    opacity: .05;
-    z-index: -1;
-  }
-  .plan-card {
-    padding: 10px;
   }
 
+  .hover-tab-menu .tab-menu li {
+    align-items: center;
+    padding: 0;
+    margin-bottom: 126px;
+    cursor: grab;
+  }
+
+  .hover-tab-menu .tab-menu li .menu-thumb {
+    padding: 5px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #bad0fb;
+    width: 65px;
+    height: 65px;
+    background: #fff;
+  }
+
+  .hover-tab-menu .tab-menu li .menu-thumb span {
+    line-height: 53px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 36px;
+    background-color: #e3ecfd;
+    width: 53px;
+    display: inline-block;
+    color: #33406a;
+  }
+
+  .hover-tab-menu .tab-menu li .menu-content {
+    width: calc(100% - 65px);
+    padding-left: 30px;
+  }
+
+  .hover-tab-menu .tab-menu li .menu-content .title {
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
+
+  .hover-tab-menu .tab-menu li.active .menu-thumb span {
+    background: #324fb0;
+    color: #ffffff;
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    animation-duration: .5s;
+    -webkit-animation-duration: .5s;
+    -moz-animation-duration: .5s;
+  }
+
+  .hover-tab-menu .tab-menu li:nth-child(2) {
+    -webkit-transform: translateX(95px);
+    -ms-transform: translateX(95px);
+    transform: translateX(95px);
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .hover-tab-menu .tab-menu li:nth-child(2) {
+      -webkit-transform: translateX(75px);
+      -ms-transform: translateX(75px);
+      transform: translateX(75px);
+    }
+
+    .hover-tab-menu .tab-menu li:nth-child(2) .menu-content {
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .hover-tab-menu .tab-menu li:nth-child(2) {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 991px) {
+    .hover-tab-menu .tab-menu li {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .hover-tab-menu .tab-menu li {
+      margin-bottom: 40px;
+    }
+
+    .hover-tab-menu .tab-menu li .menu-thumb {
+      width: 50px;
+      height: 50px;
+    }
+
+    .hover-tab-menu .tab-menu li .menu-thumb span {
+      width: 38px;
+      height: 38px;
+      text-align: center;
+      line-height: 38px;
+      font-size: 24px;
+    }
+
+    .hover-tab-menu .tab-menu li .menu-content {
+      padding-left: 15px;
+      width: calc(100% - 50px);
+    }
+
+    .hover-tab-menu .tab-menu li .menu-content .title {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .hover-tab-menu .tab-menu li:nth-child(1) .menu-thumb {
+    position: relative;
+  }
+
+  .hover-tab-menu .tab-menu li:nth-child(1) .menu-thumb:after {
+    bottom: 75%;
+    right: 75%;
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
+    z-index: -1;
+  }
+
+  .hover-tab-menu .tab-menu li:nth-child(3) .menu-thumb {
+    position: relative;
+  }
+
+  .hover-tab-menu .tab-menu li:nth-child(3) .menu-thumb:after {
+    top: 75%;
+    right: 70%;
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
+    z-index: -1;
+  }
+
+  .hover-tab-menu .tab-menu li:last-child {
+    margin: 3px;
+  }
+
+  .hover-tab-menu::after, .hover-tab-menu::before {
+    width: 600px;
+    height: 600px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    top: -37px;
+  }
+
+  @media (max-width: 1199px) and (min-width: 992px) {
+    .hover-tab-menu::after, .hover-tab-menu::before {
+      width: 680px;
+      height: 680px;
+      top: -77px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .hover-tab-menu::after, .hover-tab-menu::before {
+      display: none;
+    }
+  }
+
+  .hover-tab-menu::before {
+    right: 75%;
+    border: 9px solid #e3ebfc;
+  }
+
+  .hover-tab-menu::after {
+    border: 2px dashed #324fb0;
+    right: calc(75% + 4px);
+    animation: rotate2 2s linear infinite;
+  }
+
+  .hover-tab-area .tab-area {
+    width: 540px;
+    height: 540px;
+    position: relative;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgba(38, 78, 213, 0.102);
+    overflow: hidden;
+  }
+
+  .hover-tab-area .tab-area::after, .hover-tab-area .tab-area::before {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgba(38, 78, 213, 0.102);
+  }
+
+  .hover-tab-area .tab-area::before {
+    width: 468px;
+    height: 468px;
+  }
+
+  .hover-tab-area .tab-area::after {
+    width: 386px;
+    height: 386px;
+  }
+
+  .hover-tab-area .tab-area * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hover-tab-area .tab-area .tab-item {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+  }
+
+  .hover-tab-area .tab-area .tab-item img {
+    max-height: 300px;
+    max-width: 300px;
+    z-index: 99;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+  }
+
+  .hover-tab-area .tab-area .tab-item.active img {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hover-tab-area .tab-area .tab-item.first {
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+  }
+
+  .hover-tab-area .tab-area .tab-item.second {
+    animation-name: fadeInLeft;
+    -webkit-animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+  }
+
+  .hover-tab-area .tab-area .tab-item.third {
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+  }
+
+  @keyframes rotate2 {
+    0% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(3600deg);
+      -ms-transform: rotate(3600deg);
+      transform: rotate(3600deg);
+    }
+  }
+
+  @-webkit-keyframes rotate2 {
+    0% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(3600deg);
+      -ms-transform: rotate(3600deg);
+      transform: rotate(3600deg);
+    }
+  }
+
+  @-o-keyframes rotate2 {
+    0% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(3600deg);
+      -ms-transform: rotate(3600deg);
+      transform: rotate(3600deg);
+    }
+  }
+  .get-section .title,.feature-section .title{
+    margin-bottom: 26px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 576px) {
+    .get-section h5,.feature-section h5 {
+      font-size: 24px;
+      line-height: 34px;
+      margin-top: -8px;
+      color: #33406a;
+    }
+  }
+  .get-section p:last-child {
+    margin-bottom: -7px !important;
+  }
+  .get-section p {
+    margin-top: -12px;
+    font-size: 18px;
+  }
+  @media (min-width: 1200px) {
+    .get-section .container{
+      max-width: 1140px;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px)
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
+  }
+
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp
+  }
+  /*How Section Ends Here*/
+  /*Feature Section Starts Here*/
+  .feature-item {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .feature-item .feature-thumb {
+    width: 120px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    background: #ffffff;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    box-shadow: 0 10px 20px rgba(215, 226, 251, 0.7);
+  }
+
+  .feature-item .feature-thumb img {
+    max-height: 71px;
+  }
+
+  .feature-item .feature-content .title {
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  .feature-item:hover .feature-thumb {
+    box-shadow: 0 20px 20px #d7e2fb;
+  }
+
+  @media (max-width: 575px) {
+    .feature-item {
+      margin-bottom: 30px;
+    }
+
+    .feature-item .feature-thumb {
+      margin-bottom: 30px;
+      width: 100px;
+      height: 100px;
+    }
+
+    .feature-item .feature-thumb img {
+      max-height: 60px;
+    }
+
+    .feature-item .feature-content .title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .feature-wrapper {
+    margin-bottom: -30px;
+  }
+
+  @media (min-width: 768px) {
+    .feature-wrapper {
+      margin-bottom: -50px;
+    }
+  }
+
+  .feature-section {
+    position: relative;
+  }
+
+  @media (max-width: 991px) {
+    .feature-section {
+      background-color: #f9fbff;
+    }
+  }
+  div[class*="ball"] {
+    position: absolute;
+  }
+
+  div[class*="ball"] img {
+    max-width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    div[class*="ball"] {
+      display: none;
+    }
+  }
+
+  .ball-3 {
+    top: calc(50% - 100px);
+    right: 10px;
+  }
+
+  .ball-1 {
+    top: calc(50% - 120px);
+    left: 10px;
+  }
+
+  .ball-2 {
+    left: 17%;
+    top: 30%;
+  }
+
+  @media (max-width: 991px) {
+    .ball-1 {
+      width: 100px;
+    }
+
+    .ball-3 {
+      width: 70px;
+    }
+  }
+
+  /*Feature Section Ends Here*/
+  .banner-shape {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -2px;
+  }
+  .banner-shape-top {
+    position: absolute !important;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+.colorwhite {
+  color: #e73329;
+  padding: 20px 0;
+}
+  @media only screen and (min-width: 1024px) {
+    .container {
+      width: 100%;
+    }
+    .container .box7 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2rem 3rem
+    }
+
+    .container .box7 {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .container .box7 .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 6rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      word-wrap: break-word;
+      text-align: center;
+    }
+
+    .container .box7 .faq-list {
+      width: 100%
+    }
+
+    .container .box7 .faq-list .faq-item {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1.5rem 2rem;
+      border-radius: 6px;
+      background-color: #efefef;
+      transition: all .3s
+    }
+
+    .container .box7 .faq-list .faq-item:not(:last-child) {
+      margin-bottom: 2.5rem
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      cursor: pointer
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .name {
+      max-width: 100%;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #000;
+      word-wrap: break-word
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .right-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 2.8rem;
+      max-width: 2.8rem;
+      height: 2.8rem;
+      margin-left: 3rem;
+      border-radius: 50%;
+      background-color: #efbc16
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .right-icon i {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      transition: all .3s ease
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .right-icon .on {
+      transform: rotate(180deg)
+    }
+
+    .container .box7 .faq-list .faq-item .faq-content {
+      width: 100%;
+      margin-top: 2rem
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .container {
+      /*width:100%*/
+    }
+
+    .container .box7 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 3rem 1rem
+    }
+
+    .container .box7 {
+      width: 100%
+    }
+
+    .container .box7 .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 4.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #000;
+      word-wrap: break-word;
+      text-align: center;
+    }
+
+    .container .box7 .faq-list {
+      width: 100%
+    }
+
+    .container .box7 .faq-list .faq-item {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      background-color: #efefef;
+      transition: all .3s
+    }
+
+    .container .box7 .faq-list .faq-item:not(:last-child) {
+      margin-bottom: 1.5rem
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      cursor: pointer
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .name {
+      max-width: 100%;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #000;
+      word-wrap: break-word
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .right-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 2.2rem;
+      max-width: 2.2rem;
+      height: 2.2rem;
+      margin-left: 1.5rem;
+      border-radius: 50%;
+      background-color: #ffa701
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .right-icon i {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      transition: all .3s ease
+    }
+
+    .container .box7 .faq-list .faq-item .faq-title .right-icon .on {
+      transform: rotate(180deg)
+    }
+
+    .container .box7 .faq-list .faq-item .faq-content {
+      width: 100%;
+      margin-top: 1rem
+    }
+  }
+  .faq-content>>>img {
+    width: 100% !important;
+    max-width: 750px !important;
+  }
+  .slick-slide img {
+    height: 100%;
+    width: 100%;
+  }
   @media only screen and (min-width: 1024px) {
     .mask {
       position: fixed;
@@ -1517,57 +1970,6 @@
       background-color: rgb(251, 194, 65);
       cursor: pointer;
     }
-  }
-
-  .s-content {
-    font-size: 16px;
-    line-height: 1.5
-  }
-  .svg-icon {
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-  }
-  .wrap {
-    width: 100%;
-    padding: 10px
-  }
-
-  .wrap .item-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap
-  }
-
-  .wrap .item {
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 0 24px 8px rgba(0, 0, 0, .1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 16px;
-    cursor: pointer;
-    font-size: 29px;
-    transition: all .3s ease;
-    padding: 15px;
-    min-width: fit-content;
-  }
-
-  .wrap .item img {
-    width: 43.5px;
-    height: 43.5px
-  }
-
-  .wrap .item .svg-icon {
-    transition: all .3s ease
-  }
-
-  .wrap .item:hover {
-    box-shadow: 0 0 24px 8px rgba(0,0,0,.2)
   }
   @media only screen and (max-width: 1024px) {
     .mask {
@@ -1659,560 +2061,490 @@
     }
   }
 
-  .plan-row {
-    flex-wrap: wrap
+  @media only screen and (max-width: 992px) {
+    .btns-group .btn-lg {
+      padding: 1rem 3rem;
+    }
   }
 
-  .plan-div .card {
-    background: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
-    cursor: pointer;
-    transition: all .5s ease
+  .h-\[662px\] {
+    height: 662px;
+  }
+  @media (min-width: 1200px) {
+    .xl\:h-\[700px\] {
+      height: 700px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .xl\:px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  .leading-9 {
+    line-height: 2.25rem;
+  }
+  .text-\[30px\] {
+    font-size: 30px;
+  }
+  .mt-6 {
+    margin-top: 1.5rem;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .max-w-\[620px\] {
+    max-width: 620px;
+  }
+  .font-bold {
+    font-weight: 700;
+  }
+  .text-\[\#fff\] {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255);
+  }
+  @media (min-width: 1200px) {
+    .xl\:text-\[45px\] {
+      font-size: 45px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .xl\:leading-\[55px\] {
+      line-height: 55px;
+    }
+  }
+  .title-main {
+    color: #000;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120.5%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .header_1X03z {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    text-align: left
   }
 
-  .plan-div .card:hover {
-    background: #eee;
+  .wrapper_A-XAV {
+    padding: 0 20px 37px
   }
 
-  .plan-div .card:hover .card-body .price,.plan-div .card:hover .card-body .title {
-    /*color: #fff*/
+  .withFill_3dLQP {
+    padding: 5px 20px 0;
+    background: #092c57
   }
 
-  .plan-div .card:hover .card-body .desc-box .p {
+  .textSection_2Jl-t {
     font-size: 16px;
-    /*color: #fff*/
+    line-height: 19px;
+    color: #002133
   }
 
-  .plan-div .card:hover .card-body .btn-box .btn1 {
-    text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #fff!important;
-    color: #000!important;
-    border: 1px solid #000
+  .scheme1_27wht,.withFill_3dLQP .textSection_2Jl-t {
+    color: #fff
   }
 
-  /*.plan-div .card:hover .card-body .btn-box .btn2 {*/
-  /*  text-shadow: 0 2px 4px rgba(0,0,0,.08);*/
-  /*  background: #0a0a1a!important;*/
-  /*  color: #fff!important*/
-  /*}*/
+  .scheme1_27wht {
+    border-radius: 10px;
+    background: linear-gradient(180deg,#20436f,#03193f);
+    padding: 25px 0
+  }
 
-  /*.plan-div .card:hover .card-body .card-img img {*/
-  /*  transform: scale(1.1)*/
-  /*}*/
+  .scheme1Item_gE_r4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 65px 20px 0
+  }
 
-  /*.plan-div .card:hover .card-body .sold-out-text {*/
-  /*  color: #fff!important*/
-  /*}*/
+  .schemeArrow_2y4_o {
+    width: 16px;
+    height: 42px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTcuMjkzIDQxLjcwN2ExIDEgMCAwMDEuNDE0IDBsNi4zNjQtNi4zNjRhMSAxIDAgMDAtMS40MTQtMS40MTRMOCAzOS41ODZsLTUuNjU3LTUuNjU3QTEgMSAwIDAwLjkzIDM1LjM0M2w2LjM2NCA2LjM2NHpNNyAwdjQxaDJWMEg3eiIgZmlsbD0iIzAyOEVFNiIvPjwvc3ZnPg==) 50% no-repeat;
+    margin: 10px auto
+  }
 
-  .plan-div .card .card-body {
+
+  .subheader_1yrF2 {
+    padding: 16px 0 10px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px
+  }
+
+  .scheme2_3KqRk,.withFill_3dLQP .subheader_1yrF2 {
+    color: #fff
+  }
+
+  .scheme2_3KqRk {
     display: flex;
     flex-direction: column;
-    /*color: #fff;*/
-    text-align: center;
-    padding: 10px
+    border-radius: 10px;
+    background: linear-gradient(180deg,#de2e3c,#b4000f)
   }
 
-  .plan-div .card .card-body .card-img {
-    width: 100%;
-    overflow: hidden
-  }
-
-  .plan-div .card .card-body .card-img img {
-    width: 100%;
-    height: 100%;
-    transition: all .3s ease
-  }
-
-  .plan-div .card .card-body .sold-out-text {
-    font-size: 16px;
+  .scheme2Item_2XDAu {
     font-weight: 700;
-    color: #000
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: top 31px center;
+    padding: 105px 20px 0
   }
 
-  .plan-div .card .card-body .title {
-    font-size: 28px;
-    color: #0a0a1a;
-    font-weight: 400;
-    margin: 20px auto 0;
-    display: inline-block
+  .scheme2Item_2XDAu:last-child {
+    padding-bottom: 31px
   }
 
-  .plan-div .card .card-body .price {
-    font-size: 24px;
-    font-weight: 400;
-    color: #273444;
-    line-height: 40px;
-    text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    margin: 12px auto 19px;
+
+  .badThingsItem5_3u4ex {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuNzE5LjI4MUwuMjggMS43MmwxNSAxNSAuNzE5LjY4Ny43MTktLjY4N0wyMCAxMy40MzcgMzEuMjgxIDI0LjcybC43MTkuNjg3LjcxOS0uNjg3TDM2IDIxLjQzNyA0Ni41NjMgMzJINDB2MmgxMFYyM2gtMnY3LjU2M0wzNi43MTkgMTkuMjggMzYgMTguNTk0bC0uNzE5LjY4N0wzMiAyMi41NjMgMjAuNzE5IDExLjI4IDIwIDEwLjU5NGwtLjcxOS42ODdMMTYgMTQuNTYyIDEuNzE5LjI4M3pNMCA4djQyaDJWOEgwem02IDZ2MzZoMlYxNEg2em02IDZ2MzBoMlYyMGgtMnptNiAwdjMwaDJWMjBoLTJ6bTYgNHYyNmgyVjI0aC0yem0xMiA0djIyaDJWMjhoLTJ6bS02IDJ2MjBoMlYzMGgtMnptMTIgOHYxMmgyVjM4aC0yem02IDB2MTJoMlYzOGgtMnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=)
+  }
+
+  .goodThings_26slW {
+    padding-top: 21px;
+    display: flex;
+    flex-direction: column
+  }
+
+  .goodThingItem_rrXr3 {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #002133;
     text-align: center
   }
 
-  .plan-div .card .card-body .split_line {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg,rgba(239,242,247,0),#eff2f7 50%,rgba(239,242,247,0));
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
-    opacity: .8
-  }
-
-  .plan-div .card .card-body .desc-box {
-    text-align: center;
-    padding: 16px 5px
-  }
-
-  .plan-div .card .card-body .desc-box .p {
-    font-size: 16px;
-    font-weight: 400;
-    color: #0a0a0a;
-    line-height: 20px;
-    text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    margin: 13px 0;
-    position: relative
-  }
-
-  .plan-div .card .card-body .desc-box .p .p_show {
-    position: absolute;
-    top: -200%;
-    left: 0;
-    font-size: 14px;
-    font-weight: 400;
-    color: #8492a6;
-    line-height: 20px;
-    text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    margin: 13px 0;
-    display: none;
-    border-radius: 8px;
-    padding: 8px;
-    transition: all .5s ease;
-    background-color: rgba(0,0,0,.8)
-  }
-
-  .plan-div .card .card-body .desc-box .p .p_show:after {
-    position: absolute;
+  .goodThingItem_rrXr3:before {
     content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border: 6px solid rgba(0,0,0,.8);
-    border-top-color: rgba(0,0,0,.8);
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%)
+    display: block;
+    width: 58px;
+    height: 58px;
+    background-position: top;
+    background-repeat: no-repeat;
+    margin: 0 auto 10px
   }
 
-  .plan-div .card .card-body .desc-box .p:last-child:hover .p_show {
-    display: block
+  .goodThing7_PSeiG:before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMxIDBhMTkuMDI2IDE5LjAyNiAwIDAwLTEzLjA5NCA1LjE4OGMxLjYwMi0uNSAzLjIwNy0uODk1IDQuOTA3LTEuMDk0QTE3LjE0OCAxNy4xNDggMCAwMTMxIDJjOS4zOTggMCAxNyA3LjYwMiAxNyAxNyAwIDMtLjc5MyA1Ljc5LTIuMDk0IDguMTg4LS4xOTkgMS42OTktLjU5MyAzLjMwNC0xLjA5MyA0LjkwNkExOS4wMjYgMTkuMDI2IDAgMDA1MCAxOUM1MCA4LjUgNDEuNSAwIDMxIDB6bS02IDZhMTkuMDI2IDE5LjAyNiAwIDAwLTEzLjA5NCA1LjE4OGMxLjYwMi0uNSAzLjIwNy0uODk1IDQuOTA2LTEuMDk0QTE3LjE0OCAxNy4xNDggMCAwMTI1IDhjOS4zOTggMCAxNyA3LjYwMiAxNyAxNyAwIDMtLjc5MyA1Ljc5LTIuMDk0IDguMTg4LS4xOTkgMS42OTktLjU5MyAzLjMwNC0xLjA5MyA0LjkwNkExOS4wMjYgMTkuMDI2IDAgMDA0NCAyNWMwLTEwLjUtOC41LTE5LTE5LTE5em0tNiA2QzguNTIgMTIgMCAyMC41MiAwIDMxczguNTIgMTkgMTkgMTkgMTktOC41MiAxOS0xOS04LjUyLTE5LTE5LTE5em0wIDJjOS40MDIgMCAxNyA3LjU5OCAxNyAxNyAwIDkuNDAyLTcuNTk4IDE3LTE3IDE3LTkuNDAyIDAtMTctNy41OTgtMTctMTcgMC05LjQwMiA3LjU5OC0xNyAxNy0xN3oiIGZpbGw9IiMxMkJGMzgiLz48L3N2Zz4=)
   }
 
-  .plan-div .card .card-body .btn-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    margin-top: auto
+  .laptop_6uVzs {
+    width: 280px;
+    height: 360px;
+    position: relative;
+    margin: 30px 0 30px auto
   }
 
-  .plan-div .card .card-body .btn-box .btn {
-    width: 87px;
-    height: 39px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
-    border-radius: 8px;
-    line-height: 39px;
+  .laptop_6uVzs:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 320px;
+    height: 441px;
+    top: 0;
+    right: -20px;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+    .laptop_6uVzs:before {
+    }
+  }
+
+  .laptop_6uVzs:before {
+   background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: 320px 441px
+  }
+
+  .advantages_1feUI,.algorithm_3YfKU,.listHeader_3AOyV {
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff
+  }
+
+  .listHeader_3AOyV {
+    font-weight: 700
+  }
+
+  .list_3FeHY {
+    margin: 0;
     padding: 0
   }
 
-  .plan-div .card .card-body .btn-box .btn.btn1 {
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff3d6;
-    text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #0a0a1a
+  .listItem_Tc7Ff {
+    min-height: 32px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI2Ljg0IDUuNTJhMS4yOCAxLjI4IDAgMDAtMS4wNC42TDEzLjc2IDI0LjU0bC03LjgtNi43NGExLjI3OSAxLjI3OSAwIDEwLTEuNjggMS45Mmw4LjkyIDcuNzJjLjI4LjIzNy42NS4zNDIgMS4wMTMuMjkuMzY1LS4wNTUuNjg3LS4yNjMuODg3LS41N0wyNy45NiA3LjUyYTEuMjc4IDEuMjc4IDAgMDAtMS4xMi0yeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==) 0 0 no-repeat;
+    background-size: 32;
+    list-style-type: none;
+    padding-left: 46px;
+    margin-bottom: 10px
   }
 
-  .plan-div .card .card-body .btn-box .btn.btn2 {
-    font-size: 14px;
+  .subheader4_2MaYc {
     font-weight: 600;
-    color: #0a0a1a;
-    text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #fff;
-    border: 1px solid #000
+    font-size: 26px;
+    line-height: 32px;
+    color: #fff
   }
 
-  .plan-div .progress-bar {
-    background-color: #384247
+  .advantagesItem_11FkN {
+    text-align: center
   }
 
-  .page-next-level .page-next[data-v-265f59b7] {
-    z-index: 9
-  }
-  .mb-3>>>.van-stepper {
-    width: 100%;
-    font-size: 1rem;
-    display: flex;
-  }
-  .van-stepper>>>.van-stepper__input {
-    font-size: 1rem;
+  .advantagesList_2IDFI {
+    margin: 0;
+    padding: 0
   }
 
-  /* 20250421新增 */
-  .fw-bold{
-    font-weight: 700!important;
-  }
-  .fs-5{font-size:1.25rem!important}
-
-  @keyframes rotate180 {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(180deg);
-            }
-    }
-
-  .rotate {
-    animation: rotate180 0.5s linear; /* 应用动画，2 秒完成一次旋转，线性变化，无限循环 */
-
+  .advantageItem_39nYN {
+    background-position: top;
+    background-repeat: no-repeat;
+    list-style-type: none;
+    background-size: 50;
+    padding: 60px 0 40px
   }
 
- .fl-wap {
-  flex-wrap:wrap;
-  word-wrap: break-word;
- }
 
-
-  .justify-content-center .miner_work_title{
-    background: linear-gradient(90deg, #fffc00 35%, #db36a4 60%);
-    background-clip: text;
-    color: transparent;
-    font-weight: 700;
-    font-size: 16px;
+  .advantages1Item5_NLG94 {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI1IDBjLTIuNDUzIDAtNC41MjMgMS4zNTUtNy41OTQgMi45MzgtMy4wNyAxLjU4Mi03LjE5MSAzLjQ5Mi0xMy42MjUgNC45MDZMMyA4LjAzdi43ODFjMCAxNS4zMiA1LjM3MSAyNS41NiAxMC43NSAzMS45MDcgNS4zNzkgNi4zNDcgMTAuODQ0IDguODc1IDEwLjg0NCA4Ljg3NWwuNDM3LjIxOC40MzgtLjIxOFM0NyAzOC40NjkgNDcgOC44MTJ2LS43OGwtLjc4MS0uMTg4QzM5Ljc4NSA2LjQzIDM1LjY2NCA0LjUyIDMyLjU5NCAyLjkzNyAyOS41MjQgMS4zNTUgMjcuNDU0IDAgMjUgMHptMCAyYzEuNjQ1IDAgMy41NSAxLjEwNSA2LjY4OCAyLjcxOSAyLjk4IDEuNTMxIDcuMTcxIDMuNDEgMTMuMjUgNC44NDMtLjM2OCAyNy4xMTgtMTguNjg0IDM3LjI5LTE5Ljk3IDM3Ljk3LS42Mi0uMzAxLTQuOTQ4LTIuNDY2LTkuNzE4LTguMDk0QzEwLjIyMyAzMy41MDQgNS4yNDYgMjMuOTYgNS4wNjIgOS41NjFjNi4wNzktMS40MzMgMTAuMjctMy4zMTIgMTMuMjUtNC44NDNDMjEuNDUgMy4xMDUgMjMuMzU1IDIgMjUgMnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=)
   }
-  .justify-content-center .miner_work_text{
-    width: 100%;
-    margin: 20px auto 20px auto;
-    margin-bottom: .5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    padding: 0;
-    color: var(--bs-heading-color);
+
+  .advantages2Item1_2CE4v {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMxLjE4OCAzLjI1YS45OTYuOTk2IDAgMDAtLjYyNS4zNzVMMTEuNSAyNy4zNzVhLjk5NC45OTQgMCAwMC0uMTIxIDEuMDU5Yy4xNjguMzQ3LjUyLjU2Ni45MDIuNTY2SDIyLjc1bC01IDE2LjQzOGEuOTk4Ljk5OCAwIDAwLjQ2MSAxLjI0Mi45OTguOTk4IDAgMDAxLjI4OS0uMzA1bDE5LTIzLjc1Yy4yNDItLjMuMjktLjcxLjEyMS0xLjA1OEExLjAwMiAxLjAwMiAwIDAwMzcuNzIgMjFIMjcuNjI1bDQuNjU2LTE2LjQ2OWMuMDktLjMwOC4wMjgtLjY0NC0uMTcyLS44OThhMS4wMDUgMS4wMDUgMCAwMC0uODI4LS4zODNoLS4wOTN6TTI5LjAzIDguNzJsLTMuNzE4IDEzQTEgMSAwIDAwMjYuMjgyIDIzaDkuMzQzTDIxLjE4NyA0MS4wOTRsMy45MDctMTIuODEzQTEgMSAwIDAwMjQuMTI1IDI3aC05Ljc1TDI5LjAzMSA4LjcyeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)
+  }
+
+  .table th {
+    /*background: #000000;*/
+    color: #000;
+    width: 33.33%;
     text-align: center;
   }
-  .justify-content-center .miner_work_text.label{
-
-  }
-  .justify-content-center .miner_work_icon{
-    position: relative;
-    background-color: #16141c;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 55%;
-    padding: 25px 10px;
-  }
-  .justify-content-center .miner_work_icon .number{
-    position: absolute;
-    width: 40px;
-    height: 45px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    top:-25px;
-    border-radius: 4px;
-    background-color: #242227 !important;
-    color: #fabb04;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-  }
-
-  .justify-content-center .miner_work_icon .miner_work_image{
-    transition: transform 0.6s ease;
-    transform-origin: center center;
-    width: 150px !important;
-    height: 150px !important;
-    object-fit: contain;
-    padding: 15px 5px !important;
-    transform-style: preserve-3d; /* 保持 3D 变换效果 */
-  }
-
-  /* 鼠标悬停时，图片水平翻转 180 度 */
-  .justify-content-center .miner_work_icon:hover .miner_work_image {
-          transform: rotateY(180deg);
+  @media (min-width: 992px) {
+    .header_1X03z {
+      margin-top:0;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 64px;
+      text-align: center
     }
 
-  .problem_container{
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 1.5rem 2rem;
-    border-radius: 6px;
-    background-color: #efefef;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-  }
-  .problem_container .head{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .wrapper_A-XAV {
+      padding: 0 63px 37px
+    }
 
-  .problem_container .head .right{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    min-width: 2.5rem;
-    max-width: 2.5rem;
-    height: 2.5rem;
-    margin-left: 3rem;
-    background-color: #ccc;
-  }
-   .problem_container .head .right .fq_icon{
-    color: #662282;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
-  }
+    .withFill_3dLQP {
+      padding: 40px 63px 0;
+      background: #092c57
+    }
 
-  .latest-style{
-    background: #eee;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-    box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.12);
-  }
-  .choose_us{
-    height: 300px;
-  }
-  .choose_us .image img{
-    width: 5rem;
-    height: 5rem;
-  }
-  .choose_us .text{
-    max-width: 90%;
-    margin: 10px auto;
-  }
-  .comment_card{
-    background: -webkit-gradient(linear, left top, left bottom, from(#afceed), to(#3d4355)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(2.95%, #a3631f), color-stop(54.04%, #f9f790), color-stop(105.51%, #a3631f)) border-box;
-    background: linear-gradient(#afceed, #3d4355) padding-box, linear-gradient(180deg, #a3631f 2.95%, #f9f790 54.04%, #a3631f 105.51%) border-box;
-    border: 2px solid transparent;
-    padding: 10px 8px 10px 0;
-    border-radius: 15px;
-    position: relative;
-    margin-left: 32px;
-    position: relative;
-    height: 200px;
-  }
-  .comment_card .comment_head{
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: -webkit-gradient(linear, left top, left bottom, from(#6fadf0), to(#7695f9)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(2.95%, #a3631f), color-stop(54.04%, #f9f790), color-stop(105.51%, #a3631f)) border-box;
-    background: linear-gradient(#6fadf0, #7695f9) padding-box, linear-gradient(180deg, #a3631f 2.95%, #f9f790 54.04%, #a3631f 105.51%) border-box;
-    border: 2px solid transparent;
-    margin-left: -32px;
-    left: 0px;
-    top: 10px;
-  }
-  .comment_card .comment_head img{
-    width: 100%;
-    height: 100%;
-  }
-  .comment_card .msg{
-    width: 70%;
-    height: 100%;
-  }
-  .comment_card .msg .name{
-    color: #fff;
-  }
-  .comment_card .msg .content{
-    height: 150px;
-    overflow: hidden;
-  }
-  /* Blog */
-  .blog_card{
-    padding: 20px 10px;
-    border-radius:5px;
-    background-color: #fff;
-    box-shadow: 0 1px 5px rgba(58,57,57,.10196078431372549);
-    margin-bottom: 51px;
-    cursor: pointer;
-    margin: 0 10px;
-  }
-  .blog_card .image{
-    width: 100%;
-    height: 200px;
-  }
-  .blog_card .image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    .textSection_2Jl-t {
+      font-size: 20px;
+      line-height: 24px;
+      color: #002133
+    }
 
-  }
-  .blog_card .time{
-    font-size: 1rem;
-    color: #959595;
-    margin: 10px 0;
-  }
-  .blog_card .title{
-    height: 100px;
-    display: -webkit-box; /* 必须结合的属性 */
-    -webkit-box-orient: vertical; /* 必须结合的属性 */
-    line-clamp:3; /* 限制显示的行数 */
-    overflow: hidden; /* 隐藏溢出的内容 */
-    text-overflow: ellipsis; /* 显示省略号 */
-    word-wrap: break-word; /* 允许在长单词或URL地址内部进行断行 */
-    font-size: 1.2rem;
-    margin: 20px 0;
-  }
-  .to-blog{
-    width: 150px;
-    height: 50px;
-    color: #fba342;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin: 0 auto;
-  -webkit-box-shadow:
-inset 0 0 0 1px #fba342 !important;
-  box-shadow: inset 0 0 0 1px #fba342 !important;
-  }
+    .scheme1_27wht,.withFill_3dLQP .textSection_2Jl-t {
+      color: #fff
+    }
 
-  .profit-calculator {
-    -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
+    .scheme1_27wht {
+      display: flex;
+      border-radius: 10px;
+      background: linear-gradient(180deg,#20436f,#03193f);
+      justify-content: space-around
+    }
 
-  @media screen and (min-width: 768px) {
-    .profit-calculator {
-      background-size: cover;
-      background-position: center;
+    .scheme1Item_gE_r4 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
       background-repeat: no-repeat;
-      padding: 30px;
-      border: 1px solid rgba(240, 19, 19, 0.3);
-      border-radius: 15px;
+      background-position: top 37px center;
+      padding: 105px 20px 40px
+    }
+
+    .schemeArrow_2y4_o {
+      width: 106px;
+      height: 16px;
+      margin-top: 50px;
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA2IiBoZWlnaHQ9IjE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMDUuNzA3IDguNzA3YTEgMSAwIDAwMC0xLjQxNEw5OS4zNDMuOTI5YTEgMSAwIDEwLTEuNDE0IDEuNDE0TDEwMy41ODYgOGwtNS42NTcgNS42NTdhMSAxIDAgMDAxLjQxNCAxLjQxNGw2LjM2NC02LjM2NHpNMCA5aDEwNVY3SDB2MnoiIGZpbGw9IiMwMjhFRTYiLz48L3N2Zz4=) 50% no-repeat;
+      flex-shrink: 0
+    }
+    .subheader_1yrF2 {
+      padding: 16px 0 10px;
+      margin: 0;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 22px;
+      letter-spacing: -.864px
+    }
+
+    .scheme2_3KqRk,.withFill_3dLQP .subheader_1yrF2 {
+      color: #fff
+    }
+
+    .scheme2_3KqRk {
+      display: flex;
+      flex-direction: row;
+      border-radius: 10px;
+      justify-content: space-around
+    }
+
+    .scheme2Item_2XDAu,.scheme2Item_2XDAu:last-child {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-position: top 37px center;
+      padding: 105px 20px 40px
+    }
+
+    .badThingsItem5_3u4ex {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuNzE5LjI4MUwuMjggMS43MmwxNSAxNSAuNzE5LjY4Ny43MTktLjY4N0wyMCAxMy40MzcgMzEuMjgxIDI0LjcybC43MTkuNjg3LjcxOS0uNjg3TDM2IDIxLjQzNyA0Ni41NjMgMzJINDB2MmgxMFYyM2gtMnY3LjU2M0wzNi43MTkgMTkuMjggMzYgMTguNTk0bC0uNzE5LjY4N0wzMiAyMi41NjMgMjAuNzE5IDExLjI4IDIwIDEwLjU5NGwtLjcxOS42ODdMMTYgMTQuNTYyIDEuNzE5LjI4M3pNMCA4djQyaDJWOEgwem02IDZ2MzZoMlYxNEg2em02IDZ2MzBoMlYyMGgtMnptNiAwdjMwaDJWMjBoLTJ6bTYgNHYyNmgyVjI0aC0yem0xMiA0djIyaDJWMjhoLTJ6bS02IDJ2MjBoMlYzMGgtMnptMTIgOHYxMmgyVjM4aC0yem02IDB2MTJoMlYzOGgtMnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=)
+    }
+
+    .scheme2_3KqRk {
+      background: linear-gradient(180deg,#de2e3c,#b4000f)
+    }
+
+    .goodThings_26slW {
+      padding-top: 12px
+    }
+
+    .goodThingItem_rrXr3 {
+      display: flex;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: left
+    }
+
+    .goodThingItem_rrXr3:before {
+      flex-shrink: 0;
+      margin: 0 16px 0 0
+    }
+
+
+    .goodThing7_PSeiG:before {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMxIDBhMTkuMDI2IDE5LjAyNiAwIDAwLTEzLjA5NCA1LjE4OGMxLjYwMi0uNSAzLjIwNy0uODk1IDQuOTA3LTEuMDk0QTE3LjE0OCAxNy4xNDggMCAwMTMxIDJjOS4zOTggMCAxNyA3LjYwMiAxNyAxNyAwIDMtLjc5MyA1Ljc5LTIuMDk0IDguMTg4LS4xOTkgMS42OTktLjU5MyAzLjMwNC0xLjA5MyA0LjkwNkExOS4wMjYgMTkuMDI2IDAgMDA1MCAxOUM1MCA4LjUgNDEuNSAwIDMxIDB6bS02IDZhMTkuMDI2IDE5LjAyNiAwIDAwLTEzLjA5NCA1LjE4OGMxLjYwMi0uNSAzLjIwNy0uODk1IDQuOTA2LTEuMDk0QTE3LjE0OCAxNy4xNDggMCAwMTI1IDhjOS4zOTggMCAxNyA3LjYwMiAxNyAxNyAwIDMtLjc5MyA1Ljc5LTIuMDk0IDguMTg4LS4xOTkgMS42OTktLjU5MyAzLjMwNC0xLjA5MyA0LjkwNkExOS4wMjYgMTkuMDI2IDAgMDA0NCAyNWMwLTEwLjUtOC41LTE5LTE5LTE5em0tNiA2QzguNTIgMTIgMCAyMC41MiAwIDMxczguNTIgMTkgMTkgMTkgMTktOC41MiAxOS0xOS04LjUyLTE5LTE5LTE5em0wIDJjOS40MDIgMCAxNyA3LjU5OCAxNyAxNyAwIDkuNDAyLTcuNTk4IDE3LTE3IDE3LTkuNDAyIDAtMTctNy41OTgtMTctMTcgMC05LjQwMiA3LjU5OC0xNyAxNy0xN3oiIGZpbGw9IiMxMkJGMzgiLz48L3N2Zz4=)
+    }
+
+    .laptop_6uVzs {
+      width: 780px;
+      height: 410px;
+      margin: 40px auto 50px
+    }
+
+    .laptop_6uVzs:before {
+      position: static;
+      width: 799px;
+      height: 493px;
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+      .laptop_6uVzs:before {
+      }
+    }
+
+    .laptop_6uVzs:before {
+
+      background-size: 799px 493px;
+      background-position: top
+    }
+
+    .advantages_1feUI,.algorithm_3YfKU {
+      display: flex;
+      font-size: 20px;
+      line-height: 24px
+    }
+
+    .advantageItem_39nYN:not(:last-child),.algorithmItem_F7ORI:not(:last-child) {
+      padding-right: 50px
+    }
+
+    .listHeader_3AOyV {
+      font-size: 20px;
+      line-height: 24px
+    }
+
+    .listItem_Tc7Ff {
+      min-height: 32px;
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI2Ljg0IDUuNTJhMS4yOCAxLjI4IDAgMDAtMS4wNC42TDEzLjc2IDI0LjU0bC03LjgtNi43NGExLjI3OSAxLjI3OSAwIDEwLTEuNjggMS45Mmw4LjkyIDcuNzJjLjI4LjIzNy42NS4zNDIgMS4wMTMuMjkuMzY1LS4wNTUuNjg3LS4yNjMuODg3LS41N0wyNy45NiA3LjUyYTEuMjc4IDEuMjc4IDAgMDAtMS4xMi0yeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==) 0 0 no-repeat;
+      background-size: 32;
+      padding-left: 46px;
+      margin-bottom: 10px
+    }
+
+    .subheader4_2MaYc {
+      font-size: 36px;
+      line-height: 44px
+    }
+
+    .advantagesItem_11FkN {
+      flex-basis: 50%;
+      text-align: left
+    }
+
+    .advantageItem_39nYN {
+      background-position: 0 0
+    }
+
+    .advantages1Item2_1D_tU {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI1IDJDMTIuMzE3IDIgMiAxMi4zMTcgMiAyNXMxMC4zMTcgMjMgMjMgMjMgMjMtMTAuMzE3IDIzLTIzYzAtNC41Ni0xLjM0LTguODEtMy42MzctMTIuMzg5bC0xLjM2OSAxLjYxN0EyMC44NDYgMjAuODQ2IDAgMDE0NiAyNWMwIDExLjU3OS05LjQyMSAyMS0yMSAyMVM0IDM2LjU3OSA0IDI1IDEzLjQyMSA0IDI1IDRjNS40NDMgMCAxMC4zOTQgMi4xIDE0LjEyOSA1LjUxbDEuMzA5LTEuNTQ1QTIyLjkxMiAyMi45MTIgMCAwMDI1IDJ6bTE4LjIzNiA1Ljc1NGwtMTkuMzIyIDIyLjgtOC4xMzMtNy41ODUtMS4zNjMgMS40NjMgOS42NjYgOS4wMTUgMjAuNjgtMjQuNC0xLjUyOC0xLjI5M3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=)
+    }
+
+    .advantages1Item5_NLG94 {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI1IDBjLTIuNDUzIDAtNC41MjMgMS4zNTUtNy41OTQgMi45MzgtMy4wNyAxLjU4Mi03LjE5MSAzLjQ5Mi0xMy42MjUgNC45MDZMMyA4LjAzdi43ODFjMCAxNS4zMiA1LjM3MSAyNS41NiAxMC43NSAzMS45MDcgNS4zNzkgNi4zNDcgMTAuODQ0IDguODc1IDEwLjg0NCA4Ljg3NWwuNDM3LjIxOC40MzgtLjIxOFM0NyAzOC40NjkgNDcgOC44MTJ2LS43OGwtLjc4MS0uMTg4QzM5Ljc4NSA2LjQzIDM1LjY2NCA0LjUyIDMyLjU5NCAyLjkzNyAyOS41MjQgMS4zNTUgMjcuNDU0IDAgMjUgMHptMCAyYzEuNjQ1IDAgMy41NSAxLjEwNSA2LjY4OCAyLjcxOSAyLjk4IDEuNTMxIDcuMTcxIDMuNDEgMTMuMjUgNC44NDMtLjM2OCAyNy4xMTgtMTguNjg0IDM3LjI5LTE5Ljk3IDM3Ljk3LS42Mi0uMzAxLTQuOTQ4LTIuNDY2LTkuNzE4LTguMDk0QzEwLjIyMyAzMy41MDQgNS4yNDYgMjMuOTYgNS4wNjIgOS41NjFjNi4wNzktMS40MzMgMTAuMjctMy4zMTIgMTMuMjUtNC44NDNDMjEuNDUgMy4xMDUgMjMuMzU1IDIgMjUgMnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=)
+    }
+
+    .advantages2Item1_2CE4v {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMxLjE4OCAzLjI1YS45OTYuOTk2IDAgMDAtLjYyNS4zNzVMMTEuNSAyNy4zNzVhLjk5NC45OTQgMCAwMC0uMTIxIDEuMDU5Yy4xNjguMzQ3LjUyLjU2Ni45MDIuNTY2SDIyLjc1bC01IDE2LjQzOGEuOTk4Ljk5OCAwIDAwLjQ2MSAxLjI0Mi45OTguOTk4IDAgMDAxLjI4OS0uMzA1bDE5LTIzLjc1Yy4yNDItLjMuMjktLjcxLjEyMS0xLjA1OEExLjAwMiAxLjAwMiAwIDAwMzcuNzIgMjFIMjcuNjI1bDQuNjU2LTE2LjQ2OWMuMDktLjMwOC4wMjgtLjY0NC0uMTcyLS44OThhMS4wMDUgMS4wMDUgMCAwMC0uODI4LS4zODNoLS4wOTN6TTI5LjAzIDguNzJsLTMuNzE4IDEzQTEgMSAwIDAwMjYuMjgyIDIzaDkuMzQzTDIxLjE4NyA0MS4wOTRsMy45MDctMTIuODEzQTEgMSAwIDAwMjQuMTI1IDI3aC05Ljc1TDI5LjAzMSA4LjcyeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)
     }
 
   }
-
-  @media screen and (min-width: 1200px) {
-    .profit-calculator {
-      padding: 40px 60px 50px;
+  .uk-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+  }
+  @media (min-width: 960px) {
+    .uk-child-width-1-3\@m > * {
+      width: calc(100%* 1 / 4.001);
     }
   }
-  .profit-calculator .form--control,.profit-calculator .form-select {
-    padding: 5px;
-    border-radius: 6px;
-
+  .in-icon-vix img {
+    max-width: initial;
+    width: 150px;
   }
-  .profit-calculator .form--control[readonly] {
-    color: #000;
-
-  }
-  .el-row {
-    box-sizing:border-box
-  }
-  .el-row:after,.el-row:before {
-    display:table
-  }
-  .el-row:after {
-    clear:both
-  }
-  .el-row--flex {
-    display:flex
-  }
-  .el-col-0,.el-row--flex:after,.el-row--flex:before {
-    display:none
-  }
-  .el-row--flex.is-justify-center {
-    justify-content:center
-  }
-  .el-row--flex.is-justify-end {
-    justify-content:flex-end
-  }
-  .el-row--flex.is-justify-space-between {
-    justify-content:space-between
-  }
-  .el-row--flex.is-justify-space-around {
-    justify-content:space-around
-  }
-  .el-row--flex.is-align-top {
-    align-items:flex-start
-  }
-  .el-row--flex.is-align-middle {
-    align-items:center
-  }
-  .el-row--flex.is-align-bottom {
-    align-items:flex-end
-  }
-  [class*=el-col-] {
-    float:left;
-    box-sizing:border-box
-  }
-  .form-group{
+  .uk-vix-content {
     padding: 10px;
-    font-size: 1.5rem;
   }
-  .msg {
-    padding: 0 10px;
-    font-size: 1rem;
-  }
-  .el-col-24 {
-    width: 100%;
-  }
-  .el-row:after, .el-row:before {
-    display: table;
-  }
-  @media only screen and (min-width: 768px) {
-    .el-col-sm-24 {
-      width: 100%;
-    }
-  }
-  @media only screen and (min-width: 992px) {
-    .el-col-md-8 {
-      width: 33.33333%;
-    }
-  }
-  .video{
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    min-width: 100%;
-    min-height: 100%;
-    height: auto;
-    width: auto;
-    /*加滤镜*/
-    /*filter: blur(15px); //背景模糊设置 */
-    /*-webkit-filter: grayscale(100%);*/
-    /*filter:grayscale(100%); //背景灰度设置*/
-    /*z-index:-11*/
-
-  }
-  .video video>>>source{
-    min-width: 100%;
-    min-height: 100%;
-    height: auto;
-    width: auto;
-  }
-  .hometop {
-    min-height: 28rem;
-  }
-  @media only screen and (max-width: 1024px) {
-    .hometop {
-      min-height:12rem;
-    }
+  .uk-cn-actions {
+    margin-top: 1rem;
   }
 </style>

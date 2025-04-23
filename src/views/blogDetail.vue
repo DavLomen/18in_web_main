@@ -251,11 +251,11 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
+    background-color: #fbc241!important
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
+    color: #fbc241!important
   }
 
   .el-message {
@@ -600,7 +600,7 @@
   ==============================
   */
   .sp_separator_bg, .contact-item, .blog-widget, .referral-section {
-    background-color: #eee;
+    background-color: #F8F6FF;
   }
 
   .items-wrapper div[class*=col-]:nth-child(1) {
@@ -2238,7 +2238,7 @@
   ==============================
   */
   .page-banner {
-    padding-top: 11.25rem;
+    padding-top: 1.25rem;
     padding-bottom: 3.75rem;
   }
 
@@ -3491,6 +3491,7 @@
     color: #000;
     text-decoration: none;
     font-size: 1.5rem;
+    height: 4rem;
   }
 
   .blog-meta {
@@ -4943,14 +4944,14 @@
   .blog-widget {
     padding: 1.5625rem;
   }
-  .blogdetail h3 {
-    font-size: 3.375rem;
-  }
-  .blogdetail h4 {
-    font-size: 2.75rem;
-  }
+  /*.blogdetail h3 {*/
+  /*  font-size: 3.375rem;*/
+  /*}*/
+  /*.blogdetail h4 {*/
+  /*  font-size: 2.75rem;*/
+  /*}*/
   .sp_separator_bg, .contact-item, .blog-widget, .referral-section {
-    background-color: #eee;
+    background-color: #F8F6FF;
   }
   short-post{
     display: -ms-flexbox;
@@ -4959,7 +4960,7 @@
     flex-wrap: wrap;
   }
   .short-post .content .title a {
-    font-size: 1.725rem;
+    /*font-size: 1.725rem;*/
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -4973,12 +4974,12 @@
   a:hover {
     color: #F7C70B;
   }
-  .content {
-    font-size: 1.4rem;
-  }
-  .content p{
-    font-size: 1.4rem;
-  }
+  /*.content {*/
+  /*  font-size: 2rem;*/
+  /*}*/
+  /*.content p{*/
+  /*  font-size: 2rem;*/
+  /*}*/
 </style>
 
 

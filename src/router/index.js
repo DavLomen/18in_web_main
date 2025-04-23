@@ -16,18 +16,7 @@ const router = new VueRouter({
       component: () => import('@/views/LuckyWheel.vue'),
       meta: {
         title: 'lucky',
-        active: 'lucky',
-        requiresAuth: true,
-      }
-    },
-    {
-      path: '/setting',
-      name: 'setting',
-      component: () => import('@/views/setting.vue'),
-      meta: {
-        title: 'setting',
-        active: 'setting',
-        requiresAuth: true,
+        active: 'lucky'
       }
     },
     {
@@ -77,6 +66,15 @@ const router = new VueRouter({
       }
     },
     {
+      path: '/contracts',
+      name: 'contracts',
+      component:  () => import('@/views/product.vue'),
+      meta: {
+        title: 'contracts',
+        active: 'contracts'
+      }
+    },
+    {
       path: '/blogDetail',
       name: 'blogDetail',
       component:  () => import('@/views/blogDetail.vue'),
@@ -119,6 +117,51 @@ const router = new VueRouter({
       meta: {
         title: 'about',
         active: 'about'
+      }
+    },
+    {
+      path: '/help',
+      name: 'help',
+      component:  () => import('@/views/help.vue'),
+      meta: {
+        title: 'help',
+        active: 'help'
+      }
+    },
+    {
+      path: '/cryptocurrency',
+      name: 'cryptocurrency',
+      component:  () => import('@/views/cryptocurrency.vue'),
+      meta: {
+        title: 'cryptocurrency',
+        active: 'cryptocurrency'
+      }
+    },
+    {
+      path: '/web3',
+      name: 'web3',
+      component:  () => import('@/views/web3.vue'),
+      meta: {
+        title: 'web3',
+        active: 'web3'
+      }
+    },
+    {
+      path: '/terms',
+      name: 'terms',
+      component:  () => import('@/views/term.vue'),
+      meta: {
+        title: 'terms',
+        active: 'terms'
+      }
+    },
+    {
+      path: '/privacy',
+      name: 'privacy',
+      component:  () => import('@/views/privacy.vue'),
+      meta: {
+        title: 'privacy',
+        active: 'privacy'
       }
     },
     {
@@ -185,15 +228,6 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/Tutorial',
-      name: 'Tutorial',
-      component:  () => import('@/views/Tutorial.vue'),
-      meta: {
-        title: 'Tutorial',
-        active: 'Tutorial'
-      }
-    },
-    {
       path: '/deposit',
       name: 'deposit',
       component:  () => import('@/views/deposit.vue'),
@@ -221,6 +255,15 @@ const router = new VueRouter({
       }
     },
     {
+      path: '/Tutorial',
+      name: 'Tutorial',
+      component:  () => import('@/views/Tutorial.vue'),
+      meta: {
+        title: 'Tutorial',
+        active: 'Tutorial'
+      }
+    },
+    {
       path: '/transactions',
       name: 'transactions',
       component:  () => import('@/views/transactions.vue'),
@@ -235,7 +278,6 @@ const router = new VueRouter({
       component:  () => import('@/views/affiliates.vue'),
       meta: {
         title: 'affiliates',
-        requiresAuth: true,
         active: 'affiliates'
       }
     },
@@ -293,26 +335,6 @@ const router = new VueRouter({
         title: 'withdraw',
         requiresAuth: true,
         active: 'withdraw'
-      }
-    },
-    {
-      path: '/withdrawList',
-      name: 'withdrawList',
-      component: () => import('@/views/withdrawList.vue'),
-      meta: {
-        title: 'withdrawList',
-        requiresAuth: true,
-        active: 'withdrawList'
-      }
-    },
-    {
-      path: '/depositList',
-      name: 'depositList',
-      component: () => import('@/views/depositList.vue'),
-      meta: {
-        title: 'depositList',
-        requiresAuth: true,
-        active: 'depositList'
       }
     },
     {

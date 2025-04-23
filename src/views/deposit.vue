@@ -1,276 +1,257 @@
 <template>
   <div class="HomePage" id="app">
     <Header></Header>
-    <section style="margin-top: 2rem">
+    <section class="user-panel-section" style="padding: 20px 0px;">
       <div class="container">
-        <div class="el-row">
-          <div class="el-col el-col-5"> <UserHeader></UserHeader></div>
-          <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-            <div >
-              <div class="el-row" style="position: relative; margin-top: 50px;">
-                <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary"
-                        style="background: rgb(255, 243, 214); color: black; font-weight: 500;"><!----><i
-                  class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="sidebar-head d-flex flex-wrap align-items-center justify-content-between">
+              <h3 class="sidebar-head-title"></h3>
+            </div>
+            <div class="sidebar sidebar-user-mobile">
+              <a href="javascript:;" class="icon-btn menu-toggler-user-close">
+                <em class="ni ni-cross"></em>
+              </a>
+              <div class="sidebar-widget">
+                <ul class="user-nav">
+                  <li class="">
+                    <a aria-current="page" href="javascript:;" @click="$router.push('/dashboard')" class="router-link-active router-link-exact-active">
+                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[1]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/transactions')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[2]')}}</a>
+                  </li>
+                  <li class="active">
+                    <a href="javascript:;" @click="$router.push('/deposit')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[3]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;"  @click="$router.push('/withdraw')">
+                      <em class="ni me-2 ni-exchange"></em>{{$t('header[4]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/MyPackages')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[5]')}}</a>
+                  </li>
+<!--                  <li class="">-->
+<!--                    <a href="javascript:;" @click="$router.push('/contracts')">-->
+<!--                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[6]')}}</a>-->
+<!--                  </li>-->
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/affiliates')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[7]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/loginPassword')">
+                      <em class="ni me-2 ni-account-setting"></em>{{$t('header[8]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/message')">
+                      <em class="ni me-2 ni-megento"></em>{{$t('head[13]')}}</a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <br>
-            <div v-if="showPrice && siteBank.length>0"  class="container">
-                <div class="">
-                  <div class="">
-                    <div class="card custom--card">
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col-md-12 text-center">
-                            <!--                    <h4 class="text-center mb-4">Please follow the instruction below</h4>-->
-                            <!--                    <p class="text-center mt-2">You have requested <b class="text-danger">333.00 {{InitData.currency}}</b> , Please pay <b class="text-danger">4.79343510 LTC </b> for successful payment </p>-->
-
-                            <!--                    <p class="my-4 text-center"><span style="color: rgb(51, 51, 51);line-height: 26px; background-color: rgb(247, 248, 250);"><b>-->
-                            <!--                      After the payment is successful, save the screenshot and upload the screenshot as prompted.</b></span></p>-->
-                            <div class="title">
-                              {{$t('deposit[0]')}} <span class="text-danger">{{InitData.currency}}{{postData.money}}</span>,
-                              {{$t('deposit[1]')}}
-                              <span class="text-danger">{{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></span>
-                              {{$t('deposit[2]')}}
-                            </div>
-                            <div class="my-4 text-center" style="color: rgb(51, 51, 51);background-color: rgb(247, 248, 250);">
-                              {{$t('deposit[3]')}}
-                            </div>
+          </div>
+          <div class="col-lg-10 ps-xl-5">
+            <div  class="Deposit">
+              <div  class="">
+                <div  class="user-panel-title-box">
+                  <h2 >{{$t('deposit[0]')}}</h2></div>
+                <div  class="profile-setting-panel-wrap">
+                  <ul  class="nav nav-tabs nav-tabs-s1 nav-tabs-mobile-size" id="myTab" role="tablist">
+                    <li  class="nav-item" role="presentation">
+                      <button  class="nav-link active" id="cryptocurrency-tab" data-bs-toggle="tab" data-bs-target="#cryptocurrency" type="button" aria-selected="true" role="tab">
+                        {{$t('deposit[1]')}}
+                      </button></li>
+                  </ul>
+                  <div style="color: #e73329;">{{$t('dep[0]')}}</div>
+                  <div  class="tab-content mt-4" id="myTabContent">
+                    <div  class="tab-pane fade show active" id="cryptocurrency" role="tabpanel" aria-labelledby="cryptocurrency-tab">
+                      <div  class="profile-setting-panel">
+                        <div  class="form">
+                          <div  class="item">
+                            <div  class="item-label">{{$t('deposit[10]')}} (USDT)</div>
+                            <div  class="item-control">
+                              <input v-model="postData.money" type="number" :placeholder="$t('placehoder[0]')"></div>
                           </div>
-<!--                          <div class="col-md-12 text-center">-->
-<!--                            <div-->
-<!--                              id="QRCode"-->
-<!--                              class="qrcode ewm-img"-->
-<!--                            >-->
-<!--                            </div>-->
-<!--                          </div>-->
-
-                          <div class="col-md-12 form-group mb-4">
-                            <br>
-                            <label>{{$t('walletAddress[0]')}}</label>
-                            <div class="input-group">
-                              <input readonly v-model="siteBank[0].rececode" class="form-control form--control" />
-                              <button class="input-group-text copytext copyBoard copy-btn copy" :data-clipboard-text="siteBank[0].rececode" @click="copy"><i class="fa fa-copy"></i></button>
-
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label><strong>{{$t('deposit[6]')}} <span class="text-danger">*</span> </strong></label>
-                              <van-uploader preview-size="5rem" class="upload" v-model="fileList" :max-count="1" :multiple="false" :after-read="afterRead" >
-                                <!--                        <input type="file" name="payment_voucher" class="form-control form&#45;&#45;control" required="">-->
-                                <div class="upload"><i class="fa fa-camera" style="font-size: 2rem"></i></div>
-                              </van-uploader>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-footer">
-                        <button type="button" class="btn btn--base btn-block btn-dark" @click="onSubmit">{{$t('deposit[7]')}}</button>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div v-else class="container">
-                <div class="">
-                  <div class="">
-                    <form>
-                      <div class="card custom--card">
-                        <div class="card-body">
-                          <div class="form-group" style="position: relative;">
-                            <label>{{$t('deposit[9]')}}</label>
-                            <div class="input-group" style="width: 100%">
-                              <div class="el-form-item__content" style="width: 100%">
-                                <div class="el-select" @click="showSelect = !showSelect">
-                                  <div class="el-input el-input--suffix">
-                                    <div  class="el-input__inner">
-                                      <div>
-                                        <img v-if="selectTypes.qrcode !=''" :src="InitData.setting.up_url + selectTypes.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">
-                                        <span>{{selectTypes.name==''?$t('recharge.placeholder[1]'):selectTypes.name}}</span>
-                                      </div>
-                                      <div class="selectShow" v-show="showSelect">
-                                        <div  :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
-                                          <img :src="InitData.setting.up_url + item.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">
-                                          {{item.name}}
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <span
-                                      class="el-input__suffix"><span class="el-input__suffix-inner"><i
-                                      class="fa fa-angle-down"></i></span>
-                        </span>
-                                  </div>
+                          <div  class="item" style="margin-top: 1.25rem;">
+                            <div  class="item-label">{{$t('deposit[2]')}}</div>
+                            <div  class="item-control">
+                              <div  class="select row g-3">
+                                <div  class="col-6 col-sm-3" :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
+                                  <div  :class="'select-i '+(item.name ==selectTypes.name?'active':'')">
+                                    <img :src="InitData.setting.up_url + item.qrcode" style="width: 36px;vertical-align: middle;display: inline-block;">
+                                    <span >{{item.name}}</span></div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <label>{{$t('deposit[10]')}}</label>
-                            <div class="input-group">
-                              <input type="text" name="amount" class="form-control form--control" autocomplete="off" v-model="postData.money">
-                              <span class="input-group-text">{{InitData.currency}}</span>
+                          <div  class="row gy-3 but-wrap mt-3">
+                            <div  class="col-12 col-sm-6 convert">
+                              <div  class="me-3">
+                                <p  class="p2">{{postData.money}} USDT = {{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></p></div>
+                              <img v-if="selectTypes.qrcode !=''" :src="InitData.setting.up_url + selectTypes.qrcode" style="width: 36px;vertical-align: middle;display: inline-block;">
                             </div>
-                          </div>
-                          <div class="mt-3">
-                            <ul class="list-group text-center">
-                              <li class="list-group-item d-flex justify-content-between">
-                                <span class="font-weight-bold">{{$t('deposit[11]')}}</span>
-                                <span><span class="min font-weight-bold">{{rechargeInfo.minPrice}} </span> {{InitData.currency}} - <span class="max font-weight-bold">{{rechargeInfo.maxPrice}}</span> {{InitData.currency}}</span>
-                              </li>
-                              <li class="list-group-item d-flex justify-content-between">
-                                <span class="font-weight-bold">{{$t('wallet.label[8]')}}</span>
-                                <span><span class="charge font-weight-bold">{{rechargeInfo.fee ||0}}%</span> </span>
-                              </li>
-                              <li class="list-group-item d-flex justify-content-between">
-                                <span class="font-weight-bold">{{$t('deposit[12]')}}</span> <span><span class="payable font-weight-bold">{{postData.money-parseFloat(postData.money*parseFloat(rechargeInfo.fee)/100)}}</span> {{InitData.currency}}</span>
-                              </li>
-                              <li class="list-group-item justify-content-between rate-element d-flex"><span class="font-weight-bold">{{$t('deposit[22]')}}</span> <span><span class="font-weight-bold">1 USDT ≈ <span class="rate">{{selectTypes.rate}}</span>  <span class="base-currency" v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span class="base-currency" v-else>{{selectTypes.name}}</span></span></span></li>
-                              <li class="list-group-item justify-content-between in-site-cur d-flex">
-                                <span class="font-weight-bold">≈  <span class="base-currency">{{selectTypes.name}}</span></span>
-                                <span class="final_amo font-weight-bold">{{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}}</span>
-                              </li>
-                              <!--                      <li class="list-group-item justify-content-center crypto_currency d-none">-->
-                              <!--                        <span>Conversion with <span class="method_currency">LTC</span> and final value will Show on next step</span>-->
-                              <!--                      </li>-->
-                            </ul>
+                            <div  class="col-12 col-sm-6 justify-content-lg">
+                              <button @click="selectType"  class="btn btn-dark w-100" style="max-width: 300px;">{{$t('deposit[26]')}}</button></div>
                           </div>
                         </div>
-                        <div class="card-footer">
-                          <button type="button" class="btn btn--base btn-block btn-dark" @click="selectType()">{{$t('deposit[13]')}}</button>
-                        </div>
-<!--                        <div style="padding: 1rem;color: #e73329;">-->
-<!--                          {{$t('rechargefoot[0]')}}-->
-<!--                        </div>-->
                       </div>
-                    </form>
+                    </div>
+                  </div>
+                </div>
+                <div  class="mt-4">
+                  <div class="user-panel-title-box">
+                    <h3>{{$t('deposit[3]')}}</h3></div>
+                  <div class="profile-setting-panel-wrap">
+                    <div class="table-responsive">
+                      <table class="table mb-0 table-s2">
+                        <thead class="fs-14">
+                        <tr>
+                          <th scope="col" class="text-center">{{$t('deposit[14]')}}</th>
+                          <th scope="col" class="text-center">{{$t('deposit[18]')}}</th>
+                          <th scope="col" class="text-center">{{$t('deposit[15]')}}</th>
+                          <th scope="col" class="text-center">{{$t('deposit[16]')}}</th>
+<!--                          <th scope="col" class="text-center">USDT</th>-->
+<!--                          <th scope="col" class="text-center">Balance</th>-->
+<!--                          <th scope="col" class="text-center">Type</th>-->
+<!--                          <th scope="col" class="text-center">Wallet Address</th>-->
+                          <th scope="col" class="text-center">{{$t('deposit[17]')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody class="fs-13">
+                        <tr v-for="(item,index) in listData" :key="index">
+                          <td class="text-center small" style="font-size: 12px;">{{item.dan}}</td>
+                          <td class="text-center small" style="font-size: 12px;">{{item.adddate}}</td>
+                          <td class="text-center">
+                            <a class="forum-title fw-bold font-weight-bold text-uppercase" style="color: rgb(12, 102, 255);">{{item.pay_type}}</a></td>
+                          <td class="text-center small" style="font-size: 12px;">{{InitData.currency}}{{item.money}}</td>
+<!--                          <td class="text-center small" style="font-size: 12px;">{{InitData.currency}}{{item.money}}</td>-->
+<!--                          <td class="text-center small" style="font-size: 12px;">{{InitData.currency}}{{item.money}}</td>-->
+<!--                          <td class="text-center small">-->
+<!--                            <span class="badge text-bg-success">Deposit</span>-->
+<!--                          </td>-->
+                          <td class="text-center small">
+                            <span class="badge fw-medium text-bg-success" v-if="item.status==3">{{item.status_desc}}</span>
+                            <span class="badge fw-medium text-bg-danger" style="background: rgb(234, 84, 85);"  v-else-if="item.status==-1">{{item.status_desc}}</span>
+                            <span class="badge fw-medium text-bg-primary"  v-else>{{item.status_desc}}</span>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="text-center mt-4 mt-md-5">
+                      <div class="pagination-box">
+                        <div class="pagination-pc el-pagination is-background">
+                          <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+                          </button>
+                          <ul class="el-pager">
+                            <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+                          </ul>
+                          <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+                        </div>
+                        <div class="pagination-h5 el-pagination is-background">
+                          <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+                          </button>
+                          <ul class="el-pager">
+                            <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+                          </ul>
+                          <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            <div >
-              <section  class="section" style="padding-bottom: 0px;z-index: 1;">
-                <div  class="container">
-                  <div  class="el-row"><h4 >{{$t('wallet.default[3]')}}</h4></div>
-                  <div  class="row">
-                    <div  class="col-24" style="width: 100%; padding: 10px;">
-                      <div  class="table-responsive bg-white shadow rounded mt-4">
-                        <table  class="table mb-0 table-center">
-                          <thead  class="bg-light">
-                          <tr >
-                            <th class="text-center">{{$t('deposit[14]')}}</th>
-                            <th class="text-center">{{$t('deposit[15]')}}</th>
-                            <th class="text-center">{{$t('deposit[16]')}}</th>
-                            <th class="text-center">{{$t('deposit[17]')}}</th>
-                            <th class="text-center">{{$t('deposit[18]')}}</th>
-                            <th class="text-center">{{$t('deposit[19]')}}</th>
-                          </tr>
-                          </thead>
-                          <tbody >
-                          <tr class="tr" v-for="(item,index) in listData" :key="index">
-                            <td class="td">{{item.dan}}</td>
-                            <td class="td">{{item.pay_type}}</td>
-                            <td class="td">{{InitData.currency}}{{item.money}}</td>
-                            <td class="td">
-                              <div class="badge badge-warning" v-if="item.status==3">{{item.status_desc}}</div>
-                              <div class="badge badge-warning"  v-else-if="item.status==-1">{{item.status_desc}}</div>
-                              <div class="status-tag"  v-else>{{item.status_desc}}</div>
-                            </td>
-                            <td class="td">{{item.adddate}}</td>
-                            <td class="td">
-                              <div class="detail-btn" @click="showD(item)"><i class="el-icon-monitor"></i></div>
-                            </td>
-                          </tr>
-                          </tbody>
-                        </table>
+              <div v-if="showPrice && siteBank.length>0"  class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="background: rgba(0, 0, 0, 0.4);display: block;">
+                <div  class="modal-dialog w-90 modal-dialog-centered" style="max-width: 990px; margin: 1rem auto;color: #000;">
+                  <div  class="modal-content">
+                    <div  class="modal-header">
+                      <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="showPrice = false">
+                        <img  :src="'./static/img/btn-close.cf43e123.svg'" alt=""></button>
+                    </div>
+                    <div  class="modal-body p-3">
+                      <div class="title">
+                        {{$t('deposit1[0]')}} <span style="color: #722283">{{InitData.currency}}{{postData.money}}</span>,
+                        {{$t('deposit1[1]')}}
+                        <span style="color: #722283">{{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></span>
+                        {{$t('deposit1[2]')}}
+                      </div>
+                      <div class="desc">
+                        {{$t('deposit1[3]')}}
+                      </div>
+                      <div  class="pay-info">
+<!--                        <div class="pay-info_codeQr col-12 col-md-4 text-center">-->
+<!--                          <div id="QRCode" class="el-image qrcode ewm-img">-->
+<!--                          </div>-->
+<!--                        </div>-->
+                        <div  class="pay-info_right col-12 col-md-12 mt-md-gs">
+                          <div  class="item">
+                            <div  class="label" style="display: flex;">{{$t('deposit[33]')}}
+                            <div style="color: #e73329;margin-left: 2rem;" v-if="siteBank[0].recename=='XRP'"> {{$t('tag[0]')}} {{siteBank[0].bank}}</div>
+                            </div>
+                            <div class="input-group">
+                            <input disabled="disabled" v-model="siteBank[0].rececode" class="disabled-input" />
+                            <div class="copy-btn copy" :data-clipboard-text="siteBank[0].rececode" @click="copy"><i class="el-icon-document-copy"></i></div>
+                          </div>
+                          </div>
+
+<!--                          <div  class="convert mt-4">-->
+<!--                            <div  class="me-2">-->
+<!--                              <p  class="p1">{{$t('deposit[34]')}}</p>-->
+<!--                              <p  class="p2">{{postData.money}} USDT = {{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></p></div>-->
+<!--                              <img v-if="selectTypes.qrcode !=''" :src="InitData.setting.up_url + selectTypes.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">-->
+<!--                          </div>-->
+<!--                          <div  class="el-upload-list-wrap mt-3">-->
+<!--                            <ul  class="el-upload-list el-upload-list&#45;&#45;text"></ul>-->
+<!--                          </div>-->
+<!--                          <div  class="btns-wrap d-flex flex-column flex-sm-row">-->
+<!--                            <van-uploader preview-size="5rem" class="upload" v-model="fileList" :max-count="1" :multiple="false" :after-read="afterRead" >-->
+<!--                              <div class="upload">-->
+<!--                                <button class="w-100 btn1 btn-outline-dark mt-4">+ {{$t('deposit[35]')}}</button>-->
+<!--                              </div>-->
+<!--                            </van-uploader>-->
+<!--                          </div>-->
+                          <div class="info-item">
+                            <div class="label">{{$t('deposit[6]')}}</div>
+                            <div class="upload-box">
+                              <div tabindex="0" class="el-upload el-upload--text" >
+                                <van-uploader preview-size="25rem" class="upload" v-model="fileList" :max-count="1" :multiple="false" :after-read="afterRead" >
+                                  <div class="upload"><i class="el-icon-upload"></i></div>
+                                </van-uploader>
+                              </div>
+                              <div style="padding: 1rem;font-size: 1.1rem;">
+                                {{$t('aa[0]')}}<br><br>
+                                {{$t('tips[0]')}} <span style="color:#bb2d3b"> {{$t('tips[1]')}}</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="btns-wrap d-flex flex-column flex-sm-row"><!---->
+                            <button style="width: 100%;" class="btn btn-dark mt-3" @click="onSubmit">{{$t('submit')}}</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div  class="mt-3">
-                    <div  style="display: flex; justify-content: center;">
-                      <ul  role="menubar" aria-disabled="false" aria-label="Pagination"
-                           class="pagination b-pagination pagination-lg">
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(1)">
-                          <span role="menuitem" aria-label="Go to first page"  aria-disabled="true" class="page-link">First</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_current_page==1?'disabled':'')" @click="perPage"><span role="menuitem"
-                                                                                                                                                     aria-label="Go to previous page"
-                                                                                                                                                     aria-disabled="true"
-                                                                                                                                                     class="page-link">Prev</span>
-                        </li>
-                        <li role="presentation" class="page-item active">
-                          <button role="menuitemradio" type="button" @click="changePage(data_current_page)" :class="'number active'" class="page-link">{{data_current_page}}
-                          </button>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_total_page==data_current_page?'disabled':'')" @click="nextPage"><span role="menuitem"
-                                                                                                                                                                    aria-label="Go to next page"
-                                                                                                                                                                    aria-disabled="true"
-                                                                                                                                                                    class="page-link">Next</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(data_total_page)"><span role="menuitem"
-                                                                                                                                 aria-label="Go to last page"
-                                                                                                                                 aria-disabled="true"
-                                                                                                                                 class="page-link">Last</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div  class="mt-3" v-if="listData.length==0">
-                    <div  class="d-grid gap-2">
-                      <button  type="button"
-                               class="btn btn btn-primary disabled btn-secondary btn-block">{{$t('vanPull[1]')}}
-                      </button>
-                    </div>
+<!--                    <div  class="el-alert el-alert&#45;&#45;warning is-light text-center" role="alert">-->
+<!--                      <i class="el-icon el-alert__icon">-->
+<!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">-->
+<!--                          <path fill="currentColor" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm0 192a58.432 58.432 0 0 0-58.24 63.744l23.36 256.384a35.072 35.072 0 0 0 69.76 0l23.296-256.384A58.432 58.432 0 0 0 512 256zm0 512a51.2 51.2 0 1 0 0-102.4 51.2 51.2 0 0 0 0 102.4z"></path>-->
+<!--                        </svg>-->
+<!--                      </i>-->
+<!--                      <div class="el-alert__content">-->
+<!--                        <span class="el-alert__title">{{$t('deposit[36]')}}</span>-->
+<!--                      </div>-->
+<!--                    </div>-->
                   </div>
                 </div>
-              </section>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <div v-if="showDetail" id="__BVID__247___BV_modal_outer_" style="position: absolute; z-index: 1040;">
-      <div id="__BVID__247" role="dialog" aria-labelledby="__BVID__247___BV_modal_title_"
-           aria-describedby="__BVID__247___BV_modal_body_" class="modal fade show" aria-modal="true"
-           style="display: block;">
-        <div class="modal-dialog modal-md modal-dialog-centered"><span tabindex="0"></span>
-          <div id="__BVID__247___BV_modal_content_" tabindex="-1" class="modal-content">
-            <header id="__BVID__247___BV_modal_header_" class="modal-header"><h5 id="__BVID__247___BV_modal_title_"
-                                                                                 class="modal-title">{{$t('deposit[19]')}}</h5>
-              <button type="button" aria-label="Close" class="close" @click="showDetail = false">×</button>
-            </header>
-            <div id="__BVID__247___BV_modal_body_" class="modal-body">
-              <div class="deposit-info">
-                <div class="info">{{$t('deposit[14]')}}: {{detailItem.dan}}</div>
-                <div class="info">{{$t('deposit[15]')}}: {{detailItem.pay_type}}</div>
-                <div class="info">{{$t('deposit[16]')}}: {{InitData.currency}}{{detailItem.money}}</div>
-                <div class="info">{{$t('deposit[17]')}}: {{detailItem.status_desc}}</div>
-                <div class="info">{{$t('deposit[18]')}}: {{detailItem.adddate}}</div>
-                <!--                <div class="info">{{$t('deposit[20]')}}: $0.00</div>-->
-                <!--                <div class="info">{{$t('deposit[21]')}}: $423.00</div>-->
-                <!--                <div class="info">{{$t('deposit[22]')}}: 1 USD = 1 USDT-TRC20[Network:Tron]</div>-->
-                <!--                <div class="info">{{$t('deposit[23]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
-                <!--                <div class="info">{{$t('deposit[24]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
-              </div>
-              <div class="payment-info" v-if="detailItem.screenshots!=''" >
-                <div class="title">{{$t('deposit[25]')}}</div>
-                <img :src="InitData.setting.up_url+ detailItem.screenshots"
-                     class="upload-img">
-              </div>
-            </div>
-            <footer id="__BVID__247___BV_modal_footer_" class="modal-footer">
-              <div  class="w-100">
-                <button @click="showDetail = false" type="button" class="btn float-left ml-2 btn-primary">{{$t('confirm')}}</button>
-              </div>
-            </footer>
-          </div>
-          <span tabindex="0"></span></div>
-      </div>
-      <div id="__BVID__247___BV_modal_backdrop_" class="modal-backdrop"></div>
-    </div>
-
     <Footer></Footer>
   </div>
 </template>
@@ -279,7 +260,7 @@
   import Clipboard from 'clipboard';
   import UserHeader from '@/components/UserHeader'
   export default {
-    name: 'deposit',
+    name: 'loginPassword',
     components: {
       UserHeader
     },
@@ -351,6 +332,14 @@
         }
       });
       this.getListData('init');
+      let that = this;
+      that.$Model.HasNewMessage(data=>{
+        if (data.data == 1) {
+          that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
+            that.$router.push(`/message`)
+          }, that.$t('messageInfo[1]'));
+        }
+      })
     },
     mounted() {
     },
@@ -485,14 +474,12 @@
                 if (data.data.length > 0) {
                   let t = data.data[0].rececode;
                   data.data[0].rececode = t;
-                  // this.$nextTick(() => {
-                  //   new QRCode(document.getElementById("QRCode"), {
-                  //     text: t,
-                  //     width: 100,
-                  //     height: 100,
-                  //     correctLevel: QRCode.CorrectLevel.H
-                  //   });
-                  // });
+                  this.$nextTick(() => {
+                    new QRCode(document.getElementById("QRCode"), {
+                      text: t,
+                      correctLevel: QRCode.CorrectLevel.H
+                    });
+                  });
                 } else {
                   this.$Dialog.Toast('no config');
                 }
@@ -746,11 +733,11 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
+    background-color: #1c2b46 !important;
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff !important;
+    color: #1c2b46 !important;
   }
 
   .el-message {
@@ -813,16 +800,16 @@
   }
 
   .el-input {
-    font-size: 1rem !important;
+    font-size: 1.5rem !important;
   }
 
   .el-input .el-input__inner {
-    height: 50px;
-    line-height: 50px;
-    padding: 0px 1.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0px 2rem;
     font-family: myFont;
-    color: #000;
-    border: 1px solid #374161 !important;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(217, 217, 217) !important;
   }
 
   .el-textarea__inner {
@@ -1515,7 +1502,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: rgb(251, 194, 65);
+    background-color:#1c2b46;
   }
 
   .slide-enter-active, .slide-leave-active {
@@ -1573,11 +1560,11 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
+    background-color: #1c2b46 !important;
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff !important;
+    color: #1c2b46 !important;
   }
 
   .el-message {
@@ -1640,22 +1627,21 @@
   }
 
   .el-input {
-    font-size: 1rem !important;
-    color: #ffffff;
+    font-size: 1.5rem !important;
   }
 
   .el-input .el-input__inner {
-    height: 50px;
-    line-height: 50px;
-    padding: 0px 1.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0px 2rem;
     font-family: myFont;
-    color: #000;
-    border: 1px solid #374161 !important;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(217, 217, 217) !important;
   }
 
   .el-textarea__inner {
     font-family: myFont;
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
     color: rgb(0, 0, 0) !important;
   }
 
@@ -1775,15 +1761,15 @@
       overflow-wrap: break-word;
     }
 
-    .container .box .info-list .info-item .input-group {
+    .info-item .input-group {
       display: flex;
       align-items: center;
       width: 100%;
     }
 
-    .container .box .info-list .info-item .input-group .disabled-input {
-      width: 100%;
-      height: 4.5rem;
+    .input-group .disabled-input {
+      width: 90%;
+      height: 2.5rem;
       box-sizing: border-box;
       padding: 0px 2rem;
       border-top: 1px solid rgb(217, 217, 217);
@@ -1793,46 +1779,46 @@
       border-right: none;
       border-radius: 4px 0px 0px 4px;
       outline: none;
-      font-size: 1.6rem;
+      font-size: 0.8rem;
       font-family: myFont;
       font-weight: 700;
       color: rgb(0, 0, 0);
       background-color: rgb(255, 255, 255);
     }
 
-    .container .box .info-list .info-item .input-group .input {
+    .input-group .input {
       width: 100%;
-      height: 4.5rem;
+      height: 2.5rem;
       box-sizing: border-box;
       padding: 0px 2rem;
       border: 1px solid rgb(217, 217, 217);
       border-radius: 4px;
       outline: none;
-      font-size: 1.6rem;
+      font-size: 0.8rem;
       font-family: myFont;
       color: rgb(0, 0, 0);
       background-color: rgb(255, 255, 255);
     }
 
-    .container .box .info-list .info-item .input-group .copy-btn {
+    .input-group .copy-btn {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 4.5rem;
+      height: 2.5rem;
       box-sizing: border-box;
-      padding: 0px 1.2rem;
+      padding: 0px 0.6rem;
       border-radius: 0px 4px 4px 0px;
       background-color: rgb(251, 194, 65);
       cursor: pointer;
     }
 
-    .container .box .info-list .info-item .input-group .copy-btn i {
-      font-size: 1.8rem;
+    .input-group .copy-btn i {
+      font-size: 1.3rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
     }
 
-    .container .box .info-list .info-item .upload-box {
+     .info-item .upload-box {
       width: 100%;
       display: flex;
     }
@@ -1934,15 +1920,15 @@
       overflow-wrap: break-word;
     }
 
-    .container .box .info-list .info-item .input-group {
+     .input-group {
       display: flex;
       align-items: center;
       width: 100%;
     }
 
-    .container .box .info-list .info-item .input-group .disabled-input {
-      width: 100%;
-      height: 4.5rem;
+   .input-group .disabled-input {
+      width: 80%;
+      height: 2.5rem;
       box-sizing: border-box;
       padding: 0px 2rem;
       border-top: 1px solid rgb(217, 217, 217);
@@ -1952,41 +1938,41 @@
       border-right: none;
       border-radius: 4px 0px 0px 4px;
       outline: none;
-      font-size: 1.5rem;
+      font-size: 0.8rem;
       font-family: myFont;
       font-weight: 700;
       color: rgb(0, 0, 0);
       background-color: rgb(255, 255, 255);
     }
 
-    .container .box .info-list .info-item .input-group .input {
+     .input-group .input {
       width: 100%;
-      height: 4.5rem;
+      height: 2.5rem;
       box-sizing: border-box;
       padding: 0px 2rem;
       border: 1px solid rgb(217, 217, 217);
       border-radius: 4px;
       outline: none;
-      font-size: 1.5rem;
+      font-size: 0.8rem;
       font-family: myFont;
       color: rgb(0, 0, 0);
       background-color: rgb(255, 255, 255);
     }
 
-    .container .box .info-list .info-item .input-group .copy-btn {
+    .input-group .copy-btn {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 4.5rem;
+      height: 2.5rem;
       box-sizing: border-box;
-      padding: 0px 1.2rem;
+      padding: 0px 0.6rem;
       border-radius: 0px 4px 4px 0px;
       background-color: rgb(251, 194, 65);
       cursor: pointer;
     }
 
-    .container .box .info-list .info-item .input-group .copy-btn i {
-      font-size: 1.8rem;
+     .input-group .copy-btn i {
+      font-size: 1.3rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
     }
@@ -2210,30 +2196,197 @@
   }
 .selectShow {
   position: absolute;
-  top: 3.5rem;
+  top: 5rem;
   left: 0px;
   width: -webkit-fill-available;
   background: #fff;
   z-index: 999;
   padding: 0 2rem;
   border: 1px solid #ccc;
-  color: #000000;
 }
-.qrcode {
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-}
-.qrcode>>>img,.qrcode>>>canvas {
-    width: 40% !important;
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-    padding: 5%;
-    background: #fff;
+  .form {
+    background: #f8f9fc;
+    border-radius: .5rem;
+    padding: 1.3125rem
   }
-  .van-uploader {
-    display: block;
+
+  .form .item-label {
+    height: 1.3125rem;
+    font-size: .9375rem;
+    font-weight: 400;
+    color: #333947;
+    line-height: 1.3125rem
+  }
+
+  .form .item-control {
+    margin-top: .625rem
+  }
+
+  .form .item-control input {
     width: 100%;
+    height: 2.6875rem;
+    border: 1px solid #fff;
+    padding: 0 1rem;
+    background: #fff;
+    border-radius: 4px;
+    font-size: .9375rem;
+    font-weight: 400;
+    color: #1c2a46;
+    line-height: 2.6875rem;
+    transition: all .3s ease
+  }
+
+  .form .item-control input:focus {
+    outline: none;
+    border: 1px solid rgba(var(--bs-link-color-rgb))
+  }
+
+  .form .item-control input::-webkit-input-placeholder {
+    color: #8091a7
+  }
+
+  .form .item-control input:-moz-placeholder,.form .item-control input::-moz-placeholder {
+    color: #8091a7
+  }
+
+  .form .item-control input:-ms-input-placeholder {
+    color: #8091a7
+  }
+
+  .form .item-control .select-i {
+    background: #fff;
+    border-radius: 4px;
+    padding: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .3s ease
+  }
+
+  .form .item-control .select-i.active {
+    border-color: rgba(var(--bs-link-color-rgb))
+  }
+
+  .form .item-control .select-i span {
+    margin-top: .625rem;
+    font-size: .9375rem;
+    font-weight: 400;
+    color: #1c2a46;
+    line-height: 1.3125rem
+  }
+
+  .info-wrap {
+    background: #f4f4f4;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1c2a46;
+    line-height: 1.375rem;
+    padding: 1rem
+  }
+
+  .convert {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1rem;
+    line-height: 1.375rem
+  }
+
+  .convert .p1 {
+    color: #1c2a46
+  }
+
+  .convert .p2 {
+    color: #198754;
+    margin-top: 2px
+  }
+
+  .pay-info_right .item .label {
+    font-size: .9375rem;
+    font-weight: 500;
+    color: #1c2a46;
+    line-height: 1.3125rem
+  }
+
+  .pay-info_right .item .value {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #1c2a46;
+    line-height: 1.5625rem;
+    margin-top: .1875rem
+  }
+
+  .el-icon {
+    cursor: pointer
+  }
+  .btn-prev>>>.el-icon,.btn-next>>>.el-icon {
+    width: 100%;
+    text-align: center;
+  }
+  .el-icon:hover {
+    color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1))
+  }
+
+  .el-upload-list-wrap .el-upload-list__item .el-upload-list__item-status-label {
+    display: block
+  }
+
+  .el-upload-list-wrap .el-upload-list__item .el-icon--close,.el-upload-list-wrap .el-upload-list__item:hover .el-upload-list__item-status-label {
+    display: none
+  }
+
+  .el-upload-list-wrap .el-upload-list__item:hover .el-icon--close {
+    display: block
+  }
+  .btn1 {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    font-size: 1rem;
+    height: auto;
+  }
+  .upload .el-upload {
+    width: 100%
+  }
+
+  @media(min-width: 768px) {
+    .modal-dialog {
+      width:70vw
+    }
+  }
+  .el-image {
+    padding: 30px;
+  }
+
+  .container .box .info-list .info-item .upload-box {
+    width: 100%;
+    display: flex;
+  }
+
+  .info-item .upload-box .upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    min-height: 12rem;
+    border-radius: 4px;
+    background-color: rgb(252 243 255);
+  }
+
+  .info-item .upload-box .upload i {
+    font-size: 7.2rem;
+    color: rgb(168 119 255);
+    white-space: nowrap;
+  }
+
+  .info-item .upload-box .upload-img {
+    display: block;
+    width: 12rem;
   }
 </style>
 

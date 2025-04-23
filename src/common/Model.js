@@ -834,7 +834,7 @@ const model = {
 
   TeamReport(json, callback) {
 
-    $Dialog.Loading(i18n.t('dialog[6]'));
+    // $Dialog.Loading(i18n.t('dialog[6]'));
 
     const getResponse = ({
 
@@ -842,7 +842,7 @@ const model = {
 
     }) => {
 
-      $Dialog.Close();
+      // $Dialog.Close();
 
       callback && callback(data);
 
@@ -1096,7 +1096,7 @@ const model = {
 
       callback && callback(data);
 
-      // $Dialog.Close();
+      $Dialog.Close();
 
     }
 
@@ -1377,6 +1377,14 @@ const model = {
     axios.get('market/detail/merged?symbol='+symbol, {
       diyApi: true
     }).then(getResponse);
+  },
+  getCode1(code, callback) {
+    const getResponse = ({
+                           data
+                         }) => {
+      callback && callback(data);
+    }
+    axios.get('Account/code1?code_rand='+code, {}).then(getResponse);
   },
 }
 

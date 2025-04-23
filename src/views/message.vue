@@ -1,102 +1,141 @@
 <template>
   <div class="HomePage" id="app">
     <Header></Header>
-    <div class="container">
-      <div class="el-row">
-        <div class="el-col el-col-5">
-          <UserHeader></UserHeader>
+    <section class="user-panel-section" style="padding: 20px 0px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="sidebar-head d-flex flex-wrap align-items-center justify-content-between">
+              <h3 class="sidebar-head-title"></h3>
+            </div>
+            <div class="sidebar sidebar-user-mobile">
+              <a href="javascript:;" class="icon-btn menu-toggler-user-close">
+                <em class="ni ni-cross"></em>
+              </a>
+              <div class="sidebar-widget">
+                <ul class="user-nav">
+                  <li class="">
+                    <a aria-current="page" href="javascript:;" @click="$router.push('/dashboard')" class="router-link-active router-link-exact-active">
+                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[1]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/transactions')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[2]')}}</a>
+                  </li>
+                  <li class="active">
+                    <a href="javascript:;" @click="$router.push('/message')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('head[13]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/deposit')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[3]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;"  @click="$router.push('/withdraw')">
+                      <em class="ni me-2 ni-exchange"></em>{{$t('header[4]')}}</a>
+                  </li>
+                  <li class=""  v-if="InitData.setting.luckydraw !=undefined && InitData.setting.luckydraw.status ==1">
+                    <a href="javascript:;"  @click="$router.push('/lucky')">
+                      <em class="ni me-2 ni-gift"></em>{{$t('common[2]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/MyPackages')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[5]')}}</a>
+                  </li>
+<!--                  <li class="">-->
+<!--                    <a href="javascript:;" @click="$router.push('/contracts')">-->
+<!--                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[6]')}}</a>-->
+<!--                  </li>-->
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/affiliates')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[7]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/loginPassword')">
+                      <em class="ni me-2 ni-account-setting"></em>{{$t('header[8]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/message')">
+                      <em class="ni me-2 ni-megento"></em>{{$t('head[13]')}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-10 ps-xl-5">
+            <div class="my-order">
+              <div class="user-panel-title-box">
+                <h2 data-v-353dc8c4="">{{$t('head[13]')}}</h2></div>
+              <div class="profile-setting-panel-wrap">
+                <div class="table-responsive">
+                  <table class="table mb-0 table-s2">
+                    <thead class="fs-14">
+                    <tr>
+                      <th scope="col" class="text-center">{{$t('messageInfo[3]')}}</th>
+                      <th scope="col" class="text-center">{{$t('messageInfo[4]')}}</th>
+                      <th scope="col" class="text-center">{{$t('messageInfo[5]')}}</th>
+                    </tr>
+                    </thead>
+                    <tbody class="fs-13">
+                    <tr v-for="(item,index) in listData" :key="index">
+                      <td class="text-center small" style="font-size: 12px;">{{item.createtime}}</td>
+                      <td class="text-center small" style="font-size: 12px;">{{item.title}}</td>
+                      <td class="text-center small" style="font-size: 12px;display: flex;justify-content: center;">
+                        <div class="detail-btn" v-if="item.read==0" @click="clkItem(item,index)"><i class="el-icon-monitor"></i></div>
+                        <div class="detail-btn-read" v-else @click="clkItem(item,index)"><i class="el-icon-monitor"></i></div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="text-center mt-4 mt-md-5">
+                  <div class="pagination-box">
+                    <div class="pagination-pc el-pagination is-background">
+                      <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+                      </button>
+                      <ul class="el-pager">
+                        <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+                      </ul>
+                      <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+                    </div>
+                    <div class="pagination-h5 el-pagination is-background">
+                      <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+                      </button>
+                      <ul class="el-pager">
+                        <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+                      </ul>
+                      <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-          <section data-v-19c9d02c="" data-v-23f21a9a="" class="section pt-0" style="padding-bottom: 0px; margin-top: 50px;">
-            <div class="table-responsive--md">
-              <table class="table custom--table">
-                <thead>
-                <tr>
-                  <th>{{$t('messageInfo[3]')}}</th>
-                  <th>{{$t('messageInfo[4]')}}</th>
-                  <th>{{$t('messageInfo[5]')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-if="listData.length==0">
-                  <td colspan="100%" class="text-center">{{$t('vanPull[1]')}}</td>
-                </tr>
-                <tr v-for="(item,index) in listData" :key="index">
-                  <td :data-label="$t('messageInfo[3]')">
-                    <strong>{{item.createtime}}</strong>
-                  </td>
-
-                  <td :data-label="$t('messageInfo[4]')">
-                    <strong>{{item.title}}</strong>
-                  </td>
-
-                  <td :data-label="$t('messageInfo[5]')">
-                    <button v-if="item.read==1" class="btn btn--base btn-sm approveBtn" @click="clkItem(item,index)">
-                      <i class="fa fa-desktop"></i>
-                    </button>
-                    <button v-else style="background: red" class="btn btn--base btn-sm approveBtn" @click="clkItem(item,index)">
-                      <i class="fa fa-desktop"></i>
-                    </button>
-                  </td>
-
-                </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="pagination-box">
-              <div class="pagination-pc el-pagination is-background">
-                <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev">
-                  <i class="fa fa-angle-left"></i>
-                </button>
-                <ul class="el-pager">
-                  <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-                </ul>
-                <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next">
-                  <i class="fa fa-angle-right"></i></button>
-              </div>
-              <div class="pagination-h5 el-pagination is-background">
-                <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev">
-                  <i class="fa fa-angle-left"></i>
-                </button>
-                <ul class="el-pager">
-                  <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-                </ul>
-                <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next">
-                  <i class="fa fa-angle-right"></i></button>
-              </div>
-            </div>
-          </section>
+      </div>
+    </section>
+    <div class="mask" v-if="showNotice">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">{{msg_title}}</div>
+          <div class="close" @click="showNotice = false"><i class="el-icon-close"></i></div>
+        </div>
+        <div class="modal-body">
+          <div class="payment-info" v-html="msg_content">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="confirm-btn" @click="showNotice= false">{{$t('confirm')}}</div>
         </div>
       </div>
     </div>
     <Footer></Footer>
-    <div id="approveModal" v-if="showNotice" class="modal custom--modal fade show" tabindex="-1" style="display: block; padding-left: 0px;" aria-modal="true" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{msg_title}}</h5>
-            <button type="button" class="btn btn--danger text-white" data-bs-dismiss="modal" aria-label="Close" @click="showNotice = false">
-              <i class="las la-times"></i>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="payment-info" v-html="msg_content">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" @click="showNotice = false" data-bs-dismiss="modal">{{$t('deposit[28]')}}</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 <script>
-  import UserHeader from '@/components/UserHeader'
   export default {
     name: 'transaction',
     components: {
-      UserHeader
     },
     data() {
       return {
@@ -591,6 +630,17 @@
     background-color: rgb(251, 194, 65);
     cursor: pointer;
   }
+  .detail-btn-read {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 4.5rem;
+    max-width: 4.5rem;
+    height: 3.5rem;
+    border-radius: 4px;
+    background-color: #eee;
+    cursor: pointer;
+  }
   @media only screen and (min-width: 1024px) {
     .mask {
       position: fixed;
@@ -607,9 +657,11 @@
 
     .mask .modal {
       width: 80%;
-      margin: 0px auto;
       border-radius: 4px;
       background-color: rgb(255, 255, 255);
+      display: block;
+      margin: 0 auto;
+      margin-left: 10%;
     }
 
     .mask .modal .modal-header {
@@ -653,6 +705,7 @@
       min-height: 8rem;
       box-sizing: border-box;
       padding: 2rem;
+      overflow-y: scroll;
     }
 
     .mask .modal .modal-footer {
@@ -668,9 +721,9 @@
       height: 3.5rem;
       line-height: 3.5rem;
       box-sizing: border-box;
-      padding: 0px 1.6rem;
+      padding: 0px 1.2rem;
       border-radius: 4px;
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: rgb(255, 255, 255);
       text-align: center;
@@ -698,6 +751,8 @@
       width: 100%;
       border-radius: 4px;
       background-color: rgb(255, 255, 255);
+      display: block;
+      margin: 0 auto;
     }
 
     .mask .modal .modal-header {
@@ -741,6 +796,7 @@
       min-height: 8rem;
       box-sizing: border-box;
       padding: 1.5rem;
+      overflow-y: scroll;
     }
 
     .mask .modal .modal-footer {
@@ -756,9 +812,9 @@
       height: 3.5rem;
       line-height: 3.5rem;
       box-sizing: border-box;
-      padding: 0px 1.6rem;
+      padding: 0px 1.2rem;
       border-radius: 4px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: rgb(255, 255, 255);
       text-align: center;
@@ -769,15 +825,8 @@
   }
   .payment-info {
     font-size: 1.2rem;
-    color: #000;
   }
   .payment-info img {
     width: 100%;
-  }
-  .modal {
-    display: block !important;
-  }
-  .modal-body {
-    color: #000000;
   }
 </style>

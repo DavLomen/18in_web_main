@@ -1,6 +1,6 @@
 <template>
 
-	<div class="Body" id="common-app">
+	<div class="Body" id="common-app" style="overflow-x: hidden;">
 <!--    <van-notice-bar-->
 <!--      style="position: absolute;left: 0;width: 100%;z-index: 99;"-->
 <!--      mode="closeable"-->
@@ -12,57 +12,69 @@
 <!--      @click="readMessage"-->
 <!--    />-->
 		<router-view v-if="isRouterAlive" />
+
     <div id="Service">
+<!--      <a :href="serviceList[0].url"  v-if="serviceList.length == 1" style="color: #999999">-->
+<!--        <img :src="`./static/icon/customer.png`" width="55">-->
+<!--        {{$t('common[0]')}}-->
+<!--      </a>-->
+<!--      <router-link to="/kefu_list" v-if="serviceList.length > 1" style="color: #999999">-->
+<!--        <img :src="`./static/icon/customer.png`" width="55">-->
+<!--        {{$t('common[0]')}}-->
+<!--      </router-link>-->
     </div>
-    <div class="footer-bar-wrap">
-      <div id="footer-bar" class="footer-bar-5">
-        <a @click="$router.push('/')" id="fhome" href="javascript:;" :class="footIndex==0?'active':''">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    <div  class="footer-bar-wrap">
+      <div  id="footer-bar" class="footer-bar-5">
+        <a  id="fhome" href="javascript:;" @click="$router.push('/')" class="">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-home1"></use>
           </svg>
-          <span>{{$t('head[0]')}}</span></a>
-        <a id="ffaqs" href="javascript:;" @click="$router.push('/product')" :class="footIndex==1?'active':''">
-          <svg   class="svg-icon feather feather-help-circle" aria-hidden="true">
+          <span  class="foot-bar-span">HOME</span></a>
+        <a  id="fplans" href="javascript:;" @click="$router.push('/contracts')" class="footer_iconfire">
+          <svg   class="svg-icon" aria-hidden="true">
             <use  xlink:href="#icon-collections"></use>
           </svg>
-          <span>{{$t('foot[2]')}}</span></a>
-        <a href="javascript:;" @click="$router.push('/dashboard')" :class="footIndex==3?'router-link-exact-active router-link-active active':'router-link-exact-active router-link-active'" id="fdashboard" aria-current="page">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command">
-            <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+          <span  class="foot-bar-span">CONTRACTS</span></a>
+        <a  href="javascript:;" @click="$router.push('/dashboard')"  class="router-link-active router-link-exact-active" id="fdashboard" aria-current="page">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-dashboard1"></use>
           </svg>
-          <span>{{$t('head[4]')}}</span></a>
-
-<!--        <a v-else href="javascript:;" @click="$router.push('/withdraw')" :class="footIndex==5?'active':''" id="fwithdraws">-->
-<!--          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
-<!--               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
-<!--               class="feather feather-credit-card">-->
-<!--            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>-->
-<!--            <line x1="1" y1="10" x2="23" y2="10"></line>-->
-<!--          </svg>-->
-<!--          <span id="fwithdraws2" class="foot-bar-span">{{$t('head[8]')}}</span></a>-->
-        <a id="freferral" @click="$router.push('/affiliates')" href="javascript:;" :class="footIndex==2?'active':''">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          <span  class="foot-bar-span">DASHBOARD</span></a>
+        <a  id="freferral"  href="javascript:;" @click="$router.push('/affiliate')" class="">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-affiliates"></use>
           </svg>
-          <span>{{$t('foot[5]')}}</span></a>
-        <a href="javascript:;" @click="$router.push('/setting')" :class="footIndex==7?'active':''" id="fdeposit">
-          <i class="el-icon-setting" style="width: 24px;height: 24px;"></i>
-          <span  id="fdeposit2" class="foot-bar-span">{{$t('head[14]')}}</span></a>
-
-      </div>
+          <span  class="foot-bar-span">AFFILIATES</span></a>
+        <a  id="ffaqs" href="javascript:;" @click="$router.push('/FAQ')" class="">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-faq"></use>
+          </svg>
+          <span  class="foot-bar-span">FAQ</span></a>
+        <!---->
+        <!----></div>
     </div>
-  </div>
+<!--    <div class="mobile-bottom-tabs">-->
+<!--      <div @click="$router.push('/')" :class="'mobile-tab '+(footIndex==0?'active':'')"><i class="el-icon-house"></i>-->
+<!--        <div class="name">{{$t('head[0]')}}</div>-->
+<!--      </div>-->
+<!--      <div @click="$router.push('/product')" :class="'mobile-tab '+(footIndex==1?'active':'')"><i class="el-icon-files"></i>-->
+<!--        <div class="name">{{$t('foot[2]')}}</div>-->
+<!--      </div>-->
+<!--      <div @click="$router.push('/affiliate')" :class="'mobile-tab '+(footIndex==2?'active':'')"><i class="el-icon-office-building"></i>-->
+<!--        <div class="name">{{$t('foot[5]')}}</div>-->
+<!--      </div>-->
+<!--      <div @click="$router.push('/dashboard')" :class="'mobile-tab '+(footIndex==3?'active':'')"><i class="el-icon-user"></i>-->
+<!--        <div class="name">{{$t('head[4]')}}</div>-->
+<!--      </div>-->
+<!--    </div>-->
+	</div>
 
 </template>
 
 
 
 <script>
-  import $ from 'jquery'
+
 	export default {
 
 		name: 'App',
@@ -134,214 +146,33 @@
         if (to.path == '/') {
           this.footIndex = 0;
         }
-        if (to.path == '/product') {
+        if (to.path == '/contracts') {
           this.footIndex = 1;
         }
-        if (to.path == '/affiliates') {
+        if (to.path == '/affiliate') {
           this.footIndex = 2;
         }
         if (to.path == '/dashboard') {
           this.footIndex = 3;
         }
-        if (to.path == '/deposit') {
-          this.footIndex = 4;
-        }
-        if (to.path == '/withdraw') {
-          this.footIndex = 5;
-        }
-        if (to.path == '/FAQ') {
-          this.footIndex = 6;
-        }
-        if (to.path == '/setting') {
-          this.footIndex = 7;
-        }
 			},
 		},
 
 		created() {
-
-    },
+		  let _this = this;
+        let is_self_change = localStorage['is_self_change'] || 0
+        if(!is_self_change){
+          _this.$Model.GetLanguage();
+        }
+      let model = this.$Model;
+      setInterval(function() {
+        model.HasNewMessage(data=>{
+          localStorage.setItem("noReadNum",data.data);
+        })
+      }, 300000);
+		},
 
 		mounted() {
-
-
-			document.addEventListener("plusready", () => {
-
-				document.addEventListener("pause", () => {
-
-					this.isView = false
-
-
-				}, false);
-
-				document.addEventListener("resume", () => {
-
-					this.isView = true
-
-
-				}, false);
-
-				document.addEventListener("newintent", () => {
-
-					var args = plus.runtime.arguments;
-
-					if (args) {
-
-						this.$router.push(args)
-
-					}
-
-
-				}, false);
-
-				this.winH = document.body.clientHeight;
-
-				plus.runtime.getProperty(plus.runtime.appid, wgtinfo => {
-
-					localStorage["AppVersion"] = wgtinfo.version;
-
-					checkUpdate(wgtinfo.version);
-
-				});
-
-				// document.addEventListener("netchange",() => {
-
-				//   var nt = plus.networkinfo.getCurrentType();
-
-				//   switch (nt) {
-
-				//     case plus.networkinfo.CONNECTION_ETHERNET:
-
-				//     case plus.networkinfo.CONNECTION_WIFI:
-
-				//     case plus.networkinfo.CONNECTION_CELL2G:
-
-				//     case plus.networkinfo.CONNECTION_CELL3G:
-
-				//     case plus.networkinfo.CONNECTION_CELL4G:
-
-				//       this.networkState = 1;
-
-				//       break;
-
-				//     case plus.networkinfo.CONNECTION_UNKNOW:
-
-				//     case plus.networkinfo.CONNECTION_NONE:
-
-				//       this.networkState = 0;
-
-				//       break;
-
-				//     default:
-
-				//       this.networkState = 2;
-
-				//       break;
-
-				//   }
-
-				// },false);
-
-				if (plus.os.name == "iOS") {
-
-					iosBack();
-
-				}
-
-				plus.key.addEventListener("backbutton", () => {
-
-					appBack();
-
-				});
-
-			});
-
-			var obj = document.getElementById('Service');
-
-			var drag = false;
-
-			var screenHeight = document.documentElement.clientHeight;
-
-			var screenWidth = document.documentElement.clientWidth;
-
-			var pageX = screenWidth;
-
-			obj.addEventListener('touchstart', (ev) => {
-
-				drag = true;
-
-				if (obj.setCapture) {
-
-					obj.setCapture();
-
-				}
-
-				$('#Service').removeClass('move')
-
-			});
-
-			obj.addEventListener('touchmove', (ev) => {
-
-				$('#Service').removeClass('move')
-
-				ev.preventDefault();
-
-				ev = ev.touches ? ev.touches[0] : event;
-
-				if (drag) {
-
-					if (ev.pageY < obj.clientHeight / 2) {
-
-						obj.style.bottom = screenHeight - obj.clientHeight + 'px';
-
-					} else if (ev.pageY > screenHeight - 5 - obj.clientHeight / 2) {
-
-						obj.style.bottom = '5px';
-
-					} else {
-
-						obj.style.bottom = screenHeight - ev.pageY - obj.clientHeight / 2 + 'px';
-
-					}
-
-					if (ev.pageX < obj.clientWidth / 2) {
-
-						obj.style.right = screenWidth - obj.clientWidth + 'px';
-
-					} else if (ev.pageX > screenWidth - obj.clientWidth / 2) {
-
-						obj.style.right = '0px';
-
-					} else {
-
-						obj.style.right = screenWidth - ev.pageX - obj.clientWidth / 2 + 'px';
-
-					}
-
-					pageX = ev.pageX
-
-				}
-
-			});
-
-			obj.addEventListener('touchend', (ev) => {
-
-				drag = false;
-
-				$('#Service').addClass('move')
-
-				if (pageX > screenWidth / 2) {
-
-					obj.style.right = 0;
-
-				} else {
-
-					obj.style.right = screenWidth - obj.clientWidth + 'px';
-
-				}
-
-			})
-
 
 		},
 

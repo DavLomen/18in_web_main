@@ -1,341 +1,217 @@
 <template>
-  <header  id="header-nav" class="new-navbar">
-    <div  id="main__header" class="main__header">
-      <div  class="container">
-        <div  class="logo-box" v-if="showLogo">
-          <a  href="javascript:;" @click="$router.push('/')" class="logo-icon router-link-active">
-            <img :src="'./static/img/logo.png?t=2'" alt=""></a>
-        </div>
-        <div  class="language pc">
-          <div  id="navbarNavDarkDropdown" class="navbar-collapse">
-            <div  class="dropdown" @click="showPcLan = !showPcLan">
-              <a  href="javascript: void (0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false" class="btn dropdown-toggle header__menu--link" style="font-weight: 400;">
-                <i  class="fa fa-globe"></i>
-                <span v-if="$i18n.locale=='en-US'">Language</span>
-<!--                <span v-if="$i18n.locale=='zh-CN'">简体中文</span>-->
-                <span v-if="$i18n.locale=='de-DE'">Deutsch</span>
-                <span v-if="$i18n.locale=='fr-FR'">Français</span>
-                <span v-if="$i18n.locale=='ko-KO'">한국인</span>
-                <span v-if="$i18n.locale=='ja-JP'">日本語</span>
-                <span v-if="$i18n.locale=='pt-PT'">Português</span>
-                <span v-if="$i18n.locale=='ru-RU'">Русский</span>
-                <span v-if="$i18n.locale=='es-ES'">Español</span>
-                <span v-if="$i18n.locale=='ar-AR'">عربي</span>
-                <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                <span v-if="$i18n.locale=='tr-TR'">Türkçe</span>
-                <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                <span v-if="$i18n.locale=='nl-NL'">Nederlands</span>
-                <span v-if="$i18n.locale=='it-IT'">Italiano</span>
-              </a>
-              <div class="dropdown-menu1"  v-show="showPcLan">
-<!--                <span v-if="$i18n.locale=='it-IT'">Italiano</span>-->
-<!--                <a class="dropdown-item header__menu&#45;&#45;link" href="javascript:;" @click="changeLanguage('zh-CN')" style="font-weight: 400;">-->
-<!--                  <i class="fi fi-gb"></i>简体中文</a>-->
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('en-US')" style="font-weight: 400;">
-                  <i class="fi fi-gb"></i>English</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('de-DE')" style="font-weight: 400;">
-                  <i class="fi fi-de"></i>Deutsch</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('fr-FR')" style="font-weight: 400;">
-                  <i class="fi fi-fr"></i>Français</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ko-KO')" style="font-weight: 400;">
-                  <i class="fi fi-ko"></i>한국인</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ja-JP')" style="font-weight: 400;">
-                  <i class="fi fi-jp"></i>日本語</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('pt-PT')" style="font-weight: 400;">
-                  <i class="fi fi-pt"></i>Português</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ru-RU')" style="font-weight: 400;">
-                  <i class="fi fi-ru"></i>Русский</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('es-ES')" style="font-weight: 400;">
-                  <i class="fi fi-es"></i>Español</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ar-AR')" style="font-weight: 400;">
-                  <i class="fi fi-ar"></i>عربي</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('yd-YD')" style="font-weight: 400;">
-                  <i class="fi fi-yd"></i>हिंदी</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('tr-TR')" style="font-weight: 400;">
-                  <i class="fi fi-tr"></i>Türkçe</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('nl-NL')" style="font-weight: 400;">
-                  <i class="fi fi-nl"></i>Nederlands</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('it-IT')" style="font-weight: 400;">
-                  <i class="fi fi-it"></i>Italiano</a>
-              </div>
+  <header  class="header-section has-header-main">
+    <div  class="header-main is-sticky is-transparent has-fixed">
+      <div class="container">
+        <div class="header-wrap">
+          <div class="d-flex align-items-center">
+            <div class="header-logo"><a href="javascript:;" @click="$router.push('/')" class="logo-link">
+              <img class="logo-dark logo-img" :src="'./static/img/logo.6059159f.png?t=2'" alt="logo"><img
+              class="logo-light logo-img" :src="'./static/img/logo.6059159f.png?t=2'" alt="logo"></a>
             </div>
-          </div>
-        </div>
-        <div class="language mobile" style="width: 100%;margin-right: 15px">
-          <div v-if="!UserInfo" class=" header__account">
-            <ul  class="d-flex align-items-center">
-              <li  class="right-extend_items header__account--items" style="display: flex;justify-content: space-between;"><a href="javascript:;" @click="$router.push('/login')"
-                                                                        class="but but_login"> {{$t('head[3]')}} </a>
-                <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup">{{$t('head[2]')}} </a></li>
-            </ul>
-          </div>
-        </div>
-        <div  class="navigation">
-          <ul  class="navigation-menu" style="justify-content: right;">
-<!--            <li  class="nav__menu&#45;&#45;items">-->
-<!--              <a  href="/" class="header__menu&#45;&#45;link router-link-active">HOME</a></li>-->
-            <li class="nav__menu--items">
-
-              <a href="javascript:;" :class="'header__menu--link '+(index==0?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/')">{{$t('head[0]')}}</a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==1?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/product')">{{$t('head[9]')}}</a>
-            </li>
-            <li class="nav__menu--items" v-if="UserInfo">
-              <a href="javascript:;" :class="'header__menu--link '+(index==9?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/tutorial')">{{$t('tutorial[0]')}}</a>
-            </li>
-<!--            <li class="nav__menu&#45;&#45;items">-->
-<!--              <a href="javascript:;" :class="'header__menu&#45;&#45;link '+(index==8?'header__menu&#45;&#45;link_active':'')" @click="showMenu=false,$router.push('/Bounty')">-->
-<!--                {{$t('bounty')}}-->
-<!--              </a>-->
-<!--            </li>-->
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==2?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/about')">{{$t('foot[3]')}}</a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==8?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/FAQ')">
-                {{$t('foot[4]')}}
-              </a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==4?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/affiliate')">{{$t('foot[5]')}}</a>
-            </li>
-<!--            <li class="nav__menu&#45;&#45;items">-->
-<!--              <a href="javascript:;" :class="'header__menu&#45;&#45;link '+(index==6?'header__menu&#45;&#45;link_active':'')" @click="showMenu=false,$router.push('/contact')">{{$t('foot[7]')}}</a>-->
-<!--            </li>-->
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==8?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/welfare')">{{$t('welfare[0]')}}</a>
-            </li>
-            <li class="nav__menu--items" v-if="!UserInfo">
-              <a href="javascript:;" :class="'header__menu--link '+(index==9?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/tutorial')">{{$t('tutorial[0]')}}</a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==7?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/app')">{{$t('head[1]')}}</a>
-            </li>
-            <!--                  <li class="nav__menu--items">-->
-            <!--                    <a href="javascript:;" :class="'header__menu--link '+(index==0?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/blog')">{{$t('foot[6]')}}</a>-->
-            <!--                  </li>-->
-            <li class="nav__menu--items" v-if="UserInfo">
-              <a href="javascript:;" :class="'header__menu--link '+(index==10?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/dashboard')">{{$t('head[4]')}}</a>
-            </li>
-          </ul>
-        </div>
-        <div v-if="!UserInfo" class="right-extend header__account">
-          <ul  class="d-flex align-items-center">
-            <li  class="right-extend_items header__account--items"><a href="javascript:;" @click="$router.push('/login')"
-                                                                                        class="but but_login"> {{$t('head[3]')}} </a>
-              <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup">{{$t('head[2]')}} </a></li>
-              <li class="ml-1 OlineNum">
-                <div class="">{{ $t('head[25]') }}</div>
-                <span>{{InitData.setting.online || 0}}</span>
-              </li>
-          </ul>
-        </div>
-        <div v-else class="right-extend header__account">
-          <ul  class="d-flex align-items-center">
-            <li  class="header__account--items d-sm-u-none">
-              <div  class="dropdown">
-                <a  @click="showLogout = !showLogout"  href="javascript:;" class="dropdown-toggle header__menu--link">{{UserInfo.username}}</a>
-                <div  class="dropdown-menu1" style="left: auto; right: 0px;display: block !important;" v-show="showLogout">
-                  <a href="javascript:;" @click="$Model.Logout()" class="dropdown-item header__menu--link" style="font-weight: 400;">{{$t('head[5]')}}</a></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div  class="offcanvas__header--menu__open" style="margin-right: 0.625rem; padding: 10px 0px;" @click="showPcLan=false,showMask = true">
-          <div class="offcanvas__header--menu__open--btn">
-            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ionicon offcanvas__header--menu__open--svg">
-              <path  fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="header-overlay" v-if="showMask">
-      <div  :class="'offcanvas__header ' +(showMask?'open':'')">
-        <div  class="offcanvas__inner">
-          <div  class="offcanvas__logo">
-            <a  href="javascript:;" @click="$router.push('/')" class="offcanvas__logo_link router-link-active">
-              <img  :src="'./static/img/logo.png?t=2'" height="32" alt="" class="logo__light logo__light"></a>
-            <div  class="language mobile">
-              <div class="navbar-collapse">
-                <div  class="dropdown" @click="showPcLan = !showPcLan">
-                  <a  href="javascript: void (0)" role="button" data-toggle="dropdown" aria-expanded="false" class="btn dropdown-toggle header__menu--link" style="font-weight: 400;">
-                    <i  class="fa fa-globe"></i>
-                    <span v-if="$i18n.locale=='en-US'">Language</span>
-<!--                    <span v-if="$i18n.locale=='zh-CN'">简体中文</span>-->
-                    <span v-if="$i18n.locale=='de-DE'">Deutsch</span>
-                    <span v-if="$i18n.locale=='fr-FR'">Français</span>
-                    <span v-if="$i18n.locale=='ko-KO'">한국인</span>
-                    <span v-if="$i18n.locale=='ja-JP'">日本語</span>
-                    <span v-if="$i18n.locale=='pt-PT'">Português</span>
-                    <span v-if="$i18n.locale=='ru-RU'">Русский</span>
-                    <span v-if="$i18n.locale=='es-ES'">Español</span>
-                    <span v-if="$i18n.locale=='ar-AR'">عربي</span>
-                    <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                    <span v-if="$i18n.locale=='tr-TR'">Türkçe</span>
-                    <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                    <span v-if="$i18n.locale=='nl-NL'">Nederlands</span>
-                    <span v-if="$i18n.locale=='it-IT'">Italiano</span>
-                  </a>
-                  <div class="dropdown-menu1"  v-show="showPcLan">
-                    <!--                <span v-if="$i18n.locale=='it-IT'">Italiano</span>-->
-<!--                    <a class="dropdown-item header__menu&#45;&#45;link" href="javascript:;" @click="changeLanguage('zh-CN')" style="font-weight: 400;">-->
-<!--                      <i class="fi fi-gb"></i>简体中文</a>-->
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('en-US')" style="font-weight: 400;">
+            <div class="language">
+              <div class="navbar-collapse" id="navbarNavDarkDropdown">
+                <div class="dropdown"><a @click="showPcLan = !showPcLan"
+                                                            class="dropdown-toggle header__menu--link"
+                                                            href="javascript: void (0)" role="button"
+                                                            id="dropdownMenuLink" data-toggle="dropdown"
+                                                            aria-expanded="false" style="font-weight: 400;">
+                  <i v-if="$i18n.locale=='en-US'" class="fi fi-gb"></i>
+                  <i v-if="$i18n.locale=='zh-CN'" class="fi fi-cn"></i>
+                  <i v-if="$i18n.locale=='de-DE'" class="fi fi-de"></i>
+                  <i class="fi fi-fr" v-if="$i18n.locale=='fr-FR'"></i>
+                  <i class="fi fi-jp" v-if="$i18n.locale=='ja-JP'"></i>
+                  <i class="fi fi-kr" v-if="$i18n.locale=='ko-KO'"></i>
+                  <i class="fi fi-pt" v-if="$i18n.locale=='pt-PT'"></i>
+                  <i class="fi fi-es" v-if="$i18n.locale=='es-ES'"></i>
+                  <i class="fi fi-tr" v-if="$i18n.locale=='tr-TR'"></i>
+                  <i class="fi fi-vi" v-if="$i18n.locale=='vi-VN'"></i>
+                  <i class="fi fi-ru" v-if="$i18n.locale=='ru-RU'"></i>
+                  <i class="fi fi-ar" v-if="$i18n.locale=='ar-AR'"></i>
+                  <i class="fi fi-it" v-if="$i18n.locale=='it-IT'"></i>
+                </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" v-show="showPcLan">
+                    <a @click="changeLanguage('en-US')" v-if="InitData.setting.en==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
                       <i class="fi fi-gb"></i>English</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('de-DE')" style="font-weight: 400;">
-                      <i class="fi fi-de"></i>Deutsch</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('fr-FR')" style="font-weight: 400;">
+<!--                    <a @click="changeLanguage('zh-CN')" v-if="InitData.setting.cn==1" class="dropdown-item header__menu&#45;&#45;link" href="javascript:;" style="font-weight: 400;">-->
+<!--                      <i class="fi fi-gb"></i>简体中文</a>-->
+
+                    <a @click="changeLanguage('fr-FR')" v-if="InitData.setting.fr==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
                       <i class="fi fi-fr"></i>Français</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ko-KO')" style="font-weight: 400;">
-                      <i class="fi fi-ko"></i>한국인</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ja-JP')" style="font-weight: 400;">
+                    <a @click="changeLanguage('ja-JP')" v-if="InitData.setting.ja==1 ||InitData.setting.jp==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
                       <i class="fi fi-jp"></i>日本語</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('pt-PT')" style="font-weight: 400;">
+                    <a @click="changeLanguage('ko-KO')" v-if="InitData.setting.ko==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
+                      <i class="fi fi-kr"></i>한국어</a>
+                    <a @click="changeLanguage('pt-PT')" v-if="InitData.setting.pt==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
                       <i class="fi fi-pt"></i>Português</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ru-RU')" style="font-weight: 400;">
-                      <i class="fi fi-ru"></i>Русский</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('es-ES')" style="font-weight: 400;">
+
+                    <a @click="changeLanguage('es-ES')" v-if="InitData.setting.es==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
                       <i class="fi fi-es"></i>Español</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ar-AR')" style="font-weight: 400;">
+                    <a @click="changeLanguage('tr-TR')" v-if="InitData.setting.tr==1"  class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
+                      <i class="fi fi-tr"></i>Türk</a>
+<!--                    <a @click="changeLanguage('vi-VN')" v-if="InitData.setting.vi==1" class="dropdown-item header__menu&#45;&#45;link" href="javascript:;" style="font-weight: 400;">-->
+<!--                      <i class="fi fi-vi"></i>Tiếng Việt</a>-->
+
+                    <a @click="changeLanguage('de-DE')" v-if="InitData.setting.de==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
+                      <i class="fi fi-de"></i>Deutsch</a>
+                    <a @click="changeLanguage('ru-RU')" v-if="InitData.setting.ru==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
+                      <i class="fi fi-ru"></i>Русский</a>
+                    <a @click="changeLanguage('ar-AR')" v-if="InitData.setting.ar==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
                       <i class="fi fi-ar"></i>عربي</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('yd-YD')" style="font-weight: 400;">
-                      <i class="fi fi-yd"></i>हिंदी</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('tr-TR')" style="font-weight: 400;">
-                      <i class="fi fi-tr"></i>Türkçe</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('nl-NL')" style="font-weight: 400;">
-                      <i class="fi fi-nl"></i>Nederlands</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('it-IT')" style="font-weight: 400;">
+                    <a @click="changeLanguage('it-IT')" v-if="InitData.setting.it==1" class="dropdown-item header__menu--link" href="javascript:;" style="font-weight: 400;">
                       <i class="fi fi-it"></i>Italiano</a>
                   </div>
                 </div>
               </div>
             </div>
-            <button  @click="showMask = false" class="offcanvas__close--btn">{{$t('deposit[28]')}}</button>
           </div>
-          <nav  class="offcanvas__menu">
-            <ul  class="offcanvas__menu_ul">
-              <li class="offcanvas__menu_li">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/')">{{$t('head[0]')}}</a>
-              </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/product')">{{$t('head[9]')}}</a>
-              </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/FAQ')">
-                  {{$t('foot[4]')}}
-                </a>
-              </li>
-<!--              <li class="offcanvas__menu_li" >-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/Bounty')">-->
-<!--                  {{$t('bounty')}}-->
-<!--                </a>-->
-<!--              </li>-->
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/about')">{{$t('foot[3]')}}</a>
-              </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/affiliate')">{{$t('foot[5]')}}</a>
-              </li>
-              <!--            <li class="offcanvas__menu_li">-->
-              <!--              <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/contact')">{{$t('foot[7]')}}</a>-->
-              <!--            </li>-->
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/welfare')">{{$t('welfare[0]')}}</a>
-              </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/app')">{{$t('head[1]')}}</a>
-              </li>
-              <!--                  <li class="offcanvas__menu_li">-->
-              <!--                    <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/blog')">{{$t('foot[6]')}}</a>-->
-              <!--                  </li>-->
-              <li class="offcanvas__menu_li">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/tutorial')">{{$t('tutorial[0]')}}</a>
-              </li>
-              <li class="offcanvas__menu_li">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/message')">{{$t('head[13]')}}</a>
-              </li>
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/transactions')">{{$t('head[12]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/deposit')">{{$t('head[7]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/withdraw')">{{$t('head[8]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/MyPackages')">{{$t('head[11]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/product')">{{$t('head[9]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/affiliates')">{{$t('foot[5]')}}</a>-->
-<!--              </li>-->
-              <li class="offcanvas__menu_li" v-if="UserInfo">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showH5set =!showH5set">{{$t('head[14]')}}</a>
-                <ul role="menu" class="el-menu el-menu--inline" v-show="showH5set">
-                  <li class="el-menu-item-group">
-                    <div class="el-menu-item-group__title" style="padding-left: 40px;"></div>
-                    <ul>
-                      <li @click="$router.push('/walletAddress')"   :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[0]')}} </li>
-                      <li @click="$router.push('/loginPassword')"   :class="'el-menu-item '+(index==9?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[1]')}} </li>
-                      <li @click="$router.push('/payPassword')"   :class="'el-menu-item '+(index==10?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[2]')}} </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <div  class="header__account offcanvas__account">
-              <ul  class="align-items-center login-but_box">
-                <li  class="header__account--items">
-                  <a  href="javascript:;">{{UserInfo.username}}</a></li>
-                <br >
-                <li  class="header__account--items">
-                  <a v-if="UserInfo" href="javascript:;" @click="$Model.Logout()" class="but but_signup">{{$t('head[5]')}}</a>
-                  <ul v-else class="d-flex align-items-center">
-                    <li  class="right-extend_items header__account--items"><a href="javascript:;" @click="$router.push('/login')"
-                                                                              class="but but_login"> {{$t('head[3]')}} </a>
-                      <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup">{{$t('head[2]')}} </a></li>
-                  </ul>
-                </li>
-              </ul>
+          <div class="header-mobile-action">
+            <div class="header-mobile-wallet me-2"><a @click="$router.push('/dashboard')" href="javascript:;" class="icon-btn"><em
+              class="ni ni-user-fill"></em></a></div>
+            <div class="header-toggle" @click="showMask =!showMask">
+              <button v-if="!showMask" class="menu-toggler"><em class="menu-on menu-icon ni ni-menu"></em><em
+                class="menu-off menu-icon ni ni-cross"></em></button>
+              <button v-else class="menu-toggler active"><em class="menu-on menu-icon ni ni-menu"></em><em class="menu-off menu-icon ni ni-cross"></em></button>
             </div>
+          </div>
+          <nav style="justify-content: space-around;" :class="'header-menu menu nav '+(showMask?'mobile-menu active':'')">
+            <ul class="menu-list">
+              <li class="menu-item">
+                <a href="javascript:;" @click="$router.push('/')" :class="(index=='/'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">{{$t('header[0]')}}
+                <img v-if="index=='/'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+                </li>
+              <li class="menu-item">
+                <a href="javascript:;" @click="$router.push('/contracts')" :class="(index=='/contracts'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">{{$t('header[6]')}}
+                <img v-if="index=='/contracts'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+                </li>
+<!--              <li class="menu-item">-->
+<!--                <a @click="$router.push('/dashboard')" href="javascript:;" :class="(index=='/dashboard'?'router-link-active router-link-exact-active menu-link active':'menu-link')">-->
+<!--        <span class="menu-title">{{$t('header[1]')}}-->
+<!--                <img v-if="index=='/dashboard'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>-->
+<!--                </li>-->
+              <li class="menu-item">
+                <a href="javascript:;" @click="$router.push('/about')" :class="(index=='/about'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">{{$t('header[9]')}}
+                <img v-if="index=='/about'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+                </li>
+              <li class="menu-item">
+                <a href="javascript:;" @click="$router.push('/affiliate')" :class="(index=='/affiliate'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">{{$t('header[7]')}}
+                <img v-if="index=='/affiliate'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+              </li>
+              <li class="menu-item">
+                <a aria-current="page" href="javascript:;" @click="$router.push('/welfare')" :class="(index=='/welfare'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">{{$t('welfare[0]')}}
+          <img v-if="index=='/welfare'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+              </li>
+              <li class="menu-item">
+                <a aria-current="page" href="javascript:;" @click="$router.push('/FAQ')" :class="(index=='/FAQ'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">{{$t('header[10]')}}
+          <img v-if="index=='/FAQ'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+              </li>
+              <li class="menu-item">
+                <a href="javascript:;" @click="$router.push('/Bounty')" :class="(index=='/Bounty'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">
+                    {{$t('bounty[0]')}}
+                <img v-if="index=='/Bounty'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+              </li>
+              <li class="menu-item">
+                <a aria-current="page" href="javascript:;" @click="$router.push('/Tutorial')" :class="(index=='/Tutorial'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">{{$t('tutorial[0]')}}
+          <img v-if="index=='/Tutorial'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+              </li>
+
+
+<!--                            <li class="menu-item">-->
+<!--                              <a aria-current="page" href="javascript:;" @click="$router.push('/blog')" :class="(index=='/blog'?'router-link-active router-link-exact-active menu-link active':'menu-link')">-->
+<!--                      <span class="menu-title">{{$t('foot[6]')}}-->
+<!--                        <img v-if="index=='/blog'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>-->
+<!--                              </li>-->
+                            <li class="menu-item">
+                              <a aria-current="page" href="javascript:;" @click="$router.push('/app')" :class="(index=='/app'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+                      <span class="menu-title">{{$t('head[1]')}}
+                        <img v-if="index=='/app'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+                              </li>
+              <li class="menu-item">
+                <a href="javascript:;" @click="$router.push('/blog')" :class="(index=='/blog'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+        <span class="menu-title">
+                    {{$t('foot[6]')}}
+                <img v-if="index=='/blog'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
+              </li>
+
+              <li :class="'menu-item d-lg-none has-sub '+(showMobileLan?'active':'')" @click="showMobileLan = !showMobileLan">
+                <a href="javascript:;" class="menu-link menu-toggle">{{$t('header[11]')}}</a>
+                <div class="menu-sub menu-mega" v-if="showMobileLan">
+                  <div class="menu-mega-row">
+                    <ul class="menu-list menu-list-mega">
+                      <li class="menu-item">
+                        <a href="javascript:;" @click="$router.push('/transactions')" class="menu-link">{{$t('header[12]')}}
+                          </a></li>
+                      <li class="menu-item">
+                        <a href="javascript:;" @click="$router.push('/deposit')" class="menu-link">{{$t('header[3]')}}
+                          </a></li>
+                      <li class="menu-item">
+                        <a href="javascript:;" @click="$router.push('/withdraw')" class="menu-link">{{$t('header[4]')}}
+                          </a></li>
+                      <li class="menu-item">
+                        <a href="javascript:;" @click="$router.push('/MyPackages')" class="menu-link">{{$t('header[5]')}}
+                          </a></li>
+<!--                      <li class="menu-item">-->
+<!--                        <a href="javascript:;" @click="$router.push('/contracts')" class="menu-link">{{$t('header[6]')}}-->
+<!--                          </a></li>-->
+                      <li class="menu-item">
+                        <a href="javascript:;" @click="$router.push('/affiliates')" class="menu-link">{{$t('header[7]')}}
+                          </a></li>
+                      <li class="menu-item has-sub">
+                        <a href="javascript:;" @click="$router.push('/loginPassword')" class="menu-link">{{$t('header[8]')}}
+                          </a></li>
+                    </ul>
+                    <ul class="menu-list menu-list-mega"></ul>
+                  </div>
+                </div>
+              </li>
+
+
+            </ul>
+            <ul class="menu-btns" v-if="!UserInfo">
+              <li>
+                <a style="background: linear-gradient(to right, #2777ed,#00070e);border: none;color: #fff;" href="javascript:;" @click="$router.push('/register')" :class="'btn '+(index=='7'?'btn-dark':'btn-outline-dark')+' menu-title'">{{$t('header[14]')}}</a>
+              </li>
+              <li>
+                <a style="background: linear-gradient(to right, #2777ed,#00070e);border: none;color: #fff;" href="javascript:;" @click="$router.push('/login')" :class="'btn '+(index!='7'?'btn-dark':'btn-outline-dark')+' menu-title'">{{$t('header[13]')}}</a></li>
+            </ul>
+            <ul v-else class="menu-btns">
+              <li  class="header__account--items"><a  href="javascript:;" @click="$router.push('/dashboard')"
+                                                      class="btn btn-dark menu-title">
+<!--                <em-->
+<!--                class="ni ni-user-fill"></em>-->
+                {{$t('header[1]')}}
+              </a></li>
+              <li ><a  href="javascript:;" @click="$Model.Logout()" class="btn btn-dark menu-title">{{$t('header[15]')}}</a></li>
+            </ul>
           </nav>
+          <div class="header-overlay" @click="showMask=!showMask"></div>
         </div>
       </div>
     </div>
-
   </header>
 </template>
 
 <script>
-
   export default {
-    name: 'userHeader',
+    name: 'Header',
     components: {
 
     },
-    props: {
-      showLogo: {
-        type:Boolean,
-        default:true
-      }
-    },
+    props: [],
     data() {
       return {
+        index:'/',
         showMask:false,
-        showLogout: false,
+        showMobileLan: false,
         showPcLan: false,
-        showMenu:false,
-        index:0,
-        showH5nav:false,
-        showPackage:false,
-        showSet:false,
-        showH5packet:false,
-        showH5set:false,
+        showNext:false,
       }
     },
     computed: {
@@ -347,38 +223,48 @@
     },
     mounted() {
       if (localStorage.getItem("pageIndex") == '/') {
-        this.index = 0;
+        this.index = '/';
+      }else if (localStorage.getItem("pageIndex") == '/contracts') {
+        console.log(11111);
+        this.index = '/contracts';
+        console.log(this.index)
+      }else if (localStorage.getItem("pageIndex") == '/dashboard') {
+        this.index = '/dashboard';
+      }else if (localStorage.getItem("pageIndex") == '/loginPassword') {
+        this.index = '/loginPassword';
+      }else if (localStorage.getItem("pageIndex") == '/walletAddress') {
+        this.index = '/walletAddress';
+      }else if (localStorage.getItem("pageIndex") == '/payPassword') {
+        this.index = '/payPassword';
+      }else if (localStorage.getItem("pageIndex") == '/about') {
+        this.index = '/about';
+      }else if (localStorage.getItem("pageIndex") == '/affiliate') {
+        this.index = '/affiliate';
+      }else if (localStorage.getItem("pageIndex") == '/FAQ') {
+        this.index = '/FAQ';
+      }else if (localStorage.getItem("pageIndex") == '/deposit') {
+        this.index = '/deposit';
+        this.showNext = true;
+      }else if (localStorage.getItem("pageIndex") == '/withdraw') {
+        this.index = '/withdraw';
+        this.showNext = true;
+      }else if (localStorage.getItem("pageIndex") == '/MyPackages') {
+        this.index = '/MyPackages';
+        this.showNext = true;
+      }else if (localStorage.getItem("pageIndex") == '/affiliates') {
+        this.index = '/affiliates';
+        this.showNext = true;
+      }else if (localStorage.getItem("pageIndex") == '/transactions') {
+        this.index = '/transactions';
+        this.showNext = true;
+      }else if (localStorage.getItem("pageIndex") == '/blog') {
+        this.index = '/blog';
+      }else if (localStorage.getItem("pageIndex") == '/help') {
+        this.index = '/help';
+      }else if (localStorage.getItem("pageIndex") == '/app') {
+        this.index = '/app';
       }
-      if (localStorage.getItem("pageIndex") == '/product') {
-        this.index = 1;
-      }
-      if (localStorage.getItem("pageIndex") == '/about') {
-        this.index = 2;
-      }
-      if (localStorage.getItem("pageIndex") == '/FAQ') {
-        this.index = 3;
-      }
-      if (localStorage.getItem("pageIndex") == '/affiliate') {
-        this.index = 4;
-      }
-      if (localStorage.getItem("pageIndex") == '/blog') {
-        this.index = 5;
-      }
-      if (localStorage.getItem("pageIndex") == '/contact') {
-        this.index = 6;
-      }
-      if (localStorage.getItem("pageIndex") == '/app') {
-        this.index = 7;
-      }
-      if (localStorage.getItem("pageIndex") == '/welfare') {
-        this.index = 8;
-      }
-      if (localStorage.getItem("pageIndex") == '/tutorial') {
-        this.index = 9;
-      }
-      if (localStorage.getItem("pageIndex") == '/dashboard') {
-        this.index = 10;
-      }
+
     },
     activated() {
 
@@ -399,59 +285,48 @@
     }
   }
 </script>
-
 <style scoped>
-  .fs-5{font-size:1.25rem!important}
-  .header__menu--link_active {
-    color: #222226 !important;
+  .language {
+    margin-left: 13px;
   }
-  .header__menu--link_active,router-link-active {
-    color: #222226 !important;
+  .language .dropdown-menu {
+    display: block;
+    z-index: 9999;
   }
-  .dropdown-menu1 {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    float: left;
-    min-width: 10rem;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
-  }
-  .nav__menu--items {
-    text-align: center;
-    font-weight: bolder;
-  }
-  .pc {
+  @media(min-width: 992px) {
+    .header-menu {
+      flex:1;
+      width: 0
+    }
 
-  }
+    .menu-title {
+      font-size: 14px
+    }
 
-  @media (max-width: 768px) {
-    .pc {
-      display: none;
+    .menu-email {
+      display: none
+    }
+
+    .btn {
+      padding: 8px 6px
+    }
+
+    .ni-user-fill {
+      margin-right: 6px
     }
   }
-  /* 小屏幕（平板，大于等于 768px） */
-  @media (min-width: 768px) {
-    .mobile {
-      display: none;
+
+  @media(min-width: 1200px) {
+    .btn {
+      padding:8px 12px
     }
-  }
-  .OlineNum{
-    text-align: center;
-    margin-left: 10px;
-    border-radius:10px;
-    border:1px solid rgb(102, 34, 130);
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 5px;
+
+    .menu-title {
+      font-size: 16px
+    }
+
+    .menu-email {
+      display: flex
+    }
   }
 </style>

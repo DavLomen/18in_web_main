@@ -1,71 +1,143 @@
 <template>
   <div class="HomePage" id="app">
     <Header></Header>
-    <div class="container">
-      <div class="el-row">
-        <div class="el-col el-col-5">
-          <UserHeader></UserHeader>
-        </div>
-        <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-          <div class="container">
-            <div class="aaa">
-              <div>{{$t('lucky[0]')}}<span style="color: #e73329;">{{this.UserInfo.lucky_times ||0}}</span></div>
-              <div class="recordBtn" @click="$router.push('/luckyRecord')">{{$t('lucky[3]')}}</div>
+    <section class="user-panel-section" style="padding: 20px 0px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="sidebar-head d-flex flex-wrap align-items-center justify-content-between">
+              <h3 class="sidebar-head-title"></h3>
             </div>
-            <div style="overflow:hidden;width: 100%;background: url('./static/img/box_bg.jpg') no-repeat;background-size: cover;background-position:center;padding: 0.5rem 0;margin: 0.5rem auto 0;">
-              <div class="box" >
-                <img :src="'./static/img/bg.png'" width="100%" class="xz"/>
-                <LuckyWheel
-                  class="luck-draw"
-                  ref="LuckyWheel"
-                  width="270px"
-                  height="270px"
-                  :blocks="blocks"
-                  :prizes="prizes"
-                  :buttons="buttons"
-                  :default-style="defaultStyle"
-                  :default-config="defaultConfig"
-                  @start="startCallBack"
-                  @end="endCallBack"
-                />
+            <div class="sidebar sidebar-user-mobile">
+              <a href="javascript:;" class="icon-btn menu-toggler-user-close">
+                <em class="ni ni-cross"></em>
+              </a>
+              <div class="sidebar-widget">
+                <ul class="user-nav">
+                  <li class="">
+                    <a aria-current="page" href="javascript:;" @click="$router.push('/dashboard')" class="router-link-active router-link-exact-active">
+                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[1]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/transactions')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[2]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/message')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('head[13]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/deposit')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[3]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;"  @click="$router.push('/withdraw')">
+                      <em class="ni me-2 ni-exchange"></em>{{$t('header[4]')}}</a>
+                  </li>
+                  <li class="active" >
+                    <a href="javascript:;"  @click="$router.push('/lucky')">
+                      <em class="ni me-2 ni-gift"></em>{{$t('common[2]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/MyPackages')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[5]')}}</a>
+                  </li>
+<!--                  <li class="">-->
+<!--                    <a href="javascript:;" @click="$router.push('/contracts')">-->
+<!--                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[6]')}}</a>-->
+<!--                  </li>-->
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/affiliates')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[7]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/loginPassword')">
+                      <em class="ni me-2 ni-account-setting"></em>{{$t('header[8]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/message')">
+                      <em class="ni me-2 ni-megento"></em>{{$t('head[13]')}}</a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <!--        <van-cell style="font-weight: bolder" :title="$t('lucky[5]')" :border="false" />-->
-            <div class="info" style="padding: 16px 16px 16px;" v-html="InitData.setting.luckydraw.desc">
-            </div>
-            <van-cell style="color: #15abbf;background: rgba(0,0,0,0);font-size: 1.5rem" class="Title1" :title="$t('lucky[2]')" :border="false" />
-            <div style="width: 100%;padding-bottom: 0.1rem;">
-              <van-swipe id="SwipeList1" style="height: 340px;margin: 0 auto;" height="48" vertical autoplay="1500" duration="3000" :show-indicators="false" :touchable="false">
-                <van-swipe-item v-for="(item,index) in luckyUserList" :key="index" :index="index">
-                  <van-cell
-                    class="topItem"
-                    :title="item.username"
-                    :label="$t('lucky[4]')"
-                    center
-                  >
-                    <template slot="right-icon">
+          </div>
+          <div class="col-lg-10 ps-xl-5">
+            <div style="padding-top: 2rem">
+              <div class="aaa">
+                <div>{{$t('lucky[0]')}}<span style="color: #e73329;">{{this.UserInfo.lucky_times ||0}}</span></div>
+                <div class="recordBtn" @click="$router.push('/luckyRecord')">{{$t('lucky[3]')}}</div>
+              </div>
+              <div style="overflow:hidden;width: 100%;background: url('./static/img/box_bg.jpg') no-repeat;background-size: 100% 100%;padding: 0.5rem 0;margin: 0.5rem auto 0;">
+                <div class="box" >
+                  <img :src="'./static/img/bg.png'" width="100%" class="xz"/>
+                  <LuckyWheel
+                    class="luck-draw"
+                    ref="LuckyWheel"
+                    width="270px"
+                    height="270px"
+                    :blocks="blocks"
+                    :prizes="prizes"
+                    :buttons="buttons"
+                    :default-style="defaultStyle"
+                    :default-config="defaultConfig"
+                    @start="startCallBack"
+                    @end="endCallBack"
+                  />
+                </div>
+              </div>
+              <!--        <van-cell style="font-weight: bolder" :title="$t('lucky[5]')" :border="false" />-->
+              <div class="info" style="padding: 16px 16px 16px;" v-html="InitData.setting.luckydraw.desc">
+              </div>
+              <van-cell class="Title1" :title="$t('lucky[2]')" :border="false" />
+              <div style="width: 100%;padding-bottom: 0.1rem;">
+                <van-swipe id="SwipeList1" style="height: 340px;margin: 0 auto;" height="48" vertical autoplay="1500" duration="3000" :show-indicators="false" :touchable="false">
+                  <van-swipe-item v-for="(item,index) in luckyUserList" :key="index" :index="index">
+                    <van-cell
+                      class="topItem"
+                      :title="item.username"
+                      :label="$t('lucky[4]')"
+                      center
+                    >
+                      <template slot="right-icon">
               <span class="profit">
 <!--                <img :src="`./static/icon/gold.png`" style="height: 1.13rem">-->
                 {{item.result_described||''}}
               </span>
-                    </template>
-                  </van-cell>
-                </van-swipe-item>
-              </van-swipe>
-            </div>
-            <div style="display: none">
-              <audio id="bgMusic"  controls="controls">
-                <source :src="'./static/voice/bg.mp3'" type="audio/mp3" style="display: none;z-index: -999;">
-              </audio>
-              <audio id="scMusic"   controls="controls" style="display: none;z-index: -999;">
-                <source :src="'./static/voice/scroll.mp3'" type="audio/mp3">
-              </audio>
-              <audio id="endMusic"  controls="controls" style="display: none;z-index: -999;">
-                <source :src="'./static/voice/end.mp3'" type="audio/mp3">
-              </audio>
-            </div>
+                      </template>
+                    </van-cell>
+                  </van-swipe-item>
+                </van-swipe>
+              </div>
+              <div style="display: none">
+                <audio id="bgMusic"  controls="controls">
+                  <source :src="'./static/voice/bg.mp3'" type="audio/mp3" style="display: none;z-index: -999;">
+                </audio>
+                <audio id="scMusic"   controls="controls" style="display: none;z-index: -999;">
+                  <source :src="'./static/voice/scroll.mp3'" type="audio/mp3">
+                </audio>
+                <audio id="endMusic"  controls="controls" style="display: none;z-index: -999;">
+                  <source :src="'./static/voice/end.mp3'" type="audio/mp3">
+                </audio>
+              </div>
 
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <div class="mask" v-if="showNotice">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">{{msg_title}}</div>
+          <div class="close" @click="showNotice = false"><i class="el-icon-close"></i></div>
+        </div>
+        <div class="modal-body">
+          <div class="payment-info" v-html="msg_content">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="confirm-btn" @click="showNotice= false">{{$t('confirm')}}</div>
         </div>
       </div>
     </div>
@@ -179,10 +251,10 @@
       },
       startCallBack () {
         let that = this;
-        if(this.UserInfo.lucky_times !=undefined && this.UserInfo.lucky_times<=0){
-          that.$Dialog.Alert(that.$t('lucky[8]'),()=>{
-          })
-        }else{
+        // if(this.UserInfo.lucky_times !=undefined && this.UserInfo.lucky_times<=0){
+        //   that.$Dialog.Alert(that.$t('lucky[8]'),()=>{
+        //   })
+        // }else{
           this.$Model.LuckyDraw(null,t=>{
             that.$Dialog.Close();
             that.code_dec = t.code_dec;
@@ -204,7 +276,7 @@
             }
             that.$Model.GetUserInfo();
           });
-        }
+        // }
 
       },
       endCallBack (prize) {
@@ -272,8 +344,8 @@
 }
   .topItem {
     line-height: 1;
-    background-color: rgba(0,0,0,0) !important;
-    color: rgb(21, 171, 191);
+    /*background-color: #fff !important;*/
+    /*color: #000;*/
   }
   .topItem .van-cell__left-icon{
     height: 46px;
@@ -290,7 +362,7 @@
   .topItem .van-cell__label{
     line-height: 1.2rem;
     margin-top: 0.25rem;
-    color: #eee;
+    color: #88879A;
   }
   .topItem .profit{
     /*background-color: rgba(255, 255, 255, .5);*/
@@ -298,8 +370,8 @@
     display: flex;
     align-items: center;
     padding: 3px 8px;
-    font-size: 1rem;
-    color: rgb(21, 171, 191);
+    font-size: 2rem;
+    color: #fbc241;
     font-weight: 600;
   }
   .topItem .profit img{
@@ -310,8 +382,9 @@
     font-weight: bolder;
   }
   .recordBtn{
+    color: #000000;
     float: right;
-    border: 1px solid #000;
+    border: 1px solid #361c1c;
     border-radius: 10px;
     padding: 5px 10px;
     /*position: absolute;*/
@@ -903,7 +976,6 @@
   }
   .aaa {
     font-size: 1.2rem;
-    padding-top: 5rem;
     display: flex;
     justify-content: space-between;
   }

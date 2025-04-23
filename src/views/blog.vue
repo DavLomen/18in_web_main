@@ -21,13 +21,13 @@
             <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
               <div class="blog-item">
                 <div class="blog-thumb">
-                  <img :src="item.cover_img" alt="blog thumb">
+                  <img v-if="item.cover_img" :src="item.cover_img" alt="blog thumb">
                 </div>
                 <div class="blog-content">
-                  <ul class="blog-meta mb-2">
-<!--                    <li><van-icon name="clock" class="fas fa-clock" color="#CD9F34"/>{{item.add_time}}</li>-->
-                  </ul>
                   <h4 class="blog-title"><a href="javascript:;" @click="$router.push(`/blogDetail?id=${item.id}`)">{{item.title}}</a></h4>
+                  <ul class="">
+                    <li><van-icon name="clock" class="fas fa-clock" color="#CD9F34"/>{{item.add_time}}</li>
+                  </ul>
                   <a href="javascript:;" class="blog-btn" @click="$router.push(`/blogDetail?id=${item.id}`)">
                     <span>{{$t('blog[2]')}}</span>
                     <van-icon class="fas fa-arrow-right" name="arrow" />
@@ -228,11 +228,11 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color:#1ab5ff!important;
+    background-color: #fbc241!important
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
+    color: #fbc241!important
   }
 
   .el-message {
@@ -2215,8 +2215,8 @@
   ==============================
   */
   .page-banner {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 3.75rem;
   }
 
   .page-banner::before {
@@ -3468,6 +3468,7 @@
     color: #000;
     text-decoration: none;
     font-size: 1.5rem;
+    height: 3.5rem;
   }
 
   .blog-meta {
@@ -3482,7 +3483,7 @@
   .blog-btn {
     justify-content: space-between;
     padding-top: 0.9375rem;
-    margin-top: 1.5625rem;
+    margin-top: 0.5625rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 
@@ -4835,9 +4836,9 @@
     color: #3b3b3b;
   }
   .pagination .page-item.active .page-link {
-    background-color: rgba(42, 234, 227, 0.47);
+    background-color: #F7C70B;
     color: #fff;
-    border-color: rgba(42, 234, 227, 0.47);
+    border-color: #F7C70B;
   }
   .row {
     --bs-gutter-x: 1.5rem;

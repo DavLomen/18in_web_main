@@ -1,58 +1,129 @@
 <template>
   <div class="HomePage" id="app">
     <Header></Header>
-    <div class="container">
-      <div class="el-row">
-        <div class="el-col el-col-5">
-          <UserHeader></UserHeader>
-        </div>
-        <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-          <section data-v-19c9d02c="" data-v-23f21a9a="" class="section pt-0" style="padding-bottom: 0px; margin-top: 50px;">
-            <div class="row justify-content-center mt-4">
-              <div class="col-md-8">
-                <div class="card custom--card">
-                  <form class="register">
-                    <div class="card-body">
-                      <div v-if="UserInfo.is_fund_password==1" class="form-group hover-input-popup">
-                        <label for="passwordo">{{$t('password[0]')}}</label>
-                        <input id="passwordo" type="password" v-model.trim="postData.o_payword" class="form--control form-control"   name="password"   autocomplete="off">
+    <section class="user-panel-section" style="padding: 20px 0px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="sidebar-head d-flex flex-wrap align-items-center justify-content-between">
+              <h3 class="sidebar-head-title"></h3>
+            </div>
+            <div class="sidebar sidebar-user-mobile">
+              <a href="javascript:;" class="icon-btn menu-toggler-user-close">
+                <em class="ni ni-cross"></em>
+              </a>
+              <div class="sidebar-widget">
+                <ul class="user-nav">
+                  <li class="">
+                    <a aria-current="page" href="javascript:;" @click="$router.push('/dashboard')" class="router-link-active router-link-exact-active">
+                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[1]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/transactions')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[2]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/deposit')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[3]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;"  @click="$router.push('/withdraw')">
+                      <em class="ni me-2 ni-exchange"></em>{{$t('header[4]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/MyPackages')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[5]')}}</a>
+                  </li>
+<!--                  <li class="">-->
+<!--                    <a href="javascript:;" @click="$router.push('/contact')">-->
+<!--                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[6]')}}</a>-->
+<!--                  </li>-->
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/affiliates')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[7]')}}</a>
+                  </li>
+                  <li class="active">
+                    <a href="javascript:;" @click="$router.push('/loginPassword')">
+                      <em class="ni me-2 ni-account-setting"></em>{{$t('header[8]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/message')">
+                      <em class="ni me-2 ni-megento"></em>{{$t('head[13]')}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-10 ps-xl-5">
+            <div  class="Deposit">
+              <div class="user-panel-title-box"><h2 >{{$t('head[14]')}}</h2></div>
+              <div  class="">
+                <ul class="nav nav-tabs nav-tabs-s1 nav-tabs-mobile-size" id="myTab" role="tablist">
+                  <li  class="nav-item" role="presentation" @click="$router.push('/loginPassword')"><button  class="nav-link " data-bs-toggle="tab" data-bs-target="#AccountPassword" type="button">
+                    {{$t('userInfo.default[10]')}}</button></li>
+                  <li  class="nav-item" role="presentation" @click="$router.push('/payPassword')"><button  class="nav-link active" data-bs-toggle="tab" data-bs-target="#AccountPassword" type="button">
+                    {{$t('userInfo.default[11]')}}</button></li>
+                  <li  class="nav-item" role="presentation" @click="$router.push('/walletAddress')"><button  class="nav-link " data-bs-toggle="tab" data-bs-target="#AccountPassword" type="button">
+                    {{$t('usdt[3]')}}</button></li>
+                </ul>
+                <div id="AccountPasswordUpdateSection" class="profile-setting-panel-wrap mt-4">
+                  <div  class="form">
+                    <div class="el-col el-col-24" v-if="UserInfo.is_fund_password==1">
+                      <div class="el-form-item is-required is-no-asterisk"><label for="originalPassword"
+                                                                                  class="el-form-item__label">{{$t('userInfo.label[3]')}}</label>
+                        <div class="el-form-item__content">
+                          <div class="el-input el-input--suffix">
+                            <input type="password" autocomplete="off" placeholder="" id="originalPassword" class="el-input__inner" v-model.trim="postData.o_payword">
+                            <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                                        </span>
+                                    </span>
+                          </div>
+                        </div>
                       </div>
-                      <div class="form-group hover-input-popup">
-                        <label for="password">{{$t('password[1]')}}</label>
-                        <input id="password" v-model.trim="postData.n_payword" type="password" class="form--control form-control"   name="password"   autocomplete="off">
-                      </div>
-                      <div class="form-group">
-                        <label for="password_confirmation">{{$t('password[2]')}}</label>
-                        <input id="password_confirmation"  v-model.trim="postData.r_payword" type="password" class="form--control form-control"    autocomplete="off">
-                      </div>
-                      <!--                <div class="form-group">-->
-                      <!--                  <label>Verification Code</label>-->
-                      <!--                  <div class="input-group">-->
-                      <!--                    <input type="text" name="code" maxlength="6" placeholder="Email verification Code" onkeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" class="form-control form&#45;&#45;control" autocomplete="off">-->
-                      <!--                    <span class="input-group-text get_code"> Get Code </span>-->
-                      <!--                  </div>-->
-                      <!--                </div>-->
                     </div>
-                    <div class="card-footer">
-                      <button type="submit" class="btn btn--base  btn-block btn-dark" @click="setUserInfo">{{$t('password[3]')}}</button>
+                    <div class="el-col el-col-24">
+                      <div class="el-form-item is-required is-no-asterisk"><label for="password" class="el-form-item__label">{{$t('userInfo.label[4]')}}</label>
+                        <div class="el-form-item__content">
+                          <div class="el-input el-input--suffix">
+                            <input type="password" autocomplete="off" placeholder="" id="password" class="el-input__inner" v-model.trim="postData.n_payword">
+                            <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                                        </span>
+                                    </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </form>
+                    <div class="el-col el-col-24">
+                      <div class="el-form-item is-no-asterisk"><label for="confirmPassword" class="el-form-item__label">{{$t('userInfo.label[5]')}}</label>
+                        <div class="el-form-item__content">
+                          <div class="el-input el-input--suffix">
+                            <input type="password" autocomplete="off" placeholder="" id="confirmPassword" class="el-input__inner" v-model.trim="postData.r_payword">
+                            <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                                        </span>
+                                    </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div  class="row gy-3 but-wrap mt-3">
+                      <div  class="col-12 col-sm-6 justify-content-lg">
+                        <button @click="setUserInfo" class="btn btn-dark w-100" style="max-width: 300px;">{{$t('submit')}}</button></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <Footer></Footer>
   </div>
 </template>
 <script>
-  import UserHeader from '@/components/UserHeader'
   export default {
     name: 'loginPassword',
     components: {
-      UserHeader
     },
     data() {
       return {
@@ -83,10 +154,9 @@
       setUserInfo() {
         this.$Model.SetUserInfo(this.postData,data=>{
           if(data.code==1){
-            this.postData = {};
-            this.$Model.GetUserInfo();
+            this.postData = {}
           }
-        })
+        });
       },
     }
   }
@@ -174,11 +244,11 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
+    background-color: #fbc241!important
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
+    color: #fbc241!important
   }
 
   .el-message {
@@ -245,8 +315,8 @@
   }
 
   .el-input .el-input__inner {
-    height: 4.5rem;
-    line-height: 4.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
     padding: 0 2rem;
     font-family: myFont;
     color: #000;
@@ -327,10 +397,6 @@
       padding: 4rem;
       border-radius: 4px;
       background-color: #fff
-    }
-
-    .container .form .el-form-item {
-      margin-bottom: 2.5rem
     }
 
     .container .form .input-group {
@@ -455,7 +521,16 @@
       cursor: pointer
     }
   }
-
+  .form{
+    background: #f8f9fc !important;
+    border-radius: 0.5rem;
+    padding: 1.3125rem!important;
+  }
+  #AccountPasswordUpdateSection {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
 </style>
 
 

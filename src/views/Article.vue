@@ -14,79 +14,85 @@
 </template>
 
 <script>
-export default {
-  name: 'Info',
-  components: {
-  },
-  props: ['articleType','articleId'],
-  data() {
-    return {
-      showInfo: {
-        title: '',
-        content:'',
-      },
-    }
-  },
-  computed: {
+  export default {
+    name: 'Info',
+    components: {
+    },
+    props: ['articleType','articleId'],
+    data() {
+      return {
+        showInfo: {
+          title: '',
+          content:'',
+        },
+      }
+    },
+    computed: {
 
-  },
-  watch: {
-    '$route'(to, from) {
-      this.$router.go(0)
-    }
-  },
-  created() {
-    let _this = this;
-    if(this.articleType=='video'){
-      this.showInfo = this.InitData.videovTutorial.find(item=>item.id==this.articleId)
-      setTimeout(function () {
-        document.getElementsByTagName('video')[0].play();
-      },1000)
-    }
-    if(this.articleType=='article'){
-      _this.$Model.noticeDetail({id:_this.articleId}, data => {
-        _this.showInfo.content = data.info.content;
-        _this.showInfo.title = data.info.title;
-      })
-    }
-    if(this.articleType=='privacy'){
-      this.getListData(11);
-    }
-    if(this.articleType=='about'){
-      this.getListData(6);
-    }
-    if(this.articleType=='terms'){
-      this.getListData(12);
-    }
-    if(this.articleType=='cryptocurrency'){
-      this.getListData(18);
-    }
-    if(this.articleType=='web3'){
-      this.getListData(19);
-    }
-    if(this.articleType=='hash'){
-      this.getListData(13);
-    }
-  },
-  mounted() {
+    },
+    watch: {
+      '$route'(to, from) {
+        this.$router.go(0)
+      }
+    },
+    created() {
+      let _this = this;
+      if(this.articleType=='video'){
+        this.showInfo = this.InitData.videovTutorial.find(item=>item.id==this.articleId)
+        setTimeout(function () {
+          document.getElementsByTagName('video')[0].play();
+        },1000)
+      }
+      if(this.articleType=='article'){
+        _this.$Model.noticeDetail({id:_this.articleId}, data => {
+          _this.showInfo.content = data.info.content;
+          _this.showInfo.title = data.info.title;
+        })
+      }
+      if(this.articleType=='privacy'){
+        this.getListData(11);
+      }
+      if(this.articleType=='about'){
+        this.getListData(6);
+      }
+      if(this.articleType=='terms'){
+        this.getListData(12);
+      }
+      if(this.articleType=='hash'){
+        this.getListData(13);
+      }
+      if(this.articleType=='cryptocurrency'){
+        this.getListData(18);
+      }
+      if(this.articleType=='web3'){
+        this.getListData(20);
+      }
+      if(this.articleType=='service'){
+        this.getListData(21);
+      }
+      if(this.articleType=='cookie'){
+        this.getListData(22);
+      }
+    },
+    mounted() {
 
-  },
-  activated() {
+    },
+    activated() {
 
-  },
-  destroyed() {
+    },
+    destroyed() {
 
-  },
-  methods: {
-    getListData(type){
-      this.$Model.noticeList({gropid: type, page_no: this.pageNo}, data => {
-        if (data.code == 1 && data.info.length>0) {
-          this.showInfo = data.info[0];
-        }
-      });
+    },
+    methods: {
+      getListData(type){
+        this.$Model.noticeList({gropid: type, page_no: this.pageNo}, data => {
+          if (data.code == 1 && data.info.length>0) {
+            this.showInfo = data.info[0];
+          }
+        });
+      }
     }
   }
-}
 </script>
 <style scoped>
   @media only screen and (min-width: 1024px) {
@@ -171,11 +177,11 @@ export default {
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
+    background-color: #fbc241!important
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
+    color: #fbc241!important
   }
 
   .el-message {
@@ -317,7 +323,7 @@ export default {
     .container {
       width:100%;
       box-sizing: border-box;
-      padding: 5rem 3rem
+      padding: 8rem 3rem
     }
 
     .container .box {
@@ -329,7 +335,7 @@ export default {
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
       font-size: 3rem;
       font-weight: 700;
       color: #000;
@@ -337,6 +343,17 @@ export default {
       word-wrap: break-word
     }
 
+    .container .box .title:after {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 16rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #1f1c17, #8897fa)
+    }
 
     .container .box .content {
       width: 100%
@@ -357,7 +374,7 @@ export default {
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 2.5rem;
+      margin-bottom: 4.5rem;
       font-size: 2.2rem;
       font-weight: 700;
       color: #000;
@@ -365,16 +382,32 @@ export default {
       word-wrap: break-word
     }
 
+    .container .box .title:after {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 10rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #1f1c17, #8897fa)
+    }
+
     .container .box .content {
       width: 100%
     }
   }
-  .content img,.content video {
-    width: 100% !important;
-    height: auto !important;
+  .content>>> img {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    display: block;
   }
-  .content >>>img,.content>>>video {
-    width: 100% !important;
-    height: auto !important;
+  .content>>> video {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    display: block;
   }
 </style>

@@ -199,7 +199,7 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
+    background-color: #efbc16!important;
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
@@ -349,7 +349,7 @@
     .container .box7 {
       width: 100%;
       box-sizing: border-box;
-      padding: 4rem 1.5rem
+      padding: 8rem 3rem
     }
 
     .container .box7 .box-wrapper {
@@ -361,10 +361,10 @@
     .container .box7 .box-wrapper .title {
       position: relative;
       width: 100%;
-      margin-bottom: 3rem;
-      font-size: 1.5rem;
+      margin-bottom: 6rem;
+      font-size: 2rem;
       font-weight: 700;
-      color: rgb(21 207 231);
+      color: #efbc16;
       word-wrap: break-word
     }
 
@@ -376,7 +376,7 @@
       width: 16rem;
       height: 4px;
       border-radius: 4px;
-      background-image: linear-gradient(90deg, #68b3d4, #1f62d5)
+      background: #efbc16
     }
 
     .container .box7 .box-wrapper .faq-list {
@@ -386,7 +386,7 @@
     .container .box7 .box-wrapper .faq-list .faq-item {
       width: 100%;
       box-sizing: border-box;
-      padding: .8rem 1.5rem;
+      padding: 1.5rem 2rem;
       border-radius: 6px;
       background-color: #efefef;
       transition: all .3s
@@ -406,7 +406,7 @@
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .name {
       max-width: 100%;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: #000;
       word-wrap: break-word
@@ -416,12 +416,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 2rem;
-      max-width: 2rem;
-      height: 2rem;
-      margin-left: 2rem;
+      min-width: 2.8rem;
+      max-width: 2.8rem;
+      height: 2.8rem;
+      margin-left: 3rem;
       border-radius: 50%;
-      background-color: rgb(21 207 231)
+      background-color: #efbc16
     }
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {
@@ -460,9 +460,9 @@
       position: relative;
       width: 100%;
       margin-bottom: 4.5rem;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      color: rgb(21 207 231);
+      color: #efbc16;
       word-wrap: break-word
     }
 
@@ -474,7 +474,7 @@
       width: 10rem;
       height: 4px;
       border-radius: 4px;
-      background-image: linear-gradient(90deg, #68b3d4, #1f62d5)
+      background: #efbc16
     }
 
     .container .box7 .box-wrapper .faq-list {
@@ -504,7 +504,7 @@
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .name {
       max-width: 100%;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #000;
       word-wrap: break-word
@@ -514,12 +514,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 1.5rem;
-      max-width: 1.5rem;
-      height: 1.5rem;
-      margin-left: 1rem;
+      min-width: 2.2rem;
+      max-width: 2.2rem;
+      height: 2.2rem;
+      margin-left: 1.5rem;
       border-radius: 50%;
-      background-color: #1ab5ff
+      background-color: #efbc16
     }
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {

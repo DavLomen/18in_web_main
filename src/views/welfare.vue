@@ -3,12 +3,10 @@
     <Header></Header>
     <div class="app-wrapper">
       <div class="container">
-<!--        <img :src="'./static/images/viptop.png'">-->
         <div class="box">
           <div class="title">{{showInfo.title}}</div>
           <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
         </div>
-<!--        <div v-html="$t('vipfoot[0]',{WT:InitData.setting.web_title})"></div>-->
       </div>
     </div>
     <Footer></Footer>
@@ -37,7 +35,7 @@
       }
     },
     created() {
-      this.getListData(14);
+      this.getListData(19);
     },
     mounted() {
 
@@ -142,11 +140,11 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
+    background-color: #fbc241!important
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
+    color: #fbc241!important
   }
 
   .el-message {
@@ -288,6 +286,7 @@
     .container {
       width:100%;
       box-sizing: border-box;
+      padding: 6rem 3rem
     }
 
     .container .box {
@@ -299,7 +298,7 @@
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 3rem;
+      margin-bottom: 10rem;
       font-size: 3rem;
       font-weight: 700;
       color: #000;
@@ -309,14 +308,14 @@
 
     .container .box .title:after {
       position: absolute;
-      bottom: 0rem;
+      bottom: -2rem;
       left: 50%;
       transform: translateX(-50%);
       content: "";
       width: 16rem;
       height: 4px;
       border-radius: 4px;
-      background-image: linear-gradient(90deg, #00fefe, #88dafa)
+      background-image: linear-gradient(90deg,#fe9500,#fade88)
     }
 
     .container .box .content {
@@ -328,7 +327,7 @@
     .container {
       width:100%;
       box-sizing: border-box;
-      padding: 3rem 1rem
+      padding: 2rem 1rem
     }
 
     .container .box {
@@ -380,5 +379,4 @@
     margin: 0 auto;
     display: block;
   }
-
 </style>
