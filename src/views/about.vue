@@ -34,19 +34,8 @@
           <div class="row gy-5 align-items-top justify-content-between">
             <div class="col-lg-12 ps-xl-5 p-lg-12 about-content wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;padding-top: 0px;">
 <!--              <h2 class="sp_site_title">{{showInfo.title}}</h2>-->
-<!--              <div class="fs-lg mt-3" v-html="showInfo.content" style="font-size: 1.5rem"></div>-->
-              <div class="fs-lg mt-3" style="font-size: 1.5rem;font-weight: bolder;">
-                {{$t('about1[2]')}}
-<br>
-                {{$t('about1[3]')}}
-                {{$t('about1[4]')}}
-                <br>
-                {{$t('about1[5]')}}
-                {{$t('about1[6]')}}
-                <br>
-                {{$t('about1[7]')}}
-                {{$t('about1[8]')}}
-              </div>
+<!--              公司简介后台自己配了返回-->
+              <div class="fs-lg mt-3" v-html="showInfo.content" style="font-size: 1.5rem"></div>
             </div>
             <div class="col-lg-12 col-md-12" style="margin-top: 0px;padding-top: 0px;">
               <!--              <div class="about-thumb">-->
