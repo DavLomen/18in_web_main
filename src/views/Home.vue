@@ -122,6 +122,12 @@
                   </div>
                   <div class="text-left" style="color: #000000;font-weight: bold">
                     <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[4]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
+                    <div class="text-left" style="color: #000000;font-weight: bold">
+                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[21]')}}: $ 0</h6>
+                  </div>
+                  <div class="text-left" style="color: #000000;font-weight: bold">
+                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[22]')}}: $ 0</h6>
+                  </div>
                     <h6 class="mt-0 mb-2 text-left" style="color: #196F3D !important;font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('home[34]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
                   </div>
                   <div class="text-left" style="color: #000000;font-weight: bold">
