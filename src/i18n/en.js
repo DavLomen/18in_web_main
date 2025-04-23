@@ -312,7 +312,7 @@ export default {
     "Contract",
     "About",
     "FAQ",
-    "Alliance Plan",
+    "Affiliates Program",
     "Blog",
     "Contact",
     "Quick Links",
@@ -345,7 +345,8 @@ export default {
     "My Withdrawals",
     "My Bills",
     "Commissions",
-    "Referrals"
+    "Referrals",
+    "Online Users"
   ],
   "say":[
     "Amelia",
@@ -360,7 +361,7 @@ export default {
     ""
   ],
   "about":[
-    "About Us",
+    "About ALL4 Mining",
     "{WT} became a company in the crypto-mining sphere in 2016 in UK. At that time we, a small group of crypto-enthusiasts, decided to establish our first cryptocurrency mining farm, abandoning the then usual mining based on the use of graphics cards in favor of professional equipment-ANTMINER. And now, after some time, we are ready to present to you our experience and efforts - the {WT} cloud mining project.   {WT} allows you to engage in cryptocurrency mining from anywhere in the world, and our main goal is to make cryptocurrency mining accessible to everyone, regardless of the size of the initial contribution, experience, or technical knowledge of the user. We provide an opportunity to mine cryptocurrency (Bitcoin, Ethereum,and Litecoin) using equipment located in our data centers, as well as in the computing centers of our partners.    The maintenance of the mining equipment and technical support of clients is ensured by our company’s experts, whose many years of experience guarantee the safety and reliability of the service. {WT} uses only the most efficient equipment, which not only positively affects mining, but also makes Mining Plan prices one of the most affordable on the market.",
     "Vision And Mission",
     "{WT}, as an excellent computing power provider, provides various ranges of cryptocurrency mining capabilities for novices, interested home miners, and large investors. Our mission is to make acquiring cryptocurrencies easy and fast for everyone.  We provide a multi-algorithm, multi-coin cloud mining service using the latest technology - without any pool fees. The ultimate goal of our existence is to make cryptocurrency mining an easy, smart and rewarding experience for all.",
@@ -371,7 +372,8 @@ export default {
     "Company type",
     "Incorporated on",
     "Check Online",
-    "Download PDF"
+    "Download PDF",
+    "Company Address"
   ],
   "walletAddress":[
     "Wallet Address",
@@ -403,7 +405,7 @@ export default {
     "Sign Up Now",
     "Don't have an account?",
     "Sign Up Now",
-    "Hi! You're new here. Ready to create an account?",
+    "Create an account now to start your mining journey",
     "Enter your details to get started."
   ],
   "product":[
@@ -448,11 +450,11 @@ export default {
   "affliliate":[
     "Affiliates Program",
     "Sign Up Now",
-    "Join our community, sign up an account, get your referral link.",
+    "Create an account and get independent referral codes and referral links",
     "Invite New Users",
-    "Invite new users, sharing your link via social media.",
+    "Share a unique referral code or referral link to social media to invite users to join",
     "Earn Commissions",
-    "Get 3% bonus based on their initial investment amount.",
+    "Recommend friends to buy contracts and get up to 4.5% commission",
     "Join our referral program (Partner Program) and receive a 3% bonus based on your initial investment! You can run it like a boss and start making money without investing a penny. 3% for first-level agents and 1.5% for second-level agents. For example, if someone invests $5,000 in the program using your referral code, you’ll get $150 for free. With unlimited referrals, your earning potential is unlimited! So why wait? Sign up now and start making money by sharing your referral link with friends and family.",
     "JOIN US"
   ],
@@ -478,14 +480,14 @@ export default {
   ],
   "appDown":[
     "START MINING JOURNEY",
-    "Manage your {WT} activities on the go using our mobile apps. With access to real-time data and the ability to track your mining portfolio anywhere, anytime, the {WT} app offers a convenient, simple solution for buying and managing mining plans and building your revenue.",
-    "Manage your revenue anytime, anywhere",
+    "Explore our one-stop mining services. Use ALL4 Mining and track your mining portfolio anytime, anywhere, providing you with a convenient and simple solution to help you purchase and manage mining plans and increase your profits. Download ALL4 Mining now and easily manage your mining business.",
+    "Easily enjoy ALL4 Mining’s one-stop mining service",
     "Easy start with mining",
     "We've simplified all the steps you'll need to start with cloud mining on app.",
     "One-click mining",
     "Effortlessly order long and short-term mining plans with low thresholds and low fees.",
     "Real-time manage",
-    "Whether onsite or away, effortlessly monitor and manage your mining plans assets.",
+    "Track hashrate and revenue for all mining pools with real-time and historical data for each account.",
     "24/7 Chat Support",
     "Contact our customer support with your questions at any time."
   ],
@@ -524,7 +526,15 @@ export default {
     "Recent Activity",
     "Received register bonus.",
     "Total Profit",
-    "My Orders"
+    "My Orders",
+    "Credit Score",
+    "Membership level",
+    "Your Username",
+    "Your Referral Code",
+    "Your Affiliate Link",
+    "Do you have any Questions?",
+    "We strongly recommend that you search for the necessary information in the FAQ section. Contact our 24-hour online customer service if you need advice or technical assistance.",
+    "Get Support Now"
   ],
   "faq":[
     "Common Problem"
@@ -633,7 +643,16 @@ export default {
     "TXID",
     "Amount",
     "Status",
-    "Time"
+    "Time",
+    "Sign-up Bonus",
+    "Total Deposits",
+    "Total withdrawals",
+    "Today Profits",
+    "Today Referrals",
+    "Today Rewards",
+    "Active Orders",
+    "Expired Orders",
+    "Total Orders"
   ],
   "deposit":[
     "You have requested",
@@ -689,7 +708,10 @@ export default {
   "blog":[
     "Recent Blog",
     "Recent Blog Posts",
-    "Read More"
+    "Read More",
+    "Blog post",
+    "Follow and read the latest blog posts from our website",
+    "View all blogs"
   ],
   "welfare":[
     "Vip Award"
@@ -868,5 +890,12 @@ export default {
 "home_comment": [
   "What users say about us",
   "Many people trust us, here are the words of some of them."
+],
+"home_comment": [
+  "What users say about us",
+  "Many people trust us, here are the words of some of them."
+],
+"partners": [
+  "Our Partners",
 ],
 }

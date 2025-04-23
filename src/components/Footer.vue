@@ -1,11 +1,11 @@
 <template>
-  <footer class="footer">
-    <div v-show="showF" class="footer-top">
+  <footer class="footer" ref="foot">
+    <div v-if="showF" class="footer-top">
       <div class="container">
         <div class="row justify-content-between g-4">
           <div class="col-md-6 col-lg-2">
             <h4 class="mt-0">{{$t('foot[1]')}}</h4>
-            <div class="link-item" @click="$router.push('/product')">{{$t('foot[2]')}}</div>
+            <!-- <div class="link-item" @click="$router.push('/product')">{{$t('foot[2]')}}</div> -->
             <div class="link-item" @click="$router.push('/about')">{{$t('foot[3]')}}</div>
 <!--            <div class="link-item" @click="$router.push('/FAQ')">{{$t('foot[4]')}}</div>-->
 <!--            <div class="link-item" @click="$router.push('/Bounty')">{{$t('bounty')}}</div>-->
@@ -24,7 +24,7 @@
           <div class="col-md-6 col-lg-2">
             <h4 class="mt-0">{{$t('foot[7]')}}</h4>
             <div class="link-item"><i class="el-icon-location-information"></i>
-              1 America Square, City of London, London EC3N 2LS UK
+              2.71-75 Shelton Street, London, Greater London, United Kingdom, WC2H 9JQ
             </div>
             <div class="link-item"><i class="el-icon-message"></i>
               info@kkminer.top
@@ -63,7 +63,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-top" v-show="showT">
+    <div class="footer-top" v-if="showT">
       <div class="container">
         <div class="col-md-6 col-lg-6">
           <a href="javascript:;" class="t-link logo">

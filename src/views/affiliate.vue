@@ -17,7 +17,7 @@
                        style="width: 150px; height: 150px;">
                     <a  href="javascript:;" @click="$router.push('/login')"
                                                                class="product__card--thumbnail__link display-block"><img
-                     :src="'./static/img/1111.png'" class="product__card--thumbnail__img"
+                     :src="'./static/img/1111_new.png'" class="product__card--thumbnail__img"
                     style="width: 150px; height: 150px;"></a>
 
                   </div>
@@ -37,7 +37,7 @@
                   <div  class="product__card--horizontall__thumbnail"
                        style="width: 150px; height: 150px;"><a  href="javascript:;" @click="$router.push('/product')"
                                                                class="product__card--thumbnail__link display-block"><img
-                     :src="'./static/img/44444.png'" class="product__card--thumbnail__img"
+                     :src="'./static/img/44444_new.png'" class="product__card--thumbnail__img"
                     style="width: 150px; height: 150px;"></a></div>
                   <div  class="product__card--horizontall__content"><h3
                                                                                           class="product__card--horizontall__title product__card--horizontall__title"
@@ -53,7 +53,7 @@
                   <div  class="product__card--horizontall__thumbnail"
                        style="width: 150px; height: 150px;"><a  href="javascript:;" @click="$router.push('/dashboard')"
                                                                class="product__card--thumbnail__link display-block"><img
-                     :src="'./static/img/77777.png'" class="product__card--thumbnail__img"
+                     :src="'./static/img/77777_new.png'" class="product__card--thumbnail__img"
                     style="width: 150px; height: 150px;"></a></div>
                   <div  class="product__card--horizontall__content"><h3
                                                                                           class="product__card--horizontall__title product__card--horizontall__title"

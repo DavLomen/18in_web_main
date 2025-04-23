@@ -382,38 +382,38 @@
               <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
                 <div class="comment_container">
                   <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
-                      <swiper-slide v-for="i in 10" :key="i">
+                    <swiper-slide v-for="el in commentList.slice(0, 10)" :key="el.id">
                         <div class="comment_card">
                           <div class="comment_head">
-                            <img src="../../static/img/Agnes Davis.png" alt="">
+                            <img :src="`../../static/img/user/user_${el.id}.png`" alt="">
                           </div>
                           <div class="msg mx-auto">
-                            <div class="name fw-bold">Annmarie Garcia</div>
-                            <div class="content">I was sceptical when I learnt about KSD Miner as a platform, I was allayed by speaking to their customer service staff, who were very approachable and answered the questions I asked, I've already tried using it and their professionalism has put me more at ease.</div>
+                            <div class="msg mx-auto">
+                            <div class="name fw-bold">{{el.name}}</div>
+                            <div class="content">{{ el.text }}</div>
+                          </div>
                           </div>
                         </div>
                       </swiper-slide>
                   </swiper>
-                  <div class="swiper-pagination text-center" slot="pagination"></div>
                 </div>
               </div>
               <!-- 第二個評論 -->
               <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
                 <div class="comment_container">
                   <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
-                      <swiper-slide v-for="i in 10" :key="i">
+                      <swiper-slide v-for="el in commentList.slice(10)" :key="el.id">
                         <div class="comment_card">
                           <div class="comment_head">
-                            <img src="../../static/img/Agnes Davis.png" alt="">
+                            <img :src="`../../static/img/user/user_${el.id}.png`" alt="">
                           </div>
                           <div class="msg mx-auto">
-                            <div class="name fw-bold">Annmarie Garcia</div>
-                            <div class="content">I was sceptical when I learnt about KSD Miner as a platform, I was allayed by speaking to their customer service staff, who were very approachable and answered the questions I asked, I've already tried using it and their professionalism has put me more at ease.</div>
+                            <div class="name fw-bold">{{el.name}}</div>
+                            <div class="content">{{ el.text }}</div>
                           </div>
                         </div>
                       </swiper-slide>
                   </swiper>
-                  <div class="swiper-pagination text-center" slot="pagination"></div>
                 </div>
               </div>
             </div>
@@ -474,10 +474,63 @@
             </div>
           </div>
         </div>
+    <!-- Our Partners -->
+    <div class="section featured-section">
+      <div class="section__head">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-24 col-xl-12 pl-0 pr-0">
+              <h6 class="mt-0 text-center miner_work_title"> {{$t('partners[0]')}}</h6>
+            </div>
+          </div>
+          <div class="row partners_list justify-content-between">
+            <div class="el-col-sm-8 el-col-md-6 el-col-xs-12 pl-0 pr-0 mb-5 mt-3" v-for="i in 8" :key="i">
+              <img class="mx-auto" style="width: 70%;" src="../../static/img/Partner 1 (1).png" alt="">
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
       </div>
     </section>
-
-
+    <!-- Bolg Section -->
+    <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
+              <div class="section-title text-center">
+                <h1 class="title fw-bold" style="color: #fba342;">{{$t('blog[3]')}}</h1>
+                <div class="para-desc videoDiv text-center mx-auto">
+                  <p>
+                    {{$t('blog[4]')}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row blog_list justify-content-between">
+            <div class="el-col-sm-12 el-col-md-8 el-col-xs-24 pl-0 pr-0" v-for="(el, i) in listDataBlog" :key="el.id">
+              <div class="blog_card mb-5 mt-3" v-if="i <= 2" @click.stop="$router.push({
+                path: '/blogDetail',
+                query: {
+                  id: el.id
+                }
+              })">
+                <div class="image">
+                  <img :src="`${ApiUrl}${el.cover_img	}`" alt="">
+                </div>
+                <div class="time">{{el.add_time}}</div>
+                <div class="title">{{ el.title }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="justify-content-between">
+            <div class="to-blog" @click="$router.push({
+              path: '/blog'
+            })">{{$t('blog[5]')}}</div>
+          </div>
+        </div>
+    </section>
     <div v-if="showNotice" id="__BVID__247___BV_modal_outer_" style="position: absolute; z-index: 1040;">
       <div id="__BVID__247" role="dialog" aria-labelledby="__BVID__247___BV_modal_title_"
            aria-describedby="__BVID__247___BV_modal_body_" class="modal fade show" aria-modal="true"
@@ -551,7 +604,8 @@
                           d="M20.3715 18.7127V15.8696C19.6497 15.8183 18.8766 15.7679 18.1035 15.7679C17.3817 15.7679 16.6608 15.7679 15.9903 15.8183V18.6614C16.6248 18.7613 17.3898 18.7802 18.1035 18.7802C18.8163 18.7802 19.6497 18.7631 20.3715 18.7127ZM18 20.3777C17.2782 20.3777 16.659 20.3579 15.9894 20.3075V27.9017H20.3202V20.2859C19.5984 20.3372 18.7731 20.3777 18 20.3777Z"
                           fill="white"></path>
                       </svg>
-                    </div><!----></div>
+                    </div>
+                  </div>
                 </div>
                 <div  class="mb-3 el-row"><label  class="font-weight-bold mb-0"
                                                   style="font-size: 14px;">{{$t('settle[9]')}}</label>
@@ -581,9 +635,11 @@
 </template>
 <script>
   import { swiper, swiperSlide } from "vue-awesome-swiper";
+  import common from "../mixins/common";
   import 'swiper/dist/css/swiper.css';
   export default {
     name: 'Home',
+    mixins: [common],
     inject: ['reloadHtml'],
     components: {
       swiper, swiperSlide,
@@ -644,6 +700,7 @@
           cover_img:""
         },
         listDataQ: [],
+        listDataBlog: [],
         isLoad: false,
         isFinished: false,
         isRefresh: false,
@@ -827,6 +884,27 @@
             this.isFinished = true
           }
         })
+        this.$Model.noticeList({gropid: 10,page_no: this.pageNo,page_size:6},data=>{
+          this.isLoad = false
+          if(data.code==1){
+            if(data.info.length<=0){
+              this.listDataBlog =[];
+              this.isFinished = true
+            }else {
+              this.data_current_page = data.data_current_page;
+              this.data_total_page = data.data_total_page;
+              this.listDataBlog = data.info;
+              this.isFinished = true
+              if(type=='load'){
+                this.listDataBlog = this.listDataBlog.concat(data.info);
+              }else{
+              }
+            }
+          }else{
+            this.listData = []
+            this.isFinished = true
+          }
+        });
       },
       jumper() {
         if (this.UserInfo) {
@@ -1735,7 +1813,7 @@
 
 
   .justify-content-center .miner_work_title{
-    background: linear-gradient(90deg, #fffc00 -30%, #db36a4 90%);
+    background: linear-gradient(90deg, #fffc00 35%, #db36a4 60%);
     background-clip: text;
     color: transparent;
     font-weight: 700;
@@ -1892,5 +1970,53 @@
   .comment_card .msg .content{
     height: 150px;
     overflow: hidden;
+  }
+  /* Blog */
+  .blog_card{
+    padding: 20px 10px;
+    border-radius:5px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(58,57,57,.10196078431372549);
+    margin-bottom: 51px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  .blog_card .image{
+    width: 100%;
+    height: 200px;
+  }
+  .blog_card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+  .blog_card .time{
+    font-size: 1rem;
+    color: #959595;
+    margin: 10px 0;
+  }
+  .blog_card .title{
+    height: 100px;
+    display: -webkit-box; /* 必须结合的属性 */
+    -webkit-box-orient: vertical; /* 必须结合的属性 */
+    line-clamp:3; /* 限制显示的行数 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    text-overflow: ellipsis; /* 显示省略号 */
+    word-wrap: break-word; /* 允许在长单词或URL地址内部进行断行 */
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+  .to-blog{
+    width: 150px;
+    height: 50px;
+    color: #fba342;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+  -webkit-box-shadow:
+inset 0 0 0 1px #fba342 !important;
+  box-shadow: inset 0 0 0 1px #fba342 !important;
   }
 </style>

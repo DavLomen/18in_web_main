@@ -24,7 +24,7 @@
             </div>
             <div class="image_smart">
               <div>
-                <img :src="'./static/img/001.png?t=5'">
+                <img :src="'./static/img/001_new.png?t=5'">
 <!--                <img :src="'./static/images/download/app2.png'">-->
               </div>
             </div>

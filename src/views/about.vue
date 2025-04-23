@@ -15,10 +15,10 @@
     <section class="section" style="margin-top: -60px;">
       <div class="container">
         <div class="container mt-60 mt-60">
-          <div class="row align-items-center">
+          <div class="row mt-5">
             <div class="col-lg-6 col-md-5" style="overflow: hidden;">
               <div class="position-relative">
-                <div class="text-center text-md-left"><img :src="'./static/img/location.1704fed8.png'" alt="" width="95%"
+                <div class="text-center text-md-left"><img :src="'./static/img/location.1704fed8_new.png'" alt="" width="95%"
                                                            class="img-fluid" style="border-radius: 30px;"></div>
               </div>
             </div>
@@ -32,36 +32,6 @@
         </div>
       </div>
     </section>
-    <section class="stats">
-    <div class="container">
-      <div class="about-stats">
-        <div class="about-item">
-          <div>
-            <h1>7,000,000+</h1>
-            <p>{{$t('aboutf[0]')}}</p>
-          </div>
-        </div>
-        <div class="about-item" style="background: #ED5C2E;">
-          <div>
-            <h1>157+</h1>
-            <p>{{$t('aboutf[1]')}}</p>
-          </div>
-        </div>
-        <div class="about-item" style="background: #FF971E;">
-          <div>
-            <h1>50+</h1>
-            <p>{{$t('aboutf[2]')}}</p>
-          </div>
-        </div>
-        <div class="about-item" style="background: #0D9CFF;">
-          <div>
-            <h1>1,000,000+</h1>
-            <p>{{$t('aboutf[3]')}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
     <section class="d-table w-100 pb-0">
       <div class="row justify-content-center">
         <div class="col-12 text-center">
@@ -137,8 +107,8 @@
         <div class="row gy-5 align-items-center justify-content-between">
           <div class="col-lg-6 col-md-10">
             <p class="fs-lg mt-3">
-            </p><h3 style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">KINGK CAPITAL LIMITED</h3><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[7]')}} <b>10401415</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[9]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>1 America Square, City of London, London EC3N 2LS UK</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[8]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>Private limited Company</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[9]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>29 September 2016</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p></p>            <p></p>
-            <a target="_blank" style="background: #0a0a1a;color:#fff;" href="https://find-and-update.company-information.service.gov.uk/company/10401415/filing-history" class="btn main-btn mt-4">{{$t('about[10]')}}</a>
+            </p><h3 style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">KINGK CAPITAL LIMITED</h3><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[7]')}} <b>11380717</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[12]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>71-75 Shelton Street, London, Greater London, United Kingdom, WC2H 9JQ</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[8]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>Private limited Company</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[9]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>24 May 2018</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p></p>            <p></p>
+            <a target="_blank" style="background: #0a0a1a;color:#fff;" href="https://find-and-update.company-information.service.gov.uk/company/11380717" class="btn main-btn mt-4">{{$t('about[10]')}}</a>
             <a target="_blank" href="./static/companies_house_document.pdf?t=2" style="background: #f6c5c5" class="btn main-btn mt-4">{{$t('about[11]')}}</a>
           </div>
           <div class="col-lg-6 ps-xl-5 p-lg-4 about-content wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">

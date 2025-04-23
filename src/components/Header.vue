@@ -2,9 +2,9 @@
   <header  id="header-nav" class="new-navbar">
     <div  id="main__header" class="main__header">
       <div  class="container">
-        <div  class="logo-box">
+        <div  class="logo-box" v-if="showLogo">
           <a  href="javascript:;" @click="$router.push('/')" class="logo-icon router-link-active">
-            <img  :src="'./static/img/logo.png?t=2'" alt=""></a>
+            <img :src="'./static/img/logo.png?t=2'" alt=""></a>
         </div>
         <div  class="language pc">
           <div  id="navbarNavDarkDropdown" class="navbar-collapse">
@@ -125,6 +125,10 @@
             <li  class="right-extend_items header__account--items"><a href="javascript:;" @click="$router.push('/login')"
                                                                                         class="but but_login"> {{$t('head[3]')}} </a>
               <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup">{{$t('head[2]')}} </a></li>
+              <li class="ml-1 OlineNum">
+                <div class="">{{ $t('head[25]') }}</div>
+                <span>{{InitData.setting.online || 0}}</span>
+              </li>
           </ul>
         </div>
         <div v-else class="right-extend header__account">
@@ -308,12 +312,18 @@
 </template>
 
 <script>
+
   export default {
     name: 'userHeader',
     components: {
 
     },
-    props: [],
+    props: {
+      showLogo: {
+        type:Boolean,
+        default:true
+      }
+    },
     data() {
       return {
         showMask:false,
@@ -391,6 +401,7 @@
 </script>
 
 <style scoped>
+  .fs-5{font-size:1.25rem!important}
   .header__menu--link_active {
     color: #222226 !important;
   }
@@ -433,5 +444,14 @@
     .mobile {
       display: none;
     }
+  }
+  .OlineNum{
+    text-align: center;
+    margin-left: 10px;
+    border-radius:10px;
+    border:1px solid rgb(102, 34, 130);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px;
   }
 </style>
