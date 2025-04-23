@@ -414,7 +414,7 @@ export default {
     "Invest Period",
     "Daily Rate of Profit",
     "Daily Net Profit",
-    "Total Net Profit",
+    "Total Proceeds at Maturity",
     "Settle Interests",
     "Every 24 Hours",
     "Hash Power",
@@ -429,7 +429,9 @@ export default {
     "Return after expiry",
     "Purchase Plan",
     "Contract Description",
-    "Calculation contract and after-sales service instructions.<br><br>Cloud computing contracts provide institutional customers with the simplest and most efficient mining solution. You don’t need to maintain or run your own mining equipment to enjoy high-performance mining. In addition, cloud computing contracts provide you with the flexibility to choose your preferred mining machine model, planning time and computing volume. You only need to click Invest Now to start mining and check the mining output at any time.<br><br>Warm reminder: (Hash Power Contract 10 USD Package) is limited to one purchase per day, (Hash Power Contract 100 USD Package) is limited to one purchase per account.<br><br>Product Description<br><br>1. Instructions for Contract Purchase<br>Please understand the product carefully before investing. If you have any questions, you can consult 7x24 customer service. Investing now means that the contract has been recognized and no refunds will be given.<br><br>2. Product description<br>Contract: computing power<br>Miners: BTC computing power<br>Investment currency: US dollars<br>Payment address: Third party (USDT BTC ETH LTC USDC BCH)<br>Investment time: start-end according to contract time<br>On time: 100%<br><br>3. Settlement instructions<br>Earnings are expected to come from the real-time operation of the digital asset network and will undergo dynamic changes. for reference only. The actual mining income depends on the actual output, and the mining machine operating income is settled every 24 hours. After the contract expires, the withdrawal amount can be withdrawn if the minimum withdrawal amount requirement set by the platform is reached.<br><br><br>4. End of contract<br>The contract will automatically end when it expires. The mining contract comes into effect immediately after payment is confirmed. Unless otherwise provided by applicable law or a designated offer, early termination is non-refundable. Thank you for your understanding.<br><br>5. Risk reminder<br>The price of digital assets fluctuates greatly, and the mining difficulty of each currency is also adjusted regularly. A drop in currency prices or an increase in difficulty will lead to a drop in output. Whether from the perspective of digital assets or legal currency, this product does not guarantee that users will be able to return their costs. Franchisees need to carefully evaluate their risk tolerance and invest in digital cloud computing mining within acceptable risk control ranges.<br><br>{DT}<br>Disclaimer and Support<br><br>1. According to {WT}’s terms of use, once an order is paid, it cannot be changed and cannot be refunded.<br><br>2. {WT} is not responsible for any results arising from uncontrollable risks, including but not limited to natural disasters, such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or high-risk weather events, government Acts, or instructions, municipal power grid power supply incidents, and social acts or conflicts such as wars, strikes, and riots.<br><br>3. Fluctuations in cloud computing computing power are inevitable. {WT} is not responsible for fluctuations caused by network instability, network failures, mining machine performance, etc.<br><br>4. Static output is calculated statically based on the current difficulty and fluctuates with the market. When the difficulty goes up or down, it will be lower or higher. Therefore, for informational purposes only, {WT} does not make any promises or guarantees regarding yields."
+    "Calculation contract and after-sales service instructions.<br><br>Cloud computing contracts provide institutional customers with the simplest and most efficient mining solution. You don’t need to maintain or run your own mining equipment to enjoy high-performance mining. In addition, cloud computing contracts provide you with the flexibility to choose your preferred mining machine model, planning time and computing volume. You only need to click Invest Now to start mining and check the mining output at any time.<br><br>Warm reminder: (Hash Power Contract 10 USD Package) is limited to one purchase per day, (Hash Power Contract 100 USD Package) is limited to one purchase per account.<br><br>Product Description<br><br>1. Instructions for Contract Purchase<br>Please understand the product carefully before investing. If you have any questions, you can consult 7x24 customer service. Investing now means that the contract has been recognized and no refunds will be given.<br><br>2. Product description<br>Contract: computing power<br>Miners: BTC computing power<br>Investment currency: US dollars<br>Payment address: Third party (USDT BTC ETH LTC USDC BCH)<br>Investment time: start-end according to contract time<br>On time: 100%<br><br>3. Settlement instructions<br>Earnings are expected to come from the real-time operation of the digital asset network and will undergo dynamic changes. for reference only. The actual mining income depends on the actual output, and the mining machine operating income is settled every 24 hours. After the contract expires, the withdrawal amount can be withdrawn if the minimum withdrawal amount requirement set by the platform is reached.<br><br><br>4. End of contract<br>The contract will automatically end when it expires. The mining contract comes into effect immediately after payment is confirmed. Unless otherwise provided by applicable law or a designated offer, early termination is non-refundable. Thank you for your understanding.<br><br>5. Risk reminder<br>The price of digital assets fluctuates greatly, and the mining difficulty of each currency is also adjusted regularly. A drop in currency prices or an increase in difficulty will lead to a drop in output. Whether from the perspective of digital assets or legal currency, this product does not guarantee that users will be able to return their costs. Franchisees need to carefully evaluate their risk tolerance and invest in digital cloud computing mining within acceptable risk control ranges.<br><br>{DT}<br>Disclaimer and Support<br><br>1. According to {WT}’s terms of use, once an order is paid, it cannot be changed and cannot be refunded.<br><br>2. {WT} is not responsible for any results arising from uncontrollable risks, including but not limited to natural disasters, such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or high-risk weather events, government Acts, or instructions, municipal power grid power supply incidents, and social acts or conflicts such as wars, strikes, and riots.<br><br>3. Fluctuations in cloud computing computing power are inevitable. {WT} is not responsible for fluctuations caused by network instability, network failures, mining machine performance, etc.<br><br>4. Static output is calculated statically based on the current difficulty and fluctuates with the market. When the difficulty goes up or down, it will be lower or higher. Therefore, for informational purposes only, {WT} does not make any promises or guarantees regarding yields.",
+    "Total revenue",
+    "Capital Rebate"
   ],
   "password":[
     "Current Password",
@@ -574,13 +576,13 @@ export default {
     "Single Invest Amount",
     "Invest Period",
     "Days",
-    "Total Net Profit",
+    "Total Proceeds at Maturity",
     "Invest Now",
     "Profit Calculator",
     "Calculate your mining income",
     "Plan",
     "Amount",
-    "Total Net Profit",
+    "Total Proceeds at Maturity",
     "Daily Rate of Profit",
     "Why Choose Us",
     "Our goal is to utilize our investors money and provide a source of high income for them while minimizing the any possibility of risk.",
@@ -828,9 +830,8 @@ export default {
     ""
   ],
   "newss":[
-    "Mining Contracts",
-    "Start mining now and get contract income every day! Enjoy the most reliable and lucrative mining profits, and easily earn cryptocurrency and stablecoin income! Join us today and get your first income tomorrow!",
-    "This contract can only be purchased once",
+    "Featured Contracts",
+    "Mine easily anytime, anywhere! We take care of the hassle so you can enjoy your mining rewards with peace of mind. Start mining in just a few clicks!",
     "This contract can only be purchased once per day",
     "Our Commitment",
     "Our risk management measures are designed to protect your assets and our systems are equipped with best-in-class security measures to protect your investments and personal information to minimize any potential risk.",
