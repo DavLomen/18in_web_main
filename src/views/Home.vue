@@ -4,7 +4,13 @@
     <van-notice-bar color="red" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />
     <div data-v-473dd3c9="" data-v-46027133="" class="homeBanner home-banner">
       <section data-v-473dd3c9="" class="hero__slider--section style2">
-        <div data-v-473dd3c9="" class="container" style="min-height: 20vw;">
+        <div data-v-473dd3c9="" class="hometop" style="position: relative;">
+          <div class="video">
+            <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">
+              <source :src="'./static/images/bg.mp4'" type="video/mp4"  />
+            </video>
+          </div>
+
           <swiper :options="swiperOption1"  class="carousel slide" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">
             <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
               <img @click="jumper" :src="InitData.setting.up_url+item" style="width: 100%;height: 100%;">
@@ -2178,6 +2184,35 @@ inset 0 0 0 1px #fba342 !important;
   @media only screen and (min-width: 992px) {
     .el-col-md-8 {
       width: 33.33333%;
+    }
+  }
+  .video{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    /*加滤镜*/
+    /*filter: blur(15px); //背景模糊设置 */
+    /*-webkit-filter: grayscale(100%);*/
+    /*filter:grayscale(100%); //背景灰度设置*/
+    /*z-index:-11*/
+
+  }
+  .video video>>>source{
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+  }
+  .hometop {
+    min-height: 28rem;
+  }
+  @media only screen and (max-width: 1024px) {
+    .hometop {
+      min-height:12rem;
     }
   }
 </style>
