@@ -108,6 +108,56 @@ export default {
                     name:'Westbeck',
                     text: 'I really like ALL4 Mining because I am a newbie and it is very easy to get started. It is a great platform for beginners.'
                 }
+            ],
+            Partners:[
+                {
+                    id: '1',
+                    type: 'jpg',
+                },
+                {
+                    id: '2',
+                    type: 'png',
+                },
+                {
+                    id: '3',
+                    type: 'svg',
+                },
+                {
+                    id: '4',
+                    type: 'jpg',
+                },
+                {
+                    id: '5',
+                    type: 'png',
+                },
+                {
+                    id: '6',
+                    type: 'svg',
+                },
+                {
+                    id: '7',
+                    type: 'svg',
+                },
+                {
+                    id: '8',
+                    type: 'svg',
+                },
+                {
+                    id: '9',
+                    type: 'svg',
+                },
+                {
+                    id: '10',
+                    type: 'jpg',
+                },
+                {
+                    id: '11',
+                    type: 'png',
+                },
+                {
+                    id: '12',
+                    type: 'svg',
+                }
             ]
         }
     },

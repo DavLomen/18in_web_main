@@ -484,8 +484,8 @@
             </div>
           </div>
           <div class="row partners_list justify-content-between">
-            <div class="el-col-sm-8 el-col-md-6 el-col-xs-12 pl-0 pr-0 mb-5 mt-3" v-for="i in 8" :key="i">
-              <img class="mx-auto" style="width: 70%;" src="../../static/img/Partner 1 (1).png" alt="">
+            <div class="el-col-sm-8 el-col-md-4 el-col-xs-12 pl-0 pr-0 mb-5 mt-3" v-for="el in Partners" :key="el.id">
+              <img class="mx-auto" style="width: 70%;" :src="`../../static/img/Partners/${el.id}.${el.type}`" alt="">
             </div>
           </div>
         </div>
