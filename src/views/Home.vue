@@ -448,15 +448,15 @@
               <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
                 <div class="comment_container">
                   <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
-                    <swiper-slide v-for="el in commentList.slice(0, 10)" :key="el.id">
+                      <swiper-slide v-for="el in Array.from({ length: 10 }, (_, i) => i)" :key="el">
                         <div class="comment_card">
                           <div class="comment_head">
-                            <img :src="`../../static/img/user/user_${el.id}.png`" alt="">
+                            <img :src="`../../static/img/user/user_${el + 1}.png`" alt="">
                           </div>
                           <div class="msg mx-auto">
                             <div class="msg mx-auto">
-                            <div class="name fw-bold">{{el.name}}</div>
-                            <div class="content">{{ el.text }}</div>
+                            <div class="name fw-bold">{{$t(`commentList[${el}].name`)}}</div>
+                            <div class="content">{{$t(`commentList[${el}].text`)}}</div>
                           </div>
                           </div>
                         </div>
@@ -468,14 +468,16 @@
               <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0 mb-5">
                 <div class="comment_container">
                   <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
-                      <swiper-slide v-for="el in commentList.slice(10)" :key="el.id">
+                    <swiper-slide v-for="el in Array.from({ length: 10 }, (_, i) => i + 10)" :key="el">
                         <div class="comment_card">
                           <div class="comment_head">
-                            <img :src="`../../static/img/user/user_${el.id}.png`" alt="">
+                            <img :src="`../../static/img/user/user_${el + 1}.png`" alt="">
                           </div>
                           <div class="msg mx-auto">
-                            <div class="name fw-bold">{{el.name}}</div>
-                            <div class="content">{{ el.text }}</div>
+                            <div class="msg mx-auto">
+                            <div class="name fw-bold">{{$t(`commentList[${el}].name`)}}</div>
+                            <div class="content">{{$t(`commentList[${el}].text`)}}</div>
+                          </div>
                           </div>
                         </div>
                       </swiper-slide>
