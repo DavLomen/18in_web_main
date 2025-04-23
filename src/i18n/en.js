@@ -892,11 +892,15 @@ export default {
   "What users say about us",
   "Many people trust us, here are the words of some of them."
 ],
-"home_comment": [
-  "What users say about us",
-  "Many people trust us, here are the words of some of them."
-],
 "partners": [
   "Our Partners",
 ],
+  "calculator":[
+    "Profit Calculator",
+    "Calculate your mining income",
+    "Contract",
+    "Purchase funds",
+    "Total Net Profit",
+    "Daily Rate of Profit"
+  ],
 }

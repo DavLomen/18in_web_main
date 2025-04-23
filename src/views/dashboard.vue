@@ -16,35 +16,35 @@
                 <div class="el-col-24 mb-1 pl-2 pr-2">
                   <div class="Credit_Score fs-5 fw-bold">
                     {{ $t('dashboard[19]') }}:
-                    <span style="color: #ddb500;">60</span>
+                    <span style="color: #ddb500;">{{UserInfo.credit}}</span>
                   </div>
                   <div class="Membership_level mt-2 fs-5 fw-bold">
                     {{ $t('dashboard[20]') }}:
-                    <span style="color: #ddb500;">Ordinary member</span>
-                  </div>  
+                    <span style="color: #ddb500;">{{UserInfo.useridentity}}</span>
+                  </div>
                 </div>
                 <div class="row cal justify-content-center mt-5">
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                     <div class="pc_color_card" style="background: #529945; color: #fff;">
-                      <div class="amt fs-5 fw-bold">USD 1.00</div>
+                      <div class="amt fs-5 fw-bold">{{InitData.currency}} {{UserInfo.balance}}</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[0]") }}</div>
                     </div>
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                     <div class="pc_color_card" style="background: #5f33f7; color: #fff;">
-                      <div class="amt fs-5 fw-bold">USD 1.00</div>
+                      <div class="amt fs-5 fw-bold">{{InitData.currency}} 10</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[10]") }}</div>
                     </div>
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                     <div class="pc_color_card" style="background: #ed5c2e; color: #fff;">
-                      <div class="amt fs-5 fw-bold">USD 1.00</div>
+                      <div class="amt fs-5 fw-bold">{{InitData.currency}} {{statisticalData.total_recharge}}</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[11]") }}</div>
                     </div>
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                     <div class="pc_color_card" style="background: #ff971e; color: #fff;">
-                      <div class="amt fs-5 fw-bold">USD 1.00</div>
+                      <div class="amt fs-5 fw-bold">{{InitData.currency}} {{statisticalData.total_withdraw}}</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[12]") }}</div>
                     </div>
                   </div>
@@ -54,19 +54,19 @@
                 <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                   <div class="pc_color_card">
                     <div class="label fs-5 fw-bold">{{ $t("withdraw[13]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #529945;">+$1.00</div>
+                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #529945;">+{{statisticalData.today_earnings}}</div>
                   </div>
                 </div>
                 <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                   <div class="pc_color_card">
                     <div class="label fs-5 fw-bold">{{ $t("withdraw[14]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #f14d19;">1</div>
+                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #f14d19;">+{{statisticalData.today_invite}}</div>
                   </div>
                 </div>
                 <div class="el-col-lg-8 el-col-sm-24 el-col-xs-24 mb-1 pl-2 pr-2">
                   <div class="pc_color_card">
                     <div class="label fs-5 fw-bold">{{ $t("withdraw[15]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #ff8a00;">+$1.00</div>
+                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #ff8a00;">+{{statisticalData.today_reward}}</div>
                   </div>
                 </div>
               </div>
@@ -110,11 +110,11 @@
                     <div class="pc_link_input mt-2">
                       <div class="label">{{ $t('dashboard[22]') }}</div>
                       <div class="el-input">
-                        <input class="mt-2" type="txet" :disabled="true" v-model="UserInfo.uid"/>
-                        <div class="copy_icon mt-2 copy_code" @click="copy('.copy_code')" :data-clipboard-text="UserInfo.uid">
+                        <input class="mt-2" type="txet" :disabled="true" v-model="UserInfo.idcode"/>
+                        <div class="copy_icon mt-2 copy_code" @click="copy('.copy_code')" :data-clipboard-text="UserInfo.idcode">
                           <van-icon name="description" size="25" color="#fff"/>
                         </div>
-                      </div> 
+                      </div>
                     </div>
                   </div>
                   <div class="el-col-lg-24 el-col-sm-24 el-col-xs-24 mb-1 pl-2 pr-2">
@@ -683,7 +683,7 @@
     cursor: pointer;
   }
   .pc_color_card:hover{
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
   }
   .dashboard_title{
     color: #662282;

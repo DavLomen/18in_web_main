@@ -5,7 +5,7 @@
     <div data-v-473dd3c9="" data-v-46027133="" class="homeBanner home-banner">
       <section data-v-473dd3c9="" class="hero__slider--section style2">
         <div data-v-473dd3c9="" class="container" style="min-height: 20vw;">
-          <swiper :options="swiperOption1" ref="mySwiper" class="carousel slide" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">
+          <swiper :options="swiperOption1"  class="carousel slide" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">
             <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
               <img @click="jumper" :src="InitData.setting.up_url+item" style="width: 100%;height: 100%;">
             </swiper-slide>
@@ -122,13 +122,13 @@
                   </div>
                   <div class="text-left" style="color: #000000;font-weight: bold">
                     <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[4]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
-                    <div class="text-left" style="color: #000000;font-weight: bold">
-                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[21]')}}: $ 0</h6>
+                    <h6 class="mt-0 mb-2 text-left" style="color: #196F3D !important;font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('home[34]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
                   </div>
                   <div class="text-left" style="color: #000000;font-weight: bold">
-                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[22]')}}: $ 0</h6>
+                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[21]')}}: $ ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
                   </div>
-                    <h6 class="mt-0 mb-2 text-left" style="color: #196F3D !important;font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('home[34]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
+                  <div class="text-left" style="color: #000000;font-weight: bold">
+                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[22]')}}: $ {{item.amount}}</h6>
                   </div>
                   <div class="text-left" style="color: #000000;font-weight: bold">
                     <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('settle[0]')}}: {{item.type==1?$t('product[7]'):$t('product[17]')}}</h6>
@@ -256,6 +256,60 @@
 <!--        </div>-->
 <!--      </div>-->
 <!--    </section>-->
+
+    <div class="section profit-section">
+      <div class="container" style="max-width: 90%;margin: 0 auto;">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-xl-6">
+            <h2 class="mt-0 text-center title-main">{{$t('calculator[0]')}}</h2>
+            <p class="mb-0 mx-auto text-center t-short-para" style="font-size: 16px;">
+              {{$t('calculator[1]')}}
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="profit-calculator" style="margin: 0 auto;">
+              <div class="el-row g-3">
+                <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                  <div class="form-group">
+                    <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[2]')}}</label>
+                    <!--                            <input readonly @click="selcets = !selcets" name="plan_id" class="form-select form&#45;&#45;select form&#45;&#45;control" v-model="selcett" />-->
+
+                    <!--                            <div v-if="selcets" style="width: 100%" name="plan_id" class="form-select form&#45;&#45;select form&#45;&#45;control">-->
+                    <!--                              <div :value="item.id" v-for="(item,index) in listData" :key="index" @click="handelChange(item)">-->
+                    <!--                                {{item.title}}-->
+                    <!--                              </div>-->
+                    <!--                            </div>-->
+                    <select name="plan_id" style="width: 100%;" class="form-select form--select" v-model="selectM" @change="handelChange">
+                      <option :value="item.id" v-for="(item,index) in listData" :key="index">
+                        {{item.title}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                  <div class="form-group">
+                    <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[3]')}}</label>
+                    <input style="width:100%" type="text" v-model="selectP.amount" name="amount" class="form-control form--control" autocomplete="off">
+                    <code class="limit"></code>
+                  </div>
+                </div>
+                <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                  <div class="form-group">
+                    <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[4]')}}</label>
+                    <input style="width: 100%" v-if="selectP.daily_rate !=''" type="text" v-model="((selectP.daily_rate)/100*selectP.amount*selectP.cycle).toFixed(4)" class="form-control form--control" readonly>
+                    <input style="width: 100%" v-else type="text" class="form-control form--control">
+                  </div>
+                  <code class="msg">{{$t('calculator[5]')}}: {{selectP.daily_rate}}%</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section class="section">
       <div class="container">
         <div class="container">
@@ -304,7 +358,7 @@
       <div  class="container"><h2 class="mt-0 text-center">{{$t('latest[0]')}}</h2>
         <section  class="section transaction pt-0">
           <div class="container">
-               <div class="row is-justify-space-around el-row--flex"> 
+               <div class="row is-justify-space-around el-row--flex">
                   <div class="el-col-xs-24 el-col-sm-8">
                     <div class="col-item">
                       <div class="item-head fw-bold fs-5 mx-auto"><span data-v-89578fbc="">{{$t('latest[1]')}}</span></div>
@@ -653,6 +707,7 @@
 
     data() {
       return {
+        selectM:'',
         number:1,
         detailData:{},
         showDialog:false,
@@ -757,7 +812,7 @@
         return this.$refs.mySwiper.swiper;
       },
       swiper1() {
-        return this.$refs.mySwiper1.swiper;
+        return this.$refs.mySwiper.swiper;
       },
     },
     watch: {
@@ -813,6 +868,10 @@
     destroyed() {
     },
     methods: {
+      handelChange() {
+        let id = this.selectM;
+        this.selectP = this.listData.filter(item=>item.id==id)[0];
+      },
       buyProduct(){
         if (!this.UserInfo) {
           this.$router.push("/login");
@@ -2024,5 +2083,101 @@
   -webkit-box-shadow:
 inset 0 0 0 1px #fba342 !important;
   box-shadow: inset 0 0 0 1px #fba342 !important;
+  }
+
+  .profit-calculator {
+    -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  @media screen and (min-width: 768px) {
+    .profit-calculator {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 30px;
+      border: 1px solid rgba(240, 19, 19, 0.3);
+      border-radius: 15px;
+    }
+
+  }
+
+  @media screen and (min-width: 1200px) {
+    .profit-calculator {
+      padding: 40px 60px 50px;
+    }
+  }
+  .profit-calculator .form--control,.profit-calculator .form-select {
+    padding: 5px;
+    border-radius: 6px;
+
+  }
+  .profit-calculator .form--control[readonly] {
+    color: #000;
+
+  }
+  .el-row {
+    box-sizing:border-box
+  }
+  .el-row:after,.el-row:before {
+    display:table
+  }
+  .el-row:after {
+    clear:both
+  }
+  .el-row--flex {
+    display:flex
+  }
+  .el-col-0,.el-row--flex:after,.el-row--flex:before {
+    display:none
+  }
+  .el-row--flex.is-justify-center {
+    justify-content:center
+  }
+  .el-row--flex.is-justify-end {
+    justify-content:flex-end
+  }
+  .el-row--flex.is-justify-space-between {
+    justify-content:space-between
+  }
+  .el-row--flex.is-justify-space-around {
+    justify-content:space-around
+  }
+  .el-row--flex.is-align-top {
+    align-items:flex-start
+  }
+  .el-row--flex.is-align-middle {
+    align-items:center
+  }
+  .el-row--flex.is-align-bottom {
+    align-items:flex-end
+  }
+  [class*=el-col-] {
+    float:left;
+    box-sizing:border-box
+  }
+  .form-group{
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+  .msg {
+    padding: 0 10px;
+    font-size: 1rem;
+  }
+  .el-col-24 {
+    width: 100%;
+  }
+  .el-row:after, .el-row:before {
+    display: table;
+  }
+  @media only screen and (min-width: 768px) {
+    .el-col-sm-24 {
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .el-col-md-8 {
+      width: 33.33333%;
+    }
   }
 </style>
