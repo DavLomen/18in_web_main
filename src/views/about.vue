@@ -32,68 +32,68 @@
         </div>
       </div>
     </section>
-    <section class="d-table w-100 pb-0">
-      <div class="row justify-content-center">
-        <div class="col-12 text-center">
-          <div class="section-title mb-4 pb-2"><h4 class="title mb-4">{{$t('aboutf[4]')}}</h4>
-            <p class="text-muted mx-auto mb-0"> {{$t('aboutf[5]')}} </p></div>
-        </div>
-      </div>
-    </section>
-    <section class="d-table w-100 pb-0">
-      <div class="row justify-content-center container" style="margin: 0 auto;">
-        <div class="flex-wrap el-row el-row--flex" style="margin-left: -10px; margin-right: -10px;">
-          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">
-            <div class="card work-process border-0 rounded shadow">
-              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[6]')}}</h6>
-                <p style="font-size: 13px;"> {{$t('aboutf[7]')}} </p>
-                <p><img :src="'./static/img/img1.png?t=1'" class="img_inner"></p></div>
-            </div>
-          </div>
-          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">
-            <div class="card work-process border-0 rounded shadow">
-              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[8]')}}</h6>
-                <p style="font-size: 13px;"> {{$t('aboutf[9]')}} </p>
-                <p><img :src="'./static/img/img2.png?t=1'" class="img_inner"></p></div>
-            </div>
-          </div>
-          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">
-            <div class="card work-process border-0 rounded shadow">
-              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[10]')}}</h6>
-                <p style="font-size: 13px;"> {{$t('aboutf[11]')}} </p>
-                <p><img :src="'./static/img/img3.png?t=1'" class="img_inner"></p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="d-table w-100 pb-0">
-      <div class="row justify-content-center container" style="margin: 0 auto;">
-        <div class="flex-wrap el-row el-row--flex" style="margin-left: -10px; margin-right: -10px;">
-          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">
-            <div class="card work-process border-0 rounded shadow">
-              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[12]')}}</h6>
-                <p style="font-size: 13px;"> {{$t('aboutf[13]')}} </p>
-                <p><img :src="'./static/img/img4.png?t=1'" class="img_inner"></p></div>
-            </div>
-          </div>
-          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">
-            <div class="card work-process border-0 rounded shadow">
-              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[14]')}}</h6>
-                <p style="font-size: 13px;"> {{$t('aboutf[15]')}} </p>
-                <p><img :src="'./static/img/img5.png?t=1'" class="img_inner"></p></div>
-            </div>
-          </div>
-          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">
-            <div class="card work-process border-0 rounded shadow">
-              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[16]')}}</h6>
-                <p style="font-size: 13px;"> {{$t('aboutf[17]')}} </p>
-                <p><img :src="'./static/img/img6.png?t=1'" class="img_inner"></p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!--    <section class="d-table w-100 pb-0">-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-12 text-center">-->
+<!--          <div class="section-title mb-4 pb-2"><h4 class="title mb-4">{{$t('aboutf[4]')}}</h4>-->
+<!--            <p class="text-muted mx-auto mb-0"> {{$t('aboutf[5]')}} </p></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <section class="d-table w-100 pb-0">-->
+<!--      <div class="row justify-content-center container" style="margin: 0 auto;">-->
+<!--        <div class="flex-wrap el-row el-row&#45;&#45;flex" style="margin-left: -10px; margin-right: -10px;">-->
+<!--          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">-->
+<!--            <div class="card work-process border-0 rounded shadow">-->
+<!--              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[6]')}}</h6>-->
+<!--                <p style="font-size: 13px;"> {{$t('aboutf[7]')}} </p>-->
+<!--                <p><img :src="'./static/img/img1.png?t=1'" class="img_inner"></p></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">-->
+<!--            <div class="card work-process border-0 rounded shadow">-->
+<!--              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[8]')}}</h6>-->
+<!--                <p style="font-size: 13px;"> {{$t('aboutf[9]')}} </p>-->
+<!--                <p><img :src="'./static/img/img2.png?t=1'" class="img_inner"></p></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">-->
+<!--            <div class="card work-process border-0 rounded shadow">-->
+<!--              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[10]')}}</h6>-->
+<!--                <p style="font-size: 13px;"> {{$t('aboutf[11]')}} </p>-->
+<!--                <p><img :src="'./static/img/img3.png?t=1'" class="img_inner"></p></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <section class="d-table w-100 pb-0">-->
+<!--      <div class="row justify-content-center container" style="margin: 0 auto;">-->
+<!--        <div class="flex-wrap el-row el-row&#45;&#45;flex" style="margin-left: -10px; margin-right: -10px;">-->
+<!--          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">-->
+<!--            <div class="card work-process border-0 rounded shadow">-->
+<!--              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[12]')}}</h6>-->
+<!--                <p style="font-size: 13px;"> {{$t('aboutf[13]')}} </p>-->
+<!--                <p><img :src="'./static/img/img4.png?t=1'" class="img_inner"></p></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">-->
+<!--            <div class="card work-process border-0 rounded shadow">-->
+<!--              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[14]')}}</h6>-->
+<!--                <p style="font-size: 13px;"> {{$t('aboutf[15]')}} </p>-->
+<!--                <p><img :src="'./static/img/img5.png?t=1'" class="img_inner"></p></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="mt-4 el-col el-col-8 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">-->
+<!--            <div class="card work-process border-0 rounded shadow">-->
+<!--              <div class="card-body text-center"><h6 class="title">{{$t('aboutf[16]')}}</h6>-->
+<!--                <p style="font-size: 13px;"> {{$t('aboutf[17]')}} </p>-->
+<!--                <p><img :src="'./static/img/img6.png?t=1'" class="img_inner"></p></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
     <section class="about-section sp_pt_60 sp_pb_120 overflow-hidden">
       <div class="container">
         <div class="row justify-content-center">
@@ -108,8 +108,8 @@
           <div class="col-lg-6 col-md-10">
             <p class="fs-lg mt-3">
             </p><h3 style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">KINGK CAPITAL LIMITED</h3><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[7]')}} <b>11380717</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[12]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>71-75 Shelton Street, London, Greater London, United Kingdom, WC2H 9JQ</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[8]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>Private limited Company</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[9]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>24 May 2018</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p></p>            <p></p>
-            <a target="_blank" style="background: #0a0a1a;color:#fff;" href="https://find-and-update.company-information.service.gov.uk/company/11380717" class="btn main-btn mt-4">{{$t('about[10]')}}</a>
-            <a target="_blank" href="./static/companies_house_document.pdf?t=2" style="background: #f6c5c5" class="btn main-btn mt-4">{{$t('about[11]')}}</a>
+            <a target="_blank" style="background: linear-gradient(90deg, #ddb443, #009d24);color:#fff;" href="https://find-and-update.company-information.service.gov.uk/company/11380717" class="btn main-btn mt-4">{{$t('about[10]')}}</a>
+            <a target="_blank" href="./static/companies_house_document.pdf?t=2" style="background: linear-gradient(90deg, #ddb443, #009d24);color:#fff;" class="btn main-btn mt-4">{{$t('about[11]')}}</a>
           </div>
           <div class="col-lg-6 ps-xl-5 p-lg-4 about-content wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
             <p class="fs-lg mt-3">

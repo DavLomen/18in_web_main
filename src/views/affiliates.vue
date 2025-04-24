@@ -128,7 +128,7 @@
                 </div>
                 <div class="mt-3 phone" v-if="listData.length==0">
                   <div class="d-grid gap-2">
-                    <button type="button" class="btn btn btn-primary disabled btn-secondary btn-block">{{$t('vanPull[0]')}}</button>
+                    <button type="button"  class="btn btn btn-primary disabled btn-secondary btn-block">{{$t('vanPull[0]')}}</button>
                   </div>
                 </div>
               </div>

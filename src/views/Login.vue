@@ -6,7 +6,7 @@
       <!-- <div class="container" style="background: url(./static/img/login_bg.gif) no-repeat;max-width: 100%;background-position:center;background-size: 100% 100%;"> -->
       <div class="container">
         <video  autoplay="autoplay" loop class="bg_video" muted='muted' >
-          <source src="../../static/img/login_bg.mp4" type="video/mp4"/>
+          <source :src="'./static/img/login_bg.mp4'" type="video/mp4"/>
         </video>
         <div class="form-box">
           <div class="mt-9 px-4 lg:mt-[60px] lg:mr-[90px] lg:pr-0 lg:pl-10">
@@ -477,7 +477,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg, #ddb443, #009d24);
       cursor: pointer
     }
   }
@@ -559,7 +559,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg, #ddb443, #009d24);
       cursor: pointer
     }
   }

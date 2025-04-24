@@ -83,8 +83,8 @@
 <!--              <div  class="para-desc">{{$t('affliliate[7]')}}</div>-->
               <div  class="para-desc" v-html="showInfo.content"></div>
               <div  class="mt-4">
-                <a v-if="UserInfo"  href="javascript:;" @click="$router.push('/dashboard')" class="btn btn-primary">{{$t('affliliate[8]')}}<i  class="mdi mdi-chevron-right"></i></a>
-                <a v-else  href="javascript:;" @click="$router.push('/login')" class="btn btn-primary">{{$t('affliliate[8]')}}<i  class="mdi mdi-chevron-right"></i></a>
+                <a v-if="UserInfo" style="background: linear-gradient(90deg, #ddb443, #009d24);border: none !important;" href="javascript:;" @click="$router.push('/dashboard')" class="btn btn-primary">{{$t('affliliate[8]')}}<i  class="mdi mdi-chevron-right"></i></a>
+                <a v-else style="background: linear-gradient(90deg, #ddb443, #009d24);border: none !important;" href="javascript:;" @click="$router.push('/login')" class="btn btn-primary">{{$t('affliliate[8]')}}<i  class="mdi mdi-chevron-right"></i></a>
               </div>
             </div>
           </div>

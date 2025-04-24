@@ -307,7 +307,7 @@ export default {
     "Please enter Transaction ID(TxID)"
   ],
   "foot": [
-    "{WT} has 6 years of expertise, efficient data centers and advanced infrastructure to ensure stable mining performance and maximum profitability for the benefit of customers. The platform is user-friendly, transparent and fully automated, allowing anyone to mine easily without any technical expertise.",
+    "ALL4 Mining is a global leader in comprehensive mining and mining services, providing customers with one-stop solutions such as cloud mining. ALL4 Mining is committed to building a safe, compliant and transparent blockchain infrastructure, providing a variety of stable and intelligent computing power service solutions for global customers.",
     "Site Links",
     "Contract",
     "About",
@@ -716,7 +716,7 @@ export default {
     "View all blogs"
   ],
   "welfare": [
-    "Vip Award"
+    "VIP Rewards"
   ],
   "tips": [
     "After successful payment, please save the payment screenshot to your mobile phone and upload the screenshot to the page before submitting the order. If the screenshot is unclear or wrong, the recharge will not be completed."

@@ -2,7 +2,11 @@
   <div class="HomePage">
     <Header></Header>
     <div  class="app-wrapper register" style="font-size:10px">
-      <div class="container" style="background: url(./static/img/login_bg.png) no-repeat;background-position: center;max-width: 100%;background-size: 100% 100%">
+<!--      <div class="container" style="background: url(./static/img/login_bg.png) no-repeat;background-position: center;max-width: 100%;background-size: 100% 100%">-->
+      <div class="container">
+        <video  autoplay="autoplay" loop class="bg_video" muted='muted' >
+          <source src="../../static/img/login_bg.mp4" type="video/mp4"/>
+        </video>
         <div class="form-box">
           <div class="mt-9 px-4 lg:mt-[60px] lg:mr-[90px] lg:pr-0 lg:pl-10" style="max-width: 500px">
             <div class="form-title">{{$t('regLogin[14]')}}</div>
@@ -206,10 +210,10 @@
                           class="el-input__inner"
                         />
                       </div>
-                      <img
-                        :src="codeImg" @click="getCode"
-                        class="code-img"
-                      />
+                      <div @click="getCodes" style="position: absolute;right: 0;top: 0;display: flex;align-items: center;height: 100%;">
+                        <SIdentify :identifyCode="identifyCode" >
+                        </SIdentify>
+                      </div>
                     </div>
 
                   </div>
@@ -261,14 +265,17 @@
 </template>
 
 <script>
+  import SIdentify from "@/components/SIdentify";
   export default {
     name: 'Register',
     components: {
-
+      SIdentify
     },
     props: ['recommendId'],
     data() {
       return {
+        identifyCode: "", //密码登录图形验证码
+        identifyCodes: "1234567890abcdefghizklmnopqrstuvwxyz", //生成图形验证码的依据
         passwords:true,
         re_passwords:true,
         fund_passwords:true,
@@ -314,7 +321,7 @@
         this.postData.dest = data[0].id
       });
 
-      this.getCode();
+      this.getCodes();
 
 
       // this.checkUserAgent();
@@ -353,8 +360,15 @@
         this.$router.push(`/article/terms/${this.InitData.disclaimerList.length?this.InitData.disclaimerList[0].id:''}`)
       },
       getCode() {
+        // this.postData.code_rand = new Date().getTime()
+        // this.codeImg = this.ApiUrl+'/api/Account/code?code_rand='+this.postData.code_rand
+      },
+      getCodes() {
+        let that = this;
         this.postData.code_rand = new Date().getTime()
-        this.codeImg = this.ApiUrl+'/api/Account/code?code_rand='+this.postData.code_rand
+        this.$Model.getCode1(that.postData.code_rand,data=>{
+          that.identifyCode = data.data;
+        });
       },
       onSubmit() {
         if(!this.postData.username){
@@ -413,7 +427,7 @@
         this.isSubmit = true
         this.$Model.UserRegister(this.postData,data=>{
           this.isSubmit = false
-          this.getCode()
+          this.getCodes()
         });
       },
       getSmsCode() {
@@ -833,7 +847,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg, #ddb443, #009d24);
       cursor: pointer
     }
   }
@@ -928,7 +942,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg, #ddb443, #009d24);
       cursor: pointer
     }
   }
@@ -942,5 +956,12 @@
     .pc {
       display: none;
     }
+  }
+  .bg_video{
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
   }
 </style>

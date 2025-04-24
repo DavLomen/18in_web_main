@@ -38,7 +38,7 @@
             <div class="col-md-3 col-xl-24">
               <div class="miner_work_icon mx-auto">
                 <div class="number fs-5 fw-bold">01</div>
-                <img class="miner_work_image" src="../../static/img/process1.png" alt="">
+                <img class="miner_work_image" :src="'./static/img/process1.png'" alt="">
               </div>
               <div class="miner_work_text">
                 <h4 class="label">{{ $t('minerWorkText[0]') }}</h4>
@@ -48,7 +48,7 @@
             <div class="col-md-3 col-xl-24">
               <div class="miner_work_icon mx-auto">
                 <div class="number fs-5 fw-bold">02</div>
-                <img class="miner_work_image" src="../../static/img/process2.png" alt="">
+                <img class="miner_work_image" :src="'./static/img/process2.png'" alt="">
               </div>
               <div class="miner_work_text">
                 <h4 class="label">{{ $t('minerWorkText[2]') }}</h4>
@@ -58,7 +58,7 @@
             <div class="col-md-3 col-xl-24">
               <div class="miner_work_icon mx-auto">
                 <div class="number fs-5 fw-bold">03</div>
-                <img class="miner_work_image" src="../../static/img/process3.png" alt="">
+                <img class="miner_work_image" :src="'./static/img/process3.png'" alt="">
               </div>
               <div class="miner_work_text">
                 <h4 class="label">{{ $t('minerWorkText[4]') }}</h4>
@@ -68,7 +68,7 @@
             <div class="col-md-3 col-xl-24">
               <div class="miner_work_icon mx-auto">
                 <div class="number fs-5 fw-bold">04</div>
-                <img class="miner_work_image" src="../../static/img/process4.png" alt="">
+                <img class="miner_work_image" :src="'./static/img/process4.png'" alt="">
               </div>
               <div class="miner_work_text">
                 <h4 class="label">{{ $t('minerWorkText[6]') }}</h4>
@@ -194,7 +194,7 @@
           <div class="el-row">
             <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
               <div class="image">
-                <img src="../../static/img/choose_us1.png" alt="">
+                <img :src="'./static/img/choose_us1.png'" alt="">
               </div>
               <div class="text mt-3">
                 <h5 class="fw-bold h5">{{ $t('ChooseUs[0]') }}</h5>
@@ -203,7 +203,7 @@
             </div>
             <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
               <div class="image">
-                <img src="../../static/img/choose_us21.png" alt="">
+                <img :src="'./static/img/choose_us21.png'" alt="">
               </div>
               <div class="text mt-3">
                 <h5 class="fw-bold h5">{{ $t('ChooseUs[2]') }}</h5>
@@ -212,7 +212,7 @@
             </div>
             <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
               <div class="image">
-                <img src="../../static/img/choose_us3.png" alt="">
+                <img :src="'./static/img/choose_us3.png'" alt="">
               </div>
               <div class="text mt-3">
                 <h5 class="fw-bold h5">{{ $t('ChooseUs[4]') }}</h5>
@@ -221,7 +221,7 @@
             </div>
             <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
               <div class="image">
-                <img src="../../static/img/choose_us4.png" alt="">
+                <img :src="'./static/img/choose_us4.png'" alt="">
               </div>
               <div class="text mt-3">
                 <h5 class="fw-bold h5">{{ $t('ChooseUs[6]') }}</h5>
@@ -230,7 +230,7 @@
             </div>
             <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
               <div class="image">
-                <img src="../../static/img/choose_us5.png" alt="">
+                <img :src="'./static/img/choose_us5.png'" alt="">
               </div>
               <div class="text mt-3">
                 <h5 class="fw-bold h5">{{ $t('ChooseUs[8]') }}</h5>
@@ -239,7 +239,7 @@
             </div>
             <div class="el-col-xs-12 el-col-md-8 choose_us mb-2">
               <div class="image">
-                <img src="../../static/img/choose_us6.png" alt="">
+                <img :src="'./static/img/choose_us6.png'" alt="">
               </div>
               <div class="text mt-3">
                 <h5 class="fw-bold h5">{{ $t('ChooseUs[10]') }}</h5>
@@ -365,7 +365,7 @@
         <section  class="section transaction pt-0">
           <div class="container">
                <div class="row is-justify-space-around el-row--flex">
-                  <div class="el-col-xs-24 el-col-sm-8">
+                  <div class="el-col-xs-24 el-col-sm-10">
                     <div class="col-item">
                       <div class="item-head fw-bold fs-5 mx-auto"><span data-v-89578fbc="">{{$t('latest[1]')}}</span></div>
                       <article class="item-body">
@@ -381,7 +381,10 @@
                                 <van-swipe-item v-if="item.type==1" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
                                   <div class="card1">
                                     <div class="el-row--flex is-justify-space-between">
-                                        <div class="user col-4 text-left fl-wap">{{item.username}}</div>
+                                        <div class="user col-4 ">
+                                          <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
+                                          <div class="text-left fl-wap">{{item.username}}</div>
+                                        </div>
                                         <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
                                         <div class="time col-4 text-right">{{item.time}}</div>
                                     </div>
@@ -394,7 +397,7 @@
                       </article>
                     </div>
                   </div>
-                  <div class="el-col-xs-24 el-col-sm-8">
+                  <div class="el-col-xs-24 el-col-sm-10">
                     <div class="col-item">
                       <div class="item-head fw-bold fs-5 mx-auto"><span data-v-89578fbc="">{{$t('latest[2]')}}</span></div>
                       <article class="item-body">
@@ -410,7 +413,10 @@
                                 <van-swipe-item v-if="item.type==2" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
                                   <div class="card1">
                                     <div class="el-row--flex is-justify-space-between">
-                                        <div class="user col-4 text-left fl-wap">{{item.username}}</div>
+                                        <div class="user col-4 text-left fl-wap">
+                                          <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
+                                          <div>{{item.username}}{{item.username}}</div>
+                                        </div>
                                         <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
                                         <div class="time col-4 text-right">{{item.time}}</div>
                                     </div>
@@ -451,7 +457,7 @@
                       <swiper-slide v-for="el in Array.from({ length: 10 }, (_, i) => i)" :key="el">
                         <div class="comment_card">
                           <div class="comment_head">
-                            <img :src="`../../static/img/user/user_${el + 1}.png`" alt="">
+                            <img :src="`./static/img/user/user_${el + 1}.png`" alt="">
                           </div>
                           <div class="msg mx-auto">
                             <div class="msg mx-auto">
@@ -487,9 +493,9 @@
             </div>
         </div>
       </section>
-    <div  class="box6">
-      <video :src="InitData.setting.up_url + '/upload/KKMiner.mp4?t=2'" muted controls playsinline style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>
-    </div>
+<!--    <div  class="box6">-->
+<!--      <video :src="InitData.setting.up_url + '/upload/KKMiner.mp4?t=2'" muted controls playsinline style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>-->
+<!--    </div>-->
     <section class="section-space">
       <div class="container">
         <div class="section-head text-center" style="margin-top:2rem">
@@ -1880,8 +1886,9 @@
   }
 
  .fl-wap {
-  flex-wrap:wrap;
+  /*flex-wrap:wrap;*/
   word-wrap: break-word;
+   word-break: break-word;
  }
 
 
@@ -2216,5 +2223,9 @@ inset 0 0 0 1px #fba342 !important;
     .hometop {
       min-height:12rem;
     }
+  }
+  .user {
+    display: flex;
+    align-items: center;
   }
 </style>
