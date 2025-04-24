@@ -67,7 +67,7 @@
                         </div>
                       </div>
                       <div class="card-footer">
-                        <button type="button" class="btn btn--base btn-block btn-dark" @click="onSubmit">{{$t('deposit[7]')}}</button>
+                        <button type="button" style="background:linear-gradient(90deg, #ddb443, #009d24)" class="btn btn--base btn-block btn-dark" @click="onSubmit">{{$t('deposit[7]')}}</button>
                       </div>
 
                     </div>
@@ -80,31 +80,40 @@
                     <form>
                       <div class="card custom--card">
                         <div class="card-body">
-                          <div class="form-group" style="position: relative;">
+                          <div class="form-group form" style="position: relative;">
                             <label>{{$t('deposit[9]')}}</label>
                             <div class="input-group" style="width: 100%">
-                              <div class="el-form-item__content" style="width: 100%">
-                                <div class="el-select" @click="showSelect = !showSelect">
-                                  <div class="el-input el-input--suffix">
-                                    <div  class="el-input__inner">
-                                      <div>
-                                        <img v-if="selectTypes.qrcode !=''" :src="InitData.setting.up_url + selectTypes.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">
-                                        <span>{{selectTypes.name==''?$t('recharge.placeholder[1]'):selectTypes.name}}</span>
-                                      </div>
-                                      <div class="selectShow" v-show="showSelect">
-                                        <div  :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
-                                          <img :src="InitData.setting.up_url + item.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">
-                                          {{item.name}}
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <span
-                                      class="el-input__suffix"><span class="el-input__suffix-inner"><i
-                                      class="fa fa-angle-down"></i></span>
-                        </span>
+                              <div  class="item-control">
+                                <div  class="select row g-3">
+                                  <div  class="col-6 col-sm-3" :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
+                                    <div  :class="'select-i '+(item.name ==selectTypes.name?'active':'')">
+                                      <img :src="InitData.setting.up_url + item.qrcode" style="width: 36px;vertical-align: middle;display: inline-block;">
+                                      <span >{{item.name}}</span></div>
                                   </div>
                                 </div>
                               </div>
+<!--                              <div class="el-form-item__content" style="width: 100%">-->
+<!--                                <div class="el-select" @click="showSelect = !showSelect">-->
+<!--                                  <div class="el-input el-input&#45;&#45;suffix">-->
+<!--                                    <div  class="el-input__inner">-->
+<!--                                      <div>-->
+<!--                                        <img v-if="selectTypes.qrcode !=''" :src="InitData.setting.up_url + selectTypes.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">-->
+<!--                                        <span>{{selectTypes.name==''?$t('recharge.placeholder[1]'):selectTypes.name}}</span>-->
+<!--                                      </div>-->
+<!--                                      <div class="selectShow" v-show="showSelect">-->
+<!--                                        <div  :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">-->
+<!--                                          <img :src="InitData.setting.up_url + item.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">-->
+<!--                                          {{item.name}}-->
+<!--                                        </div>-->
+<!--                                      </div>-->
+<!--                                    </div>-->
+<!--                                    <span-->
+<!--                                      class="el-input__suffix"><span class="el-input__suffix-inner"><i-->
+<!--                                      class="fa fa-angle-down"></i></span>-->
+<!--                        </span>-->
+<!--                                  </div>-->
+<!--                                </div>-->
+<!--                              </div>-->
                             </div>
                           </div>
                           <div class="form-group">
@@ -139,7 +148,7 @@
                           </div>
                         </div>
                         <div class="card-footer">
-                          <button type="button" class="btn btn--base btn-block btn-dark" @click="selectType()">{{$t('deposit[13]')}}</button>
+                          <button type="button" style="background: linear-gradient(90deg, #ddb443, #009d24)" class="btn btn--base btn-block btn-dark" @click="selectType()">{{$t('deposit[13]')}}</button>
                         </div>
 <!--                        <div style="padding: 1rem;color: #e73329;">-->
 <!--                          {{$t('rechargefoot[0]')}}-->
@@ -218,9 +227,9 @@
                   </div>
                   <div  class="mt-3" v-if="listData.length==0">
                     <div  class="d-grid gap-2">
-                      <button  type="button"
-                               class="btn btn btn-primary disabled btn-secondary btn-block">{{$t('vanPull[1]')}}
-                      </button>
+                      <div
+                               class="btn btn btn-block">{{$t('vanPull[1]')}}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2235,6 +2244,43 @@
     display: block;
     width: 100%;
   }
+
+  .form .item-control .select-i {
+    background: #f1f1f1;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    padding: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .3s ease
+  }
+
+  .form .item-control .select-i.active {
+    border-color: #009d24
+  }
+
+  .form .item-control .select-i span {
+    margin-top: .625rem;
+    font-size: .9375rem;
+    font-weight: 400;
+    color: #1c2a46;
+    line-height: 1.3125rem
+  }
+
+  .info-wrap {
+    background: #f4f4f4;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1c2a46;
+    line-height: 1.375rem;
+    padding: 1rem
+  }
+
 </style>
 
 

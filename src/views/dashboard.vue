@@ -25,25 +25,25 @@
                 </div>
                 <div class="row cal justify-content-center mt-5">
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background: #529945; color: #fff;">
+                    <div class="pc_color_card" style="background: #20c997; color: #fff;">
                       <div class="amt fs-5 fw-bold">{{InitData.currency}} {{UserInfo.balance}}</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[0]") }}</div>
                     </div>
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background: #5f33f7; color: #fff;">
+                    <div class="pc_color_card" style="background: rgb(253 195 19); color: #fff;">
                       <div class="amt fs-5 fw-bold">{{InitData.currency}} 10</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[10]") }}</div>
                     </div>
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background: #ed5c2e; color: #fff;">
+                    <div class="pc_color_card" style="background:#17a2b8; color: #fff;">
                       <div class="amt fs-5 fw-bold">{{InitData.currency}} {{statisticalData.total_recharge}}</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[11]") }}</div>
                     </div>
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background: #ff971e; color: #fff;">
+                    <div class="pc_color_card" style="background:#28a745; color: #fff;">
                       <div class="amt fs-5 fw-bold">{{InitData.currency}} {{statisticalData.total_withdraw}}</div>
                       <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[12]") }}</div>
                     </div>
@@ -148,7 +148,9 @@
                     </div>
                   </div>
               </div>
+
               <!-- 一下是手机模式显示的内容 -->
+
               <div class="bal mobile">
                 <img :src="'./static/images/bg-div.png'">
                 <div class="bal-c">
@@ -174,6 +176,18 @@
                 </div>
                 <div class="bal-bg"></div>
               </div>
+              <div class="mobile">
+                <div>
+                  <div class="Credit_Score fs-5 fw-bold" style="width: 100%">
+                    {{ $t('dashboard[19]') }}:
+                    <span style="color: #ddb500;">{{UserInfo.credit}}</span>
+                  </div>
+                  <div class="Membership_level mt-2 fs-5 fw-bold" style="width: 100%">
+                    {{ $t('dashboard[20]') }}:
+                    <span style="color: #ddb500;">{{UserInfo.useridentity}}</span>
+                  </div>
+                </div>
+              </div>
             <div class="mobile">
               <div class="flex-3">
                 <div class="item-m" @click="$router.push('/deposit')">
@@ -184,19 +198,19 @@
                 </div>
                 <div class="item-m" @click="$router.push('/withdraw')">
                   <div>
-                    <div class="bg" style="background-color: rgb(23,85,213);"><img :src="'./static/images/arrow_upward.svg'"></div>
+                    <div class="bg" style="background-color:rgb(253 195 19);"><img :src="'./static/images/arrow_upward.svg'"></div>
                     <div class="div">{{$t('head[8]')}}</div>
                   </div>
                 </div>
                 <div class="item-m" @click="$router.push('/transactions')">
                   <div>
-                    <div class="bg" style="background-color: rgb(11,129,184);"><img :src="'./static/images/inventory_2.svg'"></div>
+                    <div class="bg" style="background-color:#17a2b8;"><img :src="'./static/images/inventory_2.svg'"></div>
                     <div class="div">{{$t('head[22]')}}</div>
                   </div>
                 </div>
                 <div class="item-m"  @click="$router.push('/MyPackages')">
                   <div>
-                    <div class="bg" style="background-color: rgb(110,24,120);"><img :src="'./static/images/receipt_long.svg'"></div>
+                    <div class="bg" style="background-color: #28a745;"><img :src="'./static/images/receipt_long.svg'"></div>
                     <div class="div">{{$t('head[11]')}}</div>
                   </div>
                 </div>
@@ -222,7 +236,7 @@
                     </div>
                     <div  class="phone" style="text-align: center; margin-top: 20px;">
                       <button  block="" size="sm" class="copy" @click="copy" :data-clipboard-text="promoteUrl"
-                              style="font-size: 18px; width: 90%; border-radius: 30px; background-color: rgb(246, 197, 197); color: black; border: none; padding: 10px 0px;">
+                              style="font-size: 18px; width: 90%; border-radius: 30px; background: linear-gradient(90deg, #ddb443, #009d24); color: #fff; border: none; padding: 10px 0px;">
                         {{$t('affiliates[16]')}}
                       </button>
                     </div>
@@ -421,7 +435,7 @@
       background-size: cover;
       background-position: center;
       position: relative;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
     }
     .cal{
       display: none;
@@ -485,7 +499,7 @@
     opacity: 1;
     height: 175px;
     border-radius: 10px;
-    background: linear-gradient(180deg, #f9c046 0%, #8f6e00 100%);
+    background: #20c997;
     left: 0;
   }
   .bal-c{
@@ -611,7 +625,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(253 154 13);
+    background: #20c997;
     border-radius: 10px;
     margin: 0 auto;
   }
@@ -686,7 +700,7 @@
     transform: translateY(-5px);
   }
   .dashboard_title{
-    color: #662282;
+    color: #20c997;
     font-family: Roboto;
     font-style: normal;
     font-weight: 600;
@@ -717,7 +731,7 @@
     right: 0;
     height: 2.5rem;
     width: 2.5rem;
-    background: #662282;
+    background: #20c997;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -734,7 +748,7 @@
     font-size: 1.5rem;
   }
   .dashboard_question .label{
-    color: #662282;
+    color: #20c997;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -755,10 +769,10 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 10px;
-    border: 1px solid #662282;
+    border: 1px solid #20c997;
     padding: 13px 32px;
     margin-top: 20px;
-    color: #662282;
+    color: #20c997;
     font-family: Roboto;
     font-style: normal;
     font-weight: 600;

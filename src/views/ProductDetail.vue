@@ -896,7 +896,7 @@
     padding: 0.5rem 5rem;
     border: none;
     outline: none;
-    background: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+    background: linear-gradient(90deg, #ddb443, #009d24);
     border-radius: 10px;
     font-family: 'Roboto';
     font-style: normal;

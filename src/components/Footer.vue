@@ -17,7 +17,7 @@
             <h4 class="mt-0">{{$t('foot[8]')}}</h4>
             <div class="link-item" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</div>
             <div class="link-item" @click="$router.push('/article/terms/detail')">{{$t('foot[10]')}}</div>
-            <div class="link-item" @click="$router.push('/Bounty')">{{$t('bounty')}}</div>
+<!--            <div class="link-item" @click="$router.push('/Bounty')">{{$t('bounty')}}</div>-->
             <div class="link-item" @click="$router.push('/article/cryptocurrency/detail')">{{$t('cryptocurrency[0]')}}</div>
             <div class="link-item" @click="$router.push('/article/web3/detail')">{{$t('cryptocurrency[1]')}}</div>
           </div>

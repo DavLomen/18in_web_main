@@ -26,7 +26,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-24 col-xl-12 pl-0 pr-0">
-              <h6 class="mt-0 text-center miner_work_title"> {{$t('home[17]')}}</h6>
+<!--              <h6 class="mt-0 text-center miner_work_title"> {{$t('home[17]')}}</h6>-->
               <h3 class="mb-0 mx-auto text-center t-short-para miner_work_text">
                   {{$t('home[18]')}}
               </h3>
@@ -1693,8 +1693,8 @@
 
   .plan-div .card:hover .card-body .btn-box .btn1 {
     text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #fff!important;
-    color: #000!important;
+    background: linear-gradient(90deg, #ddb443, #009d24)!important;
+    color: #fff!important;
     border: 1px solid #000
   }
 
@@ -1835,17 +1835,17 @@
   .plan-div .card .card-body .btn-box .btn.btn1 {
     font-size: 14px;
     font-weight: 400;
-    color: #fff3d6;
+    color: #fff;
     text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #0a0a1a
+    background: linear-gradient(90deg, #ddb443, #009d24)
   }
 
   .plan-div .card .card-body .btn-box .btn.btn2 {
     font-size: 14px;
     font-weight: 600;
-    color: #0a0a1a;
+    color: #fff;
     text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #fff;
+    background: linear-gradient(90deg, #ddb443, #009d24);
     border: 1px solid #000
   }
 
@@ -2227,5 +2227,8 @@ inset 0 0 0 1px #fba342 !important;
   .user {
     display: flex;
     align-items: center;
+  }
+  .bg-danger {
+    background: linear-gradient(90deg, #ddb443, #009d24) !important;
   }
 </style>

@@ -18,34 +18,43 @@
               <div class="">
                 <div class="card custom--card">
                   <form >
-                    <div class="card-body">
+                    <div class="card-body form">
                       <div class="form-group">
                         <label>{{$t('withdraw[1]')}}</label>
                         <div class="input-group">
-                          <div class="el-form-item__content" style="width: 100%;">
-                            <div class="el-select" @click="showSelect = !showSelect">
-                              <div class="el-input el-input--suffix">
-                                <div  class="el-input__inner">
-                                  <div>
-                                    <img v-if="selectTypes.bank_name !=''" :src="`./static/images/${selectTypes.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">
-                                    <span>{{selectBank}}</span>
-                                  </div>
-                                  <div class="selectShow" v-show="showSelect">
-                                    <div  :value="item.id" v-for="(item,index) in BankCardList" :key="index" @click="chageRecharge(item)">
-                                      <img :src="`./static/images/${item.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">
-                                      {{selectBank}}
-                                    </div>
-                                  </div>
-                                </div>
-                                <span
-                                  class="el-input__suffix"><span class="el-input__suffix-inner">
-                            <i
-                              class="fa fa-angle-down"></i>
-                          </span>
-                        </span>
+                          <div  class="item-control">
+                            <div  class="select row g-6">
+                              <div style="min-width: 14rem;" class="col-6 col-sm-6" :value="item.id" v-for="(item,index) in BankCardList" :key="index" @click="chageRecharge(item)">
+                                <div  :class="'select-i '+(item.bank_name ==selectTypes.bank_name?'active':'')">
+                                  <img :src="`./static/images/${item.bank_name}.png`" style="width: 36px;vertical-align: middle;display: inline-block;">
+                                  <span >{{item.card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2')}}</span></div>
                               </div>
                             </div>
                           </div>
+<!--                          <div class="el-form-item__content" style="width: 100%;">-->
+<!--                            <div class="el-select" @click="showSelect = !showSelect">-->
+<!--                              <div class="el-input el-input&#45;&#45;suffix">-->
+<!--                                <div  class="el-input__inner">-->
+<!--                                  <div>-->
+<!--                                    <img v-if="selectTypes.bank_name !=''" :src="`./static/images/${selectTypes.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">-->
+<!--                                    <span>{{selectBank}}</span>-->
+<!--                                  </div>-->
+<!--                                  <div class="selectShow" v-show="showSelect">-->
+<!--                                    <div  :value="item.id" v-for="(item,index) in BankCardList" :key="index" @click="chageRecharge(item)">-->
+<!--                                      <img :src="`./static/images/${item.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">-->
+<!--                                      {{selectBank}}-->
+<!--                                    </div>-->
+<!--                                  </div>-->
+<!--                                </div>-->
+<!--                                <span-->
+<!--                                  class="el-input__suffix"><span class="el-input__suffix-inner">-->
+<!--                            <i-->
+<!--                              class="fa fa-angle-down"></i>-->
+<!--                          </span>-->
+<!--                        </span>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
                         </div>
                       </div>
                       <div class="form-group">
@@ -163,9 +172,9 @@
                   </div>
                   <div  class="mt-3" v-if="listData.length==0">
                     <div  class="d-grid gap-2">
-                      <button  type="button"
-                              class="btn btn btn-primary disabled btn-secondary btn-block">{{$t('vanPull[1]')}}
-                      </button>
+                      <div
+                        class="btn btn btn-block">{{$t('vanPull[1]')}}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -282,7 +291,7 @@
             this.drawData.user_bank_id = this.BankCardList[0].id;
             this.drawData.bank_id = this.BankCardList[0].id;
             this.drawData.pix_value = this.BankCardList[0].card_no;
-            this.selectBank = this.BankCardList[0].bank_name + ' ' + this.BankCardList[0].card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
+            this.selectBank = this.BankCardList[0].card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
           }
         })
         // this.bankList = this.InitData.BanksList.flatMap(item => item.bank);
@@ -297,7 +306,7 @@
           this.drawData.user_bank_id = this.selectTypes.id;
           this.drawData.bank_id = this.selectTypes.id;
           this.drawData.pix_value = this.selectTypes.card_no;
-          this.selectBank = this.selectTypes.bank_name + ' ' + this.selectTypes.card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
+          this.selectBank = this.selectTypes.card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
         },
         changePage(page){
           this.pageNo = page;
@@ -2029,5 +2038,40 @@
     border: 1px solid #333;
     font-size: 1rem;
     color: #000000;
+  }
+  .form .item-control .select-i {
+    background: #f1f1f1;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    padding: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .3s ease
+  }
+
+  .form .item-control .select-i.active {
+    border-color: #009d24
+  }
+
+  .form .item-control .select-i span {
+    margin-top: .625rem;
+    font-size: .9375rem;
+    font-weight: 400;
+    color: #1c2a46;
+    line-height: 1.3125rem
+  }
+
+  .info-wrap {
+    background: #f4f4f4;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1c2a46;
+    line-height: 1.375rem;
+    padding: 1rem
   }
 </style>

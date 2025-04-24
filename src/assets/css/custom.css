@@ -23707,3 +23707,7 @@
     transform: rotate(359deg)
   }
 }
+.btn-dark {
+  background: linear-gradient(90deg, #ddb443, #009d24);
+  border: none !important;
+}

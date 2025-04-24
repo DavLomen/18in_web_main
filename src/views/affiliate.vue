@@ -110,7 +110,7 @@
     watch: {
     },
     created() {
-      this.getListData(20);
+      this.getListData(17);
     },
     mounted() {
     },

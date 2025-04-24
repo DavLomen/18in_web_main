@@ -336,8 +336,8 @@
 
   .plan-div .card:hover .card-body .btn-box .btn1 {
     text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #fff!important;
-    color: #000!important;
+    background: linear-gradient(90deg, #ddb443, #009d24)!important;
+    color: #fff!important;
     border: 1px solid #000
   }
 
@@ -478,17 +478,17 @@
   .plan-div .card .card-body .btn-box .btn.btn1 {
     font-size: 14px;
     font-weight: 400;
-    color: #fff3d6;
+    color: #fff;
     text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #0a0a1a
+    background: linear-gradient(90deg, #ddb443, #009d24)
   }
 
   .plan-div .card .card-body .btn-box .btn.btn2 {
     font-size: 14px;
     font-weight: 600;
-    color: #0a0a1a;
+    color: #fff;
     text-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background: #fff;
+    background: linear-gradient(90deg, #ddb443, #009d24);
     border: 1px solid #000
   }
 
@@ -506,6 +506,10 @@
   }
   .van-stepper>>>.van-stepper__input {
     font-size: 1rem;
+  }
+
+  .bg-danger {
+    background: linear-gradient(90deg, #ddb443, #009d24) !important;
   }
 </style>
 
