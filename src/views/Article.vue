@@ -62,11 +62,11 @@ export default {
       this.getListData(18);
     }
     if(this.articleType=='web3'){
-      this.getListData(19);
+      this.getListData(20);
     }
-    if(this.articleType=='hash'){
-      this.getListData(13);
-    }
+    // if(this.articleType=='hash'){
+    //   this.getListData(13);
+    // }
   },
   mounted() {
 
