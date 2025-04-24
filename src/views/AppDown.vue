@@ -3,7 +3,7 @@
     <Header></Header>
 
     <div class="app-wrapper">
-      <div class="mobilec" style="background: linear-gradient(90deg, #8a348e 0%, #423f88 100%);">
+      <div class="mobilec" style="background: linear-gradient(90deg, #7952b3 20%, #0d6efd 100%);">
         <div class="container cont_std">
           <div class="ajax-content-wrap">
             <div class="container-wrap">
@@ -156,7 +156,7 @@
           <!--          </div>-->
         </div>
       </div>
-      <section class="sp_pt_40 sp_pb_40 mt-200 std">
+      <section class="sp_pt_40 sp_pb_40 mt-5 std">
 
         <div class="container mt-120 mb-120 cont_std std_2">
           <h1 class="title_adp">{{$t('appDown[2]')}}</h1>

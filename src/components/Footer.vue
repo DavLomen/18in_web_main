@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer-section" style="background: #0dcaf0;color: #000">
+  <footer class="footer-section" style="background: #1bd17d;color: #000">
     <div class="container">
       <div class="section-space-sm">
         <div class="row">
@@ -87,19 +87,19 @@
                   <ul class="list-item list-item-s1">
                     <li>
                       <img class="" :src="'./static/images/location.ff05dc4d.png'" alt="location" style="width:30px;">
-                      10 Hollies Road Allestree, Derby, England
+                      30 Colston Avenue, Carshalton, Surrey, England, SM5 2NU
                     </li>
                     <li>
                       <img class="" :src="'./static/images/mail.8f0212e7.png'" alt="location" style="width:30px;margin-right:10px;">
-                      <a href="mailto:info@drmlminer.com">info@drmlminer.com</a></li>
+                      <a href="mailto:info@drmlminer.com">info@pbkminer.com</a></li>
                     <li>
                       <ul class="styled-icon mt-2">
                         <li>
-                          <a href="https://x.com/drmlminer?s=11">
+                          <a href="https://x.com/PBKMiner">
                             <img class="s-icon" :src="'./static/images/twitter.6352d995.png'" alt="twitter"></a>
                         </li>
                         <li>
-                          <a href="https://www.facebook.com/people/Drml-Miner-Miner/pfbid02ZbJ6T1zQssW3o6L8UFDwu9BSqvPnrUtbwZcJpTKPkMvDVQcMFs6r8FH2UWrhCbr1l/?mibextid=wwXIfr&rdid=PRavCLDm6YNtwjJe&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15xRrAhhEE%2F%3Fmibextid%3DwwXIfr">
+                          <a href="https://www.facebook.com/share/1AdeMgYwr8/?mibextid=wwXIfr">
                             <img class="s-icon" :src="'./static/images/facebook1.18f06c79.png'" alt="facebook"></a>
                         </li>
 <!--                        <li>-->
@@ -127,7 +127,7 @@
       <hr class="bg-white-slim my-0">
       <div class="copyright-wrap d-flex flex-wrap py-3 align-items-center justify-content-between">
         <p class="footer-copy-text py-2" style="margin: 0 auto;">
-          <a href="https://find-and-update.company-information.service.gov.uk/company/11574795" target="_blank">
+          <a href="https://find-and-update.company-information.service.gov.uk/company/12272456" target="_blank">
             <img :src="'./static/img/about.d15e9c77.png'" width="60"></a>{{$t('foot[11]',{WT:InitData.setting.web_title})}}</p>
         <ul class="list-item list-item-s1 list-item-inline"></ul>
       </div>

@@ -1,12 +1,12 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <header class="has-header-main" style="background: #fff;">
+    <header class="has-header-main header-bg" style="background: url('./static/img/header-bg.jpg')">
       <div  class="hero-wrap hero-wrap-2 section-space" style="position: relative;">
 <!--        <video id="v1" autoplay loop muted>-->
 <!--          <source :src="'./static/images/bg.mp4?t=1'" type="video/mp4"  />-->
 <!--        </video>-->
-        <div  class="container">
+        <div  class="container header_content_bg">
           <div  class="row align-items-center flex-md-row-reverse justify-content-between">
             <div  class="col-lg-6 col-md-6">
               <swiper v-if="InitData.bannerList && InitData.bannerList.length>0"
@@ -42,8 +42,9 @@
               </swiper>
             </div>
             <div  class="col-lg-6 col-md-6">
-              <div  class="hero-content pb-0 pt-md-0 pe-lg-4" >
-                <h1  class="hero-title mb-4" >{{$t('home1[0]')}}
+              <div  class="hero-content pb-0 pt-md-0 pe-lg-8" >
+                <h1  class="hero-title mb-8" >
+                  {{$t('home1[0]')}}
                   <span  class="nfts-word">{{$t('home1[1]')}}</span> {{$t('home1[2]')}}</h1>
                 <p  class="hero-text mb-4 pb-1" style="color:#000;"> {{$t('home1[3]')}}</p>
                 <ul  class="btns-group hero-btns justify-content-md-start justify-content-center">
@@ -64,7 +65,7 @@
       <iframe class="iframe" scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ADOGEUSD%22%2C%22title%22%3A%22Dogecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ALTCUSD%22%2C%22title%22%3A%22Litecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABCHUSD%22%2C%22title%22%3A%22Bitcoin%20Cash%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AADAUSD%22%2C%22title%22%3A%22Cardano%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%2C%22title%22%3A%22XRP%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22normal%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22globalecrypto.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22oxminer.com%2F%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 58px; width: 100%;"></iframe>
     </div>
     <van-notice-bar color="red" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />
-    <div class="h-[662px] xl:h-[700px]"
+    <!-- <div class="h-[662px] xl:h-[700px]"
          style="background-image: url('./static/images/blockchain_bg.webp'); background-size: cover; background-position: center center;">
       <div class="h-full mx-auto max-w-[1200px] px-5 box-content xl:px-8">
         <div class="flex flex-col h-full max-w-[620px] justify-center"><h3
@@ -75,7 +76,7 @@
             {{$t('newhome[1]')}}
           </p></div>
       </div>
-    </div>
+    </div> -->
     <div class="wrapper_A-XAV" style="margin-top: 1rem;">
       <div class="scheme1_27wht"><div class="scheme1Item_gE_r4 schemeItem1_1L0vC" @click="$router.push('/register')" style="background-image: url(./static/images/ht1.png);background-size: 50px;">
         {{$t('newhome[2]')}}<br><span style="font-size: 14px;">{{$t('newhome[3]')}}</span>
@@ -217,7 +218,7 @@
                   {{$t('buy[0]')}}                        </a>
               </div>
               <div class="mt-2 text-center">
-                <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #62cee7, #00070e)"/>
+                <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #33f911, #00070e)"/>
               </div>
               <img v-if="item.progress>=100" :src="'./static/images/out.png?t=1'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
             </div>
@@ -2161,7 +2162,7 @@
 
   .scheme1_27wht {
     border-radius: 10px;
-    background: linear-gradient(180deg,#20436f,#03193f);
+    background: linear-gradient(180deg,#1bd17d,#03193f);
     padding: 25px 0
   }
 
@@ -2371,7 +2372,7 @@
     .scheme1_27wht {
       display: flex;
       border-radius: 10px;
-      background: linear-gradient(180deg,#20436f,#03193f);
+      background: linear-gradient(180deg,#1bd17d,#03193f);
       justify-content: space-around
     }
 
@@ -2539,12 +2540,21 @@
   }
   .in-icon-vix img {
     max-width: initial;
-    width: 150px;
+    width: 65px;
   }
   .uk-vix-content {
     padding: 10px;
   }
   .uk-cn-actions {
     margin-top: 1rem;
+  }
+  /* 20250424新增 */
+  .header-bg{
+    background-repeat:no-repeat !important;
+    background-size:100% 100% !important;
+  }
+
+  .hero-wrap >>> .header_content_bg{
+    background: #fff;
   }
 </style>

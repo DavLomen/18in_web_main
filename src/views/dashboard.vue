@@ -308,7 +308,7 @@
     border: 0;
     border-radius: .375rem;
     transition: all .2s;
-    box-shadow: inset 0 0px 20px #8CBE06c4;
+    box-shadow: inset 0 0px 20px #0d6efd;
     background: #000;
     color: #fff;
     display: flex;
@@ -319,7 +319,7 @@
     border: 0;
     border-radius: .375rem;
     transition: all .2s;
-    box-shadow: inset 0 0px 20px #8CBE06c4;
+    box-shadow: inset 0 0px 20px #0d6efd;
     background: #fff;
     color: #000;
     display: flex;
@@ -328,7 +328,7 @@
     padding: 1.563rem 1.75rem 1.25rem 1.75rem;
   }
   .form-control:disabled {
-    box-shadow: inset 0 0px 20px #8CBE06c4;
+    box-shadow: inset 0 0px 20px #0d6efd;
     background: #fff;
     color: #000;
   }

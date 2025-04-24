@@ -111,7 +111,7 @@
                   <h5 class="title">{{$t('contact[12]')}}</h5>
                   <p class="caption">{{$t('contact[13]')}}</p>
                   <p class="mt-2">
-                    10 Hollies Road Allestree, Derby, England
+                    30 Colston Avenue, Carshalton, Surrey, England, SM5 2NU
                   </p>
                 </div>
               </div>

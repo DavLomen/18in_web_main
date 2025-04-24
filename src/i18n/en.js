@@ -326,7 +326,7 @@ export default {
     "Please enter Transaction ID(TxID)"
   ],
   "foot":[
-    "DRML Miner is the world's leading cloud mining platform. We have a professional team and advanced technology. After years of development and improvement, the company uses clean energy as kinetic energy to make cloud mining simpler and more efficient. Its mission is clear: to provide you with the tools and services needed to succeed in the field of digital assets and create more wealth for users. Join us and bring you a profitable cryptocurrency journey.",
+    "PBK Miner is the world's leading cloud mining platform, we have a professional team and advanced technology. After years of development and improvement, the company uses clean, low-cost green energy (mainly hydropower, wind power, solar energy, etc.) as kinetic energy to make cloud mining simpler and more efficient. Our mission is clear: to provide you with the tools and services you need to succeed in the digital asset field and create more wealth for users. Join us and bring you a profitable cryptocurrency journey.",
     "Main Links",
     "Important Links",
     "About Us",
@@ -337,7 +337,7 @@ export default {
     "Important Links",
     "Privacy and Policy",
     "Terms of Services",
-    "Copyright © 2018-2025 DRML Miner。All rights",
+    "Copyright © 2019-2025 PBK Miner。All rights",
     "LEARN",
     "What is cryptocurrency?",
     "What is web3?",
@@ -781,11 +781,10 @@ export default {
     "SIGN OUT"
   ],
   "home1":[
-    "Easy cloud mining anytime, anywhere",
+    "Easy cloud mining anytime, anywhere,Harnessing green energy to drive a sustainable future for cloud mining",
     "",
     "",
-    "DRML Miner is the world's leading cloud mining platform, using clean energy combined with top-level equipment to provide users with a simple and convenient way to mine. Join us and start your cloud mining journey.",
-    "Begin your cloud mining investment, withdraw your first payout after 24 hours.",
+    "PBK Miner is the world's leading cloud mining platform. It uses clean energy combined with top-level equipment to provide users with a simple and convenient way to mine. It adopts clean, low-cost green energy (mainly hydropower, wind power, solar energy, etc.), practices environmental protection concepts, promotes energy-saving innovation, and is committed to building a green, sustainable, and energy-saving data center. Join us and start your cloud mining journey.",
     "START MINING",
     "HOW TO START",
     "SIGN UP",
@@ -850,7 +849,7 @@ export default {
   "about1":[
     "ABOUT US",
     "DRML Miner is the world's leading cloud mining platform, using clean energy combined with top-level equipment to provide users with a simple and convenient way to mine. Join us and start your cloud mining journey.",
-    "DRML Miner was founded in 2018 and is headquartered in the UK. The company focuses on promoting the development of the cloud mining industry by using clean energy and strives to set new standards for sustainable development in the industry. Our goal is to provide global users with stable and efficient cloud computing services and convenient and intelligent cloud mining solutions by building a secure, compliant, and transparent blockchain infrastructure.",
+    "DRML Miner was founded in 2018 and is headquartered in the UK. The company focuses on promoting the development of the cloud mining industry by using clean energy and strives to set new standards for sustainable development in the industry. Our goal is to provide global users with stable and efficient cloud computing services and convenient and intelligent cloud mining solutions by building a secure, compliant, and transparent blockchain infrastruct  ure.",
     "Company course: Continuous improvement and innovation",
     "After years of development and continuous growth, it currently has more than 100 large-scale environmentally friendly energy mines around the world, with users in 180 countries and regions. Trusted by more than 7 million users worldwide, it has always been at the forefront of blockchain and cryptocurrency technology applications.",
     "Mission: Leading a new era of green energy",
@@ -867,7 +866,7 @@ export default {
   ],
   "download1":[
     "Download the mobile app to start mining today!",
-    "Click to directly download the DRML Miner mobile app to manage your mining activities anytime, anywhere, enjoy a faster experience, and help you increase your income efficiently."
+    "Click to directly download the PBK Miner mobile app to manage your mining activities anytime, anywhere, enjoy a faster experience, and help you increase your income efficiently."
   ],
   "newhome":[
     "Harnessing green energy to drive a sustainable future for cloud mining",
@@ -877,9 +876,9 @@ export default {
     "Select Contract",
     "Choose your mining contract",
     "Get Profit",
-    "Stable contract income is automatically updated to your account",
+    "Stable contract income is automati cally updated to your account",
     "Why choose us?",
-    "Advantages of DRML Miner",
+    "Advantages of PBK Miner",
     "Latest Hardware",
     "We use the latest ASIC mining machines and GPU equipment, and utilize clean energy combined with top-level equipment to provide users with a simple and convenient way to mine.",
     "No additional fees",

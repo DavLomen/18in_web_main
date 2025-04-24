@@ -29089,9 +29089,15 @@ textarea.form-control {
 .plan-card__head .text--danger {
   color: #0d6efd;
 }
-.btn-dark{
+/* .btn-dark{
   color: #fff;
   background: linear-gradient(to right, #2777ed, #00070e);
+  border: none;
+} */
+/* 20250424修改 */
+.btn-dark{
+  color: #fff;
+  background: linear-gradient(to right, #23cff1, #00070e);
   border: none;
 }
 

@@ -286,6 +286,9 @@
   }
 </script>
 <style scoped>
+  .header-main {
+    background: #1bd17d;
+  }
   .language {
     margin-left: 13px;
   }

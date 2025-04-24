@@ -75,7 +75,7 @@
                         {{$t('buy[0]')}}                        </a>
                     </div>
                     <div class="mt-2 text-center">
-                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #62cee7, #00070e)"/>
+                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #33f911, #00070e)"/>
                     </div>
                     <img v-if="item.progress>=100" :src="'./static/images/out.png?t=1'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
                   </div>

@@ -1,8 +1,9 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <div style="margin-top: 4rem">
-      <div class="elementor-element elementor-element-bcf0f4e e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="bcf0f4e" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+    <div>  
+        <img style="width: 100%;object-fit: cover;" :src="'./static/images/about_us_bg.jpg'" alt="">
+      <!-- <div class="elementor-element elementor-element-bcf0f4e e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="bcf0f4e" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
         <div class="elementor-element elementor-element-a079262 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-child" data-id="a079262" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
           <div class="elementor-element elementor-element-e56d023 elementor-widget elementor-widget-heading animated slideInRight">
             <div class="elementor-widget-container">
@@ -12,11 +13,6 @@
             <div class="elementor-widget-container">
               <p><span class="OYPEnA text-decoration-none text-strikethrough-none">{{$t('about1[1]')}}</span></p>								</div>
           </div>
-<!--          <div class="elementor-element elementor-element-c0890b4 elementor-widget elementor-widget-image animated fadeInDown" data-id="c0890b4" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInDown&quot;,&quot;_animation_delay&quot;:30}" data-widget_type="image.default">-->
-<!--            <div class="elementor-widget-container">-->
-<!--              <img decoding="async" width="150" height="44" :src="'./static/images/about.svg'" class="attachment-thumbnail size-thumbnail wp-image-9591" alt="Read more" title="About Us 1" loading="eager" fetchpriority="high">															-->
-<!--            </div>-->
-<!--          </div>-->
         </div>
         <div class="elementor-element elementor-element-13ecf41 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-child" data-id="13ecf41" data-element_type="container">
           <div class="elementor-element elementor-element-2c93846 elementor-widget elementor-widget-image" data-id="2c93846" data-element_type="widget" data-widget_type="image.default">
@@ -24,11 +20,9 @@
               <img fetchpriority="low" decoding="async" width="1024" height="804" :src="'./static/images/about-4.png?t=1'" sizes="auto" title="About Us 2" loading="lazy">															</div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="app-wrapper max960">
-
-
       <section class="about-section sp_pt_120 sp_pb_120" style="padding-top: 2rem">
         <div class="container">
           <div class="row gy-5 align-items-top justify-content-between">
@@ -64,16 +58,16 @@
           <div class="row gy-5 align-items-center justify-content-between">
             <div class="col-lg-6 col-md-10">
               <p class="fs-lg mt-3">
-              </p><h3 style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">DRML FINANCIAL SERVICES LIMITED</h3><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[1]')}} <b>11574795</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[2]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>10 Hollies Road Allestree, Derby, England, DE22 2HW
-            </b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[3]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>Private limited Company</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[4]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>18 September 2018</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p></p>            <p></p>
-              <a style="background: #2777ed;color: #fff;" target="_blank" href="https://find-and-update.company-information.service.gov.uk/company/11574795" class="btn main-btn mt-4">{{$t('about[5]')}}</a>
+              </p><h3 style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">PBK FINANCIAL SERVICES LTD</h3><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[1]')}} <b>12272456</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[2]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>30 Colston Avenue, Carshalton, Surrey, England, SM5 2NU
+            </b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[3]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>Private limited Company</b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b><br></b></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;">{{$t('about[4]')}}</p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><b>21 October 2019</b><br></p><p style="border: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; line-height: 1.04167; overflow-wrap: break-word;"><br></p><p></p>            <p></p>
+              <a style="background: #2777ed;color: #fff;" target="_blank" href="https://find-and-update.company-information.service.gov.uk/company/12272456" class="btn main-btn mt-4">{{$t('about[5]')}}</a>
               <a style="background: #2777ed;color: #fff;" target="_blank" href="./static/companies_house_document.pdf?t=1" class="btn main-btn mt-4">{{$t('about[6]')}}</a>
             </div>
             <div class="col-lg-6 ps-xl-5 p-lg-4 about-content wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
               <p class="fs-lg mt-3">
               </p><p style="display: flex;">
-              <img :src="'./static/images/comm1.png'" data-filename="companies_house_document.jpg" style="width: 50%;">
-              <img :src="'./static/images/comm2.png'" data-filename="companies_house_document-2.jpg" style="width: 50%;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br></p>            <p></p>
+              <img :src="'./static/images/comm1.jpg'" data-filename="companies_house_document.jpg" style="width: 50%;">
+              <img :src="'./static/images/comm2.jpg'" data-filename="companies_house_document-2.jpg" style="width: 50%;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br></p>            <p></p>
             </div>
           </div>
         </div>
