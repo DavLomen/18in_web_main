@@ -477,7 +477,7 @@
                     <swiper-slide v-for="el in Array.from({ length: 10 }, (_, i) => i + 10)" :key="el">
                         <div class="comment_card">
                           <div class="comment_head">
-                            <img :src="`../../static/img/user/user_${el + 1}.png`" alt="">
+                            <img :src="`./static/img/user/user_${el + 1}.png`" alt="">
                           </div>
                           <div class="msg mx-auto">
                             <div class="msg mx-auto">
@@ -559,7 +559,7 @@
           </div>
           <div class="row partners_list justify-content-between">
             <div class="el-col-sm-8 el-col-md-4 el-col-xs-12 pl-0 pr-0 mb-5 mt-3" v-for="el in Partners" :key="el.id">
-              <img class="mx-auto" style="width: 70%;" :src="`../../static/img/Partners/${el.id}.${el.type}`" alt="">
+              <img class="mx-auto" style="width: 70%;" :src="`./static/img/Partners/${el.id}.${el.type}`" alt="">
             </div>
           </div>
         </div>

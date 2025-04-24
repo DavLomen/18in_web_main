@@ -5,7 +5,7 @@
 <!--      <div class="container" style="background: url(./static/img/login_bg.png) no-repeat;background-position: center;max-width: 100%;background-size: 100% 100%">-->
       <div class="container">
         <video  autoplay="autoplay" loop class="bg_video" muted='muted' >
-          <source src="../../static/img/login_bg.mp4" type="video/mp4"/>
+          <source :src="'./static/img/login_bg.mp4'" type="video/mp4"/>
         </video>
         <div class="form-box">
           <div class="mt-9 px-4 lg:mt-[60px] lg:mr-[90px] lg:pr-0 lg:pl-10" style="max-width: 500px">
