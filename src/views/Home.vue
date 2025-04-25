@@ -5,17 +5,41 @@
     <div data-v-473dd3c9="" data-v-46027133="" class="homeBanner home-banner">
       <section data-v-473dd3c9="" class="hero__slider--section style2">
         <div data-v-473dd3c9="" class="hometop" style="position: relative;">
-          <div class="video">
-            <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">
-              <source :src="'./static/images/bg.mp4'" type="video/mp4"  />
-            </video>
+          <!-- 移动手机屏幕时展示 -->
+          <div class="el-row new_bg" style="color:#fff">
+            <div class="right right_top el-col-xs-24  el-col-sm-12">
+              <swiper :options="swiperOption1"  class="carousel slide" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">
+                <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
+                  <img @click="jumper" :src="InitData.setting.up_url+item" style="width: 100%;height: 100%;">
+                </swiper-slide>
+              </swiper>
+            </div>
+            <div class="left el-col-xs-24 el-col-sm-12 el-col-md-12">
+              <h1 class="fw-bold">{{ $t('head-bg[0]') }}</h1>
+              <p>{{ $t('head-bg[1]') }}</p>
+              <div v-if="!UserInfo" class=" header__account">
+                <ul  class="d-flex align-items-center">
+                  <li  class="right-extend_items header__account--items login-but_box" style="display: flex;justify-content: space-between;">
+                    <a href="javascript:;" @click="$router.push('/login')"class="but but_signup btn-dark"> {{$t('head[3]')}} </a>
+                    <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup btn-dark">{{$t('head[2]')}} </a>
+                  </li>
+                </ul>
+              </div>
+              <div style="color: #04F220;">
+                <p>{{ $t('head-bg[2]') }}</p>
+                <p>{{ $t('head-bg[3]') }}</p>
+                <p>{{ $t('head-bg[4]') }}</p>
+              </div>
+            </div>
+            <!-- 大屏时展示 -->
+            <div class="right right_down el-col-xs-24  el-col-sm-12">
+              <swiper :options="swiperOption1"  class="carousel slide" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">
+                <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
+                  <img @click="jumper" :src="InitData.setting.up_url+item" style="width: 100%;height: 100%;">
+                </swiper-slide>
+              </swiper>
+            </div>
           </div>
-
-          <swiper :options="swiperOption1"  class="carousel slide" style="width: 100%;margin: 0 auto 5px;border-radius: 12px;">
-            <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
-              <img @click="jumper" :src="InitData.setting.up_url+item" style="width: 100%;height: 100%;">
-            </swiper-slide>
-          </swiper>
         </div>
       </section>
     </div>
@@ -2218,12 +2242,32 @@ inset 0 0 0 1px #fba342 !important;
   }
   .hometop {
     min-height: 28rem;
+    background: #1f2033;
+    padding: 50px 80px;
   }
   @media only screen and (max-width: 1024px) {
     .hometop {
       min-height:12rem;
     }
   }
+
+  @media (min-width: 768px) {
+    .right_top{
+      display: none;
+    }
+    .right_down{
+      display: block;
+    }
+  }
+  @media (max-width: 768px) {
+    .right_top{
+      display: block;
+    }
+    .right_down{
+      display: none;
+    }
+  }
+
   .user {
     display: flex;
     align-items: center;

@@ -121,7 +121,7 @@
                     <div class="pc_link_input mt-2">
                       <div class="label">{{ $t('dashboard[23]') }}</div>
                       <div class="el-input">
-                        <input class="mt-2" type="txet" :disabled="true" v-model="UserInfo.username"/>
+                        <input class="mt-2" type="txet" :disabled="true" v-model="promoteUrl"/>
                         <div class="copy_icon copy_link mt-2" :data-clipboard-text="promoteUrl" @click="copy('.copy_link')">
                         <van-icon name="description" size="25" color="#fff" />
                       </div>
@@ -229,7 +229,7 @@
                          style="width: 90%; background-color: rgb(232, 232, 255); margin: 20px auto 0px; border-radius: 25px; padding: 10px 15px; display: flex; flex-flow: row; justify-content: space-between; box-shadow: white 0px 0px 3px;">
                       <span  class="notranslate"
                             style="color: rgb(10, 10, 26); line-height: 37px; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-all;">{{promoteUrl}}</span>
-                      <button  block="" size="sm" class="window copy" @click="copy" :data-clipboard-text="promoteUrl"
+                      <button  block="" size="sm" class="window copy " @click="copy" :data-clipboard-text="promoteUrl"
                               style="font-size: 18px; width: 100px; border-radius: 30px; background-color: rgb(246, 197, 197); color: black; border: none; padding: 5px 0px;">
                         {{$t('affiliates[16]')}}
                       </button>

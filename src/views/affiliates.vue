@@ -31,15 +31,15 @@
                        style="width: 90%; background-color: rgb(232, 232, 255); margin: 20px auto 0px; border-radius: 25px; padding: 10px 15px; display: flex; flex-flow: row; justify-content: space-between; box-shadow: white 0px 0px 3px;">
                     <span  class="notranslate"
                           style="color: rgb(10, 10, 26); line-height: 37px; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-all;">{{promoteUrl}}</span>
-                    <button size="sm" class="window copy"
+                    <button size="sm" class="window copy btn-dark"
                             style="font-size: 18px; width: 100px; border-radius: 30px; background-color: rgb(246, 197, 197); color: black; border: none; padding: 5px 0px;" @click="copy" :data-clipboard-text="promoteUrl">
                       {{$t('affiliates[16]')}}
                     </button>
                   </div>
                   <div  class="phone" style="text-align: center; margin-top: 20px;">
-                    <button size="sm" @click="copy" :data-clipboard-text="promoteUrl" class="copy"
+                    <button size="sm" @click="copy" :data-clipboard-text="promoteUrl" class="copy btn-dark"
                             style="font-size: 18px; width: 90%; border-radius: 30px; background-color: rgb(246, 197, 197); color: black; border: none; padding: 10px 0px;">
-                      {{$t('affiliates[16]')}}
+                      {{$t('affiliates[16]')}}222
                     </button>
                   </div>
                 </div>

@@ -13,7 +13,21 @@
                   <div class="card custom--card">
                     <form class="register">
                       <div class="card-body">
-                        <div class="form-group">
+                        <div class="form-group form" style="position: relative;">
+                            <label>{{$t('walletAddress[3]')}}</label>
+                            <div class="input-group" style="width: 100%">
+                              <div  class="item-control">
+                                <div  class="select row g-3">
+                                  <div  class="col-6 col-sm-3" :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
+                                    <div  :class="'select-i '+(item.name ==selectTypes.bank?'active':'')">
+                                      <img :src="InitData.setting.up_url + item.qrcode" style="width: 36px;vertical-align: middle;display: inline-block;">
+                                      <span >{{item.name}}</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <!-- <div class="form-group">
                           <label>{{$t('walletAddress[3]')}}</label>
                           <div class="input-group">
                             <div class="el-form-item__content" style="width: 100%;">
@@ -31,14 +45,12 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <span
-                                    class="el-input__suffix"><span class="el-input__suffix-inner"> <i class="fa fa-angle-down"></i></span>
-                        </span>
+                                  <span class="el-input__suffix"><span class="el-input__suffix-inner"> <i class="fa fa-angle-down"></i></span></span>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                           <label for="wallet_address">{{$t('walletAddress[0]')}}</label>
                           <input id="wallet_address" type="text" class="form--control form-control" name="wallet_address" autocomplete="off" v-model.trim="postData.card_no"
@@ -94,6 +106,7 @@
         bankList: '',
         showAdd: false,
         isSubmit: false,
+        rechargeList:[]
       }
     },
 
@@ -105,6 +118,13 @@
       this.selectTypes = this.InitData.BanksList[0];
       this.postData.bank_id = this.selectTypes.bank_id;
       this.postData.bank_name = this.selectTypes.bank;
+      this.$Model.GetRechargeType(data=>{
+        this.rechargeList = data.info;
+        if (data.info.length > 0) {
+          this.id = data.info[0].id;
+          this.chageRecharge(data.info[0]);
+        }
+      });
     },
     mounted() {
     },
@@ -115,11 +135,22 @@
 
     },
     methods: {
-      chageBank(item) {
-        this.postData.bank_id = item.bank_id;
-        this.postData.bank_name = item.bank;
-        this.selectTypes = item;
+      chageRecharge(item) {
+        this.selectTypes= {
+          id:item.id,
+          bank:item.name,
+        }
+        this.postData.bank_id= item.id;
+        this.postData.bank_name= item.name;
+        this.id = item.id;
+        let typeid = item.id;
+        this.rechargeInfo = this.rechargeList.find(item => item.id == typeid);
       },
+      // chageBank(item) {
+      //   this.postData.bank_id = item.bank_id;
+      //   this.postData.bank_name = item.bank;
+      //   this.selectTypes = item;
+      // },
       onSubmit() {
         this.postData.name = this.UserInfo.realname
         if(!this.postData.bank_name){
@@ -1697,6 +1728,32 @@
     border: 1px solid #333;
     font-size: 1rem;
     color: #000000;
+  }
+
+  .form .item-control .select-i {
+    background: #f1f1f1;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    padding: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .3s ease
+  }
+
+  .form .item-control .select-i.active {
+    border-color: #009d24
+  }
+
+  .form .item-control .select-i span {
+    margin-top: .625rem;
+    font-size: .9375rem;
+    font-weight: 400;
+    color: #1c2a46;
+    line-height: 1.3125rem
   }
 </style>
 

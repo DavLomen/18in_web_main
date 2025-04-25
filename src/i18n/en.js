@@ -348,6 +348,13 @@ export default {
     "Referrals",
     "Online Users"
   ],
+  "head-bg": [
+    "Renewable Energy Cryptocurrency Mining",
+    "ALL4 Mining uses encrypted clean energy sustainable cloud mining to reduce carbon footprint while maximizing profits",
+    "Complete the registration and get $15",
+    "Sign in daily to get $0.6",
+    "Recommendation reward: Earn up to 4.5%"
+  ],
   "say": [
     "Amelia",
     "nurse",
