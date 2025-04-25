@@ -174,9 +174,9 @@
                 <div class="mt-0  text-left" style="color: #000000;font-weight: normal;">
                   <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}
                 </div>
-                <!--                    <div class="mt-0  text-left" style="color: #000000">-->
-                <!--                      <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[9]')}}: {{item.miner}}-->
-                <!--                    </div>-->
+                <div class="mt-0  text-left" style="color: #000000;font-weight: normal;">
+                  <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[9]')}}: {{item.miner}}
+                </div>
                 <!--                    <div class="mt-0  text-left" style="color: #000000">-->
                 <!--                      <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[8]')}}: {{item.hash_power}}-->
                 <!--                    </div>-->
@@ -2569,5 +2569,8 @@
 
   .hero-wrap >>> .header_content_bg{
     background: #fff;
+  }
+  .pricing {
+    display: flex;
   }
 </style>
