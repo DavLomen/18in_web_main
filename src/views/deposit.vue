@@ -29,11 +29,11 @@
           <div class="desc">
             {{$t('deposit[3]')}}
           </div>
-<!--          <div-->
-<!--            id="QRCode"-->
-<!--            class="qrcode ewm-img"-->
-<!--          >-->
-<!--          </div>-->
+          <!--          <div-->
+          <!--            id="QRCode"-->
+          <!--            class="qrcode ewm-img"-->
+          <!--          >-->
+          <!--          </div>-->
           <div class="info-list">
             <div class="info-item">
               <div class="label">{{$t('walletAddress[0]')}}</div>
@@ -42,15 +42,15 @@
                 <div class="copy-btn copy" :data-clipboard-text="siteBank[0].rececode" @click="copy"><i class="el-icon-document-copy"></i></div>
               </div>
             </div>
-<!--            <div class="info-item">-->
-<!--              <div class="label">{{$t('deposit[4]')}}</div>-->
-<!--              <div class="input-group">-->
-<!--                <input v-model.trim="postData.name"-->
-<!--                  :placeholder="$t('deposit[5]')"-->
-<!--                  class="input"-->
-<!--                />-->
-<!--              </div>-->
-<!--            </div>-->
+            <!--            <div class="info-item">-->
+            <!--              <div class="label">{{$t('deposit[4]')}}</div>-->
+            <!--              <div class="input-group">-->
+            <!--                <input v-model.trim="postData.name"-->
+            <!--                  :placeholder="$t('deposit[5]')"-->
+            <!--                  class="input"-->
+            <!--                />-->
+            <!--              </div>-->
+            <!--            </div>-->
             <div class="info-item">
               <div class="label">{{$t('deposit[6]')}}</div>
               <div class="upload-box">
@@ -69,10 +69,10 @@
         </div>
       </div>
       <div v-else class="container">
-<!--        <div class="balance-box">-->
-<!--          <div class="label">{{$t('deposit[8]')}}</div>-->
-<!--          <div class="num">{{InitData.currency}} {{UserInfo.balance}}</div>-->
-<!--        </div>-->
+        <!--        <div class="balance-box">-->
+        <!--          <div class="label">{{$t('deposit[8]')}}</div>-->
+        <!--          <div class="num">{{InitData.currency}} {{UserInfo.balance}}</div>-->
+        <!--        </div>-->
         <div class="user-des">{{$t('loginpage[2]')}}</div>
         <div class="main user-box">
           <form class="el-form form el-form--label-top">
@@ -96,8 +96,8 @@
                           </div>
                         </div>
                         <span
-                        class="el-input__suffix"><span class="el-input__suffix-inner"><i
-                        class="el-select__caret el-input__icon el-icon-arrow-up"></i></span>
+                          class="el-input__suffix"><span class="el-input__suffix-inner"><i
+                          class="el-select__caret el-input__icon el-icon-arrow-up"></i></span>
                         </span>
                       </div>
                     </div>
@@ -109,7 +109,7 @@
                   <div class="el-form-item__content">
                     <div class="input-group">
                       <div class="input el-input"><input type="number" autocomplete="off" v-model="postData.money"
-                                                                class="el-input__inner">
+                                                         class="el-input__inner">
                       </div>
                       <div class="sign">{{InitData.currency}}</div>
                     </div></div>
@@ -125,10 +125,10 @@
               <div class="label">{{$t('deposit[11]')}}</div>
               <div class="value">{{rechargeInfo.minPrice}} {{InitData.currency}} - {{rechargeInfo.maxPrice}} {{InitData.currency}}</div>
             </div>
-<!--            <div class="info-item">-->
-<!--              <div class="label">Reward</div>-->
-<!--              <div class="value">0.00 {{InitData.currency}}</div>-->
-<!--            </div>-->
+            <!--            <div class="info-item">-->
+            <!--              <div class="label">Reward</div>-->
+            <!--              <div class="value">0.00 {{InitData.currency}}</div>-->
+            <!--            </div>-->
             <div class="info-item" v-if="rechargeInfo.fee && rechargeInfo.fee>0">
               <div class="label">{{$t('wallet.label[8]')}}</div>
               <div class="value">{{rechargeInfo.fee ||0}}%</div>
@@ -174,22 +174,22 @@
           </div>
         </div>
         <div class="pagination-box">
-<!--          <div class="pagination-pc el-pagination is-background">-->
-<!--            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>-->
-<!--            </button>-->
-<!--            <ul class="el-pager">-->
-<!--              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>-->
-<!--            </ul>-->
-<!--            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>-->
-<!--          </div>-->
-<!--          <div class="pagination-h5 el-pagination is-background">-->
-<!--            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>-->
-<!--            </button>-->
-<!--            <ul class="el-pager">-->
-<!--              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>-->
-<!--            </ul>-->
-<!--            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>-->
-<!--          </div>-->
+          <!--          <div class="pagination-pc el-pagination is-background">-->
+          <!--            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>-->
+          <!--            </button>-->
+          <!--            <ul class="el-pager">-->
+          <!--              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>-->
+          <!--            </ul>-->
+          <!--            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>-->
+          <!--          </div>-->
+          <!--          <div class="pagination-h5 el-pagination is-background">-->
+          <!--            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>-->
+          <!--            </button>-->
+          <!--            <ul class="el-pager">-->
+          <!--              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>-->
+          <!--            </ul>-->
+          <!--            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>-->
+          <!--          </div>-->
           <div class="VuePagination " v-if="data_total_page>0">
             <paginate
               :page-count="data_total_page"
@@ -222,11 +222,11 @@
                 <div class="info">{{$t('deposit[16]')}}: {{InitData.currency}}{{detailItem.money}}</div>
                 <div class="info">{{$t('deposit[17]')}}: {{detailItem.status_desc}}</div>
                 <div class="info">{{$t('deposit[18]')}}: {{detailItem.adddate}}</div>
-<!--                <div class="info">{{$t('deposit[20]')}}: $0.00</div>-->
-<!--                <div class="info">{{$t('deposit[21]')}}: $423.00</div>-->
-<!--                <div class="info">{{$t('deposit[22]')}}: 1 USD = 1 USDT-TRC20[Network:Tron]</div>-->
-<!--                <div class="info">{{$t('deposit[23]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
-<!--                <div class="info">{{$t('deposit[24]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
+                <!--                <div class="info">{{$t('deposit[20]')}}: $0.00</div>-->
+                <!--                <div class="info">{{$t('deposit[21]')}}: $423.00</div>-->
+                <!--                <div class="info">{{$t('deposit[22]')}}: 1 USD = 1 USDT-TRC20[Network:Tron]</div>-->
+                <!--                <div class="info">{{$t('deposit[23]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
+                <!--                <div class="info">{{$t('deposit[24]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
               </div>
               <div class="payment-info" v-if="detailItem.screenshots!=''" >
                 <div class="title">{{$t('deposit[25]')}}</div>
@@ -607,20 +607,20 @@
       },
       compressImg(file) {
         // this.$Util.CompressImg(file.file.type,file.content,750,(image)=>{
-          let param = new FormData();
-          param.append('token',localStorage['Token']);
-          param.append('type',4);
-          param.append('image',file.file,file.file.name);
-          this.$Model.UploadImg(param,(data)=>{
-            if(data.code==1){
-              file.message = this.$t('upload[2]')
-              file.status = 'success'
-              file.url = data.url
-            }else{
-              file.status = 'failed'
-              file.message = this.$t('upload[3]')
-            }
-          });
+        let param = new FormData();
+        param.append('token',localStorage['Token']);
+        param.append('type',4);
+        param.append('image',file.file,file.file.name);
+        this.$Model.UploadImg(param,(data)=>{
+          if(data.code==1){
+            file.message = this.$t('upload[2]')
+            file.status = 'success'
+            file.url = data.url
+          }else{
+            file.status = 'failed'
+            file.message = this.$t('upload[3]')
+          }
+        });
         // })
       },
       uploadImgs(file){
@@ -2188,16 +2188,16 @@
       cursor: pointer;
     }
   }
-.selectShow {
-  position: absolute;
-  top: 5rem;
-  left: 0px;
-  width: -webkit-fill-available;
-  background: #fff;
-  z-index: 999;
-  padding: 0 2rem;
-  border: 1px solid #ccc;
-}
+  .selectShow {
+    position: absolute;
+    top: 5rem;
+    left: 0px;
+    width: -webkit-fill-available;
+    background: #fff;
+    z-index: 999;
+    padding: 0 2rem;
+    border: 1px solid #ccc;
+  }
   .user-box {
     border-radius: 10px;
     background: #FFF;
