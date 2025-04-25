@@ -1,20 +1,12 @@
-<!-- 仪表盘那边用这个组件 -->
 <template>
   <div class="HomePage">
     <Header></Header>
-    <div class="app-wrapper">
-      <!-- <div class="container" style="background: url(./static/img/login_bg.gif) no-repeat;max-width: 100%;background-position:center;background-size: 100% 100%;"> -->
-      <div class="container">
-        <video  autoplay="autoplay" loop class="bg_video" muted='muted' >
-          <source :src="'./static/img/login_bg.mp4'" type="video/mp4"/>
-        </video>
-        <div class="form-box">
-          <div class="mt-9 px-4 lg:mt-[60px] lg:mr-[90px] lg:pr-0 lg:pl-10">
-            <div class="form-title">{{$t('loginpage[0]')}}</div>
-            <p
-              class="bg-clip-text font-helve text-sm mb-0 text-[#1b1b1b] text-opacity-[0.64] leading-[22px] lg:text-base lg:leading-[30px]">
-              {{$t('loginpage[4]')}}</p></div>
+    <div class="app-wrapper" style="background: url(./static/image/001.jpg?t=9) no-repeat;background-size: 100% 100%;">
+      <div class="container" >
+        <div class="form-box" style="display: flex;justify-content: right;">
           <form class="el-form form el-form--label-top">
+            <div class="form-title">{{$t('loginpage[0]')}}</div>
+
             <div class="el-row" style="margin-left: -5px; margin-right: -5px">
               <div
                 class="el-col el-col-24"
@@ -27,10 +19,10 @@
                       <input
                         v-model.trim="postData.username"
                         type="text"
-                        autocomplete="off"
+                      autocomplete="off"
                         :placeholder="$t('regLogin[2]')"
-                        class="el-input__inner"
-                      />
+                      class="el-input__inner"
+                    />
                     </div>
 
                   </div>
@@ -43,18 +35,38 @@
                 <div class="el-form-item is-required">
                   <h6>*{{$t('regLogin[5]')}}</h6>
                   <div class="el-form-item__content">
-                    <div class="el-input el-input--suffix password-input">
+                    <div class="el-input el-input--suffix">
                       <input
-                        :type="showPassWord ? 'text' : 'password'"
-                        v-model.trim="postData.password"
+                      type="password"
+                      v-model.trim="postData.password"
+                      autocomplete="off"
+                      :placeholder="$t('regLogin[6]')"
+                      class="el-input__inner"
+                    /><span class="el-input__suffix"
+                    ><span class="el-input__suffix-inner"
+                    ></span
+                    ></span
+                    >
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div v-if="code==3"
+                class="el-col el-col-24"
+                style="padding-left: 5px; padding-right: 5px"
+              >
+                <div class="el-form-item is-required">
+                  <h6>*F2A</h6>
+                  <div class="el-form-item__content">
+                    <div class="el-input">
+                      <input
+                        v-model.trim="postData.verify_code"
+                        type="text"
                         autocomplete="off"
-                        :placeholder="$t('regLogin[6]')"
+                        :placeholder="'F2A'"
                         class="el-input__inner"
                       />
-                      <div class="showPassWordIcon" @click="showPassWord = !showPassWord">
-                        <van-icon name="eye" size="20" v-show="!showPassWord"/>
-                        <van-icon name="closed-eye" size="20" v-show="showPassWord" />
-                      </div>
                     </div>
 
                   </div>
@@ -68,10 +80,8 @@
 
                   <div class="el-form-item__content">
                     <div class="other-operate">
-                      <!--                      <div class="reset-link">Forgot Password?</div>-->
-                      <van-checkbox shape="square"  v-model="keepUser" @change="changeKeepUser"  icon-size="14">
-                        <span style="color: #fff;">{{$t('login.text[0]')}}</span>
-                      </van-checkbox>
+<!--                      <div class="reset-link">Forgot Password?</div>-->
+                      <van-checkbox shape="square" v-model="keepUser" @change="changeKeepUser" checked-color="#A22283"  icon-size="14">{{$t('login.text[0]')}}</van-checkbox>
                     </div>
 
                   </div>
@@ -97,105 +107,118 @@
         </div>
       </div>
     </div>
-    <div class="pc">
-      <Footer/>
-    </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Login',
-    components: {
+export default {
+  name: 'Login',
+  components: {
 
-    },
-    props: [],
-    data() {
-      return {
-        showPassWord: false,
-        postData: {
-          username: localStorage['UserName']||'',
-          password: localStorage['PassWord']||''
-        },
-        keepUser: localStorage['KeepUser']=='1'?true:false,
-        isSubmit: false,
-        showPass: false,
-        docTitle: document.title,
-        areaList: areaList,
-        areaCode: areaList[0].id,
-      }
-    },
-    computed: {
-
-    },
-    watch: {
-
-    },
-    created() {
-      this.$Model.SmsCode((data) => {
-        this.areaList = data
-        this.areaCode = data[0].id
-      })
-    },
-    mounted() {
-      const html = document.querySelector('html');
-      let fontSize = 13.5 * document.documentElement.clientWidth / 1920;
-      if (fontSize < 10) {
-        fontSize = 10;
-      }
-      if (fontSize > 16) {
-        fontSize = 16;
-      }
-      html.style.fontSize = fontSize + 'px';
-    },
-    activated() {
-
-    },
-    destroyed() {
-
-    },
-    methods: {
-      onSubmit() {
-        if(!this.postData.username){
-          this.$Dialog.Toast(this.$t('regLogin[2]'))
-          return;
-        }
-        if(!this.postData.password){
-          this.$Dialog.Toast(this.$t('login.placeholder[1]'));
-          return;
-        }
-        this.isSubmit = true;
-        this.$Model.Login(this.postData,(data)=>{
-          this.isSubmit = false;
-          if(this.keepUser){
-            localStorage['UserName'] = this.postData.username;
-            localStorage['PassWord'] = this.postData.password;
-          }else{
-            localStorage.removeItem('UserName');
-            localStorage.removeItem('PassWord');
-          }
-        })
+  },
+  props: [],
+  data() {
+    return {
+      postData: {
+      	username: localStorage['UserName']||'',
+      	password: localStorage['PassWord']||'',
+        verify_code:'',
       },
-      changeKeepUser() {
-        if(this.keepUser){
-          localStorage['KeepUser'] = 1;
-        }else{
-          localStorage.removeItem('KeepUser');
-        }
+      keepUser: localStorage['KeepUser']=='1'?true:false,
+      isSubmit: false,
+      showPass: false,
+      docTitle: document.title,
+      areaList: areaList,
+      areaCode: areaList[0].id,
+      code:0,
+    }
+  },
+  computed: {
+
+  },
+  watch: {
+
+  },
+  created() {
+    this.$Model.SmsCode((data) => {
+      this.areaList = data
+      this.areaCode = data[0].id
+    });
+
+    // ttq.track('ViewContent', {
+    //   "contents": [
+    //     {
+    //       "content_id": "CQ2LBGJC77UFDPAMG3DG", // string. ID of the product. Example: "1077218".
+    //       "content_type": "login", // string. Either product or product_group.
+    //       "content_name": "login" // string. The name of the page or product. Example: "shirt".
+    //     }
+    //   ],
+    //   "value": "100", // number. Value of the order or items sold. Example: 100.
+    //   "currency": "USD" // string. The 4217 currency code. Example: "USD".
+    // });
+  },
+  mounted() {
+
+  },
+  activated() {
+
+  },
+  destroyed() {
+
+  },
+  methods: {
+    onSubmit() {
+    	if(!this.postData.username){
+        this.$Dialog.Toast(this.$t('regLogin[2]'))
+        return;
       }
+      if(!this.postData.password){
+        this.$Dialog.Toast(this.$t('login.placeholder[1]'));
+        return;
+      }
+      this.isSubmit = true;
+    	this.$Model.Login(this.postData,(data)=>{
+        this.isSubmit = false;
+        if(this.keepUser){
+          localStorage['UserName'] = this.postData.username;
+          localStorage['PassWord'] = this.postData.password;
+        }else{
+          localStorage.removeItem('UserName');
+          localStorage.removeItem('PassWord');
+        }
+        this.code = data.code;
+    	})
+    },
+    changeKeepUser() {
+    	if(this.keepUser){
+    		localStorage['KeepUser'] = 1;
+    	}else{
+    		localStorage.removeItem('KeepUser');
+    	}
     }
   }
+}
 </script>
 <style scoped>
+  @media only screen and (min-width:1024px) {
+    html {
+      font-size: 10px
+    }
+  }
 
-  ::-webkit-scrollbar {
+  @media only screen and (max-width:1024px) {
+    html {
+      font-size: 10px
+    }
+  }::-webkit-scrollbar {
     width: 4px;
     height: 5px
   }::-webkit-scrollbar-corner,::-webkit-scrollbar-track {
      background-color: #e2e2e2
    }::-webkit-scrollbar-thumb {
       border-radius: 0;
-      background-color: rgb(13,110,253)
+      background-color: #662282
     }
 
   .slide-enter-active,.slide-leave-active {
@@ -235,7 +258,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(13,110,253)!important
+    background-color: #662282!important
   }
 
   .el-dropdown-menu__item {
@@ -245,7 +268,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(13,110,253)!important;
+    color: #662282!important;
     background-color: #fff9f0!important
   }
 
@@ -254,11 +277,11 @@
   }
 
   /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: rgb(13,110,253)!important*/
+  /*  background-color: #662282!important*/
   /*}*/
 
   /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: rgb(13,110,253)!important*/
+  /*  color: #662282!important*/
   /*}*/
 
   .el-message {
@@ -285,12 +308,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: rgb(13,110,253);
+    color: #662282;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: rgb(13,110,253)
+    color: #662282
   }
 
   .lang-item {
@@ -375,12 +398,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(13,110,253)
+    color: #662282
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(13,110,253)!important;
-    border-color: rgb(13,110,253)!important
+    background-color: #662282!important;
+    border-color: #662282!important
   }
 
   .el-checkbox__label {
@@ -393,21 +416,20 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(13,110,253)!important
+    border-color: #662282!important
   }
 
   @media only screen and (min-width:1024px) {
     .container {
-      /*width: 100%;*/
+      width: 100%;
       box-sizing: border-box;
       padding: 8rem 3rem;
     }
 
     .container .form-box {
-      /*width: 100%;*/
+      width: 100%;
       max-width: 1300px;
-      margin: 0 auto;
-      display: flex;justify-content: space-between;
+      margin: 0 auto
     }
 
     .container .form-box .form {
@@ -418,19 +440,16 @@
       background-color: #fff
     }
 
-    .form-title {
-      /*width: 100%;*/
+    .container .form-box .form .form-title {
+      width: 100%;
       margin-bottom: 1.5rem;
       font-size: 4rem;
       font-weight: 700;
-      color: #fff;
+      color: #000;
       text-align: left;
       word-wrap: break-word
     }
-    .bg-clip-text {
-      font-size: 2rem;
-      color: #ccc;
-    }
+
     .container .form-box .form .register-link {
       width: 100%;
       margin-bottom: 5rem;
@@ -442,7 +461,7 @@
     }
 
     .container .form-box .form .register-link .link {
-      color: #1a9ede;
+      color: #A22283;
       cursor: pointer
     }
 
@@ -477,43 +496,40 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, #ddb443, #009d24);
+      background-image: linear-gradient(to right, #00f785, #410093);
       cursor: pointer
     }
   }
 
   @media only screen and (max-width:1024px) {
     .container {
-      /*width: 100%;*/
+      width: 100%;
       box-sizing: border-box;
       padding: 3rem 1rem;
     }
 
     .container .form-box {
-      /*width: 100%*/
+      width: 100%
     }
 
     .container .form-box .form {
-      /*width: 100%;*/
+      width: 100%;
       box-sizing: border-box;
       padding: 2rem;
       border-radius: .8rem;
-      background-color: rgba(255,255,255,1)
+      background-color: rgba(255,255,255,0.7)
     }
 
-    .form-title {
-      /*width: 100%;*/
+    .container .form-box .form .form-title {
+      width: 100%;
       margin-bottom: 1rem;
       font-size: 3rem;
       font-weight: 700;
-      color: #fff;
+      color: #000;
       text-align: left;
       word-wrap: break-word
     }
-    .bg-clip-text {
-      font-size: 1.3rem;
-      color: #ccc;
-    }
+
     .container .form-box .form .register-link {
       width: 100%;
       margin-bottom: 3.6rem;
@@ -525,7 +541,7 @@
     }
 
     .container .form-box .form .register-link .link {
-      color: #1a9ede;
+      color: #A22283;
       cursor: pointer
     }
 
@@ -559,7 +575,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, #ddb443, #009d24);
+      background-image: linear-gradient(to right, #00f785, #410093);
       cursor: pointer
     }
   }
@@ -573,32 +589,14 @@
     margin-top: 20px;
     padding-left: 7px;
     text-align: left;
-    color: #000000;
-    /*background: linear-gradient(180deg, #B32283 0%, #6C2383 100%);*/
-    /*-webkit-background-clip: text;*/
-    /*-webkit-text-fill-color: transparent;*/
-    /*background-clip: text;*/
-    /*-webkit-text-fill-color: transparent;*/
+    background: linear-gradient(180deg, #B32283 0%, #6C2383 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .password-input{
-    position: relative;
-  }
-  .password-input .showPassWordIcon{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-  }
-  /*@media (max-width: 768px) {*/
-  /*  .pc {*/
-  /*    display: none;*/
-  /*  }*/
-  /*}*/
-  .bg_video{
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+  .van-checkbox>>>.van-icon {
+    border: 1px solid #000;
+    background: #fff;
   }
 </style>

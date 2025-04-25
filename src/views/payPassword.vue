@@ -1,50 +1,103 @@
 <template>
   <div class="HomePage" id="app">
-    <Header></Header>
-    <div class="container">
-      <div class="el-row">
-        <div class="el-col el-col-5">
-          <UserHeader></UserHeader>
+    <UserHeader></UserHeader>
+    <div class="app-wrapper" style="width: calc(100% - 25rem);">
+      <div class="page-header">
+        <div class="page-title">{{$t('walletAddress[2]')}}</div>
+        <div class="el-dropdown">
+          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
+            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
+          </ul>
         </div>
-        <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-          <section data-v-19c9d02c="" data-v-23f21a9a="" class="section pt-0" style="padding-bottom: 0px; margin-top: 50px;">
-            <div class="row justify-content-center mt-4">
-              <div class="col-md-8">
-                <div class="card custom--card">
-                  <form class="register">
-                    <div class="card-body">
-                      <div v-if="UserInfo.is_fund_password==1" class="form-group hover-input-popup">
-                        <label for="passwordo">{{$t('password[0]')}}</label>
-                        <input id="passwordo" type="password" v-model.trim="postData.o_payword" class="form--control form-control"   name="password"   autocomplete="off">
-                      </div>
-                      <div class="form-group hover-input-popup">
-                        <label for="password">{{$t('password[1]')}}</label>
-                        <input id="password" v-model.trim="postData.n_payword" type="password" class="form--control form-control"   name="password"   autocomplete="off">
-                      </div>
-                      <div class="form-group">
-                        <label for="password_confirmation">{{$t('password[2]')}}</label>
-                        <input id="password_confirmation"  v-model.trim="postData.r_payword" type="password" class="form--control form-control"    autocomplete="off">
-                      </div>
-                      <!--                <div class="form-group">-->
-                      <!--                  <label>Verification Code</label>-->
-                      <!--                  <div class="input-group">-->
-                      <!--                    <input type="text" name="code" maxlength="6" placeholder="Email verification Code" onkeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))" class="form-control form&#45;&#45;control" autocomplete="off">-->
-                      <!--                    <span class="input-group-text get_code"> Get Code </span>-->
-                      <!--                  </div>-->
-                      <!--                </div>-->
-                    </div>
-                    <div class="card-footer">
-                      <button type="submit" class="btn btn--base  btn-block btn-dark" @click="setUserInfo">{{$t('password[3]')}}</button>
-                    </div>
-                  </form>
+      </div>
+      <div class="container">
+        <form class="el-form form el-form--label-top">
+          <div class="el-row">
+            <div class="el-col el-col-24" v-if="UserInfo.is_fund_password==1">
+              <div class="el-form-item is-required is-no-asterisk"><label for="originalPassword"
+                                                                          class="el-form-item__label">{{$t('password[0]')}}</label>
+                <div class="el-form-item__content">
+                  <div class="el-input el-input--suffix">
+                    <input type="password" autocomplete="off" placeholder="" class="el-input__inner" v-model.trim="postData.o_payword">
+                    <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                                        </span>
+                                    </span>
+                  </div>
+                </div>
+<!--                <div style="font-size: 1.5rem;color: red;padding-top: 5px">{{$t('dpwd[0]')}}</div>-->
+              </div>
+
+            </div>
+            <div class="el-col el-col-24">
+              <div class="el-form-item is-required is-no-asterisk"><label for="password" class="el-form-item__label">{{$t('password[1]')}}</label>
+                <div class="el-form-item__content">
+                  <div class="el-input el-input--suffix">
+                    <input type="password" autocomplete="off" placeholder="" class="el-input__inner" v-model.trim="postData.n_payword">
+                    <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                                        </span>
+                                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </section>
-        </div>
+            <div class="el-col el-col-24">
+              <div class="el-form-item is-no-asterisk"><label for="confirmPassword" class="el-form-item__label">{{$t('password[2]')}}</label>
+                <div class="el-form-item__content">
+                  <div class="el-input el-input--suffix">
+                    <input type="password" autocomplete="off" placeholder="" class="el-input__inner" v-model.trim="postData.r_payword">
+                    <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                                        </span>
+                                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-col el-col-24" v-if="UserInfo.google_state==1">
+              <div class="el-form-item is-no-asterisk"><label for="confirmPassword" class="el-form-item__label">f2a</label>
+                <div class="el-form-item__content">
+                  <div class="el-input el-input--suffix">
+                    <input type="text" autocomplete="off" :placeholder="$t('register.placeholder[6]')" class="el-input__inner" v-model.trim="postData.verify_code">
+                    <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                                        </span>
+                                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            <div class="el-col el-col-24">-->
+<!--              <div class="el-form-item is-required is-no-asterisk"><label for="code" class="el-form-item__label">Verification-->
+<!--                Code</label>-->
+<!--                <div class="el-form-item__content">-->
+<!--                  <div class="input-group">-->
+<!--                    <div class="input el-input">-->
+<!--                      <input type="text" autocomplete="off" placeholder="Email verification code"-->
+<!--                             class="el-input__inner">-->
+
+
+<!--                    </div>-->
+<!--                    <div class="send-btn">Get Code</div>-->
+<!--                  </div>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+            <div class="el-col el-col-24">
+              <div class="el-form-item is-no-asterisk">
+
+                <div class="el-form-item__content">
+                  <div class="submit-btn" @click="setUserInfo">{{$t('password[3]')}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 <script>
@@ -83,8 +136,7 @@
       setUserInfo() {
         this.$Model.SetUserInfo(this.postData,data=>{
           if(data.code==1){
-            this.postData = {};
-            this.$Model.GetUserInfo();
+            this.postData = {}
           }
         })
       },
@@ -115,7 +167,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: #662282
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -155,7 +207,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: #662282!important
   }
 
   .el-dropdown-menu__item {
@@ -165,7 +217,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: #662282!important;
     background-color: #fff9f0!important
   }
 
@@ -173,13 +225,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: #662282!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: #662282!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -205,12 +257,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: #662282;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: #662282
   }
 
   .lang-item {
@@ -295,12 +347,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: #662282
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: #662282!important;
+    border-color: #662282!important
   }
 
   .el-checkbox__label {
@@ -313,7 +365,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: #662282!important
   }
 
   @media only screen and (min-width: 1024px) {
@@ -359,7 +411,7 @@
       font-size: 1.5rem;
       color: #fff;
       white-space: nowrap;
-      background-color: #fbc241;
+      background-color: #662282;
       cursor: pointer
     }
 
@@ -381,7 +433,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      background-image: linear-gradient(180deg, #B62283 0%, #722283 100%);
       cursor: pointer
     }
   }
@@ -429,7 +481,7 @@
       font-size: 1.5rem;
       color: #fff;
       white-space: nowrap;
-      background-color: #fbc241;
+      background-color: #662282;
       cursor: pointer
     }
 
@@ -451,7 +503,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      background-image: linear-gradient(180deg, #B62283 0%, #722283 100%);
       cursor: pointer
     }
   }

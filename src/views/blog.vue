@@ -6,29 +6,29 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2 class="title text-white">{{$t('foot[6]')}}</h2>
-              <ul class="page-breadcrumb justify-content-center mt-2">
-                <li><a href="javascript:;" @click="$router.push('/')">{{$t('head[0]')}}</a></li>
-                <li>{{$t('foot[6]')}}</li>
-              </ul>
+              <h2 class="title">{{$t('foot[6]')}}</h2>
+<!--              <ul class="page-breadcrumb justify-content-center mt-2">-->
+<!--                <li><a href="javascript:;" @click="$router.push('/')">{{$t('head[0]')}}</a></li>-->
+<!--                <li>{{$t('foot[6]')}}</li>-->
+<!--              </ul>-->
             </div>
           </div>
         </div>
       </section>
       <section class="blog-section sp_pt_100 sp_pb_100" style="padding-top: 5rem;overflow: hidden;">
-        <div class="container">
+        <div class="container ">
           <div class="row gy-4">
             <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
               <div class="blog-item">
                 <div class="blog-thumb">
-                  <img :src="item.cover_img" alt="blog thumb">
+                  <img v-if="item.cover_img" :src="item.cover_img" alt="blog thumb">
                 </div>
                 <div class="blog-content">
                   <ul class="blog-meta mb-2">
-<!--                    <li><van-icon name="clock" class="fas fa-clock" color="#CD9F34"/>{{item.add_time}}</li>-->
+                    <li><van-icon name="clock" class="fas fa-clock" color="#CD9F34"/>{{item.add_time}}</li>
                   </ul>
-                  <h4 class="blog-title"><a href="javascript:;" @click="$router.push(`/blogDetail?id=${item.id}`)">{{item.title}}</a></h4>
-                  <a href="javascript:;" class="blog-btn" @click="$router.push(`/blogDetail?id=${item.id}`)">
+                  <h4 class="blog-title"><a href="javascript:;" @click="$router.push(`/blogDetail/${item.id}`)">{{item.title}}</a></h4>
+                  <a href="javascript:;" class="blog-btn" @click="$router.push(`/blogDetail/${item.id}`)">
                     <span>{{$t('blog[2]')}}</span>
                     <van-icon class="fas fa-arrow-right" name="arrow" />
                   </a>
@@ -125,6 +125,7 @@
               if(type=='load'){
                 this.listData = this.listData.concat(data.info);
               }else{
+                this.listData = [];
                 this.listData = data.info;
               }
             }
@@ -169,7 +170,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: #662282
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -209,7 +210,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: #662282!important
   }
 
   .el-dropdown-menu__item {
@@ -219,7 +220,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: #662282!important;
     background-color: #fff9f0!important
   }
 
@@ -227,13 +228,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color:#1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: #662282!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: #662282!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -259,12 +260,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: #662282;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: #662282
   }
 
   .lang-item {
@@ -349,12 +350,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: #662282
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: #662282!important;
+    border-color: #662282!important
   }
 
   .el-checkbox__label {
@@ -367,13 +368,10 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: #662282!important
   }
 
   @media only screen and (min-width: 1024px) {
-    .container {
-      width:100%
-    }
 
     .container .box7 {
       width: 100%;
@@ -450,7 +448,7 @@
       height: 3.8rem;
       margin-left: 3rem;
       border-radius: 50%;
-      background-color: #fbc241
+      background-color: #662282
     }
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {
@@ -471,9 +469,6 @@
   }
 
   @media only screen and (max-width: 1024px) {
-    .container {
-      width:100%
-    }
 
     .container .box7 {
       width: 100%;
@@ -548,7 +543,7 @@
       height: 3.2rem;
       margin-left: 1.5rem;
       border-radius: 50%;
-      background-color: #fbc241
+      background-color: #662282
     }
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {
@@ -2215,8 +2210,8 @@
   ==============================
   */
   .page-banner {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 11.25rem;
+    padding-bottom: 3.75rem;
   }
 
   .page-banner::before {
@@ -3468,6 +3463,7 @@
     color: #000;
     text-decoration: none;
     font-size: 1.5rem;
+    height: 3.5rem;
   }
 
   .blog-meta {
@@ -4798,7 +4794,6 @@
     margin-bottom: 0!important;
   }
   .pagination {
-    margin: -0.3125rem -0.4375rem;
     flex-wrap: wrap;
     margin-top: 1.25rem;
     justify-content: flex-end;
@@ -4835,9 +4830,9 @@
     color: #3b3b3b;
   }
   .pagination .page-item.active .page-link {
-    background-color: rgba(42, 234, 227, 0.47);
+    background-color: #F7C70B;
     color: #fff;
-    border-color: rgba(42, 234, 227, 0.47);
+    border-color: #F7C70B;
   }
   .row {
     --bs-gutter-x: 1.5rem;
@@ -4862,14 +4857,11 @@
   }
   @media (min-width: 1200px){
     .container, .container-lg, .container-md, .container-sm, .container-xl {
-      max-width: 1140px;
+      max-width: 1300px;
     }
   }
 .container {
   margin: 0 auto;
-}
-.page-banner {
-  background-color:#171717;
 }
   .text-center {
     text-align: center!important;
@@ -4887,7 +4879,6 @@
   h2 {
     font-size: 4.125rem;
     font-family: "Jost", sans-serif;
-    color: #fff;
     font-weight: 500;
     line-height: 1.3;
     margin: 0;
@@ -4909,6 +4900,18 @@
       height: 10px;
       padding-top: 0.25rem!important;
     }
+  }
+  .content img {
+    width: 100% !important;
+  }
+  .content>>>img {
+    width: 100% !important;
+  }
+  .content>>>p>>>img {
+    width: 100% !important;
+  }
+  .content p img {
+    width: 100% !important;
   }
 </style>
 

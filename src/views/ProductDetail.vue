@@ -1,159 +1,93 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <div class="app-wrapper">
-      <div class="container">
-        <div class="main">
-          <div class="top">
-            <div style="position: relative;" class="image_border">
-              <img
-                class="product-img"
-                :src="InitData.setting.up_url + detailData.icon"
-              />
-            </div>
-            <div style="padding-left: 2rem">
-              <div class="plan-title">{{detailData.title}}</div>
-              <div class="pricing">
-                <h1>${{parseFloat(detailData.amount)}}</h1>
-                <p>/{{detailData.cycle}} {{$t('product[15]')}}
-                </p>
-              </div>
-              <div class="description">
-                <p> {{$t('product[2]')}}: <span class="notranslate">{{detailData.cycle}} {{$t('product[15]')}}
-                            </span></p>
-                <p> {{$t('product[0]')}}: <span class="notranslate">${{detailData.amount}}</span></p>
-                <p> {{$t('settle[2]')}}: <span class="notranslate">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*1).toFixed(2))}}</span></p>
-                <p> {{$t('settle[3]')}}: <span class="notranslate">${{detailData.amount}} + ${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</span></p>
-                <p> {{$t('settle[0]')}}:<span class="notranslate">{{detailData.type==1?$t('product[7]'):$t('product[17]')}}</span></p>
-                <div v-if="detailData.amount==100" style="color: #e73329;font-size: 1.2rem;">{{$t('newss[2]')}}</div>
-                <div v-if="detailData.amount==10" style="color: #e73329;font-size: 1.2rem;">{{$t('newss[3]')}}</div>
-                <div class="bonus" style="display: grid;justify-content: left;" v-if="detailData.amount!=10">
-                  <div class="label">{{$t('product[10]')}}</div>
-                  <ul class="plan-referral justify-content-center mb-2">
-                    <div class="single-referral" v-for="(aa,i) in detailData.affiliate_bonus">
-                      <span>{{aa}} %</span>
-                      <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
-                    </div>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container-fluid max960">
-            <div class="flexc">
-              <div class="main-btn buy_bt disable" style="height: 48px; margin-top: 19px;" v-if="detailData.progress>=100" >{{$t('product[13]')}}</div>
-              <div class="main-btn buy_bt" style="height: 48px; margin-top: 19px;"  @click="orderNow()">{{$t('settle[5]')}}</div>
-            </div>
+<!--    <div class="app-wrapper">-->
+<!--      <div class="container">-->
+<!--        <div class="main">-->
+<!--          <div class="top">-->
+<!--          <div style="position: relative;" class="image_border">-->
+<!--              <img-->
+<!--                class="product-img"-->
+<!--                :src="InitData.setting.up_url + detailData.icon"-->
+<!--              />-->
+<!--          </div>-->
+<!--          <div class="">-->
+<!--            <div class="plan-title">{{detailData.title}}</div>-->
+<!--            <div class="pricing">-->
+<!--              <h1>${{parseFloat(detailData.amount)}}</h1>-->
+<!--              <p>/{{detailData.cycle}} {{$t('product[15]')}}-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <div class="description">-->
+<!--              <p><img :src="'./static/image//Circle_Check.svg'"> {{$t('product[2]')}}: <span class="notranslate">{{detailData.cycle}} {{$t('product[15]')}}-->
+<!--                            </span></p>-->
+<!--              <p><img :src="'./static/image//Circle_Check.svg'"> {{$t('product[0]')}}: <span class="notranslate">${{detailData.amount}}</span></p>-->
+<!--              <p><img :src="'./static/image//Circle_Check.svg'"> {{$t('product[3]')}}: <span class="notranslate">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*1).toFixed(2))}}</span></p>-->
+<!--              <p><img :src="'./static/image//Circle_Check.svg'"> {{$t('product[4]')}}: <span class="notranslate">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</span></p>-->
+<!--              <p><img :src="'./static/image//Circle_Check.svg'"> {{$t('settle[0]')}}:<span class="notranslate">{{$t('settle[1]')}}</span></p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--          <div class="container-fluid">-->
+<!--            <div class="flexc">-->
+<!--              <div class="main-btn buy_bt" style="height: 48px; margin-top: 19px;"  @click="orderNow()">{{$t('settle[5]')}}</div>-->
+<!--            </div>-->
 
-            <div class="block-input new-collection" style="width: 100%;border-radius: 10px;font-weight: 600;font-size: 18px; margin-top: 21px; height: 61px; margin-bottom: 15px;">{{$t('productDetail[0]')}}</div>
-            <div class="description-block-2">
-<!--              <pre><div v-if="detailData.amount==12|| detailData.amount==100" class="ram_detail" style="border-radius: 10px; border: 2px solid var(&#45;&#45;blue-blue-300, #2A92CD); padding: 15px 35px; font-size: 18px; display: inline-flex; align-items: center; gap: 10px; font-family: Helvetica; text-transform: none; white-space: normal;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMzSURBVHgB7VdLUttAEB2NMGyAKDuqQEYu8qmsIk4Qc4LACSAniDkB9gnIDTAnwJwAOAHOKlVJwCqwC5YCwwL06bx2JJCxJY9SUGHBqxp7RurpeTP9mZYQL/jP0PIItyzL8DxvWZfyExFZmqZZ+HfxykW/KdGElAclx3FUdSoRwMJWGASb6C4LNdSlrtdUiIwkcFQsVgXRRjzGjvcxqYHdOhNjY80botfC91+FQtg4hWUSohzLhkS1t+129Z8I8HFTEOwkFH677HZri67rigz8mJmxxgsFJrwWEW52r66W0uZpqYuH4R4m2xg6kmit1G4fiByADhtm20HXyiIhh01me8eL33reUt7FGbB/k+eyDpjGnp6a2hwmN3ACv01zDQ+30HWhYPHD+bmTtgjL6ppGpZOT7TQZNsnE+PghNmT4vr/y/uyskXw/cAJwrp7DwQSVrMU5MpgoHK3+c3bWTpNjHUEQ1LhfKBQ2RRZ4R0emSWgtoQDIbaHtqMgem+Ye626Z5ufk87HkAMexCq/n3VeFAhZOT78IRcAPGjBDOSCqYLibWPMecch5QZDb6UZCyu2ISJ+57ghw2PRIIGSybJ/EcbHY4qYii6jgEHTQjKTP3BGAhxpR1xWK4PuAm1BHk380ovkBArEiHJEjng5utIYxQEBKGe/cEE8EhK3F/3pik3cEdF2PH9riqRDt3CO6GCAg/qZMPgXr0DAe/RQ4cUXpXbzrdJoDBHpeigjg/vTk5Kp4ZCAblvmfr/Pk87484IdhL1ZJvfBQRpziwaCeSgC5mi8KNkUZhUhFjEBkMmeUHKf4KMqcN53OdioBNgN2vx4x3WC7ZSm+uLwsoUhZzJJhHdh97xIaluK1FMZ1vFjlnKBJuZSnyHy4eFTYWBjWh90dQwsShGSFq9xepoOCrOs2Db/m5srx4pzecVLrw+Sya8L7soyhVOnyvJCPmugrj9nrUY6t5KoJ+xQWixsoOqrxmBXiu6CBiPnO3wRwXPf25sZGITqPcV9VDOHqQrtdy9Kv9F3wsNIdBRBpeL6/rnKr5voyYiLwjzJO4CMm2jgZgy8W9B3iFob73evr3VGl+wueFf4Apau8q/LsijQAAAAASUVORK5CYII=" style="width: 32px;" data-filename="info.png">-->
-<!--                <span v-if="detailData.amount==12">{{$t('productDetail[1]')}}</span>-->
-<!--                <span v-if="detailData.amount==100">{{$t('productDetail[2]')}}</span>-->
-<!--              </div></pre>-->
-              <h3><b>{{$t('productDetail[3]',{WT:InitData.setting.web_title})}}</b></h3>
-              <div v-html="$t('productDetail[4]',{WT:InitData.setting.web_title})">
-              </div>
-              <div>
-                {{$t('productDetail[5]')}}
-                <br><br>
-                {{$t('productDetail[6]')}}
-                <br><br>
-                {{$t('productDetail[7]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[8]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[9]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[10]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[11]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[12]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[13]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[14]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[15]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[16]',{WT:InitData.setting.web_title})}}
-                <br>
-                <div style="color: #000" v-if="detailData.agreement && detailData.agreement !=''" v-html="detailData.agreement">
-                </div>
-                <br>
-                {{$t('productDetail[17]')}}
-              </div>
-            </div>
+<!--            <div class="block-input new-collection" style="width: 100%;border-radius: 10px;font-weight: 600;font-size: 18px; margin-top: 21px; height: 61px; margin-bottom: 15px;">Details</div>-->
+<!--            <div class="description-block-2">-->
+<!--              <pre><div class="ram_detail" style="border-radius: 10px; border: 2px solid var(&#45;&#45;blue-blue-300, #2A92CD); padding: 15px 35px; font-size: 18px; display: inline-flex; align-items: center; gap: 10px; font-family: Helvetica; text-transform: none; white-space: normal;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMzSURBVHgB7VdLUttAEB2NMGyAKDuqQEYu8qmsIk4Qc4LACSAniDkB9gnIDTAnwJwAOAHOKlVJwCqwC5YCwwL06bx2JJCxJY9SUGHBqxp7RurpeTP9mZYQL/jP0PIItyzL8DxvWZfyExFZmqZZ+HfxykW/KdGElAclx3FUdSoRwMJWGASb6C4LNdSlrtdUiIwkcFQsVgXRRjzGjvcxqYHdOhNjY80botfC91+FQtg4hWUSohzLhkS1t+129Z8I8HFTEOwkFH677HZri67rigz8mJmxxgsFJrwWEW52r66W0uZpqYuH4R4m2xg6kmit1G4fiByADhtm20HXyiIhh01me8eL33reUt7FGbB/k+eyDpjGnp6a2hwmN3ACv01zDQ+30HWhYPHD+bmTtgjL6ppGpZOT7TQZNsnE+PghNmT4vr/y/uyskXw/cAJwrp7DwQSVrMU5MpgoHK3+c3bWTpNjHUEQ1LhfKBQ2RRZ4R0emSWgtoQDIbaHtqMgem+Ye626Z5ufk87HkAMexCq/n3VeFAhZOT78IRcAPGjBDOSCqYLibWPMecch5QZDb6UZCyu2ISJ+57ghw2PRIIGSybJ/EcbHY4qYii6jgEHTQjKTP3BGAhxpR1xWK4PuAm1BHk380ovkBArEiHJEjng5utIYxQEBKGe/cEE8EhK3F/3pik3cEdF2PH9riqRDt3CO6GCAg/qZMPgXr0DAe/RQ4cUXpXbzrdJoDBHpeigjg/vTk5Kp4ZCAblvmfr/Pk87484IdhL1ZJvfBQRpziwaCeSgC5mi8KNkUZhUhFjEBkMmeUHKf4KMqcN53OdioBNgN2vx4x3WC7ZSm+uLwsoUhZzJJhHdh97xIaluK1FMZ1vFjlnKBJuZSnyHy4eFTYWBjWh90dQwsShGSFq9xepoOCrOs2Db/m5srx4pzecVLrw+Sya8L7soyhVOnyvJCPmugrj9nrUY6t5KoJ+xQWixsoOqrxmBXiu6CBiPnO3wRwXPf25sZGITqPcV9VDOHqQrtdy9Kv9F3wsNIdBRBpeL6/rnKr5voyYiLwjzJO4CMm2jgZgy8W9B3iFob73evr3VGl+wueFf4Apau8q/LsijQAAAAASUVORK5CYII=" style="width: 32px;" data-filename="info.png">Each account is limited to 1 copy per day.</div></pre>-->
 
-          </div>
-        </div>
-      </div>
-    </div>
-    <div v-if="showDialog" id="__BVID__247___BV_modal_outer_" style="position: absolute; z-index: 1040;">
-      <div id="__BVID__247" role="dialog" aria-labelledby="__BVID__247___BV_modal_title_"
-           aria-describedby="__BVID__247___BV_modal_body_" class="modal fade show" aria-modal="true"
-           style="display: block;">
-        <div class="modal-dialog modal-md modal-dialog-centered"><span tabindex="0"></span>
-          <div id="__BVID__247___BV_modal_content_" tabindex="-1" class="modal-content">
-            <header id="__BVID__247___BV_modal_header_" class="modal-header"><h5 id="__BVID__247___BV_modal_title_"
-                                                                                 class="modal-title">{{$t('settle[6]')}}</h5>
-              <button type="button" aria-label="Close" class="close" @click="showDialog = false">×</button>
-            </header>
-            <div id="__BVID__247___BV_modal_body_" class="modal-body">
-              <div ><!---->
-                <div  class="mb-3 el-row"><label  class="font-weight-bold mb-0"
-                                                  style="font-size: 14px;">{{$t('settle[7]')}}</label>
-                  <div >
-                    <van-stepper v-model="number" input-width="inherit" button-size="40px"/>
-                  </div>
-                </div>
-                <div  class="mb-3 el-row"><label  class="font-weight-bold mb-0"
-                                                  style="font-size: 14px;">{{$t('settle[8]')}}</label>
-                  <div  class="el-input is-disabled el-input-group el-input-group--append">
-                    <!----><input type="text" disabled="disabled" readonly v-model="money" autocomplete="off" placeholder="Please input"
-                                  class="el-input__inner"><!----><!---->
-                    <div class="el-input-group__append">
-                      <svg  width="36" height="36" viewBox="0 0 36 36" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M18 36C27.9411 36 36 27.9411 36 18C36 8.05887 27.9411 0 18 0C8.05887 0 0 8.05887 0 18C0 27.9411 8.05887 36 18 36Z"
-                          fill="#00A478"></path>
-                        <path
-                          d="M15.9894 17.4429V13.3308H10.4715V9.72632H25.8894V13.3812H20.3715V17.4429H15.9894Z"
-                          fill="white"></path>
-                        <path  fill-rule="evenodd" clip-rule="evenodd"
-                               d="M8.1 17.7921C8.1 16.4808 12.5118 15.4125 18 15.4125C23.4882 15.4125 27.9 16.4808 27.9 17.7921C27.9 19.1034 23.4882 20.1717 18 20.1717C12.5118 20.1717 8.1 19.1034 8.1 17.7921ZM27.0792 17.7921C26.7201 17.3061 23.7447 15.8013 18 15.8013C12.2553 15.8013 9.2799 17.2575 8.9208 17.7921C9.2799 18.2772 12.2553 19.0062 18 19.0062C23.796 19.0062 26.7201 18.2772 27.0792 17.7921Z"
-                               fill="white"></path>
-                        <path
-                          d="M20.3715 18.7127V15.8696C19.6497 15.8183 18.8766 15.7679 18.1035 15.7679C17.3817 15.7679 16.6608 15.7679 15.9903 15.8183V18.6614C16.6248 18.7613 17.3898 18.7802 18.1035 18.7802C18.8163 18.7802 19.6497 18.7631 20.3715 18.7127ZM18 20.3777C17.2782 20.3777 16.659 20.3579 15.9894 20.3075V27.9017H20.3202V20.2859C19.5984 20.3372 18.7731 20.3777 18 20.3777Z"
-                          fill="white"></path>
-                      </svg>
-                    </div><!----></div>
-                </div>
-                <div  class="mb-3 el-row"><label  class="font-weight-bold mb-0"
-                                                  style="font-size: 14px;">{{$t('settle[9]')}}</label>
-                  <div  class="el-input el-input--suffix">
-                    <div class="el-input__wrapper" tabindex="-1">
-                      <input class="el-input__inner" v-model="password" :type="showPass?'text':'password'" autocomplete="off" tabindex="0" id="el-id-9097-3">
-                      <span class="el-input__suffix" @click="showPass= !showPass"><span class="el-input__suffix-inner">
-                      <i v-if="!showPass" class="el-icon el-input__icon el-input__password"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M876.8 156.8c0-9.6-3.2-16-9.6-22.4-6.4-6.4-12.8-9.6-22.4-9.6-9.6 0-16 3.2-22.4 9.6L736 220.8c-64-32-137.6-51.2-224-60.8-160 16-288 73.6-377.6 176C44.8 438.4 0 496 0 512s48 73.6 134.4 176c22.4 25.6 44.8 48 73.6 67.2l-86.4 89.6c-6.4 6.4-9.6 12.8-9.6 22.4 0 9.6 3.2 16 9.6 22.4 6.4 6.4 12.8 9.6 22.4 9.6 9.6 0 16-3.2 22.4-9.6l704-710.4c3.2-6.4 6.4-12.8 6.4-22.4Zm-646.4 528c-76.8-70.4-128-128-153.6-172.8 28.8-48 80-105.6 153.6-172.8C304 272 400 230.4 512 224c64 3.2 124.8 19.2 176 44.8l-54.4 54.4C598.4 300.8 560 288 512 288c-64 0-115.2 22.4-160 64s-64 96-64 160c0 48 12.8 89.6 35.2 124.8L256 707.2c-9.6-6.4-19.2-16-25.6-22.4Zm140.8-96c-12.8-22.4-19.2-48-19.2-76.8 0-44.8 16-83.2 48-112 32-28.8 67.2-48 112-48 28.8 0 54.4 6.4 73.6 19.2L371.2 588.8ZM889.599 336c-12.8-16-28.8-28.8-41.6-41.6l-48 48c73.6 67.2 124.8 124.8 150.4 169.6-28.8 48-80 105.6-153.6 172.8-73.6 67.2-172.8 108.8-284.8 115.2-51.2-3.2-99.2-12.8-140.8-28.8l-48 48c57.6 22.4 118.4 38.4 188.8 44.8 160-16 288-73.6 377.6-176C979.199 585.6 1024 528 1024 512s-48.001-73.6-134.401-176Z"></path><path fill="currentColor" d="M511.998 672c-12.8 0-25.6-3.2-38.4-6.4l-51.2 51.2c28.8 12.8 57.6 19.2 89.6 19.2 64 0 115.2-22.4 160-64 41.6-41.6 64-96 64-160 0-32-6.4-64-19.2-89.6l-51.2 51.2c3.2 12.8 6.4 25.6 6.4 38.4 0 44.8-16 83.2-48 112-32 28.8-67.2 48-112 48Z"></path></svg></i>
-                      <i v-else class="el-icon el-input__icon el-input__password"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 160c320 0 512 352 512 352S832 864 512 864 0 512 0 512s192-352 512-352zm0 64c-225.28 0-384.128 208.064-436.8 288 52.608 79.872 211.456 288 436.8 288 225.28 0 384.128-208.064 436.8-288-52.608-79.872-211.456-288-436.8-288zm0 64a224 224 0 1 1 0 448 224 224 0 0 1 0-448zm0 64a160.192 160.192 0 0 0-160 160c0 88.192 71.744 160 160 160s160-71.808 160-160-71.744-160-160-160z"></path></svg></i>
-                    </span></span>
-                    </div>
-                  </div>
-                </div><!----></div>
-            </div>
-            <footer id="__BVID__247___BV_modal_footer_" class="modal-footer">
-              <div  class="w-100">
-                <button @click="buyProduct" type="button" class="btn float-left ml-2 btn-primary">{{$t('settle[10]')}}</button>
-              </div>
-            </footer>
-          </div>
-          <span tabindex="0"></span></div>
-      </div>
-      <div id="__BVID__247___BV_modal_backdrop_" class="modal-backdrop"></div>
-    </div>
+<!--              <h3><b>Purchase instructions</b></h3><h6>Please understand the product carefully before placing an order. If you have any questions, please consult customer service. After placing an order, the mining contract takes effect immediately upon confirmation of payment. All purchases are final and non-refundable unless otherwise required by applicable law or a specific offer.</h6><h3><br></h3><h3>Describe</h3><p><span style="color: rgb(79, 79, 79); font-size: 16px; font-weight: 600; text-transform: capitalize;">This Project Is A Free Trial Project, You Can Use 50 Trial Credits To Purchase It. Profits Can Be Withdrawn Or Used To Purchase Other Investment Plans</span><br></p><h3><b><br></b></h3><h3><b>Calculate output</b></h3><h6>For calculation of mining income, please refer to Enthusiasts pool: https://gemminers.com/xml/index.html#/product</h6><p><br></p><h3><b>Output settlement</b></h3><h6>After the contract expires, the mining machine will stop running, and the system will settle the principal and profit for you; users can only withdraw money if they meet the minimum amount requirement set by the platform.</h6><p><br></p><h3><b>Termination of contract</b></h3><h6>The contract will be automatically terminated upon expiration. No refunds will be given for early termination. Thank you for your understanding.</h6><p><br></p><h3><b>Risk warning</b></h3><h6>Neither party is responsible for power outages or damage to mines or mining machines caused by natural disasters (floods, mudslides, earthquakes, hurricanes, etc.), policy impacts (national publications and documents, etc.), war, political unrest, etc. Other force majeure events.</h6>            </div>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="mask" v-if="showDialog">-->
+<!--      <div class="modal">-->
+<!--        <div class="modal-header">-->
+<!--          <div class="modal-title">{{$t('settle[6]')}}</div>-->
+<!--          <div class="close" @click="showDialog = false"><i class="el-icon-close"></i></div>-->
+<!--        </div>-->
+<!--        <div class="modal-body">-->
+<!--          <div class="buynow" tabindex="-1">-->
+<!--            <div id="el-id-9097-0" class="el-dialog__body">-->
+<!--              <div >-->
+<!--                <div  class="flex-4">-->
+<!--                  <label  class="font-weight-bold col-12 input_label">{{$t('settle[7]')}}</label>-->
+<!--                  <div  class="col-12">-->
+<!--                    <van-stepper v-model="number" input-width="inherit" button-size="40px"/>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div  class="el-row mb-4">-->
+<!--                  <label  class="font-weight-bold input_label">{{$t('settle[8]')}}</label>-->
+<!--                  <div  class="el-input el-input&#45;&#45;large el-input&#45;&#45;suffix">-->
+<!--                    <div class="el-input__wrapper" tabindex="-1">-->
+<!--                      <input class="el-input__inner" v-model="money" readonly type="text" autocomplete="off" tabindex="0">-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div  class="el-row mb-4">-->
+<!--                  <label  class="font-weight-bold input_label">{{$t('settle[9]')}}</label>-->
+<!--                  <div  class="el-input el-input&#45;&#45;large el-input&#45;&#45;suffix">-->
+<!--                    <div class="el-input__wrapper" tabindex="-1">-->
+<!--                      <input class="el-input__inner" v-model="password" :type="showPass?'text':'password'" autocomplete="off" tabindex="0" id="el-id-9097-3">-->
+<!--                      <span class="el-input__suffix" @click="showPass= !showPass"><span class="el-input__suffix-inner">-->
+<!--                      <i v-if="!showPass" class="el-icon el-input__icon el-input__password"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M876.8 156.8c0-9.6-3.2-16-9.6-22.4-6.4-6.4-12.8-9.6-22.4-9.6-9.6 0-16 3.2-22.4 9.6L736 220.8c-64-32-137.6-51.2-224-60.8-160 16-288 73.6-377.6 176C44.8 438.4 0 496 0 512s48 73.6 134.4 176c22.4 25.6 44.8 48 73.6 67.2l-86.4 89.6c-6.4 6.4-9.6 12.8-9.6 22.4 0 9.6 3.2 16 9.6 22.4 6.4 6.4 12.8 9.6 22.4 9.6 9.6 0 16-3.2 22.4-9.6l704-710.4c3.2-6.4 6.4-12.8 6.4-22.4Zm-646.4 528c-76.8-70.4-128-128-153.6-172.8 28.8-48 80-105.6 153.6-172.8C304 272 400 230.4 512 224c64 3.2 124.8 19.2 176 44.8l-54.4 54.4C598.4 300.8 560 288 512 288c-64 0-115.2 22.4-160 64s-64 96-64 160c0 48 12.8 89.6 35.2 124.8L256 707.2c-9.6-6.4-19.2-16-25.6-22.4Zm140.8-96c-12.8-22.4-19.2-48-19.2-76.8 0-44.8 16-83.2 48-112 32-28.8 67.2-48 112-48 28.8 0 54.4 6.4 73.6 19.2L371.2 588.8ZM889.599 336c-12.8-16-28.8-28.8-41.6-41.6l-48 48c73.6 67.2 124.8 124.8 150.4 169.6-28.8 48-80 105.6-153.6 172.8-73.6 67.2-172.8 108.8-284.8 115.2-51.2-3.2-99.2-12.8-140.8-28.8l-48 48c57.6 22.4 118.4 38.4 188.8 44.8 160-16 288-73.6 377.6-176C979.199 585.6 1024 528 1024 512s-48.001-73.6-134.401-176Z"></path><path fill="currentColor" d="M511.998 672c-12.8 0-25.6-3.2-38.4-6.4l-51.2 51.2c28.8 12.8 57.6 19.2 89.6 19.2 64 0 115.2-22.4 160-64 41.6-41.6 64-96 64-160 0-32-6.4-64-19.2-89.6l-51.2 51.2c3.2 12.8 6.4 25.6 6.4 38.4 0 44.8-16 83.2-48 112-32 28.8-67.2 48-112 48Z"></path></svg></i>-->
+<!--                      <i v-else class="el-icon el-input__icon el-input__password"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 160c320 0 512 352 512 352S832 864 512 864 0 512 0 512s192-352 512-352zm0 64c-225.28 0-384.128 208.064-436.8 288 52.608 79.872 211.456 288 436.8 288 225.28 0 384.128-208.064 436.8-288-52.608-79.872-211.456-288-436.8-288zm0 64a224 224 0 1 1 0 448 224 224 0 0 1 0-448zm0 64a160.192 160.192 0 0 0-160 160c0 88.192 71.744 160 160 160s160-71.808 160-160-71.744-160-160-160z"></path></svg></i>-->
+<!--                    </span></span>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="centered">-->
+<!--            <button @click="buyProduct" class="main-btn modal-submit" style="width: fit-content;min-width: 200px;height: 40px; margin-bottom: 10px; font-weight: 400;" type="submit">{{$t('settle[10]')}}</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
     <Footer></Footer>
   </div>
 </template>
@@ -195,12 +129,24 @@
       let view = this.$route.query.view;
       if (view != undefined && view != '' && view == '1') {
         this.view = 1;
-        // this.agreement = localStorage.getItem("agreement");
+        this.agreement = localStorage.getItem("agreement");
       } else {
-        // this.agreement = '';
-        localStorage.setItem("agreement", "");
+        localStorage.setItem("agreement","");
+        this.agreement = '';
       }
       this.getInfoData(id);
+
+      // ttq.track('ViewContent', {
+      //   "contents": [
+      //     {
+      //       "content_id": id, // string. ID of the product. Example: "1077218".
+      //       "content_type": "product", // string. Either product or product_group.
+      //       "content_name": "product" // string. The name of the page or product. Example: "shirt".
+      //     }
+      //   ],
+      //   "value": "999", // number. Value of the order or items sold. Example: 100.
+      //   "currency": "USD" // string. The 4217 currency code. Example: "USD".
+      // });
     },
     mounted() {
     },
@@ -242,9 +188,6 @@
         this.$Model.ProductDetail(id, data => {
           this.detailData = data.data;
           // this.money = data.data.min_amount;
-          if (localStorage.getItem("agreement")) {
-            this.detailData.agreement = this.detailData.agreement +'<br>'+ localStorage.getItem("agreement");
-          }
         });
       },
       buyProduct(){
@@ -297,7 +240,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: rgb(13,110,253)
+    background-color: #662282
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -337,7 +280,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(13,110,253)!important
+    background-color: #662282!important
   }
 
   .el-dropdown-menu__item {
@@ -347,7 +290,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(13,110,253)!important;
+    color: #662282!important;
     background-color: #fff9f0!important
   }
 
@@ -356,11 +299,11 @@
   }
 
   /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: rgb(13,110,253)!important*/
+  /*  background-color: #662282!important*/
   /*}*/
 
   /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: rgb(13,110,253)!important*/
+  /*  color: #662282!important*/
   /*}*/
 
   .el-message {
@@ -387,12 +330,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: rgb(13,110,253);
+    color: #662282;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: rgb(13,110,253)
+    color: #662282
   }
 
   .lang-item {
@@ -423,12 +366,12 @@
   }
 
   .el-input {
-    font-size: 1rem!important
+    font-size: 1.5rem!important
   }
 
   .el-input .el-input__inner {
-    height: 2.5rem;
-    line-height: 2.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
     padding: 0 2rem;
     font-family: myFont;
     color: #000;
@@ -477,12 +420,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(13,110,253)
+    color: #662282
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(13,110,253)!important;
-    border-color: rgb(13,110,253)!important
+    background-color: #662282!important;
+    border-color: #662282!important
   }
 
   .el-checkbox__label {
@@ -495,7 +438,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(13,110,253)!important
+    border-color: #662282!important
   }
 
   @media only screen and (min-width: 1024px) {
@@ -588,7 +531,7 @@
       font-size: 1.5rem;
       color: #fff;
       white-space: nowrap;
-      background-color: rgb(13,110,253)
+      background-color: #662282
     }
 
     .container .main .main-wrapper .box1 .info-list {
@@ -648,7 +591,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#6baaf7,#072f77);
+      background-image: linear-gradient(90deg,#fe9500,#fade88);
       cursor: pointer
     }
 
@@ -763,7 +706,7 @@
       font-size: 1.5rem;
       color: #fff;
       white-space: nowrap;
-      background-color: rgb(13,110,253)
+      background-color: #662282
     }
 
     .container .main .main-wrapper .box1 .info-list {
@@ -823,7 +766,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#6baaf7,#072f77);
+      background-image: linear-gradient(90deg,#fe9500,#fade88);
       cursor: pointer
     }
 
@@ -896,7 +839,7 @@
     padding: 0.5rem 5rem;
     border: none;
     outline: none;
-    background: linear-gradient(90deg, #ddb443, #009d24);
+    background: linear-gradient(180deg, #B92183 0%, #662282 100%);
     border-radius: 10px;
     font-family: 'Roboto';
     font-style: normal;
@@ -911,7 +854,7 @@
     transition: .2s ease;
   }
   .description-block-2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
@@ -925,7 +868,7 @@
   }
   .image_border {
     border-radius: 10px;
-    border: 2px solid rgb(13,110,253);
+    border: 2px solid #662282;
     padding: 3px;
     max-width: 400px;
     height: fit-content;
@@ -971,7 +914,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    color: rgb(13,110,253);
+    color: #662282;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1060,7 +1003,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: #5a90ff;
+      background-color: rgb(251, 194, 65);
       cursor: pointer;
     }
   }
@@ -1148,7 +1091,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: #5a90ff;
+      background-color: rgb(251, 194, 65);
       cursor: pointer;
     }
   }
@@ -1175,21 +1118,14 @@
     width: 12rem !important;
   }
   .col-12 >>>.van-stepper__minus, .col-12 >>>.van-stepper__plus {
-    background-color: rgb(13,110,253) !important;
+    background-color: #662282 !important;
     color: #ffffff !important;
   }
   .centered {
     display: flex;
     justify-content: center;
   }
-  .mb-3>>>.van-stepper {
-    width: 100%;
-    font-size: 1rem;
-    display: flex;
-  }
-  .van-stepper>>>.van-stepper__input {
-    font-size: 1rem;
-  }
+
 </style>
 
 

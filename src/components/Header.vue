@@ -1,341 +1,347 @@
 <template>
-  <header  id="header-nav" class="new-navbar">
-    <div  id="main__header" class="main__header">
-      <div  class="container">
-        <div  class="logo-box" v-if="showLogo">
-          <a  href="javascript:;" @click="$router.push('/')" class="logo-icon router-link-active">
-            <img :src="'./static/img/logo.png?t=2'" alt=""></a>
-        </div>
-        <div  class="language pc">
-          <div  id="navbarNavDarkDropdown" class="navbar-collapse">
-            <div  class="dropdown" @click="showPcLan = !showPcLan">
-              <a  href="javascript: void (0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false" class="btn dropdown-toggle header__menu--link" style="font-weight: 400;">
-                <i  class="fa fa-globe"></i>
-                <span v-if="$i18n.locale=='en-US'">Language</span>
-<!--                <span v-if="$i18n.locale=='zh-CN'">简体中文</span>-->
-                <span v-if="$i18n.locale=='de-DE'">Deutsch</span>
-                <span v-if="$i18n.locale=='fr-FR'">Français</span>
-                <span v-if="$i18n.locale=='ko-KO'">한국인</span>
-                <span v-if="$i18n.locale=='ja-JP'">日本語</span>
-                <span v-if="$i18n.locale=='pt-PT'">Português</span>
-                <span v-if="$i18n.locale=='ru-RU'">Русский</span>
-                <span v-if="$i18n.locale=='es-ES'">Español</span>
-                <span v-if="$i18n.locale=='ar-AR'">عربي</span>
-                <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                <span v-if="$i18n.locale=='tr-TR'">Türkçe</span>
-                <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                <span v-if="$i18n.locale=='nl-NL'">Nederlands</span>
-                <span v-if="$i18n.locale=='it-IT'">Italiano</span>
-              </a>
-              <div class="dropdown-menu1"  v-show="showPcLan">
-<!--                <span v-if="$i18n.locale=='it-IT'">Italiano</span>-->
-<!--                <a class="dropdown-item header__menu&#45;&#45;link" href="javascript:;" @click="changeLanguage('zh-CN')" style="font-weight: 400;">-->
-<!--                  <i class="fi fi-gb"></i>简体中文</a>-->
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('en-US')" style="font-weight: 400;">
-                  <i class="fi fi-gb"></i>English</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('de-DE')" style="font-weight: 400;">
-                  <i class="fi fi-de"></i>Deutsch</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('fr-FR')" style="font-weight: 400;">
-                  <i class="fi fi-fr"></i>Français</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ko-KO')" style="font-weight: 400;">
-                  <i class="fi fi-ko"></i>한국인</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ja-JP')" style="font-weight: 400;">
-                  <i class="fi fi-jp"></i>日本語</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('pt-PT')" style="font-weight: 400;">
-                  <i class="fi fi-pt"></i>Português</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ru-RU')" style="font-weight: 400;">
-                  <i class="fi fi-ru"></i>Русский</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('es-ES')" style="font-weight: 400;">
-                  <i class="fi fi-es"></i>Español</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ar-AR')" style="font-weight: 400;">
-                  <i class="fi fi-ar"></i>عربي</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('yd-YD')" style="font-weight: 400;">
-                  <i class="fi fi-yd"></i>हिंदी</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('tr-TR')" style="font-weight: 400;">
-                  <i class="fi fi-tr"></i>Türkçe</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('nl-NL')" style="font-weight: 400;">
-                  <i class="fi fi-nl"></i>Nederlands</a>
-                <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('it-IT')" style="font-weight: 400;">
-                  <i class="fi fi-it"></i>Italiano</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="language mobile" style="width: 100%;margin-right: 15px">
-          <div v-if="!UserInfo" class=" header__account">
-            <ul  class="d-flex align-items-center">
-              <li  class="right-extend_items header__account--items" style="display: flex;justify-content: space-between;"><a href="javascript:;" @click="$router.push('/login')"
-                                                                        class="but but_login"> {{$t('head[3]')}} </a>
-                <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup">{{$t('head[2]')}} </a></li>
-            </ul>
-          </div>
-        </div>
-        <div  class="navigation">
-          <ul  class="navigation-menu" style="justify-content: right;">
-<!--            <li  class="nav__menu&#45;&#45;items">-->
-<!--              <a  href="/" class="header__menu&#45;&#45;link router-link-active">HOME</a></li>-->
-            <li class="nav__menu--items">
+    <div class="header">
+      <div class="header-wrapper">
+        <img @click="$router.push('/')" v-lazy="'./static/image/logo1.png'"
+             class="logo">
+        <div class="nav-list">
 
-              <a href="javascript:;" :class="'header__menu--link '+(index==0?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/')">{{$t('head[0]')}}</a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==1?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/product')">{{$t('head[9]')}}</a>
-            </li>
-            <li class="nav__menu--items" v-if="UserInfo">
-              <a href="javascript:;" :class="'header__menu--link '+(index==9?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/tutorial')">{{$t('tutorial[0]')}}</a>
-            </li>
-<!--            <li class="nav__menu&#45;&#45;items">-->
-<!--              <a href="javascript:;" :class="'header__menu&#45;&#45;link '+(index==8?'header__menu&#45;&#45;link_active':'')" @click="showMenu=false,$router.push('/Bounty')">-->
-<!--                {{$t('bounty')}}-->
-<!--              </a>-->
-<!--            </li>-->
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==2?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/about')">{{$t('foot[3]')}}</a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==8?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/FAQ')">
-                {{$t('foot[4]')}}
-              </a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==4?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/affiliate')">{{$t('foot[5]')}}</a>
-            </li>
-<!--            <li class="nav__menu&#45;&#45;items">-->
-<!--              <a href="javascript:;" :class="'header__menu&#45;&#45;link '+(index==6?'header__menu&#45;&#45;link_active':'')" @click="showMenu=false,$router.push('/contact')">{{$t('foot[7]')}}</a>-->
-<!--            </li>-->
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==8?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/welfare')">{{$t('welfare[0]')}}</a>
-            </li>
-            <li class="nav__menu--items" v-if="!UserInfo">
-              <a href="javascript:;" :class="'header__menu--link '+(index==9?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/tutorial')">{{$t('tutorial[0]')}}</a>
-            </li>
-            <li class="nav__menu--items">
-              <a href="javascript:;" :class="'header__menu--link '+(index==7?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/app')">{{$t('head[1]')}}</a>
-            </li>
-            <!--                  <li class="nav__menu--items">-->
-            <!--                    <a href="javascript:;" :class="'header__menu--link '+(index==0?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/blog')">{{$t('foot[6]')}}</a>-->
-            <!--                  </li>-->
-            <li class="nav__menu--items" v-if="UserInfo">
-              <a href="javascript:;" :class="'header__menu--link '+(index==10?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/dashboard')">{{$t('head[4]')}}</a>
-            </li>
-          </ul>
-        </div>
-        <div v-if="!UserInfo" class="right-extend header__account">
-          <ul  class="d-flex align-items-center">
-            <li  class="right-extend_items header__account--items"><a href="javascript:;" @click="$router.push('/login')"
-                                                                                        class="but but_login"> {{$t('head[3]')}} </a>
-              <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup">{{$t('head[2]')}} </a></li>
-              <li class="ml-1 OlineNum">
-                <div class="">{{ $t('head[25]') }}</div>
-                <span>{{InitData.setting.online || 0}}</span>
-              </li>
-          </ul>
-        </div>
-        <div v-else class="right-extend header__account">
-          <ul  class="d-flex align-items-center">
-            <li  class="header__account--items d-sm-u-none">
-              <div  class="dropdown">
-                <a  @click="showLogout = !showLogout"  href="javascript:;" class="dropdown-toggle header__menu--link">{{UserInfo.username}}</a>
-                <div  class="dropdown-menu1" style="left: auto; right: 0px;display: block !important;" v-show="showLogout">
-                  <a href="javascript:;" @click="$Model.Logout()" class="dropdown-item header__menu--link" style="font-weight: 400;">{{$t('head[5]')}}</a></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div  class="offcanvas__header--menu__open" style="margin-right: 0.625rem; padding: 10px 0px;" @click="showPcLan=false,showMask = true">
-          <div class="offcanvas__header--menu__open--btn">
-            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ionicon offcanvas__header--menu__open--svg">
-              <path  fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"></path>
-            </svg>
+          <div :class="'nav-item '+(index==0?'active':'')" @click="$router.push('/')">
+            {{$t('head[0]')}}
+            <div class="underlined"></div>
           </div>
+<!--          <div :class="'nav-item '+(index==18?'active':'')" @click="$router.push('/app')">-->
+<!--            {{$t('head[1]')}}-->
+<!--            <div class="underlined"></div>-->
+<!--          </div>-->
+          <div :class="'nav-item '+(index==1?'active':'')" @click="$router.push('/product')">
+            {{$t('foot[2]')}}
+            <div class="underlined"></div>
+          </div>
+          <div :class="'nav-item '+(index==2?'active':'')" @click="$router.push('/about')"> {{$t('foot[3]')}}<div class="underlined"></div></div>
+          <div :class="'nav-item '+(index==4?'active':'')" @click="$router.push('/affiliate')">{{$t('foot[5]')}}<div class="underlined"></div></div>
+<!--          <div :class="'nav-item '+(index==9?'active':'')" style="color: #FF9800;" @click="$router.push('/Bounty')"> {{$t('bounty')}}<div class="underlined"></div></div>-->
+          <div :class="'nav-item '+(index==3?'active':'')" @click="$router.push('/FAQ')"> {{$t('foot[4]')}}<div class="underlined"></div></div>
+          <!--        <div :class="'nav-item '+(index==5?'active':'')" @click="$router.push('/blog')"> {{$t('foot[6]')}}<div class="underlined"></div></div>-->
+          <!--        <div :class="'nav-item '+(index==6?'active':'')" @click="$router.push('/contact')"> {{$t('foot[7]')}}<div class="underlined"></div></div>-->
+          <div :class="'nav-item '+(index==8?'active':'')" @click="$router.push('/welfare')"> {{$t('welfare[0]')}}<div class="underlined"></div></div>
+          <div :class="'nav-item '+(index==7?'active':'')" @click="$router.push('/app')"> {{$t('head[1]')}}<div class="underlined"></div></div>
+          <div :class="'nav-item '+(index==10?'active':'')" @click="$router.push('/teach')"> {{$t('teach[0]')}}<div class="underlined"></div></div>
         </div>
-      </div>
-    </div>
-    <div class="header-overlay" v-if="showMask">
-      <div  :class="'offcanvas__header ' +(showMask?'open':'')">
-        <div  class="offcanvas__inner">
-          <div  class="offcanvas__logo">
-            <a  href="javascript:;" @click="$router.push('/')" class="offcanvas__logo_link router-link-active">
-              <img  :src="'./static/img/logo.png?t=2'" height="32" alt="" class="logo__light logo__light"></a>
-            <div  class="language mobile">
-              <div class="navbar-collapse">
-                <div  class="dropdown" @click="showPcLan = !showPcLan">
-                  <a  href="javascript: void (0)" role="button" data-toggle="dropdown" aria-expanded="false" class="btn dropdown-toggle header__menu--link" style="font-weight: 400;">
-                    <i  class="fa fa-globe"></i>
-                    <span v-if="$i18n.locale=='en-US'">Language</span>
-<!--                    <span v-if="$i18n.locale=='zh-CN'">简体中文</span>-->
-                    <span v-if="$i18n.locale=='de-DE'">Deutsch</span>
-                    <span v-if="$i18n.locale=='fr-FR'">Français</span>
-                    <span v-if="$i18n.locale=='ko-KO'">한국인</span>
-                    <span v-if="$i18n.locale=='ja-JP'">日本語</span>
-                    <span v-if="$i18n.locale=='pt-PT'">Português</span>
-                    <span v-if="$i18n.locale=='ru-RU'">Русский</span>
-                    <span v-if="$i18n.locale=='es-ES'">Español</span>
-                    <span v-if="$i18n.locale=='ar-AR'">عربي</span>
-                    <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                    <span v-if="$i18n.locale=='tr-TR'">Türkçe</span>
-                    <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
-                    <span v-if="$i18n.locale=='nl-NL'">Nederlands</span>
-                    <span v-if="$i18n.locale=='it-IT'">Italiano</span>
-                  </a>
-                  <div class="dropdown-menu1"  v-show="showPcLan">
-                    <!--                <span v-if="$i18n.locale=='it-IT'">Italiano</span>-->
-<!--                    <a class="dropdown-item header__menu&#45;&#45;link" href="javascript:;" @click="changeLanguage('zh-CN')" style="font-weight: 400;">-->
-<!--                      <i class="fi fi-gb"></i>简体中文</a>-->
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('en-US')" style="font-weight: 400;">
-                      <i class="fi fi-gb"></i>English</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('de-DE')" style="font-weight: 400;">
-                      <i class="fi fi-de"></i>Deutsch</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('fr-FR')" style="font-weight: 400;">
-                      <i class="fi fi-fr"></i>Français</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ko-KO')" style="font-weight: 400;">
-                      <i class="fi fi-ko"></i>한국인</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ja-JP')" style="font-weight: 400;">
-                      <i class="fi fi-jp"></i>日本語</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('pt-PT')" style="font-weight: 400;">
-                      <i class="fi fi-pt"></i>Português</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ru-RU')" style="font-weight: 400;">
-                      <i class="fi fi-ru"></i>Русский</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('es-ES')" style="font-weight: 400;">
-                      <i class="fi fi-es"></i>Español</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('ar-AR')" style="font-weight: 400;">
-                      <i class="fi fi-ar"></i>عربي</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('yd-YD')" style="font-weight: 400;">
-                      <i class="fi fi-yd"></i>हिंदी</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('tr-TR')" style="font-weight: 400;">
-                      <i class="fi fi-tr"></i>Türkçe</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('nl-NL')" style="font-weight: 400;">
-                      <i class="fi fi-nl"></i>Nederlands</a>
-                    <a class="dropdown-item header__menu--link" href="javascript:;" @click="changeLanguage('it-IT')" style="font-weight: 400;">
-                      <i class="fi fi-it"></i>Italiano</a>
-                  </div>
+        <div class="nav-list" style="margin-right: 5rem">
+          <div class="el-dropdown">
+            <div class="cur-lang el-dropdown-selfdefine" aria-haspopup="list" @click="showPcLan = !showPcLan"
+                 aria-controls="dropdown-menu-6877" role="button" tabindex="0">
+              <span v-if="$i18n.locale=='en-US'">
+<!--                <img v-lazy="'./static/image/en-us1.png?t=1'" style="width: 2.5rem;">-->
+                <img v-lazy="'./static/image/en-US.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ko-KO'">
+                <img v-lazy="'./static/image/ko-KO.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='es-ES'">
+                <img v-lazy="'./static/image/es-ES.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='yd-YD'">
+                <img v-lazy="'./static/image/yd-YD.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ar-AR'">
+                <img v-lazy="'./static/image/ar-AR.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='pt-PT'">
+                <img v-lazy="'./static/image/pt-PT.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ru-RU'">
+                <img v-lazy="'./static/image/ru-RU.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ja-JP'">
+                <img v-lazy="'./static/image/ja-JP.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='de-DE'">
+                <img v-lazy="'./static/image/de-DE.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='fr-FR'">
+                <img v-lazy="'./static/image/fr-FR.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='it-IT'">
+                <img v-lazy="'./static/image/it-IT.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='zh-TW'">
+                <img v-lazy="'./static/image/zh-TW.png'" style="width: 2.5rem;">
+              </span>
+              <van-icon name="arrow-down" class="el-icon-arrow-down"/>
+            </div>
+            <ul class="el-dropdown-menu" id="dropdown-menu-6877" v-show="showPcLan">
+              <li  @click="changeLanguage('en-US')" v-if="InitData.setting.en==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item">
+                  <img v-lazy="'./static/image/en-US.png'"
+                                            class="flag">
+                  English
                 </div>
-              </div>
-            </div>
-            <button  @click="showMask = false" class="offcanvas__close--btn">{{$t('deposit[28]')}}</button>
-          </div>
-          <nav  class="offcanvas__menu">
-            <ul  class="offcanvas__menu_ul">
-              <li class="offcanvas__menu_li">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/')">{{$t('head[0]')}}</a>
               </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/product')">{{$t('head[9]')}}</a>
+              <li @click="changeLanguage('ko-KO')" v-if="InitData.setting.ko==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ko-KO.png'"
+                                            class="flag"> 한국인
+                </div>
               </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/FAQ')">
-                  {{$t('foot[4]')}}
-                </a>
+              <li @click="changeLanguage('es-ES')" v-if="InitData.setting.es==1" class="el-dropdown-menu__item">
+                <div class="lang-item"><img v-lazy="'./static/image/es-ES.png'"
+                                            class="flag"> Español
+                </div>
               </li>
-<!--              <li class="offcanvas__menu_li" >-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/Bounty')">-->
-<!--                  {{$t('bounty')}}-->
-<!--                </a>-->
-<!--              </li>-->
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/about')">{{$t('foot[3]')}}</a>
-              </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/affiliate')">{{$t('foot[5]')}}</a>
-              </li>
-              <!--            <li class="offcanvas__menu_li">-->
-              <!--              <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/contact')">{{$t('foot[7]')}}</a>-->
+              <!--            <li  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+              <!--              <div class="lang-item"><img v-lazy="'./static/images/flag7.597f635f.png'"-->
+              <!--                                          class="flag"> Türkçe-->
+              <!--              </div>-->
               <!--            </li>-->
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/welfare')">{{$t('welfare[0]')}}</a>
+              <li @click="changeLanguage('yd-YD')" v-if="InitData.setting.yd==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/yd-YD.png'"
+                                            class="flag"> हिंदी
+                </div>
               </li>
-              <li class="offcanvas__menu_li" >
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/app')">{{$t('head[1]')}}</a>
+<!--              <li @click="changeLanguage('ur-UR')" v-if="InitData.setting.ur==1"  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="lang-item"><img v-lazy="'./static/images/flagur.png'"-->
+<!--                                            class="flag"> اردو-->
+<!--                </div>-->
+<!--              </li>-->
+              <li @click="changeLanguage('ar-AR')" v-if="InitData.setting.ar==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ar-AR.png'"
+                                            class="flag">عربي
+                </div>
               </li>
-              <!--                  <li class="offcanvas__menu_li">-->
-              <!--                    <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/blog')">{{$t('foot[6]')}}</a>-->
-              <!--                  </li>-->
-              <li class="offcanvas__menu_li">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/tutorial')">{{$t('tutorial[0]')}}</a>
+              <li @click="changeLanguage('pt-PT')" v-if="InitData.setting.pt==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/pt-PT.png'"
+                                            class="flag"> Português
+                </div>
               </li>
-              <li class="offcanvas__menu_li">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/message')">{{$t('head[13]')}}</a>
+              <li @click="changeLanguage('ru-RU')" v-if="InitData.setting.ru==1"   class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ru-RU.png'"
+                                            class="flag"> Русский
+                </div>
               </li>
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/transactions')">{{$t('head[12]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/deposit')">{{$t('head[7]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/withdraw')">{{$t('head[8]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/MyPackages')">{{$t('head[11]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/product')">{{$t('head[9]')}}</a>-->
-<!--              </li>-->
-<!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/affiliates')">{{$t('foot[5]')}}</a>-->
-<!--              </li>-->
-              <li class="offcanvas__menu_li" v-if="UserInfo">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showH5set =!showH5set">{{$t('head[14]')}}</a>
-                <ul role="menu" class="el-menu el-menu--inline" v-show="showH5set">
-                  <li class="el-menu-item-group">
-                    <div class="el-menu-item-group__title" style="padding-left: 40px;"></div>
-                    <ul>
-                      <li @click="$router.push('/walletAddress')"   :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[0]')}} </li>
-                      <li @click="$router.push('/loginPassword')"   :class="'el-menu-item '+(index==9?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[1]')}} </li>
-                      <li @click="$router.push('/payPassword')"   :class="'el-menu-item '+(index==10?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[2]')}} </li>
-                    </ul>
-                  </li>
-                </ul>
+              <li @click="changeLanguage('ja-JP')" v-if="InitData.setting.jp==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ja-JP.png'"
+                                            class="flag"> 日本語
+                </div>
               </li>
+              <li @click="changeLanguage('de-DE')" v-if="InitData.setting.de==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/de-DE.png'"
+                                            class="flag"> Deutsch
+                </div>
+              </li>
+              <li @click="changeLanguage('fr-FR')" v-if="InitData.setting.fr==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/fr-FR.png'"
+                                            class="flag"> Français
+                </div>
+              </li>
+              <li @click="changeLanguage('it-IT')" v-if="InitData.setting.it==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/it-IT.png'"
+                                            class="flag"> Italiano
+                </div>
+              </li>
+              <li @click="changeLanguage('zh-TW')" v-if="InitData.setting.ft==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/zh-TW.png'"
+                                            class="flag"> 繁體中文
+                </div>
+              </li>
+              <!--            <li @click="changeLanguage('zh-CN')" v-if="InitData.setting.cn==1" class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+              <!--              <div class="lang-item"><img v-lazy="'./static/images/zh-CN.png'"-->
+              <!--                                          class="flag"> 中文简体-->
+              <!--              </div>-->
+              <!--            </li>-->
             </ul>
-            <div  class="header__account offcanvas__account">
-              <ul  class="align-items-center login-but_box">
-                <li  class="header__account--items">
-                  <a  href="javascript:;">{{UserInfo.username}}</a></li>
-                <br >
-                <li  class="header__account--items">
-                  <a v-if="UserInfo" href="javascript:;" @click="$Model.Logout()" class="but but_signup">{{$t('head[5]')}}</a>
-                  <ul v-else class="d-flex align-items-center">
-                    <li  class="right-extend_items header__account--items"><a href="javascript:;" @click="$router.push('/login')"
-                                                                              class="but but_login"> {{$t('head[3]')}} </a>
-                      <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup">{{$t('head[2]')}} </a></li>
-                  </ul>
-                </li>
-              </ul>
+          </div>
+          <div class="action-box" v-if="!UserInfo">
+            <div class="action-btn"  @click="$router.push('/register')">{{$t('head[2]')}}</div>
+          </div>
+          <div class="action-box" v-if="!UserInfo" >
+            <div class="action-btn dasbtn" @click="$router.push('/login')">{{$t('head[3]')}}</div>
+          </div>
+          <div class="action-box" v-if="UserInfo" >
+            <div class="action-btn dasbtn" v-if="UserInfo" @click="$router.push('/dashboard')">{{$t('head[4]')}}</div>
+          </div>
+          <div class="action-box" v-if="UserInfo">
+            <div class="action-btn"  @click="$Model.Logout()">{{$t('head[5]')}}</div>
+          </div>
+          <div style="text-align:center;font-size: 1.5rem;margin-left: 10px;border-radius: 10px;border: 1px solid #662282;padding: 5px">
+            {{$t('online')}}<br>{{InitData.setting.online}}
+          </div>
+        </div>
+        <div class="menu-box">
+          <div style="text-align:center;font-size: 1.25rem;margin-left: 10px;border-radius: 10px;padding: 5px">
+            {{$t('online')}}<br>{{InitData.setting.online}}
+          </div>
+          <div class="el-dropdown">
+            <div class="cur-lang el-dropdown-selfdefine" aria-haspopup="list" @click="showMobileLan = !showMobileLan"
+                 aria-controls="dropdown-menu-5477" role="button" tabindex="0">
+             <span v-if="$i18n.locale=='en-US'">
+                <img v-lazy="'./static/image/en-US.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ko-KO'">
+                <img v-lazy="'./static/image/ko-KO.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='es-ES'">
+                <img v-lazy="'./static/image/es-ES.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='yd-YD'">
+                <img v-lazy="'./static/image/yd-YD.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ar-AR'">
+                <img v-lazy="'./static/image/ar-AR.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='pt-PT'">
+                <img v-lazy="'./static/image/pt-PT.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ru-RU'">
+                <img v-lazy="'./static/image/ru-RU.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ja-JP'">
+                <img v-lazy="'./static/image/ja-JP.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='de-DE'">
+                <img v-lazy="'./static/image/de-DE.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='fr-FR'">
+                <img v-lazy="'./static/image/fr-FR.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='it-IT'">
+                <img v-lazy="'./static/image/it-IT.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='zh-TW'">
+                <img v-lazy="'./static/image/zh-TW.png'" style="width: 2.5rem;">
+              </span>
+              <van-icon name="arrow-down" class="el-icon-arrow-down"/>
             </div>
-          </nav>
+            <ul class="el-dropdown-menu" id="dropdown-menu-5477" v-show="showMobileLan">
+              <li  @click="changeLanguage('en-US')" v-if="InitData.setting.en==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/en-US.png'"
+                                            class="flag"> English
+                </div>
+              </li>
+              <li @click="changeLanguage('ko-KO')" v-if="InitData.setting.ko==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ko-KO.png'"
+                                            class="flag"> 한국인
+                </div>
+              </li>
+              <li @click="changeLanguage('es-ES')" v-if="InitData.setting.es==1" class="el-dropdown-menu__item">
+                <div class="lang-item"><img v-lazy="'./static/image/es-ES.png'"
+                                            class="flag"> Español
+                </div>
+              </li>
+              <!--            <li  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+              <!--              <div class="lang-item"><img v-lazy="'./static/images/flag7.597f635f.png'"-->
+              <!--                                          class="flag"> Türkçe-->
+              <!--              </div>-->
+              <!--            </li>-->
+              <li @click="changeLanguage('yd-YD')" v-if="InitData.setting.yd==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/yd-YD.png'"
+                                            class="flag"> हिंदी
+                </div>
+              </li>
+<!--              <li @click="changeLanguage('ur-UR')" v-if="InitData.setting.ur==1"  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="lang-item"><img v-lazy="'./static/image/flagur.png'"-->
+<!--                                            class="flag"> اردو-->
+<!--                </div>-->
+<!--              </li>-->
+              <li @click="changeLanguage('ar-AR')" v-if="InitData.setting.ar==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ar-AR.png'"
+                                            class="flag">عربي
+                </div>
+              </li>
+              <li @click="changeLanguage('pt-PT')" v-if="InitData.setting.pt==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/pt-PT.png'"
+                                            class="flag"> Português
+                </div>
+              </li>
+              <li @click="changeLanguage('ru-RU')" v-if="InitData.setting.ru==1"   class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ru-RU.png'"
+                                            class="flag"> Русский
+                </div>
+              </li>
+              <li @click="changeLanguage('ja-JP')" v-if="InitData.setting.jp==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ja-JP.png'"
+                                            class="flag"> 日本語
+                </div>
+              </li>
+              <li @click="changeLanguage('de-DE')" v-if="InitData.setting.de==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/de-DE.png'"
+                                            class="flag"> Deutsch
+                </div>
+              </li>
+              <li @click="changeLanguage('fr-FR')" v-if="InitData.setting.fr==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/fr-FR.png'"
+                                            class="flag"> Français
+                </div>
+              </li>
+              <li @click="changeLanguage('it-IT')" v-if="InitData.setting.it==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/it-IT.png'"
+                                            class="flag"> Italiano
+                </div>
+              </li>
+              <li @click="changeLanguage('zh-TW')" v-if="InitData.setting.ft==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/zh-TW.png'"
+                                            class="flag"> 繁體中文
+                </div>
+              </li>
+              <!--            <li @click="changeLanguage('zh-CN')" v-if="InitData.setting.cn==1" class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+              <!--              <div class="lang-item"><img v-lazy="'./static/images/zh-CN.png'"-->
+              <!--                                          class="flag"> 中文简体-->
+              <!--              </div>-->
+              <!--            </li>-->
+              <div x-arrow="" class="popper__arrow" style="left: 87.8312px;"></div>
+            </ul>
+          </div>
+          <div class="menu" @click="showMask=true"><i class="el-icon-s-operation"></i> {{$t('head[6]')}}</div>
+
+        </div>
+        <div v-if="showMask" class="nav-mask">
+          <div class="nav-list">
+            <div :class="'nav-item '+(index==0?'active':'')" @click="$router.push('/')"> {{$t('head[0]')}}</div>
+<!--            <div :class="'nav-item '+(index==7?'active':'')" @click="$router.push('/app')"> {{$t('head[1]')}}</div>-->
+            <div :class="'nav-item '+(index==1?'active':'')" @click="$router.push('/product')"> {{$t('foot[2]')}}</div>
+            <div :class="'nav-item '+(index==2?'active':'')" @click="$router.push('/about')"> {{$t('foot[3]')}}</div>
+            <div :class="'nav-item '+(index==3?'active':'')" @click="$router.push('/FAQ')"> {{$t('foot[4]')}}</div>
+            <div :class="'nav-item '+(index==9?'active':'')" style="color: #662282;" @click="$router.push('/Bounty')"> {{$t('bounty')}}</div>
+            <div :class="'nav-item '+(index==4?'active':'')" @click="$router.push('/affiliate')"> {{$t('foot[5]')}}</div>
+            <div :class="'nav-item '+(index==5?'active':'')" @click="$router.push('/blog')"> {{$t('foot[6]')}}</div>
+            <div :class="'nav-item '+(index==6?'active':'')" @click="$router.push('/contact')"> {{$t('foot[7]')}}</div>
+            <div :class="'nav-item '+(index==8?'active':'')" style="color:#0aff22;" @click="$router.push('/welfare')"> {{$t('welfare[0]')}}</div>
+            <div :class="'nav-item '+(index==7?'active':'')" @click="$router.push('/app')"> {{$t('head[1]')}}</div>
+            <div :class="'nav-item '+(index==5?'active':'')" @click="$router.push('/teach')"> {{$t('teach[0]')}}</div>
+
+            <div class="action-box" v-if="!UserInfo">
+              <div class="action-btn"  @click="$router.push('/register')">{{$t('head[2]')}}</div>
+            </div>
+            <div class="action-box" v-if="!UserInfo">
+              <div class="action-btn dasbtn"  @click="$router.push('/login')">{{$t('head[3]')}}</div>
+            </div>
+            <div class="action-box" v-if="UserInfo">
+              <div class="action-btn dasbtn"  @click="$router.push('/dashboard')">{{$t('head[4]')}}</div>
+            </div>
+            <div class="action-box" v-if="UserInfo">
+              <div class="action-btn"  @click="$Model.Logout()">{{$t('head[5]')}}</div>
+            </div>
+          </div>
+          <div class="close-box"><i class="el-icon-error nav-close" @click="showMask = false"></i></div>
         </div>
       </div>
+
     </div>
 
-  </header>
 </template>
 
 <script>
-
   export default {
-    name: 'userHeader',
+    name: 'Header',
     components: {
 
     },
-    props: {
-      showLogo: {
-        type:Boolean,
-        default:true
-      }
-    },
+    props: [],
     data() {
       return {
-        showMask:false,
-        showLogout: false,
-        showPcLan: false,
-        showMenu:false,
         index:0,
-        showH5nav:false,
-        showPackage:false,
-        showSet:false,
-        showH5packet:false,
-        showH5set:false,
+        showMask:false,
+        showMobileLan: false,
+        showPcLan: false,
       }
     },
     computed: {
@@ -373,10 +379,10 @@
       if (localStorage.getItem("pageIndex") == '/welfare') {
         this.index = 8;
       }
-      if (localStorage.getItem("pageIndex") == '/tutorial') {
+      if (localStorage.getItem("pageIndex") == '/Bounty') {
         this.index = 9;
       }
-      if (localStorage.getItem("pageIndex") == '/dashboard') {
+      if (localStorage.getItem("pageIndex") == '/teach') {
         this.index = 10;
       }
     },
@@ -399,59 +405,527 @@
     }
   }
 </script>
-
 <style scoped>
-  .fs-5{font-size:1.25rem!important}
-  .header__menu--link_active {
-    color: #222226 !important;
+  @media only screen and (min-width: 1024px) {
+    html {
+      font-size:10px
+    }
   }
-  .header__menu--link_active,router-link-active {
-    color: #222226 !important;
+
+  @media only screen and (max-width: 1024px) {
+    html {
+      font-size:10px
+    }
   }
-  .dropdown-menu1 {
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 5px
+  }
+
+  ::-webkit-scrollbar-corner,::-webkit-scrollbar-track {
+    background-color: #e2e2e2
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: #662282
+  }
+
+  .slide-enter-active,.slide-leave-active {
+    transition: all .2s ease
+  }
+
+  .slide-enter,.slide-leave-to {
+    transform: translateY(10px);
+    opacity: 0
+  }
+
+  .slide-right-enter-active,.slide-right-leave-active {
+    transition: all .2s ease
+  }
+
+  .slide-right-enter,.slide-right-leave-to {
+    transform: translateX(-10px);
+    opacity: 0
+  }
+
+  @keyframes tobig-39d242ba {
+    0% {
+      transform: scale(1)
+    }
+
+    to {
+      transform: scale(1.5)
+    }
+  }
+
+  input::-webkit-inner-spin-button,input::-webkit-outer-spin-button {
+    -webkit-appearance: none!important
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield
+  }
+
+  .el-carousel__indicators--outside button {
+    background-color: #662282!important
+  }
+
+  .el-dropdown-menu__item {
+    font-size: 1.5rem;
+    color: #000;
+    font-family: myFont
+  }
+
+  .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
+    color: #662282!important;
+    background-color: #fff9f0!important
+  }
+
+  .el-pager li {
+    font-family: myFont
+  }
+
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: #662282!important*/
+  /*}*/
+
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: #662282!important*/
+  /*}*/
+
+  .el-message {
+    font-size: 1.6rem
+  }
+
+  .el-menu-item {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    font-weight: 700
+  }
+
+  .el-submenu__title {
+    font-size: 1.5rem!important;
+    font-weight: 700
+  }
+
+  .el-menu-item [class^=el-icon-],.el-submenu [class^=el-icon-] {
+    font-size: 2rem
+  }
+
+  .el-submenu__icon-arrow {
+    font-size: 1.4rem!important
+  }
+
+  .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
+    color: #662282;
+    background-color: #fff9f0!important
+  }
+
+  .el-menu-item:hover i,.el-submenu__title:hover i {
+    color: #662282
+  }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap
+  }
+
+  .lang-item .flag {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .6rem;
+    object-fit: contain;
+  }
+
+  .option-label {
+    display: flex;
+    align-items: center;
+    width: 100%
+  }
+
+  .option-label .icon {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .6rem
+  }
+
+  .el-input {
+    font-size: 1.5rem!important
+  }
+
+  .el-input .el-input__inner {
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
+    font-family: myFont;
+    color: #000;
+    border: 1px solid #d9d9d9!important
+  }
+
+  .el-textarea__inner {
+    font-size: 1.5rem!important;
+    font-family: myFont;
+    color: #000!important
+  }
+
+  .el-form-item__label {
+    padding-bottom: 1rem!important;
+    line-height: normal!important;
+    font-size: 1.5rem!important;
+    color: #000!important;
+    word-wrap: break-word
+  }
+
+  .el-input.is-disabled .el-input__inner {
+    color: #000!important;
+    cursor: default!important
+  }
+
+  .el-radio {
+    color: #000!important
+  }
+
+  .el-radio__label {
+    font-size: 1.5rem!important
+  }
+
+  .el-select {
+    width: 100%
+  }
+
+  .el-select-dropdown__item {
+    font-size: 1.5rem;
+    font-family: myFont
+  }
+
+  .el-select-dropdown__empty {
+    font-size: 1.5rem!important;
+    font-family: myFont
+  }
+
+  .el-select-dropdown__item.selected {
+    color: #662282
+  }
+
+  .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #662282!important;
+    border-color: #662282!important
+  }
+
+  .el-checkbox__label {
+    font-size: 1.5rem!important;
+    color: #000
+  }
+
+  .el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #000!important
+  }
+
+  .el-checkbox__input.is-focus .el-checkbox__inner {
+    border-color: #662282!important
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      width: 100%;
+      height: 10rem;
+      box-sizing: border-box;
+      padding: 0rem;
+      background-color: #fff;
+    }
+
+    .header .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /*width: 100%;*/
+      /*max-width: 1300px;*/
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 3rem;
+      background: #00ab5c;
+      /*background: linear-gradient(#00f785, #3d4355) padding-box, linear-gradient(180deg, hsl(31, 68%, 38%) 2.95%, hsl(59, 90%, 77%) 54.04%, hsl(31, 68%, 38%) 105.51%) border-box;*/
+    }
+
+    .header .header-wrapper .logo {
+      height: 5rem;
+      cursor: pointer
+    }
+
+    .header .header-wrapper .nav-list {
+      display: flex;
+      align-items: center;
+      max-width: 100%
+    }
+
+    .header .header-wrapper .nav-list .nav-item {
+      display: flex;
+      align-items: center;
+      margin-right: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FFC107;
+      white-space: nowrap;
+      cursor: pointer
+    }
+
+    .header .header-wrapper .nav-list .active,.header .header-wrapper .nav-list .nav-item:hover {
+      color: #FF9800
+    }
+
+    .header .header-wrapper .nav-list .cur-lang {
+      display: flex;
+      align-items: center;
+      margin-right: 2.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+
+    .header .header-wrapper .nav-list .cur-lang:hover {
+      color: #FF9800
+    }
+
+    .header .header-wrapper .nav-list .cur-lang i {
+      margin-left: 5px
+    }
+
+    .header .header-wrapper .nav-list .action-box {
+      display: flex;
+      align-items: center
+    }
+
+    .header .header-wrapper .nav-list .action-box .action-btn {
+      height: 3.8rem;
+      line-height: 3.8rem;
+      box-sizing: border-box;
+      padding: 0 1.5rem;
+      border-radius: .5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background: linear-gradient(to right, #00f785, #410093);
+      /*background: #4caf50;*/
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+
+    .header .header-wrapper .nav-list .action-box .action-btn:not(:last-child) {
+      margin-right: 1rem
+    }
+
+    .header .header-wrapper .menu-box,.header .header-wrapper .nav-mask {
+      display: none
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .header {
+      position:sticky;
+      top: 0;
+      z-index: 20;
+      width: 100%;
+      height: 6rem;
+      box-sizing: border-box;
+      padding: 0rem;
+      background-color: #fff
+    }
+
+    .header .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /*width: 100%;*/
+      height: inherit;
+      padding: 0 1rem;
+      background: #00ab5c;
+      /*background: linear-gradient(#00f785, #3d4355) padding-box, linear-gradient(180deg, hsl(31, 68%, 38%) 2.95%, hsl(59, 90%, 77%) 54.04%, hsl(31, 68%, 38%) 105.51%) border-box;*/
+
+    }
+
+    .header .header-wrapper .logo {
+      height: 3.5rem;
+      cursor: pointer
+    }
+
+    .header .header-wrapper .nav-list {
+      display: none
+    }
+
+    .header .header-wrapper .menu-box {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: right;
+    }
+
+    .header .header-wrapper .menu-box .menu {
+      display: flex;
+      align-items: center;
+      max-width: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      cursor: pointer
+    }
+
+    .header .header-wrapper .menu-box .menu i {
+      margin-right: 2px;
+      font-size: 2.2rem
+    }
+
+    .header .header-wrapper .menu-box .cur-lang {
+      display: flex;
+      align-items: center;
+      margin-left: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      white-space: nowrap;
+      cursor: pointer
+    }
+
+    .header .header-wrapper .menu-box .cur-lang:hover {
+      color: #662282
+    }
+
+    .header .header-wrapper .menu-box .cur-lang i {
+      margin-left: 2px
+    }
+
+    .header .header-wrapper .nav-mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0,0,0,.5)
+    }
+
+    .header .header-wrapper .nav-mask .nav-list {
+      /*display: flex;*/
+      display: block;
+      flex-direction: column;
+      width: calc(100% - 10rem);
+      background-color: #fff;
+      height: calc(100% - 6rem);
+      overflow-y: scroll;
+    }
+
+    .header .header-wrapper .nav-mask .nav-list .nav-item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 5.5rem;
+      box-sizing: border-box;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333333;
+      word-wrap: break-word;
+      cursor: pointer
+    }
+
+    .header .header-wrapper .nav-mask .nav-list .active,.header .header-wrapper .nav-mask .nav-list .nav-item:hover {
+      color: #662282
+    }
+
+    .header .header-wrapper .nav-mask .nav-list .action-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 6rem;
+      box-sizing: border-box;
+      padding: 0 1rem
+    }
+
+    .header .header-wrapper .nav-mask .nav-list .action-box .action-btn {
+      height: 3.8rem;
+      line-height: 3.8rem;
+      box-sizing: border-box;
+      padding: 0 1.5rem;
+      border-radius: .5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background: linear-gradient(to right, #00f785, #410093);
+      /*background:#4caf50;*/
+      cursor: pointer;
+      min-width: 80%;
+    }
+
+    .header .header-wrapper .nav-mask .close-box {
+      display: flex;
+      justify-content: center;
+      width: 7rem;
+      height: inherit;
+      box-sizing: border-box;
+      padding: 1.5rem 0 0
+    }
+
+    .header .header-wrapper .nav-mask .close-box .nav-close {
+      width: 4.2rem;
+      height: 4.2rem;
+      font-size: 4.2rem;
+      color: #fff;
+      cursor: pointer
+    }
+  }
+  .header #dropdown-menu-5477 {
+    left: -40px;
+    top: 25px;
+  }
+  .header #dropdown-menu-6877 {
+    left: -40px;
+    top: 25px;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .active .underlined {
+    width: 70.2%;
+    opacity: 1;
+  }
+  .nav-item:hover .underlined {
+    width: 70.2%;
+    opacity: 1;
+  }
+  .underlined {
     position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    float: left;
-    min-width: 10rem;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
-  }
-  .nav__menu--items {
-    text-align: center;
-    font-weight: bolder;
-  }
-  .pc {
-
+    border-radius: 5px;
+    background: #FF9800;
+    width: 0%;
+    height: 2px;
+    margin-top: 2px;
+    opacity: 0;
+    bottom: -0.5rem;
+    transition: width 0.3s, opacity 0.3s;
   }
 
-  @media (max-width: 768px) {
-    .pc {
-      display: none;
-    }
+  /*.dasbtn {*/
+  /*  background: linear-gradient(180deg, #B62283 0%, #722283 100%) !important;*/
+  /*}*/
+  .el-dropdown {
+    margin-right: 10px;
   }
-  /* 小屏幕（平板，大于等于 768px） */
-  @media (min-width: 768px) {
-    .mobile {
-      display: none;
-    }
-  }
-  .OlineNum{
-    text-align: center;
-    margin-left: 10px;
-    border-radius:10px;
-    border:1px solid rgb(102, 34, 130);
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 5px;
-  }
+
 </style>

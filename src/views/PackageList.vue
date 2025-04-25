@@ -67,16 +67,19 @@
                 </div>
                 <div class="right-actions">
                   <div class="bonus">
-                    <div class="label">{{$t('product[10]')}}</div>
-                    <ul class="plan-referral justify-content-center mb-2">
+                    <div class="label" style="text-align: center;">{{$t('product[10]')}}</div>
+                    <div style="display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" v-if="item.amount !=10">
                       <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                        <span>{{aa}} %</span>
-                        <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
+                        <div class="ddcc" v-if="aa==3">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/333.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
+                        <div class="ddcc" v-if="aa==1.5">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/151515.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
                       </div>
-                    </ul>
+                    </div>
+                    <div v-else style="align-items:center;display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" >
+                      {{$t('noreward[0]')}}
+                    </div>
                   </div>
                   <div class="buy-btn disabled-btn" v-if="item.progress>=100">{{$t('product[13]')}}</div>
-                  <div class="buy-btn " v-else @click="$router.push(`/productDetail?id=${item.id}`)">{{$t('product[12]')}}</div>
+                  <div class="buy-btn " v-else @click="$router.push(`/productDetail?id=${item.id}`)">{{$t('invest[0]')}}</div>
                 </div>
               </div>
 
@@ -162,7 +165,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: #662282
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -202,7 +205,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: #662282!important
   }
 
   .el-dropdown-menu__item {
@@ -212,7 +215,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: #662282!important;
     background-color: #fff9f0!important
   }
 
@@ -220,13 +223,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: #662282!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: #662282!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -252,12 +255,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: #662282;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: #662282
   }
 
   .lang-item {
@@ -349,12 +352,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: #662282
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: #662282!important;
+    border-color: #662282!important
   }
 
   .el-checkbox__label {
@@ -367,7 +370,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: #662282!important
   }
 
   @media only screen and (min-width: 1024px) {

@@ -1,51 +1,55 @@
 <template>
   <div class="HomePage" id="app">
-    <Header></Header>
-    <div class="container">
-      <div class="el-row">
-        <div class="el-col el-col-5">
-          <UserHeader></UserHeader>
+    <UserHeader></UserHeader>
+    <div class="app-wrapper" style="width: calc(100% - 25rem);">
+      <div class="page-header">
+        <div class="page-title">{{$t('lucky[3]')}}</div>
+        <div class="el-dropdown">
+          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
+            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
+          </ul>
         </div>
-        <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-          <div class="container">
-            <div class="table-responsive--md">
-              <div class="t-table">
-                <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
-                <div class="tr" v-for="(item,index) in listData" :key="index">
-                  <div class="td">{{item.add_time}}</div>
-                  <div class="td">
-                    {{item.result_described}}
-                  </div>
-                </div>
-              </div>
+      </div>
+      <div class="container">
+        <div class="t-table">
+<!--          <div class="tr">-->
+<!--            <div class="th">{{$t('messageInfo[3]')}}</div>-->
+<!--            <div class="th">{{$t('messageInfo[4]')}}</div>-->
+<!--            <div class="th">{{$t('messageInfo[5]')}}</div>-->
+<!--          </div>-->
+          <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
+          <div class="tr" v-for="(item,index) in listData" :key="index">
+            <div class="td">{{item.add_time}}</div>
+            <div class="td">
+              {{item.result_described}}
             </div>
-            <div class="pagination-box">
-              <div class="pagination-pc el-pagination is-background">
-                <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev">
-                  <i class="fa fa-angle-left"></i>
-                </button>
-                <ul class="el-pager">
-                  <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-                </ul>
-                <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next">
-                  <i class="fa fa-angle-right"></i></button>
-              </div>
-              <div class="pagination-h5 el-pagination is-background">
-                <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev">
-                  <i class="fa fa-angle-left"></i>
-                </button>
-                <ul class="el-pager">
-                  <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-                </ul>
-                <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next">
-                  <i class="fa fa-angle-right"></i></button>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div class="pagination-box">
+          <div class="pagination-pc el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
+          <div class="pagination-h5 el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
           </div>
         </div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
@@ -206,7 +210,7 @@ export default {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background-color: #fbc241
+  background-color: #662282
 }
 
 .slide-enter-active,.slide-leave-active {
@@ -246,7 +250,7 @@ input[type=number] {
 }
 
 .el-carousel__indicators--outside button {
-  background-color: #1ab5ff!important
+  background-color: #662282!important
 }
 
 .el-dropdown-menu__item {
@@ -256,7 +260,7 @@ input[type=number] {
 }
 
 .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-  color: #1ab5ff!important;
+  color: #662282!important;
   background-color: #fff9f0!important
 }
 
@@ -264,13 +268,13 @@ input[type=number] {
   font-family: myFont
 }
 
-.el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color: #1ab5ff!important
-}
+/*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+/*  background-color: #662282!important*/
+/*}*/
 
-.el-pagination.is-background .el-pager li:not(.active):hover {
-  color: #1ab5ff!important
-}
+/*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+/*  color: #662282!important*/
+/*}*/
 
 .el-message {
   font-size: 1.6rem
@@ -296,12 +300,12 @@ input[type=number] {
 }
 
 .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-  color: #1ab5ff;
+  color: #662282;
   background-color: #fff9f0!important
 }
 
 .el-menu-item:hover i,.el-submenu__title:hover i {
-  color: #1ab5ff
+  color: #662282
 }
 
 .lang-item {
@@ -386,12 +390,12 @@ input[type=number] {
 }
 
 .el-select-dropdown__item.selected {
-  color: #fbc241
+  color: #662282
 }
 
 .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color: #fbc241!important;
-  border-color: #fbc241!important
+  background-color: #662282!important;
+  border-color: #662282!important
 }
 
 .el-checkbox__label {
@@ -404,7 +408,7 @@ input[type=number] {
 }
 
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color: #fbc241!important
+  border-color: #662282!important
 }
 
 @media only screen and (min-width: 1024px) {
@@ -417,12 +421,13 @@ input[type=number] {
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
+    background-color: #fff
   }
 
   .container .t-table .tr:first-child {
     border-bottom: none!important;
     border-radius: 4px 4px 0 0;
-    background-image: linear-gradient(to right, #36e4f5 0%, rgba(42, 234, 227, 0.47) 51%, #09f5c5 100%);
+    background-color: #662282
   }
 
   .container .t-table .tr:last-child {
@@ -446,7 +451,7 @@ input[type=number] {
     box-sizing: border-box;
     padding: 1rem 2rem;
     font-size: 1.4rem;
-    color: #fff;
+    color: #000;
     text-align: center
   }
 
@@ -490,13 +495,13 @@ input[type=number] {
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
+    background-color: #fff
   }
 
   .container .t-table .tr:first-child {
     border-bottom: none!important;
     border-radius: 4px 4px 0 0;
-    background-image: linear-gradient(to right, #36e4f5 0%, rgba(42, 234, 227, 0.47) 51%, #09f5c5 100%);
-    color: #ffffff;
+    background-color: #662282
   }
 
   .container .t-table .tr:last-child {
@@ -520,7 +525,7 @@ input[type=number] {
     box-sizing: border-box;
     padding: .5rem;
     font-size: 1.2rem;
-    color: #fff;
+    color: #000;
     text-align: center
   }
 
@@ -539,6 +544,7 @@ input[type=number] {
     color: #444;
     text-align: center;
     white-space: nowrap;
+    background-color: #fff
   }
 
   .container .pagination-box {

@@ -1368,6 +1368,51 @@ const model = {
     axios.post("UserMessage/makeMessage", json).then(getData)
 
   },
+  googleQrcode(json, callback) {
+    $Dialog.Loading(i18n.t('dialog[2]'));
+    const getData = ({
+
+                       data
+
+                     }) => {
+
+      callback && callback(data);
+      $Dialog.Toast(data.code_dec);
+    };
+
+    axios.post("user/googleQrcode", json).then(getData)
+
+  },
+  googleBind(json, callback) {
+    $Dialog.Loading(i18n.t('dialog[2]'));
+    const getData = ({
+
+                       data
+
+                     }) => {
+
+      callback && callback(data);
+      $Dialog.Toast(data.code_dec);
+    };
+
+    axios.post("user/googleBind", json).then(getData)
+
+  },
+  googleUnbind(json, callback) {
+    $Dialog.Loading(i18n.t('dialog[2]'));
+    const getData = ({
+
+                       data
+
+                     }) => {
+
+      callback && callback(data);
+      $Dialog.Toast(data.code_dec);
+    };
+
+    axios.post("user/googleUnbind", json).then(getData)
+
+  },
   merged(symbol, callback) {
     const getResponse = ({
                            data
@@ -1378,13 +1423,23 @@ const model = {
       diyApi: true
     }).then(getResponse);
   },
-  getCode1(data, callback) {
+
+  MYCOUPON(json, callback) {
     const getResponse = ({
                            data
                          }) => {
       callback && callback(data);
     }
-    axios.get('Account/code1?code_rand='+data, {}).then(getResponse);
+    axios.post('coupon/my_coupon',json).then(getResponse);
+
+  },
+  getCode1(code, callback) {
+    const getResponse = ({
+                           data
+                         }) => {
+      callback && callback(data);
+    }
+    axios.get('Account/code1?code_rand='+code, {}).then(getResponse);
   },
 }
 

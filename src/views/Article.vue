@@ -5,7 +5,7 @@
       <div class="container">
         <div class="box">
           <div class="title">{{showInfo.title}}</div>
-          <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
+          <div class="content imgWW" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem;overflow: hidden"></div>
         </div>
       </div>
     </div>
@@ -58,15 +58,21 @@ export default {
     if(this.articleType=='terms'){
       this.getListData(12);
     }
+    if(this.articleType=='hash'){
+      this.getListData(13);
+    }
     if(this.articleType=='cryptocurrency'){
       this.getListData(18);
     }
     if(this.articleType=='web3'){
+      this.getListData(19);
+    }
+    if(this.articleType=='service'){
       this.getListData(20);
     }
-    // if(this.articleType=='hash'){
-    //   this.getListData(13);
-    // }
+    if(this.articleType=='cookie'){
+      this.getListData(21);
+    }
   },
   mounted() {
 
@@ -112,7 +118,7 @@ export default {
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: #662282
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -152,7 +158,7 @@ export default {
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: #662282!important
   }
 
   .el-dropdown-menu__item {
@@ -162,7 +168,7 @@ export default {
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: #662282!important;
     background-color: #fff9f0!important
   }
 
@@ -170,13 +176,13 @@ export default {
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: #662282!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: #662282!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -202,12 +208,12 @@ export default {
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: #662282;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: #662282
   }
 
   .lang-item {
@@ -292,12 +298,12 @@ export default {
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: #662282
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: #662282!important;
+    border-color: #662282!important
   }
 
   .el-checkbox__label {
@@ -310,14 +316,13 @@ export default {
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: #662282!important
   }
 
   @media only screen and (min-width: 1024px) {
     .container {
-      width:100%;
       box-sizing: border-box;
-      padding: 5rem 3rem
+      padding: 8rem 3rem
     }
 
     .container .box {
@@ -329,7 +334,7 @@ export default {
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 5rem;
+      margin-bottom: 10rem;
       font-size: 3rem;
       font-weight: 700;
       color: #000;
@@ -337,6 +342,17 @@ export default {
       word-wrap: break-word
     }
 
+    .container .box .title:after {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 16rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg,#fe9500,#fade88)
+    }
 
     .container .box .content {
       width: 100%
@@ -345,7 +361,6 @@ export default {
 
   @media only screen and (max-width: 1024px) {
     .container {
-      width:100%;
       box-sizing: border-box;
       padding: 3rem 1rem
     }
@@ -357,7 +372,7 @@ export default {
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 2.5rem;
+      margin-bottom: 4.5rem;
       font-size: 2.2rem;
       font-weight: 700;
       color: #000;
@@ -365,16 +380,70 @@ export default {
       word-wrap: break-word
     }
 
+    .container .box .title:after {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 10rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg,#fe9500,#fade88)
+    }
+
     .container .box .content {
       width: 100%
     }
+
+    .imgWW img {
+      width: 100% !important;
+    }
+    .imgWW>>>img {
+      width: 100% !important;
+    }
+    .imgWW>>>p>>>img {
+      width: 100% !important;
+    }
+    .imgWW p img {
+      width: 100% !important;
+    }
+    .imgWW p span img {
+      width: 100% !important;
+    }
+    .imgWW >>>p >>>span>>> img {
+      width: 100% !important;
+    }
+
   }
-  .content img,.content video {
+  .imgWW img {
     width: 100% !important;
-    height: auto !important;
   }
-  .content >>>img,.content>>>video {
+  .imgWW>>>img {
     width: 100% !important;
-    height: auto !important;
   }
+  .imgWW>>>p>>>img {
+    width: 100% !important;
+  }
+  .imgWW p img {
+    width: 100% !important;
+  }
+  .imgWW p span img {
+    width: 100% !important;
+  }
+  .imgWW >>>p >>>span>>> img {
+    width: 100% !important;
+  }
+  /*.content video {*/
+  /*  width: 100%;*/
+  /*  max-width: 960px;*/
+  /*  display: block;*/
+  /*  margin: 0 auto;*/
+  /*}*/
+  /*.content >>> video {*/
+  /*  width: 100%;*/
+  /*  max-width: 960px;*/
+  /*  display: block;*/
+  /*  margin: 0 auto;*/
+  /*}*/
 </style>
