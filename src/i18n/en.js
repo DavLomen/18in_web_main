@@ -446,7 +446,7 @@ export default {
   "product":[
     "Contract Price",
     "Enter amount",
-    "Invest Period",
+    "Contract Period",
     "Daily Net Profit",
     "Total Net Profit",
     "Fixed Income",
