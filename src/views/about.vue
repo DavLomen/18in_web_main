@@ -73,88 +73,106 @@
         </div>
       </section>
     </div>
-
-    <div class="advertise-section bg-color pt-110 pb-110">
-      <div class="container">
-        <div class="row align-items-center justify-content-xl-between justify-content-center gy-5">
-          <div class="col-xl-6 pe-xl-5">
-            <div class="introduction-wrapper">
-              <div class="section-title style-two text-start">
-                <h2 class="mb-lg-5 mb-4">{{$t('about1[9]')}}</h2>
-                <h4>{{$t('about1[10]')}}</h4>
-                <ul>
-                  <li>{{$t('about1[11]')}}</li>
-                  <li>{{$t('about1[12]')}}</li>
-                  <li>{{$t('about1[13]')}}</li>
-                  <li>{{$t('about1[14]')}}</li>
-                  <li>{{$t('about1[15]')}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-9 col-10">
-            <div class="advertise-slider-wrap">
-<!--              <swiper-->
-<!--                      :options="swiperOption" ref="mySwiper"-->
-<!--                      class="swiper advertise-slider swiper-cards swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress">-->
-<!--                <swiper-slide>-->
-                  <img :src="'./static/images/advertise-1.png?t=2'" alt="image">
-<!--                </swiper-slide>-->
-<!--                <swiper-slide>-->
-<!--                  <img :src="'./static/images/advertise-2.webp'" alt="image">-->
-<!--                </swiper-slide>-->
-<!--                <swiper-slide>-->
-<!--                  <img :src="'./static/images/advertise-3.webp'" alt="image">-->
-<!--                </swiper-slide>-->
-<!--                <swiper-slide>-->
-<!--                  <img :src="'./static/images/advertise-4.webp'" alt="image">-->
-<!--                </swiper-slide>-->
-
-<!--              </swiper>-->
-
-            </div>
-          </div>
+    <div class="el-row about_adv mx-auto">
+      <div class="adv_left el-col-md-12 el-col-xs-24 el-col-sm-24">
+        <div class="title">
+          <h1 style="color:#FFA62F">{{ $t("about_us_adv.title") }}</h1>
+          <p class="mt-3" style="color:#464646">{{ $t("about_us_adv.text") }}</p>
         </div>
+        <ul v-for="i in $t('about_us_adv.tipList')" :key="i">
+          <li class="d-flex align-items-center">
+            <van-icon name="checked" size="25px" color="#16C47F"/>
+            <div style="margin: 0 0 0 10px">{{ i }}</div>
+          </li>
+        </ul>
+      </div>
+      <div class="adv_right el-col-md-12">
+        <img class="adv_img adv_img_1" :src="'./static/images/adv_bg_1.jpg'" alt="">
+        <img class="adv_img adv_img_2" :src="'./static/images/adv_bg_3.jpg'" alt="">
       </div>
     </div>
-
     <div class="max960">
-      <div style="display:flex;justify-content: space-between">
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[8]')}}</div>
-          <div> <img :src="'./static/images/about1.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+      <div class="el-row">
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/Data Center Locations.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[0].title')}}</div>
+            </div>
+          </div>
         </div>
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[9]')}}</div>
-          <div> <img :src="'./static/images/about2.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/Power Systems.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[1].title')}}</div>
+            </div>
+          </div>
         </div>
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[10]')}}</div>
-          <div> <img :src="'./static/images/about3.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/Cooling System.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[2].title')}}</div>
+            </div>
+          </div>
         </div>
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[11]')}}</div>
-          <div> <img :src="'./static/images/about4.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/SecurityFire Protection.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[3].title')}}</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div style="display:flex;justify-content: space-between;margin-top: 10px;">
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[12]')}}</div>
-          <div> <img :src="'./static/images/about5.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/Data Center Hardware.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[4].title')}}</div>
+            </div>
+          </div>
         </div>
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[13]')}}</div>
-          <div> <img :src="'./static/images/about6.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/Our Team.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[5].title')}}</div>
+            </div>
+          </div>
         </div>
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[14]')}}</div>
-          <div> <img :src="'./static/images/about7.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/Wind Energy Cycle.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[6].title')}}</div>
+            </div>
+          </div>
         </div>
-        <div style="width: 24%">
-          <div style="width: 100%;font-size: 1.3rem;color: #000;text-align: center;padding: 10px;">{{$t('about[15]')}}</div>
-          <div> <img :src="'./static/images/about8.jpg?t=1'" alt="image" style="width: 100%;height: 13rem;object-fit: cover;display: block;"></div>
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+          <div class="ab_card mx-auto">
+            <div class="image mx-auto">
+              <img :src="`./static/images/about_us_bis/Solar Energy Cycle.jpg`" alt="">
+            </div>
+            <div class="content mt-1">
+              <div class="label text-center">{{$t('about_us_bis[7].title')}}</div>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
 
@@ -4617,6 +4635,58 @@
   }
   ol, ul {
     padding-left: 0px !important;
+  }
+  .ab_card{
+    width: 90%;
+    border-radius: 4px;
+    background: red;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: #0a0a38;
+    color:#fff;
+  }
+  .ab_card .image{
+    width: 100%;
+    height: 150px;
+    background: #fff;
+  }
+  .ab_card .image img{
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .about_adv{
+    width: 90%;
+    padding: 50px 10px 10px 10px;
+    margin-bottom: 100px;
+  }
+  .about_adv .adv_right{
+    padding-top: 100px;
+  }
+  .about_adv .adv_right .adv_img{
+    position: relative;
+    object-fit: cover;
+    width: 50%;
+  }
+
+  .about_adv .adv_right .adv_img_1{
+    left: 15%;
+    z-index: 2; 
+  }
+  .about_adv .adv_right .adv_img_2{
+    left: 35%;
+    bottom: 50px;
+    z-index: 3;
+  }
+
+  @media (max-width: 992px) {
+    .about_adv .adv_right{
+      display: none;
+    }
+    .about_adv{
+      margin: 0;
+    }
   }
 </style>
 

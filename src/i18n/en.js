@@ -900,5 +900,52 @@ export default {
   ],
   "complete":"completed",
   "cancel": "Cancel",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  // 新-about.vue页面业务特色卡片模块
+  "about_us_adv": {
+    "title": "Next-Gen Mining: Smarter, Faster, More Profitable",
+    "text": "Harness cutting-edge technology and robust infrastructure to make mining effortless, efficient, and profitable.",
+    "tipList":[
+      "Enterprise-Grade Security – Multi-layered protection to ensure asset and data safety.",
+      "24/7 Uptime Guarantee – Our data centers ensure uninterrupted mining operations.",
+      "Energy-Efficient Infrastructure – Optimized power usage for sustainable mining.",
+      "Seamless User Experience – Intuitive platform with easy miner deployment.",
+      "Automated Profit Optimization – Smart algorithms to maximize mining efficiency.",
+      "Global Accessibility – Mine from anywhere with cloud-based solutions."
+    ]
+  },
+  "about_us_bis":[
+    {
+      "title": "Data Center Locations",
+      "content": ""
+    },
+    {
+      "title": "Power Systems",
+      "content": ""
+    },
+    {
+      "title": "Cooling System",
+      "content": ""
+    },
+    {
+      "title": "SecurityFire Protection",
+      "content": ""
+    },
+    {
+      "title": "Data Center Hardware",
+      "content": ""
+    },
+    {
+      "title": "Our Team",
+      "content": ""
+    },
+    {
+      "title": "Wind Energy Cycle",
+      "content": ""
+    },
+    {
+      "title": "Solar Energy Cycle",
+      "content": ""
+    },
+  ]
 }
