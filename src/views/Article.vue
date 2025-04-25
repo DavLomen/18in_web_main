@@ -1,14 +1,23 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <div class="app-wrapper">
-      <div class="container">
-        <div class="box">
-          <div class="title">{{showInfo.title}}</div>
-          <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
+
+    <div class="container mt-lg-7" style="font-size: 1rem;">
+      <div class="row mt-lg-7">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-center" style="color: #000000;">{{showInfo.title}}</h1>
         </div>
       </div>
+      <div style="color: #000000" class="col-lg-10 mx-auto mt-lg-5" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')">
+
+      </div>
     </div>
+
+<!--    <div class="section-head text-center"><h2 class="mb-3 mt-5">{{showInfo.title}}</h2>&lt;!&ndash;&ndash;&gt;</div>-->
+<!--    <section class="section pb-5" style="margin:0 10px;" >-->
+<!--      <div class="container" style="border-radius:10px;" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')">-->
+<!--      </div>-->
+<!--    </section>-->
     <Footer></Footer>
   </div>
 </template>
@@ -58,14 +67,23 @@ export default {
     if(this.articleType=='terms'){
       this.getListData(12);
     }
+    if(this.articleType=='hash'){
+      this.getListData(13);
+    }
     if(this.articleType=='cryptocurrency'){
       this.getListData(18);
     }
     if(this.articleType=='web3'){
       this.getListData(20);
     }
-    // if(this.articleType=='hash'){
-    //   this.getListData(13);
+    // if(this.articleType=='company'){
+    //   this.getListData(18);
+    // }
+    // if(this.articleType=='service'){
+    //   this.getListData(20);
+    // }
+    // if(this.articleType=='cookie'){
+    //   this.getListData(21);
     // }
   },
   mounted() {
@@ -89,292 +107,13 @@ export default {
 }
 </script>
 <style scoped>
-  @media only screen and (min-width: 1024px) {
-    html {
-      font-size:10px
-    }
+  .container {
+    color: #fff;
   }
-
-  @media only screen and (max-width: 1024px) {
-    html {
-      font-size:10px
-    }
-  }
-
-  ::-webkit-scrollbar {
-    width: 4px;
-    height: 5px
-  }
-
-  ::-webkit-scrollbar-corner,::-webkit-scrollbar-track {
-    background-color: #e2e2e2
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 0;
-    background-color: #fbc241
-  }
-
-  .slide-enter-active,.slide-leave-active {
-    transition: all .2s ease
-  }
-
-  .slide-enter,.slide-leave-to {
-    transform: translateY(10px);
-    opacity: 0
-  }
-
-  .slide-right-enter-active,.slide-right-leave-active {
-    transition: all .2s ease
-  }
-
-  .slide-right-enter,.slide-right-leave-to {
-    transform: translateX(-10px);
-    opacity: 0
-  }
-
-  @keyframes tobig-5c8759ee {
-    0% {
-      transform: scale(1)
-    }
-
-    to {
-      transform: scale(1.5)
-    }
-  }
-
-  input::-webkit-inner-spin-button,input::-webkit-outer-spin-button {
-    -webkit-appearance: none!important
-  }
-
-  input[type=number] {
-    -moz-appearance: textfield
-  }
-
-  .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
-  }
-
-  .el-dropdown-menu__item {
-    font-size: 1.5rem;
-    color: #000;
-    font-family: myFont
-  }
-
-  .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
-    background-color: #fff9f0!important
-  }
-
-  .el-pager li {
-    font-family: myFont
-  }
-
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
-
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
-
-  .el-message {
-    font-size: 1.6rem
-  }
-
-  .el-menu-item {
-    padding: 0 2rem;
-    font-size: 1.5rem;
-    font-weight: 700
-  }
-
-  .el-submenu__title {
-    font-size: 1.5rem!important;
-    font-weight: 700
-  }
-
-  .el-menu-item [class^=el-icon-],.el-submenu [class^=el-icon-] {
-    font-size: 2rem
-  }
-
-  .el-submenu__icon-arrow {
-    font-size: 1.4rem!important
-  }
-
-  .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
-    background-color: #fff9f0!important
-  }
-
-  .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
-  }
-
-  .lang-item {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    white-space: nowrap
-  }
-
-  .lang-item .flag {
-    min-width: 2.5rem;
-    max-width: 2.5rem;
-    height: 2.5rem;
-    margin-right: .6rem
-  }
-
-  .option-label {
-    display: flex;
-    align-items: center;
-    width: 100%
-  }
-
-  .option-label .icon {
-    min-width: 2.5rem;
-    max-width: 2.5rem;
-    height: 2.5rem;
-    margin-right: .6rem
-  }
-
-  .el-input {
-    font-size: 1.5rem!important
-  }
-
-  .el-input .el-input__inner {
-    height: 4.5rem;
-    line-height: 4.5rem;
-    padding: 0 2rem;
-    font-family: myFont;
-    color: #000;
-    border: 1px solid #d9d9d9!important
-  }
-
-  .el-textarea__inner {
-    font-size: 1.5rem!important;
-    font-family: myFont;
-    color: #000!important
-  }
-
-  .el-form-item__label {
-    padding-bottom: 1rem!important;
-    line-height: normal!important;
-    font-size: 1.5rem!important;
-    color: #000!important;
-    word-wrap: break-word
-  }
-
-  .el-input.is-disabled .el-input__inner {
-    color: #000!important;
-    cursor: default!important
-  }
-
-  .el-radio {
-    color: #000!important
-  }
-
-  .el-radio__label {
-    font-size: 1.5rem!important
-  }
-
-  .el-select {
-    width: 100%
-  }
-
-  .el-select-dropdown__item {
-    font-size: 1.5rem;
-    font-family: myFont
-  }
-
-  .el-select-dropdown__empty {
-    font-size: 1.5rem!important;
-    font-family: myFont
-  }
-
-  .el-select-dropdown__item.selected {
-    color: #fbc241
-  }
-
-  .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
-  }
-
-  .el-checkbox__label {
-    font-size: 1.5rem!important;
-    color: #000
-  }
-
-  .el-checkbox__input.is-checked+.el-checkbox__label {
-    color: #000!important
-  }
-
-  .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
-  }
-
-  @media only screen and (min-width: 1024px) {
-    .container {
-      width:100%;
-      box-sizing: border-box;
-      padding: 5rem 3rem
-    }
-
-    .container .box {
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto
-    }
-
-    .container .box .title {
-      position: relative;
-      width: 100%;
-      margin-bottom: 5rem;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      word-wrap: break-word
-    }
-
-
-    .container .box .content {
-      width: 100%
-    }
-  }
-
-  @media only screen and (max-width: 1024px) {
-    .container {
-      width:100%;
-      box-sizing: border-box;
-      padding: 3rem 1rem
-    }
-
-    .container .box {
-      width: 100%
-    }
-
-    .container .box .title {
-      position: relative;
-      width: 100%;
-      margin-bottom: 2.5rem;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      word-wrap: break-word
-    }
-
-    .container .box .content {
-      width: 100%
-    }
-  }
-  .content img,.content video {
-    width: 100% !important;
-    height: auto !important;
-  }
-  .content >>>img,.content>>>video {
-    width: 100% !important;
-    height: auto !important;
+.container img{
+  width: 100%;
+}
+  .colorwhite,.colorwhite >>>p,.colorwhite >>>span{
+    color: #fff !important;
   }
 </style>
