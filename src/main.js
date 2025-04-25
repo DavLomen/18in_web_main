@@ -1,4 +1,4 @@
-// import 'jquery'
+import 'jquery'
 import Vue from 'vue'
 
 import App from '@/App.vue'
@@ -11,16 +11,10 @@ import Model from '@/common/Model'
 import Dialog from '@/common/Dialog'
 import Util from '@/common/Util'
 import i18n,{SetLanguage} from './i18n'
-import '@/assets/css/style.css'
 import 'vant/lib/index.css'
-import '@/assets/css/bootstrap.min.css'
+import '@/assets/css/style.css'
 import '@/assets/css/font-awesome.css'
 import '@/assets/css/line-awesome.css'
-import '@/assets/css/slick.css'
-import '@/assets/css/custom.css'
-// import '@/assets/css/color.css'
-import '@/assets/css/default.css'
-import '@/assets/css/media.css'
 import "babel-polyfill";
 
 // import ElementUI from 'element-ui';
@@ -29,12 +23,11 @@ import "babel-polyfill";
 /*APP*/
 import Toasted from 'vue-toasted';
 
-// import particles from 'particles.js'
-// Vue.use(particles)
 
 Vue.use(Vant)
 Vue.use(Toasted)
-
+import Paginate from 'vuejs-paginate'
+Vue.component('paginate', Paginate)
 Vue.prototype.$SetLanguage = SetLanguage
 
 Vue.prototype.$ImagePreview = ImagePreview
@@ -70,6 +63,9 @@ Vue.component('Header', Header)
 //Model.GetLanguage()
 
 Model.GetBackData()
+Model.HasNewMessage(data=>{
+  localStorage.setItem("noReadNum",data.data);
+})
 
 router.beforeEach((to, from, next) => {
 

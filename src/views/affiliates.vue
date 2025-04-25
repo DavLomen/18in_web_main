@@ -1,171 +1,112 @@
 <template>
   <div class="HomePage" id="app">
-    <Header></Header>
-    <div class="container">
-      <div class="el-row">
-        <div class="el-col el-col-5">
-          <UserHeader></UserHeader>
+    <UserHeader></UserHeader>
+    <div class="app-wrapper" style="width: calc(100% - 25rem);">
+      <div class="page-header">
+        <div class="page-title">{{$t('affiliates[0]')}}</div>
+        <div class="el-dropdown">
+          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
+            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
+          </ul>
         </div>
-        <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-          <div>
-            <div >
-              <div class="el-row" style="position: relative; margin-top: 50px;">
-                <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary"
-                        style="background: rgb(255, 243, 214); color: black; font-weight: 500;"><!----><i
-                  class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
+      </div>
+      <div class="container">
+        <div class="box">
+          <div class="box-item">
+            <div class="title">{{$t('affiliates[1]')}}</div>
+            <div class="user-info">
+              <div class="info-item1">
+                {{$t('affiliates[2]')}}: <span class="value">{{UserInfo.email}}</span>
               </div>
-            </div>
-            <section style="margin-top: 20px;">
-              <div class="container" style="background-color: whitesmoke; padding: 20px; border-radius: 10px;"><h3>
-                {{$t('affiliates[1]')}}</h3>
-                <p style="font-size: 18px;">{{$t('affliliate[7]')}}</p></div>
-            </section>
-            <div  class="row mb-5">
-              <div  class="col-md-9 mt-4">
-                <div
-                     style="width: 100%; background-color: rgb(56, 66, 71); padding: 30px 0px; border-radius: 1.25rem;">
-                  <div  style="width: 90%; margin: 0px auto;"><span
-                                                                                      style="color: rgb(232, 232, 255); font-weight: bold; font-size: 24px;"> {{$t('affiliates[5]')}}</span>
+              <div class="info-item1">
+                {{$t('affiliates[3]')}}: <span class="value">{{UserInfo.username}}</span>
+              </div>
+              <div class="info-item1">
+                {{$t('affiliates[4]')}}: <span class="value">{{UserInfo.idcode}}</span>
+              </div>
+              <div class="info-item2">
+                <div class="label">{{$t('affiliates[5]')}}</div>
+                <div class="input-group">
+                  <div class="input el-input is-disabled">
+                    <input
+                      v-model="promoteUrl"
+                    type="text"
+                    disabled="disabled"
+                    autocomplete="off"
+                    placeholder=""
+                    class="el-input__inner"
+                  />
                   </div>
-                  <div
-                       style="width: 90%; background-color: rgb(232, 232, 255); margin: 20px auto 0px; border-radius: 25px; padding: 10px 15px; display: flex; flex-flow: row; justify-content: space-between; box-shadow: white 0px 0px 3px;">
-                    <span  class="notranslate"
-                          style="color: rgb(10, 10, 26); line-height: 37px; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-all;">{{promoteUrl}}</span>
-                    <button size="sm" class="window copy"
-                            style="font-size: 18px; width: 100px; border-radius: 30px; background-color: rgb(246, 197, 197); color: black; border: none; padding: 5px 0px;" @click="copy" :data-clipboard-text="promoteUrl">
-                      {{$t('affiliates[16]')}}
-                    </button>
-                  </div>
-                  <div  class="phone" style="text-align: center; margin-top: 20px;">
-                    <button size="sm" @click="copy" :data-clipboard-text="promoteUrl" class="copy"
-                            style="font-size: 18px; width: 90%; border-radius: 30px; background-color: rgb(246, 197, 197); color: black; border: none; padding: 10px 0px;">
-                      {{$t('affiliates[16]')}}
-                    </button>
-                  </div>
+                  <div class="copy-btn copy" @click="copy" :data-clipboard-text="promoteUrl"><i class="el-icon-document-copy"></i></div>
                 </div>
               </div>
-              <div  class="col-md-3 mt-4">
-                <div  class="rank" style="text-align: center; border-radius: 1.25rem;" @click="showNotice = true"><h6
-                  >{{$t('affiliates[10]')}}</h6><h5 >{{teamNum}}</h5></div>
+              <div class="info-item1">
+                <i class="el-icon-coin" style="margin-right: 4px"></i>{{$t('affiliates[6]')}}
               </div>
-            </div>
-            <section class="section pt-3">
+              <div class="info-item3" v-html="$t('affiliates[7]')">
+
+              </div>
               <div
-                style="background-color: whitesmoke; padding: 10px 20px 20px; border-radius: 10px; margin-bottom: 20px;">
-                <div>
-                  <div><h4>{{$t('affiliates[17]')}}</h4></div>
-                  <div class="el-row">
-                    <div class="el-col el-col-10"><h6 class="text-primary">{{$t('affiliates[2]')}}</h6></div>
-                    <div class="el-col el-col-14"><span> {{UserInfo.email || UserInfo.username}} </span></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="el-row">
-                    <div class="el-col el-col-10"><h6 class="text-primary">{{$t('affiliates[4]')}}</h6></div>
-                    <div class="el-col el-col-14"><span> {{UserInfo.idcode}} </span></div>
-                  </div>
-                </div>
+                class="info-item1" @click="$router.push('/affiliate')"
+                style="color: #5a90ff; cursor: pointer"
+              >
+                {{$t('affiliates[8]')}}
               </div>
-              <div class="container mt-5">
-                <div class="el-row" style="margin-left: -10px; margin-right: -10px;">
-                  <div class="el-col el-col-22 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;"><h4>
-                    {{$t('affiliates[9]')}}</h4></div>
-                </div>
-                <div class="el-row" style="margin-left: -10px; margin-right: -10px;">
-                  <div class="el-col el-col-24 el-col-xs-24" style="padding-left: 10px; padding-right: 10px;">
-                    <div class="table-responsive bg-white shadow rounded mt-4">
-                      <table class="table mb-0 table-center">
-                        <thead class="bg-light">
-                        <tr>
-                          <th scope="col" class="text-center">{{$t('affiliates[11]')}}</th>
-                          <th scope="col" class="text-center">{{$t('affiliates[12]')}}</th>
-                          <th scope="col" class="text-center">{{$t('affiliates[13]')}}</th>
-                          <th scope="col" class="text-center">{{$t('affiliates[14]')}}</th>
-                          <th scope="col" class="text-center">{{$t('affiliates[15]')}}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                          <tr v-for="(item,index) in listData" :key="index">
-                            <td class="text-center small" style="font-size: 12px;">{{item.trade_time}}</td>
-                            <td class="text-center small" style="font-size: 12px;">{{item.from}}</td>
-                            <td class="text-center small" style="font-size: 12px;">{{item.vip_level}}</td>
-                            <td class="text-center small" style="font-size: 12px;">{{InitData.currency}} {{item.trade_amount}}</td>
-                            <td class="text-center small" style="font-size: 12px;">{{item.remarks}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-                <div class="mt-3 window">
-                  <div  style="display: flex; justify-content: center;">
-                    <ul  role="menubar" aria-disabled="false" aria-label="Pagination"
-                         class="pagination b-pagination pagination-lg">
-                      <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(1)">
-                        <span role="menuitem" aria-label="Go to first page"  aria-disabled="true" class="page-link">First</span>
-                      </li>
-                      <li role="presentation" aria-hidden="true" :class="'page-item '+(data_current_page==1?'disabled':'')" @click="perPage"><span role="menuitem"
-                                                                                                                                                   aria-label="Go to previous page"
-                                                                                                                                                   aria-disabled="true"
-                                                                                                                                                   class="page-link">Prev</span>
-                      </li>
-                      <li role="presentation" class="page-item active">
-                        <button role="menuitemradio" type="button" @click="changePage(data_current_page)" :class="'number active'" class="page-link">{{data_current_page}}
-                        </button>
-                      </li>
-                      <li role="presentation" aria-hidden="true" :class="'page-item '+(data_total_page==data_current_page?'disabled':'')" @click="nextPage"><span role="menuitem"
-                                                                                                                                                                  aria-label="Go to next page"
-                                                                                                                                                                  aria-disabled="true"
-                                                                                                                                                                  class="page-link">Next</span>
-                      </li>
-                      <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(data_total_page)"><span role="menuitem"
-                                                                                                                               aria-label="Go to last page"
-                                                                                                                               aria-disabled="true"
-                                                                                                                               class="page-link">Last</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="mt-3 phone" v-if="listData.length==0">
-                  <div class="d-grid gap-2">
-                    <button type="button"  class="btn btn btn-primary disabled btn-secondary btn-block">{{$t('vanPull[0]')}}</button>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-    </div>
-    <Footer></Footer>
-
-    <div id="approveModal" v-if="showNotice" class="modal custom--modal fade show" tabindex="-1" style="display: block; padding-left: 0px;" aria-modal="true" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{$t('affiliates[9]')}}</h5>
-            <button type="button" class="btn btn--danger text-white" data-bs-dismiss="modal" aria-label="Close" @click="showNotice = false">
-              <i class="las la-times"></i>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="payment-info" >
-                <div class="box-item">
-                  <div class="partner-list" style="min-height: 10rem;height:20rem;overflow-y: scroll;">
-                    <div class="list-item" v-for="(item,index) in reportData" :key="index">
-                      {{item.username}}
-                    </div>
-                  </div>
-                </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" @click="showNotice = false" data-bs-dismiss="modal">{{$t('deposit[28]')}}</button>
+          <div class="box-item">
+            <div class="title">{{$t('affiliates[9]')}}</div>
+            <div class="partner-list" style="height: 50rem;overflow-y: scroll;">
+              <div class="cur-title">{{$t('affiliates[10]')}}: <span class="num">{{teamNum}}</span></div>
+              <div class="list-item" v-for="(item,index) in reportData" :key="index">
+                {{item.username}}
+              </div>
+              <div class="pagination"></div>
+            </div>
+          </div>
+        </div>
+        <div class="c-table">
+          <div class="tr">
+            <div class="th">{{$t('affiliates[11]')}}</div>
+            <div class="th">{{$t('affiliates[12]')}}</div>
+            <div class="th">{{$t('affiliates[13]')}}</div>
+            <div class="th">{{$t('affiliates[14]')}}</div>
+            <div class="th">{{$t('affiliates[15]')}}</div>
+          </div>
+          <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
+          <div class="tr" v-for="(item,index) in listData" :key="index">
+            <div class="td">{{item.trade_time}}</div>
+            <div class="td">{{item.from}}</div>
+            <div class="td">{{item.vip_level}}</div>
+            <div class="td">{{InitData.currency}} {{item.trade_amount}}</div>
+            <div class="td">{{item.remarks}}</div>
+          </div>
+        </div>
+        <div class="pagination-box">
+          <div class="pagination-pc el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
+          <div class="pagination-h5 el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -178,7 +119,6 @@
     },
     data() {
       return {
-        showNotice:false,
         teamNum:0,
         showDetail:false,
         showH5nav:false,
@@ -305,201 +245,686 @@
   }
 </script>
 <style scoped>
-  .rank {
-    background: #384247;
-    height: 100%;
-    padding: 30px;
-    border-radius: 10px;
-    position: relative;
-    color: #fff;
-  }
   @media only screen and (min-width: 1024px) {
-    .mask {
-      position: fixed;
-      bottom: 0px;
-      left: 0px;
-      z-index: 99;
-      width: 100%;
-      height: 100vh;
-      box-sizing: border-box;
-      padding: 4rem 0px;
-      background-color: rgba(0, 0, 0, 0.3);
-      overflow: auto;
-    }
-
-    .mask .modal {
-      width: 80%;
-      margin: 0px auto;
-      border-radius: 4px;
-      background-color: rgb(255, 255, 255);
-    }
-
-    .mask .modal .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 2rem;
-      border-bottom: 1px solid rgb(233, 233, 233);
-    }
-
-    .mask .modal .modal-header .modal-title {
-      max-width: 100%;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: rgb(0, 0, 0);
-      overflow-wrap: break-word;
-    }
-
-    .mask .modal .modal-header .close {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 4rem;
-      max-width: 4rem;
-      height: 3.2rem;
-      margin-left: 4rem;
-      border-radius: 4px;
-      background-color: rgb(234, 84, 85);
-      cursor: pointer;
-    }
-
-    .mask .modal .modal-header .close i {
-      font-size: 1.7rem;
-      color: rgb(255, 255, 255);
-    }
-
-    .mask .modal .modal-body {
-      width: 100%;
-      min-height: 8rem;
-      box-sizing: border-box;
-      padding: 2rem;
-    }
-
-    .mask .modal .modal-footer {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 2rem;
-      border-top: 1px solid rgb(233, 233, 233);
-    }
-
-    .mask .modal .modal-footer .confirm-btn {
-      height: 3.5rem;
-      line-height: 3.5rem;
-      box-sizing: border-box;
-      padding: 0px 1.6rem;
-      border-radius: 4px;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: rgb(255, 255, 255);
-      text-align: center;
-      white-space: nowrap;
-      background-color: rgb(251, 194, 65);
-      cursor: pointer;
+    html {
+      font-size:10px
     }
   }
 
   @media only screen and (max-width: 1024px) {
-    .mask {
-      position: fixed;
-      bottom: 0px;
-      left: 0px;
-      z-index: 99;
-      width: 100%;
-      height: 100vh;
-      box-sizing: border-box;
-      padding: 2rem 1rem;
-      background-color: rgba(0, 0, 0, 0.3);
-      overflow: auto;
+    html {
+      font-size:10px
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 5px
+  }
+
+  ::-webkit-scrollbar-corner,::-webkit-scrollbar-track {
+    background-color: #e2e2e2
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: rgb(124 58 237)
+  }
+
+  .slide-enter-active,.slide-leave-active {
+    transition: all .2s ease
+  }
+
+  .slide-enter,.slide-leave-to {
+    transform: translateY(10px);
+    opacity: 0
+  }
+
+  .slide-right-enter-active,.slide-right-leave-active {
+    transition: all .2s ease
+  }
+
+  .slide-right-enter,.slide-right-leave-to {
+    transform: translateX(-10px);
+    opacity: 0
+  }
+
+  @keyframes tobig-63a9b81e {
+    0% {
+      transform: scale(1)
     }
 
-    .mask .modal {
-      width: 100%;
-      border-radius: 4px;
-      background-color: rgb(255, 255, 255);
+    to {
+      transform: scale(1.5)
     }
+  }
 
-    .mask .modal .modal-header {
+  input::-webkit-inner-spin-button,input::-webkit-outer-spin-button {
+    -webkit-appearance: none!important
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield
+  }
+
+  .el-carousel__indicators--outside button {
+    background-color: rgb(124 58 237) !important
+  }
+
+  .el-dropdown-menu__item {
+    font-size: 1.5rem;
+    color: #000;
+    font-family: myFont
+  }
+
+  .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
+    color: rgb(124 58 237) !important;
+    background-color: #fff9f0!important
+  }
+
+  .el-pager li {
+    font-family: myFont
+  }
+
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(124 58 237) !important*/
+  /*}*/
+
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(124 58 237) !important*/
+  /*}*/
+
+  .el-message {
+    font-size: 1.6rem
+  }
+
+  .el-menu-item {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    font-weight: 700
+  }
+
+  .el-submenu__title {
+    font-size: 1.5rem!important;
+    font-weight: 700
+  }
+
+  .el-menu-item [class^=el-icon-],.el-submenu [class^=el-icon-] {
+    font-size: 2rem
+  }
+
+  .el-submenu__icon-arrow {
+    font-size: 1.4rem!important
+  }
+
+  .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
+    color: rgb(124 58 237) ;
+    background-color: #fff9f0!important
+  }
+
+  .el-menu-item:hover i,.el-submenu__title:hover i {
+    color: rgb(124 58 237)
+  }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap
+  }
+
+  .lang-item .flag {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .6rem
+  }
+
+  .option-label {
+    display: flex;
+    align-items: center;
+    width: 100%
+  }
+
+  .option-label .icon {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .6rem
+  }
+
+  .el-input {
+    font-size: 1.5rem!important
+  }
+
+  .el-input .el-input__inner {
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
+    font-family: myFont;
+    color: #000;
+    border: 1px solid #d9d9d9!important
+  }
+
+  .el-textarea__inner {
+    font-size: 1.5rem!important;
+    font-family: myFont;
+    color: #000!important
+  }
+
+  .el-form-item__label {
+    padding-bottom: 1rem!important;
+    line-height: normal!important;
+    font-size: 1.5rem!important;
+    color: #000!important;
+    word-wrap: break-word
+  }
+
+  .el-input.is-disabled .el-input__inner {
+    color: #000!important;
+    cursor: default!important
+  }
+
+  .el-radio {
+    color: #000!important
+  }
+
+  .el-radio__label {
+    font-size: 1.5rem!important
+  }
+
+  .el-select {
+    width: 100%
+  }
+
+  .el-select-dropdown__item {
+    font-size: 1.5rem;
+    font-family: myFont
+  }
+
+  .el-select-dropdown__empty {
+    font-size: 1.5rem!important;
+    font-family: myFont
+  }
+
+  .el-select-dropdown__item.selected {
+    color: rgb(124 58 237)
+  }
+
+  .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: rgb(124 58 237) !important;
+    border-color: rgb(124 58 237) !important
+  }
+
+  .el-checkbox__label {
+    font-size: 1.5rem!important;
+    color: #000
+  }
+
+  .el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #000!important
+  }
+
+  .el-checkbox__input.is-focus .el-checkbox__inner {
+    border-color: rgb(124 58 237) !important
+  }
+
+  @media only screen and (min-width: 1024px) {
+
+    .container .box {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      width: 100%;
+      margin-bottom: 3rem
+    }
+
+    .container .box .box-item {
+      flex: 1;
+      border-radius: 4px;
+      background-color: #fff
+    }
+
+    .container .box .box-item:not(:last-child) {
+      margin-right: 2rem
+    }
+
+    .container .box .box-item .title {
       width: 100%;
       box-sizing: border-box;
-      padding: 1.5rem;
-      border-bottom: 1px solid rgb(233, 233, 233);
-    }
-
-    .mask .modal .modal-header .modal-title {
-      max-width: 100%;
-      font-size: 1.7rem;
+      padding: 1.5rem 2rem;
+      border-radius: 4px 4px 0 0;
+      font-size: 1.8rem;
       font-weight: 700;
-      color: rgb(0, 0, 0);
-      overflow-wrap: break-word;
+      color: #fff;
+      word-wrap: break-word;
+      background-color: rgb(124 58 237)
     }
 
-    .mask .modal .modal-header .close {
+    .container .box .box-item .user-info {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 4rem
+    }
+
+    .container .box .box-item .user-info .info-item1 {
+      width: 100%;
+      font-size: 1.4rem;
+      color: #666;
+      word-break: break-all
+    }
+
+    .container .box .box-item .user-info .info-item1:not(:last-child) {
+      margin-bottom: 1.5rem
+    }
+
+    .container .box .box-item .user-info .info-item1 .value {
+      margin-left: 6px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #000
+    }
+
+    .container .box .box-item .user-info .info-item2 {
+      width: 100%;
+      margin-bottom: 3rem
+    }
+
+    .container .box .box-item .user-info .info-item2 .label {
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #666;
+      word-wrap: break-word
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group {
+      display: flex;
+      align-items: center;
+      width: 100%
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .el-input.is-disabled .el-input__inner {
+      background-color: #efefef!important
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .input {
+      width: 100%
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .input .el-input__inner {
+      border-right: none!important;
+      border-radius: 4px 0 0 4px
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .copy-btn {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 3.6rem;
-      max-width: 3.6rem;
-      height: 2.8rem;
-      margin-left: 2rem;
-      border-radius: 4px;
-      background-color: rgb(234, 84, 85);
-      cursor: pointer;
+      height: 4.5rem;
+      box-sizing: border-box;
+      padding: 0 1.2rem;
+      border-radius: 0 4px 4px 0;
+      background-color: rgb(124 58 237) ;
+      cursor: pointer
     }
 
-    .mask .modal .modal-header .close i {
-      font-size: 1.7rem;
-      color: rgb(255, 255, 255);
+    .container .box .box-item .user-info .info-item2 .input-group .copy-btn i {
+      font-size: 1.8rem;
+      color: #fff;
+      white-space: nowrap
     }
 
-    .mask .modal .modal-body {
+    .container .box .box-item .user-info .info-item3 {
       width: 100%;
-      min-height: 8rem;
-      box-sizing: border-box;
-      padding: 1.5rem;
+      line-height: 160%;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      color: #444;
+      word-wrap: break-word
     }
 
-    .mask .modal .modal-footer {
-      display: flex;
-      justify-content: flex-end;
+    .container .box .box-item .partner-list {
       width: 100%;
       box-sizing: border-box;
-      padding: 1.5rem;
-      border-top: 1px solid rgb(233, 233, 233);
+      padding: 4rem
     }
 
-    .mask .modal .modal-footer .confirm-btn {
-      height: 3.5rem;
-      line-height: 3.5rem;
-      box-sizing: border-box;
-      padding: 0px 1.6rem;
-      border-radius: 4px;
-      font-size: 1.5rem;
+    .container .box .box-item .partner-list .cur-title {
+      width: 100%;
+      margin-bottom: 3rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      color: rgb(255, 255, 255);
+      color: #000;
+      word-break: break-all
+    }
+
+    .container .box .box-item .partner-list .cur-title .num {
+      margin-left: 6px;
+      font-size: 2rem;
+      color: rgb(124 58 237)
+    }
+
+    .container .box .box-item .partner-list .list-item {
+      width: 100%;
+      font-size: 1.4rem;
+      color: #000;
+      word-break: break-all
+    }
+
+    .container .box .box-item .partner-list .list-item:not(:last-child) {
+      margin-bottom: 1.5rem
+    }
+
+    .container .box .box-item .partner-list .pagination {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 1.5rem 0 0
+    }
+
+    .container .box .box-item .partner-list .pagination .pagination-h5 {
+      display: none
+    }
+
+    .container .c-table {
+      width: 100%
+    }
+
+    .container .c-table .tr {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff
+    }
+
+    .container .c-table .tr:first-child {
+      border-bottom: none!important;
+      border-radius: 4px 4px 0 0;
+      background-color: rgb(124 58 237)
+    }
+
+    .container .c-table .tr:last-child {
+      border-radius: 0 0 4px 4px
+    }
+
+    .container .c-table .tr:not(:last-child) {
+      border-bottom: 1px solid #e9e9e9
+    }
+
+    .container .c-table .tr .th {
+      word-wrap: break-word
+    }
+
+    .container .c-table .tr .td,.container .c-table .tr .th {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      box-sizing: border-box;
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      color: #000;
+      text-align: center
+    }
+
+    .container .c-table .tr .td {
+      word-break: break-all
+    }
+
+    .container .c-table .no-data {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 5rem;
+      box-sizing: border-box;
+      font-size: 1.5rem;
+      color: #444;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
-      cursor: pointer;
+      background-color: #fff
+    }
+
+    .container .pagination-box {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 3rem 0 0
+    }
+
+    .container .pagination-box .pagination-h5 {
+      display: none
     }
   }
-  .payment-info {
-    font-size: 1.2rem;
-    color: #000;
+
+  @media only screen and (max-width: 1024px) {
+
+    .container .box {
+      width: 100%;
+      margin-bottom: 2rem
+    }
+
+    .container .box .box-item {
+      width: 100%;
+      border-radius: 4px;
+      background-color: #fff
+    }
+
+    .container .box .box-item:not(:last-child) {
+      margin-bottom: 1.5rem
+    }
+
+    .container .box .box-item .title {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1.5rem;
+      border-radius: 4px 4px 0 0;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #fff;
+      word-wrap: break-word;
+      background-color: rgb(124 58 237)
+    }
+
+    .container .box .box-item .user-info {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2rem
+    }
+
+    .container .box .box-item .user-info .info-item1 {
+      width: 100%;
+      font-size: 1.4rem;
+      color: #666;
+      word-break: break-all
+    }
+
+    .container .box .box-item .user-info .info-item1:not(:last-child) {
+      margin-bottom: 1.5rem
+    }
+
+    .container .box .box-item .user-info .info-item1 .value {
+      margin-left: 6px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000
+    }
+
+    .container .box .box-item .user-info .info-item2 {
+      width: 100%;
+      margin-bottom: 2rem
+    }
+
+    .container .box .box-item .user-info .info-item2 .label {
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #666;
+      word-wrap: break-word
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group {
+      display: flex;
+      align-items: center;
+      width: 100%
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .el-input.is-disabled .el-input__inner {
+      background-color: #efefef!important
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .input {
+      width: 100%
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .input .el-input__inner {
+      border-right: none!important;
+      border-radius: 4px 0 0 4px
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .copy-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4.5rem;
+      box-sizing: border-box;
+      padding: 0 1.2rem;
+      border-radius: 0 4px 4px 0;
+      background-color: rgb(124 58 237) ;
+      cursor: pointer
+    }
+
+    .container .box .box-item .user-info .info-item2 .input-group .copy-btn i {
+      font-size: 1.8rem;
+      color: #fff;
+      white-space: nowrap
+    }
+
+    .container .box .box-item .user-info .info-item3 {
+      width: 100%;
+      line-height: 160%;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      color: #444;
+      word-wrap: break-word
+    }
+
+    .container .box .box-item .partner-list {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2rem
+    }
+
+    .container .box .box-item .partner-list .cur-title {
+      width: 100%;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      word-break: break-all
+    }
+
+    .container .box .box-item .partner-list .cur-title .num {
+      margin-left: 5px;
+      font-size: 1.8rem;
+      color: rgb(124 58 237)
+    }
+
+    .container .box .box-item .partner-list .list-item {
+      width: 100%;
+      font-size: 1.4rem;
+      color: #000;
+      word-break: break-all
+    }
+
+    .container .box .box-item .partner-list .list-item:not(:last-child) {
+      margin-bottom: 1.5rem
+    }
+
+    .container .box .box-item .partner-list .pagination {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 1.5rem 0 0
+    }
+
+    .container .box .box-item .partner-list .pagination .pagination-pc {
+      display: none
+    }
+
+    .container .c-table {
+      width: 100%
+    }
+
+    .container .c-table .tr {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff
+    }
+
+    .container .c-table .tr:first-child {
+      border-bottom: none!important;
+      border-radius: 4px 4px 0 0;
+      background-color: rgb(124 58 237)
+    }
+
+    .container .c-table .tr:last-child {
+      border-radius: 0 0 4px 4px
+    }
+
+    .container .c-table .tr:not(:last-child) {
+      border-bottom: 1px solid #e9e9e9
+    }
+
+    .container .c-table .tr .th {
+      word-wrap: break-word
+    }
+
+    .container .c-table .tr .td,.container .c-table .tr .th {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      box-sizing: border-box;
+      padding: .5rem;
+      font-size: 1.2rem;
+      color: #000;
+      text-align: center
+    }
+
+    .container .c-table .tr .td {
+      word-break: break-all
+    }
+
+    .container .c-table .no-data {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 5rem;
+      box-sizing: border-box;
+      font-size: 1.4rem;
+      color: #444;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #fff
+    }
+
+    .container .pagination-box {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 2rem 0 0
+    }
+
+    .container .pagination-box .pagination-pc {
+      display: none
+    }
   }
-  .payment-info img {
-    width: 100%;
-  }
-  .modal {
-    display: block !important;
-  }
-  .modal-body {
-    color: #000000;
-  }
+
 </style>

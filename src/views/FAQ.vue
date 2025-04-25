@@ -6,15 +6,20 @@
         <div></div>
         <div class="box7">
           <div class="box-wrapper">
-            <div class="title">{{$t('faq[0]')}}</div>
+            <section namespace="referral_image" style="margin-bottom: 1rem;">
+              <div class="container">
+                <div class="image_main">
+                  <img :src="'./static/images/faqs.jpg'">
+                  <div class="white_image_effect"></div>
+                </div>
+              </div>
+            </section>
+<!--            <div class="title">{{$t('faq[0]')}}</div>-->
             <div class="faq-list">
               <div class="faq-item" v-for="(item,index) in listData" :key="index">
                 <div @click="showIndex = index"  class="faq-title">
                   <div class="name">{{item.title}}</div>
-                  <div class="right-icon">
-                    <van-icon name="minus" v-if="showIndex==index"/>
-                    <van-icon name="plus" v-else/>
-                  </div>
+                  <div class="right-icon"><i :class="showIndex==index?'el-icon-minus on':'el-icon-plus'"></i></div>
                 </div>
                 <div class="faq-content" v-show="showIndex==index" v-html="item.content">
                 </div>
@@ -140,7 +145,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: rgb(13,110,253)
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -180,7 +185,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: rgb(13,110,253)!important
   }
 
   .el-dropdown-menu__item {
@@ -190,7 +195,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: rgb(13,110,253)!important;
     background-color: #fff9f0!important
   }
 
@@ -198,13 +203,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253)!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253)!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -230,12 +235,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: rgb(13,110,253);
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .lang-item {
@@ -320,12 +325,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: rgb(13,110,253)!important;
+    border-color: rgb(13,110,253)!important
   }
 
   .el-checkbox__label {
@@ -338,215 +343,28 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: rgb(13,110,253)!important
   }
 
-  @media only screen and (min-width: 1024px) {
-    .container {
-      width:100%
-    }
-
-    .container .box7 {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 4rem 1.5rem
-    }
-
-    .container .box7 .box-wrapper {
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto
-    }
-
-    .container .box7 .box-wrapper .title {
-      position: relative;
-      width: 100%;
-      margin-bottom: 3rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: rgb(21 207 231);
-      word-wrap: break-word
-    }
-
-    .container .box7 .box-wrapper .title:after {
-      position: absolute;
-      bottom: -2rem;
-      left: 0;
-      content: "";
-      width: 16rem;
-      height: 4px;
-      border-radius: 4px;
-      background-image: linear-gradient(90deg, #68b3d4, #1f62d5)
-    }
-
-    .container .box7 .box-wrapper .faq-list {
-      width: 100%
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item {
-      width: 100%;
-      box-sizing: border-box;
-      padding: .8rem 1.5rem;
-      border-radius: 6px;
-      background-color: #efefef;
-      transition: all .3s
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item:not(:last-child) {
-      margin-bottom: 2.5rem
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      cursor: pointer
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .name {
-      max-width: 100%;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #000;
-      word-wrap: break-word
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 2rem;
-      max-width: 2rem;
-      height: 2rem;
-      margin-left: 2rem;
-      border-radius: 50%;
-      background-color: rgb(21 207 231)
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #fff;
-      transition: all .3s ease
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon .on {
-      transform: rotate(180deg)
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-content {
-      width: 100%;
-      margin-top: 2rem
-    }
+  .image_main {
+    width: 100%;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
   }
-
-  @media only screen and (max-width: 1024px) {
-    .container {
-      width:100%
-    }
-
-    .container .box7 {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 3rem 1rem
-    }
-
-    .container .box7 .box-wrapper {
-      width: 100%
-    }
-
-    .container .box7 .box-wrapper .title {
-      position: relative;
-      width: 100%;
-      margin-bottom: 4.5rem;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: rgb(21 207 231);
-      word-wrap: break-word
-    }
-
-    .container .box7 .box-wrapper .title:after {
-      position: absolute;
-      bottom: -1.5rem;
-      left: 0;
-      content: "";
-      width: 10rem;
-      height: 4px;
-      border-radius: 4px;
-      background-image: linear-gradient(90deg, #68b3d4, #1f62d5)
-    }
-
-    .container .box7 .box-wrapper .faq-list {
-      width: 100%
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
-      background-color: #efefef;
-      transition: all .3s
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item:not(:last-child) {
-      margin-bottom: 1.5rem
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      cursor: pointer
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .name {
-      max-width: 100%;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #000;
-      word-wrap: break-word
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 1.5rem;
-      max-width: 1.5rem;
-      height: 1.5rem;
-      margin-left: 1rem;
-      border-radius: 50%;
-      background-color: #1ab5ff
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #fff;
-      transition: all .3s ease
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon .on {
-      transform: rotate(180deg)
-    }
-
-    .container .box7 .box-wrapper .faq-list .faq-item .faq-content {
-      width: 100%;
-      margin-top: 1rem
-    }
+  .image_main img {
+    width: 100%;
+    border-radius: 5px;
   }
-  .faq-content>>>img {
-    width: 100% !important;
-    max-width: 750px !important;
-    height: auto !important;
+  .white_image_effect {
+    width: 100%;
+    position: absolute;
+    height: 284px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    bottom: 0;
   }
-  .faq-content img{
-    width: 100% !important;
-    max-width: 750px !important;
-    height: auto !important;
+  .faq-content {
+    color: #000000;
   }
 </style>
 

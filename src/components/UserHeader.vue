@@ -1,168 +1,210 @@
 <template>
-<!--  <header data-v-39d1ae32="" id="header-nav" class="new-navbar">-->
-<!--    <div data-v-39d1ae32="" id="main__header" class="main__header">-->
-<!--      <div data-v-39d1ae32="" class="container">-->
-<!--        <div data-v-39d1ae32="" class="logo-box"><a data-v-39d1ae32="" href="/"-->
-<!--                                                    class="logo-icon router-link-active"><img data-v-39d1ae32=""-->
-<!--                                                                                              :src="'./static/img/logo.png'"-->
-<!--                                                                                              alt=""></a></div>-->
-<!--        <div data-v-39d1ae32="" class="language">-->
-<!--          <div data-v-39d1ae32="" id="navbarNavDarkDropdown" class="navbar-collapse">-->
-<!--            <div data-v-39d1ae32="" class="dropdown"><a data-v-39d1ae32="" href="javascript: void (0)" role="button"-->
-<!--                                                        id="dropdownMenuLink" data-toggle="dropdown"-->
-<!--                                                        aria-expanded="false"-->
-<!--                                                        class="btn dropdown-toggle header__menu&#45;&#45;link"-->
-<!--                                                        style="font-weight: 400;"><i data-v-39d1ae32=""-->
-<!--                                                                                     class="fa fa-globe"></i> Language-->
-<!--            </a>&lt;!&ndash;&ndash;&gt;</div>-->
+  <div>
+    <div class="app-nav" style="width: 25rem;box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);border-radius: 0 2rem 2rem 0;">
+      <div class="mav-top"><img @click="$router.push('/')" :src="'./static/image/dashboard.png?t=2'" class="logo">
+<!--        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAJtJREFUSEvdlNENQyEIRR/F6Idp09ldwGXcyNCIwrNfTdoBoMlzAE/u5QAcTg+cOMcFQcz8ijHeLCucc54wxpCUElqCmFmBiCSEYDqrtdaG1trdMs3nb9Mk3wH8QKWUh0t1RDQR0VRvVd1+evfe1VpvEdlQa33mnLflnIgI/KyzTPKzR27Vucngeb0XIppKoaqnKeA/R9VN78uB3ilEVtbdgbvTAAAAAElFTkSuQmCC" class="menu-icon">-->
+      </div>
+      <ul role="menubar" class="nav-menu el-menu">
+<!--        <li @click="$router.push('/')"   :class="'el-menu-item '+(index==0?'is-active':'')" style="padding-left: 20px;">-->
+<!--          <i class="el-icon-house"></i>-->
+<!--          <span>{{$t('head[0]')}}</span></li>-->
+        <li @click="$router.push('/dashboard')"   :class="'el-menu-item '+(index==1?'is-active':'')" style="padding-left: 20px;">
+          <i class="el-icon-menu"></i><span>{{$t('head[4]')}}</span></li>
+        <li  @click="$router.push('/transactions')" :class="'el-menu-item '+(index==6?'is-active':'')" style="padding-left: 20px;">
+          <i class="el-icon-notebook-2"></i><span>{{$t('head[12]')}}</span></li>
+        <li @click="$router.push('/deposit')"   :class="'el-menu-item '+(index==2?'is-active':'')" style="padding-left: 20px;">
+          <i class="el-icon-bank-card"></i><span>{{$t('head[7]')}}</span></li>
+        <li @click="$router.push('/withdraw')"   :class="'el-menu-item '+(index==3?'is-active':'')" style="padding-left: 20px;">
+          <i class="el-icon-top"></i><span>{{$t('head[8]')}}</span></li>
+<!--        <li @click="$router.push('/MyPackages')"   :class="'el-menu-item '+(index==5?'is-active':'')" style="padding-left: 20px;">-->
+<!--          <i class="el-icon-edit-outline"></i><span>{{$t('head[11]')}}</span></li>-->
+        <li  aria-haspopup="true" class="el-submenu">
+          <div class="el-submenu__title" style="padding-left: 20px;" @click="showPackage = !showPackage">
+            <i class="el-icon-document"></i><span slot="title">{{$t('head[9]')}}</span>
+            <i class="el-submenu__icon-arrow el-icon-arrow-down" v-if="!showPackage"></i>
+            <van-icon name="arrow-up" class="el-submenu__icon-arrow" v-if="showPackage"/>
+          </div>
+          <ul role="menu" class="el-menu el-menu--inline" v-show="showPackage">
+            <li class="el-menu-item-group">
+              <div class="el-menu-item-group__title" style="padding-left: 40px;"></div>
+              <ul>
+                <li  @click="$router.push('/PackageList')" :class="'el-menu-item '+(index==4?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-files"></i> {{$t('head[10]')}} </li>
+                <li  @click="$router.push('/MyPackages')" :class="'el-menu-item '+(index==5?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-folder-opened"></i> {{$t('head[11]')}} </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li  @click="$router.push('/affiliates')"  :class="'el-menu-item '+(index==7?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-office-building"></i><span>{{$t('foot[5]')}}</span></li>
+<!--        <li  @click="$router.push('/lucky')" v-if="InitData.setting.luckydraw !=undefined && InitData.setting.luckydraw.status ==1" :class="'el-menu-item '+(index==12?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-sunny"></i><span>{{$t('common[2]')}}</span></li>-->
+        <li  @click="$router.push('/message')"  :class="'el-menu-item '+(index==11?'is-active':'')" style="padding-left: 20px;">
+          <i class="el-icon-message-solid" style="position: relative;"><div class="van-info van-info--dot" v-if="noReadNum>0"></div></i><span>{{$t('head[13]')}}</span>
+
+        </li>
+        <li  aria-haspopup="true" class="el-submenu">
+          <div class="el-submenu__title" style="padding-left: 20px;" @click="showSet = !showSet"><i class="el-icon-setting"></i><span slot="title">{{$t('head[14]')}}</span>
+            <i class="el-submenu__icon-arrow el-icon-arrow-down" v-if="!showSet"></i>
+            <van-icon name="arrow-up" class="el-submenu__icon-arrow" v-if="showSet"/>
+          </div>
+          <ul role="menu" class="el-menu el-menu--inline" v-show="showSet">
+            <li class="el-menu-item-group">
+              <div class="el-menu-item-group__title" style="padding-left: 40px;"></div>
+              <ul>
+                <li @click="$router.push('/walletAddress')"   :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+                <li @click="$router.push('/loginPassword')"   :class="'el-menu-item '+(index==9?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+                <li @click="$router.push('/payPassword')"   :class="'el-menu-item '+(index==10?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li @click="$Model.Logout()"   class="el-menu-item" style="padding-left: 20px;"><i class="el-icon-switch-button"></i><span>{{$t('head[5]')}}</span></li>
+      </ul>
+    </div>
+    <div class="app-nav-h5">
+
+      <img @click="$router.push('/')" :src="'./static/image/dashboard.png?t=2'" class="logo">
+      <div style="display: flex;">
+        <div class="el-dropdown" style="margin-right: 10px">
+          <div class="cur-lang el-dropdown-selfdefine" aria-haspopup="list" @click="showMobileLan = !showMobileLan"
+               aria-controls="dropdown-menu-5477" role="button" tabindex="0" style="font-weight: bolder;color: #000000;">
+            <span v-if="$i18n.locale=='en-US'">English</span>
+            <span v-if="$i18n.locale=='ko-KO'">한국인</span>
+            <span v-if="$i18n.locale=='es-ES'">Español</span>
+            <span v-if="$i18n.locale=='yd-YD'">हिंदी</span>
+            <span v-if="$i18n.locale=='ur-UR'">اردو</span>
+            <span v-if="$i18n.locale=='ar-AR'">عربي</span>
+            <span v-if="$i18n.locale=='pt-PT'">Português</span>
+            <span v-if="$i18n.locale=='ru-RU'">Русский</span>
+            <span v-if="$i18n.locale=='ja-JP'">日本語</span>
+            <span v-if="$i18n.locale=='de-DE'">Deutsch</span>
+            <span v-if="$i18n.locale=='fr-FR'">Français</span>
+            <span v-if="$i18n.locale=='it-IT'">Italiano</span>
+            <!--            <span v-if="$i18n.locale=='zh-CN'">中文简体</span>-->
+            <van-icon name="arrow-down" class="el-icon-arrow-down"/>
+          </div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-5477" v-show="showMobileLan">
+            <li  @click="changeLanguage('en-US')" v-if="InitData.setting.en==1" class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flag1.5a756c97.png'"
+                                          class="flag"> English
+              </div>
+            </li>
+            <li @click="changeLanguage('ko-KO')" v-if="InitData.setting.ko==1" class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flag9.eaf3de18.png'"
+                                          class="flag"> 한국인
+              </div>
+            </li>
+            <li @click="changeLanguage('es-ES')" v-if="InitData.setting.es==1" class="el-dropdown-menu__item">
+              <div class="lang-item"><img :src="'./static/images/flag2.93be9cfe.png'"
+                                          class="flag"> Español
+              </div>
+            </li>
+            <!--            <li  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+            <!--              <div class="lang-item"><img :src="'./static/images/flag7.597f635f.png'"-->
+            <!--                                          class="flag"> Türkçe-->
+            <!--              </div>-->
+            <!--            </li>-->
+            <li @click="changeLanguage('yd-YD')" v-if="InitData.setting.yd==1"  class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flagyd.png'"
+                                          class="flag"> हिंदी
+              </div>
+            </li>
+            <li @click="changeLanguage('ur-UR')" v-if="InitData.setting.ur==1"  class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flagur.png'"
+                                          class="flag"> اردو
+              </div>
+            </li>
+            <li @click="changeLanguage('ar-AR')" v-if="InitData.setting.ar==1"  class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flagar.png'"
+                                          class="flag">عربي
+              </div>
+            </li>
+            <li @click="changeLanguage('pt-PT')" v-if="InitData.setting.pt==1"  class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flag3.49d12693.png'"
+                                          class="flag"> Português
+              </div>
+            </li>
+            <li @click="changeLanguage('ru-RU')" v-if="InitData.setting.ru==1"   class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flag6.cfe423f5.png'"
+                                          class="flag"> Русский
+              </div>
+            </li>
+            <li @click="changeLanguage('ja-JP')" v-if="InitData.setting.jp==1"  class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flag8.a1c0a73c.png'"
+                                          class="flag"> 日本語
+              </div>
+            </li>
+            <li @click="changeLanguage('de-DE')" v-if="InitData.setting.de==1"  class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flag5.f403fe65.png'"
+                                          class="flag"> Deutsch
+              </div>
+            </li>
+            <li @click="changeLanguage('fr-FR')" v-if="InitData.setting.fr==1" class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/flag4.6ffdaa83.png'"
+                                          class="flag"> Français
+              </div>
+            </li>
+            <li @click="changeLanguage('it-IT')" v-if="InitData.setting.it==1" class="el-dropdown-menu__item"><!---->
+              <div class="lang-item"><img :src="'./static/images/it-IT.png'"
+                                          class="flag"> Italiano
+              </div>
+            </li>
+            <!--            <li @click="changeLanguage('zh-CN')" v-if="InitData.setting.cn==1" class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+            <!--              <div class="lang-item"><img :src="'./static/images/zh-CN.png'"-->
+            <!--                                          class="flag"> 中文简体-->
+            <!--              </div>-->
+            <!--            </li>-->
+            <div x-arrow="" class="popper__arrow" style="left: 87.8312px;"></div>
+          </ul>
+        </div>
+        <div @click="showH5nav=!showH5nav" class="menu"><i  class="el-icon-s-operation"></i> {{$t('head[6]')}} </div>
+      </div>
+    </div>
+    <div v-if="showH5nav" class="app-nav-mask">
+      <ul role="menubar" class="nav-menu el-menu">
+        <li @click="$router.push('/')"   :class="'el-menu-item '+(index==0?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-house"></i><span>{{$t('head[0]')}}</span></li>
+        <li @click="$router.push('/dashboard')"   :class="'el-menu-item '+(index==1?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-discover"></i><span>{{$t('head[4]')}}</span></li>
+        <li @click="$router.push('/deposit')"   :class="'el-menu-item '+(index==2?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-folder-add"></i><span>{{$t('head[7]')}}</span></li>
+        <li @click="$router.push('/withdraw')"   :class="'el-menu-item '+(index==3?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-coin"></i><span>{{$t('head[8]')}}</span></li>
+<!--        <li  aria-haspopup="true" class="el-submenu">-->
+<!--          <div class="el-submenu__title" style="padding-left: 20px;" @click="showH5packet = !showH5packet">-->
+<!--            <i class="el-icon-document"></i>-->
+<!--            <span slot="title">{{$t('head[9]')}}</span><i class="el-submenu__icon-arrow el-icon-arrow-down"></i>-->
 <!--          </div>-->
-<!--        </div>-->
-<!--        <div data-v-39d1ae32="" class="navigation">-->
-<!--          <ul data-v-39d1ae32="" class="navigation-menu" style="justify-content: right;">-->
-<!--            <li data-v-39d1ae32="" class="nav__menu&#45;&#45;items"><a data-v-39d1ae32="" href="/"-->
-<!--                                                               class="header__menu&#45;&#45;link router-link-active" id="/">-->
-<!--              HOME </a></li>-->
-<!--            <li data-v-39d1ae32="" class="nav__menu&#45;&#45;items"><a data-v-39d1ae32="" href="/plans"-->
-<!--                                                               class="header__menu&#45;&#45;link">PLANS </a></li>-->
-<!--            <li data-v-39d1ae32="" class="nav__menu&#45;&#45;items"><a data-v-39d1ae32="" href="/profile/overview"-->
-<!--                                                               class="header__menu&#45;&#45;link router-link-exact-active router-link-active"-->
-<!--                                                               aria-current="page">DASHBOARD </a></li>-->
-<!--            <li data-v-39d1ae32="" class="nav__menu&#45;&#45;items"><a data-v-39d1ae32="" href="/referral"-->
-<!--                                                               class="header__menu&#45;&#45;link">AFFILIATES </a></li>-->
-<!--            <li data-v-39d1ae32="" class="nav__menu&#45;&#45;items"><a data-v-39d1ae32="" href="/about-us"-->
-<!--                                                               class="header__menu&#45;&#45;link">ABOUT </a></li>-->
-<!--            <li data-v-39d1ae32="" class="nav__menu&#45;&#45;items"><a data-v-39d1ae32="" href="/faq"-->
-<!--                                                               class="header__menu&#45;&#45;link">FAQ </a></li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--        <div data-v-39d1ae32="" class="right-extend header__account">-->
-<!--          <ul data-v-39d1ae32="" class="d-flex align-items-center">-->
-<!--            <li data-v-39d1ae32="" class="header__account&#45;&#45;items d-sm-u-none">-->
-<!--              <div data-v-39d1ae32="" class="dropdown"><a data-v-39d1ae32="" href="#"-->
-<!--                                                          class="dropdown-toggle header__menu&#45;&#45;link">-->
-<!--                132123456@qq.com</a>-->
-<!--                <div data-v-39d1ae32="" aria-labelledby="dropdownMenuLink" class="dropdown-menu"-->
-<!--                     style="left: auto; right: 0px; display: none;"><a data-v-39d1ae32="" href="#"-->
-<!--                                                                       class="dropdown-item header__menu&#45;&#45;link"-->
-<!--                                                                       style="font-weight: 400;">Sign out</a></div>-->
-<!--              </div>-->
+<!--          <ul role="menu" class="el-menu el-menu&#45;&#45;inline" v-show="showH5packet">-->
+<!--            <li class="el-menu-item-group">-->
+<!--              <div class="el-menu-item-group__title" style="padding-left: 40px;"></div>-->
+<!--              <ul>-->
+<!--                <li @click="$router.push('/PackageList')"  :class="'el-menu-item '+(index==4?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-files"></i> {{$t('head[10]')}} </li>-->
+<!--                <li  @click="$router.push('/MyPackages')" :class="'el-menu-item '+(index==5?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-folder-opened"></i> {{$t('head[11]')}} </li>-->
+<!--              </ul>-->
 <!--            </li>-->
 <!--          </ul>-->
-<!--        </div>-->
-<!--        <div data-v-39d1ae32="" class="offcanvas__header&#45;&#45;menu__open"-->
-<!--             style="margin-right: 0.625rem; padding: 10px 0px;">-->
-<!--          <div data-v-39d1ae32="" href="javascript:void(0)" data-offcanvas=""-->
-<!--               class="offcanvas__header&#45;&#45;menu__open&#45;&#45;btn">-->
-<!--            <svg data-v-39d1ae32="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"-->
-<!--                 class="ionicon offcanvas__header&#45;&#45;menu__open&#45;&#45;svg">-->
-<!--              <path data-v-39d1ae32="" fill="currentColor" stroke="currentColor" stroke-linecap="round"-->
-<!--                    stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"></path>-->
-<!--            </svg>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div data-v-39d1ae32="" class="offcanvas__header">-->
-<!--      <div data-v-39d1ae32="" class="offcanvas__inner">-->
-<!--        <div data-v-39d1ae32="" class="offcanvas__logo"><a data-v-39d1ae32="" href="/"-->
-<!--                                                           class="offcanvas__logo_link router-link-active"><img-->
-<!--          data-v-39d1ae32="" src="/images/logo.png" height="32" alt="" class="logo__light logo__light"></a>-->
-<!--          <button data-v-39d1ae32="" data-offcanvas="" class="offcanvas__close&#45;&#45;btn">close</button>-->
-<!--        </div>-->
-<!--        <nav data-v-39d1ae32="" class="offcanvas__menu">-->
-<!--          <ul data-v-39d1ae32="" class="offcanvas__menu_ul">-->
-<!--            <li data-v-39d1ae32="" class="offcanvas__menu_li"><a data-v-39d1ae32="" href="/" id="/"-->
-<!--                                                                 class="offcanvas__menu_item">Home</a></li>-->
-<!--            <li data-v-39d1ae32="" class="offcanvas__menu_li"><a data-v-39d1ae32="" href="/plans" id="/plans"-->
-<!--                                                                 class="offcanvas__menu_item">Plans</a></li>-->
-<!--            <li data-v-39d1ae32="" class="offcanvas__menu_li"><a data-v-39d1ae32="" href="/profile" id="/profile"-->
-<!--                                                                 class="offcanvas__menu_item header__menu&#45;&#45;link_active">Dashboard</a>-->
-<!--            </li>-->
-<!--            <li data-v-39d1ae32="" class="offcanvas__menu_li"><a data-v-39d1ae32="" href="/referral" id="/referral"-->
-<!--                                                                 class="offcanvas__menu_item">Referral</a></li>-->
-<!--            <li data-v-39d1ae32="" class="offcanvas__menu_li"><a data-v-39d1ae32="" href="/about-us" id="/about-us"-->
-<!--                                                                 class="offcanvas__menu_item">About</a></li>-->
-<!--            <li data-v-39d1ae32="" class="offcanvas__menu_li"><a data-v-39d1ae32="" href="/faq" id="/faq"-->
-<!--                                                                 class="offcanvas__menu_item">Faq</a></li>-->
-<!--          </ul>-->
-<!--          <div data-v-39d1ae32="" class="header__account offcanvas__account">-->
-<!--            <ul data-v-39d1ae32="" class="align-items-center login-but_box">-->
-<!--              <li data-v-39d1ae32="" class="header__account&#45;&#45;items"><a data-v-39d1ae32="" href="/profile/overview">-->
-<!--                132123456@qq.com</a></li>-->
-<!--              <br data-v-39d1ae32="">-->
-<!--              <li data-v-39d1ae32="" class="header__account&#45;&#45;items"><a data-v-39d1ae32="" href="#"-->
-<!--                                                                       class="but but_signup"> Sign out </a></li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </nav>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </header>-->
-  <div class="window"
-       style="margin-top: 50px; margin-bottom: 50px; margin-right: 20px; border-radius: 28px; box-shadow: rgb(221, 221, 221) 0px 0px 5px; min-height: 300px; overflow: hidden;">
-    <ul role="menubar" class="el-menu" style="border: none;">
-      <a href="javascript:;" @click="$router.push('/dashboard')" class="router-link-exact-active router-link-active" aria-current="page">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-data-analysis"></i>
-          <span>{{$t('head[4]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/transactions')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/transactions'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-money"></i>
-          <span>{{$t('head[22]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/deposit')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/deposit'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-sell"></i>
-          <span>{{$t('head[7]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/withdraw')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/withdraw'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-sold-out"></i>
-          <span>{{$t('head[8]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/MyPackages')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/MyPackages'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-shopping-cart-full"></i>
-          <span>{{$t('head[11]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/product')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/product'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-position"></i>
-          <span>{{$t('foot[2]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/affiliates')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/affiliates'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-user"></i>
-          <span>{{$t('foot[5]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/message')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/message'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-message"></i>
-          <span>{{$t('head[13]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="$router.push('/lucky')" v-if="InitData.setting.luckydraw !=undefined && InitData.setting.luckydraw.status ==1">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/lucky'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-s-goods"></i>
-          <span>{{$t('common[2]')}}</span></li>
-      </a>
-      <a href="javascript:;" class="" @click="showMenu =!showMenu">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/setting'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-setting"></i>
-          <span>{{$t('head[14]')}}</span></li>
-      </a>
-    </ul>
-    <ul v-if="showMenu" class="setting">
-      <li class="el-menu-item" @click="showMenu=false,$router.push('/walletAddress')">
-        <a href="javascript:;" class="t-link primary-menu__sub-link text-capitalize">{{$t('walletAddress[0]')}}</a>
-      </li>
-      <li class="el-menu-item" @click="showMenu=false,$router.push('/loginPassword')">
-        <a href="javascript:;"  class="t-link primary-menu__sub-link text-capitalize">{{$t('walletAddress[1]')}}</a>
-      </li>
-      <li class="el-menu-item" @click="showMenu=false,$router.push('/payPassword')">
-        <a href="javascript:;"  class="t-link primary-menu__sub-link text-capitalize">{{$t('walletAddress[2]')}}</a>
-      </li>
-    </ul>
+<!--        </li>-->
+
+        <li @click="$router.push('/MyPackages')" :class="'el-menu-item '+(index==5?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-sort"></i><span>{{$t('head[11]')}}</span></li>
+        <li @click="$router.push('/transactions')" :class="'el-menu-item '+(index==6?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-sort"></i><span>{{$t('head[12]')}}</span></li>
+        <li  @click="$router.push('/affiliates')" :class="'el-menu-item '+(index==7?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-office-building"></i><span>{{$t('foot[5]')}}</span></li>
+<!--        <li  @click="$router.push('/lucky')" v-if="InitData.setting.luckydraw !=undefined && InitData.setting.luckydraw.status ==1" :class="'el-menu-item '+(index==12?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-sunny"></i><span>{{$t('common[2]')}}</span></li>-->
+        <li  @click="$router.push('/message')"  :class="'el-menu-item '+(index==11?'is-active':'')" style="padding-left: 20px;">
+          <i class="el-icon-message-solid" style="position: relative;"><div class="van-info van-info--dot" v-if="noReadNum>0"></div></i><span>{{$t('head[13]')}}</span>
+
+        </li>
+        <li  aria-haspopup="true" class="el-submenu">
+          <div @click="showH5set = !showH5set" class="el-submenu__title" style="padding-left: 20px;"><i class="el-icon-setting"></i><span slot="title">{{$t('head[14]')}}</span><i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div>
+          <ul role="menu" class="el-menu el-menu--inline" v-show="showH5set">
+            <li class="el-menu-item-group">
+              <div class="el-menu-item-group__title" style="padding-left: 40px;"></div>
+              <ul>
+                <li @click="$router.push('/walletAddress')"   :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+                <li @click="$router.push('/loginPassword')"   :class="'el-menu-item '+(index==9?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+                <li @click="$router.push('/payPassword')"   :class="'el-menu-item '+(index==10?'is-active':'')" style="padding-left: 40px;"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li @click="$Model.Logout()"   class="el-menu-item" style="padding-left: 20px;"><i class="el-icon-switch-button"></i><span>{{$t('head[5]')}}</span></li>
+      </ul>
+      <div class="close-box"><i @click="showH5nav=false" class="el-icon-error nav-close"></i></div>
+    </div>
   </div>
 </template>
 
@@ -175,15 +217,14 @@
     props: [],
     data() {
       return {
-        pageIndex:0,
-        showPcLan: false,
-        showMenu:false,
-        index:'',
+        index:0,
+        showMobileLan:false,
         showH5nav:false,
         showPackage:false,
         showSet:false,
         showH5packet:false,
         showH5set:false,
+        noReadNum:0,
       }
     },
     computed: {
@@ -191,11 +232,55 @@
     watch: {
     },
     created() {
-
+        this.noReadNum = localStorage.getItem('noReadNum');
     },
     mounted() {
-      this.index = localStorage.getItem("pageIndex");
-      console.log(this.index);
+      if (localStorage.getItem("userIndex") == '/') {
+        this.index = 0;
+      }
+      if (localStorage.getItem("userIndex") == '/dashboard') {
+        this.index = 1;
+      }
+      if (localStorage.getItem("userIndex") == '/deposit') {
+        this.index = 2;
+      }
+      if (localStorage.getItem("userIndex") == '/withdraw') {
+        this.index = 3;
+      }
+      if (localStorage.getItem("userIndex") == '/PackageList') {
+        this.showPackage = true;
+        this.showH5packet = true;
+        this.index = 4;
+      }
+      if (localStorage.getItem("userIndex") == '/MyPackages') {
+        this.showPackage = true;
+        this.showH5packet = true;
+        this.index = 5;
+      }
+      if (localStorage.getItem("userIndex") == '/transactions') {
+        this.index = 6;
+      }
+      if (localStorage.getItem("userIndex") == '/affiliates') {
+        this.index = 7;
+      }
+      if (localStorage.getItem("userIndex") == '/walletAddress') {
+        this.showSet = true;
+        this.showH5set = true;
+        this.index = 8;
+      }
+      if (localStorage.getItem("userIndex") == '/loginPassword') {
+        this.showSet = true;
+        this.showH5set = true;
+        this.index = 9;
+      }
+      if (localStorage.getItem("userIndex") == '/payPassword') {
+        this.showSet = true;
+        this.showH5set = true;
+        this.index = 10;
+      }
+      if (localStorage.getItem("userIndex") == '/message') {
+        this.index = 11;
+      }
     },
     activated() {
 
@@ -218,8 +303,5 @@
 </script>
 
 <style scoped>
-.setting {
-
-}
 
 </style>

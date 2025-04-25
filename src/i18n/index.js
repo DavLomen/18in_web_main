@@ -20,9 +20,9 @@ import AR from './ar'
 import DE from './de'
 import RU from './ru'
 import FR from './fr'
+import HU from './hu'
+import CS from './cs'
 import IT from './it'
-import NL from './nl'
-import TR from './tr'
 
 import zhCN from 'vant/lib/locale/lang/zh-CN'
 import zhTW from 'vant/lib/locale/lang/zh-TW'
@@ -110,17 +110,17 @@ switch (lang) {
   	locale = 'ru-RU'
   	Locale.use('ru-RU', RU)
   	break;
+  case 'cs':
+  	locale = 'cs-CS'
+  	Locale.use('cs-CS', CS)
+  	break;
+  case 'hu':
+  	locale = 'hu-HU'
+  	Locale.use('hu-HU', HU)
+  	break;
   case 'it':
   	locale = 'it-IT'
   	Locale.use('it-IT', IT)
-  	break;
-  case 'nl':
-  	locale = 'nl-NL'
-  	Locale.use('nl-NL', NL)
-  	break;
-  case 'tr':
-  	locale = 'tr-TR'
-  	Locale.use('tr-TR', TR)
   	break;
 }
 
@@ -145,9 +145,9 @@ const i18n = new VueI18n({
     "fr-FR": FR,
     "ur-UR": UR,
     "ru-RU": RU,
+    "cs-CS": CS,
+    "hu-HU": HU,
     "it-IT": IT,
-    "nl-NL": NL,
-    "tr-TR": TR,
 	}
 })
 
@@ -223,17 +223,17 @@ export function SetLanguage(lang) {
     	localStorage['Language'] = 'ru'
     	Locale.use('ru-RU', RU)
     	break;
+    case 'cs-CS':
+    	localStorage['Language'] = 'cs'
+    	Locale.use('cs-CS', CS)
+    	break;
+    case 'hu-HU':
+    	localStorage['Language'] = 'hu'
+    	Locale.use('hu-HU', HU)
+    	break;
     case 'it-IT':
     	localStorage['Language'] = 'it'
     	Locale.use('it-IT', IT)
-    	break;
-    case 'nl-NL':
-    	localStorage['Language'] = 'nl'
-    	Locale.use('nl-NL', NL)
-    	break;
-    case 'tr-TR':
-    	localStorage['Language'] = 'tr'
-    	Locale.use('tr-TR', TR)
     	break;
 	}
 }
