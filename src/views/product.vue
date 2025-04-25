@@ -11,7 +11,6 @@
           <div class="section">
             <div class="container">
               <div class="row gy-4 gx-3 justify-content-center">
-
                 <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
                   <div class="plan-card" >
                     <div class="img-box">
@@ -21,63 +20,71 @@
                       />
                     </div>
                     <div class="plan-card__head">
-                      <div class="mt-0 mb-2 text-center text--danger">{{item.title}}</div>
-                      <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                        <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[9]')}}: {{item.miner}}
+                      <div class="badge-card">{{item.title}}</div>
+                      <div class="pricing notranslate">
+                        <h1>${{parseFloat(item.amount)}}</h1>
+                        <p>/ {{item.cycle}}
+                          {{$t('product[15]')}}
+                        </p>
                       </div>
-<!--                      <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">-->
-<!--                        <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[8]')}}: {{item.hash_power}}-->
-<!--                      </div>-->
-                      <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                        <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[15]')}}
+                      <div class="mt-0  text-left" style="color: #000000;font-weight: normal;">
+                        <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}
                       </div>
-                      <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                        <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}
-                      </div>
-                      <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                        <img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[0]')}}: {{item.amount}} {{InitData.currency}}
+                      <!--                    <div class="mt-0  text-left" style="color: #000000">-->
+                      <!--                      <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[9]')}}: {{item.miner}}-->
+                      <!--                    </div>-->
+                      <!--                    <div class="mt-0  text-left" style="color: #000000">-->
+                      <!--                      <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[8]')}}: {{item.hash_power}}-->
+                      <!--                    </div>-->
+                      <!--                    <div class="mt-0  text-left" style="color: #000000">-->
+                      <!--                      <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[15]')}}-->
+                      <!--                    </div>-->
+                      <div class="mt-0  text-left" style="color: #000000;font-weight: normal;">
+                        <van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('product[0]')}}: ${{item.amount}}
                       </div>
                     </div>
-                    <div class="text-left" style="color: #000000;font-weight: bold">
-                      <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[3]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
-                      <h6 class="mt-0 mb-2 text-left" style="color: red !important;font-weight: bold;"><img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('product[4]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
+                    <div class="pt-2 text-left" style="color: red">
+                      <div class="mt-0  text-left"><van-icon name="passed" color="green" style="margin-right: 6px;"/> {{$t('settle[2]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</div>
+                      <div class="mt-0  text-left"><van-icon name="passed" color="green" style="margin-right: 6px;"/> {{$t('settle[3]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>
                     </div>
-                    <div class="text-left" style="color: #000000;font-weight: bold">
-                      <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png'" style="width: 1.75rem;">{{$t('settle[0]')}}: {{item.type==1?$t('product[7]'):$t('product[17]')}}</h6>
+                    <div class="pt-2 text-left" style="color: #000000">
+                      <div class="mt-0  text-left"><van-icon name="passed" color="green" style="margin-right: 6px;"/>{{$t('settle[0]')}}:{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
                     </div>
-                    <div class="bonus" v-if="item.amount !=10">
+                    <div class="bonus" v-if="item.amount!=12">
                       <div class="label">{{$t('product[10]')}}</div>
-                      <ul class="plan-referral justify-content-center mb-2">
+                      <ul class="plan-referral justify-content-center ">
                         <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
                           <span>{{aa}} %</span>
                           <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
                         </div>
                       </ul>
                     </div>
-                    <div class="bonus"  v-else>
-                      <div class="label">{{$t('product[10]')}}</div>
-                      <ul class="plan-referral justify-content-center mb-2">
-                        <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                          <span>0 %</span>
-                          <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
-                        </div>
-                      </ul>
+                    <div v-else style="color:#000;height: 94px;">
+                      {{$t('ppp[0]')}}
                     </div>
-<!--                    <div v-else style="color:#000;height: 94px;">-->
-<!--                      {{$t('ppp[0]')}}-->
-<!--                    </div>-->
-
-                    <div class="mt-1 text-center">
-                      <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                    <!--                  <div class="mt-1 text-center">-->
+                    <!--                    <div v-if="item.progress>=100" class="t-link btn btn--dark btn--lg rounded-pill investBtn">-->
+                    <!--                      {{$t('product[13]')}}-->
+                    <!--                    </div>-->
+                    <!--                    <a v-else href="javascript:;" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--dark btn--lg rounded-pill investBtn">-->
+                    <!--                      {{$t('home[35]')}}-->
+                    <!--                    </a>-->
+                    <!--                  </div>-->
+                    <div class="mt-1 text-center" style="display: flex;justify-content: space-between">
+                      <a  href="javascript:;" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;background: #23cff1" @click="goDetail(item)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                        {{$t('settle[4]')}}
+                      </a>
+                      <div v-if="item.progress>=100" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;background: #23cff1" class="t-link btn btn--base btn--lg rounded-pill investBtn">
                         {{$t('product[13]')}}
                       </div>
-                      <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
-                        {{$t('buy[0]')}}                        </a>
+                      <a v-else href="javascript:;" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;background: #23cff1" @click="orderNow(item)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                        {{$t('buy[0]')}}
+                      </a>
                     </div>
                     <div class="mt-2 text-center">
-                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #33f911, #00070e)"/>
+                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #eee, #23cff1)"/>
                     </div>
-                    <img v-if="item.progress>=100" :src="'./static/images/out.png?t=1'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
+                    <img v-if="item.progress>=100" :src="'./static/images/out.png'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
                   </div>
                 </div>
               </div>
@@ -204,6 +211,11 @@
 
     },
     methods: {
+      goDetail(item) {
+        if(item.progress<100){
+          this.$router.push(`/productDetail?id=${item.id}`)
+        }
+      },
       orderNow(item) {
         this.detailData = item;
         this.showDialog = true;

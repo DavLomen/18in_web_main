@@ -337,7 +337,7 @@ export default {
     "Important Links",
     "Privacy and Policy",
     "Terms of Services",
-    "Copyright © 2019-2025 PBK Miner。All rights",
+    "Copyright © 2019-2025 PBK Miner. All rights.",
     "LEARN",
     "What is cryptocurrency?",
     "What is web3?",
@@ -431,8 +431,17 @@ export default {
     "Your email cannot be empty."
   ],
   "settle":[
-    "Settlement interest",
-    "Every 24 hours"
+    "Settle Interests",
+    "Every 24 Hours",
+    "Daily Income",
+    "Fixed Income",
+    "View Detail",
+    "Buy Now",
+    "Checkout",
+    "Enter purchase amount",
+    "Amount",
+    "Payment Password",
+    "Pay"
   ],
   "product":[
     "Contract Price",
