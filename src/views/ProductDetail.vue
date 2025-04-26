@@ -76,8 +76,6 @@
                 {{$t('productDetail[14]',{WT:InitData.setting.web_title})}}
                 <br><br>
                 {{$t('productDetail[15]',{WT:InitData.setting.web_title})}}
-                <br><br>
-                {{$t('productDetail[16]',{WT:InitData.setting.web_title})}}
                 <br>
                 <div style="color: #000" v-if="detailData.agreement && detailData.agreement !=''" v-html="detailData.agreement">
                 </div>

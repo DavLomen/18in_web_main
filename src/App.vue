@@ -159,7 +159,14 @@
 		},
 
 		created() {
-
+      let that = this;
+      that.$Model.HasNewMessage(data=>{
+        if (data.data == 1) {
+          that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
+            that.$router.push(`/message`)
+          }, that.$t('messageInfo[1]'));
+        }
+      })
     },
 
 		mounted() {

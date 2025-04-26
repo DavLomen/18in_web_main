@@ -25,7 +25,7 @@
             <div class="col-lg-6 col-md-7 mt-5 mt-sm-0">
               <div class="section-title">
 <!--                <h1 class="title"><br>{{showInfo.title}}</h1>-->
-                <div class="para-desc videoDiv" v-html="showInfo.content"></div>
+                <div class="para-desc videoDiv" style="font-size: 1.25rem" v-html="showInfo.content"></div>
               </div>
             </div>
           </div>

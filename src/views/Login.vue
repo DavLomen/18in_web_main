@@ -1,13 +1,8 @@
-<!-- 仪表盘那边用这个组件 -->
 <template>
   <div class="HomePage">
     <Header></Header>
     <div class="app-wrapper">
-      <!-- <div class="container" style="background: url(./static/img/login_bg.gif) no-repeat;max-width: 100%;background-position:center;background-size: 100% 100%;"> -->
-      <div class="container">
-        <video  autoplay="autoplay" loop class="bg_video" muted='muted' >
-          <source :src="'./static/img/login_bg.mp4'" type="video/mp4"/>
-        </video>
+      <div class="container" style="background: url(./static/img/login_bg.png) no-repeat;max-width: 100%;background-position:center;background-size: 100% 100%;">
         <div class="form-box">
           <div class="mt-9 px-4 lg:mt-[60px] lg:mr-[90px] lg:pr-0 lg:pl-10">
             <div class="form-title">{{$t('loginpage[0]')}}</div>
@@ -43,18 +38,18 @@
                 <div class="el-form-item is-required">
                   <h6>*{{$t('regLogin[5]')}}</h6>
                   <div class="el-form-item__content">
-                    <div class="el-input el-input--suffix password-input">
+                    <div class="el-input el-input--suffix">
                       <input
-                        :type="showPassWord ? 'text' : 'password'"
+                        type="password"
                         v-model.trim="postData.password"
                         autocomplete="off"
                         :placeholder="$t('regLogin[6]')"
                         class="el-input__inner"
-                      />
-                      <div class="showPassWordIcon" @click="showPassWord = !showPassWord">
-                        <van-icon name="eye" size="20" v-show="!showPassWord"/>
-                        <van-icon name="closed-eye" size="20" v-show="showPassWord" />
-                      </div>
+                      /><span class="el-input__suffix"
+                    ><span class="el-input__suffix-inner"
+                    ></span
+                    ></span
+                    >
                     </div>
 
                   </div>
@@ -69,9 +64,7 @@
                   <div class="el-form-item__content">
                     <div class="other-operate">
                       <!--                      <div class="reset-link">Forgot Password?</div>-->
-                      <van-checkbox shape="square"  v-model="keepUser" @change="changeKeepUser"  icon-size="14">
-                        <span style="color: #fff;">{{$t('login.text[0]')}}</span>
-                      </van-checkbox>
+                      <van-checkbox shape="square" v-model="keepUser" @change="changeKeepUser"  icon-size="14">{{$t('login.text[0]')}}</van-checkbox>
                     </div>
 
                   </div>
@@ -112,7 +105,6 @@
     props: [],
     data() {
       return {
-        showPassWord: false,
         postData: {
           username: localStorage['UserName']||'',
           password: localStorage['PassWord']||''
@@ -477,7 +469,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, #ddb443, #009d24);
+      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
       cursor: pointer
     }
   }
@@ -559,7 +551,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, #ddb443, #009d24);
+      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
       cursor: pointer
     }
   }
@@ -580,25 +572,9 @@
     /*background-clip: text;*/
     /*-webkit-text-fill-color: transparent;*/
   }
-  .password-input{
-    position: relative;
-  }
-  .password-input .showPassWordIcon{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-  }
   /*@media (max-width: 768px) {*/
   /*  .pc {*/
   /*    display: none;*/
   /*  }*/
   /*}*/
-  .bg_video{
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-  }
 </style>

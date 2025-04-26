@@ -834,7 +834,7 @@ const model = {
 
   TeamReport(json, callback) {
 
-    $Dialog.Loading(i18n.t('dialog[6]'));
+    // $Dialog.Loading(i18n.t('dialog[6]'));
 
     const getResponse = ({
 
@@ -842,7 +842,7 @@ const model = {
 
     }) => {
 
-      $Dialog.Close();
+      // $Dialog.Close();
 
       callback && callback(data);
 

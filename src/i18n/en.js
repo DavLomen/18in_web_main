@@ -412,7 +412,7 @@ export default {
     "Sign Up Now",
     "Don't have an account?",
     "Sign Up Now",
-    "Create an account now to start your mining journey",
+    "Create an account now and get $15 to participate in mining",
     "Enter your details to get started."
   ],
   "product": [
@@ -468,8 +468,8 @@ export default {
     "JOIN US"
   ],
   "affiliates": [
-    "Affiliates",
-    "Referral Program",
+    "ALL4 Mining Referral Program",
+    "ALL4 Mining offers an affiliate program designed to attract both new and experienced mining community participants. Affiliates can gradually increase their commissions as they refer more customers, earning between 3% and 4.5% commission for each customer they refer.",
     "Your Email",
     "Your Username",
     "Referral Code",
@@ -543,7 +543,8 @@ export default {
     "Your Affiliate Link",
     "Do you have any Questions?",
     "We strongly recommend that you search for the necessary information in the FAQ section. Contact our 24-hour online customer service if you need advice or technical assistance.",
-    "Get Support Now"
+    "Get Support Now",
+    "Total investment"
   ],
   "faq": [
     "Common Problem"
@@ -711,7 +712,6 @@ export default {
     "The prices of digital assets often fluctuate greatly, and the mining difficulty of each currency is also adjusted regularly. A drop in currency prices or an increase in difficulty will cause the output of each mining machine to drop. Users need to carefully evaluate their risk tolerance and invest in digital asset mining within acceptable risk control.",
     "5.{WT} is not responsible for any results arising from risks beyond its control, including but not limited to natural disasters such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or high-risk weather events, government Acts, or instructions, municipal power grid power supply incidents, and social acts or conflicts such as wars, strikes, and riots.",
     "6. Fluctuations in computing power are inevitable. {WT} is not responsible for fluctuations caused by network instability, network failures, mining machine performance, etc.",
-    "7. Static output is calculated statically based on the current difficulty and fluctuates with the market. When the difficulty goes up or down, it will be lower or higher. Therefore, for informational purposes only, {WT} does not make any promises or guarantees regarding production volumes.",
     "The platform reserves the right of final interpretation of the terms of this contract."
   ],
   "blog": [
@@ -760,8 +760,8 @@ export default {
     "Please consult 7x24 online customer service for details. The final explanation belongs to {WT}."
   ],
   "power": [
-    "Market computing power",
-    "The newly upgraded 2.0 version of new energy \"wind energy\" and \"solar energy\" green cycle power generation experience zero-cost electricity and high returns on mining machine income."
+    "Mining Renewable Energy Systems Market",
+    "ALL4 Mining Renewable Energy Systems are technologies and infrastructure that use renewable energy sources such as solar, wind and hydroelectric power to power mining operations.\n"
   ],
   "aboutf": [
     "Active Members",

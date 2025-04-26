@@ -138,8 +138,10 @@
       </a>
       <a href="javascript:;" class="" @click="$router.push('/message')">
         <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/message'?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-message"></i>
-          <span>{{$t('head[13]')}}</span></li>
+<!--          <i class="el-icon-message"></i>-->
+          <van-icon name="comment-o" size="18" style="    margin-right: 5px;" :dot="$store.state.MessageInfo>0"/>
+          <span>{{$t('head[13]')}} {{$store.state.MessageInfo}}</span>
+        </li>
       </a>
       <a href="javascript:;" class="" @click="$router.push('/lucky')" v-if="InitData.setting.luckydraw !=undefined && InitData.setting.luckydraw.status ==1">
         <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/lucky'?'is-active':'')" style="padding-left: 20px;">

@@ -4,6 +4,11 @@
     <van-notice-bar color="red" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />
     <div data-v-473dd3c9="" data-v-46027133="" class="homeBanner home-banner">
       <section data-v-473dd3c9="" class="hero__slider--section style2">
+        <div class="video">
+          <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">
+            <source :src="'./static/images/bg.mp4'" type="video/mp4"  />
+          </video>
+        </div>
         <div data-v-473dd3c9="" class="hometop" style="position: relative;">
           <!-- 移动手机屏幕时展示 -->
           <div class="el-row new_bg" style="color:#fff">
@@ -15,7 +20,7 @@
               </swiper>
             </div>
             <div class="left el-col-xs-24 el-col-sm-12 el-col-md-12">
-              <h1 class="fw-bold">{{ $t('head-bg[0]') }}</h1>
+              <h1 class="fw-bold" style="color: #000">{{ $t('head-bg[0]') }}</h1>
               <p>{{ $t('head-bg[1]') }}</p>
               <div v-if="!UserInfo" class=" header__account">
                 <ul  class="d-flex align-items-center">
@@ -50,7 +55,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-24 col-xl-12 pl-0 pr-0">
-<!--              <h6 class="mt-0 text-center miner_work_title"> {{$t('home[17]')}}</h6>-->
+<!--              <h6 class="mt-0 text-center"> {{$t('home[17]')}}</h6>-->
               <h3 class="mb-0 mx-auto text-center t-short-para miner_work_text">
                   {{$t('home[18]')}}
               </h3>
@@ -407,7 +412,7 @@
                                     <div class="el-row--flex is-justify-space-between">
                                         <div class="user col-4 ">
                                           <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
-                                          <div class="text-left fl-wap">{{item.username}}</div>
+                                          <div class="text-left fl-wap username">{{item.username}}</div>
                                         </div>
                                         <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
                                         <div class="time col-4 text-right">{{item.time}}</div>
@@ -439,7 +444,7 @@
                                     <div class="el-row--flex is-justify-space-between">
                                         <div class="user col-4 text-left fl-wap">
                                           <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
-                                          <div>{{item.username}}{{item.username}}</div>
+                                          <div class="username">{{item.username}}</div>
                                         </div>
                                         <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
                                         <div class="time col-4 text-right">{{item.time}}</div>
@@ -582,8 +587,8 @@
             </div>
           </div>
           <div class="row partners_list justify-content-between">
-            <div class="el-col-sm-8 el-col-md-4 el-col-xs-12 pl-0 pr-0 mb-5 mt-3" v-for="el in Partners" :key="el.id">
-              <img class="mx-auto" style="width: 70%;" :src="`./static/img/Partners/${el.id}.${el.type}`" alt="">
+            <div class="el-col-md-5 el-col-xs-12 pl-0 pr-0 mb-5 mt-3" v-for="el in 10" :key="el">
+              <img class="mx-auto" style="width: 80%;" :src="`./static/img/Partners/parent_${el}.png`" alt="">
             </div>
           </div>
         </div>
@@ -884,13 +889,7 @@
       }
       var nowDate = date.getFullYear() + seperator + nowMonth + seperator + strDate;
       this.date = nowDate;
-      that.$Model.HasNewMessage(data=>{
-        if (data.data == 1) {
-          that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
-            that.$router.push(`/message`)
-          }, that.$t('messageInfo[1]'));
-        }
-      })
+
       this.getListData('init');
     },
     mounted() {
@@ -1921,7 +1920,7 @@
     background-clip: text;
     color: transparent;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 2rem !important;
   }
   .justify-content-center .miner_work_text{
     width: 100%;
@@ -2242,7 +2241,7 @@ inset 0 0 0 1px #fba342 !important;
   }
   .hometop {
     min-height: 28rem;
-    background: #1f2033;
+    /*background: #1f2033;*/
     padding: 50px 80px;
   }
   @media only screen and (max-width: 1024px) {
@@ -2274,5 +2273,13 @@ inset 0 0 0 1px #fba342 !important;
   }
   .bg-danger {
     background: linear-gradient(90deg, #ddb443, #009d24) !important;
+  }
+  .username {
+    font-size: 0.75rem;
+  }
+  @media only screen and (min-width: 992px) {
+    .el-col-md-5 {
+      width: 20%;
+    }
   }
 </style>

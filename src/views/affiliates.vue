@@ -17,15 +17,14 @@
             </div>
             <section style="margin-top: 20px;">
               <div class="container" style="background-color: whitesmoke; padding: 20px; border-radius: 10px;"><h3>
-                {{$t('affiliates[1]')}}</h3>
-                <p style="font-size: 18px;">{{$t('affliliate[7]')}}</p></div>
+                {{$t('affiliates[0]')}}</h3>
+                <p style="font-size: 18px;">{{$t('affiliates[1]')}}</p></div>
             </section>
             <div  class="row mb-5">
               <div  class="col-md-9 mt-4">
                 <div
-                     style="width: 100%; background-color: rgb(56, 66, 71); padding: 30px 0px; border-radius: 1.25rem;">
-                  <div  style="width: 90%; margin: 0px auto;"><span
-                                                                                      style="color: rgb(232, 232, 255); font-weight: bold; font-size: 24px;"> {{$t('affiliates[5]')}}</span>
+                     style="width: 100%; background-color:rgb(245,242,251);color: #000; padding: 30px 0px; border-radius: 1.25rem;">
+                  <div  style="width: 90%; margin: 0px auto;"><span  style="font-weight: bold; font-size: 24px;"> {{$t('affiliates[5]')}}</span>
                   </div>
                   <div
                        style="width: 90%; background-color: rgb(232, 232, 255); margin: 20px auto 0px; border-radius: 25px; padding: 10px 15px; display: flex; flex-flow: row; justify-content: space-between; box-shadow: white 0px 0px 3px;">
@@ -306,12 +305,12 @@
 </script>
 <style scoped>
   .rank {
-    background: #384247;
+    background: rgb(245,242,251);
     height: 100%;
     padding: 30px;
     border-radius: 10px;
     position: relative;
-    color: #fff;
+    color: #000;
   }
   @media only screen and (min-width: 1024px) {
     .mask {

@@ -28,7 +28,7 @@ export default {
             //         name:'Luo Luo',
             //         text: 'I verified that  ALL4 Mining is a safe, legal and easy to operate platform'
             //     },
-            //     {   
+            //     {
             //         id: '6',
             //         name:'Leigh Beto',
             //         text: 'When I withdrew my earnings, the platform completed my withdrawal very quickly'
@@ -112,7 +112,7 @@ export default {
             Partners:[
                 {
                     id: '1',
-                    type: 'jpg',
+                    type: 'png',
                 },
                 {
                     id: '2',
@@ -120,11 +120,11 @@ export default {
                 },
                 {
                     id: '3',
-                    type: 'svg',
+                    type: 'png',
                 },
                 {
                     id: '4',
-                    type: 'jpg',
+                    type: 'png',
                 },
                 {
                     id: '5',
@@ -132,31 +132,23 @@ export default {
                 },
                 {
                     id: '6',
-                    type: 'svg',
-                },
-                {
-                    id: '7',
-                    type: 'svg',
-                },
-                {
-                    id: '8',
-                    type: 'svg',
-                },
-                {
-                    id: '9',
-                    type: 'svg',
-                },
-                {
-                    id: '10',
-                    type: 'jpg',
-                },
-                {
-                    id: '11',
                     type: 'png',
                 },
                 {
-                    id: '12',
-                    type: 'svg',
+                    id: '7',
+                    type: 'png',
+                },
+                {
+                    id: '8',
+                    type: 'png',
+                },
+                {
+                    id: '9',
+                    type: 'png',
+                },
+                {
+                    id: '10',
+                    type: 'png',
                 }
             ]
         }

@@ -148,13 +148,14 @@
           list[index].read = 1;
           _this.dataList = list;
           let noRead = 0;
-          _this.dataList.forEach(function (o,n) {
-            if(o.read == 0){
+          _this.dataList.forEach(function (o, n) {
+            if (o.read == 0) {
               noRead += 1;
             }
-          })
+          });
           // localStorage.setItem("noReadNum",noRead);
-          _this.$store.dispatch('UpdateMessageInfo', '');
+          // _this.$store.dispatch('UpdateMessageInfo', '0');
+
         })
       },
       changePage(page){

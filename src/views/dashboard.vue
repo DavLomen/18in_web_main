@@ -32,8 +32,8 @@
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                     <div class="pc_color_card" style="background: rgb(253 195 19); color: #fff;">
-                      <div class="amt fs-5 fw-bold">{{InitData.currency}} 10</div>
-                      <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[10]") }}</div>
+                      <div class="amt fs-5 fw-bold">{{InitData.currency}} {{statisticalData.total_investment}}</div>
+                      <div class="label fs-5 fw-bold mt-3">{{ $t("dashboard[27]") }}</div>
                     </div>
                   </div>
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
@@ -220,10 +220,10 @@
               <!-- show_mobile 在手机模式下可见 -->
               <div   class="row mb-5 show_mobile">
                 <div  class="col-md-9 mt-4">
-                  <div
-                       style="width: 100%; background-color: rgb(56, 66, 71); padding: 30px 0px; border-radius: 1.25rem;">
+                  <div class="rank1"
+                       style="width: 100%;  padding: 30px 0px; border-radius: 1.25rem;">
                     <div  style="width: 90%; margin: 0px auto;"><span
-                                                                                        style="color: rgb(232, 232, 255); font-weight: bold; font-size: 24px;"> {{$t('dashboard[10]')}}</span>
+                                                                                        style="font-weight: bold; font-size: 24px;"> {{$t('dashboard[10]')}}</span>
                     </div>
                     <div
                          style="width: 90%; background-color: rgb(232, 232, 255); margin: 20px auto 0px; border-radius: 25px; padding: 10px 15px; display: flex; flex-flow: row; justify-content: space-between; box-shadow: white 0px 0px 3px;">
@@ -243,7 +243,7 @@
                   </div>
                 </div>
                 <div  class="col-md-3 mt-4">
-                  <div  class="rank" style="text-align: center; border-radius: 1.25rem;"><h6
+                  <div  class="rank rank1" style="text-align: center; border-radius: 1.25rem;"><h6
                     >{{$t('affiliates[10]')}}</h6><h5 >{{teamNum}}</h5></div>
                 </div>
               </div>
@@ -256,8 +256,8 @@
                     <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;" @click="$router.push('/MyPackages?status=1')"
                                                                           class="">
                       <div  class="card work-process border-0 rounded shadow bg-light">
-                        <div  class="card-body"
-                             style="background-color: rgb(56, 66, 71); border-radius: 1.25rem; color: white;"><h5
+                        <div  class="card-body rank1"
+                             style="border-radius: 1.25rem; "><h5
                            class="para"> {{$t('dashboard[3]')}} </h5><h4  class="title notranslate">
                           {{statisticalData.activity_task}}</h4></div>
                       </div>
@@ -265,8 +265,8 @@
                     <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;" @click="$router.push('/MyPackages?status=3')"
                                                                           class="">
                       <div  class="card work-process border-0 rounded shadow bg-light">
-                        <div  class="card-body"
-                             style="background-color: rgb(56, 66, 71); border-radius: 1.25rem; color: white;"><h5
+                        <div  class="card-body rank1"
+                             style="border-radius: 1.25rem;"><h5
                            class="para"> {{$t('dashboard[4]')}} </h5><h4
                                                                             class="title notranslate"> {{statisticalData.expired_task }}</h4></div>
                       </div>
@@ -274,8 +274,8 @@
                     <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;" @click="$router.push('/MyPackages')"
                                                                           class="">
                       <div  class="card work-process border-0 rounded shadow bg-light">
-                        <div  class="card-body"
-                             style="background-color: rgb(56, 66, 71); border-radius: 1.25rem; color: white;"><h5
+                        <div  class="card-body rank1"
+                             style=" border-radius: 1.25rem; "><h5
                            class="para"> {{$t('dashboard[5]')}} </h5><h4  class="title notranslate">
                           {{statisticalData.total_task}}</h4></div>
                       </div>
@@ -346,15 +346,15 @@
         }
       })
 
-      setInterval(function () {
-        that.$Model.HasNewMessage(data=>{
-          if (data.data == 1) {
-            that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
-              that.$router.push(`/message`)
-            }, that.$t('messageInfo[1]'));
-          }
-        })
-      },300000);
+      // setInterval(function () {
+      //   that.$Model.HasNewMessage(data=>{
+      //     if (data.data == 1) {
+      //       that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
+      //         that.$router.push(`/message`)
+      //       }, that.$t('messageInfo[1]'));
+      //     }
+      //   })
+      // },300000);
     },
     mounted() {
       this.headHeight = this.$refs.header.$el.offsetHeight
@@ -408,6 +408,10 @@
     border-radius: 10px;
     position: relative;
     color: #ffffff;
+  }
+  .rank1 {
+    background: rgb(245,242,251);
+    color: #000;
   }
 
   /* 超小屏幕（手机，小于 768px） */
