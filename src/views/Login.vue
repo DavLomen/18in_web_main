@@ -12,11 +12,23 @@
               <h2 style="color: #fff"  class="mb-1" v-html="$t('home[0]',{WT:InitData.setting.web_title})"></h2>
               <p style="color: #fff">{{$t('regLogin[22]')}}</p></div>
             <form  action="#">
-              <div  class="form-floating mb-4">
-                <input autocomplete="off" v-model.trim="postData.username" id="emailAddress" type="email" class="form-control" :placeholder="$t('regLogin[4]')">
-                <label for="emailAddress">{{$t('regLogin[4]')}}</label>
-                <div style="color: #ffffff" class="invalid-feedback">{{$t('regLogin[23]')}}</div></div>
-              <div  class="form-floating mb-4">
+              <div>
+                <div class="Input-title">
+                  <span style="color: red;">*</span>
+                  {{ $t('regLogin[24]') }}
+                </div>
+                <div  class="form-floating mb-4">
+                  <input autocomplete="off" v-model.trim="postData.username" id="emailAddress" type="email" class="form-control" :placeholder="$t('regLogin[4]')">
+                  <label for="emailAddress">{{$t('regLogin[4]')}}</label>
+                  <div style="color: #ffffff" class="invalid-feedback">{{$t('regLogin[23]')}}</div>
+                </div>
+              </div>
+              <div>
+                <div class="Input-title">
+                  <span style="color: red;">*</span>
+                  {{ $t('regLogin[25]') }}
+                </div>
+                <div  class="form-floating mb-4">
                 <input autocomplete="off" v-model.trim="postData.password" :type="passwords?'password':'text'"  class="form-control password" id="password" :placeholder="$t('regLogin[6]')">
                 <label  for="password">{{$t('regLogin[5]')}}</label>
                 <a  href="javascript:;" class="password-toggle" title="Toggle show/hide password" @click="passwords = !passwords">
@@ -24,6 +36,7 @@
                   <em v-else class="password-hidden ni ni-eye"></em>
                 </a>
                 <div  class="invalid-feedback"></div>
+              </div>
               </div>
               <div  class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div  class="form-check">
@@ -125,5 +138,7 @@ export default {
       background-size:cover !important;
     }
   }
-
+  .Input-title{
+    color: #fff;
+  }
 </style>

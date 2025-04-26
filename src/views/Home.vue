@@ -43,10 +43,9 @@
             </div>
             <div  class="col-lg-6 col-md-6">
               <div  class="hero-content pb-0 pt-md-0 pe-lg-8" >
-                <h1  class="hero-title mb-8" >
-                  {{$t('home1[0]')}}
-                  <span  class="nfts-word">{{$t('home1[1]')}}</span> {{$t('home1[2]')}}</h1>
-                <p  class="hero-text mb-4 pb-1" style="color:#000;"> {{$t('home1[3]')}}</p>
+                <h1 class="hero-title  hero-title-home mb-8" >{{$t('home1[0]')}}</h1>
+                <h1 class="hero-title  hero-title-home mb-8" >{{$t('home1[1]')}}</h1>
+                <p  class="hero-text  mb-4 pb-1" style="color:#000;"> {{$t('home1[3]')}}</p>
                 <ul  class="btns-group hero-btns justify-content-md-start justify-content-center">
                   <li>
                     <a href="javascript:;" class="btn btn-lg btn-dark" @click="$router.push('/register')">{{$t('header[14]')}}</a>
@@ -84,7 +83,7 @@
         <div class="scheme1Item_gE_r4 schemeItem2_12tqw" @click="$router.push('/contracts')" style="background-image: url(./static/images/ht2.png);background-size: 50px;">
           {{$t('newhome[4]')}}<br><span style="font-size: 14px;">{{$t('newhome[5]')}}</span>
       </div> <div class="schemeArrow_2y4_o"></div>
-        <div class="scheme1Item_gE_r4 schemeItem3_2eJTU" style="background-image: url(./static/images/ht3.png);background-size: 50px;">
+        <div class="scheme1Item_gE_r4 schemeItem3_2eJTU" style="background-image: url(./static/images/ht3.png);background-size: 50px;cursor: pointer;" @click="$router.push('/login')">
           {{$t('newhome[6]')}}<br><span style="font-size: 14px;">{{$t('newhome[7]')}}</span>
       </div>
 <!--        <div class="schemeArrow_2y4_o"></div>-->
@@ -451,7 +450,7 @@
     <section class="section-space">
       <div class="container">
         <div class="section-head text-center">
-          <h2 class="mb-3">{{$t('home1[25]')}}</h2>
+          <h2 class="mb-3">{{$t('home1[25]', {WT:InitData.setting.web_title})}}</h2>
           <p v-html="$t('home1[26]',{WT:InitData.setting.web_title})"></p>
         </div>
         <div class="PayJoinSection">
@@ -2569,9 +2568,17 @@
   }
 
   .hero-wrap >>> .header_content_bg{
-    background: #fff;
+    background-color: transparent;
+    margin: 50px auto;
+    /* 添加透明悬浮阴影效果 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
   }
   .pricing {
     display: flex;
+  }
+
+  .hero-title-home{
+    font-size: 1.8rem;
   }
 </style>

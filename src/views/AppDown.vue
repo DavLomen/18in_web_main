@@ -24,31 +24,6 @@
                     </div>
                     <div class="row_col_wrap_12 col span_12 light left">
                       <div
-                        class="vc_col-sm-6 wpb_column column_container vc_column_container col centered-text no-extra-padding left_margin_tablet_75px left_margin_phone_63px inherit_tablet inherit_phone "
-                        data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="0.1"
-                        data-animation="" data-delay="0">
-                        <div class="vc_column-inner">
-                          <div class="wpb_wrapper">
-                            <div class="img-with-aniamtion-wrap  custom-size" data-max-width="75%"
-                                 data-max-width-mobile="default" data-shadow="none" data-animation="fade-in">
-                              <div class="inner">
-                                <div class="hover-wrap" style="opacity: 1;">
-                                  <div class="hover-wrap-inner img-loaded"><img decoding="async"
-                                                                                class="img-with-animation skip-lazy nectar-lazy loaded animated-in"
-                                                                                data-delay="0" height="1024" width="699"
-                                                                                data-animation="fade-in"
-                                                                                :src="'./static/images/app.png?t=1'"
-                                                                                alt="" sizes="(max-width: 699px) 100vw, 699px"
-                                                                                style=""
-                                  >
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
                         class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "
                         data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1"
                         data-animation="" data-delay="0">
@@ -122,6 +97,31 @@
                               </div>
                             </div>
 
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="vc_col-sm-6 wpb_column column_container vc_column_container col centered-text no-extra-padding left_margin_tablet_75px left_margin_phone_63px inherit_tablet inherit_phone "
+                        data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="0.1"
+                        data-animation="" data-delay="0">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div class="img-with-aniamtion-wrap  custom-size" data-max-width="75%"
+                                 data-max-width-mobile="default" data-shadow="none" data-animation="fade-in">
+                              <div class="inner">
+                                <div class="hover-wrap" style="opacity: 1;">
+                                  <div class="hover-wrap-inner img-loaded"><img decoding="async"
+                                                                                class="img-with-animation skip-lazy nectar-lazy loaded animated-in"
+                                                                                data-delay="0" height="1024" width="699"
+                                                                                data-animation="fade-in"
+                                                                                :src="'./static/images/app.png?t=1'"
+                                                                                alt="" sizes="(max-width: 699px) 100vw, 699px"
+                                                                                style=""
+                                  >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

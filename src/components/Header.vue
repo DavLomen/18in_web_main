@@ -129,16 +129,19 @@
 <!--                        <img v-if="index=='/blog'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>-->
 <!--                              </li>-->
                             <li class="menu-item">
+                                <a href="javascript:;" @click="$router.push('/blog')" :class="(index=='/blog'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
+                                  <span class="menu-title">
+                                              {{$t('foot[6]')}}
+                                    <img v-if="index=='/blog'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt="">
+                                  </span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
                               <a aria-current="page" href="javascript:;" @click="$router.push('/app')" :class="(index=='/app'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
                       <span class="menu-title">{{$t('head[1]')}}
                         <img v-if="index=='/app'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
                               </li>
-              <li class="menu-item">
-                <a href="javascript:;" @click="$router.push('/blog')" :class="(index=='/blog'?'router-link-active router-link-exact-active menu-link active':'menu-link')">
-        <span class="menu-title">
-                    {{$t('foot[6]')}}
-                <img v-if="index=='/blog'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
-              </li>
+       
 
               <li :class="'menu-item d-lg-none has-sub '+(showMobileLan?'active':'')" @click="showMobileLan = !showMobileLan">
                 <a href="javascript:;" class="menu-link menu-toggle">{{$t('header[11]')}}</a>

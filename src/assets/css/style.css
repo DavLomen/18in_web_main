@@ -29097,7 +29097,7 @@ textarea.form-control {
 /* 20250424修改 */
 .btn-dark{
   color: #fff;
-  background: linear-gradient(to right, #23cff1, #00070e);
+  background: linear-gradient(to right, #23cff1, #00070e) !important;
   border: none;
 }
 
@@ -29235,4 +29235,8 @@ textarea.form-control {
     font-size: 15px;
     line-height: 28px;
   }
+}
+
+.text_white{
+	color: #fff !important;
 }

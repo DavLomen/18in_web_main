@@ -29,8 +29,8 @@
 
       </div>
     </section>
-    <div  class="" style="max-width: 960px;margin: 0 auto;">
-      <img :src="'./static/images/Our-affiliate.jpg'" style="width: 100%;">
+    <div  class="" style="max-width: 960px;margin: 0 auto; text-align: center;">
+      <img :src="'./static/images/Our-affiliate.jpg'" style="width: 100%;max-width: 650px;">
     </div>
 <!--    <div  class="join-info">-->
 <!--      <div  class="container">-->

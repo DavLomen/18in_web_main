@@ -164,22 +164,22 @@
 
                       <div class="position-relative " ><input type="text" v-model="promoteUrl"
                                                               class="notranslate form-control form-control-s1"
-                                                              placeholder="" disabled=""><a
-                        href="javascript:void(0)" @click="copy" :data-clipboard-text="promoteUrl" class="copy-toggle copy" title="Copy Link">
-                        <em
-                          class="ni ni-copy-fill"></em></a>
-                        <div class="d-sm-block copy" size="sm" style="margin-left: 5px;" @click="copy" :data-clipboard-text="promoteUrl">  {{$t('dashboard[11]')}}</div>
+                                                              placeholder="" disabled="">
+                        <a href="javascript:void(0)" @click="copy" :data-clipboard-text="promoteUrl" class="copy-toggle copy" title="Copy Link">
+                          <em class="ni ni-copy-fill"></em>
+                        </a>
+                        <!-- <div class="d-sm-block copy" size="sm" style="margin-left: 5px;" @click="copy" :data-clipboard-text="promoteUrl">  {{$t('dashboard[11]')}}</div> -->
                       </div>
                       <div class="h3">{{$t('dashboard[9]')}}</div>
 
 
                       <div class="position-relative " ><input type="text" v-model="UserInfo.idcode"
                                                               class="notranslate form-control form-control-s1"
-                                                              placeholder="" disabled=""><a
-                        href="javascript:void(0)" @click="copy" :data-clipboard-text="UserInfo.idcode" class="copy-toggle copy" title="Copy Link">
-                        <em
-                          class="ni ni-copy-fill"></em></a>
-                        <div class="d-sm-block copy" size="sm" style="margin-left: 5px;" @click="copy" :data-clipboard-text="UserInfo.idcode"></div>
+                                                              placeholder="" disabled="">
+                        <a href="javascript:void(0)" @click="copy" :data-clipboard-text="UserInfo.idcode" class="copy-toggle copy" title="Copy Link">
+                          <em class="ni ni-copy-fill"></em>
+                        </a>
+                        <!-- <div class="d-sm-block copy" size="sm" style="margin-left: 5px;" @click="copy" :data-clipboard-text="UserInfo.idcode"></div> -->
                       </div>
                       <div class="col-lg-4 col-md-6 text-center">
                         <div class="card1">
@@ -294,12 +294,18 @@
   }
   .copy-toggle {
     position: absolute;
-    right: 0;
-    top: 40%;
+    right: 15px;
+    top: 50%;
+    padding: .69rem .75rem;
     transform: translateY(-50%);
     cursor: pointer;
-    padding: .938rem 1.25rem;
-    color: #8CBE06;
+    color: #fff;
+    font-size: 1.4rem;
+    background: #8cbe06;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: flex;
+    align-items: center;
   }
   .d-block {
     display: block !important;
@@ -356,6 +362,7 @@
     color: #000;
   }
   .position-relative {
+    position: relative;
     margin-top: 10px;
   }
   .rightas {

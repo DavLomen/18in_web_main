@@ -4662,7 +4662,7 @@
     margin-bottom: 100px;
   }
   .about_adv .adv_right{
-    padding-top: 100px;
+    padding-top: 0;
   }
   .about_adv .adv_right .adv_img{
     position: relative;
@@ -4687,6 +4687,16 @@
     .about_adv{
       margin: 0;
     }
+  }
+  @media (min-width: 1669px) {
+      .about_adv .adv_right .adv_img{
+      width: 30%;
+    }
+    .about_adv .adv_right .adv_img_2{
+    left: 5%;
+    bottom: -200px;
+    z-index: 3;
+  }
   }
 </style>
 
