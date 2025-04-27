@@ -1,9 +1,8 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <van-notice-bar color="red" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />
     <div data-v-473dd3c9="" data-v-46027133="" class="homeBanner home-banner">
-      <section data-v-473dd3c9="" class="hero__slider--section style2">
+      <section data-v-473dd3c9="" class="hero__slider--section style2" style="position: relative;">
         <div class="video">
           <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">
             <source :src="'./static/images/bg.mp4'" type="video/mp4"  />
@@ -48,7 +47,8 @@
         </div>
       </section>
     </div>
-    <iframe class="iframe" scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ADOGEUSD%22%2C%22title%22%3A%22Dogecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ALTCUSD%22%2C%22title%22%3A%22Litecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABCHUSD%22%2C%22title%22%3A%22Bitcoin%20Cash%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AADAUSD%22%2C%22title%22%3A%22Cardano%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%2C%22title%22%3A%22XRP%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22globalecrypto.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22kkminer.top%2F%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 50px; width: 100%;"></iframe>
+    <iframe class="iframe" scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ADOGEUSD%22%2C%22title%22%3A%22Dogecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ALTCUSD%22%2C%22title%22%3A%22Litecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABCHUSD%22%2C%22title%22%3A%22Bitcoin%20Cash%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AADAUSD%22%2C%22title%22%3A%22Cardano%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%2C%22title%22%3A%22XRP%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22globalecrypto.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22kkminer.top%2F%22%7D" title="ticker tape TradingView widget" lang="en" style="z-index99;user-select: none; box-sizing: border-box; display: block; height: 50px; width: 100%;"></iframe>
+    <van-notice-bar color="red" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />
 
     <div class="section featured-section">
       <div class="section__head">
@@ -2233,6 +2233,10 @@ inset 0 0 0 1px #fba342 !important;
     /*z-index:-11*/
 
   }
+  .video video {
+    min-height: 38rem;
+    object-fit: cover;
+  }
   .video video>>>source{
     min-width: 100%;
     min-height: 100%;
@@ -2240,13 +2244,14 @@ inset 0 0 0 1px #fba342 !important;
     width: auto;
   }
   .hometop {
-    min-height: 28rem;
+    min-height: 38rem;
     /*background: #1f2033;*/
     padding: 50px 80px;
   }
   @media only screen and (max-width: 1024px) {
     .hometop {
-      min-height:12rem;
+      min-height:34rem;
+      padding: 1rem;
     }
   }
 
