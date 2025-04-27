@@ -20,7 +20,7 @@
                       />
                     </div>
                     <div class="plan-card__head">
-                      <div class="badge-card">{{item.title}}</div>
+                      <div class="badge-card mb-3">{{item.title}}</div>
                       <div class="pricing notranslate">
                         <h1>${{parseFloat(item.amount)}}</h1>
                         <p>/ {{item.cycle}}
@@ -83,7 +83,7 @@
                       </a>
                     </div>
                     <div class="mt-2 text-center">
-                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #eee, #23cff1)"/>
+                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #eee, #33f911)"/>
                     </div>
                     <img v-if="item.progress>=100" :src="'./static/images/out.png'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
                   </div>
@@ -134,7 +134,7 @@
               <div  class="col-12 col-md-6">
                 <div  class="amount">
                   <div  class="title">{{$t('product[29]')}}</div>
-                  <div  class="content">= {{detailData.amount*money}} USDT
+                  <div  class="content">= {{detailData.amount*money}} >{{$t('i18nLan.product.text1')}}
                     <svg data-v-cbf2c648=""  class="svg-icon" aria-hidden="true" style="font-size: 19px; margin-left: 12px;">
                       <use data-v-cbf2c648="" xlink:href="#icon-USDT-TRC20"></use></svg>
                   </div>

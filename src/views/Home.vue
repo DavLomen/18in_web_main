@@ -43,9 +43,9 @@
             </div>
             <div  class="col-lg-6 col-md-6">
               <div  class="hero-content pb-0 pt-md-0 pe-lg-8" >
-                <h1 class="hero-title  hero-title-home mb-8" >{{$t('home1[0]')}}</h1>
-                <h1 class="hero-title  hero-title-home mb-8" >{{$t('home1[1]')}}</h1>
-                <p  class="hero-text  mb-4 pb-1" style="color:#000;"> {{$t('home1[3]')}}</p>
+                <h1 class="hero-title  hero-title-home mb-8 text_white" >{{$t('home1[0]')}}</h1>
+                <h1 class="hero-title  hero-title-home mb-8 text_white" >{{$t('home1[1]')}}</h1>
+                <p  class="hero-text  mb-4 pb-1 text_white" style="color:#000;"> {{$t('home1[3]')}}</p>
                 <ul  class="btns-group hero-btns justify-content-md-start justify-content-center">
                   <li>
                     <a href="javascript:;" class="btn btn-lg btn-dark" @click="$router.push('/register')">{{$t('header[14]')}}</a>
@@ -226,7 +226,7 @@
                 </a>
               </div>
               <div class="mt-2 text-center">
-                <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #eee, #23cff1)"/>
+                <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #eee, #33f911)"/>
               </div>
               <img v-if="item.progress>=100" :src="'./static/images/out.png'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
             </div>
@@ -450,8 +450,8 @@
     <section class="section-space">
       <div class="container">
         <div class="section-head text-center">
-          <h2 class="mb-3">{{$t('home1[25]', {WT:InitData.setting.web_title})}}</h2>
-          <p v-html="$t('home1[26]',{WT:InitData.setting.web_title})"></p>
+          <h2 class="mb-3">{{$t('home1[24]')}}</h2>
+          <p>{{ $t('home1[25]') }}</p>
         </div>
         <div class="PayJoinSection">
           <div class="wrap">

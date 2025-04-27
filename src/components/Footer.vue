@@ -87,7 +87,7 @@
                   <ul class="list-item list-item-s1">
                     <li>
                       <img class="" :src="'./static/images/location.ff05dc4d.png'" alt="location" style="width:30px;">
-                      30 Colston Avenue, Carshalton, Surrey, England, SM5 2NU
+                      >{{$t("i18nLan.about_us.text2")}}
                     </li>
                     <li>
                       <img class="" :src="'./static/images/mail.8f0212e7.png'" alt="location" style="width:30px;margin-right:10px;">

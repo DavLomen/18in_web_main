@@ -6,7 +6,7 @@
         <div class="container">
           <div class="row g-3 justify-content-center">
             <div class="col-lg-10 text-center">
-              <h2 class="m-0 banner-title">Open New Support Ticket</h2>
+              <h2 class="m-0 banner-title">{{$t("i18nLan.newticket.text1")}}</h2>
             </div>
           </div>
         </div>
@@ -16,53 +16,53 @@
       <div class="container">
         <div class="text-end mb-3">
           <a href="javascript:;" class="btn btn-sm btn--base">
-            My Support Ticket            </a>
+            {{$t("i18nLan.newticket.text2")}}           </a>
         </div>
         <div class="card custom--card">
           <form>
             <div class="card-body">
               <input type="hidden" name="_token" value="QjzuzsPyvUssFZayawjTuq6pGpAVqHnm4dQr6YZT">                    <div class="row">
               <div class="form-group col-md-6">
-                <label for="name">Name</label>
+                <label for="name">{{$t("i18nLan.newticket.text3")}}</label>
                 <input type="text" name="name" value="aa123123" class="form-control form--control" placeholder="Enter your name" readonly="">
               </div>
               <div class="form-group col-md-6">
-                <label for="email">Email address</label>
+                <label for="email">{{$t("i18nLan.newticket.text4")}}</label>
                 <input type="email" name="email" value="132123456@qq.com" class="form-control form--control" placeholder="Enter your email" readonly="">
               </div>
 
               <div class="form-group col-md-6">
-                <label for="website">Subject</label>
+                <label for="website">{{$t("i18nLan.newticket.text5")}}</label>
                 <input type="text" name="subject" value="" class="form-control form--control">
               </div>
               <div class="form-group col-md-6">
-                <label for="priority">Priority</label>
+                <label for="priority">{{$t("i18nLan.newticket.text9")}}</label>
                 <select name="priority" class="form-select form--select">
-                  <option value="3">High</option>
-                  <option value="2">Medium</option>
-                  <option value="1">Low</option>
+                  <option value="3">{{$t("i18nLan.newticket.text6")}}</option>
+                  <option value="2">{{$t("i18nLan.newticket.text7")}}</option>
+                  <option value="1">{{$t("i18nLan.newticket.text8")}}</option>
                 </select>
               </div>
               <div class="col-12 form-group">
-                <label for="inputMessage">Message</label>
+                <label for="inputMessage">{{$t("i18nLan.newticket.text10")}}</label>
                 <textarea name="message" id="inputMessage" rows="6" class="form-control form--control-textarea "></textarea>
               </div>
             </div>
               <div class="file-upload">
                 <div class="d-flex justify-content-between mb-3 align-items-center">
-                  <label for="inputAttachments">Attachments</label>
+                  <label for="inputAttachments">{{$t("i18nLan.newticket.text11")}}</label>
 
                   <button type="button" class="btn btn--base btn-sm addFile d-block">
-                    <i class="fa fa-plus"></i> Add More                            </button>
+                    <i class="fa fa-plus"></i> {{$t("i18nLan.newticket.text12")}} </button>
                 </div>
                 <input type="file" name="attachments[]" id="inputAttachments" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx" class="form--control form-control mb-2">
                 <div id="fileUploadsContainer"></div>
                 <p class="ticket-attachments-message text-muted">
-                  Allowed File Extensions: .jpg, .jpeg, .png, .pdf, .doc, .docx                        </p>
+                  {{$t("i18nLan.newticket.text13")}}                       </p>
               </div>
             </div>
             <div class="card-footer">
-              <button class="btn btn--base btn-block" type="submit">Submit</button>
+              <button class="btn btn--base btn-block" type="submit">{{$t("i18nLan.newticket.text14")}}</button>
             </div>
           </form>
         </div>

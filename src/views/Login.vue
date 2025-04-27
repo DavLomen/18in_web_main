@@ -30,7 +30,7 @@
                 </div>
                 <div  class="form-floating mb-4">
                 <input autocomplete="off" v-model.trim="postData.password" :type="passwords?'password':'text'"  class="form-control password" id="password" :placeholder="$t('regLogin[6]')">
-                <label  for="password">{{$t('regLogin[5]')}}</label>
+                <label  for="password">{{$t('regLogin[6]')}}</label>
                 <a  href="javascript:;" class="password-toggle" title="Toggle show/hide password" @click="passwords = !passwords">
                   <em v-if="passwords"  class="password-shown ni ni-eye-off"></em>
                   <em v-else class="password-hidden ni ni-eye"></em>
