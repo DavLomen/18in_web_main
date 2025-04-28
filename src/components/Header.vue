@@ -141,7 +141,7 @@
                       <span class="menu-title">{{$t('head[1]')}}
                         <img v-if="index=='/app'" class="menu-link_line active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAICAYAAACCuR0hAAAAAXNSR0IArs4c6QAAAS5JREFUOE/FlE1LQlEQhp+ZPiCkoFUgV7dhVBC0qZaamzblUpJ+SSD0S+KGS21durRFbSKCaKsgtC1cpN0zcYPQxOKmRmd75jzzznlnRpJre4tB0MloQL35eNlijJNY3o0zJXkzCiFGBJ/ASpPgOtWNoKvX4qWyNwibgMOoGnL2NmPlp7uLdhTtS+vZ2HRXcoIdImQAHXg3Se6teCvZV2B2IEkbsbI68RsP2zUouq/3RU2mrtJOrYBJDohFKQ4Yl9sJBVeA/R8Shm1SQtX/iHEutDsPxCOK/C5sFO65eN7WnCzMHxsc/ZOIKHW3BE7t+eVEetFFTazWM+Yk/MGDX9kMFVHzm/c71WHtM0lun+Ce9M9BQq0gRnrYIJlQw4k/yoCOwx0quN+jv1xVo6zAd010tziJ0OBUAAAAAElFTkSuQmCC" alt=""></span></a>
                               </li>
-       
+
 
               <li :class="'menu-item d-lg-none has-sub '+(showMobileLan?'active':'')" @click="showMobileLan = !showMobileLan">
                 <a href="javascript:;" class="menu-link menu-toggle">{{$t('header[11]')}}</a>
@@ -179,10 +179,10 @@
             </ul>
             <ul class="menu-btns" v-if="!UserInfo">
               <li>
-                <a style="background: linear-gradient(to right, #2777ed,#00070e);border: none;color: #fff;" href="javascript:;" @click="$router.push('/register')" :class="'btn '+(index=='7'?'btn-dark':'btn-outline-dark')+' menu-title'">{{$t('header[14]')}}</a>
+                <a style="background: linear-gradient(to right, #23cff1, #00070e) !important;border: none;color: #fff;" href="javascript:;" @click="$router.push('/register')" :class="'btn '+(index=='7'?'btn-dark':'btn-outline-dark')+' menu-title'">{{$t('header[14]')}}</a>
               </li>
               <li>
-                <a style="background: linear-gradient(to right, #2777ed,#00070e);border: none;color: #fff;" href="javascript:;" @click="$router.push('/login')" :class="'btn '+(index!='7'?'btn-dark':'btn-outline-dark')+' menu-title'">{{$t('header[13]')}}</a></li>
+                <a style="background: linear-gradient(to right, #23cff1, #00070e) !important;border: none;color: #fff;" href="javascript:;" @click="$router.push('/login')" :class="'btn '+(index!='7'?'btn-dark':'btn-outline-dark')+' menu-title'">{{$t('header[13]')}}</a></li>
             </ul>
             <ul v-else class="menu-btns">
               <li  class="header__account--items"><a  href="javascript:;" @click="$router.push('/dashboard')"

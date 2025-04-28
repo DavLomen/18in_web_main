@@ -242,7 +242,7 @@
                 <div class="el-form-item">
 
                   <div class="el-form-item__content">
-                    <div class="submit-btn btn-dark" style="background: linear-gradient(to right, #2777ed, #00070e);" @click="onSubmit">{{$t('regLogin[19]')}}</div>
+                    <div class="submit-btn btn-dark" style="background: linear-gradient(to right, #23cff1, #00070e) !important;" @click="onSubmit">{{$t('regLogin[19]')}}</div>
 
                   </div>
                 </div>
