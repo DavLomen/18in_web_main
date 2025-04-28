@@ -455,6 +455,11 @@ export default {
     "Faculty",
     "Faq"
   ],
+  "accept": [
+    "ACCEPT A VARIETY OF PAYMENT METHODS",
+    "To ensure convenience for our investors, Paladin Mining provides a diverse range of payment methods for both depositing funds and receiving payments.",
+    ""
+  ],
   "about":[
     "ABOUT US",
      "PaladinMining Cloud Mining Provider Introduction",
@@ -707,7 +712,10 @@ export default {
   "blog":[
     "Recent Blog",
     "Recent Blog Posts",
-    "Read More"
+    "Read More",
+    "Blog post",
+    "Follow and read the latest blog posts from our website",
+    "View all blogs"
   ],
   "welfare":[
     "VIP EXCLUSIVE"

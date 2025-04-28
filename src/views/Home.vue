@@ -381,10 +381,23 @@
           </div>
         </section>
 
-
-        <div  class="box6" style="position: relative;">
-          <video webkit-playsinline="true" playsinline="true" :src="'./static/pala.mp4'" controls style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>
+        <div class="box3 max960">
+          <div class="box-wrapper">
+            <div class="box3-title">{{$t('accept[0]')}}</div>
+            <div style="font-size: 1.5rem;padding: 1rem;line-height: 2.5rem;">{{$t('accept[1]')}}</div>
+            <div class="el-row data-flex" style="justify-content:space-between;flex-wrap: wrap;">
+              <div class="el-col-xs-8 el-col-sm-6 el-col-md-3 mx-auto mb-5 mt-5" v-for="item in coinlist" :key="item.name">
+                <div class="el-mx-auto-95 text-center">
+                  <img style="width: 50px; object-fit: cover;" :src="`./static/images/${item.name}.png`" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- 20250428视频注释 -->
+        <!-- <div  class="box6" style="position: relative;">
+          <video webkit-playsinline="true" playsinline="true" :src="'./static/pala.mp4'" controls style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>
+        </div> -->
 
 
         <div class="section faq-section" style="margin-top: 2rem">
@@ -604,7 +617,34 @@
             </div>
           </div>
         </div>
+<!-- Bolg Section -->
+      <div class="box3 max960">
+        <div class="box-wrapper">
+          <div class="box3-title text-center" style="color: #fba342;">{{$t('blog[3]')}}</div>
+          <div class="text-center" style="font-size: 1.5rem;padding: 1rem;line-height: 2.5rem;">{{$t('blog[4]')}}</div>
+          <div class="el-row data-flex" style="justify-content:space-between;flex-wrap: wrap;">
+            <div class="el-col-xs-12 el-col-sm-12 el-col-md-8 mx-auto mb-5 mt-5" v-for="(el, i) in listDataBlog" :key="i">
+              <div class="el-mx-auto-95" v-if="i <= 2" @click.stop="$router.push({
+                  path: '/blogDetail',
+                  query: {
+                    id: el.id
+                  }
+                })">
+                <div class="el_com_card_np">
+                  <img style="width: 100%; height: 200px; object-fit: cover;border-radius: 12px;" :src="`${ApiUrl}${el.cover_img	}`" alt="">
+                  <div class="" style="font-size: 1.5rem;padding: 1rem;line-height: 2.5rem;color: #333;">{{el.title}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="justify-content-between data-flex el-content-text">
+          <div class="to-blog el-content-label" @click="$router.push({
+            path: '/blog'
+          })">{{$t('blog[5]')}}</div>
+        </div>
+        </div>
       </div>
+    </div>
     </div>
 
 
@@ -695,6 +735,105 @@
     data() {
       return {
         showMore:false,
+        listDataBlog: [],
+        coinlist:[
+          {
+            name:'BTC',
+            symbol:'btcusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'ETH',
+            symbol:'ethusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'LTC',
+            symbol:'ltcusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'ATOM',
+            symbol:'atomusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'TRX',
+            symbol:'trxusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'CKB',
+            symbol:'ckbusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'BCH',
+            symbol:'bchusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'KSM',
+            symbol:'ksmusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'DOT',
+            symbol:'dotusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'FIL',
+            symbol:'filusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'USDC',
+            symbol:'usdcusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+          {
+            name:'XTZ',
+            symbol:'xtzusdt',
+            price:'',
+            change:'',
+            rate:'',
+            icon:'',
+          },
+        ],
         email:'',
         number:1,
         detailData:{},
@@ -869,6 +1008,27 @@
       if (this.InitData.bannerList.length == 1) {
         this.swiperOption0.autoplay = false;
       }
+      this.$Model.noticeList({gropid: 10,page_no: this.pageNo,page_size:6},data=>{
+          this.isLoad = false
+          if(data.code==1){
+            if(data.info.length<=0){
+              this.listDataBlog =[];
+              this.isFinished = true
+            }else {
+              this.data_current_page = data.data_current_page;
+              this.data_total_page = data.data_total_page;
+              this.listDataBlog = data.info;
+              this.isFinished = true
+              if(type=='load'){
+                this.listDataBlog = this.listDataBlog.concat(data.info);
+              }else{
+              }
+            }
+          }else{
+            this.listData = []
+            this.isFinished = true
+          }
+        });
       this.getListData('init');
     },
     mounted() {
@@ -5252,6 +5412,18 @@
   }
   .faq-content {
     color: #000000;
+  }
+  .to-blog{
+    width: 150px;
+    height: 50px;
+    color: #fba342;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+  -webkit-box-shadow:
+inset 0 0 0 1px #fba342 !important;
+  box-shadow: inset 0 0 0 1px #fba342 !important;
   }
 </style>
 

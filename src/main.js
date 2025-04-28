@@ -15,6 +15,7 @@ import 'vant/lib/index.css'
 import '@/assets/css/style.css'
 import '@/assets/css/font-awesome.css'
 import '@/assets/css/line-awesome.css'
+import '@/assets/css/common.css'
 import "babel-polyfill";
 
 // import ElementUI from 'element-ui';
