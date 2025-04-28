@@ -113,9 +113,11 @@
                       <br>{{$t('productDetail[18]')}}
                       <br>
                       <br>{{$t('productDetail[19]')}}
-                    <div style="color: #000" v-if="detailData.agreement && detailData.agreement !=''" v-html="detailData.agreement">
-                    </div>
+                      <br>
+                    <div style="color: #000;margin-top: 1rem;" v-if="detailData.agreement && detailData.agreement !=''" v-html="detailData.agreement">
 
+                    </div>
+                      <br>{{$t('productDetail[20]')}}
                     </div>
                   </div>
                 </div>

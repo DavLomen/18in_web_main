@@ -72,13 +72,13 @@
                     <!--                    </a>-->
                     <!--                  </div>-->
                     <div class="mt-1 text-center" style="display: flex;justify-content: space-between">
-                      <a  href="javascript:;" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;background: #23cff1" @click="goDetail(item)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                      <a  href="javascript:;" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;" @click="goDetail(item)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
                         {{$t('settle[4]')}}
                       </a>
-                      <div v-if="item.progress>=100" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;background: #23cff1" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                      <div v-if="item.progress>=100" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;" class="t-link btn btn--base btn--lg rounded-pill investBtn">
                         {{$t('product[13]')}}
                       </div>
-                      <a v-else href="javascript:;" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;background: #23cff1" @click="orderNow(item)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                      <a v-else href="javascript:;" style="width: 100%;height: fit-content;padding: 10px;margin: 5px;" @click="orderNow(item)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
                         {{$t('buy[0]')}}
                       </a>
                     </div>
@@ -317,9 +317,14 @@
   }
   .pricing {
     display: flex;
+    align-items: center;
   }
   .badge-card {
     margin-bottom: 1rem;
+  }
+  .badge-card {
+    color: #000000;
+    font-weight: bold;
   }
 </style>
 

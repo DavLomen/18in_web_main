@@ -725,7 +725,7 @@ export default {
   "productDetail":[
     "Detail",
     "Hash Rate and after-sales services provided by PBK Miner.",
-    "Cloud Hash Rate plans provide an easy and efficient mining solution for institutional customers. You can enjoy high-performance mining without owning, running or maintaining your own mining equipment. Additionally, cloud hash rate plans provide you with the flexibility of choosing your preferred miner model, plan duration, and hash rate capacity. You can start mining with a few clicks and monitor the mining outputs any time.\n",
+    "Cloud computing contracts provide platform users with a convenient and efficient mining solution. You can enjoy high-performance mining without owning, operating or maintaining your own mining machines. In addition, cloud computing contracts give you the flexibility to choose your favorite mining machine model, contract duration and computing capacity. Start mining with just a few clicks and monitor your mining output at any time.",
     "Product Introduction\n",
     "1. Purchase instructions\n",
     "Before placing an order, please understand the product carefully. If you are unclear, you can consult customer service. Once the order is placed, it means that the product has been approved and there is no refund.\n",
@@ -743,7 +743,7 @@ export default {
     "2.PBK Miner will not be responsible for any results that arise from uncontrollable risks, including but not limited to natural disasters such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or higher risk weather events, government actions, or directives, city-level grid power supply incidents as well as social actions or conflicts such as war, strikes, riots, etc.\n",
     "3. Hashrate fluctuation is inevitable. PBK Miner will not be responsible for fluctuations caused by unstable networks, network failures, miner performance, etc.\n",
     "4. Static Output was calculated statically by the current difficulty, which fluctuates with the market. It will be lower or higher when the difficulty rises or drops. Thus, it is for reference only",
-    ""
+    "The platform reserves the right of final interpretation of the terms of this contract."
   ],
   "blog":[
     "Recent Blog",
