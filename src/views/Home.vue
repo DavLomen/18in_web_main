@@ -20,12 +20,18 @@
             </div>
             <div class="left el-col-xs-24 el-col-sm-12 el-col-md-12">
               <h1 class="fw-bold" style="color: #000">{{ $t('head-bg[0]') }}</h1>
-              <p>{{ $t('head-bg[1]') }}</p>
+              <p style="font-size: 1.8rem;color: #cdb241">{{ $t('head-bg[1]') }}</p>
               <div v-if="!UserInfo" class=" header__account">
                 <ul  class="d-flex align-items-center">
                   <li  class="right-extend_items header__account--items login-but_box" style="display: flex;justify-content: space-between;">
-                    <a href="javascript:;" @click="$router.push('/login')"class="but but_signup btn-dark"> {{$t('head[3]')}} </a>
+                    <a href="javascript:;" @click="$router.push('/login')" class="but but_signup btn-dark"> {{$t('head[3]')}} </a>
                     <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup btn-dark">{{$t('head[2]')}} </a>
+                  </li>
+                </ul>
+                <ul  class="d-flex align-items-center">
+                  <li  class="right-extend_items header__account--items login-but_box" style="display: flex;justify-content: space-between;">
+                    <a href="javascript:;"  @click="$router.push('/deposit')" class="but but_signup btn-dark" > {{$t('head[7]')}} </a>
+                    <a  href="javascript:;" @click="$router.push('/withdraw')" class="but but_signup btn-dark" >{{$t('head[8]')}} </a>
                   </li>
                 </ul>
               </div>
@@ -168,7 +174,7 @@
                   <div class="text-left" style="color: #000000;font-weight: bold">
                     <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('settle[0]')}}: {{item.type==1?$t('product[7]'):$t('product[17]')}}</h6>
                   </div>
-                  <div class="bonus" v-if="item.amount!=10">
+                  <div class="bonus" v-if="item.amount!=15">
                     <div class="label">{{$t('product[10]')}}</div>
                     <ul class="plan-referral justify-content-center mb-2">
                       <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
@@ -414,7 +420,7 @@
                                           <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
                                           <div class="text-left fl-wap username">{{item.username}}</div>
                                         </div>
-                                        <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
+                                        <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{item.currency}}</div>
                                         <div class="time col-4 text-right">{{item.time}}</div>
                                     </div>
                                   </div>
@@ -602,7 +608,7 @@
           <div class="row justify-content-center">
             <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
               <div class="section-title text-center">
-                <h1 class="title fw-bold" style="color: #fba342;">{{$t('blog[3]')}}</h1>
+                <h1 class="title fw-bold" style="color: #000;">{{$t('blog[3]')}}</h1>
                 <div class="para-desc videoDiv text-center mx-auto">
                   <p>
                     {{$t('blog[4]')}}
@@ -1916,11 +1922,12 @@
 
 
   .justify-content-center .miner_work_title{
-    background: linear-gradient(90deg, #fffc00 35%, #db36a4 60%);
-    background-clip: text;
-    color: transparent;
+    /*background: linear-gradient(90deg, #fffc00 35%, #db36a4 60%);*/
+    /*background-clip: text;*/
+    /*color: transparent;*/
     font-weight: 700;
     font-size: 2rem !important;
+    color: #000000;
   }
   .justify-content-center .miner_work_text{
     width: 100%;
@@ -2113,14 +2120,14 @@
   .to-blog{
     width: 150px;
     height: 50px;
-    color: #fba342;
+    color: #000;
     justify-content: center;
     align-items: center;
     display: flex;
     margin: 0 auto;
   -webkit-box-shadow:
-inset 0 0 0 1px #fba342 !important;
-  box-shadow: inset 0 0 0 1px #fba342 !important;
+inset 0 0 0 1px #18a028 !important;
+  box-shadow: inset 0 0 0 1px #18a028 !important;
   }
 
   .profit-calculator {

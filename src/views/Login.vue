@@ -434,7 +434,7 @@
     }
 
     .container .form-box .form .register-link .link {
-      color: #1a9ede;
+      color: #18a028;
       cursor: pointer
     }
 
@@ -469,7 +469,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg, #ddb443, #009d24);
       cursor: pointer
     }
   }
@@ -517,7 +517,7 @@
     }
 
     .container .form-box .form .register-link .link {
-      color: #1a9ede;
+      color: #18a028;
       cursor: pointer
     }
 
@@ -551,7 +551,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
+      background-image: linear-gradient(90deg, #ddb443, #009d24);
       cursor: pointer
     }
   }

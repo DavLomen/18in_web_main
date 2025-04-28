@@ -24,10 +24,10 @@
           <div class="col-md-6 col-lg-2">
             <h4 class="mt-0">{{$t('foot[7]')}}</h4>
             <div class="link-item"><i class="el-icon-location-information"></i>
-              2.71-75 Shelton Street, London, Greater London, United Kingdom, WC2H 9JQ
+              Techspace Aldgate East, 32-38 Leman Street, London, England, E1 8EW
             </div>
             <div class="link-item"><i class="el-icon-message"></i>
-              info@kkminer.top
+              iofo@all4mining.com
             </div>
             <div class="link-item">
               <van-icon name="smile-comment-o" />

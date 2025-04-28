@@ -697,7 +697,7 @@ export default {
   ],
   "productDetail": [
     "Details",
-    "Each account is limited to one purchase per day",
+    "Each user purchases once a day",
     "Each account can only purchase 1 copy",
     "Purchase instructions",
     "The computing power and after-sales service are provided by ALL4Mining. <br>The cloud computing power plan provides institutional customers with simple and efficient mining solutions. You don't need to own, run or maintain your own mining equipment to enjoy high-performance mining. Additionally, cloud computing plans give you the flexibility to choose your preferred mining rig model, plan duration, and computing capacity. You can start mining with just a few clicks and monitor your mining output at any time.",

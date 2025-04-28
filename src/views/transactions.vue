@@ -10,8 +10,8 @@
               <section  class="section" style="margin-top: -100px;">
                 <div >
                   <div class="el-row" style="position: relative; margin-top: 50px;">
-                    <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary"
-                            style="background: rgb(255, 243, 214); color: black; font-weight: 500;"><!----><i
+                    <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary btn-dark"
+                            style="color: black; font-weight: 500;"><!----><i
                       class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
                   </div>
                 </div>

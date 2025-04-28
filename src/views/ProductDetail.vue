@@ -25,13 +25,22 @@
                 <p> {{$t('settle[2]')}}: <span class="notranslate">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*1).toFixed(2))}}</span></p>
                 <p> {{$t('settle[3]')}}: <span class="notranslate">${{detailData.amount}} + ${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</span></p>
                 <p> {{$t('settle[0]')}}:<span class="notranslate">{{detailData.type==1?$t('product[7]'):$t('product[17]')}}</span></p>
-                <div v-if="detailData.amount==100" style="color: #e73329;font-size: 1.2rem;">{{$t('newss[2]')}}</div>
-                <div v-if="detailData.amount==10" style="color: #e73329;font-size: 1.2rem;">{{$t('newss[3]')}}</div>
-                <div class="bonus" style="display: grid;justify-content: left;" v-if="detailData.amount!=10">
+                <div v-if="detailData.amount==100" style="color: #e73329;font-size: 1.2rem;">{{$t('productDetail[2]')}}</div>
+                <div v-if="detailData.amount==15" style="color: #e73329;font-size: 1.2rem;">{{$t('productDetail[1]')}}</div>
+                <div class="bonus" style="display: grid;justify-content: left;" v-if="detailData.amount!=15">
                   <div class="label">{{$t('product[10]')}}</div>
                   <ul class="plan-referral justify-content-center mb-2">
                     <div class="single-referral" v-for="(aa,i) in detailData.affiliate_bonus">
                       <span>{{aa}} %</span>
+                      <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
+                    </div>
+                  </ul>
+                </div>
+                <div class="bonus" style="display: grid;justify-content: left;" v-else>
+                  <div class="label">{{$t('product[10]')}}</div>
+                  <ul class="plan-referral justify-content-center mb-2">
+                    <div class="single-referral" v-for="(aa,i) in detailData.affiliate_bonus">
+                      <span>0 %</span>
                       <div>{{$t('affiliates[13]')}} {{(i+1)}}</div>
                     </div>
                   </ul>

@@ -6170,16 +6170,16 @@ li,ul {
 }
 
 .login-but_box .but {
-  width: var(--butWidth);
-  height: var(--butHeight);
+  min-width: 8rem;
   background: #0c66ff;
   border-radius: var(--butBR);
-  font-size: var(--butFS);
-  font-family: Nunito,sans-serif;
+  font-size: 1rem;
+  font-family: Nunito, sans-serif;
   color: #fff;
   line-height: var(--butHeight);
   text-align: center;
-  display: inline-block
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
 }
 
 .login-but_box .but:focus,.login-but_box .but:hover {

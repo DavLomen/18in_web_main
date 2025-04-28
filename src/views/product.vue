@@ -60,7 +60,7 @@
                     <div class="text-left" style="color: #000000;font-weight: bold">
                       <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('settle[0]')}}: {{item.type==1?$t('product[7]'):$t('product[17]')}}</h6>
                     </div>
-                    <div class="bonus" v-if="item.amount!=10">
+                    <div class="bonus" v-if="item.amount!=15">
                       <div class="label">{{$t('product[10]')}}</div>
                       <ul class="plan-referral justify-content-center mb-2">
                         <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">

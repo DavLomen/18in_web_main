@@ -85,7 +85,7 @@
                 <div class="content">
                   <h5 class="title">{{$t('contact[7]')}}</h5>
                   <p class="caption">{{$t('contact[8]')}}</p>
-                  <p class="mt-2"><a href="mailto:info@kkminer.top">info@kkminer.top</a></p>
+                  <p class="mt-2"><a href="mailto:iofo@all4mining.com">iofo@all4mining.com</a></p>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@
                 <div class="content">
                   <h5 class="title">{{$t('contact[12]')}}</h5>
                   <p class="caption">{{$t('contact[13]')}}</p>
-                  <p class="mt-2">1 America Square, City of London, London EC3N 2LS UK</p>
+                  <p class="mt-2">Techspace Aldgate East, 32-38 Leman Street, London, England, E1 8EW</p>
                 </div>
               </div>
             </div>
