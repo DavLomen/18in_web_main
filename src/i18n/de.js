@@ -263,9 +263,9 @@ export default {
     "Wenn Sie keine Antwort auf Ihre Fragen finden konnten, wenden Sie sich bitte an unseren Kundensupport",
     "1. Was ist Cloud Mining?",
     "Der Cloud -Mining ist eine Methode zum Kryptowährungsabbau, bei dem Einzelpersonen die Rechenleistung von Remote -Rechenzentren mieten und die Notwendigkeit des Kaufs und Wartung von Hardware beseitigen. ",
-    "2. Wie fange ich mit {WT} an?",
+    "2. Wie fange ich mit {wt} an?",
     "Registrieren Sie sich mit Ihrer E -Mail -Adresse für ein kostenloses Mitgliedskonto, überlösen Sie Ihr Konto, wählen Sie Bergbauverträge, in die Sie investieren möchten, und erzielen Sie tägliche Renditen!",
-    "3. Was sind {WT} Vorteile?",
+    "3. Was sind {Wt} Vorteile?",
     "Treten Sie {WT} bei, wo Sie keine Hardware-/Software-/technische Fachkenntnisse benötigen, noch müssen Sie Cloud -Mining -Trends oder Marktschwankungen erforschen. ",
     "4. Kann ich mehr als einen Cloud -Mining -Vertrag kaufen?",
     "Ja, Sie können mehrere Verträge und sogar Verträge unterschiedlicher Bedingungen kaufen.",
@@ -326,7 +326,7 @@ export default {
     "Bitte geben Sie die Transaktions -ID (TXID) ein"
   ],
   "foot": [
-    "DRML Miner ist die weltweit führende Cloud-Mining-Plattform. Wir verfügen über ein professionelles Team und fortschrittliche Technologie. Nach Jahren der Entwicklung und Verbesserung nutzt das Unternehmen saubere Energie als kinetische Energie, um Cloud-Mining einfacher und effizienter zu gestalten. Die Mission ist klar: Wir bieten Ihnen die Tools und Services, die Sie für Ihren Erfolg im Bereich digitaler Assets und die Schaffung von mehr Wohlstand für Ihre Nutzer benötigen. Begleiten Sie uns auf einer profitablen Reise in die Welt der Kryptowährungen.",
+    "PBK Miner ist die weltweit führende Cloud -Mining -Plattform mit professionellem Team und fortschrittlicher Technologie. ",
     "Hauptlinks",
     "Wichtige Links",
     "Über uns",
@@ -337,7 +337,7 @@ export default {
     "Wichtige Links",
     "Privatsphäre und Politik",
     "Nutzungsbedingungen",
-    "Copyright © 2018-2025 DRML Miner。all Rechte",
+    "Copyright © 2019-2025 PBK Miner. ",
     "LERNEN",
     "Was ist Kryptowährung?",
     "Was ist Web3?",
@@ -413,10 +413,10 @@ export default {
     "Passwort",
     "Passwort mindestens 6 Zeichen",
     "Passwort bestätigen",
-    "Affiliates Code (optional)",
+    "Empfehlungscode (optional)",
     "Code überprüfen",
     "Ich akzeptiere",
-    "MELDEN SIE SICH AN",
+    "Singen",
     "Sie haben kein Konto?",
     "Melden Sie sich jetzt an",
     "Ihr Verify -Code kann nicht leer sein.",
@@ -424,20 +424,31 @@ export default {
     "Datenschutzrichtlinie",
     "Und",
     "Bedingungen",
-    "EIN KONTO ERSTELLEN",
+    "Registrieren Sie sich jetzt",
     "Haben Sie bereits ein Konto?",
-    "ANMELDEN",
+    "Singen",
     "Sich anmelden, um fortzufahren",
-    "Ihre E -Mail kann nicht leer sein."
+    "Ihre E -Mail kann nicht leer sein.",
+    "Benutzername",
+    "Passwort"
   ],
   "settle": [
-    "Vergleichsinteresse",
-    "Alle 24 Stunden"
+    "SEINETTEILE INTEREN",
+    "Alle 24 Stunden",
+    "Tägliches Einkommen",
+    "Festeinkommen",
+    "Detail anzeigen",
+    "Jetzt kaufen",
+    "Kasse",
+    "Kaufbetrag eingeben",
+    "Menge",
+    "Zahlungskennwort",
+    "Zahlen"
   ],
   "product": [
     "Vertragspreis",
     "Betrag eingeben",
-    "Zeitraum investieren",
+    "Vertragszeit",
     "Täglicher Nettogewinn",
     "Gesamtnettogewinn",
     "Festeinkommen",
@@ -455,7 +466,7 @@ export default {
     "Nach Ablauf zurückkehren",
     "Tag",
     "Bergbauverträge",
-    "Wir bieten eine Vielzahl von Cloud -Mining -Investitionsverträgen an, um stabile und zuverlässige Gewinne zu gewährleisten.",
+    "Wir bieten eine Vielzahl von Cloud -Mining -Verträgen an, um ein stabiles und zuverlässiges Einkommen zu gewährleisten",
     "Tag feste Belohnungen:",
     "Volumen",
     "(Ausverkauft mit 100%)",
@@ -476,7 +487,7 @@ export default {
   "package": [
     "Txid | Zeit",
     "Vertrag",
-    "Zurückkehren",
+    "Täglicher Nettogewinn",
     "Menge",
     "Bergbaueinnahmen",
     "Datum",
@@ -490,7 +501,7 @@ export default {
     "Benutzer einladen",
     "Laden Sie Benutzer ein und teilen Sie Ihren Partner -Link über soziale Medien.",
     "Provisionen verdienen",
-    "Nachdem ein neuer Benutzer den Vertragsplan registriert und angemeldet hat, erhalten Sie eine Belohnung von 3% ihres Vertragsplanbetrags.",
+    "Nachdem ein neuer Benutzer den Vertragsplan registriert und sich angemeldet hat, erhalten Sie eine Belohnung von 3% ihres Vertragsplanbetrags.",
     "Treten Sie unserem Partnerprogramm (Partnerprogramm) bei und erhalten Sie eine lebenslange Kommission von bis zu 3%! ",
     "Wenn jemand beispielsweise ein Konto mit Ihrem Partnercode registriert und in einen Plan von 100 US -Dollar investiert, erhalten Sie 3 USD kostenlos. ",
     "Warum also nicht die Gelegenheit nutzen? ",
@@ -523,26 +534,26 @@ export default {
     "Was unsere respektablen Kunden sagen"
   ],
   "say": [
-    "DRML Miner ist eine hervorragende Cloud -Mining -Plattform, mit der Kryptowährungen untergebracht werden können, um zusätzliches Einkommen zu erzielen. ",
+    "PBK Miner ist eine hervorragende Cloud -Mining -Plattform, mit der Kryptowährungen untergebracht werden können, um zusätzliches Einkommen zu erzielen. ",
     "Ich arbeite seit fast einem Jahr an dieser Plattform. ",
-    "DRML Miner ist eine sehr gute Cloud -Mining -Plattform. ",
-    "Ich arbeite seit sechs Jahren am DRML Miner. ",
-    "Ich bin DRML Miner sehr dankbar, dass er mir geholfen hat, als ich vor drei Jahren erst 10 Dollar in der Tasche hatte. ",
-    "Die Sicherheit der DRML Miner -Plattform ist sehr gut. ",
-    "Gott sei Dank, dass ich DRML Miner treffen durfte. Diese Plattform hat keine versteckten Gebühren für Abhebungen. ",
+    "PBK Miner ist eine sehr gute Cloud -Mining -Plattform. ",
+    "Ich arbeite seit sechs Jahren am PBK Miner. ",
+    "Ich bin PBK Miner sehr dankbar, dass er mir geholfen hat, als ich vor drei Jahren erst 10 Dollar in meiner Tasche hatte. ",
+    "Die Sicherheit der PBK Miner -Plattform ist sehr gut. ",
+    "Gott sei Dank, dass ich PBK Miner treffen durfte. Diese Plattform hat keine versteckten Gebühren für Abhebungen. ",
     "Ich bin alleinerziehende Mutter. ",
     "Ich habe den Artikel gesehen, den sie in den Nachrichten geteilt haben. ",
-    "Ich fand die DRML Miner -Plattform auf der Empfehlungsseite von Google. ",
-    "Ich mag die allgemeine Zuverlässigkeit der Plattform und die vielen Kundenunterstützung, und die täglichen Ausgaben der Plattform sind stabil und es ist sehr einfach, Einkommen zu erzielen. ",
-    "Ich freue mich, mein Feedback zu DRML Miner wieder zu teilen. ",
-    "Der Gesamteffekt der DRML -Miner -Plattform ist sehr gut. ",
+    "Ich habe die PBK Miner -Plattform auf der Empfehlung von Google gefunden. ",
+    "Ich mag die allgemeine Zuverlässigkeit der Plattform und die vielen Kundenunterstützung und die täglichen Ausgaben der Plattform sind stabil und es ist sehr einfach, Einkommen zu erzielen. ",
+    "Ich freue mich, mein Feedback zu PBK Miner erneut zu teilen. ",
+    "Der Gesamteffekt der PBK Miner -Plattform ist sehr gut. ",
     "Dies ist mein erstes Mal, dass ich mich mit dem Cloud Mining in Verbindung setzte, um Geld zu verdienen. ",
-    "DRML Miner behandelt Neuankömmlinge sehr gut. ",
+    "PBK Miner behandelt Neuankömmlinge sehr gut. ",
     "Mein Freund stellte mir den Miner vor, ich bekam sofort nach der Anmeldung einen Geldbonus. ",
-    "Ich benutze eine Weile DRML Miner. ",
+    "Ich benutze PBK Miner schon eine Weile. ",
     "Ich habe zu viele andere Cloud -Mining -Plattformen ausprobiert. ",
-    "Ich werde DRML Miner allen Kryptowährungsbegeisterten empfehlen. ",
-    "DRML Miner erleichtert den Bitcoin -Mining als je zuvor. ",
+    "Ich werde PBK Miner allen Kryptowährungsbegeisterten empfehlen. ",
+    "PBK Miner erleichtert den Bitcoin -Bergbau als je zuvor. ",
     ""
   ],
   "affiliates": [
@@ -617,7 +628,7 @@ export default {
     "Häufig gestellte Fragen"
   ],
   "home": [
-    "Willkommen bei {WT}",
+    "Willkommen bei {wt}",
     "● Die tägliche Anmeldung verdient 0,5 USD",
     "Neue Benutzer können 10 US -Dollar erhalten, wenn sie sich anmelden",
     "lerne kennen",
@@ -713,8 +724,8 @@ export default {
   ],
   "productDetail": [
     "Detail",
-    "Hash-Rate und After-Sales-Dienste von DRML Miner.",
-    "Cloud -Hash -Ratenpläne bieten institutionelle Kunden eine einfache und effiziente Bergbaulösung. \n",
+    "Hash-Rate und After-Sales-Dienste von PBK Miner.",
+    "Cloud Computing -Verträge bieten Plattformbenutzern eine bequeme und effiziente Bergbaulösung. ",
     "Produkteinführung\n",
     "1. Kaufanweisungen\n",
     "Vor dem Aufgeben einer Bestellung das Produkt sorgfältig verstehen. \n",
@@ -726,13 +737,13 @@ export default {
     "Der Vertrag wird nach Ablauf automatisch gekündigt. Der Vertrag wird unmittelbar zur Bekämpfung der Zahlung. Es ist unabhängig vom günstigen Gesetz oder durch ein bestimmtes Angebot, alle Einkäufe endgültig und nicht erstattungsfähig. Vielen Dank für Ihr Verständnis.\n",
     "5. Risiko -Tipps\n",
     "Der Preis für digitale Vermögenswerte schwankt häufig stark, und die Bergbau -Schwierigkeit jeder Währung wird regelmäßig angepasst. \n",
-    "Die Plattform behält sich das Recht auf endgültige Auslegung für die Bedingungen dieses Vertrags vor.\n",
+    "",
     "Haftungsausschluss und Unterstützung\n",
-    "1. Wie in den Nutzungsbedingungen des DRML Miner angegeben, ist sie nach Bezahlung einer Bestellung unveränderlich und nicht erstattungsfähig.\n",
-    "2.Drml Miner ist nicht für Ergebnisse verantwortlich, die sich aus unkontrollierbaren Risiken ergeben, einschließlich, aber nicht beschränkt auf Naturkatastrophen wie Überschwemmungen, Vulkanausbrüche, Erdbeben, Erdrutsche, Brände, Stürme, andere unferne oder höhere Risiko-Wetterereignisse, Regierungsaktionen oder Richtlinien, Richtlinien.\n",
+    "1. Wie in den Nutzungsbedingungen von PBK Miner angegeben, ist sie nach Bezahlung einer Bestellung unveränderlich und nicht erstattungsfähig.\n",
+    "2.PBK Miner will not be responsible for any results that arise from uncontrollable risks, including but not limited to natural disasters such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or higher risk weather events, government actions, or directives, city-level grid power supply incidents as well as social actions or conflicts such as war, strikes, riots, etc.\n",
     "3. Hashrate -Fluktuation ist unvermeidlich. \n",
     "4. Die statische Ausgabe wurde statisch durch die aktuelle Schwierigkeit berechnet, die mit dem Markt schwankt. ",
-    ""
+    "Die Plattform behält sich das Recht auf endgültige Auslegung der Bedingungen dieses Vertrags vor."
   ],
   "blog": [
     "Neuerer Blog",
@@ -743,7 +754,7 @@ export default {
     "VIP Club"
   ],
   "tips": [
-    "Nach erfolgreicher Zahlung speichern Sie den Zahlungsbild -Screenshot in Ihrem Mobiltelefon und laden Sie den Screenshot auf die Seite hoch, bevor Sie die Bestellung senden. ",
+    "Nach erfolgreicher Zahlung speichern Sie den Zahlungsbildcrenshot in Ihrem Mobiltelefon und laden Sie den Screenshot auf die Seite hoch, bevor Sie die Bestellung senden. ",
     "Der Screenshot muss den Transaktions -Hash enthalten, andernfalls kann das System es nicht erkennen."
   ],
   "next": "Nächste Bezahlung",
@@ -763,29 +774,28 @@ export default {
     "Speichern Sie den Screenshot nach dem Erfolg der Zahlung und laden Sie den Screenshot wie aufgefordert hoch."
   ],
   "header": [
-    "HEIM",
-    "ARMATURENBRETT",
+    "Heim",
+    "Armaturenbrett",
     "Meine Rechnungen",
-    "KAUTION",
-    "ZURÜCKZIEHEN",
-    "MEINE BESTELLUNGEN",
+    "Kaution",
+    "Zurückziehen",
+    "Meine Bestellungen",
     "Verträge",
     "Partnerprogramm",
-    "EINSTELLUNGEN",
-    "ÜBER UNS",
+    "Einstellungen",
+    "Über uns",
     "Hilfezentrum",
     "Einstellungen",
     "Meine Rechnungen",
-    "ANMELDEN",
-    "MELDEN SIE SICH AN",
-    "ABMELDEN"
+    "Singen",
+    "Singen",
+    "Singen"
   ],
   "home1": [
     "Einfacher Wolkenabbau jederzeit und überall",
+    "Grüne Energie nutzen, um eine nachhaltige Zukunft für den Cloud -Bergbau voranzutreiben",
     "",
-    "",
-    "DRML Miner ist die weltweit führende Cloud-Mining-Plattform, die Clean Energy in Kombination mit Top-Level-Geräten verwendet, um den Benutzern eine einfache und bequeme Möglichkeit zur Minen zu bieten. ",
-    "Beginnen Sie Ihre Cloud -Mining -Investition und ziehen Sie Ihre erste Auszahlung nach 24 Stunden ab.",
+    "PBK Miner ist die weltweit führende Cloud -Mining -Plattform. ",
     "Beginnen Sie mit dem Bergbau",
     "Wie man anfängt",
     "MELDEN SIE SICH AN",
@@ -807,9 +817,9 @@ export default {
     "Unsere Plattform bietet Cloud Mining Investment -Support für alle, auch wenn Sie Anfänger sind, können Sie schnell beginnen und davon profitieren.",
     "Unsere Partner",
     "Akzeptieren Sie eine Vielzahl von Zahlungsmethoden",
-    "Um die Bequemlichkeit für unsere Anleger zu gewährleisten, bietet {WT} eine vielfältige Auswahl an Zahlungsmethoden für die Einzahlung von Fonds und den Empfang von Zahlungen.",
+    "Um unsere Anleger zu gewährleisten, bietet PBK Miner eine Vielzahl von Zahlungsmethoden für die Einzahlung von Fonds und den Erhalt von Zahlungen.",
     "Cloud -Mining -Investition in Texas",
-    "<p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Willkommen bei {WT}, Ihrem Ticket für die aufregende Welt des Kryptowährungsabbaus. Ob Sie ein Anfänger oder ein erfahrener Investor sind, bietet unsere Plattform eine Reihe von Möglichkeiten, die Digital Currency Realm zu erkunden und zu profitieren.</p><p class=\"mt-2 s-content\" ><span class=\"bullet-icon\" >•</span>Im Herzen von Texas beginnt die Reise von {WT} und nutzt die riesigen Ressourcen und technologischen Fähigkeiten des Staates, um modernste Cloud-Mining-Lösungen zu liefern.</p><p class=\"mt-2 s-content\" ><span class=\"bullet-icon\" >•</span>Bei {WT} sind wir nicht nur um Mining; wir haben Innovationen. </p><p class=\"mt-2 s-content\" ><span class=\"bullet-icon\" >•</span>Unsere Cloud-Mining-Hardware in Washington bietet erstklassige Geräte und garantiert eine optimale Leistung und Zuverlässigkeit. </p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Verabschieden Sie sich von komplexen Setups. Mit Cloud Mining Bitcoin in Kalifornien können Sie online auf unsere Dienste zugreifen. Unser Bitcoin Mining Cloud-Service ist mit Blick auf Benutzerfreundlichkeit konzipiert und richtet sich an Anfänger und Experten.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Wir nehmen Ihre Sicherheit ernst und bieten zuverlässige Cloud -Mining -Dienste, die durch robuste Maßnahmen unterstützt werden. {WT} ist bekannt für seine Transparenz und Vertrauenswürdigkeit, was uns zu einer bevorzugten Wahl für den Cloud -Mining, nicht nur in Arizona, sondern in den USA, zu einer bevorzugten Wahl macht.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Unser Engagement für die Blockchain -Technologie zeigt sich in unserem Blockchain -Cloud -Mining in den USA. Wir nutzen öffentliche Blockchains für verbesserte Bergbauerlebnisse, und unsere verstärkte Cloud -Mining -Sicherheit sorgt für die Sicherheit Ihres Vermögens.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Von Litecoin bis Ethereum haben wir Sie versichert. </p><p class=\"mt-2 s-content\" >Aber es endet nicht dort. {WT} bietet Ihnen eine einzigartige Gelegenheit, von Ihrer Leidenschaft zu profitieren. Setzen Sie unsere Cloud -Mining -Affiliate -Programme und unser Krypto -Partnerprogramm in den USA und verwandeln Ihr Interesse an Kryptowährung in eine Einkommensquelle.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Mit {WT} beginnt Ihre Reise in das Kryptowährungsuniversum.</p>",
+    "<p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Willkommen bei {wt}, Ihrem Ticket für die aufregende Welt des Kryptowährungsabbaus. Ob Sie ein Anfänger oder ein erfahrener Investor sind, bietet unsere Plattform eine Reihe von Möglichkeiten, die Digital Currency Realm zu erkunden und zu profitieren.</p><p class=\"mt-2 s-content\" ><span class=\"bullet-icon\" >•</span>Im Herzen von Texas beginnt die Reise von {Wt} und nutzt die riesigen Ressourcen und technologischen Fähigkeiten des Staates, um modernste Cloud-Mining-Lösungen zu liefern.</p><p class=\"mt-2 s-content\" ><span class=\"bullet-icon\" >•</span>Bei {Wt} sind wir nicht nur um Mining; wir haben Innovationen. </p><p class=\"mt-2 s-content\" ><span class=\"bullet-icon\" >•</span>Unsere Cloud-Mining-Hardware in Washington bietet erstklassige Geräte und garantiert eine optimale Leistung und Zuverlässigkeit. </p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Verabschieden Sie sich von komplexen Setups. Mit Cloud Mining Bitcoin in Kalifornien können Sie online auf unsere Dienste zugreifen. Unser Bitcoin Mining Cloud-Service ist mit Blick auf Benutzerfreundlichkeit konzipiert und richtet sich an Anfänger und Experten.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Wir nehmen Ihre Sicherheit ernst und bieten zuverlässige Cloud -Mining -Dienste, die durch robuste Maßnahmen unterstützt werden. {WT} ist bekannt für seine Transparenz und Vertrauenswürdigkeit, was uns zu einer bevorzugten Wahl für den Cloud -Mining, nicht nur in Arizona, sondern in den USA, zu einer bevorzugten Wahl macht.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Unser Engagement für die Blockchain -Technologie zeigt sich in unserem Blockchain -Cloud -Mining in den USA. Wir nutzen öffentliche Blockchains für verbesserte Bergbauerlebnisse, und unsere verstärkte Cloud -Mining -Sicherheit sorgt für die Sicherheit Ihres Vermögens.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Von Litecoin bis Ethereum haben wir Sie versichert. </p><p class=\"mt-2 s-content\" >Aber es endet nicht dort. {WT} bietet Ihnen eine einzigartige Gelegenheit, von Ihrer Leidenschaft zu profitieren. Setzen Sie unsere Cloud -Mining -Affiliate -Programme und unser Krypto -Partnerprogramm in den USA und verwandeln Ihr Interesse an Kryptowährung in eine Einkommensquelle.</p><p class=\"mt-2 s-content\"><span class=\"bullet-icon\">•</span>Mit {wt} beginnt Ihre Reise in das Kryptowährungsuniversum.</p>",
     "29"
   ],
   "latest": [
@@ -848,29 +858,29 @@ export default {
   ],
   "about1": [
     "ÜBER UNS",
-    "DRML Miner ist die weltweit führende Cloud-Mining-Plattform, die Clean Energy in Kombination mit Top-Level-Geräten verwendet, um den Benutzern eine einfache und bequeme Möglichkeit zur Minen zu bieten. ",
-    "DRML Miner wurde 2018 gegründet und hat seinen Hauptsitz in Großbritannien. ",
+    "PBK Miner ist die weltweit führende Cloud-Mining-Plattform und nutzt saubere Energie in Kombination mit Top-Level-Geräten, um den Benutzern eine einfache und bequeme Möglichkeit zur Minen zu bieten. ",
+    "PBK Miner wurde 2018 gegründet und hat seinen Hauptsitz in Großbritannien. ",
     "Unternehmenskurs: kontinuierliche Verbesserung und Innovation",
     "Nach Jahren der Entwicklung und des kontinuierlichen Wachstums verfügt es derzeit über mehr als 100 umweltfreundliche Energieminen auf der ganzen Welt, mit Nutzern in 180 Ländern und Regionen. ",
     "Mission: eine neue Ära der grünen Energie führen",
     "Wir sind bestrebt, ein innovativer Marktführer im Bereich Cloud Computing zu werden und die Art und Weise zu verändern, wie Menschen Energie verbrauchen. ",
     "Vision: Aufbau einer globalen führenden Marke in der Cloud Computing -Branche",
     "Unser Ziel ist es, ein weltweit führender Anbieter in der innovativen Green Cloud-Mining-Technologie zu werden, den Benutzern Mehrwertprodukte und -dienste bereitzustellen und einen hervorragenden Investitionswert und hohe Renditen zu schaffen. ",
-    "Stärken Sie Ihr Einkommen mit dem DRML -Bergmann",
-    "Erleben Sie nahtlose, sichere und profitable digitale Mining mit den hochmodernen Technologien und Diensten von DRML Miner.",
-    "Mine intelligenter, verdiene schneller - DRML Miner macht es einfach!",
+    "Stärken Sie Ihr Einkommen mit PBK Miner",
+    "Erleben Sie nahtlose, sichere und profitable digitale Mining mit den hochmodernen Technologien und Diensten von PBK Miner.",
+    "Meins intelligenter, verdiene schneller - PBK Miner macht es einfach!",
     "Keine Hardware, kein Ärger - nur reine Bitcoin -Belohnungen.",
-    "Maximieren Sie die Gewinne mit den intelligenten Bergbaulösungen von DRML Miner.",
+    "Maximieren Sie die Gewinne mit den intelligenten Bergbaulösungen von PBK Miner.",
     "Sicher, skalierbar und nahtlos - die Zukunft des Kryptoabbaus.",
-    "Ihre Bergbaureise beginnt hier - schließen Sie sich noch heute DRML Miner an!"
+    "Ihre Bergbaureise beginnt hier - Machen Sie noch heute PBK Miner!"
   ],
   "download1": [
     "Laden Sie die mobile App herunter, um noch heute mit dem Bergbau zu beginnen!",
-    "Klicken Sie hier, um die Mobile -App der DRML Miner direkt herunterzuladen, um Ihre Bergbauaktivitäten jederzeit und überall zu verwalten, eine schnellere Erfahrung zu genießen und Ihnen zu helfen, Ihr Einkommen effizient zu erhöhen."
+    "Klicken Sie hier, um die mobile PBK -Miner -App direkt herunterzuladen, um Ihre Bergbauaktivitäten jederzeit und überall zu verwalten, eine schnellere Erfahrung zu genießen und Ihnen zu helfen, Ihr Einkommen effizient zu erhöhen."
   ],
   "newhome": [
     "Grüne Energie nutzen, um eine nachhaltige Zukunft für den Cloud -Bergbau voranzutreiben",
-    "Das DRML Miner-Rechenzentrum nutzt saubere, kostengünstige grüne Energie (hauptsächlich Wasserkraft, Windkraft, Sonnenenergie usw.), praktiziert Umweltschutzkonzepte, fördert energiesparende Innovationen und verpflichtet sich, ein grünes, nachhaltiges und energiesparendes Rechenzentrum aufzubauen.",
+    "Das PBK Miner-Rechenzentrum nutzt saubere, kostengünstige grüne Energie (hauptsächlich Wasserkraft, Windkraft, Sonnenenergie usw.), praktiziert Umweltschutzkonzepte, fördert energiesparende Innovation und setzt sich dem Aufbau eines grün, nachhaltigen und energiesparenden Rechenzentrums ein.",
     "Registrieren Sie ein Konto",
     "Klicken Sie auf die Option Webseite (Anmelden), um das Formular auszufüllen",
     "Vertrag auswählen",
@@ -878,7 +888,7 @@ export default {
     "Gewinn erhalten",
     "Das stabile Vertragseinkommen wird automatisch auf Ihrem Konto aktualisiert",
     "Warum uns wählen?",
-    "Vorteile des DRML -Bergmanns",
+    "Vorteile des PBK -Bergmanns",
     "Neueste Hardware",
     "Wir verwenden die neuesten ASIC-Mining-Maschinen und GPU-Geräte und verwenden saubere Energie in Kombination mit Geräten auf höchstem Niveau, um den Benutzern einen einfachen und bequemen Weg zur Minen zu bieten.",
     "Keine zusätzlichen Gebühren",
@@ -888,7 +898,7 @@ export default {
     "Sicherheit finanzieren",
     "Die meisten Fonds werden sicher in Offline -Kaltbriefen aufbewahrt. ",
     "Expertenteam",
-    "Unser Bergbauteam besteht aus Blockchain -Branchenfachleuten und IT -Ingenieuren, die bis rund um die Uhr stehen, um sicherzustellen, dass alles reibungslos verläuft, und wir sind immer hier, um zu helfen.",
+    "Unser Bergbauteam besteht aus Blockchain -Branchenprofis und IT -Ingenieuren, die bis rund um die Uhr stehen, um sicherzustellen, dass alles reibungslos verläuft, und wir sind immer hier, um zu helfen.",
     "Umweltfreundlicher Bergbau",
     "Unsere Bergbaumaschinen und Kühlsysteme werden von den besten monokristallinen Sonnenkollektoren angetrieben und nutzen auch großflächige Windenergie, um Gewinne zu gewährleisten und gleichzeitig die Umwelt besser zu schützen.",
     "Was werden Sie als Partnerin bekommen?",
@@ -900,5 +910,78 @@ export default {
   ],
   "complete": "vollendet",
   "cancel": "Stornieren",
-  "confirm": "Bestätigen"
+  "confirm": "Bestätigen",
+  "about_us_adv": {
+    "title": "Bergbau der nächsten Generation: intelligenter, schneller, profitabler",
+    "text": "Nutzen Sie die modernste Technologie und eine robuste Infrastruktur, um den Bergbau mühelos, effizient und profitabel zu machen.",
+    "tipList": [
+      "Sicherheit für Unternehmensqualität-mehrschichtiger Schutz, um die Sicherheit von Vermögenswerten und Daten zu gewährleisten.",
+      "24/7 Verfügbarkeitsgarantie - Unsere Rechenzentren gewährleisten ununterbrochene Bergbauvorgänge.",
+      "Energieeffiziente Infrastruktur-optimierter Stromverbrauch für nachhaltigen Bergbau.",
+      "Nahe Benutzererfahrung - Intuitive Plattform mit einfacher Bergmann -Bereitstellung.",
+      "Automatisierte Gewinnoptimierung - Smart -Algorithmen zur Maximierung der Bergbaueffizienz.",
+      "Globale Zugänglichkeit-Mine von überall mit Cloud-basierten Lösungen."
+    ]
+  },
+  "about_us_bis": [
+    {
+      "title": "Standorte des Rechenzentrums",
+      "content": ""
+    },
+    {
+      "title": "Stromversorgungssysteme",
+      "content": ""
+    },
+    {
+      "title": "Kühlsystem",
+      "content": ""
+    },
+    {
+      "title": "Sicherheitsfeuerschutz",
+      "content": ""
+    },
+    {
+      "title": "Data Center -Hardware",
+      "content": ""
+    },
+    {
+      "title": "Unser Team",
+      "content": ""
+    },
+    {
+      "title": "Windenergiezyklus",
+      "content": ""
+    },
+    {
+      "title": "Sonnenenergiezyklus",
+      "content": ""
+    }
+  ],
+  "i18nLan": {
+    "about_us": {
+      "text1": "PBK Financial Services Ltd",
+      "text2": "30 Colston Avenue, Carsalton, Surrey, England, SM5 2nu",
+      "text3": "Private Limited Company",
+      "text4": "21. Oktober 2019"
+    },
+    "newticket": {
+      "text1": "Neue Support -Ticket eröffnen",
+      "text2": "Mein Support -Ticket",
+      "text3": "Name",
+      "text4": "E-Mail-Adresse",
+      "text5": "Thema",
+      "text6": "Hoch",
+      "text7": "Medium",
+      "text8": "Niedrig",
+      "text9": "Priorität",
+      "text10": "Nachricht",
+      "text11": "Anhänge",
+      "text12": "Fügen Sie mehr hinzu",
+      "text13": " Erlaubte Dateierweiterungen: .jpg, .jpeg, .png, .pdf, .doc, .docx",
+      "text14": "Einreichen"
+    },
+    "product": {
+      "text1": "USDT"
+    }
+  }
 }

@@ -102,8 +102,6 @@
                       <br>
                       <br>{{$t('productDetail[13]')}}
                       <br>
-                      <br>{{$t('productDetail[14]')}}
-                      <br>
                       <br>{{$t('productDetail[15]')}}
                       <br>
                       <br>{{$t('productDetail[16]')}}
@@ -247,6 +245,8 @@
           }
           if (data.data.amount == 10) {
             that.money = data.data.amount;
+          } else {
+            that.money = '';
           }
           //
         });

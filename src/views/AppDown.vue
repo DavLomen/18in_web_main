@@ -25,7 +25,7 @@
                     <div class="row_col_wrap_12 col span_12 light left">
                       <div
                         class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "
-                        data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1"
+                        data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" style="display: flex;align-items: center"
                         data-animation="" data-delay="0">
                         <div class="vc_column-inner">
                           <div class="wpb_wrapper"><h2 style="font-size:35px;color:#f4af47;text-align:left;"
@@ -114,7 +114,7 @@
                                                                                 class="img-with-animation skip-lazy nectar-lazy loaded animated-in"
                                                                                 data-delay="0" height="1024" width="699"
                                                                                 data-animation="fade-in"
-                                                                                :src="'./static/images/app.png?t=1'"
+                                                                                :src="'./static/images/app.png?t=3'"
                                                                                 alt="" sizes="(max-width: 699px) 100vw, 699px"
                                                                                 style=""
                                   >

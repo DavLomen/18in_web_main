@@ -83,7 +83,7 @@
                       </a>
                     </div>
                     <div class="mt-2 text-center">
-                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #eee, #33f911)"/>
+                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #23cff1, #00070e)"/>
                     </div>
                     <img v-if="item.progress>=100" :src="'./static/images/out.png'" style="position: absolute;bottom: 3rem;right: 1rem;width: 8rem;">
                   </div>
@@ -110,13 +110,15 @@
           <div id="el-id-9097-0" class="el-dialog__body">
             <div >
               <div  class="el-row mb-4">
-                <label  class="font-weight-bold col-12 input_label">{{$t('product[27]')}}</label>
+                <label  class="font-weight-bold col-12 input_label">{{$t('buy[1]')}}</label>
+                <!--                <label  class="font-weight-bold col-12 input_label">{{$t('product[27]')}}</label>-->
                 <div  class="col-12">
-                  <van-stepper v-model="money" input-width="inherit" button-size="40px" />
+                  <!--                  <van-stepper v-model="money" input-width="inherit" button-size="40px" />-->
+                  <input autocomplete="off" v-model.trim="money" type="text" class="form-control animated">
                 </div>
               </div>
               <div  class="el-row mb-4">
-                <label  class="font-weight-bold input_label">{{$t('product[28]')}}</label>
+                <label  class="font-weight-bold input_label">{{$t('walletAddress[2]')}}</label>
                 <div  class="el-input el-input--large el-input--suffix">
                   <div class="el-input__wrapper" tabindex="-1">
                     <input class="el-input__inner" v-model="password" :type="showPass?'text':'password'" autocomplete="off" tabindex="0" id="el-id-9097-3">
@@ -133,11 +135,11 @@
             <div  class="row d-md-flex align-items-center justify-content-center justify-content-md-between">
               <div  class="col-12 col-md-6">
                 <div  class="amount">
-                  <div  class="title">{{$t('product[29]')}}</div>
-                  <div  class="content">= {{detailData.amount*money}} >{{$t('i18nLan.product.text1')}}
-                    <svg data-v-cbf2c648=""  class="svg-icon" aria-hidden="true" style="font-size: 19px; margin-left: 12px;">
-                      <use data-v-cbf2c648="" xlink:href="#icon-USDT-TRC20"></use></svg>
-                  </div>
+                  <!--                  <div  class="title">{{$t('product[29]')}}</div>-->
+                  <!--                  <div  class="content">= {{money}} USDT-->
+                  <!--                    <svg data-v-cbf2c648=""  class="svg-icon" aria-hidden="true" style="font-size: 19px; margin-left: 12px;">-->
+                  <!--                      <use data-v-cbf2c648="" xlink:href="#icon-USDT-TRC20"></use></svg>-->
+                  <!--                  </div>-->
                 </div>
               </div>
               <div  class="col-12 col-md-6 mt-5 mt-md-0 d-flex justify-content-center justify-content-md-end">
@@ -219,6 +221,11 @@
       },
       orderNow(item) {
         this.detailData = item;
+        if (item.amount == 10) {
+          this.money = item.amount;
+        } else {
+          this.money = '';
+        }
         this.showDialog = true;
       },
       buyProduct(){

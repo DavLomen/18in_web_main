@@ -737,7 +737,7 @@ export default {
     "The contract will be terminated automatically when it expires.Mining Contract becomes active immediately afer payment confrmation.Unless otherwise provided by the aplicable Law or by a particular offer, all purchases are final and non-refundable .Thank you for your understanding.\n",
     "5. Risk tips\n",
     "The price of digital assets often fluctuates greatly, and the mining difficulty of each currency will be adjusted regularly. The decrease of currency price or the increase of difficulty will lead to the decrease of the yield of each mining machine. No matter from the point of view of digital assets or legal currency, this product does not guarantee that users can return the cost. Users need to carefully assess their risk tolerance and invest in digital asset mining within acceptable risk control.\n",
-    "The platform reserves the right of final interpretation for the terms of this contract.\n",
+    "",
     "Disclaimer & Support\n",
     "1. As specified in PBK Miner's terms of use, once an order has been paid, it is unchangeable and non-refundable.\n",
     "2.PBK Miner will not be responsible for any results that arise from uncontrollable risks, including but not limited to natural disasters such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or higher risk weather events, government actions, or directives, city-level grid power supply incidents as well as social actions or conflicts such as war, strikes, riots, etc.\n",
@@ -986,3 +986,4 @@ export default {
     }
   }
 }
+//英语，法语，日语，韩语，葡萄牙语，西班牙语，德语，俄语，阿拉伯语，意大利语
