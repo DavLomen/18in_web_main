@@ -1,0 +1,102 @@
+/* my common css */
+.btn_common{
+    width: 150px;
+    padding: 10px !important;
+    border: none !important;
+  }
+  .btn_common_a{
+    background: linear-gradient(90deg,#00f785,#410093) !important;
+    color: #fff!important;
+  }
+  
+  .fw-300{
+    font-weight: 300 !important;
+  }
+  
+  .fw-400{
+    font-weight: 400 !important;
+  }
+  
+  .fw-500{
+    font-weight: 500 !important;
+  }
+  
+  .fw-600{
+    font-weight: 600 !important;
+  }
+  
+  .font-title{
+    font-size: 2.3rem !important;
+    font-weight: 700 !important;
+  }
+  
+  .font-intr{
+    color: #8492a6 !important;
+    font-size: 1.1rem !important;
+  }
+  .el-content-label{
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+  }
+  
+  .el-content-text{
+    font-size: 1.2rem !important;
+  }
+  .el-mx-auto-95{
+    width: 95%!important;
+    margin: 0 auto;
+  }
+  .el-mx-auto-90{
+    width: 90%!important;
+    margin: 0 auto;
+  }
+  .el-mx-auto-80{
+    width: 80%!important;
+    margin: 0 auto;
+  }
+  .el-mx-auto-70{
+    width: 70%!important;
+    margin: 0 auto;
+  }
+  
+  .el-common-link{
+    width:20%;
+    margin: 10px auto 0 auto;
+    height: 3px;
+    background: #000;
+    border-radius: 14px;
+  }
+  
+  .max-width-200{
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .max-width-300{
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .el-content-text-color{
+    color:#8492a6 !important;
+  }
+  
+  .data-flex{
+    display: flex!important;
+  }
+
+  /* Button style */
+.btn_style_ksd{
+    background:linear-gradient(90deg,#00f785,#410093);
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+}
+
+/* Card Common Style */
+.el_com_card{
+  position: relative;
+  padding: 10px 15px;
+  background: #fff;
+}

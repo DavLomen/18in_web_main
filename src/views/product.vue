@@ -6,75 +6,85 @@
         <img :src="'./static/images/img/producttop.png?t=1'" style="width: 100%">
       </div>
       <div class="section">
-        <div class="" style="margin-top: 20px">
-          <div class="row gy-4 gx-3 justify-content-center">
-            <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
-              <div class="plan-card" >
-                <div class="img-box">
-                  <img
-                    :src="InitData.setting.up_url + item.icon"
-                    class="img" style="width: 100%"
-                  />
+      <div class="container">
+        <div class="row gy-4 gx-3 justify-content-center">
+          <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
+            <div class="plan-card" >
+              <div class="img-box">
+                <img
+                  :src="InitData.setting.up_url + item.icon"
+                  class="img" style="width: 100%"
+                />
+              </div>
+              <div class="plan-card__head">
+                <div class="mt-0 mb-2 text-center text--danger">{{item.title}}</div>
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[0]')}}: {{item.miner}}
                 </div>
-                <div class="plan-card__head">
-                  <div class="mt-0 mb-2 text-center text--danger">{{item.title}}</div>
-                  <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                    <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[0]')}}: {{item.miner}}
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[1]')}}: {{item.hash_power}}
+                </div>
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[2]')}}
+                </div>
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[3]')}}: {{item.cycle}} {{$t('product[2]')}}
+                </div>
+                <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[4]')}}: {{item.amount}} {{InitData.currency}}
+                </div>
+              </div>
+              <div class="text-left" style="color: #000000;font-weight: bold">
+                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[5]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
+                <h6 class="mt-0 mb-2 text-left" style="color: red !important;font-weight: bold;"><img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[6]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
+              </div>
+              <div class="text-left" style="color: #000000;font-weight: bold">
+                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[7]')}}: {{item.type==1?$t('settletype[0]'):$t('settletype[1]')}}</h6>
+              </div>
+              <div class="bonus" v-if="item.amount !=10">
+                <div class="label">{{$t('product[8]')}}</div>
+                <ul class="plan-referral justify-content-center mb-2 data-flex">
+                  <div class="single-referral justify-content-center data-flex align-items-center" v-for="(aa,i) in item.affiliate_bonus" style="margin-right: 5px;">
+                    <div style="margin-right: 2px;">{{$t('product[9]')}}  {{(i+1)}}:</div>
+                    <span class="fw-bold text-white" style="background: #4988fd;">{{aa}}%</span>
                   </div>
-                  <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                    <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[1]')}}: {{item.hash_power}}
+                </ul>
+              </div>
+              <div class="bonus"  v-else>
+                <div class="label">{{$t('product[8]')}}</div>
+                <ul class="plan-referral justify-content-center mb-2" style="margin-right: 5px;">
+                  <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
+                    <span>0 %</span>
+                    <div>{{$t('product[9]')}} {{(i+1)}}</div>
                   </div>
-                  <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                    <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[2]')}}
-                  </div>
-                  <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                    <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[3]')}}: {{item.cycle}} {{$t('product[2]')}}
-                  </div>
-                  <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                    <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[4]')}}: {{item.amount}} {{InitData.currency}}
-                  </div>
-                </div>
-                <div class="text-left" style="color: #000000;font-weight: bold">
-                  <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[5]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
-                  <h6 class="mt-0 mb-2 text-left" style="color: red !important;font-weight: bold;"><img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[6]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
-                </div>
-                <div class="text-left" style="color: #000000;font-weight: bold">
-                  <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[7]')}}: {{item.type==1?$t('settletype[0]'):$t('settletype[1]')}}</h6>
-                </div>
-                <div class="bonus" v-if="item.amount !=10">
-                  <div class="label">{{$t('product[8]')}}</div>
-                  <ul class="plan-referral justify-content-center mb-2">
-                    <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                      <span>{{aa}} %</span>
-                      <div>{{$t('product[9]')}}  {{(i+1)}}</div>
-                    </div>
-                  </ul>
-                </div>
-                <div class="bonus"  v-else>
-                  <div class="label">{{$t('product[8]')}}</div>
-                  <ul class="plan-referral justify-content-center mb-2">
-                    <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                      <span>0 %</span>
-                      <div>{{$t('product[9]')}} {{(i+1)}}</div>
-                    </div>
-                  </ul>
-                </div>
-                <div class="mt-1 text-center">
+                </ul>
+              </div>
+              <div class="el-row justify-content-between data-flex">
+                <div class="mt-1 text-center el-col-10">
                   <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
                     {{$t('product[10]')}}
                   </div>
-                  <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
-                    {{$t('product[11]')}}
+                  <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg btn_style_ksd">
+                    {{$t('product[12]')}}
                   </a>
                 </div>
-                <div class="mt-2 text-center">
-                  <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #aaa, #15bf6f)"/>
+              <div class="mt-1 text-center el-col-10 ml-3">
+                <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                  {{$t('product[10]')}} 
                 </div>
+                <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg btn_style_ksd">
+                  {{$t('product[11]')}}
+                </a>
+              </div>
+              </div>
+              <div class="mt-3 text-center">
+                <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #aaa, #15bf6f)"/>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     </div>
 

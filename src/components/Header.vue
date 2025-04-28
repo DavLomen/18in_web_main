@@ -9,7 +9,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
+          <ul class="navbar-nav me-auto data-flex justify-content-between" style="width: 70%;padding: 0 5px;">
             <li class="nav-item ">
               <a :class="'nav-link '+(index=='/'?'active':'')" href="javascript:;" @click="$router.push('/')">{{$t('header[0]')}}</a>
             </li>
@@ -17,14 +17,21 @@
               <a :class="'nav-link '+(index=='/contracts'?'active':'')" @click="$router.push('/contracts')" href="javascript:;">{{$t('header[1]')}}</a>
             </li>
             <li class="nav-item">
+              <a :class="'nav-link '+(index=='/about'?'active':'')"  @click="$router.push('/about')" href="javascript:;">{{$t('header[3]')}}</a>
+            </li>
+            <li class="nav-item">
               <a :class="'nav-link '+(index=='/affiliate'?'active':'')"  @click="$router.push('/affiliate')" href="javascript:;">{{$t('header[2]')}}
               </a>
             </li>
             <li class="nav-item">
-              <a :class="'nav-link '+(index=='/about'?'active':'')"  @click="$router.push('/about')" href="javascript:;">{{$t('header[3]')}}</a>
+              <a :class="'nav-link '+(index=='/welfare'?'active':'')"  @click="$router.push('/welfare')" href="javascript:;">{{$t('header[26]')}}
+              </a>
             </li>
             <li class="nav-item">
               <a :class="'nav-link '+(index=='/FAQ'?'active':'')"  @click="$router.push('/FAQ')" href="javascript:;">{{$t('header[4]')}}</a>
+            </li>
+            <li class="nav-item">
+              <a :class="'nav-link '+(index=='/app'?'active':'')" @click="$router.push('/app')" href="javascript:;">{{$t('header[7]')}}</a>
             </li>
             <li class="nav-item">
               <a :class="'nav-link '+(index=='/teach'?'active':'')" @click="$router.push('/teach')" href="javascript:;">{{$t('header[5]')}}</a>
@@ -35,9 +42,6 @@
             <li class="nav-item">
               <a :class="'nav-link '+(index=='/blog'?'active':'')" @click="$router.push('/blog')" href="javascript:;">{{$t('header[6]')}}</a>
             </li>
-            <li class="nav-item">
-              <a :class="'nav-link '+(index=='/app'?'active':'')" @click="$router.push('/app')" href="javascript:;">{{$t('header[7]')}}</a>
-            </li>
           </ul>
           <div class="d-flex gap-3" v-if="UserInfo">
             <a href="javascript:;" @click="$router.push('/dashboard')" class="btn btn-join">{{$t('header[8]')}}</a>
@@ -45,6 +49,10 @@
           <div class="d-flex gap-3" v-else>
             <a href="javascript:;" @click="$router.push('/login')" class="btn btn-login">{{$t('header[9]')}}</a>
             <a href="javascript:;" @click="$router.push('/register')" class="btn btn-join">{{$t('header[10]')}}</a>
+          </div>
+          <div class="ml-1 OlineNum">
+              <div class="">{{ $t('header[25]') }}</div>
+              <span>{{InitData.setting.online || 0}}</span>
           </div>
           <div class="btn-group ">
             <button @click="showPcLan = !showPcLan" class="btn  dropdown-toggle p-1 ms-3 col-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,8 +110,6 @@
               <div class="text-center text-bhs pt-2">
                 <span class="fs-7">{{$t('header[12]')}}: {{UserInfo.idcode}}</span>
               </div>
-
-
               <div class="d-flex justify-content-around mt-5 ">
                 <a href="javascript:;" @click="$router.push('/deposit')" class="text-decoration-none text-black">
                   <div class="text-center">
@@ -500,5 +506,17 @@
   }
   .py-2 h5 {
     color: #000;
+  }
+  .OlineNum{
+    text-align: center;
+    margin-left: 10px;
+    border-radius:10px;
+    border:1px solid rgb(102, 34, 130);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px;
+  }
+  .nav-link{
+    padding: 0!important;
   }
 </style>

@@ -72,31 +72,35 @@
       <div class="row align-items-center">
         <div class="col-lg-6 col-12 mb-4">
           <div class="certificate-info px-3">
-            <h2 class="mb-4">SIX HILLS INVESTMENTS LIMITED</h2>
+            <h2 class="mb-4">{{  $t("i18nlan.aboutUs.text1") }}</h2>
             <div class="info-group mb-4">
-              <h6 class="mb-2">{{$t('about[13]')}}: 11038906</h6>
+              <h6 class="mb-2">{{$t("i18nlan.aboutUs.text2")}}: 10689012</h6>
             </div>
             <div class="info-group mb-4">
               <h6 class="fw-bold mb-2">{{$t('about[14]')}}: </h6>
-              <h6>69 Six Hills Road, Walton On The Wolds, Loughborough, Leicestershire, United Kingdom, LE12 8JF</h6>
+              <h6>{{$t("i18nlan.aboutUs.text5")}}</h6>
             </div>
             <div class="info-group mb-4">
               <h6 class="fw-bold mb-2">{{$t('about[15]')}}: </h6>
-              <h6>Private Limited Company</h6>
+              <h6>{{$t("i18nlan.aboutUs.text6")}}</h6>
             </div>
             <div class="info-group mb-4">
               <h6 class="fw-bold mb-2">{{$t('about[16]')}}: </h6>
-              <h6>30 October 2017</h6>
+              <h6>{{$t("i18nlan.aboutUs.text7")}}</h6>
             </div>
             <div class="mt-4">
-              <a href="https://find-and-update.company-information.service.gov.uk/company/11038906" target="_blank" class="btn btn-primary me-3 mb-3">{{$t('about[17]')}}</a>
+              <a href="https://find-and-update.company-information.service.gov.uk/company/10689012" target="_blank" class="btn btn-primary me-3 mb-3">{{$t('about[17]')}}</a>
               <a target="_blank" href="./static/companies_house_document.pdf"  class="btn btn-primary mb-3">{{$t('about[18]')}}</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-12">
-          <img :src="'./static/images/img/pdf.png'" alt="" class="img-fluid">
-        </div>
+        <div class="col-lg-6 ps-xl-5 p-lg-4 about-content wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+            <p class="fs-lg mt-3">
+            </p><p style="display: flex;">
+            <img :src="'./static/images/img/cc1.png'" data-filename="companies_house_document.jpg" style="width: 50%;">
+            <img :src="'./static/images/img/cc2.png'" data-filename="companies_house_document.jpg" style="width: 50%;">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br></p>            <p></p>
+          </div>
       </div>
     </div>
 

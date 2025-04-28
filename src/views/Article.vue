@@ -82,9 +82,9 @@ export default {
     // if(this.articleType=='service'){
     //   this.getListData(20);
     // }
-    // if(this.articleType=='cookie'){
-    //   this.getListData(21);
-    // }
+    if(this.articleType=='cookie'){
+      this.getListData(21);
+    }
   },
   mounted() {
 

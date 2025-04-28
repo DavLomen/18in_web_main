@@ -1,5 +1,5 @@
 <template>
-  <div class="HomePage" style="background: rgb(220,244,255);">
+  <div class="HomePage">
     <Header></Header>
     <header class="has-header-main">
       <div  class="hero-wrap hero-wrap-2 section-space" style="position: relative;">
@@ -29,22 +29,63 @@
                 <p  class="hero-text mb-4 pb-1" style="color:#000;font-size: 1rem;">
                   {{$t('home[1]')}}
                 </p>
-                <ul  class="btns-group hero-btns justify-content-md-start justify-content-center">
+                <ul class="btns-group hero-btns justify-content-md-start justify-content-center mb-3">
                   <li>
-                    <a href="javascript:;" style="background: #1989fac9;border-color: #b1d7fd" class="btn btn-lg btn-dark" @click="$router.push('/register')">{{$t('home[2]')}}</a>
-                    <a href="javascript:;" style="background: #1989fac9;border-color: #b1d7fd" class="btn btn-lg btn-dark" @click="$router.push('/login')">{{$t('home[3]')}}</a>
+                    <a href="javascript:;" class="btn btn-lg btn_common btn_common_a fw-600" @click="$router.push('/register')">{{$t('home[2]')}}</a>
+                    <a href="javascript:;" style="margin-left: 10px;" class="btn btn-lg btn_common btn_common_a fw-600" @click="$router.push('/login')">{{$t('home[3]')}}</a>
                   </li>
                 </ul>
-                <p  class="hero-text pb-1" style="color:red;font-size: 1.2rem;">{{$t('home[4]')}}</p>
+                <ul  class="btns-group hero-btns justify-content-md-start justify-content-center mb-3">
+                  <li>
+                    <a href="javascript:;" style="background: #FE9500" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/register')">{{$t('home[4]')}}</a>
+                    <a href="javascript:;" style="background: #B62283; margin-left: 10px;" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/login')">{{$t('home[5]')}}</a>
+                  </li>
+                </ul>
+                <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[6]')}}</p>
+                <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[7]')}}</p>
+                <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[8]')}}</p>
               </div>
             </div>
           </div>
         </div>
+        <div style="width: 100%;">
+            <iframe class="iframe" scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ADOGEUSD%22%2C%22title%22%3A%22Dogecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ALTCUSD%22%2C%22title%22%3A%22Litecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABCHUSD%22%2C%22title%22%3A%22Bitcoin%20Cash%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AADAUSD%22%2C%22title%22%3A%22Cardano%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%2C%22title%22%3A%22XRP%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22white%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22globalecrypto.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22Miner.com%2F%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 74px; width: 100%;"></iframe>
+          </div>
+          <van-notice-bar color="red" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />
       </div>
     </header>
-<!--    <van-notice-bar color="red" v-if="InitData.notifications && InitData.notifications.length>0" left-icon="volume-o" scrollable :text="InitData.notifications?InitData.notifications[0]:''" />-->
-
-    <section class="Cosmi GTPZ Righleftc minelooking owningeco work py-100" >
+    <!-- HOW TO WORK MODULE -->
+    <div class="el-row" style="padding: 20px 0;">
+      <div class="el-col-24 text-center mb-5">
+        <h1 class="font-title">{{ $t("i18nlan.Home.HTW.text1") }}</h1>
+        <div class="font-intr">{{ $t("i18nlan.Home.HTW.text2") }}</div>
+        <div class="el-common-link" style="background: linear-gradient(90deg,#00f785,#410093);"></div>
+      </div>
+      <div class="el-row mt-5">
+        <div class="el-col-xs-24 el-col-md-8 mt-3">
+          <div class="el-image-intr text-center mb-3">
+            <img :src="'./static/images/htw1.png'" alt="">
+          </div>
+          <div class="el-content-label text-center">{{ $t("i18nlan.Home.HTW.text3") }}</div>
+          <div class="el-content-text text-center max-width-300 mt-2 el-content-text-color">{{ $t("i18nlan.Home.HTW.text4") }}</div>
+        </div>
+        <div class="el-col-xs-24 el-col-md-8 mt-3">
+          <div class="el-image-intr text-center mb-3">
+            <img :src="'./static/images/htw2.png'" alt="">
+          </div>
+          <div class="el-content-label text-center">{{ $t("i18nlan.Home.HTW.text5") }}</div>
+          <div class="el-content-text text-center max-width-300 mt-2 el-content-text-color">{{ $t("i18nlan.Home.HTW.text6") }}</div>
+        </div>
+        <div class="el-col-xs-24 el-col-md-8 mt-3">
+          <div class="el-image-intr text-center mb-3">
+            <img :src="'./static/images/htw3.png'" alt="">
+          </div>
+          <div class="el-content-label text-center">{{ $t("i18nlan.Home.HTW.text7") }}</div>
+          <div class="el-content-text text-center max-width-300 mt-2 el-content-text-color">{{ $t("i18nlan.Home.HTW.text8") }}</div>
+        </div>
+      </div>
+    </div>
+    <!-- <section class="Cosmi GTPZ Righleftc minelooking owningeco work py-100" >
       <div class="Cosmi GTPZ Righleftc minelooking owningeco container">
         <div class="Cosmi GTPZ Righleftc minelooking owningeco row justify-content-center">
           <div class="Cosmi GTPZ Righleftc minelooking owningeco col-lg-8">
@@ -67,8 +108,6 @@
 								1
 							</span>
               <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
-<!--								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-user-edit">-->
-<!--								</i>-->
                 <img :src="'./static/images/img/hh11.png'" class="Cosmi GTPZ Righleftc minelooking owningeco " style="width: 55px;">
 							</span>
               <h4 class="Cosmi GTPZ Righleftc minelooking owningeco work-item__title">
@@ -87,8 +126,6 @@
 								2
 							</span>
               <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
-<!--							  <i class="Cosmi GTPZ Righleftc minelooking owningeco las la-archive">-->
-<!--								</i>-->
                                 <img :src="'./static/images/img/hh22.png'" class="Cosmi GTPZ Righleftc minelooking owningeco " style="width: 55px;">
 
 							</span>
@@ -108,8 +145,6 @@
 								3
 							</span>
               <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
-<!--								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-coins">-->
-<!--								</i>-->
                                 <img :src="'./static/images/img/hh33.png'" class="Cosmi GTPZ Righleftc minelooking owningeco " style="width: 55px;">
 
 							</span>
@@ -129,8 +164,6 @@
 								4
 							</span>
               <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
-<!--								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-wallet">-->
-<!--								</i>-->
                                 <img :src="'./static/images/img/hh44.png'" class="Cosmi GTPZ Righleftc minelooking owningeco " style="width: 55px;">
 
 							</span>
@@ -144,11 +177,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-<!--    <div class=" w-100">-->
-<!--      <img :src="'./static/images/img/separator-bottom.svg'" alt="" class="img-fluid w-100">-->
-<!--    </div>-->
+   <!-- <div class=" w-100">
+     <img :src="'./static/images/img/separator-bottom.svg'" alt="" class="img-fluid w-100">
+   </div> -->
     <div class="section">
       <div class="container">
         <div class="row gy-4 gx-3 justify-content-center">
@@ -163,55 +196,65 @@
               <div class="plan-card__head">
                 <div class="mt-0 mb-2 text-center text--danger">{{item.title}}</div>
                 <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                  <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[0]')}}: {{item.miner}}
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[0]')}}: {{item.miner}}
                 </div>
                 <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                  <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[1]')}}: {{item.hash_power}}
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[1]')}}: {{item.hash_power}}
                 </div>
                 <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                  <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[2]')}}
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[2]')}}
                 </div>
                 <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                  <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[3]')}}: {{item.cycle}} {{$t('product[2]')}}
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[3]')}}: {{item.cycle}} {{$t('product[2]')}}
                 </div>
                 <div class="mt-0 mb-2 text-left" style="color: #000000;font-weight: bold">
-                  <img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[4]')}}: {{item.amount}} {{InitData.currency}}
+                  <img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[4]')}}: {{item.amount}} {{InitData.currency}}
                 </div>
               </div>
               <div class="text-left" style="color: #000000;font-weight: bold">
-                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[5]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
-                <h6 class="mt-0 mb-2 text-left" style="color: red !important;font-weight: bold;"><img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[6]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
+                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[5]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
+                <h6 class="mt-0 mb-2 text-left" style="color: red !important;font-weight: bold;"><img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[6]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
               </div>
               <div class="text-left" style="color: #000000;font-weight: bold">
-                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked.png?t=1'" style="width: 1.75rem;">{{$t('product[7]')}}: {{item.type==1?$t('settletype[0]'):$t('settletype[1]')}}</h6>
+                <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><img :src="'./static/images/checked_new.png?t=1'" style="width: 1.75rem;">{{$t('product[7]')}}: {{item.type==1?$t('settletype[0]'):$t('settletype[1]')}}</h6>
               </div>
               <div class="bonus" v-if="item.amount !=10">
                 <div class="label">{{$t('product[8]')}}</div>
-                <ul class="plan-referral justify-content-center mb-2">
-                  <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                    <span>{{aa}} %</span>
-                    <div>{{$t('product[9]')}}  {{(i+1)}}</div>
+                <ul class="plan-referral justify-content-center mb-2 data-flex">
+                  <div class="single-referral justify-content-center data-flex align-items-center" v-for="(aa,i) in item.affiliate_bonus" style="margin-right: 5px;">
+                    <div style="margin-right: 2px;">{{$t('product[9]')}}  {{(i+1)}}:</div>
+                    <span class="fw-bold text-white" style="background: #4988fd;">{{aa}}%</span>
                   </div>
                 </ul>
               </div>
               <div class="bonus"  v-else>
                 <div class="label">{{$t('product[8]')}}</div>
-                <ul class="plan-referral justify-content-center mb-2">
+                <ul class="plan-referral justify-content-center mb-2" style="margin-right: 5px;">
                   <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
                     <span>0 %</span>
                     <div>{{$t('product[9]')}} {{(i+1)}}</div>
                   </div>
                 </ul>
               </div>
-              <div class="mt-1 text-center">
-                <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
-                  {{$t('product[10]')}}
+              <div class="el-row justify-content-between data-flex">
+                <div class="mt-1 text-center el-col-10">
+                  <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                    {{$t('product[10]')}}
+                  </div>
+                  <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg btn_style_ksd">
+                    {{$t('product[12]')}}
+                  </a>
                 </div>
-                <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+              <div class="mt-1 text-center el-col-10 ml-3">
+                <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
+                  {{$t('product[10]')}} 
+                </div>
+                <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg btn_style_ksd">
                   {{$t('product[11]')}}
                 </a>
               </div>
-              <div class="mt-2 text-center">
+              </div>
+              <div class="mt-3 text-center">
                 <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #aaa, #15bf6f)"/>
               </div>
             </div>
@@ -220,7 +263,7 @@
       </div>
     </div>
 
-    <div class="section profit-section">
+    <div class="">
       <div class="container" style="max-width: 90%;margin: 0 auto;">
         <div class="row justify-content-center">
           <div class="col-md-8 col-xl-6">
@@ -522,10 +565,46 @@
           </div>
         </div>
       </div>
-      <div style="width: 100%;">
-        <iframe class="iframe" scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ADOGEUSD%22%2C%22title%22%3A%22Dogecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ALTCUSD%22%2C%22title%22%3A%22Litecoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABCHUSD%22%2C%22title%22%3A%22Bitcoin%20Cash%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AADAUSD%22%2C%22title%22%3A%22Cardano%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AXRPUSD%22%2C%22title%22%3A%22XRP%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22white%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22globalecrypto.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22Miner.com%2F%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 74px; width: 100%;"></iframe>
-      </div>
     </section>
+
+    <!-- Bolg Section -->
+    <section class="section">
+    <div class="container">
+        <div class="row justify-content-center data-flex">
+          <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
+            <div class="section-title text-center">
+              <h1 class="title fw-bold font-title" style="color: #fba342;">{{$t('blog[3]')}}</h1>
+              <div class="para-desc videoDiv text-center mx-auto font-intr">
+                <p>
+                  {{$t('blog[4]')}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row blog_list justify-content-between data-flex">
+          <div class="el-col-sm-12 el-col-md-8 el-col-xs-24 pl-0 pr-0" v-for="(el, i) in listDataBlog" :key="el.id">
+            <div class="blog_card mb-5 mt-3" v-if="i <= 2" @click.stop="$router.push({
+              path: '/blogDetail',
+              query: {
+                id: el.id
+              }
+            })">
+              <div class="image">
+                <img :src="`${ApiUrl}${el.cover_img	}`" alt="">
+              </div>
+              <div class="time">{{el.add_time}}</div>
+              <div class="title">{{ el.title }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="justify-content-between data-flex el-content-text">
+          <div class="to-blog" @click="$router.push({
+            path: '/blog'
+          })">{{$t('blog[5]')}}</div>
+        </div>
+      </div>
+  </section>
 
 <!--    <div class=" w-100">-->
 <!--      <img :src="'./static/images/img/separator-bottom.svg'" alt="" class="img-fluid w-100">-->
@@ -723,6 +802,7 @@
         data_total_page:"1",
         listDataB:[],
         affInfo:{},
+        listDataBlog: [],
       }
     },
 
@@ -766,7 +846,27 @@
           }, that.$t('messageInfo[1]'));
         }
       });
-
+      this.$Model.noticeList({gropid: 10,page_no: this.pageNo,page_size:6},data=>{
+          this.isLoad = false
+          if(data.code==1){
+            if(data.info.length<=0){
+              this.listDataBlog =[];
+              this.isFinished = true
+            }else {
+              this.data_current_page = data.data_current_page;
+              this.data_total_page = data.data_total_page;
+              this.listDataBlog = data.info;
+              this.isFinished = true
+              if(type=='load'){
+                this.listDataBlog = this.listDataBlog.concat(data.info);
+              }else{
+              }
+            }
+          }else{
+            this.listData = []
+            this.isFinished = true
+          }
+        });
       this.getListData('init');
     },
     mounted() {
@@ -3418,6 +3518,55 @@
   margin-bottom: 1rem;
   overflow-x: hidden;
 }
+
+/* Blog */
+.blog_card{
+    padding: 20px 10px;
+    border-radius:5px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(58,57,57,.10196078431372549);
+    margin-bottom: 51px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  .blog_card .image{
+    width: 100%;
+    height: 200px;
+  }
+  .blog_card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+  .blog_card .time{
+    font-size: 1rem;
+    color: #959595;
+    margin: 10px 0;
+  }
+  .blog_card .title{
+    height: 100px;
+    display: -webkit-box; /* 必须结合的属性 */
+    -webkit-box-orient: vertical; /* 必须结合的属性 */
+    line-clamp:3; /* 限制显示的行数 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    text-overflow: ellipsis; /* 显示省略号 */
+    word-wrap: break-word; /* 允许在长单词或URL地址内部进行断行 */
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+  .to-blog{
+    width: 150px;
+    height: 50px;
+    color: #fba342;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+  -webkit-box-shadow:
+inset 0 0 0 1px #fba342 !important;
+  box-shadow: inset 0 0 0 1px #fba342 !important;
+  }
 </style>
 
 

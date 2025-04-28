@@ -12,13 +12,14 @@ import Dialog from '@/common/Dialog'
 import Util from '@/common/Util'
 import i18n,{SetLanguage} from './i18n'
 import 'vant/lib/index.css'
-// import '@/assets/css/style.css'
+import '@/assets/css/style.css'
 // import '@/assets/css/font-awesome.css'
 import '@/assets/css/line-awesome.css'
 import '@/assets/css/bootstrap.min.css'
 import '@/assets/css/munt.css'
 import '@/assets/css/linsty.css'
 import '@/assets/css/color.css'
+import '@/assets/css/common.css'
 import "babel-polyfill";
 
 // import ElementUI from 'element-ui';

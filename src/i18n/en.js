@@ -345,7 +345,16 @@ export default {
     "Order Number",
     "Amount",
     "trading status",
-    "Time"
+    "Time",
+    "Sign-up Bonus",
+    "Total Deposits",
+    "Total withdrawals",
+    "Today Profits",
+    "Today Referrals",
+    "Today Rewards",
+    "Active Orders",
+    "Expired Orders",
+    "Total Orders"
   ],
   "deposit": [
     "You have requested",
@@ -401,8 +410,8 @@ export default {
     "Daily Rate of Profit"
   ],
   "foot": [
-    "SIX MINING is the world's leading cloud mining platform. We have a professional and advanced core technology team and free cloud computing services. We use clean energy to power cloud mining, provide cryptocurrency enthusiasts with simpler and more efficient mining solutions, and bring the latest mining experience to your cryptocurrency.",
-    "QUICK LINK",
+    "RIPPLECOIN Mining is the world's leading cloud mining platform and has been the focus of millions of users since 2017. We have advanced cloud computing technology and strong mining capabilities, focusing on cryptocurrency cloud mining, and providing all cryptocurrency enthusiasts with simpler, more efficient and more reliable mining solutions, creating future wealth with you.",
+    "About",
     "Marketplace",
     "About Us",
     "FAQ",
@@ -412,13 +421,15 @@ export default {
     "Important Links",
     "Privacy and Policy",
     "Terms of Services",
-    "Copyright © 2018-2025 {WT}. All Rights Reserved.",
+    "Copyright © 2017-2025 RIPPLECOIN Mining. All Rights Reserved.",
     "LEARN",
     "What is cryptocurrency?",
     "What is web3?",
     "RESOURCES",
     "COMPANY",
-    "Help Center"
+    "Help Center",
+    "Cookie Policy",
+    "Million reward"
   ],
   "placehoder": [
     "Please enter amount",
@@ -491,11 +502,15 @@ export default {
     "The final interpretation rights of this contract belong to SIX MINING."
   ],
   "home": [
-    "Here you will achieve future wealth freedom",
-    "SIX MINING is trusted by more than 7 million users worldwide and is the world's leading safe, low-carbon and efficient cloud mining platform.",
-    "SIGN UP",
-    "SIGN IN",
-    "Start mining now and get a $12 bonus",
+    "Welcome to RIPPLECOIN Mining, the global leader in cryptocurrency mining",
+    "RIPPLECOIN Mining is the world's leading cloud mining platform. With its security, stability, efficiency and authority, it is trusted by more than 8 million users around the world. With just a few simple clicks, you can easily achieve your future wealth freedom!",
+    "Register now",
+    "Sign In",
+    "Recharge",
+    "Withdraw",
+    "● Sign up now and get 15$",
+    "● Daily sign-in earns $0.6",
+    "● Permanent 3%-4.5% bonus for inviting friends",
     ""
   ],
   "product": [
@@ -511,23 +526,23 @@ export default {
     "Level",
     "Sold Out",
     "Invest Now",
-    ""
+    "View Details"
   ],
   "why": [
     "Our advantages",
-    "Why choose SIX MINING",
-    "Latest Hardware",
-    "Working to develop a new generation of hardware for cryptocurrency mining",
-    "Fund Security",
-    "EV SSL encryption is used, most funds are stored in cold wallets, and are protected from DDoS",
-    "Automatic income",
-    "one-stop cloud computing service, calculated every 24 hours",
+    "Why choose RIPPLECOIN MINING",
+    "New state-of-the-art hardware",
+    "We use the newest ASIC and GPU mining gear from Bitmain, Canaan and Nvidia and advanced technologies in our centers.",
+    "Stable profits",
+    "We offer steady fixed income that is automatically deposited into your account every day.",
+    "Fast Regular Payouts",
+    "All withdrawal requests will be automatically processed by the system within five minutes.",
+    "100% Money Security",
+    "Most funds are safely stored in offline, cold wallets. Enhanced security protocols like McAfee® SECURE and Cloudflare® SECURE are also in place to ensure maximum protection.",
     "Expert team",
-    "We have a professional core technical team and adopt a bank-level fund supervision and security system.",
-    "Simple mining",
-    "no need to buy expensive equipment, easily participate in mining and get profits",
-    "Environmentally friendly mining",
-    "Our mining machines and cooling systems are powered by top-grade monocrystalline solar panels and large-scale wind power, continuously driving innovation and development in cloud mining",
+    "Our platform offers cloud mining investment support for everyone, even if you're a beginner, you can quickly get started and benefit from it.",
+    "Eco-friendly mining",
+    "Our miners and cooling systems are powered by the best monocrystalline solar panels thus environment-friendly and very profitable.",
     ""
   ],
   "latest": [
@@ -603,13 +618,21 @@ export default {
     "Send Now",
     ""
   ],
+  "blog": [
+    "Recent Blog",
+    "Recent Blog Posts",
+    "Read More",
+    "Blog post",
+    "Follow and read the latest blog posts from our website",
+    "View all blogs"
+  ],
   "header": [
     "Home",
     "Contracts",
-    "VIP/Affiliate",
+    "Affiliate Program",
     "About Us",
     "FAQs",
-    "Tutorial",
+    "User Guide",
     "Blog",
     "APP",
     "Dashboard",
@@ -629,7 +652,8 @@ export default {
     "Log out",
     "APP Download",
     "Affiliate",
-    ""
+    "Online Users",
+    "VIP Rewards"
   ],
   "side": [
     "Dashboard",
@@ -646,8 +670,37 @@ export default {
     "Terms of Service",
     "Log out"
   ],
+  "dashboard": [
+    "View All",
+    "Available Balance",
+    "Total Commission",
+    "Active Orders",
+    "Expired Orders",
+    "Total Orders",
+    "Total Deposits",
+    "Total Withdrawals",
+    "Your Username",
+    "Your Referral Code",
+    "Your Affiliate Link",
+    "WELCOME",
+    "TOTAL BALANCE",
+    "Interests",
+    "Commission",
+    "Recent Activity",
+    "Received register bonus.",
+    "Total Profit",
+    "My Orders",
+    "Credit Score",
+    "Membership level",
+    "Your Username",
+    "Your Referral Code",
+    "Your Affiliate Link",
+    "Do you have any Questions?",
+    "We strongly recommend that you search for the necessary information in the FAQ section. Contact our 24-hour online customer service if you need advice or technical assistance.",
+    "Get Support Now"
+  ],
   "regpage": [
-    "Welcome to SIX MINING!",
+    "Welcome to RIPPLECOIN Mining!",
     "Enter email address",
     "Create Password",
     "Confirm Password",
@@ -700,5 +753,44 @@ export default {
   "complete": "completed",
   "submit": "Submit",
   "cancel": "Cancel",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  "i18nlan": {
+    "aboutUs": {
+      "text1": "ENTRE-WEALTH LIMITED",
+      "text2": "Company number",
+      "text3": "Company Type",
+      "text4": "Limited Liability Company",
+      "text5": "Preston Park House, South Road, Brighton, East Sussex, BN1 6SB, United Kingdom Date of establishment: March 24, 2017",
+      "text6": "Private Limited Company",
+      "text7": "30 October 2017",
+      "text8": "24/7 Chat Support",
+    },
+    "Home": {
+      "HTW": {
+        "text1": "How we work?",
+        "text2": "Follow these simple steps and make profit!",
+        "text3": "Sign Up",
+        "text4": "Fill in the form and get ready to start mining in under than 1 minute.",
+        "text5": "Choose Your Contracts",
+        "text6": "Choose one of the most profitable contracts and start cloud mining.",
+        "text7": "Start Earning",
+        "text8": "Withdraw your mining income on a daily basis to your crypto wallet.",
+      },
+    },
+    "affiliate": {
+      "label": {
+        "text1": "About Affiliate Program",
+        "text2": "Refer a friend and start earning with our referral program"
+      },
+      "content": {
+        "text1": "Sign Up",
+        "text2": "Join our community, sign up an account, get your referral link.",
+        "text3": "Invite New Users:",
+        "text4": "Invite new users, sharing your link via social media.",
+        "text5": "Earn Commissions:",
+        "text6": "After a new user registers and signs up for the contract plan, you will receive a reward of 3% of their contract plan amount.",
+
+      },
+    },
+  },
 }

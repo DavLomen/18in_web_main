@@ -41,15 +41,15 @@
                   <h5 class="mb-4">{{$t('foot[1]')}}</h5>
                   <ul class="list-item list-item-s1">
                     <li>
-                      <a href="javascript:;" @click="$router.push('/article/cryptocurrency/detail')">{{$t('foot[13]')}}</a></li>
-                    <li>
-                      <a href="javascript:;" @click="$router.push('/article/web3/detail')">{{$t('foot[14]')}}</a></li>
+                      <a href="javascript:;" @click="$router.push('/FAQ')">{{$t('foot[17]')}}</a></li>
                     <li>
                       <a href="javascript:;" @click="$router.push('/affiliate')">{{$t('foot[5]')}}</a></li>
                     <li>
-                      <a href="javascript:;" @click="$router.push('/FAQ')">{{$t('foot[17]')}}</a></li>
-                    <li>
                       <a href="javascript:;" @click="$router.push('/contact')">{{$t('foot[7]')}}</a></li>
+                    <li>
+                      <a href="javascript:;" @click="$router.push('/article/web3/detail')">{{$t('foot[14]')}}</a></li>
+                    <li>
+                      <a href="javascript:;" @click="$router.push('/article/cryptocurrency/detail')">{{$t('foot[13]')}}</a></li>
                   </ul>
                 </div>
               </div>
@@ -62,9 +62,11 @@
                     <li>
                       <a href="javascript:;" @click="$router.push('/article/terms/detail')">{{$t('foot[10]')}}</a></li>
                     <li>
-                      <a href="javascript:;" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</a></li>
+                      <a href="javascript:;" @click="$router.push('/article/cookie/detail')">{{$t('foot[18]')}}</a></li>
                     <li>
-                      <a href="javascript:;" @click="$router.push('/blog')">{{$t('foot[6]')}}</a></li>
+                      <a href="javascript:;" @click="$router.push('/welfare')">{{$t('foot[19]')}}</a></li>
+                    <li>
+                      <a href="javascript:;" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</a></li>
                   </ul>
                 </div>
               </div>
@@ -73,11 +75,15 @@
                   <h5 class="mb-4">{{$t('foot[7]')}}</h5>
                   <ul class="list-item list-item-s1">
                     <li>
-                      <img class="" :src="'./static/images/location.ff05dc4d.png'" alt="location" style="width:30px;">
-                      69 Six Hills Road, Walton On The Wolds, Loughborough, Leicestershire, United Kingdom
+                      <img class="" :src="'./static/images/customer_service_icon.png'" alt="location" style="width:30px;">
+                      {{$t("i18nlan.aboutUs.text8")}}
                     </li>
                     <li>
-                      <img class="" :src="'./static/images/mail.8f0212e7.png'" alt="location" style="width:30px;margin-right:10px;">
+                      <img class="" :src="'./static/images/location.ff05dc4d.png'" alt="location" style="width:30px;">
+                      {{$t("i18nlan.aboutUs.text5")}}
+                    </li>
+                    <li>
+                      <img class="" :src="'./static/images/mail.jpg'" alt="location" style="width:30px;margin-right:10px;">
                       <a href="mailto:info@sixmining.com">info@sixmining.com</a></li>
                     <li>
                       <ul class="styled-icon mt-2">
@@ -89,10 +95,14 @@
                           <a href="https://web.facebook.com/SIXMining">
                             <img class="s-icon" :src="'./static/images/facebook1.18f06c79.png'" alt="facebook"></a>
                         </li>
-                        <!--                        <li>-->
-                        <!--                          <a href="https://www.youtube.com/@gdmining">-->
-                        <!--                            <img class="s-icon" :src="'./static/images/youtb.c72e893b.png'" alt="ins"></a>-->
-                        <!--                        </li>-->
+                        <li>
+                          <a href="https://www.youtube.com/@gdmining">
+                            <img class="s-icon" :src="'./static/images/youtb.c72e893b.png'" alt="ins"></a>
+                        </li>
+                        <li>
+                          <a href="">
+                            <img class="s-icon" :src="'./static/images/Tele.png'" alt="ins"></a>
+                        </li>
                       </ul>
                       <ul  class="styled-icon">
                         <li>
