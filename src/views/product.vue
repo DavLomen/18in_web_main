@@ -318,6 +318,9 @@
   .pricing {
     display: flex;
   }
+  .badge-card {
+    margin-bottom: 1rem;
+  }
 </style>
 
 

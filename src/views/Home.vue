@@ -2571,7 +2571,7 @@
     background-color: transparent;
     margin: 50px auto;
     /* 添加透明悬浮阴影效果 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);*/
     transition: box-shadow 0.3s ease;
   }
   .pricing {
@@ -2580,5 +2580,8 @@
 
   .hero-title-home{
     font-size: 1.8rem;
+  }
+  .badge-card {
+    margin-bottom: 1rem;
   }
 </style>
