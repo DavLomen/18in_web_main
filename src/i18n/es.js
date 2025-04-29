@@ -787,9 +787,9 @@ export default {
     "Centro de ayuda",
     "Ajustes",
     "Mis facturas",
-    "Cantar",
-    "Cantar más fuerte",
-    "Gritar"
+    "Iniciar sesión",
+    "Registrarse",
+    "Cerrar sesión"
   ],
   "home1": [
     "Minería de nubes fácil en cualquier momento, en cualquier lugar",

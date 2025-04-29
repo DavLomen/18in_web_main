@@ -787,9 +787,7 @@ export default {
     "Hilfezentrum",
     "Einstellungen",
     "Meine Rechnungen",
-    "Singen",
-    "Singen",
-    "Singen"
+    "Anmelden", "Registrieren", "Abmelden"
   ],
   "home1": [
     "Einfacher Wolkenabbau jederzeit und überall",

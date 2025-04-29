@@ -11,7 +11,7 @@
             <!--              {{$t('regLogin[15]')}}</p>-->
           </div>
           <form class="el-form form el-form--label-top">
-            <h2  class="mb-2" style="width: 100%;text-align: center;">{{$t('regLogin[11]')}}</h2>
+            <h2  class="mb-2" style="width: 100%;text-align: center;">{{$t('header[14]')}}</h2>
             <div class="el-row" style="margin-left: -5px; margin-right: -5px">
               <div
                 class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-12"

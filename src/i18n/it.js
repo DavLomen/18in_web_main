@@ -787,9 +787,7 @@ export default {
     "Centro di aiuto",
     "Impostazioni",
     "Le mie bollette",
-    "Cantare",
-    "Canta",
-    "Cantare"
+    "Accedi", "Registrati", "Esci"
   ],
   "home1": [
     "Easy Cloud Mining in qualsiasi momento, ovunque",

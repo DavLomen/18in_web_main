@@ -45,9 +45,9 @@
 <!--                <a  href="javascript:;" class="btn-link form-forget-password">Forgot Password?</a>-->
               </div>
               <button  class="btn btn-dark w-100" type="button" @click="onSubmit">
-                {{$t('regLogin[21]')}}</button>
+                {{$t('header[13]')}}</button>
               <p  class="mt-3 form-text" style="color: #fff">{{$t('login.i18n[0]')}}
-                <a style="color: red" href="javascript:;" @click="$router.push('/register')" class="btn-link">{{$t('regLogin[11]')}}</a></p>
+                <a style="color: red" href="javascript:;" @click="$router.push('/register')" class="btn-link">{{$t('header[14]')}}</a></p>
             </form>
           </div>
         </div>

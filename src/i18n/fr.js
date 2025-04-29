@@ -787,9 +787,9 @@ export default {
     "Centre d'aide",
     "Paramètres",
     "Mes factures",
-    "Chasser",
-    "Chanter",
-    "Chanter"
+"Connexion",
+"Inscription",
+"Déconnexion"
   ],
   "home1": [
     "Cloud Mining facile à tout moment, n'importe où",
