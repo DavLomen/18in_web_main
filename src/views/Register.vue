@@ -9,17 +9,17 @@
         <div class="text-center p-4">
           <h3 class="mb-4" style="color: #2962b7;">{{$t('regpage[0]')}}</h3>
           <div class="form-group mb-3">
+           <div class="input-wrapper">
+             <i class="bi bi-person"></i>
+             <input type="text" class="form-control custom-input" name="username" id="username" placeholder="Create Username" data-sharkid="__1">
+           </div>
+         </div>
+          <div class="form-group mb-3">
             <div class="input-wrapper">
               <i class="bi bi-envelope"></i>
               <input v-model="postData.username" type="email" class="form-control custom-input" name="email" id="email" :placeholder="$t('regpage[1]')" data-sharkid="__0" data-sharklabel="email">
             </div>
           </div>
-<!--          <div class="form-group mb-3">-->
-<!--            <div class="input-wrapper">-->
-<!--              <i class="bi bi-person"></i>-->
-<!--              <input type="text" class="form-control custom-input" name="username" id="username" placeholder="Create Username" data-sharkid="__1">-->
-<!--            </div>-->
-<!--          </div>-->
           <div class="form-group mb-3">
             <div class="input-wrapper">
               <i class="bi bi-lock"></i>

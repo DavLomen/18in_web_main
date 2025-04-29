@@ -117,6 +117,9 @@
   }
 </script>
 <style scoped>
+.card{
+  background: #b1fdcb6b !important;
+}
 
 </style>
 

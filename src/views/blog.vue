@@ -8,24 +8,22 @@
           <!-- <h2 class="text-lh pt-2">Latest News</h2> -->
         </div>
         <div class="row mt-4">
-          <div class="col-lg-4 p-3" v-for="(item,index) in listData" :key="index">
-            <div class="light-border p-3" style="--x: 30.024509803921568%;">
-              <div class="staking-plan-img">
-                <img :src="InitData.setting.up_url +item.cover_img" alt="" class="img-fluid rounded-3">
+          <div class="el-row blog_list justify-content-between data-flex">
+          <div class="el-col-sm-12 el-col-md-8 el-col-xs-24 pl-0 pr-0" v-for="(el, i) in listData" :key="el.id">
+            <div class="blog_card mb-5 mt-3" v-if="i <= 2" @click.stop="$router.push({
+              path: '/blogDetail',
+              query: {
+                id: el.id
+              }
+            })">
+              <div class="image">
+                <img :src="`${ApiUrl}${el.cover_img	}`" alt="">
               </div>
-              <div class="mt-2" style="height: 1.5rem;">
-                <a href="javascript:;" @click="$router.push(`/blogDetail?id=${item.id}`)">
-                  <p class="title-two-lines ">{{item.title}}</p>
-                </a>
-              </div>
-              <div class="separator-animated mt-4 mb-3"></div>
-
-              <a href="javascript:;" @click="$router.push(`/blogDetail?id=${item.id}`)" class=" d-flex justify-content-between text-decoration-none">
-                <div class="fs-5 ">{{$t('blogs[1]')}}</div>
-                <div><i class="bi bi-arrow-right fs-5 fw-bold "></i></div>
-              </a>
+              <div class="time">{{el.add_time}}</div>
+              <div class="title">{{ el.title }}</div>
             </div>
           </div>
+        </div>
 
         </div>
         <div  class="text-center mt-4 mt-md-5">
@@ -188,6 +186,42 @@
   }
   .title-two-lines {
     color: #000000;
+  }
+  /* Blog */
+.blog_card{
+    padding: 20px 10px;
+    border-radius:5px;
+    background-color: #00d7a361;
+    box-shadow: 0 1px 5px rgba(58,57,57,.10196078431372549);
+    margin-bottom: 51px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  .blog_card .image{
+    width: 100%;
+    height: 200px;
+  }
+  .blog_card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+  .blog_card .time{
+    font-size: 1rem;
+    color: #959595;
+    margin: 10px 0;
+  }
+  .blog_card .title{
+    height: 100px;
+    display: -webkit-box; /* 必须结合的属性 */
+    -webkit-box-orient: vertical; /* 必须结合的属性 */
+    line-clamp:3; /* 限制显示的行数 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    text-overflow: ellipsis; /* 显示省略号 */
+    word-wrap: break-word; /* 允许在长单词或URL地址内部进行断行 */
+    font-size: 1.2rem;
+    margin: 20px 0;
   }
 </style>
 

@@ -14,15 +14,15 @@
 <!--          <h6 style="line-height: 1.5rem;">Global Data Center Network: Over 100 advanced data centers strategically located across Europe, North America, and Asia, ensuring 24/7 seamless operations.</h6>-->
 <!--          <h6 style="line-height: 1.5rem;">Clean Energy Solutions: All mining operations are powered by renewable energy sources such as solar and wind, creating an eco-friendly and sustainable mining ecosystem.</h6>-->
 <!--        -->
-          <h5>{{$t('about[0]')}}</h5>
+          <h5 class="text-center">{{$t('about[0]')}}</h5>
           <h6>
             {{$t('about[1]')}}
           </h6>
-          <h5>{{$t('about[2]')}}</h5>
+          <h5 class="text-center">{{$t('about[2]')}}</h5>
           <h6>
             {{$t('about[3]')}}
           </h6>
-          <h5>{{$t('about[4]')}}</h5>
+          <h5 class="text-center">{{$t('about[4]')}}</h5>
           <h6>{{$t('about[5]')}}</h6>
           <h6>
             {{$t('about[6]')}}
@@ -81,11 +81,11 @@
               <h6>{{$t("i18nlan.aboutUs.text5")}}</h6>
             </div>
             <div class="info-group mb-4">
-              <h6 class="fw-bold mb-2">{{$t('about[15]')}}: </h6>
+              <h6 class="fw-bold mb-2">{{$t("i18nlan.aboutUs.text7")}}: </h6>
               <h6>{{$t("i18nlan.aboutUs.text6")}}</h6>
             </div>
             <div class="info-group mb-4">
-              <h6 class="fw-bold mb-2">{{$t('about[16]')}}: </h6>
+              <h6 class="fw-bold mb-2">{{$t("i18nlan.aboutUs.text9")}}: </h6>
               <h6>{{$t("i18nlan.aboutUs.text7")}}</h6>
             </div>
             <div class="mt-4">

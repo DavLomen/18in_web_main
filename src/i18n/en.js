@@ -389,6 +389,19 @@ export default {
     "Every 24 Hours",
     "Return after expiry"
   ],
+  "settle":[
+    "Settle Interests",
+    "Every 24 Hours",
+    "Daily Income",
+    "Total return at contract maturity",
+    "View Detail",
+    "Buy Now",
+    "Checkout",
+    "Quantity",
+    "Amount",
+    "Payment Password",
+    "Pay"
+  ],
   "how": [
     "How does it start working?",
     "How to Become a Miner",
@@ -742,6 +755,30 @@ export default {
     "Your Partner",
     ""
   ],
+  "product":[
+    "Contract Price",
+    "Enter amount",
+    "Contract Term",
+    "Daily Profit",
+    "Total Profit",
+    "Fixed Income",
+    "Settle Interests",
+    "Every 24 Hours",
+    "Hashrate",
+    "Miner",
+    "Affiliate Bonus",
+    "Hash Lease Contract",
+    "Start Now",
+    "Sold Out",
+    "Contract details",
+    "Days",
+    "Hash Power Marketplace",
+    "Return after expiry",
+    "Choose Your Plan",
+    "Daily check-in: $0.5",
+    "Capital Back",
+    "Yes"
+  ],
   "account":[
     "Your Account",
     "Membership level",
@@ -760,10 +797,11 @@ export default {
       "text2": "Company number",
       "text3": "Company Type",
       "text4": "Limited Liability Company",
-      "text5": "Preston Park House, South Road, Brighton, East Sussex, BN1 6SB, United Kingdom Date of establishment: March 24, 2017",
+      "text5": "Preston Park House, South Road, Brighton, East Sussex, BN1 6SB",
       "text6": "Private Limited Company",
-      "text7": "30 October 2017",
+      "text7": " March 24, 2017",
       "text8": "24/7 Chat Support",
+      "text9": "United Kingdom Date of establishment",
     },
     "Home": {
       "HTW": {
@@ -793,7 +831,6 @@ export default {
         "text4": "Invite new users, sharing your link via social media.",
         "text5": "Earn Commissions:",
         "text6": "After a new user registers and signs up for the contract plan, you will receive a reward of 3% of their contract plan amount.",
-
       },
     },
   },

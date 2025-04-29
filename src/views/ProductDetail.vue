@@ -15,9 +15,9 @@
               <h3 class="fw-bold mb-3">LTC Classic Miner</h3>
               <h1 class="fw-bold"><sup>$</sup>200.00 USD</h1>
           </div> -->
-
-          <div class="pt-3">
-            <div class="mt-2 text-center">
+<!-- ----------PT3-------------------- -->
+          <!-- <div class="pt-3"> -->
+            <!-- <div class="mt-2 text-center">
               <h4 class="fw-bold">{{detailData.title}}</h4>
               <span class="text-dhs" v-if="detailData.type==1">{{$t('productInfo[0]')}}</span>
               <span class="text-dhs" v-else>{{$t('productInfo[1]')}}</span>
@@ -43,13 +43,31 @@
                 <h6>
                   ${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</h6>
               </div>
-            </div>
+            </div> -->
+            <!-- 原本注释内容 -->
             <!--<div class="mt-3">-->
             <!--    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">-->
             <!--        <div class="progress-bar progress-bar-striped progress-bar-animated " style="width: 0%; background-color: rgba(111, 100, 233, 0.6);">0%</div>-->
             <!--    </div>-->
             <!--</div>-->
-
+            <!-- 原本注释内容 -->
+            <div class="">
+            <div class="plan-title el-content-label mb-3">{{detailData.title}}</div>
+            <div class="pricing data-flex align-items-center">
+              <p class="el-content-label">${{parseFloat(detailData.amount)}}</p>
+              <p>/{{detailData.cycle}} {{$t('product[15]')}}
+              </p>
+            </div>
+            <div class="description">
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('product[2]')}}: <span class="notranslate">{{detailData.cycle}} {{$t('product[15]')}}
+                            </span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('product[0]')}}: <span class="notranslate">${{detailData.amount}}</span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[2]')}}: <span class="notranslate">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*1).toFixed(2))}}</span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[3]')}}: <span class="notranslate">${{detailData.amount}} + ${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[0]')}}:<span class="notranslate">{{$t('settle[1]')}}</span></p>
+            </div>
+          </div>
+             <!-- 以上是修改后的内容 -->
             <div class="mt-3">
               <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
                    aria-valuemin="0" aria-valuemax="100">
@@ -59,8 +77,8 @@
                 </div>
               </div>
             </div>
-          </div>
-
+          <!-- </div> -->
+<!-- ----------PT3-------------------- -->
           <!-- <div class="pt-3">
               <div class="rounded-top border border-1 border-bshs d-flex justify-content-between p-3">
                   <span class="fs-6 text-bhs">Contract Terms</span>
