@@ -62,6 +62,9 @@
                                 <!--                        <input type="file" name="payment_voucher" class="form-control form&#45;&#45;control" required="">-->
                                 <div class="upload"><i class="fa fa-camera" style="font-size: 2rem"></i></div>
                               </van-uploader>
+                              <div class="text-danger">
+                                {{$t('tips[0]')}}
+                              </div>
                             </div>
                           </div>
                         </div>

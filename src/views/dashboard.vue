@@ -54,19 +54,19 @@
                 <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                   <div class="pc_color_card">
                     <div class="label fs-5 fw-bold">{{ $t("withdraw[13]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #529945;">+{{statisticalData.today_earnings}}</div>
+                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #529945;">+{{statisticalData.today_profit||0}}</div>
                   </div>
                 </div>
                 <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                   <div class="pc_color_card">
                     <div class="label fs-5 fw-bold">{{ $t("withdraw[14]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #f14d19;">+{{statisticalData.today_invite}}</div>
+                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #f14d19;">+{{statisticalData.total_reward||0}}</div>
                   </div>
                 </div>
                 <div class="el-col-lg-8 el-col-sm-24 el-col-xs-24 mb-1 pl-2 pr-2">
                   <div class="pc_color_card">
                     <div class="label fs-5 fw-bold">{{ $t("withdraw[15]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #ff8a00;">+{{statisticalData.today_reward}}</div>
+                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #ff8a00;">+{{statisticalData.total_profit||0}}</div>
                   </div>
                 </div>
               </div>
@@ -162,7 +162,7 @@
                     </div>
                     <div class="bal-item two-sect">
                       <h4 class="notranslate">{{InitData.currency}} {{statisticalData.total_profit}}</h4>
-                      <p>{{$t('product[4]')}}</p>
+                      <p>{{$t('dashboard[28]')}}</p>
                     </div>
                     <div class="bal-item">
                       <h4 class="notranslate">{{InitData.currency}} {{statisticalData.total_recharge}}</h4>
@@ -245,6 +245,39 @@
                 <div  class="col-md-3 mt-4">
                   <div  class="rank rank1" style="text-align: center; border-radius: 1.25rem;"><h6
                     >{{$t('affiliates[10]')}}</h6><h5 >{{teamNum}}</h5></div>
+                </div>
+              </div>
+              <div  class="el-card box-card mt-4 mb-5 is-always-shadow show_mobile">
+                <div class="el-card__body" style="padding: 0px;">
+                  <div  class="row">
+                    <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;"
+                                                                          class="">
+                      <div  class="card work-process border-0 rounded shadow bg-light">
+                        <div  class="card-body rank1"
+                             style="border-radius: 1.25rem; "><h5
+                           class="para"> {{$t('withdraw[13]')}} </h5><h4  class="title notranslate">
+                          {{statisticalData.today_profit||0}}</h4></div>
+                      </div>
+                    </a></div>
+                    <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;"
+                                                                          class="">
+                      <div  class="card work-process border-0 rounded shadow bg-light">
+                        <div  class="card-body rank1"
+                             style="border-radius: 1.25rem;"><h5
+                           class="para"> {{$t('withdraw[14]')}} </h5><h4
+                                                                            class="title notranslate"> {{statisticalData.total_reward }}</h4></div>
+                      </div>
+                    </a></div>
+                    <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;"
+                                                                          class="">
+                      <div  class="card work-process border-0 rounded shadow bg-light">
+                        <div  class="card-body rank1"
+                             style=" border-radius: 1.25rem; "><h5
+                           class="para"> {{$t('withdraw[15]')}} </h5><h4  class="title notranslate">
+                          {{statisticalData.total_profit}}</h4></div>
+                      </div>
+                    </a></div>
+                  </div>
                 </div>
               </div>
               <div  class="el-card box-card mt-4 mb-5 is-always-shadow show_mobile">

@@ -97,7 +97,11 @@
                             <div class="value">{{parseFloat(parseFloat((drawData.draw_money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.bank_name !='' && selectTypes.bank_name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.bank_name}}</span></div>
                           </li>
                         </ul>
+                        <div class="text-danger" style="margin-top: 10px;">
+                          {{$t('tips[1]')}}
+                        </div>
                       </div>
+
                     </div>
                     <div class="card-footer">
                       <button type="button" class="btn btn--base btn-block btn-dark" @click="submitDraw">{{$t('withdraw[5]')}}</button>

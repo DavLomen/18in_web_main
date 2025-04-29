@@ -5922,7 +5922,7 @@ li,ul {
 }
 
 #header-nav .main__header .navigation-menu .nav__menu--items .header__menu--link {
-  height: var(--headerMenuLinkHeight);
+  /*height: var(--headerMenuLinkHeight);*/
   font-size: var(--headerMenuLinkFs);
   font-family: Nunito, sans-serif;
   color: #666;

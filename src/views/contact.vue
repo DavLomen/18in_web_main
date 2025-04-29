@@ -85,7 +85,7 @@
                 <div class="content">
                   <h5 class="title">{{$t('contact[7]')}}</h5>
                   <p class="caption">{{$t('contact[8]')}}</p>
-                  <p class="mt-2"><a href="mailto:iofo@all4mining.com">iofo@all4mining.com</a></p>
+                  <p class="mt-2"><a href="mailto:info@all4mining">info@all4mining</a></p>
                 </div>
               </div>
             </div>

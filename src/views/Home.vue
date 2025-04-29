@@ -20,9 +20,9 @@
             </div>
             <div class="left el-col-xs-24 el-col-sm-12 el-col-md-12">
               <h1 class="fw-bold" style="color: #000">{{ $t('head-bg[0]') }}</h1>
-              <p style="font-size: 1.8rem;color: #cdb241">{{ $t('head-bg[1]') }}</p>
-              <div v-if="!UserInfo" class=" header__account">
-                <ul  class="d-flex align-items-center">
+              <p style="font-size: 1.3rem;color: #fff">{{ $t('head-bg[1]') }}</p>
+              <div class=" header__account">
+                <ul v-if="!UserInfo"  class="d-flex align-items-center">
                   <li  class="right-extend_items header__account--items login-but_box" style="display: flex;justify-content: space-between;">
                     <a href="javascript:;" @click="$router.push('/login')" class="but but_signup btn-dark"> {{$t('head[3]')}} </a>
                     <a  href="javascript:;" @click="$router.push('/register')" class="but but_signup btn-dark">{{$t('head[2]')}} </a>
@@ -30,8 +30,8 @@
                 </ul>
                 <ul  class="d-flex align-items-center">
                   <li  class="right-extend_items header__account--items login-but_box" style="display: flex;justify-content: space-between;">
-                    <a href="javascript:;"  @click="$router.push('/deposit')" class="but but_signup btn-dark" > {{$t('head[7]')}} </a>
-                    <a  href="javascript:;" @click="$router.push('/withdraw')" class="but but_signup btn-dark" >{{$t('head[8]')}} </a>
+                    <a href="javascript:;" style="background: linear-gradient(90deg, #2ed7c1, #009d24)" @click="$router.push('/deposit')" class="but but_signup btn-dark" > {{$t('head[7]')}} </a>
+                    <a  href="javascript:;" style="background: linear-gradient(90deg, #2ed7c1, #009d24)" @click="$router.push('/withdraw')" class="but but_signup btn-dark" >{{$t('head[8]')}} </a>
                   </li>
                 </ul>
               </div>
@@ -166,7 +166,7 @@
                     <h6 class="mt-0 mb-2 text-left" style="color: #196F3D !important;font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('home[34]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
                   </div>
                   <div class="text-left" style="color: #000000;font-weight: bold">
-                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[21]')}}: $ ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</h6>
+                    <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[21]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</h6>
                   </div>
                   <div class="text-left" style="color: #000000;font-weight: bold">
                     <h6 class="mt-0 mb-2 text-left" style="font-weight: bold;"><van-icon name="passed" color="green" style="margin-right: 0.5rem;"/>{{$t('product[22]')}}: $ {{item.amount}}</h6>
@@ -452,7 +452,7 @@
                                           <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
                                           <div class="username">{{item.username}}</div>
                                         </div>
-                                        <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{InitData.currency}}</div>
+                                        <div class="amt col-4 text-center" style="color: #55d6dd;">{{item.money}} {{item.currency}}</div>
                                         <div class="time col-4 text-right">{{item.time}}</div>
                                     </div>
                                   </div>
@@ -2241,7 +2241,7 @@ inset 0 0 0 1px #18a028 !important;
 
   }
   .video video {
-    min-height: 38rem;
+    min-height: 40rem;
     object-fit: cover;
   }
   .video video>>>source{

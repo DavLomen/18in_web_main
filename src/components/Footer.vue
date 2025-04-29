@@ -24,10 +24,10 @@
           <div class="col-md-6 col-lg-2">
             <h4 class="mt-0">{{$t('foot[7]')}}</h4>
             <div class="link-item"><i class="el-icon-location-information"></i>
-              Techspace Aldgate East, 32-38 Leman Street, London, England, E1 8EW
+              Flat 75 Cheyne Court, London, United Kingdom, SW3 5TT
             </div>
             <div class="link-item"><i class="el-icon-message"></i>
-              iofo@all4mining.com
+              info@all4mining
             </div>
             <div class="link-item">
               <van-icon name="smile-comment-o" />

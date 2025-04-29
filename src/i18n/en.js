@@ -544,7 +544,8 @@ export default {
     "Do you have any Questions?",
     "We strongly recommend that you search for the necessary information in the FAQ section. Contact our 24-hour online customer service if you need advice or technical assistance.",
     "Get Support Now",
-    "Total investment"
+    "Total investment",
+    "Total income"
   ],
   "faq": [
     "Common Problem"
@@ -658,8 +659,8 @@ export default {
     "Total Deposits",
     "Total withdrawals",
     "Today Profits",
-    "Today Referrals",
-    "Today Rewards",
+    "Total referral commission",
+    "Total income",
     "Active Orders",
     "Expired Orders",
     "Total Orders"
@@ -726,7 +727,8 @@ export default {
     "VIP Rewards"
   ],
   "tips": [
-    "After successful payment, please save the payment screenshot to your mobile phone and upload the screenshot to the page before submitting the order. If the screenshot is unclear or wrong, the recharge will not be completed."
+    "Please copy the platform wallet address and recharge through the withdrawal function of \"your\" exchange. After the recharge is successful, please upload the transaction hash screenshot to the platform, the system will automatically verify and deposit the funds into your member account. After the payment is successful, please save the payment screenshot to your mobile phone and upload it to the page before submitting the order. If the screenshot is not clear or incorrect, the recharge will not be completed. The screenshot must contain the transaction hash, otherwise the system cannot recognize it.",
+    "Note: The minimum withdrawal amount is 100 USD. According to the international anti-money laundering law: the platform stipulates that the recharged funds must be used to purchase the contract before they can be withdrawn. If they are not purchased, they cannot be withdrawn. Please comply with the international anti-money laundering law and purchase investments legally and rationally."
   ],
   "next": "Next pay",
   "placehoder": [

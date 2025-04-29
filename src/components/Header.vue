@@ -116,7 +116,7 @@
             <!--                    <a href="javascript:;" :class="'header__menu--link '+(index==0?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/blog')">{{$t('foot[6]')}}</a>-->
             <!--                  </li>-->
             <li class="nav__menu--items" v-if="UserInfo">
-              <a href="javascript:;" :class="'header__menu--link '+(index==10?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/dashboard')">{{$t('head[4]')}}</a>
+              <a href="javascript:;" :class="'btn btn--base btn-block btn-dark '+(index==10?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/dashboard')">{{$t('head[4]')}}</a>
             </li>
           </ul>
         </div>
@@ -131,17 +131,18 @@
               </li>
           </ul>
         </div>
-        <div v-else class="right-extend header__account">
-          <ul  class="d-flex align-items-center">
-            <li  class="header__account--items d-sm-u-none">
-              <div  class="dropdown">
-                <a  @click="showLogout = !showLogout"  href="javascript:;" class="dropdown-toggle header__menu--link">{{UserInfo.username}}</a>
-                <div  class="dropdown-menu1" style="left: auto; right: 0px;display: block !important;" v-show="showLogout">
-                  <a href="javascript:;" @click="$Model.Logout()" class="dropdown-item header__menu--link" style="font-weight: 400;">{{$t('head[5]')}}</a></div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <div v-else class="right-extend header__account ">
+<!--          <ul  class="d-flex align-items-center">-->
+<!--            <li  class="header__account&#45;&#45;items d-sm-u-none">-->
+<!--              <div  class="dropdown">-->
+<!--                <a  @click="showLogout = !showLogout"  href="javascript:;" class="dropdown-toggle header__menu&#45;&#45;link">{{UserInfo.username}}</a>-->
+<!--                <div  class="dropdown-menu1" style="left: auto; right: 0px;display: block !important;" v-show="showLogout">-->
+<!--                  <a href="javascript:;" @click="$Model.Logout()" class="dropdown-item header__menu&#45;&#45;link" style="font-weight: 400;">{{$t('head[5]')}}</a></div>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--          </ul>-->
+          <a href="javascript:;" @click="$Model.Logout()" class="btn btn--base btn-block btn-dark header__menu--link" style="font-weight: 400;margin-left: 10px;">{{$t('head[5]')}}</a></div>
+      </div>
         <div  class="offcanvas__header--menu__open" style="margin-right: 0.625rem; padding: 10px 0px;" @click="showPcLan=false,showMask = true">
           <div class="offcanvas__header--menu__open--btn">
             <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ionicon offcanvas__header--menu__open--svg">
@@ -453,5 +454,8 @@
     font-size: 0.8rem;
     font-weight: 600;
     padding: 5px;
+  }
+  .navigation-menu {
+    margin-bottom: 0;
   }
 </style>
