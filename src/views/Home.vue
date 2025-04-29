@@ -184,6 +184,10 @@
    </div> -->
     <div class="section">
       <div class="container">
+        <div class="el-col-24 text-center mb-5">
+          <h1 class="font-title">{{ $t("i18nlan.Home.CONTRACT.text1") }}</h1>
+          <div class="font-intr">{{ $t("i18nlan.Home.CONTRACT.text2") }}</div>
+        </div>
         <div class="row gy-4 gx-3 justify-content-center">
           <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
             <div class="plan-card" >
@@ -328,7 +332,7 @@
       </div>
       <div class="row mt-4">
         <div class="col-lg-4 mt-3">
-          <div class="light-border p-3" style="min-height: 21rem; --x: 26.08173076923077%;">
+          <div class="light-border p-3 bg-white" style="min-height: 21rem; --x: 26.08173076923077%;">
             <img :src="'./static/images/img/aq11.png?t=1'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
             <h5 class="fw-bold mb-3">{{$t('why[2]')}}</h5>
             <h6 class="text-ls" style="line-height: 1.8;">
@@ -337,7 +341,7 @@
           </div>
         </div>
         <div class="col-lg-4 mt-3">
-          <div class="light-border p-3" style="min-height: 21rem;">
+          <div class="light-border p-3 bg-white" style="min-height: 21rem;">
             <img :src="'./static/images/img/aq22.png?t=1'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
             <h5 class="fw-bold mb-3">{{$t('why[4]')}}</h5>
             <h6 class="text-ls" style="line-height: 1.8;">
@@ -346,7 +350,7 @@
           </div>
         </div>
         <div class="col-lg-4 mt-3">
-          <div class="light-border p-3" style="min-height: 21rem;">
+          <div class="light-border p-3 bg-white" style="min-height: 21rem;">
             <img :src="'./static/images/img/aq33.png?t=1'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
             <h5 class="fw-bold mb-3">{{$t('why[6]')}}</h5>
             <h6 class="text-ls" style="line-height: 1.8;">
@@ -355,7 +359,7 @@
           </div>
         </div>
         <div class="col-lg-4 mt-3">
-          <div class="light-border p-3" style="min-height: 21rem;">
+          <div class="light-border p-3 bg-white" style="min-height: 21rem;">
             <img :src="'./static/images/img/aq44.png?t=1'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
             <h5 class="fw-bold mb-3">{{$t('why[8]')}}</h5>
             <h6 class="text-ls" style="line-height: 1.8;">
@@ -364,7 +368,7 @@
           </div>
         </div>
         <div class="col-lg-4 mt-3">
-          <div class="light-border p-3" style="min-height: 21rem;">
+          <div class="light-border p-3 bg-white" style="min-height: 21rem;">
             <img :src="'./static/images/img/aq55.png?t=1'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
             <h5 class="fw-bold mb-3">{{$t('why[10]')}}</h5>
             <h6 class="text-ls" style="line-height: 1.8;">
@@ -373,7 +377,7 @@
           </div>
         </div>
         <div class="col-lg-4 mt-3">
-          <div class="light-border p-3" style="min-height: 21rem;">
+          <div class="light-border p-3 bg-white" style="min-height: 21rem;">
             <img :src="'./static/images/img/aq66.png?t=1'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
             <h5 class="fw-bold mb-3">{{$t('why[12]')}}</h5>
             <h6 class="text-ls" style="line-height: 1.8;">
@@ -3523,7 +3527,7 @@
 .blog_card{
     padding: 20px 10px;
     border-radius:5px;
-    background-color: #fff;
+    background-color: #00d7a361;
     box-shadow: 0 1px 5px rgba(58,57,57,.10196078431372549);
     margin-bottom: 51px;
     cursor: pointer;

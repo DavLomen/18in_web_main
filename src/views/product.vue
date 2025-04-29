@@ -3,10 +3,14 @@
     <Header></Header>
     <div class="container text-center">
       <div class="mt-3">
-        <img :src="'./static/images/img/producttop.png?t=1'" style="width: 100%">
+        <img :src="'./static/images/img/producttop.jpg?t=1'" style="width: 100%">
       </div>
       <div class="section">
       <div class="container">
+        <div class="el-col-24 text-center mb-5">
+          <h1 class="font-title">{{ $t("i18nlan.Home.CONTRACT.text1") }}</h1>
+          <div class="font-intr">{{ $t("i18nlan.Home.CONTRACT.text2") }}</div>
+        </div>
         <div class="row gy-4 gx-3 justify-content-center">
           <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
             <div class="plan-card" >

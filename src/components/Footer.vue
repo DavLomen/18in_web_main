@@ -83,7 +83,7 @@
                       {{$t("i18nlan.aboutUs.text5")}}
                     </li>
                     <li>
-                      <img class="" :src="'./static/images/mail.jpg'" alt="location" style="width:30px;margin-right:10px;">
+                      <img class="" :src="'./static/images/mail.png'" alt="location" style="width:30px;margin-right:10px;">
                       <a href="mailto:info@sixmining.com">info@sixmining.com</a></li>
                     <li>
                       <ul class="styled-icon mt-2">

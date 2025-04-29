@@ -776,6 +776,10 @@ export default {
         "text7": "Start Earning",
         "text8": "Withdraw your mining income on a daily basis to your crypto wallet.",
       },
+      "CONTRACT": {
+        "text1": "RIPPLECOIN MINING CONTRACT",
+        "text2": "Buy a cloud mining contract to start your cryptocurrency mining journey and earn a stable and reliable income."
+      },
     },
     "affiliate": {
       "label": {

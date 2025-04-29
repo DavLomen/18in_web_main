@@ -330,6 +330,9 @@
 .light-border {
   background: #b1d7fd;
 }
+.bg-white {
+  background: #fff !important;
+}
 body {
   background: rgb(255, 248, 240);
   color: #000;
