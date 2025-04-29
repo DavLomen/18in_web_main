@@ -106,10 +106,10 @@
                       </ul>
                       <ul  class="styled-icon">
                         <li>
-                          <div style="display: flex">
+                          <div>
                             <img
-                              class="s-app" style="margin-left: 0;" @click="downloadApp('andriod')" :src="'./static/images/d_android.bd8613ec.png'" alt="android-download"><img
-                            class="s-app" @click="downloadApp('ios')" :src="'./static/images/d_ios.fc9d4780.png'" alt="ios-download">
+                              class="s-app" style="display: block !important;" @click="downloadApp('andriod')" :src="'./static/images/d_android.bd8613ec.png'" alt="android-download">
+                              <img class="s-app" @click="downloadApp('ios')" :src="'./static/images/d_ios.fc9d4780.png'" alt="ios-download">
                           </div>
                         </li>
                       </ul>
@@ -196,8 +196,8 @@
     display: inline-block;
   }
   .s-app{
-    margin-left: 20px;
     width: 8rem;
+    margin-bottom: 10px;
   }
   .footer-section a{
     color: #000000;

@@ -12,7 +12,7 @@
         <div class="el-row">
           <div class="el-col-23 mx-auto">
             <div  class="overview">
-              <div class="pc1" style="padding-top: 40px;width: 100%;">
+              <div class="pc1" style="width: 100%;">
                 <div class="el-row cal justify-content-center mt-5">
                   <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2 ">
                     <div class="pc_color_card el-mx-auto-90" style="background: #20c997; color: #fff;">
