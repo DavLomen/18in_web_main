@@ -114,7 +114,7 @@
                                                                                 class="img-with-animation skip-lazy nectar-lazy loaded animated-in"
                                                                                 data-delay="0" height="1024" width="699"
                                                                                 data-animation="fade-in"
-                                                                                :src="'./static/images/app.png?t=3'"
+                                                                                :src="'./static/images/app.png?t=4'"
                                                                                 alt="" sizes="(max-width: 699px) 100vw, 699px"
                                                                                 style=""
                                   >
