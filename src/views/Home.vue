@@ -1,49 +1,51 @@
 <template>
-  <div class="HomePage">
+  <div class="HomePage" style="overflow: hidden;">
     <Header></Header>
     <header class="has-header-main">
       <div  class="hero-wrap hero-wrap-2 section-space" style="position: relative;">
         <!--        <video id="v1" autoplay loop muted>-->
         <!--          <source :src="'./static/images/bg.mp4?t=1'" type="video/mp4"  />-->
         <!--        </video>-->
-        <div  class="container">
-          <div  class="row align-items-center flex-md-row-reverse justify-content-between">
-            <div  class="col-lg-6 col-md-6">
-              <swiper v-if="InitData.bannerList && InitData.bannerList.length>0"
-                      :options="swiperOption" ref="mySwiper"
-                      class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events banner-slider swiper-button-s3"
-              >
-                <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
-                  <div  class="card">
-                    <div  class="hero-image">
-                      <img :src="InitData.setting.up_url+item" alt="" class="w-100"></div>
-                  </div>
-                </swiper-slide>
-              </swiper>
-            </div>
-            <div  class="col-lg-6 col-md-6" style="    color: #000;">
-              <div  class="hero-content pb-0 pt-md-0 pe-lg-4" >
-                <h1  class="hero-title mb-4" >
-                  {{$t('home[0]')}}
-                </h1>
-                <p  class="hero-text mb-4 pb-1" style="color:#000;font-size: 1rem;">
-                  {{$t('home[1]')}}
-                </p>
-                <ul class="btns-group hero-btns justify-content-md-start justify-content-center mb-3">
-                  <li>
-                    <a href="javascript:;" class="btn btn-lg btn_common btn_common_a fw-600" @click="$router.push('/register')">{{$t('home[2]')}}</a>
-                    <a href="javascript:;" style="margin-left: 10px;" class="btn btn-lg btn_common btn_common_a fw-600" @click="$router.push('/login')">{{$t('home[3]')}}</a>
-                  </li>
-                </ul>
-                <ul  class="btns-group hero-btns justify-content-md-start justify-content-center mb-3">
-                  <li>
-                    <a href="javascript:;" style="background: #FE9500" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/register')">{{$t('home[4]')}}</a>
-                    <a href="javascript:;" style="background: #B62283; margin-left: 10px;" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/login')">{{$t('home[5]')}}</a>
-                  </li>
-                </ul>
-                <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[6]')}}</p>
-                <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[7]')}}</p>
-                <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[8]')}}</p>
+        <div style="background: url(./static/images/bg.gif) no-repeat;background-size: 100% 100%">
+          <div  class="container">
+            <div  class="row align-items-center flex-md-row-reverse justify-content-between">
+              <div  class="col-lg-6 col-md-6">
+                <swiper v-if="InitData.bannerList && InitData.bannerList.length>0"
+                        :options="swiperOption" ref="mySwiper"
+                        class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events banner-slider swiper-button-s3"
+                >
+                  <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
+                    <div  class="card">
+                      <div  class="hero-image">
+                        <img :src="InitData.setting.up_url+item" alt="" class="w-100"></div>
+                    </div>
+                  </swiper-slide>
+                </swiper>
+              </div>
+              <div  class="col-lg-6 col-md-6" style="    color: #fff;">
+                <div  class="hero-content pb-0 pt-md-0 pe-lg-4" >
+                  <h1  class="hero-title mb-4" >
+                    {{$t('home[0]')}}
+                  </h1>
+                  <p  class="hero-text mb-4 pb-1" style="color:#fff;font-size: 1rem;">
+                    {{$t('home[1]')}}
+                  </p>
+                  <ul class="btns-group hero-btns justify-content-md-start justify-content-center mb-3">
+                    <li>
+                      <a href="javascript:;" class="btn btn-lg btn_common btn_common_a fw-600" @click="$router.push('/register')">{{$t('home[2]')}}</a>
+                      <a href="javascript:;" style="margin-left: 10px;" class="btn btn-lg btn_common btn_common_a fw-600" @click="$router.push('/login')">{{$t('home[3]')}}</a>
+                    </li>
+                  </ul>
+                  <ul  class="btns-group hero-btns justify-content-md-start justify-content-center mb-3">
+                    <li>
+                      <a href="javascript:;" style="background: #FE9500" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/register')">{{$t('home[4]')}}</a>
+                      <a href="javascript:;" style="background: #B62283; margin-left: 10px;" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/login')">{{$t('home[5]')}}</a>
+                    </li>
+                  </ul>
+                  <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[6]')}}</p>
+                  <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[7]')}}</p>
+                  <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[8]')}}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -251,7 +253,7 @@
                 </div>
               <div class="mt-1 text-center el-col-10 ml-3">
                 <div v-if="item.progress>=100" tyle="width: 100%" class="t-link btn btn--base btn--lg rounded-pill investBtn">
-                  {{$t('product[10]')}} 
+                  {{$t('product[10]')}}
                 </div>
                 <a v-else href="javascript:;" style="width: 100%" @click="$router.push(`/productDetail?id=${item.id}`)" class="t-link btn btn--base btn--lg btn_style_ksd">
                   {{$t('product[11]')}}
