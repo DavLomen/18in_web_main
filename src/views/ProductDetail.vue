@@ -399,6 +399,11 @@
   .txt2 ,.txt8,.txt11,.txt15,.txt18,.txt20,.txt22,.txt25,.txt28,.txt32{
     font-weight: bold;
   }
+
+  .description img{
+    width: 25px;
+    object-fit: cover;
+  }
 </style>
 
 
