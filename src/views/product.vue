@@ -66,7 +66,7 @@
                   </div>
                 </div>
                 <div class="text-center" style="margin-top: 10px;">
-                  <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" text-color="#fff" color="linear-gradient(to right, #9C27B0, #673AB7)"/>
+                  <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" text-color="#000" color="linear-gradient(to right, #409eff, #fff)"/>
                 </div>
                 <a aria-current="page" href="javascript:;"  v-if="item.progress>=100"
                    class="router-link-active router-link-exact-active btn bg-violet-600 hover:bg-violet-700 border-violet-600 hover:border-violet-700 text-white rounded-full mt-5 w-full"><i

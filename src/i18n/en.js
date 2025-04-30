@@ -751,9 +751,9 @@ export default {
     "Each user can only purchase once a day"
   ],
   "newhome":[
-    "Mine Cryptocurrency With Ease",
-    "Paladin Mining: A new era of low-carbon mining | 100% clean energy driven, sustainable profitability",
-    "Sign up to get $15",
+    "BCC Mining one-stop service   Leader of cloud mining",
+    "Simple, efficient, energy-saving, safe and environmentally friendly, start your cloud mining wealth journey!",
+    "Sign up as a new user and receive a $15 bonus!",
     "How it Works?",
     "Our Mining Contracts",
     "We offer you the most profitable and reliable cloud mining contracts by providing daily payouts for all the contracts in the currency of the contract.",
@@ -863,15 +863,15 @@ export default {
   ],
   "how":[
     "How does it start working?",
-    "Learn about our work process. You need to follow the steps below to start your first mining.",
-    "Create An Account",
-    "Fill out the form using the registration option and start your cloud mining journey",
+    "Simple and convenient, it only takes one minute to start your mining journey",
+    "Register Now",
+    "Start your mining journey easily",
     "Choose Plans",
     "Choose your preferred contract plan",
-    "Start Mining",
-    "Buy a contract plan and earn passive income",
-    "Get Mining Output",
-    "Your stable profit income is automatically updated on your account every day"
+    "Purchase Contract",
+    "Choose the contract that suits you",
+    "Get mining output",
+    "Earn extra income steadily every day"
   ],
   "clickmore":[
     "Click to show more"
@@ -887,8 +887,8 @@ export default {
   ],
   "adda":[
     "（The principal will be automatically returned after the contract expires）",
-    "$0.60 for daily check-ins",
-    "Referral bonus: Commission 3% (up to 5%)"
+    "Earn $0.60 every day with daily check-in!",
+    "Invite friends to earn a 3% referral bonus!"
   ],
   "about1":[
     "Certificate Of Incorporation",
@@ -959,5 +959,22 @@ export default {
   "online":"Online Users",
   "complete":"completed",
   "cancel": "Cancel",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  "i18n":{
+    "qustion_card":{
+      "text0": "BCC Mining Advantages",
+      "text1": "8 years company",
+      "text2": "Started in 2017",
+      "text3": "Environmentally friendly and energy-saving mining",
+      "text4": "Our miners and cooling systems are powered by the best monocrystalline solar panels thus environment-friendly and very profitable.",
+      "text5": "Fund security",
+      "text6": "Most funds are securely stored in offline cold wallets. Strong security measures such as McAfee® SECURE protection and Cloudflare® SECURE protection.",
+      "text7": "Latest Hardware",
+      "text8": "Our competitive edge lies in our use of advanced ASIC and GPU miners and our proven track record in cloud mining.",
+      "text9": "Higher Profit Potential",
+      "text10": "Fair and competitive pricing with full transparency—no hidden fees.",
+      "text11": "Expert Team",
+      "text12": "Our mining team consists of professionals from the blockchain industry and IT engineers, ensuring that our team possesses the necessary knowledge and skills to meet your needs.",
+    }
+  }
 }

@@ -22,11 +22,11 @@
                     <div class="btn zse" @click="$router.push('/register')">{{$t('head[2]')}}</div>
                     <div class="btn zse" @click="$router.push('/login')">{{$t('head[3]')}}</div>
                   </div>
-                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: red;margin-bottom: 0.5rem" v-html="$t('newhome[2]')">
+                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: #f30606;margin-bottom: 0.5rem" v-html="$t('newhome[2]')">
                   </p>
-                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: red;margin-top: 0.5rem" v-html="$t('adda[1]')">
+                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: #f30606;margin-top: 0.5rem" v-html="$t('adda[1]')">
                   </p>
-                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: red;margin-top: 0.5rem" v-html="$t('adda[2]')">
+                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: #f30606;margin-top: 0.5rem" v-html="$t('adda[2]')">
                   </p>
 <!--                  <div style="margin-bottom: 10px;display: flex;">-->
 <!--                    <div class="btn" @click="downloadApp('andriod')">-->
@@ -81,13 +81,12 @@
                 <div class="Cosmi GTPZ Righleftc minelooking owningeco work-item">
 							<span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__border">
 							</span>
-                  <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
-								1
+              <!-- <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
 							</span>
                   <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
 								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-user-edit">
 								</i>
-							</span>
+							</span> -->
                   <h4 class="Cosmi GTPZ Righleftc minelooking owningeco work-item__title">
                     {{$t('how[2]')}}
                   </h4>
@@ -100,13 +99,12 @@
                 <div class="Cosmi GTPZ Righleftc minelooking owningeco work-item">
 							<span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__border">
 							</span>
-                  <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
-								2
+              <!-- <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
 							</span>
                   <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
 								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-coins">
 								</i>
-							</span>
+							</span> -->
                   <h4 class="Cosmi GTPZ Righleftc minelooking owningeco work-item__title">
                     {{$t('how[6]')}}
                   </h4>
@@ -119,13 +117,12 @@
                 <div class="Cosmi GTPZ Righleftc minelooking owningeco work-item">
 							<span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__border">
 							</span>
-                  <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
-								3
+              <!-- <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
 							</span>
                   <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
 								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-wallet">
 								</i>
-							</span>
+							</span> -->
                   <h4 class="Cosmi GTPZ Righleftc minelooking owningeco work-item__title">
                     {{$t('how[8]')}}
                   </h4>
@@ -201,7 +198,7 @@
                       </div>
                     </div>
                     <div class="text-center" style="margin-top: 10px;">
-                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" text-color="#fff" color="linear-gradient(to right, #9C27B0, #673AB7)"/>
+                      <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" text-color="#000" color="linear-gradient(to right, #409eff, #fff)"/>
                     </div>
                     <a aria-current="page" href="javascript:;"  v-if="item.progress>=100"
                        class="router-link-active router-link-exact-active btn bg-violet-600 hover:bg-violet-700 border-violet-600 hover:border-violet-700 text-white rounded-full mt-5 w-full"><i
@@ -215,12 +212,30 @@
             </div>
           </div>
         </div>
-        <div class="container max960" data-v-2089527b="">
-          <div class="grid grid-cols-1 text-center" data-v-2089527b=""><span class="section-title mb-2"
+        <div class="container el-mx-auto-70" data-v-2089527b="">
+          <div class="el-row">
+            <div class="el-col-24">
+              <div class="qustion_card">
+                <div class="card_item data-flex  align-items-center border-b-1">
+                  <div class="">
+                    <van-icon name="comment" size="20px"/>
+                  </div>
+                  <div class="el-content-label" style="margin-left: 5px;">{{ $t("i18n.qustion_card.text0") }}</div>
+                </div>
+                <div class="card_item border-b-1" v-for="i in [1,3,5,7,9,11]">
+                  <div class="el-content-label" style="margin-left: 5px;">{{ $t(`i18n.qustion_card.text${i}`) }}</div>
+                  <div class="el-content-text mt-3" style="margin-left: 5px;">{{ $t(`i18n.qustion_card.text${i+1}`) }}</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ----------------2025-04-30  注释下面的内容------------------- -->
+          <!-- <div class="grid grid-cols-1 text-center" data-v-2089527b=""><span class="section-title mb-2"
                                                                              data-v-2089527b="">{{$t('our[0]')}}</span>
             <h3 class="md:text-[30px] text-[26px] font-semibold mb-3" data-v-2089527b="">{{$t('our[1]')}} </h3>
-          </div>
-          <div class="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px] mt-10"
+          </div> -->
+          <!-- <div class="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px] mt-10"
                data-v-2089527b="">
             <div
               class="choose-card group relative rounded-xl bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 p-6 text-center mt-10 hover:shadow-md dark:hover:shadow-gray-800 transition-all duration-500"
@@ -327,7 +342,7 @@
                 <h5 class="text-lg font-semibold mt-5" data-v-2089527b=""> {{$t('our[12]')}} </h5>
                 <p class="text-slate-400 mt-3" data-v-2089527b=""> {{$t('our[13]')}} </p></div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <section class="max960 top-creator-section section-space-t bg--theme--overlay bg_fixed pt-120 pb-120 bottom--wave-wrapper top--wave-wrapper bg_img" style="position: relative;">
@@ -344,7 +359,7 @@
                         <div class="card card-creator-s1">
                           <div class="card-body"><img :src="`./static/head/${item.header}?t=2`" alt="avatar" width="46">
                             <div class="flex-grow-1"><span style="margin-left: 5px;">{{item.username}}</span><span
-                              class="d-block fw-medium" style="margin-left: 5px; color: rgb(153 0 203);">{{item.money}} {{item.currency}}</span>
+                              class="d-block fw-medium" style="margin-left: 5px; color: #00BFFF;">{{item.money}} {{item.currency}}</span>
                             </div>
                             <!--                        <div style="margin-right: 5px">{{startDate}}</div>-->
                             <div>{{item.time}}</div>
@@ -366,7 +381,7 @@
                         <div class="card card-creator-s1">
                           <div class="card-body"><img :src="`./static/head/${item.header}?t=2`" alt="avatar" width="46">
                             <div class="flex-grow-1"><span style="margin-left: 5px;">{{item.username}}</span><span
-                              class="d-block fw-medium" style="margin-left: 5px; color: rgb(153 0 203);">{{item.money}} {{item.currency}}</span>
+                              class="d-block fw-medium" style="margin-left: 5px; color: #00BFFF;">{{item.money}} {{item.currency}}</span>
                             </div>
                             <!--                        <div style="margin-right: 5px">{{startDate}}</div>-->
                             <div>{{item.time}}</div>
@@ -4408,7 +4423,7 @@
   }
   .hero-text {
     font-size: 2rem;
-    color: rgb(239, 208, 160);
+    color:#FFD700;
   }
 
 
@@ -4884,6 +4899,7 @@
     border-radius: 8px;
     position: relative;
     overflow: hidden;
+    height: 110px;
 
     margin: 1rem 0.75rem;
   }
@@ -5424,6 +5440,9 @@
   -webkit-box-shadow:
 inset 0 0 0 1px #fba342 !important;
   box-shadow: inset 0 0 0 1px #fba342 !important;
+  }
+  .work-item__desc{
+    color: rgba(255, 255, 255, 0.5) !important;
   }
 </style>
 

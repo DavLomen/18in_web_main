@@ -1,29 +1,37 @@
 <template>
   <div class="header">
     <div class="header-wrapper">
-      <img :src="'./static/image/dashboard.png?t=2'"  @click="$router.push('/')"
-                                     class="logo">
       <div class="nav-list">
+        <img :src="'./static/image/dashboard.png?t=2'"  @click="$router.push('/')"
+        class="logo">
+        <!-- 首页 -->
         <div :class="'nav-item '+(index==0?'active':'')" @click="$router.push('/')">
           {{$t('head[0]')}}
           <div class="underlined"></div>
         </div>
+        <!-- 合同 -->
         <div :class="'nav-item '+(index==1?'active':'')" @click="$router.push('/contract')">
            {{$t('head[9]')}}
           <div class="underlined"></div>
         </div>
+        <!-- VIP -->
+        <div :class="'nav-item '+(index==8?'active':'')" @click="$router.push('/welfare')"> {{$t('welfare[0]')}}<div class="underlined"></div></div>
 <!--        <div :class="'nav-item '+(index==9?'active':'')" @click="$router.push('/Bounty')">-->
 <!--          BOUNTY-->
 <!--          <div class="underlined"></div>-->
 <!--        </div>-->
-        <div :class="'nav-item '+(index==10?'active':'')" @click="$router.push('/blog')"> {{$t('foot[6]')}}<div class="underlined"></div></div>
-        <div :class="'nav-item '+(index==2?'active':'')" @click="$router.push('/about')"> {{$t('about[0]')}}<div class="underlined"></div></div>
-        <div :class="'nav-item '+(index==3?'active':'')" @click="$router.push('/FAQ')"> {{$t('foot[4]')}}<div class="underlined"></div></div>
-        <!--        <div :class="'nav-item '+(index==6?'active':'')" @click="$router.push('/contact')"> {{$t('foot[7]')}}<div class="underlined"></div></div>-->
+        <!-- App -->
         <div style="margin-left: 1rem;" :class="'nav-item '+(index==7?'active':'')" @click="$router.push('/app')"> {{$t('head[1]')}}<div class="underlined"></div></div>
+        <!-- 博客 -->
+        <div :class="'nav-item '+(index==10?'active':'')" @click="$router.push('/blog')"> {{$t('foot[6]')}}<div class="underlined"></div></div>
+        <!-- FAQ -->
+        <div :class="'nav-item '+(index==3?'active':'')" @click="$router.push('/FAQ')"> {{$t('foot[4]')}}<div class="underlined"></div></div>
+        <!-- 关于我们 -->
+        <div :class="'nav-item '+(index==2?'active':'')" @click="$router.push('/about')"> {{$t('about[0]')}}<div class="underlined"></div></div>
+        <!-- 教程 -->
         <div :class="'nav-item '+(index==11?'active':'')" @click="$router.push('/teach')"> {{$t('teach[0]')}}<div class="underlined"></div></div>
-          <div :class="'nav-item '+(index==4?'active':'')" @click="$router.push('/affiliate')"> {{$t('head[18]')}}<div class="underlined"></div></div>
-          <div :class="'nav-item '+(index==8?'active':'')" @click="$router.push('/welfare')"> {{$t('welfare[0]')}}<div class="underlined"></div></div>
+        <!-- 联盟 -->
+        <div :class="'nav-item '+(index==4?'active':'')" @click="$router.push('/affiliate')"> {{$t('head[18]')}}<div class="underlined"></div></div>
 
         <div class="action-box">
           <div class="action-btn" v-if="!UserInfo" @click="$router.push('/register')">{{$t('head[2]')}}</div>
@@ -140,11 +148,14 @@
         </div>
 
       </div>
-      <div class="d-show" style="text-align:center;font-size: 12px;border-radius: 10px;padding: 5px;display: block;color: #fff!important;">
+      <div class="menu-box align-center">
+        <div class="menu" @click="showMask=true"><i class="el-icon-s-operation"></i> {{$t('head[6]')}}</div>
+        <img :src="'./static/image/dashboard.png?t=2'"  @click="$router.push('/')"
+        class="logo">
+        <div class="d-show" style="text-align:center;font-size: 12px;border-radius: 10px;padding: 5px;display: block;color: #fff!important;">
         {{$t('online')}}<br>{{InitData.setting.online||0}}
       </div>
-      <div class="menu-box">
-        <div class="el-dropdown" style="margin-right: 10px">
+      <div class="el-dropdown" style="margin-right: 10px">
           <div class="cur-lang el-dropdown-selfdefine" aria-haspopup="list" @click="showMobileLan = !showMobileLan"
                aria-controls="dropdown-menu-5477" role="button" tabindex="0">
             <span v-if="$i18n.locale=='en-US'">English</span>
@@ -248,7 +259,6 @@
             <div x-arrow="" class="popper__arrow" style="left: 87.8312px;"></div>
           </ul>
         </div>
-        <div class="menu" @click="showMask=true"><i class="el-icon-s-operation"></i> {{$t('head[6]')}}</div>
       </div>
       <div v-if="showMask" class="nav-mask">
         <div class="nav-list">
@@ -261,7 +271,7 @@
           <div :class="'nav-item '+(index==5?'active':'')" @click="$router.push('/blog')"> BLOG</div>
           <div :class="'nav-item '+(index==11?'active':'')" @click="$router.push('/teach')"> TUTORIAL</div>
 <!--          <div :class="'nav-item '+(index==6?'active':'')" @click="$router.push('/contact')"> {{$t('foot[7]')}}</div>-->
-          <div :class="'nav-item '+(index==8?'active':'')" style="color:#0aff22;" @click="$router.push('/welfare')"> VIP EXCLUSIVE</div>
+          <div :class="'nav-item '+(index==8?'active':'')" style="color:red;" @click="$router.push('/welfare')"> VIP EXCLUSIVE</div>
           <div :class="'nav-item '+(index==7?'active':'')" @click="$router.push('/app')"> APP</div>
           <div class="action-box">
             <div class="action-btn" v-if="!UserInfo" @click="$router.push('/register')">Sign Up</div>
@@ -665,7 +675,8 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background:linear-gradient(110deg, #9C27B0, #8647af 59%, #6c4982);
+      /* background:linear-gradient(110deg, #9C27B0, #8647af 59%, #6c4982); */
+      background: #00BFFF;
       cursor: pointer
     }
 
@@ -709,7 +720,9 @@
 
     .header .header-wrapper .menu-box {
       display: flex;
-      align-items: center
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
     }
 
     .header .header-wrapper .menu-box .menu {
@@ -781,7 +794,7 @@
     }
 
     .header .header-wrapper .nav-mask .nav-list .active,.header .header-wrapper .nav-mask .nav-list .nav-item:hover {
-      color: rgb(124 58 237);
+      color: #00BFFF;
     }
     .header .header-wrapper .nav-mask .nav-list .action-box {
       /*display: flex;*/
@@ -806,7 +819,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(124 58 237);
+      background-color: #00BFFF;
       cursor: pointer
     }
 

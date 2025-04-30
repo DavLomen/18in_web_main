@@ -278,7 +278,7 @@ body,html {
     white-space:nowrap
   }
   #common-app .mobile-bottom-tabs .active {
-    color: rgb(124, 58, 237);
+    color:#00BFFF;
     font-weight: bold;
   }
 }#app {
@@ -14257,7 +14257,8 @@ img, video {
 }
 .bg-violet-600 {
   --tw-bg-opacity: 1 !important;
-  background-color: rgb(124 58 237) !important;
+  /* background-color: rgb(124 58 237) !important; */
+  background-color: #00BFFF !important;
 }
 .rounded-full {
   border-radius: 9999px !important;
@@ -14322,7 +14323,7 @@ img, video {
 }
 
 .card-full {
-  height: 100%
+  /* height: 100% */
 }
 
 .card-full-screen {
