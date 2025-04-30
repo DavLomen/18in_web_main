@@ -42,6 +42,9 @@
   .el-content-text{
     font-size: 1.2rem !important;
   }
+  .el-content-tip-text{
+    font-size: 0.8rem !important;
+  }
   .el-mx-auto-95{
     width: 95%!important;
     margin: 0 auto;

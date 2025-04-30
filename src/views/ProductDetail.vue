@@ -59,12 +59,12 @@
               </p>
             </div>
             <div class="description">
-              <p><img :src="'./static/images/checked_new.png'"> {{$t('product[2]')}}: <span class="notranslate">{{detailData.cycle}} {{$t('product[15]')}}
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('product[2]')}}: <span class="notranslate el-content-tip-text">{{detailData.cycle}} {{$t('product[15]')}}
                             </span></p>
-              <p><img :src="'./static/images/checked_new.png'"> {{$t('product[0]')}}: <span class="notranslate">${{detailData.amount}}</span></p>
-              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[2]')}}: <span class="notranslate">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*1).toFixed(2))}}</span></p>
-              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[3]')}}: <span class="notranslate">${{detailData.amount}} + ${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</span></p>
-              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[0]')}}:<span class="notranslate">{{$t('settle[1]')}}</span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('product[0]')}}: <span class="notranslate el-content-tip-text">${{detailData.amount}}</span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[2]')}}: <span class="notranslate el-content-tip-text">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*1).toFixed(2))}}</span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[3]')}}: <span class="notranslate el-content-tip-text">${{detailData.amount}} + ${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</span></p>
+              <p><img :src="'./static/images/checked_new.png'"> {{$t('settle[0]')}}:<span class="notranslate el-content-tip-text">{{$t('settle[1]')}}</span></p>
             </div>
           </div>
              <!-- 以上是修改后的内容 -->
@@ -129,9 +129,11 @@
           <span class="fs-4 ps-3" v-else>{{$t('limits[2]')}}</span>
         </div>
         <div class="pt-3 fw-bold txt">{{$t('productInfo[9]')}}</div>
-        <div :class="'txt txt'+i" v-for="i in 32" >{{$t('productDetail['+i+']')}}</div>
+        <div :class="'txt txt'+i" v-for="i in 30" >
+          <span>{{$t(`productDetail['${i}']`)}}</span>
+        </div>
         <div class="txt" v-html="detailData.agreement"></div>
-        <div class="txt" >{{$t('productDetail[33]')}}</div>
+        <div class="txt" >{{$t('productDetail[32]')}}</div>
         </div>
     </div>
 
