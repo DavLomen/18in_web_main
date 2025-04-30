@@ -349,8 +349,8 @@
         this.$router.push(`/article/terms/${this.InitData.disclaimerList.length?this.InitData.disclaimerList[0].id:''}`)
       },
       getCode() {
-        this.postData.code_rand = new Date().getTime()
-        this.codeImg = this.ApiUrl+'/api/Account/code?code_rand='+this.postData.code_rand
+        // this.postData.code_rand = new Date().getTime()
+        // this.codeImg = this.ApiUrl+'/api/Account/code?code_rand='+this.postData.code_rand
       },
       getCodes() {
         let that = this;
@@ -416,7 +416,7 @@
         this.isSubmit = true
         this.$Model.UserRegister(this.postData,data=>{
           this.isSubmit = false
-          this.getCode()
+          // this.getCode()
         });
       },
       getSmsCode() {
