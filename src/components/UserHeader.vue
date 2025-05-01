@@ -9,19 +9,27 @@
 <!--          <i class="el-icon-house"></i>-->
 <!--          <span>{{$t('head[0]')}}</span></li>-->
         <li @click="$router.push('/dashboard')"   :class="'el-menu-item '+(index==1?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-menu"></i><span>{{$t('head[4]')}}</span></li>
-        <li  @click="$router.push('/app')"  :class="'el-menu-item '+(index==19?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-download"></i><span>{{$t('head[1]')}}</span></li>
+          <img :src="'./static/dash/dash.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[4]')}}</span></li>
+        <li  @click="$router.push('/app')"  :class="'el-menu-item '+(index==19?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/app.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[1]')}}</span></li>
 
         <li  @click="$router.push('/transactions')" :class="'el-menu-item '+(index==6?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-notebook-2"></i><span>{{$t('head[12]')}}</span></li>
+          <img :src="'./static/dash/bill.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[12]')}}</span></li>
         <li @click="$router.push('/deposit')"   :class="'el-menu-item '+(index==2?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-bank-card"></i><span>{{$t('head[7]')}}</span></li>
+          <img :src="'./static/dash/recharge.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[7]')}}</span></li>
         <li @click="$router.push('/withdraw')"   :class="'el-menu-item '+(index==3?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-top"></i><span>{{$t('head[8]')}}</span></li>
+          <img :src="'./static/dash/withdraw.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[8]')}}</span></li>
         <li @click="$router.push('/product')"   :class="'el-menu-item '+(index==4?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-folder"></i><span>{{$t('head[10]')}}</span></li>
+          <img :src="'./static/dash/contract.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[10]')}}</span></li>
         <li @click="$router.push('/MyPackages')"   :class="'el-menu-item '+(index==5?'is-active':'')" style="padding-left: 20px;">
-          <i class="el-icon-edit-outline"></i><span>{{$t('head[11]')}}</span></li>
+          <img :src="'./static/dash/mycontract.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[11]')}}</span></li>
 <!--        <li  aria-haspopup="true" class="el-submenu">-->
 <!--          <div class="el-submenu__title" style="padding-left: 20px;" @click="showPackage = !showPackage">-->
 <!--            <i class="el-icon-document"></i><span slot="title">{{$t('head[9]')}}</span>-->
@@ -38,15 +46,26 @@
 <!--            </li>-->
 <!--          </ul>-->
 <!--        </li>-->
-        <li @click="$router.push('/welfare')" :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-grape"></i><span>{{$t('welfare[0]')}}</span></li>
+        <li @click="$router.push('/welfare')" :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/vip.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('welfare[0]')}}</span></li>
 
-        <li  @click="$router.push('/affiliates')"  :class="'el-menu-item '+(index==7?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-office-building"></i><span>{{$t('foot[5]')}}</span></li>
+        <li  @click="$router.push('/affiliates')"  :class="'el-menu-item '+(index==7?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/affi.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('foot[5]')}}</span></li>
         <li  @click="$router.push('/lucky')" v-if="InitData.setting.luckydraw !=undefined && InitData.setting.luckydraw.status ==1" :class="'el-menu-item '+(index==12?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-sunny"></i><span>{{$t('common[2]')}}</span></li>
-        <li  @click="$router.push('/message')"  :class="'el-menu-item '+(index==11?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-message-solid"></i><span>{{$t('head[13]')}}</span></li>
-        <li  @click="$router.push('/coupon')"  :class="'el-menu-item '+(index==12?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-s-goods"></i><span>{{$t('coupon[0]')}}</span></li>
-        <li  @click="$router.push('/security')"  :class="'el-menu-item '+(index==18?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-s-platform"></i><span>f2a</span></li>
+        <li  @click="$router.push('/message')"  :class="'el-menu-item '+(index==11?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/message.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[13]')}}</span></li>
+        <li  @click="$router.push('/coupon')"  :class="'el-menu-item '+(index==12?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/coupon.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('coupon[0]')}}</span></li>
+        <li  @click="$router.push('/security')"  :class="'el-menu-item '+(index==18?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/f2a.png'" class="el-icon-download" style="width: 4rem;"><span>f2a</span></li>
         <li  aria-haspopup="true" class="el-submenu">
-          <div class="el-submenu__title" style="padding-left: 20px;" @click="showSet = !showSet"><i class="el-icon-setting"></i><span slot="title">{{$t('head[14]')}}</span>
+          <div class="el-submenu__title" style="padding-left: 20px;" @click="showSet = !showSet">
+            <img :src="'./static/dash/set.png'" class="el-icon-download" style="width: 4rem;">
+            <span slot="title">{{$t('head[14]')}}</span>
             <i class="el-submenu__icon-arrow el-icon-arrow-down" v-if="!showSet"></i>
             <van-icon name="arrow-up" class="el-submenu__icon-arrow" v-if="showSet"/>
           </div>
@@ -62,7 +81,17 @@
             </li>
           </ul>
         </li>
-        <li @click="$Model.Logout()"   class="el-menu-item" style="padding-left: 20px;"><i class="el-icon-switch-button"></i><span>{{$t('head[5]')}}</span></li>
+        <li @click="$Model.Logout()"   class="el-menu-item" style="padding-left: 20px;">
+          <img :src="'./static/dash/logout.png'" class="el-icon-download" style="width: 4rem;">
+          <span>{{$t('head[5]')}}</span></li>
+
+        <li  @click="$router.push('/article/privacy/detail')"  :class="'el-menu-item '+(index==12?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/private.png'"  style="width: 4rem;">
+          <span>{{$t('foot[9]')}}</span></li>
+
+        <li  @click="$router.push('/article/terms/detail')"  :class="'el-menu-item '+(index==12?'is-active':'')" style="padding-left: 20px;">
+          <img :src="'./static/dash/terms.png'" style="width: 4rem;">
+          <span>{{$t('foot[10]')}}</span></li>
       </ul>
     </div>
     <div class="app-nav-h5">
@@ -220,6 +249,8 @@
             </li>
           </ul>
         </li>
+        <li  @click="$router.push('/article/privacy/detail')"  :class="'el-menu-item '+(index==18?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-burger"></i><span>{{$t('foot[9]')}}</span></li>
+        <li  @click="$router.push('/article/terms/detail')"  :class="'el-menu-item '+(index==18?'is-active':'')" style="padding-left: 20px;"><i class="el-icon-cherry"></i><span>{{$t('foot[10]')}}</span></li>
         <li @click="$Model.Logout()"   class="el-menu-item" style="padding-left: 20px;"><i class="el-icon-switch-button"></i><span>{{$t('head[5]')}}</span></li>
       </ul>
       <div class="close-box"><i @click="showH5nav=false" class="el-icon-error nav-close"></i></div>

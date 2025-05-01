@@ -18,12 +18,12 @@
             <div class="underlined"></div>
           </div>
           <div :class="'nav-item '+(index==2?'active':'')" @click="$router.push('/about')"> {{$t('foot[3]')}}<div class="underlined"></div></div>
-          <div :class="'nav-item '+(index==4?'active':'')" @click="$router.push('/affiliate')">{{$t('foot[5]')}}<div class="underlined"></div></div>
 <!--          <div :class="'nav-item '+(index==9?'active':'')" style="color: #FF9800;" @click="$router.push('/Bounty')"> {{$t('bounty')}}<div class="underlined"></div></div>-->
           <div :class="'nav-item '+(index==3?'active':'')" @click="$router.push('/FAQ')"> {{$t('foot[4]')}}<div class="underlined"></div></div>
           <!--        <div :class="'nav-item '+(index==5?'active':'')" @click="$router.push('/blog')"> {{$t('foot[6]')}}<div class="underlined"></div></div>-->
           <!--        <div :class="'nav-item '+(index==6?'active':'')" @click="$router.push('/contact')"> {{$t('foot[7]')}}<div class="underlined"></div></div>-->
           <div :class="'nav-item '+(index==8?'active':'')" @click="$router.push('/welfare')"> {{$t('welfare[0]')}}<div class="underlined"></div></div>
+          <div :class="'nav-item '+(index==4?'active':'')" @click="$router.push('/affiliate')">{{$t('foot[5]')}}<div class="underlined"></div></div>
           <div :class="'nav-item '+(index==7?'active':'')" @click="$router.push('/app')"> {{$t('head[1]')}}<div class="underlined"></div></div>
           <div :class="'nav-item '+(index==10?'active':'')" @click="$router.push('/teach')"> {{$t('teach[0]')}}<div class="underlined"></div></div>
         </div>
@@ -35,17 +35,8 @@
 <!--                <img v-lazy="'./static/image/en-us1.png?t=1'" style="width: 2.5rem;">-->
                 <img v-lazy="'./static/image/en-US.png'" style="width: 2.5rem;">
               </span>
-              <span v-if="$i18n.locale=='ko-KO'">
-                <img v-lazy="'./static/image/ko-KO.png'" style="width: 2.5rem;">
-              </span>
               <span v-if="$i18n.locale=='es-ES'">
                 <img v-lazy="'./static/image/es-ES.png'" style="width: 2.5rem;">
-              </span>
-              <span v-if="$i18n.locale=='yd-YD'">
-                <img v-lazy="'./static/image/yd-YD.png'" style="width: 2.5rem;">
-              </span>
-              <span v-if="$i18n.locale=='ar-AR'">
-                <img v-lazy="'./static/image/ar-AR.png'" style="width: 2.5rem;">
               </span>
               <span v-if="$i18n.locale=='pt-PT'">
                 <img v-lazy="'./static/image/pt-PT.png'" style="width: 2.5rem;">
@@ -53,21 +44,40 @@
               <span v-if="$i18n.locale=='ru-RU'">
                 <img v-lazy="'./static/image/ru-RU.png'" style="width: 2.5rem;">
               </span>
-              <span v-if="$i18n.locale=='ja-JP'">
-                <img v-lazy="'./static/image/ja-JP.png'" style="width: 2.5rem;">
-              </span>
               <span v-if="$i18n.locale=='de-DE'">
                 <img v-lazy="'./static/image/de-DE.png'" style="width: 2.5rem;">
               </span>
               <span v-if="$i18n.locale=='fr-FR'">
                 <img v-lazy="'./static/image/fr-FR.png'" style="width: 2.5rem;">
               </span>
+              <span v-if="$i18n.locale=='nl-NL'">
+                <img v-lazy="'./static/image/nl-NL.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ro-RO'">
+                <img v-lazy="'./static/image/ro-RO.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='pl-PL'">
+                <img v-lazy="'./static/image/pl-PL.png'" style="width: 2.5rem;">
+              </span>
               <span v-if="$i18n.locale=='it-IT'">
                 <img v-lazy="'./static/image/it-IT.png'" style="width: 2.5rem;">
               </span>
-              <span v-if="$i18n.locale=='zh-TW'">
-                <img v-lazy="'./static/image/zh-TW.png'" style="width: 2.5rem;">
+
+              <span v-if="$i18n.locale=='ko-KO'">
+                <img v-lazy="'./static/image/ko-KO.png'" style="width: 2.5rem;">
               </span>
+<!--              <span v-if="$i18n.locale=='yd-YD'">-->
+<!--                <img v-lazy="'./static/image/yd-YD.png'" style="width: 2.5rem;">-->
+<!--              </span>-->
+              <span v-if="$i18n.locale=='ar-AR'">
+                <img v-lazy="'./static/image/ar-AR.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ja-JP'">
+                <img v-lazy="'./static/image/ja-JP.png'" style="width: 2.5rem;">
+              </span>
+<!--              <span v-if="$i18n.locale=='zh-TW'">-->
+<!--                <img v-lazy="'./static/image/zh-TW.png'" style="width: 2.5rem;">-->
+<!--              </span>-->
               <van-icon name="arrow-down" class="el-icon-arrow-down"/>
             </div>
             <ul class="el-dropdown-menu" id="dropdown-menu-6877" v-show="showPcLan">
@@ -78,34 +88,9 @@
                   English
                 </div>
               </li>
-              <li @click="changeLanguage('ko-KO')" v-if="InitData.setting.ko==1" class="el-dropdown-menu__item"><!---->
-                <div class="lang-item"><img v-lazy="'./static/image/ko-KO.png'"
-                                            class="flag"> 한국인
-                </div>
-              </li>
               <li @click="changeLanguage('es-ES')" v-if="InitData.setting.es==1" class="el-dropdown-menu__item">
                 <div class="lang-item"><img v-lazy="'./static/image/es-ES.png'"
                                             class="flag"> Español
-                </div>
-              </li>
-              <!--            <li  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
-              <!--              <div class="lang-item"><img v-lazy="'./static/images/flag7.597f635f.png'"-->
-              <!--                                          class="flag"> Türkçe-->
-              <!--              </div>-->
-              <!--            </li>-->
-              <li @click="changeLanguage('yd-YD')" v-if="InitData.setting.yd==1"  class="el-dropdown-menu__item"><!---->
-                <div class="lang-item"><img v-lazy="'./static/image/yd-YD.png'"
-                                            class="flag"> हिंदी
-                </div>
-              </li>
-<!--              <li @click="changeLanguage('ur-UR')" v-if="InitData.setting.ur==1"  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
-<!--                <div class="lang-item"><img v-lazy="'./static/images/flagur.png'"-->
-<!--                                            class="flag"> اردو-->
-<!--                </div>-->
-<!--              </li>-->
-              <li @click="changeLanguage('ar-AR')" v-if="InitData.setting.ar==1"  class="el-dropdown-menu__item"><!---->
-                <div class="lang-item"><img v-lazy="'./static/image/ar-AR.png'"
-                                            class="flag">عربي
                 </div>
               </li>
               <li @click="changeLanguage('pt-PT')" v-if="InitData.setting.pt==1"  class="el-dropdown-menu__item"><!---->
@@ -118,19 +103,63 @@
                                             class="flag"> Русский
                 </div>
               </li>
-              <li @click="changeLanguage('ja-JP')" v-if="InitData.setting.jp==1"  class="el-dropdown-menu__item"><!---->
-                <div class="lang-item"><img v-lazy="'./static/image/ja-JP.png'"
-                                            class="flag"> 日本語
-                </div>
-              </li>
+
               <li @click="changeLanguage('de-DE')" v-if="InitData.setting.de==1"  class="el-dropdown-menu__item"><!---->
                 <div class="lang-item"><img v-lazy="'./static/image/de-DE.png'"
                                             class="flag"> Deutsch
                 </div>
               </li>
+
+              <li @click="changeLanguage('ko-KO')" v-if="InitData.setting.ko==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ko-KO.png'"
+                                            class="flag"> 한국인
+                </div>
+              </li>
+                            <li @click="changeLanguage('ja-JP')" v-if="InitData.setting.jp==1"  class="el-dropdown-menu__item"><!---->
+                              <div class="lang-item"><img v-lazy="'./static/image/ja-JP.png'"
+                                                          class="flag"> 日本語
+                              </div>
+                            </li>
+              <!--            <li  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+              <!--              <div class="lang-item"><img v-lazy="'./static/images/flag7.597f635f.png'"-->
+              <!--                                          class="flag"> Türkçe-->
+              <!--              </div>-->
+              <!--            </li>-->
+<!--              <li @click="changeLanguage('yd-YD')" v-if="InitData.setting.yd==1"  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="lang-item"><img v-lazy="'./static/image/yd-YD.png'"-->
+<!--                                            class="flag"> हिंदी-->
+<!--                </div>-->
+<!--              </li>-->
+<!--              <li @click="changeLanguage('ur-UR')" v-if="InitData.setting.ur==1"  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="lang-item"><img v-lazy="'./static/images/flagur.png'"-->
+<!--                                            class="flag"> اردو-->
+<!--                </div>-->
+<!--              </li>-->
+              <li @click="changeLanguage('ar-AR')" v-if="InitData.setting.ar==1"  class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ar-AR.png'"
+                                            class="flag">عربي
+                </div>
+              </li>
+
+
               <li @click="changeLanguage('fr-FR')" v-if="InitData.setting.fr==1" class="el-dropdown-menu__item"><!---->
                 <div class="lang-item"><img v-lazy="'./static/image/fr-FR.png'"
                                             class="flag"> Français
+                </div>
+              </li>
+              <li @click="changeLanguage('nl-NL')" v-if="InitData.setting.nl==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/nl-NL.png'"
+                                            class="flag"> Nederlands
+                </div>
+              </li>
+              <li @click="changeLanguage('ro-RO')" v-if="InitData.setting.ro==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ro-RO.png'"
+                                            class="flag"> română
+                </div>
+              </li>
+              <li @click="changeLanguage('pl-PL')" v-if="InitData.setting.pl==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/pl-PL.png'"
+                                            class="flag"> Polski
                 </div>
               </li>
               <li @click="changeLanguage('it-IT')" v-if="InitData.setting.it==1" class="el-dropdown-menu__item"><!---->
@@ -138,11 +167,11 @@
                                             class="flag"> Italiano
                 </div>
               </li>
-              <li @click="changeLanguage('zh-TW')" v-if="InitData.setting.ft==1" class="el-dropdown-menu__item"><!---->
-                <div class="lang-item"><img v-lazy="'./static/image/zh-TW.png'"
-                                            class="flag"> 繁體中文
-                </div>
-              </li>
+<!--              <li @click="changeLanguage('zh-TW')" v-if="InitData.setting.ft==1" class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="lang-item"><img v-lazy="'./static/image/zh-TW.png'"-->
+<!--                                            class="flag"> 繁體中文-->
+<!--                </div>-->
+<!--              </li>-->
               <!--            <li @click="changeLanguage('zh-CN')" v-if="InitData.setting.cn==1" class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
               <!--              <div class="lang-item"><img v-lazy="'./static/images/zh-CN.png'"-->
               <!--                                          class="flag"> 中文简体-->
@@ -162,13 +191,13 @@
           <div class="action-box" v-if="UserInfo">
             <div class="action-btn"  @click="$Model.Logout()">{{$t('head[5]')}}</div>
           </div>
-          <div style="text-align:center;font-size: 1.5rem;margin-left: 10px;border-radius: 10px;border: 1px solid #662282;padding: 5px">
-            {{$t('online')}}<br>{{InitData.setting.online}}
+          <div style="color:#fff;text-align:center;font-size: 1.5rem;margin-left: 10px;border-radius: 10px;border: 1px solid #662282;padding: 5px">
+            {{$t('online')}}<br>{{InitData.setting.online || 0}}
           </div>
         </div>
         <div class="menu-box">
-          <div style="text-align:center;font-size: 1.25rem;margin-left: 10px;border-radius: 10px;padding: 5px">
-            {{$t('online')}}<br>{{InitData.setting.online}}
+          <div style="color:#fff;text-align:center;font-size: 1.25rem;margin-left: 10px;border-radius: 10px;padding: 5px">
+            {{$t('online')}}<br>{{InitData.setting.online ||0}}
           </div>
           <div class="el-dropdown">
             <div class="cur-lang el-dropdown-selfdefine" aria-haspopup="list" @click="showMobileLan = !showMobileLan"
@@ -209,6 +238,15 @@
               <span v-if="$i18n.locale=='zh-TW'">
                 <img v-lazy="'./static/image/zh-TW.png'" style="width: 2.5rem;">
               </span>
+              <span v-if="$i18n.locale=='nl-NL'">
+                <img v-lazy="'./static/image/nl-NL.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='ro-RO'">
+                <img v-lazy="'./static/image/ro-RO.png'" style="width: 2.5rem;">
+              </span>
+              <span v-if="$i18n.locale=='pl-PL'">
+                <img v-lazy="'./static/image/pl-PL.png'" style="width: 2.5rem;">
+              </span>
               <van-icon name="arrow-down" class="el-icon-arrow-down"/>
             </div>
             <ul class="el-dropdown-menu" id="dropdown-menu-5477" v-show="showMobileLan">
@@ -232,11 +270,11 @@
               <!--                                          class="flag"> Türkçe-->
               <!--              </div>-->
               <!--            </li>-->
-              <li @click="changeLanguage('yd-YD')" v-if="InitData.setting.yd==1"  class="el-dropdown-menu__item"><!---->
-                <div class="lang-item"><img v-lazy="'./static/image/yd-YD.png'"
-                                            class="flag"> हिंदी
-                </div>
-              </li>
+<!--              <li @click="changeLanguage('yd-YD')" v-if="InitData.setting.yd==1"  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="lang-item"><img v-lazy="'./static/image/yd-YD.png'"-->
+<!--                                            class="flag"> हिंदी-->
+<!--                </div>-->
+<!--              </li>-->
 <!--              <li @click="changeLanguage('ur-UR')" v-if="InitData.setting.ur==1"  class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
 <!--                <div class="lang-item"><img v-lazy="'./static/image/flagur.png'"-->
 <!--                                            class="flag"> اردو-->
@@ -272,16 +310,31 @@
                                             class="flag"> Français
                 </div>
               </li>
+              <li @click="changeLanguage('nl-NL')" v-if="InitData.setting.nl==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/nl-NL.png'"
+                                            class="flag"> Nederlands
+                </div>
+              </li>
+              <li @click="changeLanguage('ro-RO')" v-if="InitData.setting.ro==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/ro-RO.png'"
+                                            class="flag"> română
+                </div>
+              </li>
+              <li @click="changeLanguage('pl-PL')" v-if="InitData.setting.pl==1" class="el-dropdown-menu__item"><!---->
+                <div class="lang-item"><img v-lazy="'./static/image/pl-PL.png'"
+                                            class="flag"> Polski
+                </div>
+              </li>
               <li @click="changeLanguage('it-IT')" v-if="InitData.setting.it==1" class="el-dropdown-menu__item"><!---->
                 <div class="lang-item"><img v-lazy="'./static/image/it-IT.png'"
                                             class="flag"> Italiano
                 </div>
               </li>
-              <li @click="changeLanguage('zh-TW')" v-if="InitData.setting.ft==1" class="el-dropdown-menu__item"><!---->
-                <div class="lang-item"><img v-lazy="'./static/image/zh-TW.png'"
-                                            class="flag"> 繁體中文
-                </div>
-              </li>
+<!--              <li @click="changeLanguage('zh-TW')" v-if="InitData.setting.ft==1" class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="lang-item"><img v-lazy="'./static/image/zh-TW.png'"-->
+<!--                                            class="flag"> 繁體中文-->
+<!--                </div>-->
+<!--              </li>-->
               <!--            <li @click="changeLanguage('zh-CN')" v-if="InitData.setting.cn==1" class="el-dropdown-menu__item">&lt;!&ndash;&ndash;&gt;-->
               <!--              <div class="lang-item"><img v-lazy="'./static/images/zh-CN.png'"-->
               <!--                                          class="flag"> 中文简体-->
@@ -300,11 +353,11 @@
             <div :class="'nav-item '+(index==1?'active':'')" @click="$router.push('/product')"> {{$t('foot[2]')}}</div>
             <div :class="'nav-item '+(index==2?'active':'')" @click="$router.push('/about')"> {{$t('foot[3]')}}</div>
             <div :class="'nav-item '+(index==3?'active':'')" @click="$router.push('/FAQ')"> {{$t('foot[4]')}}</div>
-            <div :class="'nav-item '+(index==9?'active':'')" style="color: #662282;" @click="$router.push('/Bounty')"> {{$t('bounty')}}</div>
+<!--            <div :class="'nav-item '+(index==9?'active':'')" style="color: #662282;" @click="$router.push('/Bounty')"> {{$t('bounty')}}</div>-->
             <div :class="'nav-item '+(index==4?'active':'')" @click="$router.push('/affiliate')"> {{$t('foot[5]')}}</div>
             <div :class="'nav-item '+(index==5?'active':'')" @click="$router.push('/blog')"> {{$t('foot[6]')}}</div>
             <div :class="'nav-item '+(index==6?'active':'')" @click="$router.push('/contact')"> {{$t('foot[7]')}}</div>
-            <div :class="'nav-item '+(index==8?'active':'')" style="color:#0aff22;" @click="$router.push('/welfare')"> {{$t('welfare[0]')}}</div>
+            <div :class="'nav-item '+(index==8?'active':'')" @click="$router.push('/welfare')"> {{$t('welfare[0]')}}</div>
             <div :class="'nav-item '+(index==7?'active':'')" @click="$router.push('/app')"> {{$t('head[1]')}}</div>
             <div :class="'nav-item '+(index==5?'active':'')" @click="$router.push('/teach')"> {{$t('teach[0]')}}</div>
 
@@ -652,7 +705,7 @@
       height: 100%;
       margin: 0 auto;
       padding: 0 3rem;
-      background: #00ab5c;
+      background: #373737;
       /*background: linear-gradient(#00f785, #3d4355) padding-box, linear-gradient(180deg, hsl(31, 68%, 38%) 2.95%, hsl(59, 90%, 77%) 54.04%, hsl(31, 68%, 38%) 105.51%) border-box;*/
     }
 
@@ -675,7 +728,8 @@
       font-weight: 700;
       color: #FFC107;
       white-space: nowrap;
-      cursor: pointer
+      cursor: pointer;
+      text-transform: uppercase;
     }
 
     .header .header-wrapper .nav-list .active,.header .header-wrapper .nav-list .nav-item:hover {
@@ -718,7 +772,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background: linear-gradient(to right, #00f785, #410093);
+      background: linear-gradient(to right, #fff, #410093);
       /*background: #4caf50;*/
       cursor: pointer;
       margin-right: 1rem;
@@ -752,7 +806,7 @@
       /*width: 100%;*/
       height: inherit;
       padding: 0 1rem;
-      background: #00ab5c;
+      background: #373737;
       /*background: linear-gradient(#00f785, #3d4355) padding-box, linear-gradient(180deg, hsl(31, 68%, 38%) 2.95%, hsl(59, 90%, 77%) 54.04%, hsl(31, 68%, 38%) 105.51%) border-box;*/
 
     }
@@ -779,7 +833,7 @@
       max-width: 100%;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #000;
+      color: #fff;
       cursor: pointer
     }
 
@@ -867,7 +921,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background: linear-gradient(to right, #00f785, #410093);
+      background: linear-gradient(to right, #fff, #410093);
       /*background:#4caf50;*/
       cursor: pointer;
       min-width: 80%;

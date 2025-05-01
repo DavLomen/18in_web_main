@@ -64,12 +64,14 @@
               <div class="el-col el-col-24">
                 <div class="el-form-item is-required is-no-asterisk"><label for="amount" class="el-form-item__label">{{$t('withdraw[2]')}}</label>
                   <div class="el-form-item__content">
-                    <div class="input-group">
+                    <div class="input-group" style="    position: relative;
+    width: 100%;">
                       <div class="input el-input"><input type="number" autocomplete="off" v-model="drawData.draw_money"
                                                          class="el-input__inner">
                       </div>
-                      <div class="sign">{{InitData.currency}}</div>
-                    </div></div>
+                      <div class="sign" style="position:absolute;right: 0;">{{InitData.currency}}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
 

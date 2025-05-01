@@ -309,25 +309,29 @@
           <div class="pc">
           <div class="el-col el-col-24 el-col-xs-24 el-col-sm-12 el-col-md-6" style="padding-left: 12px; padding-right: 12px;">
             <div class="cal-item" style="background: #529945;color: #ffffff;">
+              <img :src="'./static/images/das1.png'" style="width: 5rem;">
               <div class="label">{{InitData.currency}} {{UserInfo.balance}}</div>
               <div class="num">{{$t('dashboard[1]')}}</div>
             </div>
           </div>
           <div class="el-col el-col-24 el-col-xs-24 el-col-sm-12 el-col-md-6" style="padding-left: 12px; padding-right: 12px;">
             <div class="cal-item" style="background: #5F33F7;color: #ffffff;">
-              <div class="label">{{InitData.currency}} {{free}}</div>
+              <img :src="'./static/images/das1.png'" style="width: 5rem;">
+              <div class="label">{{InitData.currency}} {{UserInfo.register_prize}}</div>
               <div class="num">{{$t('free[0]')}}</div>
 <!--              <div class="" style="word-break: break-word;font-size: 14px;">{{$t('ttt[0]')}}</div>-->
             </div>
           </div>
           <div class="el-col el-col-24 el-col-xs-24 el-col-sm-12 el-col-md-6" style="padding-left: 12px; padding-right: 12px;">
             <div class="cal-item" style="    background: #ED5C2E;color: #ffffff;">
+              <img :src="'./static/images/das1.png'" style="width: 5rem;">
               <div class="label">{{InitData.currency}} {{statisticalData.total_recharge}}</div>
               <div class="num">{{$t('dashboard[6]')}}</div>
             </div>
           </div>
           <div class="el-col el-col-24 el-col-xs-24 el-col-sm-12 el-col-md-6" style="padding-left: 12px; padding-right: 12px;">
             <div class="cal-item" style="background: #FF971E;color: #ffffff">
+              <img :src="'./static/images/das1.png'" style="width: 5rem;">
               <div class="label">{{InitData.currency}} {{statisticalData.total_withdraw}}</div>
               <div class="num">{{$t('dashboard[7]')}}</div>
             </div>
@@ -336,16 +340,31 @@
           <div class="pc">
             <div class="inf" style="padding: 1rem;overflow: hidden;width: 100%">
               <div class="item-inf">
-                <p>{{$t('dashboard[16]')}}</p>
-                <h4 class="green">+${{statisticalData.today_earnings}}</h4>
+                <div>
+                  <img :src="'./static/images/das2.png'" style="width: 5rem;">
+                </div>
+                <div>
+                  <p>{{$t('dashboard[16]')}}</p>
+                  <h4 class="green">+${{statisticalData.today_earnings}}</h4>
+                </div>
               </div>
               <div class="item-inf">
+                <div>
+                  <img :src="'./static/images/das3.png'" style="width: 5rem;">
+                </div>
+                <div>
                 <p>{{$t('dashboard[17]')}}</p>
                 <h4 class="orange">+{{statisticalData.today_invite}}</h4>
+                </div>
               </div>
               <div class="item-inf">
+                <div>
+                  <img :src="'./static/images/das4.png'" style="width: 5rem;">
+                </div>
+                <div>
                 <p>{{$t('dashboard[18]')}}</p>
                 <h4 class="yellow">+${{statisticalData.today_reward}}</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -353,24 +372,44 @@
           <div class="mobile">
             <div class="inf" style="padding: 1rem;overflow: hidden;width: 100%">
               <div class="item-inf" style="width: 48%">
+                <div>
+                  <img :src="'./static/images/das2.png'" style="width: 5rem;">
+                </div>
+                <div>
                 <p>{{$t('dashboard[16]')}}</p>
                 <h4 class="green">+${{statisticalData.today_earnings}}</h4>
+                </div>
               </div>
               <div class="item-inf" style="width: 48%">
+                <div>
+                  <img :src="'./static/images/das3.png'" style="width: 5rem;">
+                </div>
+                <div>
                 <p>{{$t('dashboard[17]')}}</p>
                 <h4 class="orange">+{{statisticalData.today_invite}}</h4>
+                </div>
               </div>
             </div>
           </div>
           <div class="mobile">
             <div class="inf" style="padding: 1rem;overflow: hidden;width: 100%">
               <div class="item-inf" style="width: 48%">
+                <div>
+                  <img :src="'./static/images/das4.png'" style="width: 5rem;">
+                </div>
+                <div>
                 <p>{{$t('dashboard[18]')}}</p>
                 <h4 class="yellow">+${{statisticalData.today_reward}}</h4>
+                </div>
               </div>
               <div class="item-inf" style="width: 48%">
+                <div>
+                  <img :src="'./static/images/das1.png'" style="width: 5rem;">
+                </div>
+                <div>
                 <p>{{$t('free[0]')}}</p>
-                <h4 class="orange">{{InitData.currency}} {{free}}</h4>
+                <h4 class="orange">{{InitData.currency}} {{UserInfo.register_prize}}</h4>
+                </div>
 <!--                <div class="" style="word-break: break-word;font-size: 12px;text-align: center;">{{$t('free[0]')}}</div>-->
               </div>
             </div>
@@ -383,25 +422,48 @@
 <!--            </div>-->
 <!--          </div>-->
           <div class=" el-col-md-8" style="padding-left: 12px; padding-right: 12px;">
-            <div class="cal-item">
+            <div class="cal-item flex">
+              <div>
+                <img :src="'./static/images/das5.png'" style="width: 5rem;">
+              </div>
+              <div>
               <div class="num">{{$t('dashboard[3]')}}</div>
               <div class="label">{{statisticalData.activity_task}}</div>
+              </div>
             </div>
           </div>
           <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;">
-            <div class="cal-item">
+            <div class="cal-item flex">
+              <div>
+                <img :src="'./static/images/das6.png'" style="width: 5rem;">
+              </div>
+              <div>
               <div class="num">{{$t('dashboard[4]')}}</div>
               <div class="label">{{statisticalData.expired_task }}</div>
+              </div>
             </div>
           </div>
           <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;">
-            <div class="cal-item">
+            <div class="cal-item flex">
+              <div>
+                <img :src="'./static/images/das7.png'" style="width: 5rem;">
+              </div>
+              <div>
               <div class="num">{{$t('dashboard[5]')}}</div>
               <div class="label">{{statisticalData.total_task}}</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="user-title">{{$t('dashboard[14]')}}</div>
+        <div class="user-title">
+          <div style="width: fit-content">
+            <div style="width: 100%;">
+              {{$t('dashboard[14]')}}
+            </div>
+            <img :src="'./static/images/das8.png'" style="width: 5rem;    margin: 0 auto;">
+          </div>
+
+        </div>
         <form class="el-form user-box el-form--label-top">
           <div class="el-row" style="margin-left: -12px; margin-right: -12px;">
             <div class="el-col el-col-24 el-col-xs-24 el-col-sm-12 el-col-md-12" style="padding-left: 12px; padding-right: 12px;">
@@ -935,7 +997,10 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     width: 32%;
-    padding: 37px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .item-inf2 {
@@ -1363,6 +1428,11 @@
       width: 50px;
       height: 50px;
     }
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 

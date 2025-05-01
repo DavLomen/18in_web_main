@@ -113,11 +113,12 @@
               <div class="el-col el-col-24">
                 <div class="el-form-item is-required is-no-asterisk"><label for="amount" class="el-form-item__label">{{$t('deposit[10]')}}</label>
                   <div class="el-form-item__content">
-                    <div class="input-group">
+                    <div class="input-group" style="    position: relative;
+    width: 100%;">
                       <div class="input el-input"><input type="number" autocomplete="off" v-model="postData.money"
                                                                 class="el-input__inner">
                       </div>
-                      <div class="sign">{{InitData.currency}}</div>
+                      <div class="sign" style="position: absolute;right: 0;">{{InitData.currency}}</div>
                     </div></div>
                 </div>
               </div>
@@ -128,8 +129,9 @@
                     <div  class="select row g-3">
                       <div  class="col-6 col-sm-3" :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
                         <div  :class="'select-i '+(item.name ==selectTypes.name?'active':'')">
-                          <img :src="InitData.setting.up_url + item.qrcode" style="width: 36px;vertical-align: middle;display: inline-block;">
-                          <span >{{item.name}}</span></div>
+                          <span>{{item.name}}</span>
+                          <img :src="InitData.setting.up_url + item.qrcode" style="width: 46px;vertical-align: middle;display: inline-block;margin-bottom: 5px;">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2244,6 +2246,7 @@
 
   .form .item-control .select-i span {
     margin-top: .625rem;
+    margin-bottom: .625rem;
     font-size: 1.2rem;
     font-weight: 400;
     color: #1c2a46;

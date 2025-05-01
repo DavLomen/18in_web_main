@@ -65,13 +65,19 @@ export default {
       this.getListData(18);
     }
     if(this.articleType=='web3'){
-      this.getListData(19);
-    }
-    if(this.articleType=='service'){
       this.getListData(20);
     }
-    if(this.articleType=='cookie'){
+    // if(this.articleType=='service'){
+    //   this.getListData(20);
+    // }
+    if(this.articleType=='energy'){
       this.getListData(21);
+    }
+    if(this.articleType=='bit'){
+      this.getListData(22);
+    }
+    if(this.articleType=='who'){
+      this.getListData(23);
     }
   },
   mounted() {

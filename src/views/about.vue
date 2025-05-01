@@ -6,8 +6,8 @@
         <div class="container">
           <div class="box7">
             <div class="image_main">
-              <img :src="'./static/image/ppp.jpg'" style="object-fit:cover">
-              <div class="white_image_effect"></div>
+              <img :src="'./static/images/aboutt.png'" style="object-fit:cover">
+<!--              <div class="white_image_effect"></div>-->
             </div>
           </div>
         </div>
@@ -22,53 +22,49 @@
           </div>
         </div>
       </section>
-      <div class="section--sm cta-section">
-        <div class="container">
-          <div class="box7 box71" style="justify-content: space-between">
-            <div class="col-md-7 col-xl-6">
-              <p class="t-short-para">
-                KSD FINANCE LTD
-              </p>
-              <p class="t-short-para">
-                {{$t('about[1]')}}：09651110
-              </p>
-              <p class="t-short-para">
-                {{$t('about[2]')}}：{{$t('about[3]')}}
-              </p>
-              <p class="t-short-para">
-                Amba House 3rd Floor, 15 College Road, Harrow, Middlesex, United Kingdom, HA1 1BA
-              </p>
-              <p class="t-short-para">
-                {{$t('about[4]')}}：22 June 2015
-              </p>
-              <!--            <a href="javascript:;" @click="$router.push('register')" class="btn btn&#45;&#45;xxl btn&#45;&#45;base mt-3">-->
-              <!--              {{$t('about[9]')}}-->
-              <!--            </a>-->
-              <div>
-                <a target="_blank" style="margin-right:1rem;color:#ffffff;background:linear-gradient(to right, #00f785, #410093) !important;margin-top: 1rem;" href="https://find-and-update.company-information.service.gov.uk/company/09651110" class="btn main-btn mt-4">{{$t('about[5]')}}</a>
-                <a target="_blank" href="./static/companies_house_document.pdf?t=1"  style="color:#ffffff;background: linear-gradient(to right, #00f785, #410093);margin-top: 1rem;" class="btn main-btn mt-4">{{$t('about[6]')}}</a>
-              </div>
-            </div>
-            <div class="col-md-5 col-xl-6">
-              <div class="col-md-12 col-xl-12" style="display: flex">
-                <img :src="'./static/image/cccc1.png?t=2'" style="width: 50%;display: inline-block" class="img-fluid cta-section__img">
-                <img :src="'./static/image/cccc2.png?t=2'" style="width: 50%;display: inline-block;margin-left: 5px;" class="img-fluid cta-section__img">
-              </div>
-              <!--            <img :src="'./static/images/frontend/cta/6561b5d4d82711700902356.png'" class="img-fluid cta-section__img">-->
-            </div>
-          </div>
-        </div>
-      </div>
+<!--      <div class="section&#45;&#45;sm cta-section">-->
+<!--        <div class="container">-->
+<!--          <div class="box7 box71" style="justify-content: space-between">-->
+<!--            <div class="col-md-7 col-xl-6">-->
+<!--              <p class="t-short-para">-->
+<!--                KSD FINANCE LTD-->
+<!--              </p>-->
+<!--              <p class="t-short-para">-->
+<!--                {{$t('about[1]')}}：09651110-->
+<!--              </p>-->
+<!--              <p class="t-short-para">-->
+<!--                {{$t('about[2]')}}：{{$t('about[3]')}}-->
+<!--              </p>-->
+<!--              <p class="t-short-para">-->
+<!--                Amba House 3rd Floor, 15 College Road, Harrow, Middlesex, United Kingdom, HA1 1BA-->
+<!--              </p>-->
+<!--              <p class="t-short-para">-->
+<!--                {{$t('about[4]')}}：22 June 2015-->
+<!--              </p>-->
+<!--              &lt;!&ndash;            <a href="javascript:;" @click="$router.push('register')" class="btn btn&#45;&#45;xxl btn&#45;&#45;base mt-3">&ndash;&gt;-->
+<!--              &lt;!&ndash;              {{$t('about[9]')}}&ndash;&gt;-->
+<!--              &lt;!&ndash;            </a>&ndash;&gt;-->
+<!--              <div>-->
+<!--                <a target="_blank" style="margin-right:1rem;color:#ffffff;background:linear-gradient(to right, #00f785, #410093) !important;margin-top: 1rem;" href="https://find-and-update.company-information.service.gov.uk/company/09651110" class="btn main-btn mt-4">{{$t('about[5]')}}</a>-->
+<!--                <a target="_blank" href="./static/companies_house_document.pdf?t=1"  style="color:#ffffff;background: linear-gradient(to right, #00f785, #410093);margin-top: 1rem;" class="btn main-btn mt-4">{{$t('about[6]')}}</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-5 col-xl-6">-->
+<!--              <div class="col-md-12 col-xl-12" style="display: flex">-->
+<!--                <img :src="'./static/image/cccc1.png?t=2'" style="width: 50%;display: inline-block" class="img-fluid cta-section__img">-->
+<!--                <img :src="'./static/image/cccc2.png?t=2'" style="width: 50%;display: inline-block;margin-left: 5px;" class="img-fluid cta-section__img">-->
+<!--              </div>-->
+<!--              &lt;!&ndash;            <img :src="'./static/images/frontend/cta/6561b5d4d82711700902356.png'" class="img-fluid cta-section__img">&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <section id="featured1" class="featured featured-1 bg-overlay bg-overlay-dark2 bg-parallax bg-section" style="background-image: url('./static/image/1.jpg');">
+      <section id="featured1" class="featured featured-1 bg-overlay bg-overlay-dark2 bg-parallax bg-section" style="background-image: url('./static/image/aboutss.png');">
 
         <div class="container max960">
           <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6" style="display: flex;align-content: center;align-items: center;">
-              <div class="featured-img">
-                <img :src="'./static/image/65f18b0da62c51710328589.png?t=1'" alt="Laptop Mockup">
-              </div>
-            </div><!-- .col-lg-5 end -->
+
             <div class="col-sm-12 col-md-12 col-lg-6">
               <div class="heading heading-6">
                 <h2 class="heading--title text-white">{{$t('about1[11]')}}</h2>
@@ -109,6 +105,11 @@
                 </div><!-- .col-lg-4 end -->
               </div><!-- .row end -->
             </div><!-- .col-lg-5 end -->
+            <div class="col-sm-12 col-md-12 col-lg-6" style="display: flex;align-content: center;align-items: center;">
+              <div class="featured-img">
+                <img :src="'./static/image/65f18b0da62c51710328589.png'" alt="Laptop Mockup">
+              </div>
+            </div>
           </div>
           <!-- .row end -->
         </div>
@@ -165,71 +166,71 @@
         <!-- .container end -->
       </section>
 
-      <section id="featured2" class="featured featured-2 pb-50">
-        <div class="container max960">
-          <div class="row">
-            <!-- Feature Card #1 -->
-            <div class="col-sm-12 col-md-12 col-lg-3">
-              <div class="feature-card">
-                <div class="feature-card-icon">
-                  <img :src="'./static/image/about1.png?t=1'" style="width: 65px;"/>
-                </div>
-                <div class="feature-card-content">
-                  <h3 class="feature-card-title" v-html="$t('about1[16]')"></h3>
-                  <p class="feature-card-desc">
-                    {{$t('about1[17]')}}
-                  </p>
-                </div>
-              </div>
-            </div><!-- .col-lg-4 end -->
-            <!-- Feature Card #2 -->
-            <div class="col-sm-12 col-md-12 col-lg-3">
-              <div class="feature-card">
-                <div class="feature-card-icon">
-                  <img :src="'./static/image/about2.png?t=1'" style="width: 65px;"/>
-                </div>
-                <div class="feature-card-content">
-                  <h3 class="feature-card-title">{{$t('about1[18]')}}</h3>
-                  <p class="feature-card-desc">
-                    {{$t('about1[19]')}}
-                  </p>
-                </div>
-              </div>
-            </div><!-- .col-lg-4 end -->
-            <!-- Feature Card #3 -->
-            <div class="col-sm-12 col-md-12 col-lg-3">
-              <div class="feature-card">
-                <div class="feature-card-icon">
-                  <img :src="'./static/image/about3.png?t=1'" style="width: 65px;"/>
-                </div>
-                <div class="feature-card-content">
-                  <h3 class="feature-card-title">{{$t('about1[20]')}}</h3>
-                  <p class="feature-card-desc">
-                    {{$t('about1[21]')}}
-                  </p>
-                </div>
-              </div>
-            </div><!-- .col-lg-4 end -->
-            <!-- Feature Card #6 -->
-            <div class="col-sm-12 col-md-12 col-lg-3">
-              <div class="feature-card">
-                <div class="feature-card-icon">
-                  <img :src="'./static/image/about6.png?t=1'" style="width: 65px;"/>
-                </div>
-                <div class="feature-card-content">
-                  <h3 class="feature-card-title">{{$t('about1[22]')}}</h3>
-                  <p class="feature-card-desc">
-                    {{$t('about1[23]')}}
-                  </p>
-                </div>
-              </div>
-            </div><!-- .col-lg-4 end -->
+<!--      <section id="featured2" class="featured featured-2 pb-50">-->
+<!--        <div class="container max960">-->
+<!--          <div class="row">-->
+<!--            &lt;!&ndash; Feature Card #1 &ndash;&gt;-->
+<!--            <div class="col-sm-12 col-md-12 col-lg-3">-->
+<!--              <div class="feature-card">-->
+<!--                <div class="feature-card-icon">-->
+<!--                  <img :src="'./static/image/about1.png?t=1'" style="width: 65px;"/>-->
+<!--                </div>-->
+<!--                <div class="feature-card-content">-->
+<!--                  <h3 class="feature-card-title" v-html="$t('about1[16]')"></h3>-->
+<!--                  <p class="feature-card-desc">-->
+<!--                    {{$t('about1[17]')}}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>&lt;!&ndash; .col-lg-4 end &ndash;&gt;-->
+<!--            &lt;!&ndash; Feature Card #2 &ndash;&gt;-->
+<!--            <div class="col-sm-12 col-md-12 col-lg-3">-->
+<!--              <div class="feature-card">-->
+<!--                <div class="feature-card-icon">-->
+<!--                  <img :src="'./static/image/about2.png?t=1'" style="width: 65px;"/>-->
+<!--                </div>-->
+<!--                <div class="feature-card-content">-->
+<!--                  <h3 class="feature-card-title">{{$t('about1[18]')}}</h3>-->
+<!--                  <p class="feature-card-desc">-->
+<!--                    {{$t('about1[19]')}}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>&lt;!&ndash; .col-lg-4 end &ndash;&gt;-->
+<!--            &lt;!&ndash; Feature Card #3 &ndash;&gt;-->
+<!--            <div class="col-sm-12 col-md-12 col-lg-3">-->
+<!--              <div class="feature-card">-->
+<!--                <div class="feature-card-icon">-->
+<!--                  <img :src="'./static/image/about3.png?t=1'" style="width: 65px;"/>-->
+<!--                </div>-->
+<!--                <div class="feature-card-content">-->
+<!--                  <h3 class="feature-card-title">{{$t('about1[20]')}}</h3>-->
+<!--                  <p class="feature-card-desc">-->
+<!--                    {{$t('about1[21]')}}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>&lt;!&ndash; .col-lg-4 end &ndash;&gt;-->
+<!--            &lt;!&ndash; Feature Card #6 &ndash;&gt;-->
+<!--            <div class="col-sm-12 col-md-12 col-lg-3">-->
+<!--              <div class="feature-card">-->
+<!--                <div class="feature-card-icon">-->
+<!--                  <img :src="'./static/image/about6.png?t=1'" style="width: 65px;"/>-->
+<!--                </div>-->
+<!--                <div class="feature-card-content">-->
+<!--                  <h3 class="feature-card-title">{{$t('about1[22]')}}</h3>-->
+<!--                  <p class="feature-card-desc">-->
+<!--                    {{$t('about1[23]')}}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>&lt;!&ndash; .col-lg-4 end &ndash;&gt;-->
 
-          </div>
-          <!-- .row end -->
-        </div>
-        <!-- .container end -->
-      </section>
+<!--          </div>-->
+<!--          &lt;!&ndash; .row end &ndash;&gt;-->
+<!--        </div>-->
+<!--        &lt;!&ndash; .container end &ndash;&gt;-->
+<!--      </section>-->
 
       <section namespace="stats">
         <div class="container">
@@ -237,35 +238,127 @@
             <div class="about-stats">
               <div class="about-item">
                 <div>
-                  <h1>8,000,000+</h1>
-                  <p>{{$t('about[7]')}}</p>
+                  <h1>97+ </h1>
+                  <p>{{$t('about2[0]')}}</p>
                 </div>
               </div>
               <div class="about-item" style="background: #ED5C2E;">
                 <div>
-                  <h1>195+</h1>
-                  <p>{{$t('about[8]')}}</p>
+                  <h1>9,390,000+</h1>
+                  <p>{{$t('about2[1]')}}</p>
                 </div>
               </div>
               <div class="about-item" style="background: #FF971E;">
                 <div>
-                  <h1>{{$t('about[9]')}}</h1>
-                  <p>{{$t('about[10]')}}</p>
+                  <h1>180+</h1>
+                  <p>{{$t('about2[2]')}}</p>
                 </div>
               </div>
               <div class="about-item" style="background: #0D9CFF;">
                 <div>
-                  <h1>{{$t('about[30]')}}</h1>
-                  <p>{{$t('about[11]')}}</p>
+                  <h1>4,930,000+</h1>
+                  <p>{{$t('about2[3]')}}</p>
+                </div>
+              </div>
+              <div class="about-item" style="background: #0D9CFF;">
+                <div>
+                  <h1>100％</h1>
+                  <p>{{$t('about2[4]')}}</p>
+                </div>
+              </div>
+              <div class="about-item" style="background: #0D9CFF;">
+                <div>
+                  <h1>100％</h1>
+                  <p>{{$t('about2[5]')}}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div class="figure"></div>
+
       <section namespace="data_centers">
         <div class="container">
+          <div class="box7">
+            <h1 class="fontza text-zah">{{$t('about2[6]')}}</h1>
+            <h6 class="text-hh mt-4">{{$t('about2[7]')}}</h6>
+            <h6 class="text-hh mt-3">{{$t('about2[8]')}}</h6>
+            <h6 class="text-hh mt-3">{{$t('about2[9]')}}</h6>
+            <h6 class="text-hh mt-3">{{$t('about2[10]')}}</h6>
+            <div class="row">
+              <div class="col-lg-3 p-3 mt-4">
+                <div class="border border-2 border-zah  p-3" style="height: 200px;">
+                  <h4 class="fontza text-zah">{{$t('about2[11]')}}</h4>
+                  <div style="border-bottom: 2px solid #FF7D10; width: 50px;"></div>
+                  <h6 class="text-bhs mt-3">{{$t('about2[12]')}}</h6>
+                </div>
+              </div>
+              <div class="col-lg-3 p-3 mt-4">
+                <div class="border border-2 border-zah  p-3" style="height: 200px;">
+                  <h4 class="fontza text-zah">{{$t('about2[13]')}}</h4>
+                  <div style="border-bottom: 2px solid #FF7D10; width: 50px;"></div>
+                  <h6 class="text-bhs mt-3">{{$t('about2[14]')}}</h6>
+                </div>
+              </div>
+              <div class="col-lg-3 p-3 mt-4">
+                <div class="border border-2 border-zah  p-3" style="height: 200px;">
+                  <h4 class="fontza text-zah">{{$t('about2[15]')}}</h4>
+                  <div style="border-bottom: 2px solid #FF7D10; width: 50px;"></div>
+                  <h6 class="text-bhs mt-3">{{$t('about2[16]')}}</h6>
+                </div>
+              </div>
+              <div class="col-lg-3 p-3 mt-4">
+                <div class="border border-2 border-zah  p-3" style="height: 200px;">
+                  <h4 class="fontza text-zah">{{$t('about2[17]')}}</h4>
+                  <div style="border-bottom: 2px solid #FF7D10; width: 50px;"></div>
+                  <h6 class="text-bhs mt-3">{{$t('about2[18]')}}</h6>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section namespace="data_centers">
+        <div class="container">
+          <div class="box7">
+            <div class="">
+              <h1 class="fontza text-zah">{{$t('about2[19]')}}</h1>
+              <div class="row mt-4">
+                <div class="col-lg-6">
+                  <img :src="'./static/images/commpp.png'" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-6">
+                  <div style="padding-left: 1rem">
+                    <h2 class="fontza text-zah mt-4">COOKE CAPITAL LIMITED</h2>
+                    <h6 class="text-hh p-3 border border-2 border-zah rounded-3 mt-4 col-lg-10">{{$t('about[1]')}}: 13219561</h6>
+                    <h6 class="text-hh p-3 border border-2 border-zah rounded-3 mt-3 col-lg-10">{{$t('about[3]')}}: C/O Venture Finance Management, Suite 101, Cotton Exchange, Old Hall Street, Liverpool, England, L3 9LQ</h6>
+                    <h6 class="text-hh p-3 border border-2 border-zah rounded-3 mt-3 col-lg-10">{{$t('about[2]')}}: Private Limited Company</h6>
+                    <h6 class="text-hh p-3 border border-2 border-zah rounded-3 mt-3 col-lg-10">{{$t('about[4]')}}: 23 February 2021</h6>
+                    <div class="d-flex">
+                      <div class="text-center mt-3 col-lg-3 col-6">
+                        <a href="https://find-and-update.company-information.service.gov.uk/company/13219561" target="_blank" type="button" class="btn-join p-3 text-hh fw-bold  fs-6">{{$t('about2[20]')}}</a>
+                      </div>
+                      <div class="text-center mt-3 col-lg-3 col-6">
+                        <a href="./static/companies_house_document.pdf?t=1" target="_blank" type="button" class="btn-join p-3 text-hh fw-bold  fs-6">{{$t('about2[21]')}}</a>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <div class="figure"></div>
+      <section namespace="data_centers">
+        <div class="container ">
           <div class="box7">
             <h1 class="titled_2" style="text-align: left; font-size: 30px; margin-top: 0px;">{{$t('about[12]')}}</h1>
             <p class="mini_desc" style="margin-bottom: 27px;">{{$t('about[13]')}}</p>
@@ -311,11 +404,127 @@
                 <h1>{{$t('about[28]')}}</h1>
                 <p>{{$t('about[29]')}}</p>
               </div>
+              <div class="about-item-data">
+                <img :src="'./static/image/aaa9.jpg'">
+                <h1>{{$t('about[30]')}}</h1>
+                <p>{{$t('about[31]')}}</p>
+              </div>
+              <div class="about-item-data">
+                <img :src="'./static/image/aaa10.jpg'">
+                <h1>{{$t('about[32]')}}</h1>
+                <p>{{$t('about[33]')}}</p>
+              </div>
             </div>
           </div>
 
         </div>
       </section>
+
+      <div  class="section choice-section max960"
+           style="background-image: url('./static/images/frontend/choose_us/61f237c71bfe21643263943.jpg');">
+        <div  class="section__head">
+          <div  class="container">
+            <div  class="row justify-content-center">
+              <div  class="col-md-8 col-xl-6"><h2  class="mt-0 text-center">{{$t('why[0]')}}</h2>
+                <p  class="mb-0 mx-auto text-center t-short-para">
+                  {{$t('why[1]')}}
+                </p></div>
+            </div>
+          </div>
+        </div>
+        <div  class="container">
+          <div  class="row g-3">
+            <div  class="col-md-6 col-lg-4">
+              <div  class="feature-card bg--alpha text-center">
+                <div  class="feature-card__icon-float"><img
+                                                                              :src="'./static/images/abouti1.png'"
+                                                                              style="width: 5rem; display: block;">
+                </div>
+                <div  class="icon icon--md icon--sqr feature-card__icon"><img
+                                                                                                :src="'./static/images/abouti1.png'"
+                                                                                                style="width: 100%; height: 100%; display: block;">
+                </div>
+                <h4 >{{$t('why[2]')}}</h4>
+                <p  class="mb-0">
+                  {{$t('why[3]')}}
+                </p></div>
+            </div>
+            <div  class="col-md-6 col-lg-4">
+              <div  class="feature-card bg--alpha text-center">
+                <div  class="feature-card__icon-float"><img
+                                                                              :src="'./static/images/abouti2.png'"
+                                                                              style="width: 5rem; display: block;">
+                </div>
+                <div  class="icon icon--md icon--sqr feature-card__icon" style="overflow: hidden;">
+                  <img  :src="'./static/images/abouti2.png'"
+                       style="width: 100%; height: 100%; display: block;"></div>
+                <h4 >{{$t('why[4]')}}</h4>
+                <p  class="mb-0">
+                  {{$t('why[5]')}}
+                </p></div>
+            </div>
+            <div  class="col-md-6 col-lg-4">
+              <div  class="feature-card bg--alpha text-center">
+                <div  class="feature-card__icon-float"><img
+                                                                              :src="'./static/images/abouti3.png'"
+                                                                              style="width: 5rem; display: block;">
+                </div>
+                <div  class="icon icon--md icon--sqr feature-card__icon" style="overflow: hidden;">
+                  <img  :src="'./static/images/abouti3.png'"
+                       style="width: 100%; height: 100%; display: block;"></div>
+                <h4 >{{$t('why[6]')}}</h4>
+                <p  class="mb-0">
+                  {{$t('why[7]')}}
+                </p></div>
+            </div>
+            <div  class="col-md-6 col-lg-4">
+              <div  class="feature-card bg--alpha text-center">
+                <div  class="feature-card__icon-float"><img
+                                                                              :src="'./static/images/abouti4.png'"
+                                                                              style="width: 5rem; display: block;">
+                </div>
+                <div  class="icon icon--md icon--sqr feature-card__icon"><img
+                                                                                                :src="'./static/images/abouti4.png'"
+                                                                                                style="width: 100%; height: 100%; display: block;">
+                </div>
+                <h4 >{{$t('why[8]')}}</h4>
+                <p  class="mb-0">
+                  {{$t('why[9]')}}
+                </p></div>
+            </div>
+            <div  class="col-md-6 col-lg-4">
+              <div  class="feature-card bg--alpha text-center">
+                <div  class="feature-card__icon-float"><img
+                                                                              :src="'./static/images/abouti5.png'"
+                                                                              style="width: 5rem; display: block;">
+                </div>
+                <div  class="icon icon--md icon--sqr feature-card__icon"><img
+                                                                                                :src="'./static/images/abouti5.png'"
+                                                                                                style="width: 100%; height: 100%; display: block;">
+                </div>
+                <h4 >{{$t('why[10]')}}</h4>
+                <p  class="mb-0">
+                  {{$t('why[11]')}}
+                </p></div>
+            </div>
+            <div  class="col-md-6 col-lg-4">
+              <div  class="feature-card bg--alpha text-center">
+                <div  class="feature-card__icon-float"><img
+                                                                              :src="'./static/images/abouti6.png'"
+                                                                              style="width: 5rem; display: block;">
+                </div>
+                <div  class="icon icon--md icon--sqr feature-card__icon" style="overflow: hidden;">
+                  <img  :src="'./static/images/abouti6.png'"
+                       style="width: 100%; height: 100%; display: block;"></div>
+                <h4 >{{$t('why[12]')}}</h4>
+                <p  class="mb-0">
+                  {{$t('why[13]')}}
+                </p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <Footer></Footer>
@@ -373,7 +582,6 @@
   .image_main {
     width: 100%;
     position: relative;
-    max-width: 900px;
     margin: 0 auto;
   }
   .image_main img {
@@ -421,6 +629,7 @@
     justify-content: space-between;
     grid-gap: 8px;
     margin-top: 7px;
+    overflow-x: auto;
   }
 
   /* Background Image */
@@ -465,7 +674,7 @@
     opacity: .6;
   }
   .bg-overlay-dark2:before {
-    background-color: #1b1a1a;
+    background-color: rgba(0,0,0,0.3);
     opacity: .97;
   }
   .bg-overlay-dark3:before {
@@ -548,6 +757,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 15rem;
   }
 
   .about-item-data {
@@ -617,8 +827,8 @@
 
   .about-data {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 13px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
     margin-top: 10px;
   }
   /* 超小屏幕（手机，小于 768px） */
@@ -641,8 +851,8 @@
 
     .about-data {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 13px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
       margin-top: 10px;
     }
   }
@@ -683,7 +893,7 @@
     }
   }
   .t-short-para {
-    max-width: 48ch;
+    /*max-width: 48ch;*/
     font-size: 1.5rem;
   }
   .g-4, .gy-4 {
@@ -1184,8 +1394,8 @@
 
     .about-data {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 13px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
       margin-top: 10px;
     }
   }
@@ -1300,6 +1510,129 @@
     max-width: 1140px;
     margin: 0 auto;
   }
+  .fontza {
+    font-family: 'Poppins' !important;
+  }
+  .text-zah {
+    background: linear-gradient(0deg, #FED504 -30%, #f0cd0b 30%, #FF7D10 90%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .border-zah {
+    border: 1px solid #FF7D10;
+  }
+  .p-3 {
+    padding: 1rem !important;
+  }
+  .border-2 {
+    border-width: 2px !important;
+  }
+  .text-bhs {
+    color: #333;
+  }
+  .mt-3 {
+    margin-top: 1rem !important;
+  }
+  .text-hh {
+    color: #efac45;
+    font-size: 1.5rem;
+  }
+  .mt-4 {
+    margin-top: 1.5rem !important;
+  }
+  .btn-join {
+    background: #FED504;
+    background: linear-gradient(90deg, #FED504 -30%, #FED504 30%, #FF7D10 90%);
+    border: 1px solid #FED504;
+    color: #000;
+    border-radius: 8px;
+  }
+  [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+  }
+  .d-flex {
+    display: flex !important;
+  }
+  .choice-section {
+    margin-bottom: 2rem;
+  }
+  .choice-section .row>* {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-top: 10px;
+
+  }
+  .choice-section .feature-card {
+    width: 100%;
+    /*height: 100%;*/
+    padding: 30px 15px;
+    position: relative;
+    border: 1px solid #4CAF50;
+    border-radius: 20px;
+    background-color: #eee;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1;
+    /*height: 17rem;*/
+
+  }
+
+  @media screen and (min-width: 1200px) {
+    .feature-card {
+      padding: 30px;
+    }
+  }
+
+  .feature-card:hover {
+    -webkit-box-shadow: 0 3px 10px rgba(240, 19, 19, 0.5);
+    box-shadow: 0 3px 10px rgba(240, 19, 19, 0.5);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  .feature-card__icon {
+    color: #fff;
+  }
+
+  .feature-card__icon-float {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: var(--d1);
+    line-height: 1;
+    opacity: 0.05;
+    z-index: -1;
+  }
+  .icon {
+    position: relative;
+    display: inline-block;
+  }
+  .icon--md {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 32px;
+  }
+  .icon--sqr {
+    border-radius: 5px;
+    text-align: center;
+  }
+  .choice-section h4 {
+   margin: 1.5rem 0 1rem;
+   font-family: "Inter", sans-serif;
+   font-weight: 700;
+   line-height: 1.15;
+   color: #000;
+ }
+  .mb-0 {
+    font-size: 1.5rem;
+  }
+
+
 </style>
 
 

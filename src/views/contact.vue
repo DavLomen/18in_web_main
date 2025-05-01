@@ -91,7 +91,7 @@
                 </div>
                 <div class="content">
                   <h5 class="title">{{$t('contact[7]')}}</h5>
-                  <p class="caption"> Amba House 3rd Floor, 15 College Road, Harrow, Middlesex, United Kingdom, HA1 1BA</p>
+                  <p class="caption"> C/O Venture Finance Management, Suite 101, Cotton Exchange, Old Hall Street, Liverpool, England, L3 9LQ</p>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="content">
                   <h5 class="title">{{$t('contact[9]')}}</h5>
                   <p class="caption">{{$t('contact[10]')}}</p>
-                  <p class="mt-2"><a href="mailto:info@ksdminer.com">info@ksdminer.com</a></p>
+                  <p class="mt-2"><a href="mailto:info@cryptominingfirm.com">info@cryptominingfirm.com</a></p>
                 </div>
               </div>
             </div>
@@ -124,8 +124,7 @@
         </div>
       </div>
       <div class="map-area" style="height: 450px;margin-top: 2rem">
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.373893717501!2d-0.33753472357575215!3d51.579710505418554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487613748dadad67%3A0xb0cfe7bad74d03b2!2s3rd%20Floor%2C%20amba%20house%2C%2015%20College%20Rd%2C%20Harrow%20HA1%201BA%E8%8B%B1%E5%9B%BD!5e0!3m2!1sen-US!2shk!4v1729248006780!5m2!1sen-US!2shk" width="600" height="450" style="width: 100%;height: 450px !important;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.2947408072146!2d-2.995323923597941!3d53.40955476999264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b2131ba4ddd07%3A0x6c90aa06226b0954!2sVenture%20Finance%20Management!5e0!3m2!1szh-CN!2shk!4v1745763153959!5m2!1sen-US!2shk!4v1729248006780!5m2!1sen-US!2shk" width="600" height="450" style="width: 100%;height: 450px !important;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
     <Footer></Footer>

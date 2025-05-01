@@ -2,19 +2,28 @@
   <div class="HomePage">
     <Header></Header>
     <div class="app-wrapper">
+      <section namespace="referral_image">
+        <div class="container">
+          <div class="box7">
+            <div class="image_main">
+              <img :src="'./static/images/faqt.png'" style="object-fit:cover">
+              <!--              <div class="white_image_effect"></div>-->
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="container">
-        <div></div>
         <div class="box7">
           <div class="box-wrapper">
-            <div class="carousel-container1 info-block">
-              <div class="carousel1 info-block">
-                <div class="carousel-item1">
-                  <img :src="'./static/image/64ea21da0113d1693065690.png'" style="object-fit:cover">
-                  <div class="carousel-desc info-block-title">
-                  </div>
-                </div>
-              </div>
-            </div>
+<!--            <div class="carousel-container1 info-block">-->
+<!--              <div class="carousel1 info-block">-->
+<!--                <div class="carousel-item1">-->
+<!--                  <img :src="'./static/images/faqt.png'" style="object-fit:cover">-->
+<!--                  <div class="carousel-desc info-block-title">-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
             <div class="title">{{$t('faq[0]')}}</div>
             <div class="faq-list">
               <div class="faq-item" v-for="(item,index) in listData" :key="index">
@@ -350,7 +359,6 @@
   .image_main {
     width: 100%;
     position: relative;
-    max-width: 900px;
     margin: 0 auto;
   }
   .image_main img {
@@ -369,7 +377,7 @@
     overflow: hidden;
     margin-top: 10px;
     width: 100%;
-    border-radius: 26px;
+
     padding: 2rem 0;
   }
   .carousel1 {
@@ -379,10 +387,8 @@
   }
   .carousel-item1 {
     position: relative;
-    border-radius: 26px;
-    max-width: 900px;
+
     margin: 0 auto;
-    max-height: 350px;
     overflow: hidden;
 
   }
@@ -408,12 +414,12 @@
     z-index: 1;
     line-height: 95.84%;
     background: linear-gradient(98.57deg, #ce048b -4.59%, #4c0a8e 101.92%);
-    border-radius: 26px;
+
   }
   .carousel-item1 img {
     width: 100%;
     position: relative;
-    border-radius: 26px;
+
     z-index: 2;
   }
 </style>

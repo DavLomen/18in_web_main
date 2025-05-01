@@ -1,170 +1,15 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-<!--    <div class="app-wrapper">-->
-<!--      <div class="container">-->
-<!--        <div class="box3">-->
-<!--          <div class="box-wrapper">-->
-<!--            <div class="carousel-container1 info-block">-->
-<!--              <div class="carousel1 info-block">-->
-<!--                <div class="carousel-item1">-->
-<!--                  <img v-lazy="'./static/image/pppp.jpg'" style="object-fit:cover">-->
-<!--                  <div class="carousel-desc info-block-title">-->
-<!--                    {{$t('product[18]')}}-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div style="font-size: 3.5rem;line-height: 4rem;text-align: center;font-weight: bolder;margin-bottom: 1rem">{{$t('newP[7]')}}</div>-->
-<!--            <div style="font-size: 2rem;line-height: 2.5rem;text-align: center;"> {{$t('newP[8]')}}</div>-->
-<!--            <div class="row row&#45;&#45;15 gy-4 gx-3 justify-content-center d3-block">-->
-<!--              <div class="col-lg-4 col-md-6 col-12" v-for="(item,index) in listData" :key="index">-->
-<!--                <div class="rainbow-pricing style-2">-->
-<!--                  <div class="pricing-table-inner bg-flashlight" style="&#45;&#45;x: 376px; &#45;&#45;y: 636px; padding: 2rem !important;">-->
-<!--                    <div class="pricing-header">-->
-<!--                      <div class="pricing1">-->
-<!--                        <div class="img-area overflow-hidden">-->
-<!--                          <img class="plan w-100" v-lazy="InitData.setting.up_url + item.icon" alt="plan">-->
-<!--                        </div>-->
-<!--                        <h4 class="title mt-4 mb-2">{{item.title}}</h4>-->
-<!--                        <span class="subtitle">{{item.type==1?$t('product[7]'):$t('product[17]')}}</span>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                    <div class="separator-animated mt-4 mb&#45;&#45;30"></div>-->
-<!--                    <div class="pricing-body mb-1">-->
-<!--                      <div class="d-grid gap-10 mt-10" style="grid-template-columns: repeat(2, 1fr);">-->
-<!--                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">-->
-<!--                          <p class="medium grayd text-center fw-600">{{$t('newP[0]')}}</p>-->
-<!--                          <p class="semi text-center">-->
-<!--                            {{item.cycle}} {{$t('product[15]')}}-->
-<!--                          </p>-->
-<!--                        </div>-->
-<!--                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">-->
-<!--                          <p class="medium grayd text-center fw-600">{{$t('newP[1]')}}</p>-->
-<!--                          <p class="semi text-center">{{$t('newP[2]')}}</p>-->
-<!--                        </div>-->
-<!--                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">-->
-<!--                          <p class="label grayd text-center fw-600">{{$t('newP[3]')}}</p>-->
-<!--                          <p class="semi text-center">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</p>-->
-<!--                        </div>-->
-<!--                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">-->
-<!--                          <p class="medium grayd text-center fw-600">{{$t('newP[4]')}}</p>-->
-<!--                          <p class="semi text-center">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</p>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--&lt;!&ndash;                    <div class="pricing-body" v-if="item.amount !=15">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <div class="d-grid gap-10 mt-10" style="grid-template-columns: repeat(2, 1fr);">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div v-for="(aa,i) in item.affiliate_bonus" class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">&ndash;&gt;-->
-<!--&lt;!&ndash;                          <p class="label grayd text-center fw-600">&ndash;&gt;-->
-<!--&lt;!&ndash;                            {{parseFloat(item.amount)*aa/100}}$&ndash;&gt;-->
-<!--&lt;!&ndash;                          </p>&ndash;&gt;-->
-<!--&lt;!&ndash;                          <p class="semi text-center">{{$t('bonus[0]',{L:(i+1),B:aa})}}</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                      </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="pricing-body" v-else>&ndash;&gt;-->
-<!--&lt;!&ndash;                      <div class="d-grid gap-10 mt-10">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">&ndash;&gt;-->
-<!--&lt;!&ndash;                          <p class="label grayd text-center fw-600">&ndash;&gt;-->
-<!--&lt;!&ndash;                            {{$t('tips[5]')}}&ndash;&gt;-->
-<!--&lt;!&ndash;                          </p>&ndash;&gt;-->
-<!--&lt;!&ndash;                          <p class="semi text-center">&nbsp;</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                      </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--                    <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden w-100 mt-2" style="padding: 5px;">-->
-<!--                      <div class="d-flex align-items-center justify-content-between">-->
-<!--                        <div class="caption-title theme-gradient text-center" style="margin-left: 20px; font-weight: 700;">{{$t('newP[5]')}} {{item.amount}}</div>-->
-<!--                        <a href="javascript:;" class="btn-default " v-if="item.progress>=100" >{{$t('product[13]')}}</a>-->
-<!--                        <a href="javascript:;" class="btn-default " v-else @click="getInfoData(item.id)"> {{$t('newP[6]')}} </a>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                    <div class="mt-2 text-center" style="margin-top: 10px">-->
-<!--                      <div class="progress">-->
-<!--                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"-->
-<!--                             class="progress-bar bg-danger progress-bar-striped progress-bar-animated"-->
-<!--                             :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-
-<!--              &lt;!&ndash;              <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="plan-card" style="position: relative;">&ndash;&gt;-->
-<!--&lt;!&ndash;                  <div class="img-box">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <img&ndash;&gt;-->
-<!--&lt;!&ndash;                      v-lazy="InitData.setting.up_url + item.icon"&ndash;&gt;-->
-<!--&lt;!&ndash;                      class="img" style="width: 100%;    max-height: 35rem;object-fit: contain;"&ndash;&gt;-->
-<!--&lt;!&ndash;                    />&ndash;&gt;-->
-<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <div class="plan-card__head">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="badge-card">{{item.title}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="pricing notranslate">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <h1>${{parseFloat(item.amount)}}</h1>&ndash;&gt;-->
-<!--&lt;!&ndash;                      <p>/ {{item.cycle}}&ndash;&gt;-->
-<!--&lt;!&ndash;                        {{$t('product[15]')}}&ndash;&gt;-->
-<!--&lt;!&ndash;                      </p>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="mt-0 mb-2 text-left" style="color: #000000">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="mt-0 mb-2 text-left" style="color: #000000">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[0]')}}: ${{item.amount}}&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <div class="pt-2 text-left" style="color: #000000">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[3]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[4]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <div class="pt-2 text-left" style="color: #000000">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('settle[0]')}}:{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <div class="bonus">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="label" style="text-align: center;">{{$t('product[10]')}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div style="display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" v-if="item.amount !=15">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="ddcc" v-if="aa==3">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/333.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="ddcc" v-if="aa==1.5">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/151515.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                      </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div v-else style="display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" >&ndash;&gt;-->
-<!--&lt;!&ndash;                      {{$t('tips[5]')}}&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <div class="buttons">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <a href="javascript:;"  class="w-100" @click="getInfoData(item.id)"><div class="main-btn ed w-100">{{$t('settle[4]')}}</div></a>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="main-btn buy_bt" style="background: #ccc" v-if="item.progress>=100" >{{$t('product[13]')}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="main-btn buy_bt" v-else @click="orderNow(item)">{{$t('settle[5]')}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <div class="mt-2 text-center">&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                    <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #aaa, #662282)"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="progress">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"&ndash;&gt;-->
-<!--&lt;!&ndash;                           class="progress-bar bg-danger progress-bar-striped progress-bar-animated"&ndash;&gt;-->
-<!--&lt;!&ndash;                           :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <img v-lazy="'./static/image/out.png'" v-if="item.progress>=100" style="position: absolute;&ndash;&gt;-->
-<!--&lt;!&ndash;    right: 1rem;&ndash;&gt;-->
-<!--&lt;!&ndash;    bottom: 10%;&ndash;&gt;-->
-<!--&lt;!&ndash;    width: 10rem;">&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;              </div>&ndash;&gt;-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
     <div class="app-wrapper">
       <div class="container">
         <div class="box3">
           <div class="box-wrapper">
+            <img :src="'./static/images/cont.png'" style="object-fit:cover;width: 100%;margin: 0 auto;display: block;">
             <div class="carousel-container1 info-block">
               <div class="carousel1 info-block">
                 <div class="carousel-item1">
-                  <img v-lazy="'./static/image/pppp.jpg?t=2'" style="width: 100%;height: 100%;">
+<!--                  <img v-lazy="'./static/images/cont.png'" style="width: 100%;height: 100%;">-->
                   <div class="carousel-desc info-block-title">
 <!--                    {{$t('product[18]')}}-->
                   </div>
@@ -172,78 +17,88 @@
               </div>
             </div>
             <div style="font-size: 3.5rem;line-height: 4rem;text-align: center;font-weight: bolder;margin-bottom: 1rem">{{$t('newP[7]')}}</div>
-            <div style="font-size: 2rem;line-height: 2.5rem;text-align: center;"> {{$t('newP[8]')}}</div>
-            <div class="row gy-4 gx-3 justify-content-center d3-block">
-              <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
-                <div class="plan-card" style="position: relative;">
-                  <div class="img-box">
-                    <img
-                      :src="InitData.setting.up_url + item.icon"
-                      class="img" style="width: 100%;    max-height: 40rem;object-fit: contain;"
-                    />
+            <div style="font-size: 2rem;line-height: 2.5rem;text-align: center;    padding: 2rem;"> {{$t('newP[8]')}}</div>
+            <div class="product-list">
+              <div class="product-item" v-for="(item,index) in listData" :key="index">
+                <div class="img-box">
+                  <img
+                    :src="InitData.setting.up_url + item.icon"
+                    class="img"
+                  />
+                </div>
+                <div class="right">
+                  <img v-if="item.progress>=100" :src="'./static/image/out.png'" style="position: absolute;
+    right: 1rem;
+    top: 8rem;
+    width: 10rem;">
+                  <div class="name">
+                    {{item.title}}
                   </div>
-                  <div class="plan-card__head">
-                    <div class="badge-card">{{item.title}}</div>
-                    <div class="pricing notranslate">
-                      <h1>${{parseFloat(item.amount)}}</h1>
-                      <p>/ {{item.cycle}}
-                        {{$t('product[15]')}}
-                      </p>
-                    </div>
-                    <div class="mt-0 mb-2 text-left" style="color: #000000">
-                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[9]')}}: {{item.miner}}
-                    </div>
-                    <div class="mt-0 mb-2 text-left" style="color: #000000">
-                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}
-                    </div>
-
-<!--                        <div class="mt-0 mb-2 text-left" style="color: #000000">-->
-<!--                          <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{$t('product[8]')}}: {{item.hash_power}}-->
-<!--                        </div>-->
-                    <!--                    <div class="mt-0 mb-2 text-left" style="color: #000000">-->
-                    <!--                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[15]')}}-->
-                    <!--                    </div>-->
-                    <div class="mt-0 mb-2 text-left" style="color: #000000">
-                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[0]')}}: ${{item.amount}}
-                    </div>
-                  </div>
-                  <div class="pt-2 text-left" style="color: #F44336">
-                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[3]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</div>
-                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[4]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>
-                  </div>
-                  <div class="pt-2 text-left" style="color: #000000">
-                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('settle[0]')}}:{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
-                  </div>
-                  <div class="bonus">
-                    <div class="label" style="text-align: center;">{{$t('product[10]')}}</div>
-                    <div style="display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" v-if="item.amount !=10">
-                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                        <div class="ddcc" v-if="aa==3">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/333.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
-                        <div class="ddcc" v-if="aa==1.5">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/151515.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
+                  <div class="bottom">
+                    <div class="info-list">
+                      <div class="info-item">
+                        <div class="label">{{$t('product[0]')}}</div>
+                        <div class="value">${{item.amount}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[2]')}}</div>
+                        <div class="value">{{item.cycle}} {{$t('product[15]')}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[3]')}}</div>
+                        <div class="value">${{(item.daily_rate/100*item.amount).toFixed(2)}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[4]')}}</div>
+                        <div class="value">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[5]')}}</div>
+                        <div class="value" style="color: #F9A504">
+                          ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}
+                        </div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[6]')}}</div>
+                        <div class="value rebate">{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[9]')}}</div>
+                        <div class="value">{{item.miner}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('bbbx[0]')}}</div>
                       </div>
                     </div>
-                    <div v-else style="align-items:center;display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" >
-                      {{$t('noreward[0]')}}
+                    <div class="right-actions">
+                      <div class="bonus" v-if="item.amount!=10">
+                        <div class="label">{{$t('product[10]')}}</div>
+                        <ul class="plan-referral justify-content-center mb-2">
+                          <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
+                            <span>{{aa}} %</span>
+                            <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
+                          </div>
+                        </ul>
+                      </div>
+                      <div class="bonus" v-else>
+                        <div class="label">{{$t('product[10]')}}</div>
+                        <ul class="plan-referral justify-content-center mb-2">
+                          <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
+                            <span>0 %</span>
+                            <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
+                          </div>
+                        </ul>
+                      </div>
+                      <div class="buy-btn disabled-btn" v-if="item.progress>=100">{{$t('product[13]')}}</div>
+                      <div class="buy-btn " style="background: rgb(13, 110, 253);" v-else @click="getInfoData(item.id)">{{$t('product[12]')}}</div>
                     </div>
                   </div>
-                  <div class="buttons">
-                    <a href="javascript:;" v-if="item.progress>=100" class="w-100" ><div class="main-btn ed w-100">{{$t('settle[4]')}}</div></a>
-                    <a href="javascript:;" v-else class="w-100" @click="getInfoData(item.id)"><div class="main-btn ed w-100">{{$t('settle[4]')}}</div></a>
-                    <div class="main-btn buy_bt" style="background: #ccc" v-if="item.progress>=100" >{{$t('product[13]')}}</div>
-                    <div class="main-btn buy_bt" v-else @click="orderNow(item)">{{$t('invest[0]')}}</div>
-                  </div>
-                  <div class="mt-2 text-center" style="width: 90%;margin: 0 auto;">
-                    <!--                    <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #aaa, #662282)"/>-->
-                    <div class="progress">
-                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"
-                           class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
-                           :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
-                    </div>
-                  </div>
-                  <img :src="'./static/image/out.png'" v-if="item.progress>=100" style="position: absolute;
-    right: 1rem;
-    bottom: 10%;
-    width: 10rem;">
+
+                </div>
+                <div class="progress">
+                  <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"
+                       class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
+                       :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
                 </div>
               </div>
             </div>
@@ -403,16 +258,24 @@
 <!--                      <p><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('settle[0]')}}:<span class="notranslate">{{detailData.type==1?$t('product[7]'):$t('product[17]')}}</span></p>-->
 <!--                    </div>-->
 
-                    <div class="bonus" style="padding: 0;margin-top: 1rem" v-if="detailData.id !=1">
+                    <div class="bonus" v-if="detailData.amount!=10">
                       <div class="label">{{$t('product[10]')}}</div>
-                      <ul style="display: flex;height: 3rem;padding: 0;font-size: 1.5rem;">
+                      <ul class="plan-referral justify-content-center mb-2">
                         <div class="single-referral" v-for="(aa,i) in detailData.affiliate_bonus">
-                          <div class="ddcc" v-if="aa==3">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/333.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
-                          <div class="ddcc" v-if="aa==1.5">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/151515.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
+                          <span>{{aa}} %</span>
+                          <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
                         </div>
                       </ul>
                     </div>
-                    <div v-else style="height: 5rem;font-size: 1.5rem;display: flex;align-items: center;">{{$t('tips[5]')}}</div>
+                    <div class="bonus" v-else>
+                      <div class="label">{{$t('product[10]')}}</div>
+                      <ul class="plan-referral justify-content-center mb-2">
+                        <div class="single-referral" v-for="(aa,i) in detailData.affiliate_bonus">
+                          <span>0 %</span>
+                          <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
+                        </div>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <div class="container-fluid">
@@ -431,10 +294,50 @@
                       </div>
                     </div>
                     <h6 v-html="$t('productDetail[6]')"></h6>
-                    <h6 v-html="$t('productDetail[7]')"></h6>
-                    <h6 v-html="$t('productDetail[8]')"></h6>
+                    <h6 v-html="$t('productDetailL[0]')"></h6>
+                    <h6 v-html="$t('productDetailL[1]')"></h6>
+                    <h6 v-html="$t('productDetailL[2]')"></h6>
+                    <h6 v-html="$t('productDetailL[3]')"></h6>
+                    <h6 v-html="$t('productDetailL[4]')"></h6>
+                    <h6 v-html="$t('productDetailL[5]')"></h6>
+<!--                    <h6 v-html="$t('productDetail[7]')"></h6>-->
+<!--                    <h6 v-html="$t('productDetail[8]')"></h6>-->
                     <h6 v-html="$t('productDetail[9]')"></h6>
-                    <h6 v-html="$t('productDetail[10]')"></h6>
+                    <div style="font-size: 16px;overflow-x: scroll;">
+                      <table border="1px" style="width: 100%;text-align: center;">
+                        <tr>
+                          <td>{{$t('tables[0]')}}</td>
+                          <td>{{$t('tables[1]')}}</td>
+                          <td>{{$t('tables[2]')}}</td>
+                          <td>{{$t('tables[3]')}}</td>
+                          <td>{{$t('tables[4]')}}</td>
+                          <td>{{$t('tables[5]')}}</td>
+                          <td>{{$t('tables[6]')}}</td>
+                        </tr>
+                        <tr>
+                          <td>{{$t('tables[7]')}}</td>
+                          <td>{{detailData.title}}</td>
+                          <td>{{detailData.amount}}USD</td>
+                          <td>{{detailData.cycle}} {{$t('product[15]')}}</td>
+                          <td>{{detailData.daily_rate}}%</td>
+                          <td>${{parseFloat((parseFloat(detailData.daily_rate)/100*money*1).toFixed(2))}}USD</td>
+                          <td>${{parseFloat((parseFloat(detailData.daily_rate)/100*money*detailData.cycle).toFixed(2))}}USD</td>
+                        </tr>
+                        <tr>
+                          <td>{{$t('tables[8]')}}</td>
+                          <td colspan="6">{{$t('tables[9]')}}</td>
+                        </tr>
+                        <tr>
+                          <td>{{$t('tables[10]')}}</td>
+                          <td>BTC</td>
+                          <td>ETH</td>
+                          <td>BCH</td>
+                          <td>LTC</td>
+                          <td>USDC</td>
+                          <td>USDT</td>
+                        </tr>
+                      </table>
+                    </div>
                     <h6 v-html="$t('productDetail[11]')"></h6>
                     <h6 v-html="$t('productDetail[12]')"></h6>
                     <h6 v-html="$t('productDetail[13]')"></h6>
@@ -445,10 +348,15 @@
                     <h6 v-html="$t('productDetail[18]')"></h6>
                     <h6 v-html="$t('productDetail[19]')"></h6>
                     <h6 v-html="$t('productDetail[20]')"></h6>
+                    <h6 v-html="$t('productDetail[21]')"></h6>
+                    <h6 v-html="$t('productDetail[22]')"></h6>
+                    <h6 v-html="$t('productDetail[23]')"></h6>
+                    <h6 v-html="$t('productDetail[24]')"></h6>
+                    <h6 v-html="$t('productDetail[25]')"></h6>
 <!--                    <h6 v-html="$t('productDetail[21]')"></h6>-->
                     <h6 v-if="detailData.agreement && detailData.agreement !=''" v-html="detailData.agreement">
                     </h6>
-                    <h6>{{$t('productDetail[21]')}}</h6>
+                    <h6>{{$t('productDetail[26]')}}</h6>
                   </div>
                 </div>
               </div>
@@ -460,7 +368,7 @@
         </div>
         <div class="diaf" >
           <div class="buttons">
-            <a href="javascript:;"  class="w-100" @click="showDialogD = false"><div class="main-btn ed w-100">{{$t('close')}}</div></a>
+            <a href="javascript:" class="w-100" @click="showDialogD = false"><div class="main-btn ed w-100">{{$t('close')}}</div></a>
             <!--                    <a href="javascript:;"  class="w-100" @click="$router.push(`/productDetail?id=${item.id}`)"><div class="main-btn ed w-100">{{$t('settle[4]')}}</div></a>-->
             <div class="main-btn buy_bt" @click="orderNow(detailData)">{{$t('newP[6]')}}</div>
           </div>
@@ -633,11 +541,11 @@
     font-size: 1.4rem;
   }
   .d-flex div, tbody, td, tfoot, th {
-    width: 33.3%;
     text-align: center;
     /* padding: 13px 34px; */
     font-size: 1.5rem;
     word-break: break-word;
+    padding: 0.5rem;
   }
   .carousel-container1 {
     overflow: hidden;
@@ -654,11 +562,9 @@
   .carousel-item1 {
     position: relative;
     border-radius: 26px;
-    max-width: 900px;
     margin: 0 auto;
     max-height: 350px;
     overflow: hidden;
-
   }
   .info-block-title {
     position: absolute;
@@ -1169,9 +1075,9 @@
     }
     .container .box3 .product-list .product-item .progress {
       position: absolute;
-      left: 34rem;
+      left: 44rem;
       bottom: 1rem;
-      width: calc(100% - 36rem);
+      width: calc(100% - 46rem);
     }
     .container .box3 .product-list .product-item:not(:last-child) {
       margin-bottom: 3rem
@@ -1179,8 +1085,8 @@
 
     .container .box3 .product-list .product-item .img-box {
       position: relative;
-      min-width: 30rem;
-      max-width: 30rem;
+      min-width: 40rem;
+      max-width: 40rem;
       height: 26rem;
       overflow: hidden
     }
@@ -1205,8 +1111,8 @@
 
     .container .box3 .product-list .product-item .right .name {
       width: 100%;
-      margin-bottom: 2.5rem;
-      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #000;
       word-wrap: break-word
@@ -1273,8 +1179,8 @@
     }
 
     .container .box3 .product-list .product-item .right .bottom .right-actions .bonus {
-      min-width: 16rem;
-      max-width: 16rem;
+      min-width: 20rem;
+      max-width: 20rem;
     }
 
     .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .label {

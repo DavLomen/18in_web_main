@@ -263,6 +263,7 @@ const router = new VueRouter({
       component:  () => import('@/views/affiliates.vue'),
       meta: {
         title: 'affiliates',
+        requiresAuth: true,
         active: 'affiliates'
       }
     },

@@ -5,22 +5,22 @@
       <div class="container hero-wrap ">
         <div
           class="box1 cover first-box-wraper"
-          style="position: relative;"
+          style="position: relative;background: url(./static/images/bg.jpg) no-repeat;background-size: 100% 100%"
         >
-<!--          <img :src="'./static/image/homebg.webp'" class="first-box-wraper-img-layer" data-v-27b24e63="">-->
-          <div class="video">
-            <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">
-              <source :src="'./static/images/bg.mp4?t=15'" type="video/mp4"  />
-            </video>
-          </div>
+<!--          <img :src="'./static/images/bg.jpg'" class="first-box-wraper-img-layer" data-v-27b24e63="">-->
+<!--          <div class="video">-->
+<!--            <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">-->
+<!--              <source :src="'./static/images/bg.mp4?t=15'" type="video/mp4"  />-->
+<!--            </video>-->
+<!--          </div>-->
 
           <div class="box-wrapper top-wraper" style="    max-width: 1500px;">
             <div class="box1-inner-area left-info-area" style="overflow-x: hidden">
               <div class="row" style="overflow-x: hidden">
                 <div class="col-md-6" >
-                  <div class="box1-title" style="padding-right: 20%">{{$t('newhome[0]',{WT:InitData.setting.web_title})}}</div>
-                  <div class="box1-desc" style="padding-right: 20%">
-                    {{$t('newhome[1]',{WT:InitData.setting.web_title})}}
+                  <div class="box1-title" style="padding-right: 20%;color: #198754">{{$t('newhome[0]',{WT:InitData.setting.web_title})}}</div>
+                  <div class="box1-desc" style="padding-right: 20%;color: #198754">
+                    {{$t('long[0]',{WT:InitData.setting.web_title})}}
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -58,14 +58,20 @@
                 </div>
                 <div style="display: flex;margin: 10px 0;">
                   <div class="btn start-btn" style="background: #fe9500" @click="$router.push('/deposit')">{{$t('head[7]')}}</div>
-                  <div  class="btn start-btn" style="background: #b62283" @click="$router.push('/withdraw')">{{$t('head[8]')}}</div>
+                  <div  class="btn start-btn" style="background: #fe9500" @click="$router.push('/withdraw')">{{$t('head[8]')}}</div>
                 </div>
 
-                <div style="color:#f0b603;font-size: 1.75rem;margin: 0;padding-top: 0.5rem;">
-                  <p style="color:#f0b603;font-size: 1.75rem;margin: 0;padding: 0rem;">{{$t('home[1]')}}</p>
-                  <p style="color:#f0b603;font-size: 1.75rem;margin: 0;padding: 0.5rem 0;">{{$t('home[2]')}}</p>
-                  <p style="color:#f0b603;font-size: 1.75rem;margin: 0;padding: 0rem;">{{$t('home[3]')}}</p>
+                <div style="color:#0a58ca;font-size: 1.75rem;margin: 0;padding-top: 0.5rem;">
+                  <p style="color: #198754;font-size: 1.75rem;margin: 0;padding: 0rem;">{{$t('home[1]')}}</p>
+                  <p style="color:#198754;font-size: 1.75rem;margin: 0;padding: 0.5rem 0;">{{$t('home[2]')}}</p>
+                  <p style="color:#198754;font-size: 1.75rem;margin: 0;padding: 0rem;" v-html="$t('home[3]')"></p>
                 </div>
+
+                <div style="display: flex;margin: 10px 0;">
+                  <img @click="downloadApp('andriod')" :src="'./static/images/google-play.png'" style="height: 4rem;">
+                  <img @click="downloadApp('ios')" :src="'./static/images/apple-store.png'" style="height: 4rem;margin-left: 1rem">
+                </div>
+
               </div>
             </div>
 
@@ -85,7 +91,7 @@
 <!--              <img @click="handleShare('youtube')" :src="'./static/image/share4.png'" name="youtube" style="width: 35px;margin-right: 5px" />-->
               <img @click="handleShare('whatsapp')" :src="'./static/image/share5.png?t=1'" name="whats" style="width: 40px;" />
               <img @click="handleShare('linkin')" :src="'./static/image/share7.png?t=1'" name="whats" style="width: 40px;    border-radius: 100%;" />
-              <img onclick="javascript:void((function() {var e=document.createElement('script' );e.setAttribute('type','text/javascript' );e.setAttribute('charset','UTF-8' );e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());" :src="'./static/image/share8.png?t=1'" name="whats" style="width: 40px;    border-radius: 100%;" />
+              <img onclick="void((function() {var e=document.createElement('script' );e.setAttribute('type','text/javascript' );e.setAttribute('charset','UTF-8' );e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());" :src="'./static/image/share8.png?t=1'" name="whats" style="width: 40px;    border-radius: 100%;" />
               <img @click="handleShare('reddit')" :src="'./static/image/share9.png?t=1'" name="whats" style="width: 40px;    border-radius: 100%;" />
               <img @click="handleShare('mixit')" :src="'./static/image/share10.png?t=1'" name="whats" style="width: 40px;    border-radius: 100%;" />
 
@@ -98,7 +104,7 @@
             <div class="tab-list">
               <div class="tab-item" @click="$router.push('/register')">
                 <img :src="'./static/image/home1.png?t=1'" class="img" />
-                <div class="title" >1. {{$t('head[2]')}}</div>
+                <div class="title" >1. {{$t('register.text[0]')}}</div>
                 <div class="desc">
                   {{$t('home[5]',{WT:InitData.setting.web_title})}}
                 </div>
@@ -117,207 +123,146 @@
                   {{$t('home[9]')}}
                 </div>
               </div>
+              <div class="tab-item">
+                <img  :src="'./static/image/home4.png?t=1'" class="img" />
+                <div class="title">4. {{$t('home[23]')}}</div>
+                <div class="desc">
+                  {{$t('home[24]')}}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-       <!-- <div class="container box3">
-          <div class="box-wrapper">
-            <div class="box3-title">{{$t('newhome[4]')}}</div>
-            <div style="font-size: 1.5rem;padding: 1rem;line-height: 2.5rem;color: #000000;text-align: center;">{{$t('newhome[5]')}}</div>
-            <div class="row row&#45;&#45;15 gy-4 gx-3 justify-content-center d3-block">
-              <div class="col-lg-4 col-md-6 col-12" v-for="(item,index) in listData" :key="index">
-                <div class="rainbow-pricing style-2">
-                  <div class="pricing-table-inner bg-flashlight" style="&#45;&#45;x: 376px; &#45;&#45;y: 636px; padding: 0.5rem !important;">
-                    <div class="pricing-header">
-                      <div class="pricing1">
-                        <div class="img-area overflow-hidden">
-                          <img class="plan w-100" v-lazy="InitData.setting.up_url + item.icon"
-                                alt="plan">
-                        </div>
-                        <h4 class="title mt-4 mb-2">{{item.title}}</h4>
-                        <span class="subtitle">{{item.type==1?$t('product[7]'):$t('product[17]')}}</span>
-                      </div>
-                    </div>
-                    <div class="separator-animated mt-4 mb&#45;&#45;30"></div>
-                    <div class="pricing-body mb-1">
-                      <div class="d-grid gap-10 mt-10" style="grid-template-columns: repeat(2, 1fr);">
-                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">
-                          <p class="medium grayd text-center fw-600">{{$t('newP[0]')}}</p>
-                          <p class="semi text-center">
-                            {{item.cycle}} {{$t('product[15]')}}
-                          </p>
-                        </div>
-                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">
-                          <p class="medium grayd text-center fw-600">{{$t('newP[1]')}}</p>
-                          <p class="semi text-center">{{$t('newP[2]')}}</p>
-                        </div>
-                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">
-                          <p class="label grayd text-center fw-600">{{$t('newP[3]')}}</p>
-                          <p class="semi text-center">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</p>
-                        </div>
-                        <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden m-0 p_plans c_pointer">
-                          <p class="medium grayd text-center fw-600">{{$t('newP[4]')}}</p>
-                          <p class="semi text-center">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="single-settings-box profile-details-box top-flashlight light-xl leftside overflow-hidden w-100 mt-2" style="padding: 5px;">
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="caption-title theme-gradient text-center" style="margin-left: 20px; font-weight: 700;">{{$t('newP[5]')}} {{item.amount}}</div>
-                        <a href="javascript:;" class="btn-default " v-if="item.progress>=100" >{{$t('product[13]')}}</a>
-                        <a href="javascript:;" class="btn-default " v-else @click="getInfoData(item.id)"> {{$t('newP[6]')}} </a>
-                      </div>
-                    </div>
-                    <div class="mt-2 text-center">
-                      <div class="progress">
-                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"
-                             class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
-                             :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
-                      </div>
-                    </div>
-                  </div>
+
+        <section namespace="affiliate">
+          <div class="container">
+            <div class="box3 box-wrapper">
+              <div class="row">
+                <div class="col-sm-6" style="color: rgb(22, 28, 45); font-family: Roboto; font-size: 18px;padding-right: 1rem;">
+                  {{$t('long[1]')}}
+                  <br>{{$t('long[2]')}}
+                  <br>{{$t('long[3]')}}
+                  <br>
+                  <br>{{$t('long[4]')}}
+                  <br>{{$t('long[5]')}}
+                  <br>{{$t('long[6]')}}
+                </div>
+                <div class="col-sm-6" style="color: rgb(22, 28, 45); font-family: Roboto; font-size: 18px;padding-right: 1rem;">
+                  <img :src="'./static/image/zzz.png'" style="    width: 90%;
+    margin: 5%;
+    display: block;">
                 </div>
               </div>
-&lt;!&ndash;              <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">&ndash;&gt;
-&lt;!&ndash;                <div class="plan-card" style="position: relative">&ndash;&gt;
-&lt;!&ndash;                  <div class="img-box">&ndash;&gt;
-&lt;!&ndash;                    <img&ndash;&gt;
-&lt;!&ndash;                      :src="InitData.setting.up_url + item.icon"&ndash;&gt;
-&lt;!&ndash;                      class="img" style="width: 100%;    max-height: 35rem;object-fit: contain;"&ndash;&gt;
-&lt;!&ndash;                    />&ndash;&gt;
-&lt;!&ndash;                  </div>&ndash;&gt;
-&lt;!&ndash;                  <div class="plan-card__head">&ndash;&gt;
-&lt;!&ndash;                    <div class="badge-card">{{item.title}}</div>&ndash;&gt;
-&lt;!&ndash;                    <div class="pricing notranslate">&ndash;&gt;
-&lt;!&ndash;                      <h1>${{parseFloat(item.amount)}}</h1>&ndash;&gt;
-&lt;!&ndash;                      <p>/ {{item.cycle}}&ndash;&gt;
-&lt;!&ndash;                        {{$t('product[15]')}}&ndash;&gt;
-&lt;!&ndash;                      </p>&ndash;&gt;
-&lt;!&ndash;                    </div>&ndash;&gt;
-&lt;!&ndash;                    <div class="mt-0 mb-2 text-left" style="color: #000000">&ndash;&gt;
-&lt;!&ndash;                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}&ndash;&gt;
-&lt;!&ndash;                    </div>&ndash;&gt;
-&lt;!&ndash;                    <div class="mt-0 mb-2 text-left" style="color: #000000">&ndash;&gt;
-&lt;!&ndash;                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[0]')}}: ${{item.amount}}&ndash;&gt;
-&lt;!&ndash;                    </div>&ndash;&gt;
-&lt;!&ndash;                  </div>&ndash;&gt;
-&lt;!&ndash;                  <div class="pt-2 text-left" style="color: #000000">&ndash;&gt;
-&lt;!&ndash;                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[3]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</div>&ndash;&gt;
-&lt;!&ndash;                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[4]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>&ndash;&gt;
-&lt;!&ndash;                  </div>&ndash;&gt;
-&lt;!&ndash;                  <div class="pt-2 text-left" style="color: #000000">&ndash;&gt;
-&lt;!&ndash;                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('settle[0]')}}:{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>&ndash;&gt;
-&lt;!&ndash;                  </div>&ndash;&gt;
-&lt;!&ndash;                  <div class="bonus">&ndash;&gt;
-&lt;!&ndash;                    <div class="label" style="text-align: center">{{$t('product[10]')}}</div>&ndash;&gt;
-&lt;!&ndash;                    <div style="display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" v-if="item.amount !=15">&ndash;&gt;
-&lt;!&ndash;                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">&ndash;&gt;
-&lt;!&ndash;                        <div class="ddcc" v-if="aa==3">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/333.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>&ndash;&gt;
-&lt;!&ndash;                        <div class="ddcc" v-if="aa==1.5">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/151515.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>&ndash;&gt;
-&lt;!&ndash;                      </div>&ndash;&gt;
-&lt;!&ndash;                    </div>&ndash;&gt;
-&lt;!&ndash;                    <div v-else style="display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" >&ndash;&gt;
-&lt;!&ndash;                      {{$t('tips[5]')}}&ndash;&gt;
-&lt;!&ndash;                    </div>&ndash;&gt;
-&lt;!&ndash;                  </div>&ndash;&gt;
-&lt;!&ndash;                  <div class="buttons">&ndash;&gt;
-&lt;!&ndash;                    <a href="javascript:;"  class="w-100" @click="getInfoData(item.id)"><div class="main-btn ed w-100">{{$t('settle[4]')}}</div></a>&ndash;&gt;
-&lt;!&ndash;                    <div class="main-btn buy_bt" style="background: #ccc" v-if="item.progress>=100" >{{$t('product[13]')}}</div>&ndash;&gt;
-&lt;!&ndash;                    <div class="main-btn buy_bt" v-else @click="orderNow(item)">{{$t('settle[5]')}}</div>&ndash;&gt;
-&lt;!&ndash;                  </div>&ndash;&gt;
-&lt;!&ndash;                  <div class="mt-2 text-center">&ndash;&gt;
-&lt;!&ndash;                    <div class="progress">&ndash;&gt;
-&lt;!&ndash;                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"&ndash;&gt;
-&lt;!&ndash;                           class="progress-bar bg-danger progress-bar-striped progress-bar-animated"&ndash;&gt;
-&lt;!&ndash;                           :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>&ndash;&gt;
-&lt;!&ndash;                    </div>&ndash;&gt;
-&lt;!&ndash;                    &lt;!&ndash;                    <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #aaa, #662282)"/>&ndash;&gt;&ndash;&gt;
-&lt;!&ndash;                  </div>&ndash;&gt;
-&lt;!&ndash;                  <img v-if="item.progress>=100" :src="'./static/image/out.png'" style="position: absolute;&ndash;&gt;
-&lt;!&ndash;    right: 1rem;&ndash;&gt;
-&lt;!&ndash;    bottom: 10%;&ndash;&gt;
-&lt;!&ndash;    width: 10rem;">&ndash;&gt;
-&lt;!&ndash;                </div>&ndash;&gt;
-&lt;!&ndash;              </div>&ndash;&gt;
+              <div class="row">
+                <div class="col-sm-6" style="color: rgb(22, 28, 45); font-family: Roboto; font-size: 18px;padding-right: 1rem;">
+                  <img :src="'./static/image/yyy.png'" style="    width: 90%;
+    margin: 5%;
+    display: block;">
+                </div>
+                <div class="col-sm-6" style="color: rgb(22, 28, 45); font-family: Roboto; font-size: 18px;padding-right: 1rem;">
+                  <br>{{$t('long[7]')}}
+                  <br>{{$t('long[8]')}}
+                  <br>{{$t('long[9]')}}
+                  <br>{{$t('long[10]')}}
+                  <br>
+                  <br>{{$t('long[11]')}}
+                  <br>{{$t('long[12]')}}
+                  <br>{{$t('long[13]')}}
+                  <br>{{$t('long[14]')}}
+                </div>
+
+              </div>
+
             </div>
           </div>
-        </div>-->
+        </section>
 
         <div class="container box3">
           <div class="box-wrapper">
             <div class="box3-title">{{$t('newhome[4]')}}</div>
-            <div style="font-size: 1.5rem;padding: 1rem;line-height: 2.5rem;color: #000000;text-align: center;">{{$t('newhome[5]')}}</div>
-            <div class="row gy-4 gx-3 justify-content-center d3-block">
-              <div class="col-md-6 col-lg-4" v-for="(item,index) in listData" :key="index">
-                <div class="plan-card" style="position: relative">
-                  <div class="img-box">
-                    <img
-                      :src="InitData.setting.up_url + item.icon"
-                      class="img" style="width: 100%;    max-height: 38rem;object-fit: contain;"
-                    />
-                  </div>
-                  <div class="plan-card__head">
-                    <div class="badge-card">{{item.title}}</div>
-                    <div class="pricing notranslate">
-                      <h1>${{parseFloat(item.amount)}}</h1>
-                      <p>/ {{item.cycle}}
-                        {{$t('product[15]')}}
-                      </p>
-                    </div>
-                    <div class="mt-0 mb-2 text-left" style="color: #000000">
-                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[9]')}}: {{item.miner}}
-                    </div>
-                    <div class="mt-0 mb-2 text-left" style="color: #000000">
-                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[2]')}}: {{item.cycle}} {{$t('product[15]')}}
-                    </div>
-
-<!--                                        <div class="mt-0 mb-2 text-left" style="color: #000000">-->
-<!--                                          <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[8]')}}: {{item.hash_power}}-->
-<!--                                        </div>-->
-                    <!--                    <div class="mt-0 mb-2 text-left" style="color: #000000">-->
-                    <!--                      {{item.amount}} {{InitData.currency}}/{{item.cycle}} {{$t('product[15]')}}-->
-                    <!--                    </div>-->
-                    <div class="mt-0 mb-2 text-left" style="color: #000000">
-                      <van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/>{{$t('product[0]')}}: ${{item.amount}}
-                    </div>
-                  </div>
-                  <div class="pt-2 text-left" style="color: #F44336">
-                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[3]')}}: ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*1).toFixed(2))}}</div>
-                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('product[4]')}}: ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>
-                  </div>
-                  <div class="pt-2 text-left" style="color: #000000">
-                    <div class="mt-0 mb-2 text-left"><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('settle[0]')}}:{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
-                  </div>
-                  <div class="bonus">
-                    <div class="label" style="text-align: center">{{$t('product[10]')}}</div>
-                    <div style="display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" v-if="item.amount !=10">
-                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                        <div class="ddcc" v-if="aa==3">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/333.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
-                        <div class="ddcc" v-if="aa==1.5">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/151515.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
-                      </div>
-                    </div>
-                    <div v-else style="align-items:center;display: flex;padding: 0;font-size: 1.5rem;height: 4rem;justify-content: center;" >
-                      {{$t('noreward[0]')}}
-                    </div>
-                  </div>
-                  <div class="buttons">
-                    <a href="javascript:;" v-if="item.progress>=100" class="w-100" ><div class="main-btn ed w-100">{{$t('settle[4]')}}</div></a>
-                    <a href="javascript:;" v-else class="w-100" @click="getInfoData(item.id)"><div class="main-btn ed w-100">{{$t('settle[4]')}}</div></a>
-                    <div class="main-btn buy_bt" style="background: #ccc" v-if="item.progress>=100" >{{$t('product[13]')}}</div>
-                    <div class="main-btn buy_bt" v-else @click="orderNow(item)">{{$t('invest[0]')}}</div>
-                  </div>
-                  <div class="mt-2 text-center" style="width: 90%;margin: 0 auto;">
-                    <div class="progress">
-                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"
-                           class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
-                           :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
-                    </div>
-                    <!--                    <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #aaa, #662282)"/>-->
-                  </div>
+            <div style="font-size: 1.5rem;padding: 2rem;line-height: 2.5rem;color: #000000;text-align: center;">{{$t('newhome[5]')}}</div>
+            <div class="product-list">
+              <div class="product-item" v-for="(item,index) in listData" :key="index">
+                <div class="img-box">
+                  <img
+                    :src="InitData.setting.up_url + item.icon"
+                    class="img"
+                  />
+                </div>
+                <div class="right">
                   <img v-if="item.progress>=100" :src="'./static/image/out.png'" style="position: absolute;
     right: 1rem;
-    bottom: 10%;
+    bottom: 8rem;
     width: 10rem;">
+                  <div class="name">
+                    {{item.title}}
+                  </div>
+                  <div class="bottom">
+                    <div class="info-list">
+                      <div class="info-item">
+                        <div class="label">{{$t('product[0]')}}</div>
+                        <div class="value">${{item.amount}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[2]')}}</div>
+                        <div class="value">{{item.cycle}} {{$t('product[15]')}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[3]')}}</div>
+                        <div class="value">${{(item.daily_rate/100*item.amount).toFixed(2)}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[4]')}}</div>
+                        <div class="value">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[5]')}}</div>
+                        <div class="value" style="color: #F9A504">
+                          ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}
+                        </div>
+                      </div>
+                      <div class="info-item">
+                        <div class="label">{{$t('product[6]')}}</div>
+<!--                        <div class="label">{{$t('product[6]')}}</div>-->
+                        <div class="value rebate">{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
+                      </div>
+                                        <div class="info-item">
+                                          <div class="label">{{$t('product[9]')}}</div>
+                                          <div class="value">{{item.miner}}</div>
+                                        </div>
+                                        <div class="info-item">
+                                          <div class="label">{{$t('bbbx[0]')}}</div>
+                                        </div>
+                    </div>
+                    <div class="right-actions">
+                      <div class="bonus" v-if="item.amount!=10">
+                        <div class="label">{{$t('product[10]')}}</div>
+                        <ul class="plan-referral justify-content-center mb-2">
+                          <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
+                            <span>{{aa}} %</span>
+                            <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
+                          </div>
+                        </ul>
+                      </div>
+                      <div class="bonus" v-else>
+                        <div class="label">{{$t('product[10]')}}</div>
+                        <ul class="plan-referral justify-content-center mb-2">
+                          <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
+                            <span>0 %</span>
+                            <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
+                          </div>
+                        </ul>
+                      </div>
+                      <div class="buy-btn disabled-btn" v-if="item.progress>=100">{{$t('product[13]')}}</div>
+                      <div class="buy-btn " style="background: rgb(13, 110, 253);" v-else @click="getInfoData(item.id)">{{$t('product[12]')}}</div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="progress">
+                  <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"
+                       class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
+                       :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
                 </div>
               </div>
             </div>
@@ -328,6 +273,9 @@
             <div class="title-main">
               {{$t('home[10]')}}
             </div>
+            <p class="mb-0 mx-auto text-center t-short-para" style="font-size: 16px">
+              {{$t('home[25]')}}
+            </p>
             <div class="offer-block max960">
               <div  class="row">
                 <div  class="col-lg-4 col-md-6 mt-4 ">
@@ -397,6 +345,50 @@
                       </p></div>
                   </div>
                 </div>
+                <div  class="col-lg-3 col-md-6 mt-4 ">
+                  <div  class="card border-0 text-center features feature-primary feature-clean px-3">
+                    <div  class="icons text-center mx-auto"><i
+                      class="avatar avatar-md-md rounded-md"><img
+                      v-lazy="'./static/image/www7.png'" alt="" class="avatar avatar-md-sm"></i></div>
+                    <div  class="content mt-4"><h5  class="fw-semibold">{{$t('home[26]')}}</h5>
+                      <p  class="text-muted mb-0">
+                        {{$t('home[27]')}}
+                      </p></div>
+                  </div>
+                </div>
+                <div  class="col-lg-3 col-md-6 mt-4 ">
+                  <div  class="card border-0 text-center features feature-primary feature-clean px-3">
+                    <div  class="icons text-center mx-auto"><i
+                      class="avatar avatar-md-md rounded-md"><img
+                      v-lazy="'./static/image/www8.png'" alt="" class="avatar avatar-md-sm"></i></div>
+                    <div  class="content mt-4"><h5  class="fw-semibold">{{$t('home[28]')}}</h5>
+                      <p  class="text-muted mb-0">
+                        {{$t('home[29]')}}
+                      </p></div>
+                  </div>
+                </div>
+                <div  class="col-lg-3 col-md-6 mt-4 ">
+                  <div  class="card border-0 text-center features feature-primary feature-clean px-3">
+                    <div  class="icons text-center mx-auto"><i
+                      class="avatar avatar-md-md rounded-md"><img
+                      v-lazy="'./static/image/www9.png'" alt="" class="avatar avatar-md-sm"></i></div>
+                    <div  class="content mt-4"><h5  class="fw-semibold">{{$t('home[30]')}}</h5>
+                      <p  class="text-muted mb-0">
+                        {{$t('home[31]')}}
+                      </p></div>
+                  </div>
+                </div>
+                <div  class="col-lg-3 col-md-6 mt-4 ">
+                  <div  class="card border-0 text-center features feature-primary feature-clean px-3">
+                    <div  class="icons text-center mx-auto"><i
+                      class="avatar avatar-md-md rounded-md"><img
+                      v-lazy="'./static/image/www10.png'" alt="" class="avatar avatar-md-sm"></i></div>
+                    <div  class="content mt-4"><h5  class="fw-semibold">{{$t('home[32]')}}</h5>
+                      <p  class="text-muted mb-0">
+                        {{$t('home[33]')}}
+                      </p></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="figure"></div>
@@ -461,31 +453,18 @@
           </div>
         </div>
 
-        <div  class="box6" style="position: relative;margin-top: 2rem;">
-          <video :poster="'./static/images/homeposter1.jpg'" webkit-playsinline="true" playsinline="true" :src="'./static/KSD1.mp4'" controls style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>
-        </div>
+<!--        <div  class="box6" style="position: relative;margin-top: 2rem;">-->
+<!--          <video :poster="'./static/images/homeposter1.jpg'" webkit-playsinline="true" playsinline="true" :src="'./static/KSD1.mp4'" controls style="width:100%;max-width: 960px;display: block;margin: 0 auto;"></video>-->
+<!--        </div>-->
 
-        <section namespace="affiliate">
-          <div class="container">
-            <div class="box3 box-wrapper">
-              <div class="title-main" style="margin-top: 53px; margin-bottom: 38px;">
-                {{$t('newhome[20]')}}
-              </div>
-              <div><span style="color: rgb(22, 28, 45); font-family: Roboto; font-size: 18px;" v-html="$t('newhome[21]')">
-              </span>
-              </div>
-              <div class="centered" style="margin-top: 43px;"><a href="javascript:;" @click="$router.push('/register')"><div class="main-btnNew1" style="font-weight: 500;"> {{$t('newhome[22]')}}</div></a></div>
-            </div>
-          </div>
-        </section>
         <section class="transaction py-120">
           <div class="container max960">
             <div class="box-wrapper">
               <div class="title-main">{{$t('latest[0]')}}</div>
               <div class="row gy-4">
-                <div class="col-lg-6">
-                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[1]')}}</h4>
-                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 90%;margin: 0 auto;">
+                <div class="col-lg-4">
+                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('realtime[0]')}}</h4>
+                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 95%;margin: 0 auto;">
                     <table class="style-two scroll-table table">
                       <thead>
                       <tr>
@@ -499,33 +478,34 @@
                       <div class="seamless-warp"><!----> <!---->
                         <div>
                           <div style="overflow: hidden;">
-                            <van-swipe id="SwipeList2" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem" height="60" vertical autoplay="3000" :show-indicators="false" :touchable="false">
-                              <van-swipe-item v-if="item.type==1" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
-                                <div class="card1">
+                            <swiper
+                              :options="swiperOption" ref="mySwiper" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem">
+                              <swiper-slide v-if="item.type==3" v-for="(item,index) in InitData.fundList" :key="index">
+                                <div class="card1" style="height: 70px;">
                                   <div class="d-flex align-items-center justify-content-between"
                                        style="padding-top: 2px; padding-bottom: 2px;">
-                                    <div class="card__title">
-                                      <div style="display: flex;width: 100%;align-items: center;font-size: 12px;">
+                                    <div class="card__title" style="width: 33.33%">
+                                      <div style="word-break:break-word;display: flex;width: 100%;align-items: center;font-size: 12px;">
                                         <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
                                         {{item.username}}
                                       </div>
                                     </div>
-                                    <div class="card__subtitle" style="color: rgb(13,110,253);padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
+                                    <div class="card__subtitle" style="font-size:1.8rem;color: #FFC107 !important;padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
                                     </div>
                                     <div class="card__time">{{item.time}}</div>
                                   </div>
                                 </div>
-                              </van-swipe-item>
-                            </van-swipe>
+                              </swiper-slide>
+                            </swiper>
                           </div>
                         </div>
                       </div>
                     </article>
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[2]')}}</h4>
-                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 90%;margin: 0 auto;">
+                <div class="col-lg-4">
+                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[1]')}}</h4>
+                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 95%;margin: 0 auto;">
                     <table class="style-two scroll-table table">
                       <thead>
                       <tr>
@@ -535,92 +515,67 @@
                       </tr>
                       </thead>
                     </table>
-                    <van-swipe id="SwipeList1" style="width:95%;height: 400px;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem" height="60" vertical autoplay="3000" :show-indicators="false" :touchable="false">
-                      <van-swipe-item v-if="item.type==2" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
-                        <div class="card1">
+                    <article class="item-body">
+                      <div class="seamless-warp"><!----> <!---->
+                        <div>
+                          <div style="overflow: hidden;">
+                            <swiper
+                              :options="swiperOption" ref="mySwiper" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem">
+                              <swiper-slide v-if="item.type==1" v-for="(item,index) in InitData.fundList" :key="index">
+                                <div class="card1" style="height: 70px;">
+                                  <div class="d-flex align-items-center justify-content-between"
+                                       style="padding-top: 2px; padding-bottom: 2px;">
+                                    <div class="card__title" style="width: 33.33%">
+                                      <div style="word-break:break-word;display: flex;width: 100%;align-items: center;font-size: 12px;">
+                                        <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
+                                        {{item.username}}
+                                      </div>
+                                    </div>
+                                    <div class="card__subtitle" style="font-size:1.8rem;color: #FFC107  !important;padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
+                                    </div>
+                                    <div class="card__time">{{item.time}}</div>
+                                  </div>
+                                </div>
+                              </swiper-slide>
+                            </swiper>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[2]')}}</h4>
+                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 95%;margin: 0 auto;">
+                    <table class="style-two scroll-table table">
+                      <thead>
+                      <tr>
+                        <th>{{$t('latest[3]')}}</th>
+                        <th>{{$t('latest[4]')}}</th>
+                        <th>{{$t('latest[5]')}}</th>
+                      </tr>
+                      </thead>
+                    </table>
+                    <swiper
+                      :options="swiperOption" ref="mySwiper" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem">
+                      <swiper-slide v-if="item.type==2" v-for="(item,index) in InitData.fundList" :key="index">
+                        <div class="card1" style="height: 70px">
                           <div class="d-flex align-items-center justify-content-between"
                                style="padding-top: 2px; padding-bottom: 2px;">
-                            <div class="card__title">
-                              <div style="display: flex;width: 100%;align-items: center;font-size: 12px;align-content: center;">
+                            <div class="card__title" style="width: 33.33%">
+                              <div style="word-break:break-word;display: flex;width: 100%;align-items: center;font-size: 12px;align-content: center;">
                                 <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
                                 {{item.username}}
                               </div>
                             </div>
-                            <div class="card__subtitle" style="color: rgb(13,110,253);padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
+                            <div class="card__subtitle" style="font-size:1.8rem;color: #FFC107 !important;padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
                             </div>
                             <div class="card__time">{{item.time}}</div>
                           </div>
                         </div>
-                      </van-swipe-item>
-                    </van-swipe>
+                      </swiper-slide>
+                    </swiper>
                   </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-        <section class="testimonials py-120 bg-img">
-          <div class="container">
-            <div class="box-wrapper">
-              <div class="row justify-content-center">
-                <div class="col-lg-10">
-                  <div class="section-heading">
-                    <h2 class="section-heading__title"> {{$t('newhome[48]')}}</h2>
-                    <p class="section-heading__desc">{{$t('newhome[49]')}}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testimonial-slider slick-initialized slick-slider slick-dotted">
-                <div class="slick-list draggable">
-                  <VueSlickCarousel ref="slick" v-bind="settings" class="slick-track" :dots="true">
-                    <div class="slick-slide" v-if="index<=20" v-for="(item,index) in slickList" :key="index">
-                      <div class="testimonails-card" style="width: 100%; display: inline-block;">
-                        <div class="testimonial-item flex-wrap">
-                          <div class="testimonial-item__thumb">
-                            <img
-                              v-lazy="`./static/head/${item.name}.png?t=1`"
-                              class="fit-image" alt="image">
-                          </div>
-                          <div class="testimonial-item__content">
-                            <div class="testimonial-item__info">
-                              <h5 class="testimonial-item__name">{{item.name}}</h5>
-                              <!--                              <span class="testimonial-item__designation fs-14"> {{$t('newhome[66]')}}</span>-->
-                            </div>
-                            <p class="testimonial-item__desc" v-html="$t('say['+index+']')">
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </VueSlickCarousel>
-                </div>
-              </div>
-              <div class="testimonial-slider slick-initialized slick-slider slick-dotted">
-                <div class="slick-list draggable">
-                  <VueSlickCarousel ref="slick" v-bind="settings" class="slick-track" :dots="true">
-                    <div class="slick-slide" v-if="index>20" v-for="(item,index) in slickList" :key="index">
-                        <div class="testimonails-card" style="width: 100%; display: inline-block;">
-                          <div class="testimonial-item flex-wrap">
-                            <div class="testimonial-item__thumb">
-                              <img
-                                v-lazy="`./static/head/${item.name}.png?t=2`"
-                                class="fit-image" alt="image">
-                            </div>
-                            <div class="testimonial-item__content">
-                              <div class="testimonial-item__info">
-                                <h5 class="testimonial-item__name">{{item.name}}</h5>
-                                <!--                              <span class="testimonial-item__designation fs-14"> {{$t('newhome[66]')}}</span>-->
-                              </div>
-                              <p class="testimonial-item__desc" v-html="$t('say['+index+']')">
-
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                  </VueSlickCarousel>
                 </div>
               </div>
             </div>
@@ -679,15 +634,15 @@
                       </div>
                       <div  class="col-xs-6 text-right">{{item.add_time}}</div>
                     </div>
-                    <a  href="javascript:;" @click="$router.push(`/blogDetail/${item.id}`)"
+                    <a href="javascript:" @click="$router.push(`/blogDetail/${item.id}`)"
                        class="">{{item.title}}</a></div>
                 </div>
               </div>
             </div>
             <div  class="row">
               <div  class="col-sm-4"></div>
-              <div  class="col-sm-4 text-center"><a  href="javascript:;" @click="$router.push('/blog')"
-                                                                      class="btn outline primary normal fluid text-center">{{$t('blog[6]')}}</a><br
+              <div  class="col-sm-4 text-center"><a href="javascript:" @click="$router.push('/blog')"
+                                                    class="btn outline primary normal fluid text-center">{{$t('blog[6]')}}</a><br
                 >
               </div>
               <div  class="col-sm-4"></div>
@@ -744,11 +699,127 @@
                       <use data-v-cbf2c648="" xlink:href="#icon-Kraken"></use>
                     </svg>
                   </div>
+                  <div class="item">
+                    <img :src="'./static/images/DOGE.png'" class="svg-icon">
+                  </div>
+                  <div class="item">
+                    <img :src="'./static/images/SOL.png'" class="svg-icon">
+                  </div>
+                  <div class="item">
+                    <img :src="'./static/images/XRP.png'" class="svg-icon">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <div style="background: #a7cdf3;padding: 2rem 0;">
+
+
+        <div class="bg-zth py-3 max9601">
+          <div class="container  mb-5" style="margin-top: 0px !important;">
+            <div class="mt-3  text-center">
+              <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;">
+                <span class="text-z-fs fw-bold" style="font-size: 2.5rem">{{$t('partners[0]')}}</span></h6>
+            </div>
+            <div class="row mt-4">
+              <div class="col-lg-12">
+                <ul class="brand-style-2">
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz1.webp'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz2.png'" alt="Partner 1" class="img-fluid " style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz3.png'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz4.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz5.webp'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz6.png'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz7.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz8.webp'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz9.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz10.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz11.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
+                    <a target="_blank">
+                      <img :src="'./static/images/hz12.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+<!--        <section class="brand-section section-space max960" style="margin-bottom: 2rem">-->
+<!--          <div class="container">-->
+<!--            <div class="section-head text-center"><h2 class="mb-3" style="color:#000;">{{$t('partners[0]')}}</h2></div>-->
+<!--            <div class="row g-gs">-->
+<!--              &lt;!&ndash;              <div class="client-logo-item text-center">&ndash;&gt;-->
+<!--              &lt;!&ndash;                <img :src="'./static/images/111.png'" alt="" class="img-fluid">&ndash;&gt;-->
+<!--              &lt;!&ndash;              </div>&ndash;&gt;-->
+<!--              <swiper ref="myswiper1" :options="swiperOption1" class="">-->
+<!--                <swiper-slide v-for="(item,index) in 8" :key="index"  >-->
+<!--                  <div class="" style="margin-right: 30px;">-->
+<!--                    <div class="text-center" style="background: #b1d7fd;border-radius: 10px;">-->
+<!--                      <img :src="`./static/images/coop_${item}.png`" alt="" class="img-fluid" style="display: block">-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </swiper-slide>-->
+<!--              </swiper>-->
+<!--              &lt;!&ndash;              <swiper :options="swiperOption2" class="">&ndash;&gt;-->
+<!--              &lt;!&ndash;                <swiper-slide v-for="(item,index) in 7" :key="index" class="language__slider-single swiper-slide-duplicate-next" style="margin-right: 30px;">&ndash;&gt;-->
+<!--              &lt;!&ndash;                  <div class="">&ndash;&gt;-->
+<!--              &lt;!&ndash;                    <div class="text-center">&ndash;&gt;-->
+<!--              &lt;!&ndash;                      <img :src="`./static/images/coop_${item+7}.png`" alt="" class="img-fluid">&ndash;&gt;-->
+<!--              &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--              &lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--              &lt;!&ndash;                </swiper-slide>&ndash;&gt;-->
+<!--              &lt;!&ndash;              </swiper>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+
       </div>
     </div>
 
@@ -929,16 +1000,24 @@
 <!--                      <p><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('newP[4]')}}: <span class="notranslate">${{parseFloat((parseFloat(detailData.daily_rate)/100*detailData.amount*detailData.cycle).toFixed(2))}}</span></p>-->
 <!--                      <p><van-icon :name="'./static/image/check.png'" style="margin-right: 0.5rem;"/> {{$t('settle[0]')}}:<span class="notranslate">{{detailData.type==1?$t('product[7]'):$t('product[17]')}}</span></p>-->
 <!--                    </div>-->
-                    <div class="bonus" style="padding: 0;margin-top: 1rem" v-if="detailData.id !=1">
+                    <div class="bonus" v-if="detailData.amount!=10">
                       <div class="label">{{$t('product[10]')}}</div>
-                      <ul style="display: flex;padding: 0;font-size: 1.5rem;height: 3rem">
+                      <ul class="plan-referral justify-content-center mb-2">
                         <div class="single-referral" v-for="(aa,i) in detailData.affiliate_bonus">
-                          <div class="ddcc" v-if="aa==3">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/333.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
-                          <div class="ddcc" v-if="aa==1.5">{{$t('affiliates[13]')}} {{(i+1)}}: <van-icon :name="'./static/image/151515.png'" size="3.5rem" style="margin-right: 0.5rem;"/></div>
+                          <span>{{aa}} %</span>
+                          <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
                         </div>
                       </ul>
                     </div>
-                    <div v-else style="height: 5rem;font-size: 1.5rem;display: flex;align-items: center;">{{$t('tips[5]')}}</div>
+                    <div class="bonus" v-else>
+                      <div class="label">{{$t('product[10]')}}</div>
+                      <ul class="plan-referral justify-content-center mb-2">
+                        <div class="single-referral" v-for="(aa,i) in detailData.affiliate_bonus">
+                          <span>0 %</span>
+                          <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
+                        </div>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <div class="container-fluid">
@@ -957,10 +1036,50 @@
                       </div>
                     </div>
                     <h6 v-html="$t('productDetail[6]')"></h6>
-                    <h6 v-html="$t('productDetail[7]')"></h6>
-                    <h6 v-html="$t('productDetail[8]')"></h6>
+                    <h6 v-html="$t('productDetailL[0]')"></h6>
+                    <h6 v-html="$t('productDetailL[1]')"></h6>
+                    <h6 v-html="$t('productDetailL[2]')"></h6>
+                    <h6 v-html="$t('productDetailL[3]')"></h6>
+                    <h6 v-html="$t('productDetailL[4]')"></h6>
+                    <h6 v-html="$t('productDetailL[5]')"></h6>
+<!--                    <h6 v-html="$t('productDetail[7]')"></h6>-->
+<!--                    <h6 v-html="$t('productDetail[8]')"></h6>-->
                     <h6 v-html="$t('productDetail[9]')"></h6>
-                    <h6 v-html="$t('productDetail[10]')"></h6>
+                    <div style="font-size: 16px;overflow-x: scroll;">
+                      <table border="1px" style="width: 100%;text-align: center">
+                        <tr>
+                          <td>{{$t('tables[0]')}}</td>
+                          <td>{{$t('tables[1]')}}</td>
+                          <td>{{$t('tables[2]')}}</td>
+                          <td>{{$t('tables[3]')}}</td>
+                          <td>{{$t('tables[4]')}}</td>
+                          <td>{{$t('tables[5]')}}</td>
+                          <td>{{$t('tables[6]')}}</td>
+                        </tr>
+                        <tr>
+                          <td>{{$t('tables[7]')}}</td>
+                          <td>{{detailData.title}}</td>
+                          <td>{{detailData.amount}}USD</td>
+                          <td>{{detailData.cycle}} {{$t('product[15]')}}</td>
+                          <td>{{detailData.daily_rate}}%</td>
+                          <td>${{parseFloat((parseFloat(detailData.daily_rate)/100*money*1).toFixed(2))}}USD</td>
+                          <td>${{parseFloat((parseFloat(detailData.daily_rate)/100*money*detailData.cycle).toFixed(2))}}USD</td>
+                        </tr>
+                        <tr>
+                          <td>{{$t('tables[8]')}}</td>
+                          <td colspan="6">{{$t('tables[9]')}}</td>
+                        </tr>
+                        <tr>
+                          <td>{{$t('tables[10]')}}</td>
+                          <td>BTC</td>
+                          <td>ETH</td>
+                          <td>BCH</td>
+                          <td>LTC</td>
+                          <td>USDC</td>
+                          <td>USDT</td>
+                        </tr>
+                      </table>
+                    </div>
                     <h6 v-html="$t('productDetail[11]')"></h6>
                     <h6 v-html="$t('productDetail[12]')"></h6>
                     <h6 v-html="$t('productDetail[13]')"></h6>
@@ -971,10 +1090,15 @@
                     <h6 v-html="$t('productDetail[18]')"></h6>
                     <h6 v-html="$t('productDetail[19]')"></h6>
                     <h6 v-html="$t('productDetail[20]')"></h6>
+                    <h6 v-html="$t('productDetail[21]')"></h6>
+                    <h6 v-html="$t('productDetail[22]')"></h6>
+                    <h6 v-html="$t('productDetail[23]')"></h6>
+                    <h6 v-html="$t('productDetail[24]')"></h6>
+                    <h6 v-html="$t('productDetail[25]')"></h6>
 <!--                    <h6 v-html="$t('productDetail[21]')"></h6>-->
                     <h6 v-if="detailData.agreement && detailData.agreement !=''" v-html="detailData.agreement">
                     </h6>
-                    <h6>{{$t('productDetail[21]')}}</h6>
+                    <h6>{{$t('productDetail[26]')}}</h6>
                   </div>
 
                 </div>
@@ -984,7 +1108,7 @@
         </div>
         <div class="diaf" >
           <div class="buttons">
-            <a href="javascript:;"  class="w-100" @click="showDialogD = false"><div class="main-btn ed w-100">{{$t('close')}}</div></a>
+            <a href="javascript:" class="w-100" @click="showDialogD = false"><div class="main-btn ed w-100">{{$t('close')}}</div></a>
             <div class="main-btn buy_bt" @click="orderNow(detailData)">{{$t('newP[6]')}}</div>
           </div>
         </div>
@@ -996,14 +1120,14 @@
 <script>
   import { swiper, swiperSlide } from "vue-awesome-swiper";
   import 'swiper/dist/css/swiper.css';
-  import VueSlickCarousel from 'vue-slick-carousel'
-  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+  // import VueSlickCarousel from 'vue-slick-carousel'
+  // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  // import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
   export default {
     name: 'Home',
     inject: ['reloadHtml'],
     components: {
-      swiper, swiperSlide,VueSlickCarousel
+      swiper, swiperSlide
     },
 
     data() {
@@ -1049,9 +1173,9 @@
             stopOnLastSlide: false,
           },
           direction:'vertical',
-          // slidesPerView: 3,  // 可是区域内可展示多少个块
+          slidesPerView: 8,  // 可是区域内可展示多少个块
           // spaceBetween: 10,  // 块之间间隔距离
-          initialSlide:10,  // 默认初始显示块
+          // initialSlide:7,  // 默认初始显示块
           // freeMode: false,
           // effect : 'coverflow',
           // 显示分页
@@ -1064,6 +1188,25 @@
           //   nextEl: ".swiper-button-next",
           //   prevEl: ".swiper-button-prev",
           // },
+        },
+        swiperOption1: {
+          loop: true,  // 是否循环轮播
+          speed:10000,
+          autoplay: {
+            disableOnInteraction:false,
+            delay: 2000,
+            revertDirection:true,
+          },
+          autoplayDisableOnInteraction:false,
+          slidesPerView:4,
+          observer:true,
+          observeParents:true,
+          roundLengths:true,
+          on:{
+            slideChangeTransitionEnd: function () {
+              this.autoplay.start();
+            }
+          }
         },
         settings:{
           "dots": true,
@@ -1315,6 +1458,17 @@
     methods: {
       showVideo() {
         this.showVideoDialog = true;
+      },
+      downloadApp (app) {
+        if(app == 'ios')
+        {
+          this.$Util.OpenUrl(this.InitData.setting.app_down_ios)
+        }
+        else if (app == 'andriod') {
+          this.$Util.OpenUrl(this.InitData.setting.app_down_android);
+        } else {
+          this.$Util.OpenUrl(this.InitData.setting.app_down_google);
+        }
       },
       handleShare (index) {
         if (index == 'reddit') {
@@ -1883,8 +2037,8 @@
     .container .box1 .box1-inner-area .box1-desc {
       margin: 3rem 0 2.5rem;
       line-height: 160%;
-      font-size: 1.6rem;
-      color: #fff;
+      font-size: 1.85rem;
+      color: #ff7d10;
       font-weight: bolder;
       word-wrap: break-word
     }
@@ -2032,9 +2186,9 @@
     }
     .container .box3 .product-list .product-item .progress {
       position: absolute;
-      left: 34rem;
+      left: 44rem;
       bottom: 1rem;
-      width: calc(100% - 36rem);
+      width: calc(100% - 46rem);
     }
     .container .box3 .product-list .product-item:not(:last-child) {
       margin-bottom: 3rem
@@ -2042,8 +2196,8 @@
 
     .container .box3 .product-list .product-item .img-box {
       position: relative;
-      min-width: 30rem;
-      max-width: 30rem;
+      min-width: 40rem;
+      max-width: 40rem;
       height: 26rem;
       overflow: hidden
     }
@@ -2068,8 +2222,8 @@
 
     .container .box3 .product-list .product-item .right .name {
       width: 100%;
-      margin-bottom: 2.5rem;
-      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #000;
       word-wrap: break-word
@@ -2136,8 +2290,8 @@
     }
 
     .container .box3 .product-list .product-item .right .bottom .right-actions .bonus {
-      min-width: 16rem;
-      max-width: 16rem;
+      min-width: 20rem;
+      max-width: 20rem;
     }
 
     .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .label {
@@ -2310,7 +2464,7 @@
     .container .box7 {
       width: 100%;
       box-sizing: border-box;
-      padding: 0 3rem 8rem
+      padding: 0
     }
 
     .container .box7 .box-wrapper {
@@ -2588,8 +2742,8 @@
     .container .box1 .box1-inner-area .box1-desc {
       margin: 3.5rem 0 1.5rem;
       line-height: 160%;
-      font-size: 1.5rem;
-      color: #fff;
+      font-size: 1.85rem;
+      color: #ff7d10;
       font-weight: bolder;
       word-wrap: break-word
     }
@@ -3000,7 +3154,7 @@
     .container .box7 {
       width: 100%;
       box-sizing: border-box;
-      padding: 0 1rem 3rem
+      padding: 0
     }
 
     .container .box7 .box-wrapper {
@@ -3841,6 +3995,9 @@
       width: 50%;
     }
   }
+  .col-lg-4 {
+    width: 100%;
+  }
   @media (min-width: 992px){
     .col-lg-4 {
       flex: 0 0 auto;
@@ -3872,6 +4029,9 @@
       visibility: hidden;
       height: 10px;
       padding-top: 0.25rem!important;
+    }
+    .col-6 {
+      width: 50%;
     }
   }
   .plan-card {
@@ -4295,31 +4455,31 @@
   h4 {
     font-size: 2rem;
   }
-  table {
+  .style-two {
     width: 100%;
     font-size: 1.4rem;
   }
-  table tbody {
+  .style-two tbody {
     border: 0 !important;
   }
-  table thead {
-    background: #eee;
+  .style-two thead {
     font-size: 1.3rem;
   }
-  .d-flex div,tbody, td, tfoot, th {
+  .style-two tbody, .style-two td, .style-two tfoot, .style-two th {
     width: 33.3%;
     text-align: center;
     /*padding: 13px 34px;*/
     font-size: 1.5rem;
     word-break: break-word;
   }
-  tbody, td, tfoot, th, thead, tr {
+  .style-two tbody, .style-two td, .style-two tfoot, .style-two th, .style-two thead, .style-two tr {
     border-color: inherit;
     border-style: solid;
     border-width: 0;
     font-size: 1.5rem;
     width: 33.3%;
   }
+
   .style-two tbody tr td {
     text-align: left;
     vertical-align: middle;
@@ -5042,7 +5202,7 @@
     transform: scale(.94)
   }
   .first-box-wraper {
-    background: radial-gradient(circle, #323136 0, #181a22 99%);
+    /*background: radial-gradient(circle, #323136 0, #181a22 99%);*/
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -5082,7 +5242,7 @@
   }
 
   .top-wraper .left-info-area .btn-area .btn.start-btn {
-    background: linear-gradient(to right, #00f785, #410093);
+    background: linear-gradient(to right, #fff, #410093);
     /*background: #4caf50;*/
     color: #fff;
     /*padding: 0 30px;*/
@@ -5964,6 +6124,897 @@
   }
   .mb-1 {
     margin-bottom: 1px !important;
+  }
+  .max960 {
+    /*max-width: 1140px;*/
+    margin: 0 auto;
+  }
+  .transaction div{
+    color: #000 !important;
+  }
+
+  .col-4 {
+    width: 33.33%;
+    word-break: break-word;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .rounded-4 {
+    border-radius: 1rem !important
+  }
+  .brand-style-2 {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media(min-width: 576px) {
+    .col-sm {
+      flex:1 0 0%
+    }
+
+    .row-cols-sm-auto>* {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .row-cols-sm-1>* {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .row-cols-sm-2>* {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .row-cols-sm-3>* {
+      flex: 0 0 auto;
+      width: 33.3333333333%
+    }
+
+    .row-cols-sm-4>* {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .row-cols-sm-5>* {
+      flex: 0 0 auto;
+      width: 20%
+    }
+
+    .row-cols-sm-6>* {
+      flex: 0 0 auto;
+      width: 16.6666666667%
+    }
+
+    .col-sm-auto {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .col-sm-1 {
+      flex: 0 0 auto;
+      width: 8.33333333%
+    }
+
+    .col-sm-2 {
+      flex: 0 0 auto;
+      width: 16.66666667%
+    }
+
+    .col-sm-3 {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .col-sm-4 {
+      flex: 0 0 auto;
+      width: 33.33333333%
+    }
+
+    .col-sm-5 {
+      flex: 0 0 auto;
+      width: 41.66666667%
+    }
+
+    .col-sm-6 {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .col-sm-7 {
+      flex: 0 0 auto;
+      width: 58.33333333%
+    }
+
+    .col-sm-8 {
+      flex: 0 0 auto;
+      width: 66.66666667%
+    }
+
+    .col-sm-9 {
+      flex: 0 0 auto;
+      width: 75%
+    }
+
+    .col-sm-10 {
+      flex: 0 0 auto;
+      width: 83.33333333%
+    }
+
+    .col-sm-11 {
+      flex: 0 0 auto;
+      width: 91.66666667%
+    }
+
+    .col-sm-12 {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .offset-sm-0 {
+      margin-left: 0
+    }
+
+    .offset-sm-1 {
+      margin-left: 8.33333333%
+    }
+
+    .offset-sm-2 {
+      margin-left: 16.66666667%
+    }
+
+    .offset-sm-3 {
+      margin-left: 25%
+    }
+
+    .offset-sm-4 {
+      margin-left: 33.33333333%
+    }
+
+    .offset-sm-5 {
+      margin-left: 41.66666667%
+    }
+
+    .offset-sm-6 {
+      margin-left: 50%
+    }
+
+    .offset-sm-7 {
+      margin-left: 58.33333333%
+    }
+
+    .offset-sm-8 {
+      margin-left: 66.66666667%
+    }
+
+    .offset-sm-9 {
+      margin-left: 75%
+    }
+
+    .offset-sm-10 {
+      margin-left: 83.33333333%
+    }
+
+    .offset-sm-11 {
+      margin-left: 91.66666667%
+    }
+
+    .g-sm-0,.gx-sm-0 {
+      --bs-gutter-x: 0
+    }
+
+    .g-sm-0,.gy-sm-0 {
+      --bs-gutter-y: 0
+    }
+
+    .g-sm-1,.gx-sm-1 {
+      --bs-gutter-x: 0.25rem
+    }
+
+    .g-sm-1,.gy-sm-1 {
+      --bs-gutter-y: 0.25rem
+    }
+
+    .g-sm-2,.gx-sm-2 {
+      --bs-gutter-x: 0.5rem
+    }
+
+    .g-sm-2,.gy-sm-2 {
+      --bs-gutter-y: 0.5rem
+    }
+
+    .g-sm-3,.gx-sm-3 {
+      --bs-gutter-x: 1rem
+    }
+
+    .g-sm-3,.gy-sm-3 {
+      --bs-gutter-y: 1rem
+    }
+
+    .g-sm-4,.gx-sm-4 {
+      --bs-gutter-x: 1.5rem
+    }
+
+    .g-sm-4,.gy-sm-4 {
+      --bs-gutter-y: 1.5rem
+    }
+
+    .g-sm-5,.gx-sm-5 {
+      --bs-gutter-x: 3rem
+    }
+
+    .g-sm-5,.gy-sm-5 {
+      --bs-gutter-y: 3rem
+    }
+
+    .g-sm-gs,.gx-sm-gs {
+      --bs-gutter-x: 2rem
+    }
+
+    .g-sm-gs,.gy-sm-gs {
+      --bs-gutter-y: 2rem
+    }
+  }
+
+  @media(min-width: 768px) {
+    .col-md {
+      flex:1 0 0%
+    }
+
+    .row-cols-md-auto>* {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .row-cols-md-1>* {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .row-cols-md-2>* {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .row-cols-md-3>* {
+      flex: 0 0 auto;
+      width: 33.3333333333%
+    }
+
+    .row-cols-md-4>* {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .row-cols-md-5>* {
+      flex: 0 0 auto;
+      width: 20%
+    }
+
+    .row-cols-md-6>* {
+      flex: 0 0 auto;
+      width: 16.6666666667%
+    }
+
+    .col-md-auto {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .col-md-1 {
+      flex: 0 0 auto;
+      width: 8.33333333%
+    }
+
+    .col-md-2 {
+      flex: 0 0 auto;
+      width: 16.66666667%
+    }
+
+    .col-md-3 {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .col-md-4 {
+      flex: 0 0 auto;
+      width: 33.33333333%
+    }
+
+    .col-md-5 {
+      flex: 0 0 auto;
+      width: 41.66666667%
+    }
+
+    .col-md-6 {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .col-md-7 {
+      flex: 0 0 auto;
+      width: 58.33333333%
+    }
+
+    .col-md-8 {
+      flex: 0 0 auto;
+      width: 66.66666667%
+    }
+
+    .col-md-9 {
+      flex: 0 0 auto;
+      width: 75%
+    }
+
+    .col-md-10 {
+      flex: 0 0 auto;
+      width: 83.33333333%
+    }
+
+    .col-md-11 {
+      flex: 0 0 auto;
+      width: 91.66666667%
+    }
+
+    .col-md-12 {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .offset-md-0 {
+      margin-left: 0
+    }
+
+    .offset-md-1 {
+      margin-left: 8.33333333%
+    }
+
+    .offset-md-2 {
+      margin-left: 16.66666667%
+    }
+
+    .offset-md-3 {
+      margin-left: 25%
+    }
+
+    .offset-md-4 {
+      margin-left: 33.33333333%
+    }
+
+    .offset-md-5 {
+      margin-left: 41.66666667%
+    }
+
+    .offset-md-6 {
+      margin-left: 50%
+    }
+
+    .offset-md-7 {
+      margin-left: 58.33333333%
+    }
+
+    .offset-md-8 {
+      margin-left: 66.66666667%
+    }
+
+    .offset-md-9 {
+      margin-left: 75%
+    }
+
+    .offset-md-10 {
+      margin-left: 83.33333333%
+    }
+
+    .offset-md-11 {
+      margin-left: 91.66666667%
+    }
+
+    .g-md-0,.gx-md-0 {
+      --bs-gutter-x: 0
+    }
+
+    .g-md-0,.gy-md-0 {
+      --bs-gutter-y: 0
+    }
+
+    .g-md-1,.gx-md-1 {
+      --bs-gutter-x: 0.25rem
+    }
+
+    .g-md-1,.gy-md-1 {
+      --bs-gutter-y: 0.25rem
+    }
+
+    .g-md-2,.gx-md-2 {
+      --bs-gutter-x: 0.5rem
+    }
+
+    .g-md-2,.gy-md-2 {
+      --bs-gutter-y: 0.5rem
+    }
+
+    .g-md-3,.gx-md-3 {
+      --bs-gutter-x: 1rem
+    }
+
+    .g-md-3,.gy-md-3 {
+      --bs-gutter-y: 1rem
+    }
+
+    .g-md-4,.gx-md-4 {
+      --bs-gutter-x: 1.5rem
+    }
+
+    /*.g-md-4,.gy-md-4 {*/
+    /*  --bs-gutter-y: 1.5rem*/
+    /*}*/
+
+    .g-md-5,.gx-md-5 {
+      --bs-gutter-x: 3rem
+    }
+
+    .g-md-5,.gy-md-5 {
+      --bs-gutter-y: 3rem
+    }
+
+    .g-md-gs,.gx-md-gs {
+      --bs-gutter-x: 2rem
+    }
+
+    .g-md-gs,.gy-md-gs {
+      --bs-gutter-y: 2rem
+    }
+  }
+
+  @media(min-width: 992px) {
+    .col-lg {
+      flex:1 0 0%
+    }
+
+    .row-cols-lg-auto>* {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .row-cols-lg-1>* {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .row-cols-lg-2>* {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .row-cols-lg-3>* {
+      flex: 0 0 auto;
+      width: 33.3333333333%
+    }
+
+    .row-cols-lg-4>* {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .row-cols-lg-5>* {
+      flex: 0 0 auto;
+      width: 20%
+    }
+
+    .row-cols-lg-6>* {
+      flex: 0 0 auto;
+      width: 16.6666666667%
+    }
+
+    .col-lg-auto {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .col-lg-1 {
+      flex: 0 0 auto;
+      width: 8.33333333%
+    }
+
+    .col-lg-2 {
+      flex: 0 0 auto;
+      width: 16.66666667%
+    }
+
+    .col-lg-3 {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .col-lg-4 {
+      flex: 0 0 auto;
+      width: 33.33333333%
+    }
+
+    .col-lg-5 {
+      flex: 0 0 auto;
+      width: 41.66666667%
+    }
+
+    .col-lg-6 {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .col-lg-7 {
+      flex: 0 0 auto;
+      width: 58.33333333%
+    }
+
+    .col-lg-8 {
+      flex: 0 0 auto;
+      width: 66.66666667%
+    }
+
+    .col-lg-9 {
+      flex: 0 0 auto;
+      width: 75%
+    }
+
+    .col-lg-10 {
+      flex: 0 0 auto;
+      width: 83.33333333%
+    }
+
+    .col-lg-11 {
+      flex: 0 0 auto;
+      width: 91.66666667%
+    }
+
+    .col-lg-12 {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .offset-lg-0 {
+      margin-left: 0
+    }
+
+    .offset-lg-1 {
+      margin-left: 8.33333333%
+    }
+
+    .offset-lg-2 {
+      margin-left: 16.66666667%
+    }
+
+    .offset-lg-3 {
+      margin-left: 25%
+    }
+
+    .offset-lg-4 {
+      margin-left: 33.33333333%
+    }
+
+    .offset-lg-5 {
+      margin-left: 41.66666667%
+    }
+
+    .offset-lg-6 {
+      margin-left: 50%
+    }
+
+    .offset-lg-7 {
+      margin-left: 58.33333333%
+    }
+
+    .offset-lg-8 {
+      margin-left: 66.66666667%
+    }
+
+    .offset-lg-9 {
+      margin-left: 75%
+    }
+
+    .offset-lg-10 {
+      margin-left: 83.33333333%
+    }
+
+    .offset-lg-11 {
+      margin-left: 91.66666667%
+    }
+
+    .g-lg-0,.gx-lg-0 {
+      --bs-gutter-x: 0
+    }
+
+    .g-lg-0,.gy-lg-0 {
+      --bs-gutter-y: 0
+    }
+
+    .g-lg-1,.gx-lg-1 {
+      --bs-gutter-x: 0.25rem
+    }
+
+    .g-lg-1,.gy-lg-1 {
+      --bs-gutter-y: 0.25rem
+    }
+
+    .g-lg-2,.gx-lg-2 {
+      --bs-gutter-x: 0.5rem
+    }
+
+    .g-lg-2,.gy-lg-2 {
+      --bs-gutter-y: 0.5rem
+    }
+
+    .g-lg-3,.gx-lg-3 {
+      --bs-gutter-x: 1rem
+    }
+
+    .g-lg-3,.gy-lg-3 {
+      --bs-gutter-y: 1rem
+    }
+
+    .g-lg-4,.gx-lg-4 {
+      --bs-gutter-x: 1.5rem
+    }
+
+    .g-lg-4,.gy-lg-4 {
+      --bs-gutter-y: 1.5rem
+    }
+
+    .g-lg-5,.gx-lg-5 {
+      --bs-gutter-x: 3rem
+    }
+
+    .g-lg-5,.gy-lg-5 {
+      --bs-gutter-y: 3rem
+    }
+
+    .g-lg-gs,.gx-lg-gs {
+      --bs-gutter-x: 2rem
+    }
+
+    .g-lg-gs,.gy-lg-gs {
+      --bs-gutter-y: 2rem
+    }
+  }
+
+  @media(min-width: 1200px) {
+    .col-xl {
+      flex:1 0 0%
+    }
+
+    .row-cols-xl-auto>* {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .row-cols-xl-1>* {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .row-cols-xl-2>* {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .row-cols-xl-3>* {
+      flex: 0 0 auto;
+      width: 33.3333333333%
+    }
+
+    .row-cols-xl-4>* {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .row-cols-xl-5>* {
+      flex: 0 0 auto;
+      width: 20%
+    }
+
+    .row-cols-xl-6>* {
+      flex: 0 0 auto;
+      width: 16.6666666667%
+    }
+
+    .col-xl-auto {
+      flex: 0 0 auto;
+      width: auto
+    }
+
+    .col-xl-1 {
+      flex: 0 0 auto;
+      width: 8.33333333%
+    }
+
+    .col-xl-2 {
+      flex: 0 0 auto;
+      width: 16.66666667%
+    }
+
+    .col-xl-3 {
+      flex: 0 0 auto;
+      width: 25%
+    }
+
+    .col-xl-4 {
+      flex: 0 0 auto;
+      width: 33.33333333%
+    }
+
+    .col-xl-5 {
+      flex: 0 0 auto;
+      width: 41.66666667%
+    }
+
+    .col-xl-6 {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .col-xl-7 {
+      flex: 0 0 auto;
+      width: 58.33333333%
+    }
+
+    .col-xl-8 {
+      flex: 0 0 auto;
+      width: 66.66666667%
+    }
+
+    .col-xl-9 {
+      flex: 0 0 auto;
+      width: 75%
+    }
+
+    .col-xl-10 {
+      flex: 0 0 auto;
+      width: 83.33333333%
+    }
+
+    .col-xl-11 {
+      flex: 0 0 auto;
+      width: 91.66666667%
+    }
+
+    .col-xl-12 {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    .offset-xl-0 {
+      margin-left: 0
+    }
+
+    .offset-xl-1 {
+      margin-left: 8.33333333%
+    }
+
+    .offset-xl-2 {
+      margin-left: 16.66666667%
+    }
+
+    .offset-xl-3 {
+      margin-left: 25%
+    }
+
+    .offset-xl-4 {
+      margin-left: 33.33333333%
+    }
+
+    .offset-xl-5 {
+      margin-left: 41.66666667%
+    }
+
+    .offset-xl-6 {
+      margin-left: 50%
+    }
+
+    .offset-xl-7 {
+      margin-left: 58.33333333%
+    }
+
+    .offset-xl-8 {
+      margin-left: 66.66666667%
+    }
+
+    .offset-xl-9 {
+      margin-left: 75%
+    }
+
+    .offset-xl-10 {
+      margin-left: 83.33333333%
+    }
+
+    .offset-xl-11 {
+      margin-left: 91.66666667%
+    }
+
+    .g-xl-0,.gx-xl-0 {
+      --bs-gutter-x: 0
+    }
+
+    .g-xl-0,.gy-xl-0 {
+      --bs-gutter-y: 0
+    }
+
+    .g-xl-1,.gx-xl-1 {
+      --bs-gutter-x: 0.25rem
+    }
+
+    .g-xl-1,.gy-xl-1 {
+      --bs-gutter-y: 0.25rem
+    }
+
+    .g-xl-2,.gx-xl-2 {
+      --bs-gutter-x: 0.5rem
+    }
+
+    .g-xl-2,.gy-xl-2 {
+      --bs-gutter-y: 0.5rem
+    }
+
+    .g-xl-3,.gx-xl-3 {
+      --bs-gutter-x: 1rem
+    }
+
+    .g-xl-3,.gy-xl-3 {
+      --bs-gutter-y: 1rem
+    }
+
+    .g-xl-4,.gx-xl-4 {
+      --bs-gutter-x: 1.5rem
+    }
+
+    .g-xl-4,.gy-xl-4 {
+      --bs-gutter-y: 1.5rem
+    }
+
+    .g-xl-5,.gx-xl-5 {
+      --bs-gutter-x: 3rem
+    }
+
+    .g-xl-5,.gy-xl-5 {
+      --bs-gutter-y: 3rem
+    }
+
+    .g-xl-gs,.gx-xl-gs {
+      --bs-gutter-x: 2rem
+    }
+
+    .g-xl-gs,.gy-xl-gs {
+      --bs-gutter-y: 2rem
+    }
+  }
+  .col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .mt-4 {
+    margin-top: 2.5rem !important;
+  }
+  .max9601 {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .bg-hs1{
+    background-color: #0f1021 !important;
+  }
+  .p-2 {
+    padding: 1rem !important;
+  }
+  .text-z-fs{
+    background: linear-gradient(90deg, #12B5DE -30%, #7130C3 30%, #FF3BD4 90%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .start-btn {
+    border-radius: 0px !important;
+    border: 2px solid #fff !important;
   }
 </style>
 
