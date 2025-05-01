@@ -457,131 +457,41 @@
 <!--          <video :poster="'./static/images/homeposter1.jpg'" webkit-playsinline="true" playsinline="true" :src="'./static/KSD1.mp4'" controls style="width:100%;max-width: 960px;display: block;margin: 0 auto;"></video>-->
 <!--        </div>-->
 
-        <section class="transaction py-120">
-          <div class="container max960">
-            <div class="box-wrapper">
-              <div class="title-main">{{$t('latest[0]')}}</div>
-              <div class="row gy-4">
-                <div class="col-lg-4">
-                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('realtime[0]')}}</h4>
-                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 95%;margin: 0 auto;">
-                    <table class="style-two scroll-table table">
-                      <thead>
-                      <tr>
-                        <th>{{$t('latest[3]')}}</th>
-                        <th>{{$t('latest[4]')}}</th>
-                        <th>{{$t('latest[5]')}}</th>
-                      </tr>
-                      </thead>
-                    </table>
-                    <article class="item-body">
-                      <div class="seamless-warp"><!----> <!---->
-                        <div>
-                          <div style="overflow: hidden;">
-                            <swiper
-                              :options="swiperOption" ref="mySwiper" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem">
-                              <swiper-slide v-if="item.type==3" v-for="(item,index) in InitData.fundList" :key="index">
-                                <div class="card1" style="height: 70px;">
-                                  <div class="d-flex align-items-center justify-content-between"
-                                       style="padding-top: 2px; padding-bottom: 2px;">
-                                    <div class="card__title" style="width: 33.33%">
-                                      <div style="word-break:break-word;display: flex;width: 100%;align-items: center;font-size: 12px;">
-                                        <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
-                                        {{item.username}}
-                                      </div>
-                                    </div>
-                                    <div class="card__subtitle" style="font-size:1.8rem;color: #FFC107 !important;padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
-                                    </div>
-                                    <div class="card__time">{{item.time}}</div>
-                                  </div>
-                                </div>
-                              </swiper-slide>
-                            </swiper>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[1]')}}</h4>
-                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 95%;margin: 0 auto;">
-                    <table class="style-two scroll-table table">
-                      <thead>
-                      <tr>
-                        <th>{{$t('latest[3]')}}</th>
-                        <th>{{$t('latest[4]')}}</th>
-                        <th>{{$t('latest[5]')}}</th>
-                      </tr>
-                      </thead>
-                    </table>
-                    <article class="item-body">
-                      <div class="seamless-warp"><!----> <!---->
-                        <div>
-                          <div style="overflow: hidden;">
-                            <swiper
-                              :options="swiperOption" ref="mySwiper" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem">
-                              <swiper-slide v-if="item.type==1" v-for="(item,index) in InitData.fundList" :key="index">
-                                <div class="card1" style="height: 70px;">
-                                  <div class="d-flex align-items-center justify-content-between"
-                                       style="padding-top: 2px; padding-bottom: 2px;">
-                                    <div class="card__title" style="width: 33.33%">
-                                      <div style="word-break:break-word;display: flex;width: 100%;align-items: center;font-size: 12px;">
-                                        <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
-                                        {{item.username}}
-                                      </div>
-                                    </div>
-                                    <div class="card__subtitle" style="font-size:1.8rem;color: #FFC107  !important;padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
-                                    </div>
-                                    <div class="card__time">{{item.time}}</div>
-                                  </div>
-                                </div>
-                              </swiper-slide>
-                            </swiper>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <h4 class="transaction__title mb-md-4 mb-3 text-center">{{$t('latest[2]')}}</h4>
-                  <div class="transaction__content overflow-x-auto" style="border: 1px solid rgb(13,110,253);border-radius: 10px;width: 95%;margin: 0 auto;">
-                    <table class="style-two scroll-table table">
-                      <thead>
-                      <tr>
-                        <th>{{$t('latest[3]')}}</th>
-                        <th>{{$t('latest[4]')}}</th>
-                        <th>{{$t('latest[5]')}}</th>
-                      </tr>
-                      </thead>
-                    </table>
-                    <swiper
-                      :options="swiperOption" ref="mySwiper" style="height: 400px;width: 95%;margin:0 auto;background: rgba(0,0,0,0);border-radius: 1rem">
-                      <swiper-slide v-if="item.type==2" v-for="(item,index) in InitData.fundList" :key="index">
-                        <div class="card1" style="height: 70px">
-                          <div class="d-flex align-items-center justify-content-between"
-                               style="padding-top: 2px; padding-bottom: 2px;">
-                            <div class="card__title" style="width: 33.33%">
-                              <div style="word-break:break-word;display: flex;width: 100%;align-items: center;font-size: 12px;align-content: center;">
-                                <img :src="`./static/head/${item.header}`" style="width: 30px;height: 30px;display:block;margin-right: 5px;">
-                                {{item.username}}
-                              </div>
-                            </div>
-                            <div class="card__subtitle" style="font-size:1.8rem;color: #FFC107 !important;padding: 0 5px;text-align: center;display: flex;align-items: center;justify-content: center;">{{item.money}}
-                            </div>
-                            <div class="card__time">{{item.time}}</div>
-                          </div>
-                        </div>
-                      </swiper-slide>
-                    </swiper>
-                  </div>
+        <section data-v-c3c3f456="" data-v-17089f97="" class="section language pb-5">
+          <div data-v-c3c3f456="" class="container">
+            <div data-v-c3c3f456="" class="row justify-content-center">
+              <div data-v-c3c3f456="" class="col-12 col-xl-8">
+                <div data-v-c3c3f456="" class="section__header"><h2 style="text-align: center" class="h2">
+                  {{$t('latest[0]')}}
+                </h2>
                 </div>
               </div>
             </div>
-
+          </div>
+          <div>
+            <swiper :options="swiperOption1" ref="mySwiper" class="language__slider swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+              <swiper-slide v-for="(item,index) in InitData.fundList" :key="index" v-if="item.type==1" class="language__slider-single swiper-slide-duplicate-next" style="margin-right: 30px;">
+                <div data-v-c3c3f456="" class="thumb">
+                  <img :src="`./static/images/${item.currency}.png`" style="height: 40px;">
+                </div>
+                <p data-v-c3c3f456="" class="fw-5"> +{{item.money}} {{item.currency}}</p>
+                <p data-v-c3c3f456="" class="fw-5"> {{item.username}}</p>
+              </swiper-slide>
+            </swiper>
+          </div>
+          <div data-v-c3c3f456="" dir="rtl">
+            <swiper :options="swiperOption2" ref="mySwiper" class="language__slider swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+              <swiper-slide v-for="(item,index) in InitData.fundList" :key="index" v-if="item.type==2" class="language__slider-single swiper-slide-duplicate-next" style="margin-right: 30px;">
+                <div data-v-c3c3f456="" class="thumb">
+                  <img :src="`./static/images/${item.currency}.png`" style="height: 40px;">
+                </div>
+                <p data-v-c3c3f456="" class="fw-5"> -{{item.money}} {{item.currency}}</p>
+                <p data-v-c3c3f456="" class="fw-5"> {{item.username}}</p>
+              </swiper-slide>
+            </swiper>
           </div>
         </section>
+
         <div class="section faq-section" style="margin-top: 2rem">
           <div class="container">
             <div class="box7 box-wrapper">
@@ -713,84 +623,26 @@
             </div>
           </div>
         </section>
-        <div style="background: #a7cdf3;padding: 2rem 0;">
 
-
-        <div class="bg-zth py-3 max9601">
-          <div class="container  mb-5" style="margin-top: 0px !important;">
-            <div class="mt-3  text-center">
-              <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;">
-                <span class="text-z-fs fw-bold" style="font-size: 2.5rem">{{$t('partners[0]')}}</span></h6>
-            </div>
-            <div class="row mt-4">
-              <div class="col-lg-12">
-                <ul class="brand-style-2">
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz1.webp'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz2.png'" alt="Partner 1" class="img-fluid " style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz3.png'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz4.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz5.webp'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz6.png'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz7.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz8.webp'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz9.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz10.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz11.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                  <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center mt-4">
-                    <a target="_blank">
-                      <img :src="'./static/images/hz12.svg'" alt="Partner 1" class="img-fluid" style="max-height: 50px; width: 80%;">
-                    </a>
-                  </li>
-                </ul>
-              </div>
+        <section class="brand-section section-space" style="margin-bottom: 2rem">
+          <div class="container">
+            <div class="section-head text-center"><h2 class="mb-3" style="color:#000;">{{$t('partners[0]')}}</h2></div>
+            <div class="row g-gs">
+              <!--              <div class="client-logo-item text-center">-->
+              <!--                <img :src="'./static/images/111.png'" alt="" class="img-fluid">-->
+              <!--              </div>-->
+              <swiper ref="myswiper1" :options="swiperOption3" class="">
+                <swiper-slide v-for="(item,index) in 8" :key="index"  >
+                  <div class="" style="margin-right: 30px;">
+                    <div class="text-center" style="background: #b1d7fd;border-radius: 10px;">
+                      <img :src="`./static/images/coop_${item}.png`" alt="" class="img-fluid" style="display: block">
+                    </div>
+                  </div>
+                </swiper-slide>
+              </swiper>
             </div>
           </div>
-        </div>
-        </div>
+        </section>
 <!--        <section class="brand-section section-space max960" style="margin-bottom: 2rem">-->
 <!--          <div class="container">-->
 <!--            <div class="section-head text-center"><h2 class="mb-3" style="color:#000;">{{$t('partners[0]')}}</h2></div>-->
@@ -1190,6 +1042,27 @@
           // },
         },
         swiperOption1: {
+          loop: true,  // 是否循环轮播
+          speed:10000,
+          autoplay: {
+            disableOnInteraction:false,
+            delay: 0,
+            revertDirection:true,
+          },
+          autoplayDisableOnInteraction:false,
+          slidesPerView:5,
+        },
+        swiperOption2: {
+          loop: true,  // 是否循环轮播
+          speed:10000,
+          autoplay: {
+            disableOnInteraction:false,
+            delay: 0,
+          },
+          autoplayDisableOnInteraction:false,
+          slidesPerView:5,
+        },
+        swiperOption3: {
           loop: true,  // 是否循环轮播
           speed:10000,
           autoplay: {
@@ -7015,6 +6888,24 @@
   .start-btn {
     border-radius: 0px !important;
     border: 2px solid #fff !important;
+  }
+
+  .language .language__slider{margin:-20px 0px}
+  .language .language__slider-single{height:60px;margin-right: 35px; min-width:fit-content;background-color:#fff;padding:0 14px;-webkit-box-shadow:0px 4px 16px rgba(69,105,231,.15);box-shadow:0px 4px 16px rgba(69,105,231,.15);border-radius:100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:10px;margin-top:20px;margin-bottom:20px}
+  .language .language__slider-single .thumb{width:40px;min-width:40px;height:40px;border-radius:50%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+  .language .language__slider-single .thumb img{border-radius:50%}
+  .language .language__slider-single p{font-size:18px;color:#111827 !important;margin-top: 1rem;margin-bottom: 1rem;}
+  .language .language__slider-rtl{margin-top:10px;margin-bottom:-20px}
+  .language .language__slider-rtl .language__slider-single{direction:ltr}
+
+
+
+  .language{
+    padding: 100px 0;
+  }
+  .language__slider-single{
+    direction: ltr;
+    max-width: 380px;
   }
 </style>
 
