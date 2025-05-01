@@ -1,101 +1,98 @@
 <template>
   <div class="HomePage" id="app">
-    <UserHeader></UserHeader>
-    <div class="app-wrapper" style="width: calc(100% - 25rem);">
-      <div class="page-header">
-        <div class="page-title">{{$t('head[10]')}}</div>
-        <div class="el-dropdown">
-          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
-          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
-            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
-            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
-          </ul>
-        </div>
-      </div>
-      <div class="container">
-        <div class="product-list">
-          <div class="product-item" v-for="(item,index) in listData" :key="index">
-            <div class="img-box">
-              <img
-                :src="InitData.setting.up_url + item.icon"
-                class="img"
-              />
-            </div>
-            <div class="right">
-              <div class="name">
-                {{item.title}}
-              </div>
-              <div class="bottom">
-                <div class="info-list">
-                  <div class="info-item">
-                    <div class="label">{{$t('product[0]')}}</div>
-                    <div class="value">${{item.amount}}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[2]')}}</div>
-                    <div class="value">{{item.cycle}} {{$t('product[15]')}}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[3]')}}</div>
-                    <div class="value">${{(item.daily_rate/100*item.amount).toFixed(2)}}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[4]')}}</div>
-                    <div class="value">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[5]')}}</div>
-                    <div class="value" style="color: rgb(255, 0, 0)">
-                      ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}
-                    </div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[6]')}}</div>
-                    <div class="value rebate">{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[9]')}}</div>
-                    <div class="value">{{item.miner}}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[8]')}}</div>
-                    <div class="value">{{item.hash_power}}</div>
-                  </div>
-                </div>
-                <div class="right-actions">
-                  <div class="bonus">
-                    <div class="label">{{$t('product[10]')}}</div>
-                    <ul class="plan-referral justify-content-center mb-2">
-                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
-                        <span>{{aa}} %</span>
-                        <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>
-                      </div>
-                    </ul>
-                  </div>
-                  <div class="buy-btn disabled-btn" v-if="item.progress>=100">{{$t('product[13]')}}</div>
-                  <div class="buy-btn " v-else @click="$router.push(`/productDetail?id=${item.id}`)">{{$t('product[12]')}}</div>
-                </div>
-              </div>
+<!--    <div class="app-wrapper" style="width: calc(100% - 25rem);">-->
+<!--      <div class="page-header">-->
+<!--        <div class="page-title">{{$t('head[10]')}}</div>-->
+<!--        <div class="el-dropdown">-->
+<!--          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>-->
+<!--          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">-->
+<!--            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>-->
+<!--            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>-->
+<!--            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>-->
+<!--            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>-->
+<!--            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="container">-->
+<!--        <div class="product-list">-->
+<!--          <div class="product-item" v-for="(item,index) in listData" :key="index">-->
+<!--            <div class="img-box">-->
+<!--              <img-->
+<!--                :src="InitData.setting.up_url + item.icon"-->
+<!--                class="img"-->
+<!--              />-->
+<!--            </div>-->
+<!--            <div class="right">-->
+<!--              <div class="name">-->
+<!--                {{item.title}}-->
+<!--              </div>-->
+<!--              <div class="bottom">-->
+<!--                <div class="info-list">-->
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[0]')}}</div>-->
+<!--                    <div class="value">${{item.amount}}</div>-->
+<!--                  </div>-->
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[2]')}}</div>-->
+<!--                    <div class="value">{{item.cycle}} {{$t('product[15]')}}</div>-->
+<!--                  </div>-->
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[3]')}}</div>-->
+<!--                    <div class="value">${{(item.daily_rate/100*item.amount).toFixed(2)}}</div>-->
+<!--                  </div>-->
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[4]')}}</div>-->
+<!--                    <div class="value">${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}</div>-->
+<!--                  </div>-->
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[5]')}}</div>-->
+<!--                    <div class="value" style="color: rgb(255, 0, 0)">-->
+<!--                      ${{item.amount}} + ${{parseFloat((parseFloat(item.daily_rate)/100*item.amount*item.cycle).toFixed(2))}}-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[6]')}}</div>-->
+<!--                    <div class="value rebate">{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>-->
+<!--                  </div>-->
+<!--&lt;!&ndash;                  <div class="info-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="label">{{$t('product[9]')}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="value">{{item.miner}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <div class="info-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="label">{{$t('product[8]')}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="value">{{item.hash_power}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="right-actions">-->
+<!--                  <div class="bonus" v-if="item.amount!=12">-->
+<!--                    <div class="label">{{$t('product[10]')}}</div>-->
+<!--                    <ul class="plan-referral justify-content-center mb-2">-->
+<!--                      <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">-->
+<!--                        <span>{{aa}} %</span>-->
+<!--                        <p>{{$t('affiliates[13]')}} {{(i+1)}}</p>-->
+<!--                      </div>-->
+<!--                    </ul>-->
+<!--                  </div>-->
+<!--                  <div class="buy-btn disabled-btn" v-if="item.progress>=100">{{$t('product[13]')}}</div>-->
+<!--                  <div class="buy-btn " v-else @click="$router.push(`/productDetail?id=${item.id}`)">{{$t('product[12]')}}</div>-->
+<!--                </div>-->
+<!--              </div>-->
 
-            </div>
-            <div class="progress">
-              <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #fe9500, #fade88)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!--            </div>-->
+<!--            <div class="progress">-->
+<!--              <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, rgb(170, 170, 170), rgb(3 117 235))"/>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 <script>
-  import UserHeader from '@/components/UserHeader'
   export default {
     name: 'transaction',
     components: {
-      UserHeader
     },
     data() {
       return {
@@ -162,7 +159,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: rgb(13,110,253)
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -202,7 +199,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: rgb(13,110,253)!important
   }
 
   .el-dropdown-menu__item {
@@ -212,7 +209,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: rgb(13,110,253)!important;
     background-color: #fff9f0!important
   }
 
@@ -220,13 +217,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253)!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253)!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -252,12 +249,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: rgb(13,110,253);
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .lang-item {
@@ -310,7 +307,7 @@
     /*手机*/
     position: absolute;
     left: 2rem;
-    bottom: 1rem;
+    bottom: 0rem;
     width: calc(100% - 4rem);
   }
   .el-form-item__label {
@@ -349,12 +346,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: rgb(13,110,253)!important;
+    border-color: rgb(13,110,253)!important
   }
 
   .el-checkbox__label {
@@ -367,7 +364,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: rgb(13,110,253)!important
   }
 
   @media only screen and (min-width: 1024px) {
@@ -382,7 +379,7 @@
     .container .product-list .product-item .progress {
       position: absolute;
       left: 34rem;
-      bottom: 1rem;
+      bottom: 0rem;
       width: calc(100% - 36rem);
     }
     .container .product-list .product-item:not(:last-child) {
@@ -519,7 +516,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      background-image: linear-gradient(90deg,#6baaf7,#072f77);
       cursor: pointer
     }
 
@@ -654,7 +651,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      background-image: linear-gradient(90deg,#6baaf7,#072f77);
       cursor: pointer
     }
 
@@ -665,5 +662,8 @@
   }
   .container .product-list .product-item {
     position: relative;
+  }
+  .bottom {
+    padding-bottom: 1rem;
   }
 </style>

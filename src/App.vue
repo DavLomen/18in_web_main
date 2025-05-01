@@ -1,6 +1,5 @@
 <template>
-
-	<div class="Body" id="common-app">
+	<div class="Body page-wrap" id="common-app">
 <!--    <van-notice-bar-->
 <!--      style="position: absolute;left: 0;width: 100%;z-index: 99;"-->
 <!--      mode="closeable"-->
@@ -12,49 +11,43 @@
 <!--      @click="readMessage"-->
 <!--    />-->
 		<router-view v-if="isRouterAlive" />
+
     <div id="Service">
     </div>
-    <div class="footer-bar-wrap">
-      <div id="footer-bar" class="footer-bar-5">
-        <a @click="$router.push('/')" id="fhome" href="javascript:;" :class="footIndex==0?'active':''">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
-          <span>{{$t('head[0]')}}</span></a>
-        <a id="ffaqs" href="javascript:;" @click="$router.push('/product')" :class="footIndex==1?'active':''">
-          <svg   class="svg-icon feather feather-help-circle" aria-hidden="true">
-            <use  xlink:href="#icon-collections"></use>
-          </svg>
-          <span>{{$t('foot[2]')}}</span></a>
-        <a href="javascript:;" @click="$router.push('/dashboard')" :class="footIndex==3?'router-link-exact-active router-link-active active':'router-link-exact-active router-link-active'" id="fdashboard" aria-current="page">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command">
-            <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
-          </svg>
-          <span>{{$t('head[4]')}}</span></a>
-
-<!--        <a v-else href="javascript:;" @click="$router.push('/withdraw')" :class="footIndex==5?'active':''" id="fwithdraws">-->
-<!--          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
-<!--               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
-<!--               class="feather feather-credit-card">-->
-<!--            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>-->
-<!--            <line x1="1" y1="10" x2="23" y2="10"></line>-->
-<!--          </svg>-->
-<!--          <span id="fwithdraws2" class="foot-bar-span">{{$t('head[8]')}}</span></a>-->
-        <a id="freferral" @click="$router.push('/affiliates')" href="javascript:;" :class="footIndex==2?'active':''">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <span>{{$t('foot[5]')}}</span></a>
-        <a href="javascript:;" @click="$router.push('/setting')" :class="footIndex==7?'active':''" id="fdeposit">
-          <i class="el-icon-setting" style="width: 24px;height: 24px;"></i>
-          <span  id="fdeposit2" class="foot-bar-span">{{$t('head[14]')}}</span></a>
-
+    <nav class="navbar fixed-bottom py-0 d-lg-none" style="background-color: #0c0c0c;">
+      <div class="container pt-1 justify-content-between px-4 py-1 pt-2 " id="foot" style="margin-top: 0px !important; background-color: #0c0c0c;">
+        <a :class="'nav-link d-flex flex-column justify-content-center '+(footIndex=='/'?'active':'')" href="javascript:;" @click="$router.push('/')" style="padding: 0px !important;">
+          <img v-if="footIndex=='/'" class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/home2.png'">
+          <img v-else class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/home1.png'">
+          <span  v-if="footIndex=='/'" class="navbar-text py-0 text-zs" style="font-size: 12px;">Home</span>
+          <span v-else class="navbar-text py-0 text-light" style="font-size: 12px;">Home</span>
+        </a>
+        <a :class="'nav-link d-flex flex-column justify-content-center '+(footIndex=='/contracts'?'active':'')" href="javascript:;" @click="$router.push('/contracts')" style="padding: 0px !important;">
+          <img  v-if="footIndex=='/contracts'" class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/plans2.png'">
+          <img v-else class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/plans1.png'">
+          <span v-if="footIndex=='/contracts'" class="navbar-text py-0 text-zs" style="font-size: 12px;">Contracts</span>
+          <span v-else class="navbar-text py-0 text-light" style="font-size: 12px;">Contracts</span>
+        </a>
+        <a :class="'nav-link d-flex flex-column justify-content-center '+(footIndex=='/dashboard'?'active':'')" href="javascript:;" @click="$router.push('/dashboard')" style="padding: 0px !important;">
+          <img v-if="footIndex=='/dashboard'" class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/dash2.png'">
+          <img v-else class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/dash1.png'">
+          <span v-if="footIndex=='/dashboard'"  class="navbar-text py-0 text-zs" style="font-size: 12px;">Dashboard</span>
+          <span v-else class="navbar-text py-0 text-light" style="font-size: 12px;">Dashboard</span>
+        </a>
+        <a :class="'nav-link d-flex flex-column justify-content-center '+(footIndex=='/affiliates'?'active':'')" href="javascript:;" @click="$router.push('/affiliates')" style="padding: 0px !important;">
+          <img v-if="footIndex=='/affiliates'" class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/aff2.png'">
+          <img v-else class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/aff1.png'">
+          <span v-if="footIndex=='/affiliates'" class="navbar-text py-0 text-zs" style="font-size: 12px;">Team</span>
+          <span v-else class="navbar-text py-0 text-light" style="font-size: 12px;">Team</span>
+        </a>
+        <a :class="'nav-link d-flex flex-column justify-content-center '+(footIndex=='/FAQ'?'active':'')" href="javascript:;" @click="$router.push('/FAQ')" style="padding: 0px !important;">
+          <img v-if="footIndex=='/FAQ'" class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/faq2.png'">
+          <img v-else class="mx-auto d-block" style="width: 26px;" :src="'./static/images/img/faq1.png'">
+          <span v-if="footIndex=='/FAQ'" class="navbar-text py-0 text-zs" style="font-size: 12px;">FAQs</span>
+          <span v-else class="navbar-text py-0 text-light" style="font-size: 12px;">FAQs</span>
+        </a>
       </div>
-    </div>
+    </nav>
   </div>
 
 </template>
@@ -62,7 +55,7 @@
 
 
 <script>
-  import $ from 'jquery'
+
 	export default {
 
 		name: 'App',
@@ -131,36 +124,23 @@
 			'$route'(to, from) {
         localStorage.setItem("pageIndex", to.path);
         localStorage.setItem("userIndex", to.path);
-        if (to.path == '/') {
-          this.footIndex = 0;
-        }
-        if (to.path == '/product') {
-          this.footIndex = 1;
-        }
-        if (to.path == '/affiliates') {
-          this.footIndex = 2;
-        }
-        if (to.path == '/dashboard') {
-          this.footIndex = 3;
-        }
-        if (to.path == '/deposit') {
-          this.footIndex = 4;
-        }
-        if (to.path == '/withdraw') {
-          this.footIndex = 5;
-        }
-        if (to.path == '/FAQ') {
-          this.footIndex = 6;
-        }
-        if (to.path == '/setting') {
-          this.footIndex = 7;
-        }
+        this.footIndex = to.path;
 			},
 		},
 
 		created() {
-
-    },
+		  let _this = this;
+        let is_self_change = localStorage['is_self_change'] || 0
+        if(!is_self_change){
+          _this.$Model.GetLanguage();
+        }
+      let model = this.$Model;
+      setInterval(function() {
+        model.HasNewMessage(data=>{
+          localStorage.setItem("noReadNum",data.data);
+        })
+      }, 300000);
+		},
 
 		mounted() {
 
@@ -382,5 +362,196 @@
 </script>
 
 <style scoped>
+  .footer-bar-wrap {
+    width: 100%
+  }
 
+  #footer-bar {
+    max-width: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 98;
+    background-color: hsla(0,0%,97.6%,.98);
+    box-shadow: 0 -5px 10px 0 rgba(0,0,0,.06);
+    height: 60px;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: all .3s ease;
+    display: none
+  }
+
+  #footer-bar a {
+    color: #1f1f1f;
+    padding-top: 12px;
+    position: relative;
+    flex: 1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  #footer-bar a .icon-svg {
+    color: #444
+  }
+
+  /*#footer-bar a.active {*/
+  /*  color: #7952b3!important*/
+  /*}*/
+
+  /*#footer-bar a.active .icon-svg {*/
+  /*  color: #7952b3*/
+  /*}*/
+
+  #footer-bar a.active .img-n {
+    display: none
+  }
+
+  #footer-bar a.active .img-y {
+    display: inline-block
+  }
+
+  #footer-bar a span {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: -6px;
+    opacity: .7;
+    font-family: roboto, sans-serif !important;
+    color: #d77600;
+  }
+
+  #footer-bar a svg {
+    margin-top: -8px
+  }
+
+  #footer-bar a i {
+    margin-top: -3px;
+    font-size: 18px;
+    position: relative;
+    z-index: 2
+  }
+
+  #footer-bar .badge {
+    font-style: normal;
+    z-index: 5;
+    top: 0;
+    position: absolute;
+    margin-left: 3px;
+    color: #fff!important;
+    width: 18px;
+    text-align: center;
+    line-height: 18px;
+    padding: 0;
+    padding-left: 0!important;
+    border-radius: 18px;
+    margin-top: 7px;
+    font-size: 11px
+  }
+
+  .footer-bar-2 .active-nav {
+    color: #fff!important
+  }
+
+  .footer-bar-2 .active-nav strong {
+    position: absolute;
+    width: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0
+  }
+
+  .footer-bar-4 .active-nav {
+    color: #fff!important
+  }
+
+  .footer-bar-4 .active-nav strong {
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    border-radius: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    bottom: 0
+  }
+
+  .footer-bar-4 span {
+    display: none!important
+  }
+
+  .footer-bar-4 i {
+    padding-top: 10px
+  }
+
+  .footer-bar-5 .active-nav strong {
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    border-radius: 60px;
+    left: 50%;
+    bottom: 0.5rem;
+    transform: translateX(-50%)
+  }
+
+  .footer-bar-3 span {
+    display: none!important
+  }
+
+  .footer-bar-3 .active-nav {
+    padding-top: 11px!important
+  }
+
+  .footer-bar-3 .active-nav span {
+    display: block!important
+  }
+
+  .footer-bar-3 a {
+    padding-top: 18px!important
+  }
+
+  .footer-menu-hidden {
+    transition: all .1s ease;
+    transform: translateY(100%)!important
+  }
+
+  .footer-bar-white  {
+    color: #fff
+  }
+
+  #footer-bar.position-relative {
+    z-index: 2!important
+  }
+
+  #footer-bar {
+    height: 4rem;
+  }
+
+  .footer-bar-5.position-relative .active-nav strong {
+    bottom: 0!important
+  }
+
+  @media only screen and (max-width: 992px) {
+    .footer-bar-wrap {
+      padding:30px
+    }
+
+    #footer-bar {
+      display: flex
+    }
+
+    #footer-bar .foot-bar-span {
+      font-size: 10px;
+      font-weight: 600
+    }
+  }
+  #footer-bar {
+    z-index: 10000;
+  }
 </style>

@@ -1,327 +1,209 @@
 <template>
   <div class="HomePage" id="app">
-    <div class="flex_conntainer" style="display: flex;">
-      <div class="left">
-        <UserHeader></UserHeader>
+    <Header></Header>
+    <div class="d-flex mbt4">
+      <div class="col-2 border-end border-hhs d-none d-lg-block">
+        <Side></Side>
       </div>
-      <div class="right" style="flex:1">
-        <Header ref="header" :showLogo="false"></Header>
-    <div class="dashboard_section">
-      <section>
-      <div class="container">
-        <div class="el-row">
-          <div class="el-col-23 mx-auto">
-            <div  class="overview">
-              <div class="pc1" style="padding-top: 40px;width: 100%;">
-                <div class="el-col-24 mb-1 pl-2 pr-2">
-                  <div class="Credit_Score fs-5 fw-bold">
-                    {{ $t('dashboard[19]') }}:
-                    <span style="color: #ddb500;">{{UserInfo.credit}}</span>
+      <div class="container col-lg-10 ">
+        <div class="">
+          <div class="row mx-auto align-items-center">
+            <div class="col-lg-5 ">
+              <div class="border rounded-4 border-0 bg-hs1 text-center p-5 single-settings-box top-flashlight light-xl leftside" style="margin-bottom: 0px !important;">
+                <h3 class="fw-bold">{{$t('dash[0]')}}</h3>
+                <h2 class="text-zs fw-bold">{{InitData.currency}} {{UserInfo.balance}}</h2>
+              </div>
+            </div>
+            <div class="row mx-auto col-lg-7 p-2 justify-content-center align-items-center">
+              <div class="p-1 " style="width: 50%;">
+                <div class="border border-0 rounded-3 py-3 px-3 d-flex align-items-center " style="background-color: #410093;">
+                  <div class="border border-0 rounded-3 p-2 text-center" style="width: 50px; height: 50px; background-color: #ffffff30;">
+                    <i class="bi bi-plus-square fs-5"></i>
                   </div>
-                  <div class="Membership_level mt-2 fs-5 fw-bold">
-                    {{ $t('dashboard[20]') }}:
-                    <span style="color: #ddb500;">{{UserInfo.useridentity}}</span>
-                  </div>
-                </div>
-                <div class="row cal justify-content-center mt-5">
-                  <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background: #20c997; color: #fff;">
-                      <div class="amt fs-5 fw-bold">{{InitData.currency}} {{UserInfo.balance}}</div>
-                      <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[0]") }}</div>
-                    </div>
-                  </div>
-                  <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background: rgb(253 195 19); color: #fff;">
-                      <div class="amt fs-5 fw-bold">{{InitData.currency}} 10</div>
-                      <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[10]") }}</div>
-                    </div>
-                  </div>
-                  <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background:#17a2b8; color: #fff;">
-                      <div class="amt fs-5 fw-bold">{{InitData.currency}} {{statisticalData.total_recharge}}</div>
-                      <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[11]") }}</div>
-                    </div>
-                  </div>
-                  <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" style="background:#28a745; color: #fff;">
-                      <div class="amt fs-5 fw-bold">{{InitData.currency}} {{statisticalData.total_withdraw}}</div>
-                      <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[12]") }}</div>
-                    </div>
+                  <div class="ms-2" style="height: 4rem;">
+                    <h6 class="fw-bold"> {{$t('dash[1]')}}</h6>
+                    <h6 class="fw-bold"> {{InitData.currency}} {{statisticalData.total_recharge}}</h6>
                   </div>
                 </div>
               </div>
-              <div class="row cal justify-content-center mt-1">
-                <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                  <div class="pc_color_card">
-                    <div class="label fs-5 fw-bold">{{ $t("withdraw[13]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #529945;">+{{statisticalData.today_earnings}}</div>
+              <div class="p-1 " style="width: 50%;">
+                <div class="border border-0 rounded-3 py-3 px-3 d-flex align-items-center " style="background-color: #4179fe;">
+                  <div class="border border-0 rounded-3 p-2 text-center" style="width: 50px; height: 50px; background-color: #ffffff30;">
+                    <i class="bi bi-credit-card fs-5"></i>
                   </div>
-                </div>
-                <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                  <div class="pc_color_card">
-                    <div class="label fs-5 fw-bold">{{ $t("withdraw[14]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #f14d19;">+{{statisticalData.today_invite}}</div>
-                  </div>
-                </div>
-                <div class="el-col-lg-8 el-col-sm-24 el-col-xs-24 mb-1 pl-2 pr-2">
-                  <div class="pc_color_card">
-                    <div class="label fs-5 fw-bold">{{ $t("withdraw[15]") }}</div>
-                    <div class="amt fs-5 fw-bold  mt-4"  style="color: #ff8a00;">+{{statisticalData.today_reward}}</div>
+                  <div class="ms-2" style="height: 4rem;">
+                    <h6 class="fw-bold"> {{$t('dash[2]')}}</h6>
+                    <h6 class="fw-bold"> {{InitData.currency}} {{statisticalData.total_withdraw}}</h6>
                   </div>
                 </div>
               </div>
-              <!-- My Order -->
-              <div class="cal">
-                <div class="el-col-24 mb-2 pl-2 pr-2 dashboard_title">{{ $t('dashboard[18]') }}</div>
-                <div class="row justify-content-center mt-1">
-                  <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card"  @click="$router.push('/MyPackages?status=1')">
-                      <div class="label fs-5 fw-bold">{{ $t('dashboard[3]') }}</div>
-                      <div class="amt fs-5 fw-bold  mt-4"> {{statisticalData.activity_task}}</div>
-                    </div>
+              <div class="p-1 " style="width: 50%;">
+                <div class="border border-0 rounded-3 py-3 px-3 d-flex align-items-center " style="background-color: #7064e9;">
+                  <div class="border border-0 rounded-3 p-2 text-center" style="width: 50px; height: 50px; background-color: #ffffff30;">
+                    <i class="bi bi-currency-dollar fs-5"></i>
                   </div>
-                  <div class="el-col-lg-8 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" @click="$router.push('/MyPackages?status=3')">
-                      <div class="label fs-5 fw-bold">{{ $t("dashboard[4]") }}</div>
-                      <div class="amt fs-5 fw-bold  mt-4">{{statisticalData.expired_task }}</div>
-                    </div>
-                  </div>
-                  <div class="el-col-lg-8 el-col-sm-24 el-col-xs-24 mb-1 pl-2 pr-2">
-                    <div class="pc_color_card" @click="$router.push('/MyPackages')">
-                      <div class="label fs-5 fw-bold">{{ $t("dashboard[5]") }}</div>
-                      <div class="amt fs-5 fw-bold  mt-4">{{statisticalData.total_task}}</div>
-                    </div>
+                  <div class="ms-2" style="height: 4rem;">
+                    <h6 class="fw-bold"> {{$t('dash[3]')}}</h6>
+                    <h6 class="fw-bold"> {{InitData.currency}} {{UserInfo.balance_base}}</h6>
                   </div>
                 </div>
               </div>
-              <!-- Your Affiliate Link -->
-              <div class="cal">
-                <div class="el-col-24 mb-2 pl-2 pr-2 dashboard_title">{{ $t('dashboard[10]') }}</div>
-                <div class="row justify-content-center mt-1">
-                  <div class="el-col-lg-12 el-col-sm-12 el-col-xs-24 mb-1 pl-2 pr-2">
-                    <div class="pc_link_input mt-2">
-                      <div class="label">{{ $t('dashboard[21]') }}</div>
-                      <div class="el-input">
-                        <input class="mt-2" type="txet" :disabled="true" v-model="UserInfo.username"/>
-                      </div>
-                    </div>
+              <div class="p-1 " style="width: 50%;">
+                <div class="border border-0 rounded-3 py-3 px-3 d-flex align-items-center " style="background-color: #7376aa;">
+                  <div class="border border-0 rounded-3 p-2 text-center" style="width: 50px; height: 50px; background-color: #ffffff30;">
+                    <i class="bi bi-award fs-5"></i>
                   </div>
-                  <div class="el-col-lg-12 el-col-sm-12 el-col-xs-24 mb-1 pl-2 pr-2">
-                    <div class="pc_link_input mt-2">
-                      <div class="label">{{ $t('dashboard[22]') }}</div>
-                      <div class="el-input">
-                        <input class="mt-2" type="txet" :disabled="true" v-model="UserInfo.idcode"/>
-                        <div class="copy_icon mt-2 copy_code" @click="copy('.copy_code')" :data-clipboard-text="UserInfo.idcode">
-                          <van-icon name="description" size="25" color="#fff"/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="el-col-lg-24 el-col-sm-24 el-col-xs-24 mb-1 pl-2 pr-2">
-                    <div class="pc_link_input mt-2">
-                      <div class="label">{{ $t('dashboard[23]') }}</div>
-                      <div class="el-input">
-                        <input class="mt-2" type="txet" :disabled="true" v-model="UserInfo.username"/>
-                        <div class="copy_icon copy_link mt-2" :data-clipboard-text="promoteUrl" @click="copy('.copy_link')">
-                        <van-icon name="description" size="25" color="#fff" />
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- 问题跳转 -->
-                <div class="cal">
-                    <div class="row justify-content-center mt-1">
-                      <div class="el-col-23 mb-1">
-                        <div class="dashboard_question">
-                          <div class="label">
-                            {{ $t('dashboard[24]') }}
-                          </div>
-                          <div class="text mt-3">
-                            {{ $t('dashboard[25]') }}
-                          </div>
-                          <div class="button" @click="$router.push('/FAQ')">
-                            {{ $t('dashboard[26]') }}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- 一下是手机模式显示的内容 -->
-
-              <div class="bal mobile">
-                <img :src="'./static/images/bg-div.png'">
-                <div class="bal-c">
-                  <div class="bal-line"></div>
-                  <div class="flex-bal">
-                    <div class="bal-item">
-                      <h4 class="notranslate">{{InitData.currency}} {{UserInfo.balance}}</h4>
-                      <p>{{$t('dashboard[1]')}}</p>
-                    </div>
-                    <div class="bal-item two-sect">
-                      <h4 class="notranslate">{{InitData.currency}} {{statisticalData.total_profit}}</h4>
-                      <p>{{$t('product[4]')}}</p>
-                    </div>
-                    <div class="bal-item">
-                      <h4 class="notranslate">{{InitData.currency}} {{statisticalData.total_recharge}}</h4>
-                      <p>{{$t('dashboard[6]')}}</p>
-                    </div>
-                    <div class="bal-item two-sect">
-                      <h4 class="notranslate">{{InitData.currency}} {{statisticalData.total_withdraw}}</h4>
-                      <p>{{$t('dashboard[7]')}}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="bal-bg"></div>
-              </div>
-              <div class="mobile">
-                <div>
-                  <div class="Credit_Score fs-5 fw-bold" style="width: 100%">
-                    {{ $t('dashboard[19]') }}:
-                    <span style="color: #ddb500;">{{UserInfo.credit}}</span>
-                  </div>
-                  <div class="Membership_level mt-2 fs-5 fw-bold" style="width: 100%">
-                    {{ $t('dashboard[20]') }}:
-                    <span style="color: #ddb500;">{{UserInfo.useridentity}}</span>
-                  </div>
-                </div>
-              </div>
-            <div class="mobile">
-              <div class="flex-3">
-                <div class="item-m" @click="$router.push('/deposit')">
-                  <div>
-                    <div class="bg"><img :src="'./static/images/credit_card.svg'"></div>
-                    <div class="div">{{$t('head[7]')}}</div>
-                  </div>
-                </div>
-                <div class="item-m" @click="$router.push('/withdraw')">
-                  <div>
-                    <div class="bg" style="background-color:rgb(253 195 19);"><img :src="'./static/images/arrow_upward.svg'"></div>
-                    <div class="div">{{$t('head[8]')}}</div>
-                  </div>
-                </div>
-                <div class="item-m" @click="$router.push('/transactions')">
-                  <div>
-                    <div class="bg" style="background-color:#17a2b8;"><img :src="'./static/images/inventory_2.svg'"></div>
-                    <div class="div">{{$t('head[22]')}}</div>
-                  </div>
-                </div>
-                <div class="item-m"  @click="$router.push('/MyPackages')">
-                  <div>
-                    <div class="bg" style="background-color: #28a745;"><img :src="'./static/images/receipt_long.svg'"></div>
-                    <div class="div">{{$t('head[11]')}}</div>
+                  <div class="ms-2" style="height: 4rem;">
+                    <h6 class="fw-bold"> {{$t('dash[4]')}}</h6>
+                    <h6 class="fw-bold">---</h6>
                   </div>
                 </div>
               </div>
             </div>
 
-              <!-- show_mobile 在手机模式下可见 -->
-              <div   class="row mb-5 show_mobile">
-                <div  class="col-md-9 mt-4">
-                  <div
-                       style="width: 100%; background-color: rgb(56, 66, 71); padding: 30px 0px; border-radius: 1.25rem;">
-                    <div  style="width: 90%; margin: 0px auto;"><span
-                                                                                        style="color: rgb(232, 232, 255); font-weight: bold; font-size: 24px;"> {{$t('dashboard[10]')}}</span>
-                    </div>
-                    <div
-                         style="width: 90%; background-color: rgb(232, 232, 255); margin: 20px auto 0px; border-radius: 25px; padding: 10px 15px; display: flex; flex-flow: row; justify-content: space-between; box-shadow: white 0px 0px 3px;">
-                      <span  class="notranslate"
-                            style="color: rgb(10, 10, 26); line-height: 37px; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-all;">{{promoteUrl}}</span>
-                      <button  block="" size="sm" class="window copy" @click="copy" :data-clipboard-text="promoteUrl"
-                              style="font-size: 18px; width: 100px; border-radius: 30px; background-color: rgb(246, 197, 197); color: black; border: none; padding: 5px 0px;">
-                        {{$t('affiliates[16]')}}
-                      </button>
-                    </div>
-                    <div  class="phone" style="text-align: center; margin-top: 20px;">
-                      <button  block="" size="sm" class="copy" @click="copy" :data-clipboard-text="promoteUrl"
-                              style="font-size: 18px; width: 90%; border-radius: 30px; background: linear-gradient(90deg, #ddb443, #009d24); color: #fff; border: none; padding: 10px 0px;">
-                        {{$t('affiliates[16]')}}
-                      </button>
-                    </div>
+          </div>
+
+
+          <div class="d-block d-lg-none ">
+            <div class="p-3 pt-4 row row-cols-4 ">
+              <div class="text-center">
+                <a href="javascript:;" @click="$router.push('/deposit')">
+                  <div>
+                    <img :src="'./static/images/img/red.png'" alt="" height="60px;" class="text-center p-2 mb-2 border rounded-3 border-0" style="background-color: #5F33F7;">
+                  </div>
+                </a>
+                <h6 class="text-bhs">{{$t('dash[5]')}}</h6>
+              </div>
+              <div class="text-center">
+                <a href="javascript:;"  @click="$router.push('/withdraw')">
+                  <div>
+                    <img :src="'./static/images/img/wit.png'" alt="" height="60px;" class="text-center p-2 mb-2 border rounded-3 border-0" style="background-color: rgb(132 54 230);">
+                  </div>
+                </a>
+                <h6 class="text-bhs">{{$t('dash[6]')}}</h6>
+              </div>
+              <div class="text-center">
+                <a href="javascript:;"  @click="$router.push('/transactions')">
+                  <div>
+                    <img :src="'./static/images/img/bilss.png'" alt="" height="60px;" class="text-center p-2 mb-2 border rounded-3 border-0" style="background-color: #ED5C2E;">
+                  </div>
+                </a>
+                <h6 class="text-bhs">{{$t('dash[7]')}}</h6>
+              </div>
+              <div class="text-center"  @click="$router.push('/MyPackages')">
+                <a href="javascript:;">
+                  <div>
+                    <img :src="'./static/images/img/orders.png'" alt="" height="60px;" class="text-center p-2 mb-2 border rounded-3 border-0" style="background-color: rgb(208,147,232);">
+                  </div>
+                </a>
+                <h6 class="text-bhs">{{$t('dash[8]')}}</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <a class="col-lg-6 col-6 p-2 text-light" href="javascript:;">
+              <div class="p-3 ps-lg-5 border border-0 rounded-3 bg-okh light-border" style="--x: 3.4382828898368203%;">
+                <div class="p-2 border border-0 rounded-3 " style="width: 56px; background-color: #dd00ac40;">
+                  <div class="p-2  border border-0 rounded-3 text-center " style="background-color: #dd00ac;">
+                    <i class="bi bi-bookmark-star fs-6 fw-bold"></i>
                   </div>
                 </div>
-                <div  class="col-md-3 mt-4">
-                  <div  class="rank" style="text-align: center; border-radius: 1.25rem;"><h6
-                    >{{$t('affiliates[10]')}}</h6><h5 >{{teamNum}}</h5></div>
-                </div>
+                <h6 class="mt-3 fw-bold ">{{$t('dash[9]')}}</h6>
+                <h6 class="fw-bold ">{{statisticalData.activity_task}}</h6>
               </div>
-              <div  class="el-card box-card mt-4 mb-5 is-always-shadow show_mobile">
-                <div class="el-card__header">
-                  <div  class="clearfix"><h4 >{{$t('dashboard[18]')}}</h4></div>
-                </div>
-                <div class="el-card__body" style="padding: 0px;">
-                  <div  class="row">
-                    <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;" @click="$router.push('/MyPackages?status=1')"
-                                                                          class="">
-                      <div  class="card work-process border-0 rounded shadow bg-light">
-                        <div  class="card-body"
-                             style="background-color: rgb(56, 66, 71); border-radius: 1.25rem; color: white;"><h5
-                           class="para"> {{$t('dashboard[3]')}} </h5><h4  class="title notranslate">
-                          {{statisticalData.activity_task}}</h4></div>
-                      </div>
-                    </a></div>
-                    <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;" @click="$router.push('/MyPackages?status=3')"
-                                                                          class="">
-                      <div  class="card work-process border-0 rounded shadow bg-light">
-                        <div  class="card-body"
-                             style="background-color: rgb(56, 66, 71); border-radius: 1.25rem; color: white;"><h5
-                           class="para"> {{$t('dashboard[4]')}} </h5><h4
-                                                                            class="title notranslate"> {{statisticalData.expired_task }}</h4></div>
-                      </div>
-                    </a></div>
-                    <div  class="col-md-4 mt-4 pt-2"><a  href="javascript:;" @click="$router.push('/MyPackages')"
-                                                                          class="">
-                      <div  class="card work-process border-0 rounded shadow bg-light">
-                        <div  class="card-body"
-                             style="background-color: rgb(56, 66, 71); border-radius: 1.25rem; color: white;"><h5
-                           class="para"> {{$t('dashboard[5]')}} </h5><h4  class="title notranslate">
-                          {{statisticalData.total_task}}</h4></div>
-                      </div>
-                    </a></div>
+            </a>
+
+
+            <a class="col-lg-6 col-6 p-2 text-light" href="javascript:;">
+              <div class="p-3 ps-lg-5 border border-0 rounded-3 bg-okh light-border" style="--x: 30.84027354594082%;">
+                <div class="p-2 border border-0 rounded-3 " style="width: 56px; background-color: #4179fe40;">
+                  <div class="p-2 border border-0 rounded-3 text-center " style="background-color: #4179fe;">
+                    <i class="bi bi-bookmark-dash fs-6 fw-bold"></i>
                   </div>
                 </div>
+                <h6 class="mt-3 fw-bold ">{{$t('dash[10]')}}</h6>
+                <h6 class="fw-bold ">{{statisticalData.total_task}}</h6>
               </div>
+            </a>
+
+            <!--<div class="col-lg-3 col-6 p-2 ">-->
+            <!--    <div class="p-3 border border-0 rounded-3 bg-okh light-border">-->
+            <!--        <div class="p-2 border border-0 rounded-3 " style="width: 56px; background-color: #7064e940;">-->
+            <!--            <div class="p-2 border border-0 rounded-3 text-center " style="background-color: #7064e9;">-->
+            <!--                <i class="bi bi-currency-dollar fs-6 fw-bold"></i>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <!--        <h6 class="mt-3 fw-bold ">Total Plans</h6>-->
+            <!--        <h6 class="fw-bold ">$0</h6>-->
+            <!--    </div>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3 col-6 p-2  ">-->
+            <!--    <div class="p-3 border border-0 rounded-3 bg-okh light-border">-->
+            <!--        <div class="p-2 border border-0 rounded-3" style="width: 56px; background-color: #7376aa40;">-->
+            <!--            <div class="p-2 border border-0 rounded-3 text-center" style="background-color: #7376aa;">-->
+            <!--                <i class="bi bi-currency-dollar fs-6 fw-bold"></i>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <!--        <h6 class="mt-3 fw-bold ">Total Plans</h6>-->
+            <!--        <h6 class="fw-bold ">$0</h6>-->
+            <!--    </div>-->
+            <!--</div>-->
+          </div>
+
+          <div class="py-3 ">
+            <!-- <div class="d-flex justify-content-between m-2">
+                <h6>My AffiliateLink</h6>
+
+            </div> -->
+            <div class="border rounded-3 border-0 bg-okh p-3 text-center  mx-auto my-lg-5 light-border" style="--x: 24.860470433180467%;">
+              <input class="w-100 border rounded-3 border-0 ps-3 my-3" style="line-height: 20px; height: 40px; font-size: 15px; color: rgb(163,163,163); background-color: rgb(51, 51, 51);" type="text" v-model="promoteUrl" disabled="" data-sharkid="__0">
+              <button @click="copy" :data-clipboard-text="promoteUrl" id="copylink" class="btn btn-primary col-4 p-2 copy">Copy</button>
+            </div>
+            <div class="border rounded-3 border-0 bg-okh p-3 text-center mt-3  mx-auto my-lg-5 light-border" style="--x: 35.53330553949191%;">
+              <h4 class="">{{$t('dash[12]')}}</h4>
+              <span class="fs-6 text-lvs">{{teamNum}} </span>
+<!--              <span class="fs-6 text-white">/</span><span class="fs-6 text-warning"> 0</span>-->
             </div>
           </div>
         </div>
       </div>
-    </section>
     </div>
-    <Footer ref="footElement"></Footer>
+
+    <div class="">
+      <div class="rainbow-gradient-circle"></div>
+      <div class="rainbow-gradient-circle theme-pink"></div>
     </div>
-    </div>
+    <Footer></Footer>
   </div>
 </template>
 <script>
-  import Clipboard, { copy } from 'clipboard';
-  import UserHeader from '@/components/UserHeader_new'
+  import Clipboard from 'clipboard';
+
   export default {
     name: 'dashboard',
     components: {
-      UserHeader
     },
     data() {
       return {
         teamNum:0,
-        showH5nav:false,
-        showUserDown:false,
-        showMenuDown:false,
-        statisticalData:{},
-        promoteUrl:'',
-        intv:null,
-        headHeight: 0,
+        showH5nav: false,
+        showUserDown: false,
+        showMenuDown: false,
+        statisticalData: {},
+        promoteUrl: '',
+        intv: null,
       }
     },
 
     computed: {},
-    watch: {
-    },
+    watch: {},
     created() {
+      let that = this;
       this.$Model.GetUserInfo();
-      this.$Model.GetStatisticsInfo(data=>{
-        if(data.code==1){
+      this.$Model.GetStatisticsInfo(data => {
+        if (data.code == 1) {
           this.statisticalData = data.info;
         }
       })
@@ -332,32 +214,21 @@
       //   that.loadData();
       // },3000)
       let post = {}
-      this.$Model.TeamReport(post, data => {
-        if (data.code == 1) {
+      this.$Model.TeamReport(post,data=>{
+        if(data.code==1){
           this.teamNum = data.teamNumber;
         }
-      });
-      let that = this;
-      that.$Model.HasNewMessage(data=>{
-        if (data.data == 1) {
-          that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
+      })
+      this.$Model.HasNewMessage(data=>{
+        // this.noReadNum = data.data==null?0:1;
+        if(data.data!=null &&data.data>0){
+          that.$Dialog.Confirm1(that.$t('messageInfo[0]'), () => {
             that.$router.push(`/message`)
           }, that.$t('messageInfo[1]'));
         }
       })
-
-      setInterval(function () {
-        that.$Model.HasNewMessage(data=>{
-          if (data.data == 1) {
-            that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
-              that.$router.push(`/message`)
-            }, that.$t('messageInfo[1]'));
-          }
-        })
-      },300000);
     },
     mounted() {
-      this.headHeight = this.$refs.header.$el.offsetHeight
     },
     activated() {
 
@@ -371,19 +242,19 @@
         for (let i = 0; i < that.coinlist.length; i++) {
           that.$Model.merged(that.coinlist[i].symbol, function (data) {
             that.coinlist[i].price = data.tick.ask[0];
-            that.coinlist[i].change = (data.tick.close-data.tick.open).toFixed(2);
-            that.coinlist[i].rate = parseFloat((data.tick.close-data.tick.open)/data.tick.open*100).toFixed(2);
+            that.coinlist[i].change = (data.tick.close - data.tick.open).toFixed(2);
+            that.coinlist[i].rate = parseFloat((data.tick.close - data.tick.open) / data.tick.open * 100).toFixed(2);
           });
         }
       },
-      copy (className =  '.copy') {
+      copy() {
         let that = this;
-        var clipboard = new Clipboard(className)
+        var clipboard = new Clipboard('.copy')
         clipboard.on('success', e => {
           that.$Dialog.Toast(that.$t('dialog[3]'));
           clipboard.destroy();
         })
-        clipboard.on('error', e =>{
+        clipboard.on('error', e => {
           // 不支持复制
           // 释放内存
           clipboard.destroy()
@@ -393,392 +264,12 @@
   }
 </script>
 <style scoped>
-  .fs-5{font-size:1.25rem!important}
-  .fw-bold{
-    font-weight: 700!important;
-  }
-  .overview .el-card {
-    border: none;
-    box-shadow: none;
-  }
-  .rank {
-    background: #384247;
-    height: 100%;
-    padding: 30px;
-    border-radius: 10px;
-    position: relative;
-    color: #ffffff;
-  }
-
-  /* 超小屏幕（手机，小于 768px） */
-  @media (max-width: 768px) {
-    .mobile {
-      display: flex;
+  @media only screen and (max-width: 992px) {
+    .mbt4 {
+      padding-bottom: 4rem;
     }
-    .show_mobile{
-      display: block;
-    }
-    .el-col-md-6 {
-      width: 50%;
-    }
-    .pc {
-      display: none;
-    }
-    .pc1 {
-      display: none;
-    }
-    .bal {
-      display: block;
-      width: 100%;
-      height: 175px;
-      border-radius: 10px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      margin-bottom: 1rem;
-    }
-    .cal{
-      display: none;
-    }
-  }
-  /* 小屏幕（平板，大于等于 768px） */
-  @media (min-width: 768px) {
-    .mobile {
-      display: none;
-    }
-    .show_mobile{
-      display: none;
-    }
-    .pc {
-      display: flex;
-    }
-    .bal {
-      display: none;
-      width: 100%;
-      height: 175px;
-      border-radius: 10px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      margin-bottom: 3rem;
-    }
-  }
-
-  .bal-line {
-    position: absolute;
-    width: 1px;
-    height: 105px;
-    left: 50%;
-    top: 46px;
-    opacity: 1;
-    -webkit-transition: 1s ease;
-    transition: 1s ease;
-    -webkit-animation: an 1s ease forwards;
-    animation: an 1s ease forwards;
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
-    background: #FFFFFF;
-    z-index: 3;
-  }
-  .dts_pl {
-    background-size: cover;
-  }
-  .flex-bal {
-    padding-top: 23px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .dts_pl::before {
-
-  }
-  .bal-bg {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    top: 0;
-    opacity: 1;
-    height: 175px;
-    border-radius: 10px;
-    background: #20c997;
-    left: 0;
-  }
-  .bal-c{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
-  .inf {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    grid-gap: 9px;
-  }
-
-  .item-inf {
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    width: 100%;
-    height: 88px;
-  }
-
-  .item-inf2 {
-    background: #F9F2F8;
-    border-radius: 10px;
-    width: 100%;
-    height: 88px;
-  }
-
-  .item-inf2 p {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 14px;
-    padding-top: 15px;
-    padding-left: 12px;
-
-
-    color: #A22283;
-  }
-
-  .item-inf p {
-    margin-top: 15px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-  }
-
-  .item-inf h4, .item-inf2 h4  {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 26px;
-    text-align: center;
-  }
-
-  .item-inf2 h4 {
-    color: black;
-  }
-  .bal-item {
-    width: 50%;
-  }
-  .two-sect {
-    margin-top: 10px;
-  }
-  .bal-item h4 {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    margin-bottom: 10px;
-    line-height: 26px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 0;
-  }
-  .bal-item p {
-    font-family: 'Roboto';
-    text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    margin: 0;
-    line-height: 14px;
-    color: #FFFFFF;
-  }
-  .bal img {
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  .flex-3 {
-    width: 100%;
-    margin-top: 14px;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-bottom: 2rem;
-  }
-  .flex-3 a {
-    text-decoration: none;
-  }
-  .item-m {
-    cursor: pointer;
-    width: 25%;
-  }
-  .item-m .bg {
-    width: 60px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #20c997;
-    border-radius: 10px;
-    margin: 0 auto;
-  }
-  .item-m .div {
-    font-family: 'Roboto';
-    font-style: normal;
-    margin: 0;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    color: #000000;
-  }
-  .item-m .bg img {
-    width: 24px;
-    height: 18px;
-  }
-  .bal {
-    margin-top: 1rem;
-  }
-  .para {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .infos {
-    /*width: 100%;*/
-    text-align: left;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-around;
-    background-color: rgb(56, 66, 71);
-    border-radius: 1.5rem;
-    color: white;
-    padding: 1.5rem 1rem;
-  }
-  .infos div {
-    margin-right: 1rem;
-  }
-  .flex_conntainer{
-    overflow: hidden;
-    height: 100vh;
-  }
-  .flex_conntainer .right{
-    overflow-y: scroll;
-  }
-  .flex_conntainer .left{
-    overflow-y: scroll;
-  }
-  @media (max-width: 768px) {
-    .flex_conntainer {
-      overflow: scroll;
-    }
-  }
-  /* 20250423新增 */
-  .pc_color_card{
-    position: relative;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin-bottom: 2rem;
-    transition: all .3s ease 0s;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-    border-radius: 10px;
-    text-align: center;
-    padding: 40px 17px;
-    cursor: pointer;
-  }
-  .pc_color_card:hover{
-    transform: translateY(-5px);
-  }
-  .dashboard_title{
-    color: #20c997;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 30px;
-  }
-  .pc_link_input{
-    width: 100%;
-    border-radius: 4px;
-  }
-  .pc_link_input .el-input{
-    position: relative;
-  }
-  .pc_link_input .el-input input{
-    height: 2.5rem;
-    line-height: 4.5rem;
-    padding: 0 1rem;
-    font-family: myFont;
-    color: #000;
-    border: 1px solid #d9d9d9 !important;
-    background-color: #efefef !important;
-    width: 100%;
-    border-radius: 4px;
-  }
-  .copy_icon{
-    position: absolute;
-    top:0;
-    right: 0;
-    height: 2.5rem;
-    width: 2.5rem;
-    background: #20c997;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  .dashboard_question{
-    width: 100%;
-    padding: 23px 44px;
-    border-radius: 10px;
-    background: #f0e9f3;
-    margin-top: 31px;
-    margin-bottom: 60px;
-    font-size: 1.5rem;
-  }
-  .dashboard_question .label{
-    color: #20c997;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
-  }
-
-  .dashboard_question .text{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
-    font-size: 1rem;
-  }
-
-  .dashboard_question .button{
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #20c997;
-    padding: 13px 32px;
-    margin-top: 20px;
-    color: #20c997;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    cursor: pointer;
   }
 </style>
+
 
 

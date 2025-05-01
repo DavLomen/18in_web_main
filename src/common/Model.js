@@ -6,8 +6,7 @@ import axios from './Axios'
 
 import $Dialog from './Dialog'
 
-import i18n,{SetLanguage} from '@/i18n'
-
+import i18n, {SetLanguage} from '@/i18n'
 
 
 const model = {
@@ -578,7 +577,7 @@ const model = {
 
       fromData: true,
 
-      diyApi: false
+      // diyApi: false
 
     }).then(getResponse);
 
@@ -1378,13 +1377,13 @@ const model = {
       diyApi: true
     }).then(getResponse);
   },
-  getCode1(data, callback) {
+  getCode1(code, callback) {
     const getResponse = ({
                            data
                          }) => {
       callback && callback(data);
     }
-    axios.get('Account/code1?code_rand='+data, {}).then(getResponse);
+    axios.get('Account/code1?code_rand='+code, {}).then(getResponse);
   },
 }
 
