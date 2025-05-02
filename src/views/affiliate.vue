@@ -6,32 +6,26 @@
         <div class="el-col-24 font-title text-center">{{ $t("i18nlan.affiliate.label.text1") }}</div>
         <div class="el-col-24 el-content-label text-center">{{ $t("i18nlan.affiliate.label.text2") }}</div>
       </div>
-      <div class="el-row mt-5 text-center">
+      <div class="el-row mt-5" style="text-align: left">
         <div class="el-col-24 mb-4">
-          <div class="box data-flex align-items-center">
-            <div class="image">
-              <img :src="'./static/images/img/af_1.png'" alt="">
-            </div>
-            <div class="el-content-label text-left ms-4" style="color: rgb(231, 121, 22)">{{ $t("i18nlan.affiliate.content.text1") }}</div>
-            <div class="el-content-text text-left ms-2">{{ $t("i18nlan.affiliate.content.text2") }}</div>
+          <div class="box align-items-center">
+            <img :src="'./static/images/img/af_1.png'" alt="" style="width: 40px">
+            <span class="el-content-label text-left " style="color: rgb(231, 121, 22)">{{ $t("i18nlan.affiliate.content.text1") }}</span>
+            <span class="el-content-text text-left ms-2">{{ $t("i18nlan.affiliate.content.text2") }}</span>
           </div>
         </div>
         <div class="el-col-24 mb-4">
-          <div class="box data-flex align-items-center">
-            <div class="image">
-              <img :src="'./static/images/img/af_2.png'" alt="">
-            </div>
-            <div class="el-content-label text-left ms-4" style="color: rgb(231, 121, 22)">{{ $t("i18nlan.affiliate.content.text3") }}</div>
-            <div class="el-content-text text-left ms-2">{{ $t("i18nlan.affiliate.content.text4") }}</div>
+          <div class="box align-items-center">
+              <img :src="'./static/images/img/af_2.png'" alt="" style="width: 40px">
+            <span class="el-content-label text-left " style="color: rgb(231, 121, 22)">{{ $t("i18nlan.affiliate.content.text3") }}</span>
+            <span class="el-content-text text-left ms-2">{{ $t("i18nlan.affiliate.content.text4") }}</span>
           </div>
         </div>
         <div class="el-col-24 mb-4">
-          <div class="box data-flex align-items-center">
-            <div class="image">
-              <img :src="'./static/images/img/af_3.png'" alt="">
-            </div>
-            <div class="el-content-label text-left ms-4" style="color: rgb(231, 121, 22);flex: 2 1 16%;">{{ $t("i18nlan.affiliate.content.text5") }}</div>
-            <div class="el-content-text text-left ms-2">{{ $t("i18nlan.affiliate.content.text6") }}</div>
+          <div class="box align-items-center">
+            <img :src="'./static/images/img/af_3.png'" alt="" style="width: 40px">
+            <span class="el-content-label text-left" style="color: rgb(231, 121, 22);">{{ $t("i18nlan.affiliate.content.text5") }}</span>
+            <span class="el-content-text text-left ms-2">{{ $t("i18nlan.affiliate.content.text6") }}</span>
           </div>
         </div>
       </div>
@@ -91,11 +85,11 @@
   position: relative;
 }
 .image{
-  position: absolute;
+  /*position: absolute;*/
   width: 40px;
   height: 40px;
-  left: -15px;
-  top: -20px;
+  /*left: -15px;*/
+  /*top: -20px;*/
 }
 
 @media (max-width: 1200px){

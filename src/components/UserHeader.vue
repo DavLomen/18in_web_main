@@ -99,7 +99,7 @@
 <!--    </div>-->
 <!--  </header>-->
   <div class="window"
-       style="margin-top: 50px; margin-bottom: 50px; margin-right: 20px; border-radius: 28px; box-shadow: rgb(221, 221, 221) 0px 0px 5px; min-height: 300px; overflow: hidden;">
+       style="margin-top: 50px; margin-bottom: 50px; margin-right: 20px; border-radius: 28px;overflow: hidden;">
     <ul role="menubar" class="el-menu" style="border: none;">
       <a href="javascript:;" @click="$router.push('/dashboard')" class="router-link-exact-active router-link-active" aria-current="page">
         <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard'?'is-active':'')" style="padding-left: 20px;">

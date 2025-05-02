@@ -6,7 +6,7 @@
         <img :src="'./static/images/img/abouttop.png?t=1'" style="width: 100%">
       </div>
       <div class="row mt-5 p-3">
-        <div class="col-lg-6 text-ls">
+        <div class="col-lg-12 text-ls">
 <!--          <h5>Our Professional Certification</h5>-->
 <!--          <h6 style="line-height: 1.5rem;">As an industry leader, JAMINING is proudly certified by the Financial Conduct Authority (FCA) in the UK, ensuring our platform meets the highest international standards and offers a safe and compliant investment environment.</h6>-->
 <!--          <h5>Technological Advantages</h5>-->
@@ -14,54 +14,56 @@
 <!--          <h6 style="line-height: 1.5rem;">Global Data Center Network: Over 100 advanced data centers strategically located across Europe, North America, and Asia, ensuring 24/7 seamless operations.</h6>-->
 <!--          <h6 style="line-height: 1.5rem;">Clean Energy Solutions: All mining operations are powered by renewable energy sources such as solar and wind, creating an eco-friendly and sustainable mining ecosystem.</h6>-->
 <!--        -->
-          <h5 class="text-center">{{$t('about[0]')}}</h5>
-          <h6>
-            {{$t('about[1]')}}
-          </h6>
-          <h5 class="text-center">{{$t('about[2]')}}</h5>
-          <h6>
-            {{$t('about[3]')}}
-          </h6>
-          <h5 class="text-center">{{$t('about[4]')}}</h5>
-          <h6>{{$t('about[5]')}}</h6>
-          <h6>
-            {{$t('about[6]')}}
-          </h6>
+          <div class="text-center" v-html="showInfo.content">
+
+          </div>
+<!--          <h5 class="text-center">{{$t('about[0]')}}</h5>-->
+<!--          <h6>-->
+<!--            {{$t('about[1]')}}-->
+<!--          </h6>-->
+<!--          <h5 class="text-center">{{$t('about[2]')}}</h5>-->
+<!--          <h6>-->
+<!--            {{$t('about[3]')}}-->
+<!--          </h6>-->
+<!--          <h5 class="text-center">{{$t('about[4]')}}</h5>-->
+<!--          <h6>{{$t('about[5]')}}</h6>-->
+<!--          <h6>-->
+<!--            {{$t('about[6]')}}-->
+<!--          </h6>-->
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
 <!--          <img class="border border-0 rounded-3" :src="'./static/images/img/ab1.jpg'" alt="" width="100%">-->
-            <video id="v1" autoplay loop muted style="width: 100%;">
-              <source :src="'./static/SIX-2_x264.mp4'" type="video/mp4"  />
-            </video>
+          <video  webkit-playsinline="true" playsinline="true"
+                 :src="'./static/images/bg.mp4'" controls style="width:100%;max-width: 960px;display: block;margin: 0 auto;"></video>
         </div>
       </div>
     </div>
 <!--    <div class=" w-100">-->
 <!--      <img :src="'./static/images/img/separator-bottom.svg'" alt="" class="img-fluid w-100">-->
 <!--    </div>-->
-    <div class="container mb-5">
+<!--    <div class="container mb-5">-->
 
-      <div class="row mt-5 p-3 mbrev" style="gap:100px;">
-        <div class="col-lg-5">
-          <img class="border border-0 rounded-3" :src="'./static/images/img/ab2.jpg?t=1'" alt="" width="100%">
-        </div>
-        <div class="col-lg-6 text-ls">
-          <h6>{{$t('about[7]')}}</h6>
-          <h6 style="line-height: 1.5rem;">
-            {{$t('about[8]')}}
-          </h6>
-          <h6 style="line-height: 1.5rem;">
-            {{$t('about[9]')}}
-          </h6>
-          <h6 style="line-height: 1.5rem;">
-            {{$t('about[10]')}}
-          </h6>
-          <h6>
-            {{$t('about[11]')}}
-          </h6>
-        </div>
-      </div>
-    </div>
+<!--      <div class="row mt-5 p-3 mbrev" style="gap:100px;">-->
+<!--        <div class="col-lg-5">-->
+<!--          <img class="border border-0 rounded-3" :src="'./static/images/img/ab2.jpg?t=1'" alt="" width="100%">-->
+<!--        </div>-->
+<!--        <div class="col-lg-6 text-ls">-->
+<!--          <h6>{{$t('about[7]')}}</h6>-->
+<!--          <h6 style="line-height: 1.5rem;">-->
+<!--            {{$t('about[8]')}}-->
+<!--          </h6>-->
+<!--          <h6 style="line-height: 1.5rem;">-->
+<!--            {{$t('about[9]')}}-->
+<!--          </h6>-->
+<!--          <h6 style="line-height: 1.5rem;">-->
+<!--            {{$t('about[10]')}}-->
+<!--          </h6>-->
+<!--          <h6>-->
+<!--            {{$t('about[11]')}}-->
+<!--          </h6>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 <!--    <div class=" w-100">-->
 <!--      <img :src="'./static/images/img/separator-top.svg'" alt="" class="img-fluid w-100">-->
 <!--    </div>-->

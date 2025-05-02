@@ -68,6 +68,7 @@
               <img v-if="$i18n.locale=='pt-PT'" :src="'./static/images/uploads/20250215/74bbe4ec4c22c83c14b9f089b0203c60.png'" style="width: 2rem;">
               <img v-if="$i18n.locale=='ru-RU'" :src="'./static/images/uploads/20250215/8b35279908e14c6d54702130abaf9051.png'" style="width: 2rem;">
               <img v-if="$i18n.locale=='vi-VN'" :src="'./static/images/uploads/20250215/c787c2a9525dd767e67fef599fff4cfe.png'" style="width: 2rem;">
+              <img v-if="$i18n.locale=='yd-YD'" :src="'./static/images/yd-YD.png'" style="width: 2rem;">
             </button>
             <ul :class="showPcLan?'dropdown-menu show':'dropdown-menu'" style="left: -6rem;top: 3rem;">
               <li><a class="dropdown-item" v-if="InitData.setting.en==1" href="javascript:;" @click="changeLanguage('en-US')"><img :src="'./static/images/uploads/20241117/cd3300dc91a25db0b825e2a43cc7304d.png'" style="width: 2rem;"> English</a></li>
@@ -83,6 +84,7 @@
               <li><a class="dropdown-item" v-if="InitData.setting.pt==1" href="javascript:;" @click="changeLanguage('pt-PT')"><img :src="'./static/images/uploads/20250215/74bbe4ec4c22c83c14b9f089b0203c60.png'" style="width: 2rem;"> Português</a></li>
               <li><a class="dropdown-item" v-if="InitData.setting.ru==1" href="javascript:;" @click="changeLanguage('ru-RU')"><img :src="'./static/images/uploads/20250215/8b35279908e14c6d54702130abaf9051.png'" style="width: 2rem;"> Русский</a></li>
               <li><a class="dropdown-item" v-if="InitData.setting.vi==1" href="javascript:;" @click="changeLanguage('vi-VN')"><img :src="'./static/images/uploads/20250215/c787c2a9525dd767e67fef599fff4cfe.png'" style="width: 2rem;"> Tiếng Việt </a></li>
+              <li><a class="dropdown-item" v-if="InitData.setting.yd==1 || InitData.setting.hi==1" href="javascript:;" @click="changeLanguage('yd-YD')"><img :src="'./static/images/yd-YD.png'" style="width: 2rem;"> हिन्दी </a></li>
               <!--                <li><a class="dropdown-item" href="javascript:;" @click="changeLanguage('rin ')"><img :src="'./static/images/uploads/20250215/1bbcfe92678e6478842fed4c0be0e31c.png'" style="width: 2rem;"> हिंदी</a></li>-->
             </ul>
           </div>
@@ -235,6 +237,7 @@
               <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.ru==1"  @click="changeLanguage('ru-RU')"><img :src="'./static/images/uploads/20250215/8b35279908e14c6d54702130abaf9051.png'" style="width: 2rem;"> Русский</a></li>
               <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.vi==1" @click="changeLanguage('vi-VN')"><img :src="'./static/images/uploads/20250215/c787c2a9525dd767e67fef599fff4cfe.png'" style="width: 2rem;"> Tiếng Việt </a></li>
               <!--                <li><a class="dropdown-item" href="javascript:;" @click="changeLanguage('rin ')"><img :src="'./static/images/uploads/20250215/1bbcfe92678e6478842fed4c0be0e31c.png'" style="width: 2rem;"> हिंदी</a></li>-->
+              <li><a class="dropdown-item" v-if="InitData.setting.yd==1 || InitData.setting.hi==1" href="javascript:;" @click="changeLanguage('yd-YD')"><img :src="'./static/images/yd-YD.png'" style="width: 2rem;"> हिन्दी </a></li>
 
             </ul>
 
@@ -243,7 +246,7 @@
         </div>
         <div v-else class="container-fluid p-2 ">
 <!--          未登录-->
-          <img data-bs-toggle="offcanvas"  role="button" aria-controls="offcanvasExample" :src="'./static/images/img/logo.png'" alt="" height="35">
+          <img data-bs-toggle="offcanvas"  role="button" aria-controls="offcanvasExample" :src="'./static/images/img/logo.png'" alt="" height="35" style="height: 35px;">
           <div>
             <button @click="showMobileMenu = true" class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-list-task text-dark fs-1"></i></button>
 
@@ -261,13 +264,12 @@
                 <img v-if="$i18n.locale=='pt-PT'" :src="'./static/images/uploads/20250215/74bbe4ec4c22c83c14b9f089b0203c60.png'" style="width: 2rem;">
                 <img v-if="$i18n.locale=='ru-RU'" :src="'./static/images/uploads/20250215/8b35279908e14c6d54702130abaf9051.png'" style="width: 2rem;">
                 <img v-if="$i18n.locale=='vi-VN'" :src="'./static/images/uploads/20250215/c787c2a9525dd767e67fef599fff4cfe.png'" style="width: 2rem;">
+                <img v-if="$i18n.locale=='yd-YD'" :src="'./static/images/yd-YD.png'" style="width: 2rem;">
               </button>
               <div :class="'offcanvas offcanvas-end border-end border-bshs text-start col-lg-5'+(showMobileMenu?' show':'')" style="width: 18rem; background-color: #fff; border:0px;" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRight">
                 <div class="offcanvas-header text-center">
                   <img :src="'./static/images/img/logo.png'" alt="" class="mx-auto" style="width: 50%;">
                 </div>
-
-
                 <div class="offcanvas-body px-4">
                   <div class="py-2 border-bottom border-bshs ">
                     <a class="text-bhs d-flex active" href="javascript:;" @click="$router.push('/')">
@@ -365,6 +367,7 @@
                 <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.pt==1" @click="changeLanguage('pt-PT')"><img :src="'./static/images/uploads/20250215/74bbe4ec4c22c83c14b9f089b0203c60.png'" style="width: 2rem;"> Português</a></li>
                 <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.ru==1" @click="changeLanguage('ru-RU')"><img :src="'./static/images/uploads/20250215/8b35279908e14c6d54702130abaf9051.png'" style="width: 2rem;"> Русский</a></li>
                 <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.vi==1" @click="changeLanguage('vi-VN')"><img :src="'./static/images/uploads/20250215/c787c2a9525dd767e67fef599fff4cfe.png'" style="width: 2rem;"> Tiếng Việt </a></li>
+                <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.yd==1 || InitData.setting.hi==1" @click="changeLanguage('yd-YD')"><img :src="'./static/images/yd-YD.png'" style="width: 2rem;"> हिन्दी </a></li>
 <!--                <li><a class="dropdown-item" href="javascript:;" @click="changeLanguage('rin ')"><img :src="'./static/images/uploads/20250215/1bbcfe92678e6478842fed4c0be0e31c.png'" style="width: 2rem;"> हिंदी</a></li>-->
               </ul>
 

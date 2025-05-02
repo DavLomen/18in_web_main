@@ -106,9 +106,11 @@
                       </ul>
                       <ul  class="styled-icon">
                         <li>
-                          <div>
+                          <div style="    display: flex;
+    align-items: center;
+    justify-content: space-between;">
                             <img
-                              class="s-app" style="display: block !important;" @click="downloadApp('andriod')" :src="'./static/images/d_android.bd8613ec.png'" alt="android-download">
+                              class="s-app" style="display: block !important;margin-right: 5px" @click="downloadApp('andriod')" :src="'./static/images/d_android.bd8613ec.png'" alt="android-download">
                               <img class="s-app" @click="downloadApp('ios')" :src="'./static/images/d_ios.fc9d4780.png'" alt="ios-download">
                           </div>
                         </li>

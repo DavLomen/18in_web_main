@@ -8,9 +8,9 @@
           <!-- <h2 class="text-lh pt-2">Latest News</h2> -->
         </div>
         <div class="row mt-4">
-          <div class="el-row blog_list justify-content-between data-flex">
+          <div class="el-row blog_list justify-content-between">
           <div class="el-col-sm-12 el-col-md-8 el-col-xs-24 pl-0 pr-0" v-for="(el, i) in listData" :key="el.id">
-            <div class="blog_card mb-5 mt-3" v-if="i <= 2" @click.stop="$router.push({
+            <div class="blog_card mb-5 mt-3" @click.stop="$router.push({
               path: '/blogDetail',
               query: {
                 id: el.id

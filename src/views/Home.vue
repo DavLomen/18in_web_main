@@ -15,7 +15,7 @@
                         class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events banner-slider swiper-button-s3"
                 >
                   <swiper-slide v-for="(item,index) in InitData.bannerList" :key="index">
-                    <div  class="card">
+                    <div  class="">
                       <div  class="hero-image">
                         <img :src="InitData.setting.up_url+item" alt="" class="w-100"></div>
                     </div>
@@ -65,21 +65,21 @@
       </div>
       <div class="el-row mt-5">
         <div class="el-col-xs-24 el-col-md-8 mt-3">
-          <div class="el-image-intr text-center mb-3">
+          <div class="el-image-intr text-center mb-3" @click="$router.push('/register')">
             <img :src="'./static/images/htw1.png'" alt="">
           </div>
           <div class="el-content-label text-center">{{ $t("i18nlan.Home.HTW.text3") }}</div>
           <div class="el-content-text text-center max-width-300 mt-2 el-content-text-color">{{ $t("i18nlan.Home.HTW.text4") }}</div>
         </div>
         <div class="el-col-xs-24 el-col-md-8 mt-3">
-          <div class="el-image-intr text-center mb-3">
+          <div class="el-image-intr text-center mb-3" @click="$router.push('/contracts')">
             <img :src="'./static/images/htw2.png'" alt="">
           </div>
           <div class="el-content-label text-center">{{ $t("i18nlan.Home.HTW.text5") }}</div>
           <div class="el-content-text text-center max-width-300 mt-2 el-content-text-color">{{ $t("i18nlan.Home.HTW.text6") }}</div>
         </div>
         <div class="el-col-xs-24 el-col-md-8 mt-3">
-          <div class="el-image-intr text-center mb-3">
+          <div class="el-image-intr text-center mb-3" @click="$router.push('/login')">
             <img :src="'./static/images/htw3.png'" alt="">
           </div>
           <div class="el-content-label text-center">{{ $t("i18nlan.Home.HTW.text7") }}</div>
@@ -1051,6 +1051,9 @@
   }
 </script>
 <style scoped>
+  .flex-md-row-reverse {
+    flex-direction: column-reverse;
+  }
   .footer-section::before, .affiliate-wrapper::before, .hover-tab-menu .tab-menu li:nth-child(1) .menu-thumb:after, .hover-tab-menu .tab-menu li:nth-child(3) .menu-thumb:after, .hover-tab-menu::after, .hover-tab-menu::before, .hover-tab-area .tab-area .tab-item, .offer-item .offer-footer::after, .offer-item .offer-body .bal-shape::after, .offer-item .offer-body .bal-shape::before, .offer-item::after, .offer-item::before, .calculate-wrapper::after, .calculate-wrapper::before, .contact-wrapper::before, .contact-wrapper .contact-content a::before {
     position: absolute;
     content: '';

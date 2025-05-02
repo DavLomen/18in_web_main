@@ -11,6 +11,10 @@
       <div class="container">
         <div class="el-row">
           <div class="el-col-23 mx-auto">
+            <div class="pc1" style="font-size: 1.25rem;width: 100%;margin-bottom: 10px">
+              {{$t('credit[0]')}}:<span style="font-size: 1.5rem;font-weight: bolder;color: rgb(221 181 0)">{{UserInfo.credit}}</span><br>
+              {{$t('account[1]')}}:<span style="font-size: 1.5rem;font-weight: bolder;color: rgb(221 181 0)">{{UserInfo.useridentity}}</span>
+            </div>
             <div  class="overview">
               <div class="pc1" style="width: 100%;">
                 <div class="el-row cal justify-content-center mt-5">
