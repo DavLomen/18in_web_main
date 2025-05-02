@@ -94,10 +94,10 @@
                       <a href="mailto:info@drmlminer.com">info@pbkminer.com</a></li>
                     <li>
                       <ul class="styled-icon mt-2">
-                        <li>
-                          <a href="https://x.com/PBKMiner">
-                            <img class="s-icon" :src="'./static/images/twitter.6352d995.png'" alt="twitter"></a>
-                        </li>
+<!--                        <li>-->
+<!--                          <a href="https://x.com/PBKMiner">-->
+<!--                            <img class="s-icon" :src="'./static/images/twitter.6352d995.png'" alt="twitter"></a>-->
+<!--                        </li>-->
                         <li>
                           <a href="https://www.facebook.com/share/1AdeMgYwr8/?mibextid=wwXIfr">
                             <img class="s-icon" :src="'./static/images/facebook1.18f06c79.png'" alt="facebook"></a>
