@@ -1,48 +1,55 @@
 <template>
   <div class="container d-flex flex-column ps-4" style="min-height: calc(100vh - 120px);">
-    <div class="flex-grow-1">
+    <div class="flex-grow-1 container">
       <div class="py-2 border border-0  rounded-4  p-3 ">
         <a :class="'text-bhs '+(index=='/dashboard'?'active':'')" href="javascript:;" @click="$router.push('/dashboard')">
-          <i class="bi bi-grid fs-4"></i>
+          <!-- <i class="bi bi-grid fs-4"></i> -->
+          <img :src="'./static/images/img/dash_l_1.png?t=1'" alt="">
           <span class="ps-2 fs-5">{{$t('side[0]')}}</span>
         </a>
       </div>
       <div class="py-2 mt-3 border border-0  rounded-4  p-3 ">
         <a :class="'text-bhs '+(index=='/deposit'?'active':'')" href="javascript:;" @click="$router.push('/deposit')">
-          <i class="bi bi-wallet fs-4"></i>
+          <!-- <i class="bi bi-wallet fs-4"></i> -->
+          <img :src="'./static/images/img/dash_l_2.png?t=1'" alt="">
           <span class="ps-2 fs-5">{{$t('side[1]')}}</span>
         </a>
       </div>
       <div class="py-2 mt-3 border border-0  rounded-4 p-3 ">
         <a :class="'text-bhs '+(index=='/withdraw'?'active':'')" href="javascript:;" @click="$router.push('/withdraw')">
-          <i class="bi bi-wallet2 fs-4"></i>
+          <!-- <i class="bi bi-wallet2 fs-4"></i> -->
+          <img :src="'./static/images/img/dash_l_3.png?t=1'" alt="">
           <span class="ps-2 fs-5">{{$t('side[2]')}}</span>
         </a>
       </div>
 
       <div class="py-2 mt-3 border border-0  rounded-4 p-3 ">
         <a :class="'text-bhs '+(index=='/affiliates'?'active':'')" href="javascript:;" @click="$router.push('/affiliates')">
-          <i class="bi bi-people fs-4"></i>
+          <!-- <i class="bi bi-people fs-4"></i> -->
+          <img :src="'./static/images/img/dash_l_4.png?t=1'" alt="">
           <span class="ps-2 fs-5">{{$t('side[3]')}}</span>
         </a>
       </div>
 
       <div class="py-2 mt-3 border border-0  rounded-4 p-3 ">
         <a :class="'text-bhs '+(index=='/MyPackages'?'active':'')" href="javascript:;" @click="$router.push('/MyPackages')">
-          <i class="bi bi-ui-checks fs-4"></i>
+          <!-- <i class="bi bi-ui-checks fs-4"></i> -->
+          <img :src="'./static/images/img/dash_l_5.png?t=1'" alt="">
           <span class="ps-2 fs-5">{{$t('side[4]')}}</span>
         </a>
       </div>
       <div class="py-2 mt-3 border border-0  rounded-4 p-3 ">
         <a :class="'text-bhs '+(index=='/transactions'?'active':'')" href="javascript:;" @click="$router.push('/transactions')">
-          <i class="bi bi-journal-bookmark fs-4"></i>
+          <!-- <i class="bi bi-journal-bookmark fs-4"></i> -->
+          <img :src="'./static/images/img/dash_l_6.png?t=1'" alt="">
           <span class="ps-2 fs-5">{{$t('side[5]')}}</span>
         </a>
       </div>
 
       <div class="py-2 mt-3 border border-0  rounded-4 p-3 ">
-        <a href="javascript:;" @click="showSet = !showSet" class="accordion-button fs-5 text-bhs " style="color: rgb(185, 192, 196);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <a href="javascript:;" @click="showSet = !showSet" class="accordion-button fs-5 text-bhs " style="color: #000;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           <i class="bi bi-plus-circle fs-4"></i>
+          <!-- <img :src="'./static/images/img/dash_l_7.png?t=1'" alt=""> -->
           <span class="ps-2 fs-5">{{$t('side[6]')}}</span>
         </a>
       </div>
@@ -50,19 +57,22 @@
         <div class="accordion-body">
           <div class="py-2 ms-4">
             <a :class="'text-bhs '+(index=='/walletAddress'?'active':'')" href="javascript:;" @click="$router.push('/walletAddress')">
-              <i class="bi bi-wallet-fill fs-4"></i>
+              <!-- <i class="bi bi-wallet-fill fs-4"></i> -->
+              <img :src="'./static/images/img/dash_l_8.png?t=1'" alt="">
               <span class="ps-2 fs-5">{{$t('side[7]')}}</span>
             </a>
           </div>
           <div class="py-2 ms-4">
             <a :class="'text-bhs '+(index=='/loginPassword'?'active':'')" href="javascript:;" @click="$router.push('/loginPassword')">
-              <i class="bi bi-shield-lock-fill fs-4"></i>
+              <!-- <i class="bi bi-shield-lock-fill fs-4"></i> -->
+              <img :src="'./static/images/img/dash_l_9.png?t=1'" alt="">
               <span class="ps-2 fs-5">{{$t('side[8]')}}</span>
             </a>
           </div>
           <div class="py-2 ms-4">
             <a :class="'text-bhs '+(index=='/payPassword'?'active':'')" href="javascript:;" @click="$router.push('/payPassword')">
-              <i class="bi bi-safe2 fs-4"></i>
+              <!-- <i class="bi bi-safe2 fs-4"></i> -->
+              <img :src="'./static/images/img/dash_l_7.png?t=1'" alt="">
               <span class="ps-2 fs-5">{{$t('side[9]')}}</span>
             </a>
           </div>
@@ -71,22 +81,23 @@
       <div class="py-2 mt-3 border-top border-bottom border-hhs p-3 ">
         <div class="py-2 mt-3 border border-0  rounded-4">
           <a :class="'text-bhs '+(index=='/dashboard'?'active':'')" href="javascript:;" @click="$router.push(`/article/privacy/detail`)">
-            <i class="bi bi-shield-check fs-4"></i>
+            <!-- <i class="bi bi-shield-check fs-4"></i> -->
+            <img :src="'./static/images/img/dash_l_11.png?t=1'" alt="">
             <span class="ps-2 fs-5">{{$t('side[10]')}}</span>
           </a>
         </div>
         <div class="py-2 my-3 border border-0  rounded-4 ">
           <a :class="'text-bhs '+(index=='/dashboard'?'active':'')" href="javascript:;" @click="$router.push(`/article/terms/detail`)">
-            <i class="bi bi-clipboard2-check fs-4"></i>
+            <!-- <i class="bi bi-clipboard2-check fs-4"></i> -->
+            <img :src="'./static/images/img/dash_l_12.png?t=1'" alt="">
             <span class="ps-2 fs-5">{{$t('side[11]')}}</span>
           </a>
         </div>
       </div>
       <div class="p-3 mt-4">
-        <a href="javascript:;" @click="$Model.Logout()" type="button" class="btn col-12 p-3 text-light fw-bold" style="background-color: #1989fa;">{{$t('side[12]')}}</a>
+        <a href="javascript:;" @click="$Model.Logout()" type="button" class="btn col-12 p-3 text-light fw-bold" style="background-color: rgb(250,126,25, 0.79);">{{$t('side[12]')}}</a>
       </div>
     </div>
-
 <!--    <div class="mt-auto p-2 ">-->
 <!--      <div class="p-3 border border-0 border-hhs rounded-4 d-flex bg-hs">-->
 <!--        <div class="me-2 col-5">-->
@@ -156,7 +167,22 @@
 </script>
 
 <style scoped>
-
+  .window {
+    width: 20vw;
+    margin-top: 110px;
+  }
+  .logo-box{
+    display: inline-block;
+    padding: var(--logoIconPadding) 0;
+  }
+  .el-menu{
+    background: none !important;
+    color: #fff;
+  }
+  .el-menu-item {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+  }
   /* 菜单项基础样式 */
   .container a.text-bhs {
     position: relative;
@@ -170,14 +196,14 @@
 
   /* 菜单项悬停效果 */
   .container a.text-bhs:hover {
-    background: linear-gradient(90deg, #0d6efd 0%, #ebedf0 100%);
-    color: #0d64fd !important;
+    background: linear-gradient(90deg, #198754 0%, #ebedf0 100%) !important;
+    color: #fff !important;
   }
 
   /* 菜单项激活状态 */
   .container a.text-bhs.active {
-    background: linear-gradient(90deg, #0d6efd 0%, #ebedf0 100%);
-    color: #0d64fd !important;
+    background: linear-gradient(90deg, #198754 0%, #ebedf0 100%) !important;
+    color: #fff !important;
   }
 
   /* 图标样式 */
@@ -188,7 +214,7 @@
   /* 悬停时图标颜色变化 */
   .container a.text-bhs:hover i,
   .container a.text-bhs.active i {
-    color: #0d64fd;
+    color: #fff;
   }
 
   /* 添加悬停时的左边框效果 */
@@ -200,7 +226,7 @@
     transform: translateY(-50%);
     width: 4px;
     height: 0;
-    background: linear-gradient(90deg, #0d6efd 0%, #ebedf0 100%);
+    background: linear-gradient(90deg, #198754 0%, #ebedf0 100%);
     border-radius: 0 4px 4px 0;
     transition: height 0.3s ease;
   }
@@ -219,7 +245,7 @@
   }
 
   .accordion-button:not(.collapsed) {
-    color: #0d64fd !important;
+    color: #0d6efd !important;
   }
 
   /* 设置面板样式 */

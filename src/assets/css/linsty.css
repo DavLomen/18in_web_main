@@ -107,28 +107,28 @@
   overflow: hidden;
 }
 
-.top-flashlight::before {
-  content: "";
-  width: 150px;
-  height: 150px;
-  background: #7064e9;
-  position: absolute;
-  left: 50%;
-  top: -60px;
-  transform: translateY(-50%) translateX(-50%);
-  border-radius: 100%;
-  filter: blur(70px);
-}
+/*.top-flashlight::before {*/
+/*  content: "";*/
+/*  width: 150px;*/
+/*  height: 150px;*/
+/*  background: #7064e9;*/
+/*  position: absolute;*/
+/*  left: 50%;*/
+/*  top: -60px;*/
+/*  transform: translateY(-50%) translateX(-50%);*/
+/*  border-radius: 100%;*/
+/*  filter: blur(70px);*/
+/*}*/
 
-.top-flashlight.leftside::before {
-  left: 0;
-  top: 0;
-}
+/*.top-flashlight.leftside::before {*/
+/*  left: 0;*/
+/*  top: 0;*/
+/*}*/
 
-.top-flashlight.light-xl::before {
-  width: 300px;
-  filter: blur(140px);
-}
+/*.top-flashlight.light-xl::before {*/
+/*  width: 300px;*/
+/*  filter: blur(140px);*/
+/*}*/
 
 .progress-dot {
   position: relative;

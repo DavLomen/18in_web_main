@@ -335,6 +335,25 @@ export default {
     "Total Profit",
     "Days"
   ],
+  "affiliates":[
+    "Affiliates",
+    "Affiliate Program",
+    "Your Email",
+    "Your Username",
+    "Your Referral Code",
+    "Your Affiliate Link",
+    "Earn Bonus Shares",
+    "Share to others.You'll get extra 3% as bonus of their purchase on each order. Check the link below, copy-paste link and share it with your friends, earn a massive commission.",
+    "Learn More",
+    "Partners List",
+    "Your Partners",
+    "Date",
+    "From",
+    "Level",
+    "Amount",
+    "Type",
+    "Copy Link"
+  ],
   "withdraw": [
     "Available Balance",
     "Withdrawal Network",

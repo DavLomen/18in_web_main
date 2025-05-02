@@ -120,10 +120,10 @@
         </div>
       </div>
     </div>
-    <div class="d-none d-lg-block">
-      <div class="rainbow-gradient-circle"></div>
-      <div class="rainbow-gradient-circle theme-pink"></div>
-    </div>
+<!--    <div class="d-none d-lg-block">-->
+<!--      <div class="rainbow-gradient-circle"></div>-->
+<!--      <div class="rainbow-gradient-circle theme-pink"></div>-->
+<!--    </div>-->
     <Footer></Footer>
   </div>
 </template>
