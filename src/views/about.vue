@@ -1,7 +1,7 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <div>  
+    <div>
         <img style="width: 100%;object-fit: cover;" :src="'./static/images/about_us_bg.jpg'" alt="">
       <!-- <div class="elementor-element elementor-element-bcf0f4e e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="bcf0f4e" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
         <div class="elementor-element elementor-element-a079262 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-child" data-id="a079262" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -39,7 +39,7 @@
               <!--                <div class="line three"></div>-->
               <!--              </div>-->
               <div  class="box6">
-                <video :src="'./static/DRML.mp4'" autoplay controls style="width:100%;max-width: 900px;display: block;margin: 1rem auto;" class="videos"></video>
+                <video :src="'./static/PBK.mp4'" autoplay controls style="width:100%;max-width: 900px;display: block;margin: 1rem auto;" class="videos"></video>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@
     </div>
     <div class="max960">
       <div class="el-row">
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/Data Center Locations.jpg`" alt="">
@@ -103,7 +103,7 @@
             </div>
           </div>
         </div>
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/Power Systems.jpg`" alt="">
@@ -113,7 +113,7 @@
             </div>
           </div>
         </div>
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/Cooling System.jpg`" alt="">
@@ -123,7 +123,7 @@
             </div>
           </div>
         </div>
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/SecurityFire Protection.jpg`" alt="">
@@ -133,7 +133,7 @@
             </div>
           </div>
         </div>
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/Data Center Hardware.jpg`" alt="">
@@ -143,7 +143,7 @@
             </div>
           </div>
         </div>
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/Our Team.jpg`" alt="">
@@ -153,7 +153,7 @@
             </div>
           </div>
         </div>
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/Wind Energy Cycle.jpg`" alt="">
@@ -163,7 +163,7 @@
             </div>
           </div>
         </div>
-        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6"> 
+        <div class="el-col-xs-12 el-col-sm-8 el-col-lg-6">
           <div class="ab_card mx-auto">
             <div class="image mx-auto">
               <img :src="`./static/images/about_us_bis/Solar Energy Cycle.jpg`" alt="">
@@ -4672,7 +4672,7 @@
 
   .about_adv .adv_right .adv_img_1{
     left: 15%;
-    z-index: 2; 
+    z-index: 2;
   }
   .about_adv .adv_right .adv_img_2{
     left: 35%;
