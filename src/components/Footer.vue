@@ -64,7 +64,7 @@
                     <li>
                       <a href="javascript:;" @click="$router.push('/article/cookie/detail')">{{$t('foot[18]')}}</a></li>
                     <li>
-                      <a href="javascript:;" @click="$router.push('/welfare')">{{$t('foot[19]')}}</a></li>
+                      <a href="javascript:;" @click="$router.push('/Bounty')">{{$t('foot[19]')}}</a></li>
                     <li>
                       <a href="javascript:;" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</a></li>
                   </ul>

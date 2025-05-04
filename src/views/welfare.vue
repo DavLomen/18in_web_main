@@ -33,7 +33,7 @@
       }
     },
     created() {
-      this.getListData(14);
+      this.getListData(19);
     },
     mounted() {
 

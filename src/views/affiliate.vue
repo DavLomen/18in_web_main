@@ -29,6 +29,13 @@
           </div>
         </div>
       </div>
+
+      <div class="container">
+        <div class="box">
+<!--          <div class="title">{{showInfo.title}}</div>-->
+          <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
+        </div>
+      </div>
     </div>
     <Footer></Footer>
   </div>
