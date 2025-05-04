@@ -137,15 +137,107 @@ const router = new VueRouter({
       meta: {
         title: 'dashboard',
         active: 'dashboard'
-      }
+      },
+      children: [
+        {
+          path: 'view',
+          name: 'view',
+          component:  () => import('@/views/dashboard/index.vue'),
+          meta: {
+            title: 'view',
+            active: 'view'
+          }
+        },
+        {
+          path: '/dashboard/transactions',
+          name: '/dashboard/transactions',
+          component:  () => import('@/views/dashboard/transactions.vue'),
+          meta: {
+            title: '/dashboard/transactions',
+            active: '/dashboard/transactions'
+          }
+        },
+        {
+          path: '/dashboard/deposit',
+          name: '/dashboard/deposit',
+          component:  () => import('@/views/dashboard/deposit.vue'),
+          meta: {
+            title: '/dashboard/deposit',
+            active: '/dashboard/deposit'
+          }
+        },
+        {
+          path: '/dashboard/withdraw',
+          name: '/dashboard/withdraw',
+          component:  () => import('@/views/dashboard/withdraw.vue'),
+          meta: {
+            title: '/dashboard/withdraw',
+            active: '/dashboard/withdraw'
+          }
+        },
+        {
+          path: '/dashboard/MyPackages',
+          name: '/dashboard/MyPackages',
+          component:  () => import('@/views/dashboard/MyPackages.vue'),
+          meta: {
+            title: '/dashboard/MyPackages',
+            active: '/dashboard/MyPackages'
+          }
+        },
+        {
+          path: '/dashboard/affiliates',
+          name: '/dashboard/affiliates',
+          component:  () => import('@/views/dashboard/affiliates.vue'),
+          meta: {
+            title: '/dashboard/affiliates',
+            active: '/dashboard/affiliates'
+          }
+        },
+        {
+          path: '/dashboard/message',
+          name: '/dashboard/message',
+          component:  () => import('@/views/dashboard/message.vue'),
+          meta: {
+            title: '/dashboard/message',
+            active: '/dashboard/message'
+          }
+        },
+        {
+          path: '/dashboard/walletAddress',
+          name: '/dashboard/walletAddress',
+          component:  () => import('@/views/dashboard/walletAddress.vue'),
+          meta: {
+            title: '/dashboard/walletAddress',
+            active: '/dashboard/walletAddress'
+          }
+        },
+        {
+          path: '/dashboard/loginPassword',
+          name: '/dashboard/loginPassword',
+          component:  () => import('@/views/dashboard/loginPassword.vue'),
+          meta: {
+            title: '/dashboard/loginPassword',
+            active: '/dashboard/loginPassword'
+          }
+        },
+        {
+          path: '/dashboard/payPassword',
+          name: '/dashboard/payPassword',
+          component:  () => import('@/views/dashboard/payPassword.vue'),
+          meta: {
+            title: '/dashboard/payPassword',
+            active: '/dashboard/payPassword'
+          }
+        },
+      ],
     },
     {
       path: '/loginPassword',
-      name: 'loginPassword',
+      name: '/loginPassword',
       component:  () => import('@/views/loginPassword.vue'),
       meta: {
-        title: 'loginPassword',
-        active: 'loginPassword'
+        title: '/loginPassword',
+        active: '/loginPassword'
       }
     },
     {
@@ -168,7 +260,7 @@ const router = new VueRouter({
     },
     {
       path: '/MyPackages',
-      name: 'MyPackages',
+      name: '/MyPackages',
       component:  () => import('@/views/MyPackages.vue'),
       meta: {
         title: 'MyPackages',

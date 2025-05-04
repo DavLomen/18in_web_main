@@ -153,6 +153,7 @@ const i18n = new VueI18n({
 
 /*切換*/
 export function SetLanguage(lang) {
+	console.log(lang)
 	i18n.locale = lang
 	switch (lang) {
 		case 'zh-CN':

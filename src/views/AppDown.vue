@@ -8,24 +8,21 @@
             <div class="desc_hold">
               <h1 class="title_adp mb-20">{{$t('appDown[0]')}}</h1>
               <p>{{$t('appDown[1]',{WT:InitData.setting.web_title})}}</p>
-              <div class="download_window">
-                <div class="markss">
+              <div class="download_window el-row">
+                <div class="markss el-col-xs-24 el-col-sm-12">
                   <a href="javascript:;" @click="downloadApp('andriod')" target="blank_" class="block">
                     <img :src="'./static/img/android.png?t=2'"></a>
                   <a @click="downloadApp('ios')" id="downloadappIos" target="blank_" class="mt-10 block">
                     <img :src="'./static/img/iphone.png?t=2'"></a>
-<!--                  <a @click="downloadApp('google')" id="downloadG" style="background: #000;border-radius: 5px;" target="blank_" class="mt-10 block">-->
-<!--                    <img :src="'./static/images/sb2.webp?t=2'"></a>-->
                 </div>
-<!--                <div class="qr_code_down">-->
-<!--                  <img :src="'./static/img/qrcode.png?t=2'">-->
-<!--                </div>-->
+                <div class="el-col-xs-24 el-col-sm-12">
+                  <img style="width: 50%; min-width: 108px; object-fit: cover;" :src="'./static/img/APP.png'" alt="">
+                </div>
               </div>
             </div>
             <div class="image_smart">
               <div>
                 <img :src="'./static/img/001_new.png?t=5'">
-<!--                <img :src="'./static/images/download/app2.png'">-->
               </div>
             </div>
           </div>

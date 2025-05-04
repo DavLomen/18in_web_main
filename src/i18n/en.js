@@ -545,7 +545,9 @@ export default {
     "We strongly recommend that you search for the necessary information in the FAQ section. Contact our 24-hour online customer service if you need advice or technical assistance.",
     "Get Support Now",
     "Total investment",
-    "Total income"
+    "Total income",
+    "User Name",
+    "Your email address"
   ],
   "faq": [
     "Common Problem"
@@ -694,7 +696,8 @@ export default {
     "Upload transfer screenshot",
     "Confirm Deposit",
     "Payment Information",
-    "Close"
+    "Close",
+    "Warm reminder: The minimum deposit amount on the platform is US$100",
   ],
   "productDetail": [
     "Details",
@@ -1017,5 +1020,5 @@ export default {
       "name": "Westbeck",
       "text": "I really like ALL4 Mining because I am a newbie and it is very easy to get started. It is a great platform for beginners."
     }
-  ]
+  ],
 }

@@ -11,7 +11,7 @@
             <div class="row justify-content-center mt-4" style="font-size: 1.4rem;">
               <div class="col-md-8">
                 <div class="card custom--card">
-                  <form class="register" style="background: #F4DD37">
+                  <form class="register" style="background: #28a745">
                     <div class="card-body" >
                       <div class="form-group hover-input-popup" style="text-align: center;">{{UserInfo.username}}</div>
                       <div style="text-align: center;">{{UserInfo.email||''}}</div>
@@ -38,7 +38,7 @@
                     :title="$t('walletAddress[0]')"
                     center
                     :value="$t('userInfo.default[8]')"
-                    to="/walletAddress"
+                    to="/dashboard/walletAddress"
                     is-link
                   />
                   <van-cell
@@ -46,7 +46,7 @@
                     :title="$t('walletAddress[1]')"
                     center
                     :value="$t('userInfo.default[8]')"
-                    to="/loginPassword"
+                    to="/dashboard/loginPassword"
                     is-link
                   />
                   <van-cell
@@ -54,14 +54,14 @@
                     :title="$t('walletAddress[2]')"
                     center
                     :value="$t('userInfo.default[8]')"
-                    to="/payPassword"
+                    to="/dashboard/payPassword"
                     is-link
                   />
                   <van-cell
                     size="large"
                     :title="$t('head[13]')"
                     center
-                    to="/message"
+                    to="/dashboard/message"
                     is-link
                   />
                 </div>
@@ -80,7 +80,7 @@
 <script>
   import UserHeader from '@/components/UserHeader'
   export default {
-    name: 'loginPassword',
+    name: '/dashboard/loginPassword',
     components: {
       UserHeader
     },

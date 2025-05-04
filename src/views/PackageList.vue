@@ -7,9 +7,9 @@
         <div class="el-dropdown">
           <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
           <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/dashboard/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/dashboard/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/dashboard/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
             <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
             <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
           </ul>

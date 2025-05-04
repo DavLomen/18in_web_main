@@ -7,28 +7,28 @@
     </div>
     </div>
     <ul role="menubar" class="el-menu mt-4" style="border: none;">
-      <a href="javascript:;" @click="$router.push('/dashboard')" class="router-link-exact-active router-link-active" aria-current="page">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard'?'is-active':'')" style="padding-left: 20px;">
+      <a href="javascript:;" @click="$router.push('/dashboard/view')" class="router-link-exact-active router-link-active" aria-current="page">
+        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard/view'?'is-active':'')" style="padding-left: 20px;">
           <i class="el-icon-data-analysis"></i>
           <span>{{$t('head[4]')}}</span></li>
       </a>
-      <a href="javascript:;" class="" @click="$router.push('/transactions')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/transactions'?'is-active':'')" style="padding-left: 20px;">
+      <a href="javascript:;" class="" @click="$router.push('/dashboard/transactions')">
+        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard/transactions'?'is-active':'')" style="padding-left: 20px;">
           <i class="el-icon-money"></i>
           <span>{{$t('head[22]')}}</span></li>
       </a>
-      <a href="javascript:;" class="" @click="$router.push('/deposit')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/deposit'?'is-active':'')" style="padding-left: 20px;">
+      <a href="javascript:;" class="" @click="$router.push('/dashboard/deposit')">
+        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard/deposit'?'is-active':'')" style="padding-left: 20px;">
           <i class="el-icon-sell"></i>
           <span>{{$t('head[7]')}}</span></li>
       </a>
-      <a href="javascript:;" class="" @click="$router.push('/withdraw')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/withdraw'?'is-active':'')" style="padding-left: 20px;">
+      <a href="javascript:;" class="" @click="$router.push('/dashboard/withdraw')">
+        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard/withdraw'?'is-active':'')" style="padding-left: 20px;">
           <i class="el-icon-sold-out"></i>
           <span>{{$t('head[8]')}}</span></li>
       </a>
-      <a href="javascript:;" class="" @click="$router.push('/MyPackages')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/MyPackages'?'is-active':'')" style="padding-left: 20px;">
+      <a href="javascript:;" class="" @click="$router.push('/dashboard/MyPackages')">
+        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard/MyPackages'?'is-active':'')" style="padding-left: 20px;">
           <i class="el-icon-shopping-cart-full"></i>
           <span>{{$t('head[11]')}}</span></li>
       </a>
@@ -37,13 +37,13 @@
           <i class="el-icon-position"></i>
           <span>{{$t('foot[2]')}}</span></li>
       </a>
-      <a href="javascript:;" class="" @click="$router.push('/affiliates')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/affiliates'?'is-active':'')" style="padding-left: 20px;">
+      <a href="javascript:;" class="" @click="$router.push('/dashboard/affiliates')">
+        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard/affiliates'?'is-active':'')" style="padding-left: 20px;">
           <i class="el-icon-user"></i>
           <span>{{$t('foot[5]')}}</span></li>
       </a>
-      <a href="javascript:;" class="" @click="$router.push('/message')">
-        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/message'?'is-active':'')" style="padding-left: 20px;">
+      <a href="javascript:;" class="" @click="$router.push('/dashboard/message')">
+        <li role="menuitem" tabindex="-1" :class="'el-menu-item '+(index=='/dashboard/message'?'is-active':'')" style="padding-left: 20px;">
           <van-icon name="comment-o" size="18" style="    margin-right: 5px;" :dot="$store.state.MessageInfo>0"/>
           <span>{{$t('head[13]')}}</span></li>
       </a>
@@ -59,13 +59,13 @@
       </a>
     </ul>
     <ul v-if="showMenu" class="setting">
-      <li class="el-menu-item" @click="showMenu=false,$router.push('/walletAddress')">
+      <li class="el-menu-item" @click="showMenu=false,$router.push('/dashboard/walletAddress')">
         <a href="javascript:;" class="t-link primary-menu__sub-link text-capitalize">{{$t('walletAddress[0]')}}</a>
       </li>
-      <li class="el-menu-item" @click="showMenu=false,$router.push('/loginPassword')">
+      <li class="el-menu-item" @click="showMenu=false,$router.push('/dashboard/loginPassword')">
         <a href="javascript:;"  class="t-link primary-menu__sub-link text-capitalize">{{$t('walletAddress[1]')}}</a>
       </li>
-      <li class="el-menu-item" @click="showMenu=false,$router.push('/payPassword')">
+      <li class="el-menu-item" @click="showMenu=false,$router.push('/dashboard/payPassword')">
         <a href="javascript:;"  class="t-link primary-menu__sub-link text-capitalize">{{$t('walletAddress[2]')}}</a>
       </li>
     </ul>
@@ -95,6 +95,9 @@
     computed: {
     },
     watch: {
+      '$route'() {
+        this.index = localStorage.getItem("pageIndex");
+      }
     },
     created() {
 

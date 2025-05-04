@@ -237,7 +237,7 @@
         data.fund_password = this.password;
         this.$Model.ProductBuy(data, data => {
           if(data.code==1){
-            this.$router.push("/MyPackages")
+            this.$router.push("/dashboard/MyPackages")
           }
         });
       },
@@ -273,7 +273,7 @@
         data.fund_password = this.password;
         this.$Model.ProductBuy(data, data => {
           if(data.code==1){
-            this.$router.push("/MyPackages")
+            this.$router.push("/dashboard/MyPackages")
           }
         });
       },

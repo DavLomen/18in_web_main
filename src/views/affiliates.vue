@@ -10,7 +10,7 @@
           <div>
             <div >
               <div class="el-row" style="position: relative; margin-top: 50px;">
-                <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary btn-dark"
+                <button @click="$router.push('/dashboard/view')" type="button" class="el-button el-button--primary btn-dark"
                         style="color: black; font-weight: 500;"><!----><i
                   class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
               </div>
@@ -54,8 +54,14 @@
                 <div>
                   <div><h4>{{$t('affiliates[17]')}}</h4></div>
                   <div class="el-row">
+                    <div class="el-col el-col-10"><h6 class="text-primary">{{$t('affiliates[3]')}}</h6></div>
+                    <div class="el-col el-col-14"><span> {{UserInfo.username}} </span></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="el-row">
                     <div class="el-col el-col-10"><h6 class="text-primary">{{$t('affiliates[2]')}}</h6></div>
-                    <div class="el-col el-col-14"><span> {{UserInfo.email || UserInfo.username}} </span></div>
+                    <div class="el-col el-col-14"><span> {{UserInfo.email || 'email'}} </span></div>
                   </div>
                 </div>
                 <div>

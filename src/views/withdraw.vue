@@ -8,7 +8,7 @@
           <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
             <div >
               <div class="el-row" style="position: relative; margin-top: 50px;">
-                <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary btn-dark"
+                <button @click="$router.push('/dashboard/view')" type="button" class="el-button el-button--primary btn-dark"
                         style="color: black; font-weight: 500;"><!----><i
                   class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
               </div>
@@ -282,13 +282,13 @@
         this.$Model.GetUserInfo();
         if(this.UserInfo.is_fund_password!=1){
           this.$Dialog.Alert(this.$t('wallet.msg[0]'),()=>{
-            this.$router.push('/payPassword')
+            this.$router.push('/dashboard/payPassword')
           })
         }
         this.$Model.GetBankCardList(rep=>{
           if(rep.code == 0){
             this.$Dialog.Confirm(this.$t('wallet.msg[1]'),()=>{
-              this.$router.push('/walletAddress')
+              this.$router.push('/dashboard/walletAddress')
             })
           }else{
             this.chageRecharge(that.BankCardList[0]);

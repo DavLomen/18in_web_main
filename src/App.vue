@@ -27,13 +27,13 @@
             <use  xlink:href="#icon-collections"></use>
           </svg>
           <span>{{$t('foot[2]')}}</span></a>
-        <a href="javascript:;" @click="$router.push('/dashboard')" :class="footIndex==3?'router-link-exact-active router-link-active active':'router-link-exact-active router-link-active'" id="fdashboard" aria-current="page">
+        <a href="javascript:;" @click="$router.push('/dashboard/view')" :class="footIndex==3?'router-link-exact-active router-link-active active':'router-link-exact-active router-link-active'" id="fdashboard" aria-current="page">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command">
             <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
           </svg>
           <span>{{$t('head[4]')}}</span></a>
 
-<!--        <a v-else href="javascript:;" @click="$router.push('/withdraw')" :class="footIndex==5?'active':''" id="fwithdraws">-->
+<!--        <a v-else href="javascript:;" @click="$router.push('/dashboard/withdraw')" :class="footIndex==5?'active':''" id="fwithdraws">-->
 <!--          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
 <!--               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
 <!--               class="feather feather-credit-card">-->
@@ -41,7 +41,7 @@
 <!--            <line x1="1" y1="10" x2="23" y2="10"></line>-->
 <!--          </svg>-->
 <!--          <span id="fwithdraws2" class="foot-bar-span">{{$t('head[8]')}}</span></a>-->
-        <a id="freferral" @click="$router.push('/affiliates')" href="javascript:;" :class="footIndex==2?'active':''">
+        <a id="freferral" @click="$router.push('/dashboard/affiliates')" href="javascript:;" :class="footIndex==2?'active':''">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
@@ -128,25 +128,26 @@
 		},
 
 		watch: {
-			'$route'(to, from) {
-        localStorage.setItem("pageIndex", to.path);
-        localStorage.setItem("userIndex", to.path);
+		'$route'(to, from) {
+		console.log(to.path)
+		localStorage.setItem("pageIndex", to.path);
+		localStorage.setItem("userIndex", to.path);
         if (to.path == '/') {
           this.footIndex = 0;
         }
         if (to.path == '/product') {
           this.footIndex = 1;
         }
-        if (to.path == '/affiliates') {
+        if (to.path == '/dashboard/affiliates') {
           this.footIndex = 2;
         }
-        if (to.path == '/dashboard') {
+        if (to.path == '/dashboard/view') {
           this.footIndex = 3;
         }
-        if (to.path == '/deposit') {
+        if (to.path == '/dashboard/deposit') {
           this.footIndex = 4;
         }
-        if (to.path == '/withdraw') {
+        if (to.path == '/dashboard/withdraw') {
           this.footIndex = 5;
         }
         if (to.path == '/FAQ') {
@@ -163,7 +164,7 @@
       that.$Model.HasNewMessage(data=>{
         if (data.data == 1) {
           that.$Dialog.Confirm(that.$t('messageInfo[0]'), () => {
-            that.$router.push(`/message`)
+            that.$router.push(`/dashboard/message`)
           }, that.$t('messageInfo[1]'));
         }
       })
@@ -380,7 +381,7 @@
 
       readMessage(){
         this.$store.dispatch('UpdateMessageInfo', '');
-        this.$router.push(`/message`)
+        this.$router.push(`/dashboard/message`)
       },
 		}
 

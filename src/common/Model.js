@@ -90,7 +90,7 @@ const model = {
           localStorage.removeItem("showIndexDialog");
         // } else {
 
-          router.replace('/dashboard');
+          router.replace('/dashboard/view');
 
         // }
 
@@ -1198,7 +1198,7 @@ const model = {
                          }) => {
       callback && callback(data);
     }
-    axios.post('redpack/withdraw', {}).then(getResponse);
+    axios.post('redpack/dashboard/withdraw', {}).then(getResponse);
   },
   redpackWithdrawList(callback) {
     $Dialog.Loading(i18n.t('dialog[6]'));

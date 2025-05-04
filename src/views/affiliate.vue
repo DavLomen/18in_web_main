@@ -51,7 +51,7 @@
               <div  class="col-lg-4 col-12 mt-10">
                 <article  class="product__card--horizontall d-flex mb-30" style="padding: 0.8125rem;">
                   <div  class="product__card--horizontall__thumbnail"
-                       style="width: 150px; height: 150px;"><a  href="javascript:;" @click="$router.push('/dashboard')"
+                       style="width: 150px; height: 150px;"><a  href="javascript:;" @click="$router.push('/dashboard/view')"
                                                                class="product__card--thumbnail__link display-block"><img
                      :src="'./static/img/77777_new.png'" class="product__card--thumbnail__img"
                     style="width: 150px; height: 150px;"></a></div>
@@ -60,7 +60,7 @@
                                                                                           style="display: flex; gap: 1.25rem;">
                     <img  :src="'./static/img/no3.7e2b0dc0.png'" style="width: 30px; height: 30px;"><span
                      style="font-size: 16px;"><a
-                                                                   href="javascript:;" @click="$router.push('/dashboard')">{{$t('affliliate[5]')}}</a></span></h3>
+                                                                   href="javascript:;" @click="$router.push('/dashboard/view')">{{$t('affliliate[5]')}}</a></span></h3>
                     <span  class="product__card--author__text">{{$t('affliliate[6]')}}</span>
                   </div>
                 </article>
@@ -83,7 +83,7 @@
 <!--              <div  class="para-desc">{{$t('affliliate[7]')}}</div>-->
               <div  class="para-desc" v-html="showInfo.content"></div>
               <div  class="mt-4">
-                <a v-if="UserInfo" style="background: linear-gradient(90deg, #ddb443, #009d24);border: none !important;" href="javascript:;" @click="$router.push('/dashboard')" class="btn btn-primary">{{$t('affliliate[8]')}}<i  class="mdi mdi-chevron-right"></i></a>
+                <a v-if="UserInfo" style="background: linear-gradient(90deg, #ddb443, #009d24);border: none !important;" href="javascript:;" @click="$router.push('/dashboard/view')" class="btn btn-primary">{{$t('affliliate[8]')}}<i  class="mdi mdi-chevron-right"></i></a>
                 <a v-else style="background: linear-gradient(90deg, #ddb443, #009d24);border: none !important;" href="javascript:;" @click="$router.push('/login')" class="btn btn-primary">{{$t('affliliate[8]')}}<i  class="mdi mdi-chevron-right"></i></a>
               </div>
             </div>

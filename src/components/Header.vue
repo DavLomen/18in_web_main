@@ -116,7 +116,7 @@
             <!--                    <a href="javascript:;" :class="'header__menu--link '+(index==0?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/blog')">{{$t('foot[6]')}}</a>-->
             <!--                  </li>-->
             <li class="nav__menu--items" v-if="UserInfo">
-              <a href="javascript:;" :class="'btn btn--base btn-block btn-dark '+(index==10?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/dashboard')">{{$t('head[4]')}}</a>
+              <a href="javascript:;" :class="'btn btn--base btn-block btn-dark '+(index==10?'header__menu--link_active':'')" @click="showMenu=false,$router.push('/dashboard/view')">{{$t('head[4]')}}</a>
             </li>
           </ul>
         </div>
@@ -143,21 +143,8 @@
 <!--          </ul>-->
           <a href="javascript:;" @click="$Model.Logout()" class="btn btn--base btn-block btn-dark header__menu--link" style="font-weight: 400;margin-left: 10px;">{{$t('head[5]')}}</a></div>
       </div>
-        <div  class="offcanvas__header--menu__open" style="margin-right: 0.625rem; padding: 10px 0px;" @click="showPcLan=false,showMask = true">
-          <div class="offcanvas__header--menu__open--btn">
-            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ionicon offcanvas__header--menu__open--svg">
-              <path  fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="header-overlay" v-if="showMask">
-      <div  :class="'offcanvas__header ' +(showMask?'open':'')">
-        <div  class="offcanvas__inner">
-          <div  class="offcanvas__logo">
-            <a  href="javascript:;" @click="$router.push('/')" class="offcanvas__logo_link router-link-active">
-              <img  :src="'./static/img/logo.png?t=2'" height="32" alt="" class="logo__light logo__light"></a>
+        <div  class="offcanvas__header--menu__open" style="margin-right: 0.625rem; padding: 10px 0px;">
+          <div class="offcanvas__header--menu__open--btn d-flex justify-content-end align-items-center">
             <div  class="language mobile">
               <div class="navbar-collapse">
                 <div  class="dropdown" @click="showPcLan = !showPcLan">
@@ -213,6 +200,19 @@
                 </div>
               </div>
             </div>
+            <svg @click="showPcLan=false,showMask = true"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ionicon offcanvas__header--menu__open--svg">
+              <path  fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-overlay" v-if="showMask">
+      <div  :class="'offcanvas__header ' +(showMask?'open':'')">
+        <div  class="offcanvas__inner">
+          <div  class="offcanvas__logo">
+            <a  href="javascript:;" @click="$router.push('/')" class="offcanvas__logo_link router-link-active">
+              <img  :src="'./static/img/logo.png?t=2'" height="32" alt="" class="logo__light logo__light"></a>
             <button  @click="showMask = false" class="offcanvas__close--btn">{{$t('deposit[28]')}}</button>
           </div>
           <nav  class="offcanvas__menu">
@@ -255,25 +255,25 @@
                 <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/tutorial')">{{$t('tutorial[0]')}}</a>
               </li>
               <li class="offcanvas__menu_li">
-                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/message')">{{$t('head[13]')}}</a>
+                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/dashboard/message')">{{$t('head[13]')}}</a>
               </li>
 <!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
 <!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/transactions')">{{$t('head[12]')}}</a>-->
 <!--              </li>-->
 <!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/deposit')">{{$t('head[7]')}}</a>-->
+<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/dashboard/deposit')">{{$t('head[7]')}}</a>-->
 <!--              </li>-->
 <!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/withdraw')">{{$t('head[8]')}}</a>-->
+<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/dashboard/withdraw')">{{$t('head[8]')}}</a>-->
 <!--              </li>-->
 <!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/MyPackages')">{{$t('head[11]')}}</a>-->
+<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/dashboard/MyPackages')">{{$t('head[11]')}}</a>-->
 <!--              </li>-->
 <!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
 <!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/product')">{{$t('head[9]')}}</a>-->
 <!--              </li>-->
 <!--              <li class="offcanvas__menu_li" v-if="UserInfo">-->
-<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/affiliates')">{{$t('foot[5]')}}</a>-->
+<!--                <a href="javascript:;" class="offcanvas__menu_item " @click="showMenu=false,$router.push('/dashboard/affiliates')">{{$t('foot[5]')}}</a>-->
 <!--              </li>-->
               <li class="offcanvas__menu_li" v-if="UserInfo">
                 <a href="javascript:;" class="offcanvas__menu_item " @click="showH5set =!showH5set">{{$t('head[14]')}}</a>
@@ -281,9 +281,9 @@
                   <li class="el-menu-item-group">
                     <div class="el-menu-item-group__title" style="padding-left: 40px;"></div>
                     <ul>
-                      <li @click="$router.push('/walletAddress')"   :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[0]')}} </li>
-                      <li @click="$router.push('/loginPassword')"   :class="'el-menu-item '+(index==9?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[1]')}} </li>
-                      <li @click="$router.push('/payPassword')"   :class="'el-menu-item '+(index==10?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[2]')}} </li>
+                      <li @click="$router.push('/dashboard/walletAddress')"   :class="'el-menu-item '+(index==8?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[0]')}} </li>
+                      <li @click="$router.push('/dashboard/loginPassword')"   :class="'el-menu-item '+(index==9?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[1]')}} </li>
+                      <li @click="$router.push('/dashboard/payPassword')"   :class="'el-menu-item '+(index==10?'is-active':'')" style="padding-left: 40px;">{{$t('walletAddress[2]')}} </li>
                     </ul>
                   </li>
                 </ul>
@@ -377,7 +377,7 @@
       if (localStorage.getItem("pageIndex") == '/tutorial') {
         this.index = 9;
       }
-      if (localStorage.getItem("pageIndex") == '/dashboard') {
+      if (localStorage.getItem("pageIndex") == '/dashboard/view') {
         this.index = 10;
       }
     },

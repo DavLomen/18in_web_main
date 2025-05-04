@@ -162,13 +162,13 @@
         this.$Model.GetUserInfo();
         if(this.UserInfo.is_fund_password!=1){
           this.$Dialog.Alert(this.$t('wallet.msg[0]'),()=>{
-            this.$router.push('/payPassword')
+            this.$router.push('/dashboard/payPassword')
           })
         }
         this.$Model.GetBankCardList(rep=>{
           if(rep.code == 0){
             this.$Dialog.Confirm(this.$t('wallet.msg[1]'),()=>{
-              this.$router.push('/walletAddress')
+              this.$router.push('/dashboard/walletAddress')
             })
           }else{
             this.chageRecharge(that.BankCardList[0]);

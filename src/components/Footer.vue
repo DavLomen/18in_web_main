@@ -20,19 +20,6 @@
 <!--            <div class="link-item" @click="$router.push('/Bounty')">{{$t('bounty')}}</div>-->
             <div class="link-item" @click="$router.push('/article/cryptocurrency/detail')">{{$t('cryptocurrency[0]')}}</div>
             <div class="link-item" @click="$router.push('/article/web3/detail')">{{$t('cryptocurrency[1]')}}</div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <h4 class="mt-0">{{$t('foot[7]')}}</h4>
-            <div class="link-item"><i class="el-icon-location-information"></i>
-              Flat 75 Cheyne Court, London, United Kingdom, SW3 5TT
-            </div>
-            <div class="link-item"><i class="el-icon-message"></i>
-              info@all4mining
-            </div>
-            <div class="link-item">
-              <van-icon name="smile-comment-o" />
-              {{$t('contact[10]')}}
-            </div>
             <div class="link-item">
               <a href="https://twitter.com/kkminer77" target="_blank" class="icon">
                 <img :src="'./static/img/ft1.png'" style="height: 2rem;">
@@ -44,6 +31,40 @@
                 <img :src="'./static/img/ft3.png'" style="height: 2rem;">
               </a>
 
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2">
+            <h4 class="mt-0">{{$t('foot[7]')}}</h4>
+            <div class="link-item"><i class="el-icon-location-information"></i>
+              Flat 75 Cheyne Court, London, United Kingdom, SW3 5TT
+            </div>
+            <div class="link-item"><i class="el-icon-message"></i>
+              Info@all4miing.com
+            </div>
+            <div class="link-item">
+              <van-icon name="smile-comment-o" />
+              {{$t('contact[10]')}}
+            </div>
+            <div class="link-item">
+              <!-- <a href="https://twitter.com/kkminer77" target="_blank" class="icon">
+                <img :src="'./static/img/ft1.png'" style="height: 2rem;">
+              </a> -->
+<!--              <a href="https://www.youtube.com/channel/UC6K45FIaqQT_x0CrFyN7Oqw" target="_blank" class="icon">-->
+<!--                <img :src="'./static/images/ft2.png'" style="height: 2rem;">-->
+<!--              </a>-->
+              <!-- <a href="https://web.facebook.com/non.nandi.9" target="_blank" class="icon">
+                <img :src="'./static/img/ft3.png'" style="height: 2rem;">
+              </a> -->
+              <div style="width: 100px;">
+                <div class="mt-2">
+                  <a href="javascript:;" @click="downloadApp('andriod')" target="blank_" class="block">
+                    <img style="width: 100%;" :src="'./static/img/android.png?t=2'"></a>
+                </div>
+                <div class="mt-2">
+                  <a @click="downloadApp('ios')" id="downloadappIos" target="blank_" class="block">
+                    <img style="width: 100%;" :src="'./static/img/iphone.png?t=2'"></a>
+                </div>
+              </div>
             </div>
 <!--            <div class="markss" style="margin-top: 5px">-->
 <!--              <a href="javascript:;" @click="downloadApp('andriod')" target="blank_" class="block">-->
@@ -116,17 +137,17 @@ export default {
 
   },
   mounted() {
-    if (localStorage.getItem("pageIndex") == '/dashboard') {
+    if (localStorage.getItem("pageIndex") == '/dashboard/view') {
       this.showF = false;
     }
     if (localStorage.getItem("pageIndex") == '/setting') {
       this.showF = false;
       this.showT = true;
     }
-    if (localStorage.getItem("pageIndex") == '/affiliates') {
+    if (localStorage.getItem("pageIndex") == '/dashboard/affiliates') {
       this.showF = false;
     }
-    if (localStorage.getItem("pageIndex") == '/MyPackages') {
+    if (localStorage.getItem("pageIndex") == '/dashboard/MyPackages') {
       this.showF = false;
     }
     if (localStorage.getItem("pageIndex") == '/transactions') {

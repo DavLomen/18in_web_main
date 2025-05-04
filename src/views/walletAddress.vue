@@ -81,7 +81,7 @@
 <script>
   import UserHeader from '@/components/UserHeader'
   export default {
-    name: 'loginPassword',
+    name: '/dashboard/loginPassword',
     components: {
       UserHeader
     },

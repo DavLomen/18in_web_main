@@ -30,8 +30,8 @@
                 </ul>
                 <ul  class="d-flex align-items-center">
                   <li  class="right-extend_items header__account--items login-but_box" style="display: flex;justify-content: space-between;">
-                    <a href="javascript:;" style="background: linear-gradient(90deg, #2ed7c1, #009d24)" @click="$router.push('/deposit')" class="but but_signup btn-dark" > {{$t('head[7]')}} </a>
-                    <a  href="javascript:;" style="background: linear-gradient(90deg, #2ed7c1, #009d24)" @click="$router.push('/withdraw')" class="but but_signup btn-dark" >{{$t('head[8]')}} </a>
+                    <a href="javascript:;" style="background: linear-gradient(90deg, #2ed7c1, #009d24)" @click="$router.push('/dashboard/deposit')" class="but but_signup btn-dark" > {{$t('head[7]')}} </a>
+                    <a  href="javascript:;" style="background: linear-gradient(90deg, #2ed7c1, #009d24)" @click="$router.push('/dashboard/withdraw')" class="but but_signup btn-dark" >{{$t('head[8]')}} </a>
                   </li>
                 </ul>
               </div>
@@ -934,7 +934,7 @@
         data.fund_password = this.password;
         this.$Model.ProductBuy(data, data => {
           if(data.code==1){
-            this.$router.push("/MyPackages")
+            this.$router.push("/dashboard/MyPackages")
           }
         });
       },
@@ -1016,7 +1016,7 @@
       },
       jumper() {
         if (this.UserInfo) {
-          this.$router.push('/dashboard');
+          this.$router.push('/dashboard/view');
         } else {
           this.$router.push('/login');
         }

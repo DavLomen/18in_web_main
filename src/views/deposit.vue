@@ -8,7 +8,7 @@
           <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
             <div >
               <div class="el-row" style="position: relative; margin-top: 50px;">
-                <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary btn-dark"
+                <button @click="$router.push('/dashboard/view')" type="button" class="el-button el-button--primary btn-dark"
                         style="color: black; font-weight: 500;"><!----><i
                   class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
               </div>
@@ -148,6 +148,9 @@
                               <!--                        <span>Conversion with <span class="method_currency">LTC</span> and final value will Show on next step</span>-->
                               <!--                      </li>-->
                             </ul>
+                            <div class="text-right mt-2 mr-1">
+                              <code>{{ $t("deposit[29]") }}</code>
+                            </div>
                           </div>
                         </div>
                         <div class="card-footer">
@@ -378,6 +381,7 @@
         this.showDetail = true
       },
       chageRecharge(item) {
+        console.log(item)
         this.selectTypes= item;
         this.postData.recharge_id= item.id;
         this.id = item.id;

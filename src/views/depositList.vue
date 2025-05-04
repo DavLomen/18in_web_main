@@ -97,7 +97,7 @@
             </ul>
             <ul class="list-group withdraw-detail mt-1"><br><strong class="my-3">{{$t('deposit[27]')}}</strong>  <li class="list-group-item">
               <span class="fw-bold "> {{$t('deposit[25]')}} </span> :
-<!--              <img src="./static/images/verify/deposit//2024/01/18/65aa20cbd50171705648331.png" alt="Image" class="w-100">-->
+<!--              <img src="./static/images/verify/dashboard/deposit//2024/01/18/65aa20cbd50171705648331.png" alt="Image" class="w-100">-->
               <img  v-if="detailItem.screenshots!=''" :src="InitData.setting.up_url+ detailItem.screenshots"
                    class="w-100">
             </li></ul>
