@@ -25,34 +25,34 @@
 						<li data-v-1bce91fb="" class="el-menu-item " style="padding-left: 20px;"
 							@click="$router.push('/')">
 							<!-- <i data-v-1bce91fb="" class="el-icon-house"></i> -->
-							<img src="@/static/images/dashboard/家.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/home.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Home')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item "
 							:class="$route.path=='/dashboard' ? 'is-active' : ''" style="padding-left: 20px;"
 							@click="$router.push('/dashboard')">
 							<!-- <i data-v-1bce91fb="" class="el-icon-discover"></i> -->
-							<img src="@/static/images/dashboard/仪表盘.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/dashboard.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Dashboard')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item" :class="$route.path=='/deposit' ? 'is-active' : ''"
 							style="padding-left: 20px;" @click="$router.push('/deposit')">
 							<!-- <i data-v-1bce91fb="" class="el-icon-folder-add"></i> -->
-							<img src="@/static/images/dashboard/订金.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/deposit.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Deposit')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item "
 							:class="$route.path=='/withdraw' ? 'is-active' : ''" style="padding-left: 20px;"
 							@click="$router.push('/withdraw')">
 							<!-- <i data-v-1bce91fb="" class="el-icon-coin"></i> -->
-							<img src="@/static/images/dashboard/提现.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/withdraw.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Withdraw')}}</span>
 						</li>
 						<li data-v-1bce91fb="" aria-haspopup="true" class="el-submenu">
 							<div data-v-1bce91fb="" class="el-submenu__title" style="padding-left: 20px;"
 								@click="clickShowData('MyBill')">
 								<!-- <i data-v-1bce91fb="" class="el-icon-document"></i> -->
-								<img src="@/static/images/dashboard/套餐.png" style="width: 20px;margin: 0 10px;">
+								<img src="@/static/images/dashboard/package.png" style="width: 20px;margin: 0 10px;">
 								<span data-v-1bce91fb="" slot="title">{{$t('common.Packages')}}</span>
 								<i data-v-1bce91fb="" class="el-submenu__icon-arrow "
 									:class="show_data.MyBill ? 'el-icon-arrow-up' : 'el-icon-arrow-down'"></i>
@@ -82,28 +82,28 @@
 						<li data-v-1bce91fb="" class="el-menu-item "
 							:class="$route.path=='/transactions' ? 'is-active' : ''" style="padding-left: 20px;"
 							@click="$router.push('/transactions')">
-							<img src="@/static/images/dashboard/交易.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/trade.png" style="width: 20px;margin: 0 10px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-sort"></i> -->
 							<span data-v-1bce91fb="">{{$t('common.Transactions')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item "
 							:class="$route.path=='/affiliates' ? 'is-active' : ''" style="padding-left: 20px;"
 							@click="$router.push('/affiliates')">
-							<img src="@/static/images/dashboard/附属机构.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/affiliate.png" style="width: 20px;margin: 0 10px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-office-building"></i> -->
 							<span data-v-1bce91fb="">{{$t('common.Affiliate')}}</span>
 						</li>
 						<!---->
 						<li data-v-1bce91fb="" class="el-menu-item " :class="$route.path=='/message' ? 'is-active' : ''"
 							style="padding-left: 20px;" @click="$router.push('/message')">
-							<img src="@/static/images/dashboard/信息.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/message.png" style="width: 20px;margin: 0 10px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-message-solid"></i> -->
 							<span data-v-1bce91fb="">{{$t('common.Message')}}</span>
 						</li>
 						<li data-v-1bce91fb="" aria-haspopup="true" class="el-submenu">
 							<div data-v-1bce91fb="" class="el-submenu__title" style="padding-left: 20px;"
 								@click="clickShowData('Settings')">
-								<img src="@/static/images/dashboard/设置.png" style="width: 20px;margin: 0 10px;">
+								<img src="@/static/images/dashboard/set.png" style="width: 20px;margin: 0 10px;">
 								<!-- <i data-v-1bce91fb="" class="el-icon-setting"></i> -->
 								<span data-v-1bce91fb="" slot="title">{{$t('common.Settings')}}</span>
 								<i data-v-1bce91fb="" class="el-submenu__icon-arrow"
@@ -139,18 +139,18 @@
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item" style="padding-left: 20px;"
 							@click="$router.push('/privacy')">
-							<img src="@/static/images/dashboard/隐私和政策.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/private.png" style="width: 20px;margin: 0 10px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-warning-outline"></i> -->
 							<span data-v-1bce91fb="">{{$t('register.PrivacyandPolicy')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item" style="padding-left: 20px;"
 							@click="$router.push('/termsService')">
-							<img src="@/static/images/dashboard/服务协议.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/terms.png" style="width: 20px;margin: 0 10px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-warning-outline"></i> -->
 							<span data-v-1bce91fb="">{{$t('register.TermsofServices')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item" style="padding-left: 20px;" @click="logout()">
-							<img src="@/static/images/dashboard/登出.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/logout.png" style="width: 20px;margin: 0 10px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-switch-button"></i> -->
 							<span data-v-1bce91fb="">{{$t('common.Logout')}}</span>
 						</li>
@@ -168,30 +168,30 @@
 					<ul data-v-1bce91fb="" role="menubar" class="nav-menu el-menu">
 						<li data-v-1bce91fb="" class="el-menu-item " style="padding-left: 20px;"
 							@click="$router.push('/')">
-							<img src="@/static/images/dashboard/家.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/home.png" style="width: 20px;margin: 0 10px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-house"></i> -->
 							<span data-v-1bce91fb="">{{$t('common.Home')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item" @click="$router.push('/dashboard')"
 							:class="$route.path=='/dashboard' ? 'is-active' : ''" style="padding-left: 20px;">
 							<!-- <i data-v-1bce91fb="" class="el-icon-discover"></i> -->
-							<img src="@/static/images/dashboard/仪表盘.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/dashboard.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Dashboard')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item " @click="$router.push('/deposit')"
 							:class="$route.path=='/deposit' ? 'is-active' : ''" style="padding-left: 20px;">
-							<img src="@/static/images/dashboard/订金.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/deposit.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Deposit')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item " @click="$router.push('/withdraw')"
 							:class="$route.path=='/withdraw' ? 'is-active' : ''" style="padding-left: 20px;">
-							<img src="@/static/images/dashboard/提现.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/withdraw.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Withdraw')}}</span>
 						</li>
 						<li data-v-1bce91fb="" aria-haspopup="true" class="el-submenu">
 							<div data-v-1bce91fb="" class="el-submenu__title" style="padding-left: 20px;"
 								@click="clickShowData('MyBill')">
-								<img src="@/static/images/dashboard/套餐.png" style="width: 20px;margin: 0 10px;">
+								<img src="@/static/images/dashboard/package.png" style="width: 20px;margin: 0 10px;">
 								<span data-v-1bce91fb="" slot="title">{{$t('common.Packages')}}</span>
 								<i data-v-1bce91fb="" class="el-submenu__icon-arrow el-icon-arrow-down"></i>
 							</div>
@@ -221,24 +221,24 @@
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item " @click="$router.push('/transactions')"
 							:class="$route.path=='/transactions' ? 'is-active' : ''" style="padding-left: 20px;">
-							<img src="@/static/images/dashboard/交易.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/trade.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Transactions')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item " @click="$router.push('/affiliates')"
 							:class="$route.path=='/affiliates' ? 'is-active' : ''" style="padding-left: 20px;">
-							<img src="@/static/images/dashboard/附属机构.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/affiliate.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Affiliate')}}</span>
 						</li>
 						<!---->
 						<li data-v-1bce91fb="" class="el-menu-item " @click="$router.push('/message')"
 							:class="$route.path=='/message' ? 'is-active' : ''" style="padding-left: 20px;">
-							<img src="@/static/images/dashboard/信息.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/message.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Message')}}</span>
 						</li>
 						<li data-v-1bce91fb="" aria-haspopup="true" class="el-submenu">
 							<div data-v-1bce91fb="" class="el-submenu__title" style="padding-left: 20px;"
 								@click="clickShowData('Settings')">
-								<img src="@/static/images/dashboard/设置.png" style="width: 20px;margin: 0 10px;">
+								<img src="@/static/images/dashboard/set.png" style="width: 20px;margin: 0 10px;">
 								<span data-v-1bce91fb="" slot="title">{{$t('common.Settings')}}</span>
 								<i data-v-1bce91fb="" class="el-submenu__icon-arrow el-icon-arrow-down"></i>
 							</div>
@@ -272,18 +272,18 @@
 
 						<li data-v-1bce91fb="" class="el-menu-item" style="padding-left: 20px;"
 							@click="$router.push('/privacy')">
-							<img src="@/static/images/dashboard/隐私和政策.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/private.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.PrivacyandPolicy')}}</span>
 						</li>
 						<li data-v-1bce91fb="" class="el-menu-item" style="padding-left: 20px;"
 							@click="$router.push('/termsService')">
-							<img src="@/static/images/dashboard/服务协议.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/terms.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.TermsofServices')}}</span>
 						</li>
 
 
 						<li data-v-1bce91fb="" class="el-menu-item" style="padding-left: 20px;" @click="logout()">
-							<img src="@/static/images/dashboard/登出.png" style="width: 20px;margin: 0 10px;">
+							<img src="@/static/images/dashboard/logout.png" style="width: 20px;margin: 0 10px;">
 							<span data-v-1bce91fb="">{{$t('common.Logout')}}</span>
 						</li>
 					</ul>

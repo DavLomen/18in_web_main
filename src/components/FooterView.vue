@@ -109,28 +109,28 @@
 				<span data-v-6b500d1a="" class="css-tabBar-item-icon">
 					<!-- <i data-v-6b500d1a="" class="el-icon-house ">
 					</i> -->
-					<img src="@/static/images/dashboard/家.png" style="width: 20px;margin: 0 10px;">
+					<img src="@/static/images/dashboard/home.png" style="width: 20px;margin: 0 10px;">
 				</span>
 				<span data-v-6b500d1a="" class="css-tabBar-item-text">{{$t('common.Home')}}</span>
 			</router-link>
 
 			<router-link to="/product" data-v-6b500d1a="" class="css-tabBar-item">
 				<span data-v-6b500d1a="" class="css-tabBar-item-icon">
-					<img src="@/static/images/dashboard/套餐.png" style="width: 20px;margin: 0 10px;">
+					<img src="@/static/images/dashboard/package.png" style="width: 20px;margin: 0 10px;">
 					<!-- <i data-v-6b500d1a="" class="el-icon-notebook-2"></i> -->
 				</span>
 				<span data-v-6b500d1a="" class="css-tabBar-item-text">{{$t('common.Contract')}}</span>
 			</router-link>
 			<router-link to="/affiliate" data-v-6b500d1a="" class="css-tabBar-item">
 				<span data-v-6b500d1a="" class="css-tabBar-item-icon">
-					<img src="@/static/images/dashboard/附属机构.png" style="width: 20px;margin: 0 10px;">
+					<img src="@/static/images/dashboard/affiliate.png" style="width: 20px;margin: 0 10px;">
 					<!-- <i data-v-6b500d1a="" class="el-icon-caret-left"></i> -->
 				</span>
 				<span data-v-6b500d1a="" class="css-tabBar-item-text">{{$t('common.Affiliate')}}</span>
 			</router-link>
 			<router-link to="/dashboard" data-v-6b500d1a="" class="css-tabBar-item">
 				<span data-v-6b500d1a="" class="css-tabBar-item-icon">
-					<img src="@/static/images/dashboard/仪表盘.png" style="width: 20px;margin: 0 10px;">
+					<img src="@/static/images/dashboard/dashboard.png" style="width: 20px;margin: 0 10px;">
 					<!-- <i data-v-6b500d1a="" class="el-icon-user-solid"></i> -->
 				</span>
 				<span data-v-6b500d1a="" class="css-tabBar-item-text">{{$t('common.Dashboard')}}</span>
