@@ -178,15 +178,15 @@
                   <div class="bal-bg"></div>
                 </div>
                 <div class="mobile">
-                  <div class="Membership_level mt-2 fs-5 fw-bold">
-                    {{ $t('dashboard[29]') }}:
-                    <span style="color: #ddb500;">{{UserInfo.username}}</span>
-                  </div>
-                  <div class="Membership_level mt-2 fs-5 fw-bold">
-                    {{ $t('dashboard[30]') }}:
-                    <span style="color: #ddb500;">{{UserInfo.email || ''}}</span>
-                  </div>
                   <div>
+                    <div class="Membership_level mt-2 fs-5 fw-bold">
+                      {{ $t('dashboard[29]') }}:
+                      <span style="color: #ddb500;">{{UserInfo.username}}</span>
+                    </div>
+                    <div class="Membership_level mt-2 fs-5 fw-bold">
+                      {{ $t('dashboard[30]') }}:
+                      <span style="color: #ddb500;">{{UserInfo.email || ''}}</span>
+                    </div>
                     <div class="Credit_Score fs-5 fw-bold" style="width: 100%">
                       {{ $t('dashboard[19]') }}:
                       <span style="color: #ddb500;">{{UserInfo.credit}}</span>
