@@ -21,13 +21,13 @@
             <div class="link-item" @click="$router.push('/article/cryptocurrency/detail')">{{$t('cryptocurrency[0]')}}</div>
             <div class="link-item" @click="$router.push('/article/web3/detail')">{{$t('cryptocurrency[1]')}}</div>
             <div class="link-item">
-              <a href="https://twitter.com/kkminer77" target="_blank" class="icon">
+              <a href="https://x.com/all4_mining" target="_blank" class="icon">
                 <img :src="'./static/img/ft1.png'" style="height: 2rem;">
               </a>
 <!--              <a href="https://www.youtube.com/channel/UC6K45FIaqQT_x0CrFyN7Oqw" target="_blank" class="icon">-->
 <!--                <img :src="'./static/images/ft2.png'" style="height: 2rem;">-->
 <!--              </a>-->
-              <a href="https://web.facebook.com/non.nandi.9" target="_blank" class="icon">
+              <a href="https://web.facebook.com/profile.php?id=61574819625985" target="_blank" class="icon">
                 <img :src="'./static/img/ft3.png'" style="height: 2rem;">
               </a>
 
