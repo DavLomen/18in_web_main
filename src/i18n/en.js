@@ -697,7 +697,7 @@ export default {
     "Confirm Deposit",
     "Payment Information",
     "Close",
-    "Warm reminder: The minimum deposit amount on the platform is US$100",
+    "Warm reminder: The minimum deposit amount on the platform is US$100"
   ],
   "productDetail": [
     "Details",
@@ -1020,5 +1020,5 @@ export default {
       "name": "Westbeck",
       "text": "I really like ALL4 Mining because I am a newbie and it is very easy to get started. It is a great platform for beginners."
     }
-  ],
+  ]
 }

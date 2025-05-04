@@ -39,7 +39,7 @@
               Flat 75 Cheyne Court, London, United Kingdom, SW3 5TT
             </div>
             <div class="link-item"><i class="el-icon-message"></i>
-              Info@all4miing.com
+              info@all4mining.com
             </div>
             <div class="link-item">
               <van-icon name="smile-comment-o" />

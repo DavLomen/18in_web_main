@@ -21,7 +21,7 @@
                     </div>
                     <div class="Membership_level mt-2 fs-5 fw-bold">
                       {{ $t('dashboard[30]') }}:
-                      <span style="color: #ddb500;">{{UserInfo.email || 'email'}}</span>
+                      <span style="color: #ddb500;">{{UserInfo.email || ''}}</span>
                     </div>
                   </div>
                   <div class="row cal justify-content-center mt-5">
@@ -149,9 +149,9 @@
                       </div>
                     </div>
                 </div>
-  
+
                 <!-- 一下是手机模式显示的内容 -->
-  
+
                 <div class="bal mobile">
                   <img :src="'./static/images/bg-div.png'">
                   <div class="bal-c">
@@ -178,6 +178,14 @@
                   <div class="bal-bg"></div>
                 </div>
                 <div class="mobile">
+                  <div class="Membership_level mt-2 fs-5 fw-bold">
+                    {{ $t('dashboard[29]') }}:
+                    <span style="color: #ddb500;">{{UserInfo.username}}</span>
+                  </div>
+                  <div class="Membership_level mt-2 fs-5 fw-bold">
+                    {{ $t('dashboard[30]') }}:
+                    <span style="color: #ddb500;">{{UserInfo.email || ''}}</span>
+                  </div>
                   <div>
                     <div class="Credit_Score fs-5 fw-bold" style="width: 100%">
                       {{ $t('dashboard[19]') }}:
@@ -217,7 +225,7 @@
                   </div>
                 </div>
               </div>
-  
+
                 <!-- show_mobile 在手机模式下可见 -->
                 <div   class="row mb-5 show_mobile">
                   <div  class="col-md-9 mt-4">
@@ -343,7 +351,7 @@
           intv:null,
         }
       },
-  
+
       computed: {},
       watch: {
       },
@@ -374,7 +382,7 @@
             }, that.$t('messageInfo[1]'));
           }
         })
-  
+
         // setInterval(function () {
         //   that.$Model.HasNewMessage(data=>{
         //     if (data.data == 1) {
@@ -388,7 +396,7 @@
       mounted() {
       },
       activated() {
-  
+
       },
       destroyed() {
         // clearInterval(this.intv)
@@ -441,7 +449,7 @@
       background: rgb(245,242,251);
       color: #000;
     }
-  
+
     /* 超小屏幕（手机，小于 768px） */
     @media (max-width: 768px) {
       .mobile {
@@ -495,7 +503,7 @@
         margin-bottom: 3rem;
       }
     }
-  
+
     .bal-line {
       position: absolute;
       width: 1px;
@@ -521,7 +529,7 @@
       flex-wrap: wrap;
     }
     .dts_pl::before {
-  
+
     }
     .bal-bg {
       position: absolute;
@@ -548,7 +556,7 @@
       justify-content: space-between;
       grid-gap: 9px;
     }
-  
+
     .item-inf {
       background-color: #fff;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
@@ -556,14 +564,14 @@
       width: 100%;
       height: 88px;
     }
-  
+
     .item-inf2 {
       background: #F9F2F8;
       border-radius: 10px;
       width: 100%;
       height: 88px;
     }
-  
+
     .item-inf2 p {
       font-family: 'Roboto';
       font-style: normal;
@@ -572,11 +580,11 @@
       line-height: 14px;
       padding-top: 15px;
       padding-left: 12px;
-  
-  
+
+
       color: #A22283;
     }
-  
+
     .item-inf p {
       margin-top: 15px;
       font-family: 'Roboto';
@@ -586,7 +594,7 @@
       line-height: 14px;
       text-align: center;
     }
-  
+
     .item-inf h4, .item-inf2 h4  {
       font-family: 'Roboto';
       font-style: normal;
@@ -595,7 +603,7 @@
       line-height: 26px;
       text-align: center;
     }
-  
+
     .item-inf2 h4 {
       color: black;
     }
@@ -634,7 +642,7 @@
       left: 0;
       top: 0;
     }
-  
+
     .flex-3 {
       width: 100%;
       margin-top: 14px;
@@ -787,7 +795,7 @@
       line-height: normal;
       margin: 0;
     }
-  
+
     .dashboard_question .text{
       font-family: Roboto;
       font-style: normal;
@@ -796,7 +804,7 @@
       margin: 0;
       font-size: 1rem;
     }
-  
+
     .dashboard_question .button{
       display: inline-block;
       font-size: 16px;
@@ -812,6 +820,5 @@
       cursor: pointer;
     }
   </style>
-  
-  
-  
+
+
