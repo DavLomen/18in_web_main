@@ -1,190 +1,162 @@
 <template>
   <div class="HomePage" id="app">
-    <Header></Header>
-    <section style="margin-top: 2rem">
+    <UserHeader></UserHeader>
+    <div class="app-wrapper" style="width: calc(100% - 25rem);">
+      <div class="page-header">
+        <div class="page-title">{{$t('head[8]')}}</div>
+        <div class="el-dropdown">
+          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
+            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
+          </ul>
+        </div>
+      </div>
       <div class="container">
-        <div class="el-row">
-          <div class="el-col el-col-5"> <UserHeader></UserHeader></div>
-          <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-            <div >
-              <div class="el-row" style="position: relative; margin-top: 50px;">
-                <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary"
-                        style="background: rgb(255, 243, 214); color: black; font-weight: 500;"><!----><i
-                  class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
-              </div>
-            </div>
-            <br>
-            <div class="container">
-              <div class="">
-                <div class="card custom--card">
-                  <form >
-                    <div class="card-body form">
-                      <div class="form-group">
-                        <label>{{$t('withdraw[1]')}}</label>
-                        <div class="input-group">
-                          <div  class="item-control">
-                            <div  class="select row g-6">
-                              <div style="min-width: 14rem;" class="col-6 col-sm-6" :value="item.id" v-for="(item,index) in BankCardList" :key="index" @click="chageRecharge(item)">
-                                <div  :class="'select-i '+(item.bank_name ==selectTypes.bank_name?'active':'')">
-                                  <img :src="`./static/images/${item.bank_name}.png`" style="width: 36px;vertical-align: middle;display: inline-block;">
-                                  <span >{{item.card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2')}}</span></div>
-                              </div>
+<!--        <div class="balance-box">-->
+<!--          <div class="label">{{$t('withdraw[0]')}}</div>-->
+<!--          <div class="num">{{InitData.currency}} {{UserInfo.balance}}</div>-->
+<!--        </div>-->
+        <div class="main user-box">
+          <form class="el-form form el-form--label-top">
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required is-no-asterisk"><label for="type" class="el-form-item__label">
+                  {{$t('withdraw[1]')}}</label>
+                  <div class="el-form-item__content">
+<!--                    <div class="el-select">-->
+<!--                      <div class="el-input el-input&#45;&#45;suffix">-->
+<!--                        <select class="el-input__inner" v-model="selectBank">-->
+<!--                          <option :value="item" v-for="item in cardList" :key="item">{{item}}</option>-->
+<!--                        </select>-->
+<!--                        <span-->
+<!--                          class="el-input__suffix"><span class="el-input__suffix-inner"><i-->
+<!--                          class="el-select__caret el-input__icon el-icon-arrow-up"></i></span>-->
+<!--                        </span></div>-->
+<!--                    </div>-->
+                    <div class="el-select" @click="showSelect = !showSelect">
+                      <div class="el-input el-input--suffix">
+                        <div  class="el-input__inner">
+                          <div>
+                            <img v-if="selectTypes.bank_name !=''" :src="`./static/images/${selectTypes.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">
+                            <span>{{selectBank}}</span>
+                          </div>
+                          <div class="selectShow" v-show="showSelect">
+                            <div  :value="item.id" v-for="(item,index) in BankCardList" :key="index" @click="chageRecharge(item)">
+                              <img :src="`./static/images/${item.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">
+                              {{selectBank}}
                             </div>
                           </div>
-<!--                          <div class="el-form-item__content" style="width: 100%;">-->
-<!--                            <div class="el-select" @click="showSelect = !showSelect">-->
-<!--                              <div class="el-input el-input&#45;&#45;suffix">-->
-<!--                                <div  class="el-input__inner">-->
-<!--                                  <div>-->
-<!--                                    <img v-if="selectTypes.bank_name !=''" :src="`./static/images/${selectTypes.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">-->
-<!--                                    <span>{{selectBank}}</span>-->
-<!--                                  </div>-->
-<!--                                  <div class="selectShow" v-show="showSelect">-->
-<!--                                    <div  :value="item.id" v-for="(item,index) in BankCardList" :key="index" @click="chageRecharge(item)">-->
-<!--                                      <img :src="`./static/images/${item.bank_name}.png`" style="width: 20px;vertical-align: middle;display: inline-block;">-->
-<!--                                      {{selectBank}}-->
-<!--                                    </div>-->
-<!--                                  </div>-->
-<!--                                </div>-->
-<!--                                <span-->
-<!--                                  class="el-input__suffix"><span class="el-input__suffix-inner">-->
-<!--                            <i-->
-<!--                              class="fa fa-angle-down"></i>-->
-<!--                          </span>-->
-<!--                        </span>-->
-<!--                              </div>-->
-<!--                            </div>-->
-<!--                          </div>-->
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label>{{$t('withdraw[2]')}}</label>
-                        <div class="input-group">
-                          <input type="text" name="amount" class="form-control form--control" autocomplete="off" v-model="drawData.draw_money">
-                          <span class="input-group-text">{{InitData.currency}}</span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label>{{$t('withdraw[3]')}}</label>
-                        <div class="input-group">
-                          <div class="el-form-item__content" style="width: 100%;">
-                            <div class="el-input el-input--suffix">
-                              <input style="background: rgba(0,0,0,0);width: 100%;" :type="hidePwd?'password':'text'" autocomplete="off" v-model="drawData.drawword"
-                                     placeholder="" class="el-input__inner">
-                              <span class="el-input__suffix"><span class="el-input__suffix-inner">
-                        <van-icon name="eye-o" v-if="!hidePwd" @click="hidePwd = !hidePwd"/>
-                        <van-icon name="closed-eye" v-else  @click="hidePwd = !hidePwd"/>
-                        </span></span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="mt-3">
-                        <ul class="list-group text-center">
-                          <!--                    <li class="list-group-item d-flex justify-content-between">-->
-                          <!--                      <span>{{$t('deposit[11]')}}</span>-->
-                          <!--                      <span><span class="min font-weight-bold">0</span> USDT - <span class="max font-weight-bold">0</span> USDT</span>-->
-                          <!--                    </li>-->
-                          <li class="list-group-item d-flex justify-content-between">
-                            <span>{{$t('wallet.label[8]')}}</span>
-                            <span><span class="charge font-weight-bold">{{withdraw_handling_fee}}</span> {{InitData.currency}}</span>
-                          </li>
-                          <li class="list-group-item d-flex justify-content-between">
-                            <span>{{$t('deposit[22]')}}</span>
-                            <div>1USD ≈ {{selectTypes.rate}} <span v-if="selectTypes.bank_name !='' && selectTypes.bank_name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.bank_name}}</span></div>
-                          </li>
-                          <li class="list-group-item d-flex justify-content-between">
-                            <span>{{$t('withdraw[4]')}}</span>
-                            <div class="value">{{parseFloat(parseFloat((drawData.draw_money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.bank_name !='' && selectTypes.bank_name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.bank_name}}</span></div>
-                          </li>
-                        </ul>
+                        <span
+                          class="el-input__suffix"><span class="el-input__suffix-inner"><i
+                          class="el-select__caret el-input__icon el-icon-arrow-up"></i></span>
+                        </span>
                       </div>
                     </div>
-                    <div class="card-footer">
-                      <button type="button" class="btn btn--base btn-block btn-dark" @click="submitDraw">{{$t('withdraw[5]')}}</button>
-                    </div>
-<!--                    <div style="padding: 1rem;color: #e73329;">-->
-<!--                      {{$t('rechargefoot[1]')}}-->
-<!--                    </div>-->
-                  </form>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div >
-              <section  class="section" style="padding-bottom: 0px;z-index: 1;">
-                <div  class="container">
-                  <div  class="el-row"><h4 >{{$t('wallet.default[4]')}}</h4></div>
-                  <div  class="row">
-                    <div  class="col-24" style="width: 100%; padding: 10px;">
-                      <div  class="table-responsive bg-white shadow rounded mt-4">
-                        <table  class="table mb-0 table-center">
-                          <thead  class="bg-light">
-                          <tr >
-                            <th  scope="col" class="text-center">{{$t('withdraw[6]')}}</th>
-                            <th  scope="col" class="text-center">{{$t('walletAddress[0]')}}</th>
-                            <th  scope="col" class="text-center">{{$t('withdraw[7]')}}</th>
-                            <th  scope="col" class="text-center">{{$t('withdraw[8]')}}</th>
-                            <th  scope="col" class="text-center">{{$t('withdraw[9]')}}</th>
-                          </tr>
-                          </thead>
-                          <tbody >
-                          <tr class="tr" v-for="(item,index) in listData" :key="index">
-                            <td class="td">{{item.dan}}</td>
-                            <td class="td">{{item.bank_no_tail.replace(/^(.{4}).*(.{4})$/, '$1 **** $2')}}</td>
-                            <td class="td">{{InitData.currency}} {{item.money}}</td>
-                            <td class="td">
-                              <div class="status-tag" style="color:#000;">{{item.status_desc}}</div>
-                            </td>
-                            <td class="td">{{item.adddate}}</td>
-                          </tr>
-                          </tbody>
-                        </table>
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required is-no-asterisk"><label for="amount" class="el-form-item__label">{{$t('withdraw[2]')}}</label>
+                  <div class="el-form-item__content">
+                    <div class="input-group">
+                      <div class="input el-input"><input type="number" autocomplete="off" v-model="drawData.draw_money"
+                                                         class="el-input__inner">
                       </div>
-                    </div>
-                  </div>
-                  <div  class="mt-3">
-                    <div  style="display: flex; justify-content: center;">
-                      <ul  role="menubar" aria-disabled="false" aria-label="Pagination"
-                           class="pagination b-pagination pagination-lg">
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(1)">
-                          <span role="menuitem" aria-label="Go to first page"  aria-disabled="true" class="page-link">First</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_current_page==1?'disabled':'')" @click="perPage"><span role="menuitem"
-                                                                                                                                                     aria-label="Go to previous page"
-                                                                                                                                                     aria-disabled="true"
-                                                                                                                                                     class="page-link">Prev</span>
-                        </li>
-                        <li role="presentation" class="page-item active">
-                          <button role="menuitemradio" type="button" @click="changePage(data_current_page)" :class="'number active'" class="page-link">{{data_current_page}}
-                          </button>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_total_page==data_current_page?'disabled':'')" @click="nextPage"><span role="menuitem"
-                                                                                                                                                                    aria-label="Go to next page"
-                                                                                                                                                                    aria-disabled="true"
-                                                                                                                                                                    class="page-link">Next</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(data_total_page)"><span role="menuitem"
-                                                                                                                                 aria-label="Go to last page"
-                                                                                                                                 aria-disabled="true"
-                                                                                                                                 class="page-link">Last</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div  class="mt-3" v-if="listData.length==0">
-                    <div  class="d-grid gap-2">
-                      <div
-                        class="btn btn btn-block">{{$t('vanPull[1]')}}
-                      </div>
-                    </div>
+                      <div class="sign">{{InitData.currency}}</div>
+                    </div></div>
+                </div>
+              </div>
+
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required is-no-asterisk"><label class="el-form-item__label">
+                  {{$t('withdraw[3]')}}</label>
+                  <div class="el-form-item__content">
+                    <div class="el-input el-input--suffix"><input :type="hidePwd?'password':'text'" autocomplete="off" v-model="drawData.drawword"
+                                                                         placeholder="" class="el-input__inner">
+                      <span class="el-input__suffix"><span class="el-input__suffix-inner">
+                        <van-icon name="eye-o" v-if="hidePwd" @click="hidePwd = !hidePwd"/>
+                        <van-icon name="closed-eye" v-else  @click="hidePwd = !hidePwd"/>
+                        </span></span></div>
                   </div>
                 </div>
-              </section>
+              </div>
+
             </div>
+          </form>
+          <div style="padding: 0 1rem;font-size: 1.5rem;color: #e73329;">
+            {{$t('tips[2]')}}
+          </div>
+          <div class="info-list">
+<!--            <div class="info-item">-->
+<!--              <div class="label">Limit</div>-->
+<!--              <div class="value">0 USD - 0 USD</div>-->
+<!--            </div>-->
+            <div class="info-item" v-if="withdraw_handling_fee>0">
+              <div class="label">{{$t('wallet.label[8]')}}</div>
+              <div class="value">{{withdraw_handling_fee}} {{InitData.currency}}</div>
+            </div>
+<!--            <div class="info-item">-->
+<!--              <div class="label">{{$t('withdraw[4]')}}</div>-->
+<!--              <div class="value">{{drawData.draw_money-withdraw_handling_fee}} {{InitData.currency}}</div>-->
+<!--            </div>-->
+            <div class="info-item">
+              <div class="label">{{$t('deposit[22]')}}</div>
+              <div class="value">1USD ≈ {{selectTypes.rate}} <span v-if="selectTypes.bank_name !='' && selectTypes.bank_name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.bank_name}}</span></div>
+            </div>
+            <div class="info-item">
+              <div class="label">{{$t('withdraw[4]')}}</div>
+              <div class="value">{{parseFloat(parseFloat((drawData.draw_money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.bank_name !='' && selectTypes.bank_name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.bank_name}}</span></div>
+            </div>
+          </div>
+          <div class="submit-btn" @click="submitDraw">{{$t('withdraw[5]')}}</div>
+        </div>
+
+        <div class="r-table">
+          <div class="tr">
+            <div class="th">{{$t('withdraw[6]')}}</div>
+            <div class="th">{{$t('walletAddress[0]')}}</div>
+            <div class="th">{{$t('withdraw[7]')}}</div>
+            <div class="th">{{$t('withdraw[8]')}}</div>
+            <div class="th">{{$t('withdraw[9]')}}</div>
+          </div>
+          <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
+          <div class="tr" v-for="(item,index) in listData" :key="index">
+            <div class="td">{{item.dan}}</div>
+            <div class="td">{{item.bank_no_tail.replace(/^(.{4}).*(.{4})$/, '$1 **** $2')}}</div>
+            <div class="td">{{InitData.currency}} {{item.money}}</div>
+            <div class="td">
+<!--              <div class="status-tag" style="background: rgb(13,110,253);" v-if="item.status==3">{{item.status_desc}}</div>-->
+<!--              <div class="status-tag" style="background: rgb(234, 84, 85);" v-else-if="item.status==-1">{{item.status_desc}}</div>-->
+              <div class="status-tag" style="color:#000;">{{item.status_desc}}</div>
+            </div>
+            <div class="td">{{item.adddate}}</div>
+          </div>
+        </div>
+        <div class="pagination-box">
+          <div class="pagination-pc el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
+          <div class="pagination-h5 el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
           </div>
         </div>
       </div>
-    </section>
-    <Footer></Footer>
+    </div>
   </div>
 </template>
 
@@ -291,7 +263,7 @@
             this.drawData.user_bank_id = this.BankCardList[0].id;
             this.drawData.bank_id = this.BankCardList[0].id;
             this.drawData.pix_value = this.BankCardList[0].card_no;
-            this.selectBank = this.BankCardList[0].card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
+            this.selectBank = this.BankCardList[0].bank_name + ' ' + this.BankCardList[0].card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
           }
         })
         // this.bankList = this.InitData.BanksList.flatMap(item => item.bank);
@@ -306,7 +278,7 @@
           this.drawData.user_bank_id = this.selectTypes.id;
           this.drawData.bank_id = this.selectTypes.id;
           this.drawData.pix_value = this.selectTypes.card_no;
-          this.selectBank = this.selectTypes.card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
+          this.selectBank = this.selectTypes.bank_name + ' ' + this.selectTypes.card_no.replace(/^(.{4}).*(.{4})$/, '$1 **** $2');
         },
         changePage(page){
           this.pageNo = page;
@@ -507,7 +479,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: rgb(251, 194, 65);
+    background-color: rgb(13,110,253);
   }
 
   .slide-enter-active, .slide-leave-active {
@@ -546,7 +518,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
   }
 
   .el-dropdown-menu__item {
@@ -556,7 +528,7 @@
   }
 
   .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(251, 194, 65) !important;
+    color: rgb(13,110,253) !important;
     background-color: rgb(255, 249, 240) !important;
   }
 
@@ -564,13 +536,13 @@
     font-family: myFont;
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253) !important;*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff !important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253) !important;*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem;
@@ -596,12 +568,12 @@
   }
 
   .el-menu-item.is-active, .el-menu-item:hover, .el-submenu__title:hover {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
     background-color: rgb(255, 249, 240) !important;
   }
 
   .el-menu-item:hover i, .el-submenu__title:hover i {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .lang-item {
@@ -636,13 +608,12 @@
   }
 
   .el-input .el-input__inner {
-    height: 3rem;
-    line-height: 3rem;
-    padding: 0px 1.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0px 2rem;
     font-family: myFont;
-    color: #000;
-    font-size: 1rem;
-    border: 1px solid #374161 !important;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(217, 217, 217) !important;
   }
 
   .el-textarea__inner {
@@ -687,12 +658,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(251, 194, 65) !important;
-    border-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   .el-checkbox__label {
@@ -705,7 +676,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(251, 194, 65) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -738,7 +709,7 @@
       width: 100%;
       font-size: 2rem;
       font-weight: 700;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       word-break: break-all;
     }
 
@@ -802,7 +773,7 @@
       font-size: 1.5rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
     }
 
     .container .main .info-list {
@@ -847,7 +818,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);;
       cursor: pointer;
     }
 
@@ -865,7 +836,7 @@
 
     .container .r-table .tr:first-child {
       border-radius: 4px 4px 0px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: #f4f4f4;
       border-bottom: none !important;
     }
 
@@ -916,7 +887,7 @@
     .container .r-table .tr .td .el-icon-info {
       margin-left: 5px;
       font-size: 2.5rem;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       white-space: nowrap;
       cursor: pointer;
     }
@@ -929,7 +900,7 @@
       max-width: 4.5rem;
       height: 3.5rem;
       border-radius: 4px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -1039,7 +1010,7 @@
       width: 100%;
       font-size: 1.8rem;
       font-weight: 700;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       word-break: break-all;
     }
 
@@ -1103,7 +1074,7 @@
       font-size: 1.5rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
     }
 
     .container .main .info-list {
@@ -1148,7 +1119,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);;
       cursor: pointer;
     }
 
@@ -1166,7 +1137,7 @@
 
     .container .r-table .tr:first-child {
       border-radius: 4px 4px 0px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: #f4f4f4;
       border-bottom: none !important;
     }
 
@@ -1218,7 +1189,7 @@
     .container .r-table .tr .td .el-icon-info {
       margin-top: 2px;
       font-size: 2.2rem;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       white-space: nowrap;
       cursor: pointer;
     }
@@ -1231,7 +1202,7 @@
       max-width: 3.8rem;
       height: 2.8rem;
       border-radius: 4px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -1335,7 +1306,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: rgb(251, 194, 65);
+    background-color: rgb(13,110,253);
   }
 
   .slide-enter-active, .slide-leave-active {
@@ -1374,7 +1345,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
   }
 
   .el-dropdown-menu__item {
@@ -1384,7 +1355,7 @@
   }
 
   .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(251, 194, 65) !important;
+    color: rgb(13,110,253) !important;
     background-color: rgb(255, 249, 240) !important;
   }
 
@@ -1392,13 +1363,13 @@
     font-family: myFont;
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: rgb(251, 194, 65) !important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253) !important;*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: rgb(251, 194, 65) !important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253) !important;*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem;
@@ -1424,12 +1395,12 @@
   }
 
   .el-menu-item.is-active, .el-menu-item:hover, .el-submenu__title:hover {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
     background-color: rgb(255, 249, 240) !important;
   }
 
   .el-menu-item:hover i, .el-submenu__title:hover i {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .lang-item {
@@ -1464,13 +1435,12 @@
   }
 
   .el-input .el-input__inner {
-    height: 3rem;
-    line-height: 3rem;
-    padding: 0px 1.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0px 2rem;
     font-family: myFont;
-    color: #000;
-    font-size: 1rem;
-    border: 1px solid #374161 !important;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(217, 217, 217) !important;
   }
 
   .el-textarea__inner {
@@ -1515,12 +1485,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(251, 194, 65) !important;
-    border-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   .el-checkbox__label {
@@ -1533,7 +1503,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(251, 194, 65) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -1642,7 +1612,7 @@
       box-sizing: border-box;
       padding: 0px 1.2rem;
       border-radius: 0px 4px 4px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -1689,7 +1659,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);;
       cursor: pointer;
     }
   }
@@ -1800,7 +1770,7 @@
       box-sizing: border-box;
       padding: 0px 1.2rem;
       border-radius: 0px 4px 4px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -1847,7 +1817,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);;
       cursor: pointer;
     }
   }
@@ -1935,7 +1905,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
   }
@@ -2023,55 +1993,23 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
   }
   .selectShow {
     position: absolute;
-    top: 3rem;
+    top: 5rem;
     left: 0px;
     width: -webkit-fill-available;
     background: #fff;
     z-index: 999;
-    padding: 0 1.5rem;
-    border: 1px solid #333;
-    font-size: 1rem;
-    color: #000000;
+    padding: 0 2rem;
+    border: 1px solid #ccc;
   }
-  .form .item-control .select-i {
-    background: #f1f1f1;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    padding: 1.25rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all .3s ease
-  }
-
-  .form .item-control .select-i.active {
-    border-color: #009d24
-  }
-
-  .form .item-control .select-i span {
-    margin-top: .625rem;
-    font-size: .9375rem;
-    font-weight: 400;
-    color: #1c2a46;
-    line-height: 1.3125rem
-  }
-
-  .info-wrap {
-    background: #f4f4f4;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #1c2a46;
-    line-height: 1.375rem;
-    padding: 1rem
+  .user-box {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   }
 </style>

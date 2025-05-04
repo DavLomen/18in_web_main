@@ -4,14 +4,11 @@ export default {
   "common": [
     "Servicio",
     "Cancelar suspensión",
-    "Sorteo"
+    "sorteo"
   ],
   "vanPull": [
     "No más datos",
     "Sin datos"
-  ],
-  "upload": [
-    "Subiendo"
   ],
   "login": {
     "text": [
@@ -22,10 +19,6 @@ export default {
     "placeholder": [
       "Por favor ingrese el nombre de usuario",
       "Por favor ingrese la contraseña de inicio de sesión"
-    ],
-    "i18n": [
-      "¿Sin cuenta de {título}? ",
-      "Registro"
     ]
   },
   "register": {
@@ -48,10 +41,6 @@ export default {
       "porfavor ingrese el codigo de verificacion",
       "Marque para aceptar los términos del descargo de responsabilidad.",
       "Por favor ingrese el correo electrónico"
-    ],
-    "i18n": [
-      "¿Tener una cuenta? ",
-      "Acceso"
     ]
   },
   "user": {
@@ -74,11 +63,11 @@ export default {
       "alipay",
       "Información detallada",
       "Contraseña de inicio de sesión",
-      "Contraseña del fondo",
+      "Contraseña de pago",
       "Haga clic en Configuración",
       "Cambiar retrato de cabeza",
       "Cambiar contraseña de inicio de sesión",
-      "Cambiar contraseña del fondo",
+      "Cambiar contraseña de pago",
       "Entregar",
       "Vaciar el caché"
     ],
@@ -86,17 +75,17 @@ export default {
       "Contraseña de inicio de sesión original",
       "Nueva contraseña de inicio de sesión",
       "Confirmando contraseña",
-      "Contraseña original del fondo",
-      "Nueva contraseña de fondo",
+      "Contraseña de pago original",
+      "Nueva contraseña de pago",
       "Confirmar Contraseña"
     ],
     "placeholder": [
       "Por favor ingrese la contraseña de inicio de sesión original",
       "Por favor ingrese una nueva contraseña de inicio de sesión",
       "Por favor confirme la contraseña de inicio de sesión",
-      "Por favor ingrese la contraseña original del fondo",
-      "Por favor ingrese la nueva contraseña del fondo",
-      "Por favor confirme la contraseña del fondo"
+      "Por favor ingrese la Contraseña de Pago original",
+      "Por favor ingrese la nueva Contraseña de Pago",
+      "Por favor confirme la contraseña de pago"
     ]
   },
   "userSet": {
@@ -149,7 +138,7 @@ export default {
     "label": [
       "método de retiro",
       "Cantidad de retiro",
-      "Contraseña del fondo",
+      "Contraseña de pago",
       "Entregar",
       "Número de teléfono",
       "Correo electrónico",
@@ -178,7 +167,7 @@ export default {
     "placeholder": [
       "Seleccione el método de retiro",
       "Por favor ingrese el monto del retiro",
-      "Por favor ingrese la contraseña del fondo",
+      "Por favor ingrese la Contraseña de Pago",
       "Por favor seleccione el método de retiro",
       "Por favor introduzca el número de teléfono móvil del beneficiario",
       "Por favor ingrese la dirección de correo electrónico del beneficiario",
@@ -186,7 +175,7 @@ export default {
       "Por favor seleccione el banco de retiro"
     ],
     "msg": [
-      "No has configurado la contraseña del fondo, configúrala primero",
+      "No ha configurado la contraseña de pago, configúrela primero",
       "No ha vinculado su dirección de retiro, vincúlela primero"
     ]
   },
@@ -218,7 +207,7 @@ export default {
       "El importe mínimo único es {currency} {min}",
       "El importe máximo único es {currency} {max}",
       "Por favor ingrese el nombre del pagador",
-      "Ingrese el número de teléfono móvil del pagador y preceda el número con el código de área internacional, como +86",
+      "Ingrese el número de teléfono móvil del pagador, prefije el número con el código de área internacional, como 86",
       "Ingrese la cuenta UPI del pagador",
       "Por favor ingrese la dirección de correo electrónico del pagador"
     ],
@@ -229,7 +218,7 @@ export default {
       "Número de cuenta",
       "Nombre",
       "Copiar",
-      "{tipo} Transferir",
+      "{tipo} Transferencia",
       "Transferir captura de pantalla",
       "Entregar",
       "Código IFSC",
@@ -307,18 +296,18 @@ export default {
     "Por favor ingrese el ID de transacción (TxID)"
   ],
   "foot": [
-    "Desde 2016, {WT} se ha convertido en un centro de minería en la nube de criptomonedas de renombre mundial y es una empresa diversificada con un objetivo muy simple: brindamos las herramientas y servicios que necesita para tener éxito en el campo de los activos digitales. ",
+    "Desde 2018, {WT} ha cooperado con los principales centros de datos del mundo y cuenta con tecnología avanzada de computación en la nube y una potente potencia informática de minería. ",
     "Enlaces al sitio",
-    "Contrato",
+    "Planes",
     "Acerca de",
     "Preguntas más frecuentes",
-    "Afiliado",
+    "Remisión",
     "Blog",
     "Contacto",
-    "enlaces rápidos",
+    "Links importantes",
     "Privacidad y política",
     "Términos de servicios",
-    "Copyright © 2016-2024 {WT}.  <a href=\"{WS}\" class=\"text--base\">{PESO}</a>"
+    "Copyright © 2018-2024 {WT}"
   ],
   "head": [
     "Hogar",
@@ -331,46 +320,42 @@ export default {
     "Depósito",
     "Retirar",
     "Contrato",
-    "Todo contrato",
+    "Contrato Minero",
     "Mi contrato",
-    "factura",
+    "Actas",
     "Mensaje",
     "Ajustes",
     "Dirección de billetera",
     "Contraseña de inicio de sesión",
-    "Contraseña de pago",
-    "Depositar dinero",
-    "Mis depósitos",
-    "Retirar dinero",
-    "Mis retiros",
-    "Facturas",
-    "Comisiones",
-    "Referencias"
-  ],
-  "say": [
-    "amelia",
-    "enfermero",
-    "Es una empresa maravillosa. ",
-    "Bill Clinton",
-    "Diseñador de ropa",
-    "Ganada, esta es la mejor plataforma de inversión en minería en la nube que he visitado. Comencé con un plan de $100 y ahora he aumentado los fondos para comprar planes más altos.",
-    "katrin",
-    "doctor",
-    "{WT} es una empresa de tecnología seria que ayuda a extraer criptomonedas y se dedica al desarrollo de proyectos ICO. Confío en toda la empresa y les deseo un gran crecimiento y éxito.",
-    ""
+    "Contraseña de pago"
   ],
   "about": [
-    "Sobre nosotros",
-    "{WT} se convirtió en una empresa del ámbito de la criptominería en 2016 en el Reino Unido. ",
-    "Visión y misión",
-    "{WT}, como excelente proveedor de potencia informática, ofrece varias gamas de capacidades de minería de criptomonedas para principiantes, mineros domésticos interesados ​​y grandes inversores. ",
-    "Unete a nosotros",
-    "¿Quieres ser parte de nuestra comunidad? ",
-    "Certificado de incorporación",
-    "Numero de compañia",
-    "tipo de compañía",
-    "Incorporado el",
-    "Revisa en linea",
+    "Acerca de",
+    "Hogar",
+    "servicio",
+    "Plataforma internacional de computación en la nube",
+    "MAR Mining es un proveedor de servicios de minería de activos digitales en rápido crecimiento y el proveedor de servicios de minería en la nube líder en el mundo. ",
+    "infraestructura",
+    "Líder mundial en minería",
+    "Desde 2018, MAR Mining ha estado construyendo granjas mineras para facilitar y procesar de manera confiable los activos digitales. ",
+    "negocio",
+    "Diseño de negocios globales",
+    "MAR Mining tiene granjas de minería en la nube a gran escala en Canadá, Reino Unido, Rusia, Estados Unidos y otras regiones. ",
+    "¡Da hoy el primer paso para convertirte en un entusiasta de la minería en la nube!",
+    "Ahora puedes comenzar a obtener ganancias mineras de forma rápida, fácil y segura, sin importar dónde te encuentres. ",
+    "Retiros rápidos 24 horas al día, 7 días a la semana",
+    "Plataforma confiable y segura",
+    "Plataforma legal y estable",
+    "Proteccion",
+    "El equipo técnico de MAR Mining cuenta con tecnología blockchain de última generación y garantiza la seguridad mediante consenso descentralizado y cifrado criptográfico. ",
+    "Empresa jurídica autorizada",
+    "MAR Mining es una plataforma de minería de criptomonedas en la nube autorizada y registrada en el Reino Unido. ",
+    "Sencillo y rápido",
+    "MAR Mining se caracteriza por su simplicidad de operación. ",
+    "granja minera de carga millonaria",
+    "Hasta el momento MAR Mining cuenta con grandes parques mineros en Estados Unidos, Canadá, Reino Unido, Rusia y otros países, con una mina de un millón de carga. ",
+    "Certificado",
+    "búsqueda en línea",
     "Descargar PDF"
   ],
   "walletAddress": [
@@ -386,7 +371,7 @@ export default {
     "Realizado",
     "Cantidad",
     "Saldo posterior",
-    "Tipo de billetera"
+    "tipo de transacción"
   ],
   "regLogin": [
     "¿Ya tienes una cuenta?",
@@ -397,7 +382,7 @@ export default {
     "Contraseña",
     "Contraseña de al menos 6 caracteres",
     "confirmar Contraseña",
-    "Código de recomendación",
+    "Código de Referencia (Opcional)",
     "Introduzca captcha",
     "Acepto",
     "Regístrate ahora",
@@ -407,12 +392,12 @@ export default {
     "Ingrese sus datos para comenzar."
   ],
   "product": [
-    "Monto único de inversión",
-    "Monto de inversión",
-    "Período de inversión",
-    "Tasa de ganancia diaria",
-    "Beneficio neto diario",
-    "Beneficio neto total",
+    "Precio de contrato",
+    "Ingrese la cantidad",
+    "Duración del contrato",
+    "Ganancia diaria",
+    "Beneficio total",
+    "Renta Fija",
     "Liquidar intereses",
     "Cada 24 Horas",
     "Poder hash",
@@ -421,13 +406,11 @@ export default {
     "Contrato de arrendamiento de hash",
     "Empezar ahora",
     "Agotado",
-    "Detalles del paquete",
+    "Detalles del contrato",
     "Días",
     "Mercado de poder hash",
     "Devolución después del vencimiento",
-    "Plan de compra",
-    "Descripción del contrato",
-    "Contrato de cálculo e instrucciones de servicio postventa.<br><br>Los contratos de computación en la nube brindan a los clientes institucionales la solución de minería más simple y eficiente. <br><br>Recordatorio: (Paquete Hash Power Contract de 10 USD) está limitado a una compra por día, (Paquete Hash Power Contract de 100 USD) está limitado a una compra por cuenta.<br><br>Descripción del Producto<br><br>1. Instrucciones para la compra del contrato<br>Por favor, comprenda el producto cuidadosamente antes de invertir. <br><br>2. Descripción del producto<br>Contrato: potencia informática<br>Mineros: potencia informática de BTC<br>Moneda de inversión: dólares estadounidenses<br>Dirección de pago: Tercero (USDT BTC ETH LTC USDC BCH)<br>Tiempo de inversión: inicio-fin según tiempo de contrato<br>A tiempo: 100%<br><br>3. Instrucciones de liquidación<br>Se espera que las ganancias provengan del funcionamiento en tiempo real de la red de activos digitales y sufrirán cambios dinámicos. <br><br><br>4. Fin del contrato<br>El contrato finalizará automáticamente cuando expire. <br><br>5. Recordatorio de riesgos<br>El precio de los activos digitales fluctúa mucho y la dificultad de extracción de cada moneda también se ajusta periódicamente. <br><br>{DT}<br>Descargo de responsabilidad y soporte<br><br>1. De acuerdo con los términos de uso de {WT}, una vez que se paga un pedido, no se puede cambiar ni reembolsar.<br><br>2. {WT} no es responsable de los resultados que surjan de riesgos incontrolables, incluidos, entre otros, desastres naturales, como inundaciones, erupciones volcánicas, terremotos, deslizamientos de tierra, incendios, tormentas, otros eventos climáticos imprevistos o de alto riesgo, leyes gubernamentales. <br><br>3. Las fluctuaciones en el poder de la computación en la nube son inevitables. <br><br>4. La producción estática se calcula estáticamente en función de la dificultad actual y fluctúa con el mercado. "
+    "Elige tu plan"
   ],
   "password": [
     "Contraseña actual",
@@ -437,7 +420,7 @@ export default {
   ],
   "package": [
     "TXID | ",
-    "Paquete",
+    "Contrato",
     "Devolver",
     "Cantidad",
     "Ganancias mineras",
@@ -446,35 +429,37 @@ export default {
     "Ganancias mineras"
   ],
   "affliliate": [
-    "Programa de afiliados",
-    "Regístrate ahora",
-    "Únase a nuestra comunidad, registre una cuenta y obtenga su enlace de referencia.",
+    "¿Como funciona?",
+    "Inscribirse",
+    "Regístrese y obtenga un enlace de referencia.",
     "Invitar a nuevos usuarios",
-    "Invita a nuevos usuarios, compartiendo tu enlace a través de las redes sociales.",
+    "Invita a tus amigos a utilizar el enlace de referencia.",
+    "Paquetes de compra",
+    "Paquetes de compra de referidos.",
     "Gana Comisiones",
-    "Obtenga un bono del 3% según el monto de su inversión inicial.",
-    "Join our referral program (Partner Program) and receive a 3% bonus based on your initial investment! You can run it like a boss and start making money without investing a penny. 3% for first-level agents and 1.5% for second-level agents. For example, if someone invests $5,000 in the program using your referral code, you’ll get $150 for free. With unlimited referrals, your earning potential is unlimited! So why wait? Sign up now and start making money by sharing your referral link with friends and family.",
-    "ÚNETE A NOSOTROS"
+    "Nuevo usuario se registra y compra. ",
+    "¡Únase a nuestro programa de referencias (Programa de socios) y gane hasta un 4,5% de comisión de por vida! ",
+    "Puedes administrarlo como un jefe y empezar a ganar dinero sin invertir ni un centavo. ",
+    "Entonces, ¿por qué esperar? ",
+    "Únete a nosotros"
   ],
   "affiliates": [
     "Afiliados",
-    "Programa de referencia",
+    "programa de afiliación",
     "Tu correo electrónico",
     "Su nombre de usuario",
-    "código de referencia",
-    "Enlace de referencia",
+    "Su código de referencia",
+    "Su enlace de afiliado",
     "Gane acciones de bonificación",
-    "Comparta el sitio web con otras personas. Obtendrá una bonificación del 3% según el monto de su inversión inicial. ",
+    "Como socio afiliado de nuestro sitio web, tiene la oportunidad de ganar dinero compartiendo su enlace de referencia con amigos y familiares. Incluso si no invierte, aún puede comenzar a ganar hasta el 3% de cada compra realizada por los usuarios que refiera. ",
     "Aprende más",
-    "Lista de referencias",
-    "Socios",
+    "Lista de socios",
+    "Total de socios",
     "Fecha",
     "De",
     "Nivel",
     "Cantidad",
-    "Tipo",
-    "Copiar link",
-    "Remisión"
+    "Tipo"
   ],
   "appDown": [
     "COMENZAR EL VIAJE MINERO",
@@ -517,111 +502,13 @@ export default {
     "Su nombre de usuario",
     "Su código de referencia",
     "Su enlace de afiliado",
-    "BIENVENIDO",
-    "BALANCE TOTAL",
-    "Intereses",
-    "Comisión",
-    "Actividad reciente",
-    "Bonificación de registro recibida.",
-    "Beneficio total",
-    "Mis ordenes"
+    "¿Tiene usted alguna pregunta?",
+    "Le recomendamos encarecidamente que busque la información necesaria en la sección de preguntas frecuentes. ",
+    "Obtenga soporte ahora",
+    "Mi enlace de referencia"
   ],
   "faq": [
-    "Problema comun"
-  ],
-  "home": [
-    "La plataforma de minería en la nube de criptomonedas líder en el mundo, en la que confían 6,5 millones de clientes, ofrece una gama completa de contratos de minería en la nube. ",
-    "● Regístrese ahora y obtenga un bono de $10<br>● Obtenga $0,5 por el check-in diario<br>● Invita a tus amigos para obtener una recompensa permanente del 3 %.",
-    "Regístrate ahora",
-    "Nuestro compromiso",
-    "Haremos que el retorno de tu inversión crezca de manera constante y de una manera muy segura.",
-    "Hecho para ser fácil",
-    "Un conjunto de herramientas conveniente y retiros simples: el tablero es intuitivamente comprensible tanto para principiantes como para profesionales.",
-    "Seguro y privado",
-    "Apoyamos las criptomonedas que promueven la privacidad, por lo que nos esforzamos por mantener los datos de usuario recopilados al mínimo y solo solicitamos información que sea obligatoria desde una perspectiva regulatoria.",
-    "Programa de referencia de la alianza",
-    "Si algún usuario se registra a través de sus enlaces de referencia y realiza compras, usted recibe una comisión del 4,5% sobre todas las compras que realice.",
-    "Altos rendimientos",
-    "La tecnología y el personal profesionales garantizan la seguridad de su principal y generan altos rendimientos.",
-    "Protección fuerte",
-    "La seguridad del cliente es una gran prioridad para nosotros. ",
-    "Sitio web protegido",
-    "Estamos utilizando uno de los proveedores de mitigación y protección DDoS más experimentados, profesionales y confiables.",
-    "La minería en la nube te brinda ingresos pasivos",
-    "La minería en la nube le permite utilizar la potencia informática de los equipos de minería alojados en centros de datos especializados sin poseer ni mantener el equipo. ",
-    "Inscribirse",
-    "Complete el formulario para crear su propia cuenta",
-    "Seleccionar contrato",
-    "Elija uno o más contratos de minería en la nube",
-    "obtener ganancias",
-    "Para el contrato que elija, las ganancias diarias se acreditarán en su cuenta de inmediato.",
-    "obtener ganancias",
-    "Para el contrato que elija, las ganancias diarias se acreditarán en su cuenta de inmediato.",
-    "Tasa de ganancia diaria",
-    "Liquidar intereses cada 24 horas",
-    "El capital se devuelve al vencimiento.",
-    "Soporte 24 horas al día, 7 días a la semana",
-    "Monto único de inversión",
-    "Período de inversión",
-    "Días",
-    "Beneficio neto total",
-    "Invierta ahora",
-    "Calculadora de ganancias",
-    "Calcula tus ingresos mineros",
-    "Plan",
-    "Cantidad",
-    "Beneficio neto total",
-    "Tasa de ganancia diaria",
-    "Por qué elegirnos",
-    "Nuestro objetivo es utilizar el dinero de nuestros inversores y proporcionarles una fuente de altos ingresos mientras minimizamos cualquier posibilidad de riesgo.",
-    "Global",
-    "Somos una empresa internacional que tiene clientes de diferentes países del mundo.",
-    "Usuario primero",
-    "Todo nuestro trabajo está centrado en el usuario y brindamos servicio al cliente 24 horas al día, 7 días a la semana.",
-    "Seguridad del fondo",
-    "Bajo la supervisión de las agencias reguladoras, se han tomado medidas estrictas para cumplir y lograr la total transparencia.",
-    "Certificado",
-    "Somos una empresa certificada que realiza negocios legales en el campo legal. ",
-    "Seguro",
-    "Trabajamos constantemente para mejorar nuestro sistema y nuestro nivel de seguridad para minimizar cualquier riesgo potencial.",
-    "Sostenibilidad",
-    "Todas las minas utilizan electricidad de energía limpia, lo que hace que la minería en la nube se una a las filas de la neutralidad de carbono.",
-    "Unete a nosotros",
-    "¿Quieres ser parte de nuestra comunidad? ",
-    "Únete ahora",
-    "Problema comun",
-    "Respondemos algunas de tus Preguntas Frecuentes sobre nuestra plataforma. ",
-    "¿Qué es la minería en la nube?",
-    "Si desea ganar dinero a través de criptomonedas, la minería en la nube es el camino a seguir. La minería en la nube es el proceso de minería de criptomonedas que utiliza un centro de datos remoto con poder de procesamiento compartido. Este tipo de minería en la nube permite a los usuarios extraer bitcoins o criptomonedas alternativas sin administrar el hardware. ",
-    "¿Cómo empezar a minar en {WT}?",
-    "Todo lo que necesita hacer para comenzar a minar criptomonedas en {WT} es registrarse y comprar su contrato para obtener ingresos pasivos fácilmente todos los días.",
-    "¿Cuánto cuesta el servicio?",
-    "No hay ningún cargo adicional, la tarifa del servicio ya está incluida en el contrato.",
-    "¿Cómo hago un depósito?",
-    "Seleccione la PESTAÑA Depósito y siga las instrucciones de la página. ",
-    "¿Cómo retiro mis ingresos mineros?",
-    "Seleccione la PESTAÑA Retiro para solicitar un retiro. ",
-    "¿Por qué tiene sentido reinvertir mis ganancias mineras?",
-    "{WT} opera minas en todo el mundo y puede utilizar precios de electricidad relativamente bajos. ",
-    "Olvidé mi Contraseña, ¿qué debo hacer?",
-    "Haga clic en \"Olvidé mi contraseña\" en la página de inicio de sesión.<br>Ingrese su dirección de correo electrónico registrada en la siguiente pantalla y haga clic en Enviar. <br>Recibirá un correo electrónico para restablecer su contraseña dentro de 5 minutos, pero recuerde revisar sus carpetas de correo no deseado si no lo ve de manera oportuna.<br>Su contraseña está cifrada con MD5 y almacenada en la base de datos. ",
-    "¿Qué es el programa de referencia de afiliados?",
-    "Puede encontrar el referente en su cuenta, copiar el enlace de referencia y compartir este enlace para obtener una bonificación. ",
-    "Perdí mi código de verificación de dos factores (2FA), ¿qué debo hacer?",
-    "Si por alguna razón no puede pasar la autenticación de dos factores, podemos eliminarla después de verificar la propiedad de su cuenta.<br>Aquí está la información que debe completar para eliminar 2FA:<br>1. Dirección de correo electrónico registrada:<br>2. Dirección de BTC Wallet registrada en su cuenta:<br>¡Advertencia! ",
-    "¿Cómo hacer una copia de seguridad del autenticador de Google?",
-    "Recibimos muchas solicitudes para cancelar la certificación 2FA de Google. ",
-    "¿Puedo confiar en {WT}?",
-    "{WT} se fundó en 2016 y tiene su sede en el Reino Unido. ",
-    "Lo que dicen nuestros clientes",
-    "Eche un vistazo a nuestro equipo de expertos que trabajan arduamente para asegurarse de obtener ganancias.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Preguntas frecuentes"
   ],
   "withdraw": [
     "Saldo disponible",
@@ -632,7 +519,7 @@ export default {
     "Entregar",
     "TXID",
     "Cantidad",
-    "Estado",
+    "estado comercial",
     "Tiempo"
   ],
   "deposit": [
@@ -643,9 +530,9 @@ export default {
     "ID de transacción/número de hash",
     "Complete el ID de transacción/número de hash",
     "Subir captura de pantalla de transferencia",
-    "He pagado",
+    "Entregar",
     "Saldo disponible",
-    "Puerta",
+    "Método de depósito",
     "Cantidad",
     "Límite",
     "Pagadero",
@@ -653,7 +540,7 @@ export default {
     "TXID",
     "Método de depósito",
     "Cantidad",
-    "Estado",
+    "estado comercial",
     "Tiempo",
     "Detalles",
     "Premio",
@@ -662,16 +549,14 @@ export default {
     "Cantidad a pagar",
     "Monto real",
     "Subir captura de pantalla de transferencia",
-    "Confirmar depósito",
-    "Información del pago",
-    "Cerca"
+    "Recordatorio: el monto mínimo de depósito comienza desde $100."
   ],
   "productDetail": [
     "Detalles",
     "Cada cuenta está limitada a una compra por día.",
     "Cada cuenta solo puede comprar 1 copia",
     "Instrucciones de compra",
-    "La potencia informática y el servicio postventa son proporcionados por {WT}. <br>El plan de energía de computación en la nube brinda a los clientes institucionales soluciones de minería simples y eficientes. ",
+    "La potencia informática y el servicio postventa son proporcionados por MAR Mining. <br>El plan de energía de computación en la nube brinda a los clientes institucionales soluciones de minería simples y eficientes. ",
     "Descripción del Producto",
     "1. Instrucciones de compra",
     "Por favor, comprenda el producto cuidadosamente antes de realizar un pedido. ",
@@ -681,7 +566,7 @@ export default {
     "El contrato quedará automáticamente rescindido al vencimiento. ",
     "4. Advertencia de riesgo",
     "Los precios de los activos digitales suelen fluctuar mucho y la dificultad de extracción de cada moneda también se ajusta periódicamente. ",
-    "5.{WT} no es responsable de los resultados que surjan de riesgos fuera de su control, incluidos, entre otros, desastres naturales como inundaciones, erupciones volcánicas, terremotos, deslizamientos de tierra, incendios, tormentas, otros eventos climáticos imprevistos o de alto riesgo, ",
+    "5.MAR Mining no es responsable de los resultados que surjan de riesgos fuera de su control, incluidos, entre otros, desastres naturales como inundaciones, erupciones volcánicas, terremotos, deslizamientos de tierra, incendios, tormentas, otros eventos climáticos imprevistos o de alto riesgo, leyes gubernamentales. ",
     "6. Las fluctuaciones en la potencia informática son inevitables. ",
     "7. La producción estática se calcula estáticamente en función de la dificultad actual y fluctúa con el mercado. ",
     "La plataforma se reserva el derecho de interpretación final de los términos de este contrato."
@@ -695,7 +580,9 @@ export default {
     "club vip"
   ],
   "tips": [
-    "Después de realizar el pago correctamente, guarde la captura de pantalla del pago en su teléfono móvil y cárguela en la página antes de enviar el pedido. "
+    "Después de realizar el pago correctamente, guarde la captura de pantalla del pago en su teléfono móvil y cárguela en la página antes de enviar el pedido. ",
+    "La captura de pantalla debe contener el hash de la transacción; de lo contrario, el sistema no podrá reconocerla.",
+    "Recordatorio: el monto mínimo de retiro comienza desde $100."
   ],
   "next": "Próximo pago",
   "placehoder": [
@@ -706,124 +593,122 @@ export default {
   "dep": [
     "Recordatorio: el monto mínimo de recarga comienza en US$100. "
   ],
-  "payment": [
-    "ACEPTE UNA VARIEDAD DE MÉTODOS DE PAGO",
-    "Para garantizar la comodidad de nuestros inversores, {WT} ofrece una amplia gama de métodos de pago tanto para depositar fondos como para recibir pagos."
-  ],
-  "latest": [
-    "Última transacción",
-    "Último depósito",
-    "último retiro"
+  "cryptocurrency": [
+    "¿Qué es la criptomoneda?"
   ],
   "loginpage": [
     "Hola, bienvenido de nuevo!",
     "Crea tu cuenta",
     "Ofrecemos los siguientes métodos de pago.",
-    "Aceptar y continuar",
+    "Aceptar",
     "Ingrese sus datos para iniciar sesión."
   ],
-  "vipfoot": [
-    "Consulte el servicio de atención al cliente en línea 7x24 para obtener más detalles. "
-  ],
-  "power": [
-    "Potencia informática del mercado",
-    "La versión 2.0 recientemente actualizada de la generación de energía de ciclo verde de nueva energía \"energía eólica\" y \"energía solar\" experimenta electricidad sin costo y altos retornos en los ingresos de las máquinas mineras."
-  ],
-  "aboutf": [
-    "Miembros activos",
-    "País de soporte",
-    "Minerales globales",
-    "Equipo de minería",
-    "Nuestro centro de citas",
-    "Servicios que seguimos mejorando",
-    "Ubicaciones del centro de datos",
-    "Nuestros centros de campo minero están ubicados en Islandia, Noruega, Kazajstán, etc.",
-    "Hardware del centro de datos",
-    "Más de 1000000 mineros ASIC más recientes y dispositivos GPU listos para minar.",
-    "Sistema de poder",
-    "Utilizamos energía eólica, hidráulica y solar, con una capacidad total de 700.000 kilovatios.",
-    "Sistema de refrigeración",
-    "Sistema de refrigeración por aire y sistema de refrigeración por agua que mantienen la temperatura: 20-24 ℃. ",
-    "Seguridad/Protección contra incendios",
-    "Guardias en sitio 24 horas al día, 7 días a la semana, sistemas de detección de intrusos, cámaras IP-DVR.",
-    "Nuestro equipo",
-    "Nuestro equipo de minería proviene de la industria blockchain y de ingenieros de TI."
-  ],
-  "affliate": [
-    "Afiliado",
-    "Nuestro programa de afiliados ofrece numerosos beneficios.",
-    "<p></p><div>Ofrecemos un programa de afiliados excepcional que trae consigo numerosas ventajas.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">NO SE NECESITA DEPÓSITO</span></div><div>Puede convertirse en afiliado y aprovechar nuestro programa incluso sin realizar un depósito.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">ALTAS COMISIONES</span></div><div>Por cada compra realizada por un usuario recomendado por usted, recibirá una generosa recompensa por recomendación de hasta el 1,5-3%.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">PAGOS INSTANTÁNEOS</span></div><div>Proporcionamos pagos instantáneos de recompensas por referencias en criptomonedas, que se acreditan en el saldo de su cuenta.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">POTENCIAL DE GANANCIAS ILIMITADA</span></div><div>No hay límites para la cantidad de referencias que puede generar, por lo que su potencial de ganancias es ilimitado.</div><p></p>",
-    "¿Como funciona?",
-    "Regístrate ahora",
-    "Regístrese y obtenga un enlace de referencia.",
-    "Invitar a nuevos usuarios",
-    "Invita a tus amigos a utilizar el enlace de referencia.",
-    "Contrato de compra",
-    "Contrato de compra de referidos.",
-    "Gana Comisiones",
-    "Se registra un nuevo usuario. Obtienes el 4,5% de su compra.",
+  "newhome": [
+    "La exploración de la minería en la nube comienza con {WT}",
+    "{WT} es el principal proveedor de servicios de minería en la nube del mundo, que es simple y conveniente, y tiene una amplia experiencia en la operación de sistemas de minería en la nube y tecnología de punta. ",
+    "Regístrate ahora y obtén un bono de $12",
+    "¿Cómo funciona?",
+    "Nuestros contratos mineros",
+    "Le ofrecemos los contratos de minería en la nube más rentables y confiables al brindarle pagos diarios para todos los contratos en la moneda del contrato. ",
+    "Conozca nuestro proceso de trabajo. ",
+    "Crea una cuenta",
+    "Complete el formulario usando la opción de registro y comience su viaje de minería en la nube",
+    "Elija planes",
+    "Elige tu plan de contrato preferido",
+    "Comenzar la mineria",
+    "Compre un plan de contrato y obtenga ingresos pasivos",
+    "Obtener producción minera",
+    "Sus ingresos estables se actualizan automáticamente en su cuenta todos los días",
+    "¿Porque nosotros? ",
+    "Hecho para ser fácil",
+    "Un conjunto de herramientas conveniente y retiros simples: el tablero es intuitivamente comprensible tanto para principiantes como para profesionales.",
+    "Seguro y privado",
+    "Apoyamos las criptomonedas que promueven la privacidad, por lo que nos esforzamos por mantener los datos de usuario recopilados al mínimo y solo solicitamos información que sea obligatoria desde una perspectiva regulatoria.",
+    "Programa de referencia de la alianza",
+    "Si algún usuario se registra a través de sus enlaces de referencia y realiza compras, usted recibe una comisión del 4,5% sobre todas las compras que realice.",
+    "Tarifas fijas",
+    "Sin tarifas ni comisiones ocultas, cada transacción es transparente y visible en su panel de control",
+    "Protección fuerte",
+    "La seguridad del cliente es una gran prioridad para nosotros. ",
+    "Sitio web protegido",
+    "Estamos utilizando uno de los proveedores de mitigación y protección DDoS más experimentados, profesionales y confiables.",
     "¿Qué obtendrá como socio afiliado?",
-    "¡Únase a nuestro programa de referencias (Programa de socios) y gane hasta un 4,5% de comisión de por vida!  <br><br>Para comenzar, regístrese para obtener una cuenta y obtenga su propio enlace/URL de referencia. <br><br>A continuación, invite a nuevos usuarios compartiendo su enlace de referencia a través de las redes sociales o su propio sitio web. <br>",
-    "Únete ahora"
-  ],
-  "cryptocurrency": [
-    "¿Qué es la criptomoneda?",
-    "¿Qué es Web3?"
-  ],
-  "rechargefoot": [
-    "Recordatorio: el monto mínimo de recarga comienza en US$100. ",
-    "Recordatorio: el monto mínimo de retiro comienza desde $100. "
+    "¡Únase a nuestro programa de referencias (Programa de socios) y gane hasta un 4,5% de comisión de por vida!  <br><br>Primero, regístrese para obtener una cuenta y obtenga su propio enlace/URL de referencia. <br><br>A continuación, invite a nuevos usuarios compartiendo su enlace de referencia a través de las redes sociales o su propio sitio web. ",
+    "Únete ahora",
+    "Sitio confiable de minería en la nube",
+    "Umbral bajo",
+    "No es necesario comprar hardware, acceso inmediato a la minería BTC.",
+    "Nodos globales",
+    "Implementa nodos mineros en Europa, América, etc. ",
+    "Pagos diarios",
+    "En BTC, ETH, USDT, LTC, obtenga resultados diariamente.",
+    "Soporte en vivo 24 horas al día, 7 días a la semana",
+    "Con tiempo de respuesta inferior a 2 min.",
+    "Usuario",
+    "Cantidad",
+    "Tiempo",
+    "Facilite la minería en la nube y abra la puerta a la riqueza.",
+    "Somos una empresa especializada en minería en la nube, que brinda servicios de minería en la nube para máquinas de minería de criptomonedas ASIC y GPU, eliminando procesos complicados para todos los entusiastas de las criptomonedas.<br>Brindándole más tiempo para concentrarse en aumentar sus ingresos y desarrollar su cartera minera sin la necesidad de configuraciones complejas e inversiones en equipos pesados.",
+    "Nuestra plataforma ha investigado y compilado cuidadosamente una lista de los proveedores de servicios de minería en la nube más eficientes y de mayor reputación, lo que garantiza una experiencia perfecta para los mineros de todos los niveles. Se puede acceder a la minería MAR y retirarla en cualquier momento, las 24 horas del día. ",
+    "Las ganancias diarias se pueden retirar sin límite superior. ",
+    "Continuar",
+    "Lo que la gente dice de nosotros",
+    "Un gran número de personas confían en nosotros y aquí tenéis las palabras de algunas de ellas.",
+    "Bill Clinton",
+    "trabajadores de oficina",
+    "Esta es la mejor plataforma de inversión en minería en la nube que he visitado. Comencé con el plan de $100 y ahora aumenté mis fondos para comprar planes superiores.",
+    "amilia",
+    "modelo",
+    "Esta es una empresa seria de tecnología de minería en la nube que ayuda a extraer criptomonedas y participa en el desarrollo de proyectos ICO. ",
+    "Jonathan Smith",
+    "Empresario",
+    "He estado usando esta plataforma y obteniendo excelentes comentarios. ",
+    "Matthias van den Ede",
+    "Qui quo excepto ni",
+    "La conexión que me recomendó mi buen amigo Moomin actualmente genera ingresos constantes y espero mejores paquetes de la plataforma.",
+    "Sr. Kamal Le",
+    "Qui quis qui sed est",
+    "Recibí un retiro de esta empresa en menos de 10 minutos. ",
+    "caitlin",
+    "Rerum excepto volu",
+    "Esta es una gran compañía. ",
+    "Pablo Brignadero",
+    "ingeniero",
+    "MAR Mining es la mejor plataforma de minería en la nube que he usado. ",
+    "Natasha DeLoach",
+    "trabajadores de oficina",
+    "Vi un anuncio de vídeo en Twitter e hice una pequeña compra por adelantado. ",
+    "Aspinas Amet",
+    "modelo",
+    "Llevo más de 8 meses usando la plataforma de minería en la nube que comparte mi hermana europea y ahora se ha convertido en una fuente de ingresos familiar.",
+    "Cromo Esponja",
+    "modelo",
+    "Vi el artículo que compartieron de Crypto News y pensé que era una oportunidad. ",
+    ""
   ],
   "settle": [
     "Liquidar intereses",
     "Cada 24 Horas",
     "Ingreso diario",
     "Renta Fija",
-    "Ver más",
+    "Ver Detalle",
     "Comprar ahora",
     "Verificar",
     "Cantidad",
     "Cantidad",
     "Contraseña de pago",
-    "Pagar",
-    "Agotado al 100%"
+    "Pagar"
   ],
-  "tip100": [
-    "Recordatorio: este paquete de contrato de potencia informática está limitado a una compra por cuenta.",
-    "Recordatorio: este paquete de contrato de potencia informática está limitado a una compra por día."
+  "latest": [
+    "Última transacción",
+    "Último pago",
+    "último retiro"
   ],
-  "tutorial": [
+  "teach": [
     "Tutorial"
   ],
-  "newHome": [
-    "Centros de datos en todo el mundo",
-    "Nuestros planes de alojamiento web, alojamiento de WordPress y alojamiento en la nube ofrecen ubicaciones de servidores en: EE. UU., Reino Unido, Francia, India, Singapur, Indonesia, Brasil, Lituania y Países Bajos.",
-    "progreso de ventas"
-  ],
-  "newss":[
-    "Contrato minero",
-    "¡Empiece a minar ahora y obtenga ingresos por contrato todos los días! ¡Disfrute de las ganancias mineras más confiables y generosas y obtenga fácilmente ingresos en criptomonedas y monedas estables! ¡Únase a nosotros hoy y obtenga su primer ingreso mañana!",
-    "Este contrato sólo se puede comprar una vez",
-    "Este contrato sólo se puede comprar una vez al día.",
-    "nuestro compromiso",
-    "Nuestras medidas de gestión de riesgos están diseñadas para proteger sus activos y nuestros sistemas están equipados con las mejores medidas de seguridad de su clase para proteger sus inversiones e información personal, minimizando cualquier riesgo potencial.",
-    "① Hazlo simple",
-    "Permite tanto a principiantes como a profesionales completar la operación de forma fácil, rápida, intuitiva y comprensible.",
-    "② Beneficios estables",
-    "Una vez que se active su contrato de minería en la nube, sus ganancias diarias se distribuirán a su cuenta de minería después de 24 horas.",
-    "③ Seguro y privado",
-    "Apoyamos las criptomonedas que promueven la privacidad, por lo que nos esforzamos por mantener al mínimo los datos de usuario que recopilamos.",
-    "④ Minería en la nube respetuosa con el medio ambiente",
-    "Nuestros equipos y sistemas de refrigeración funcionan con energía solar y eólica, lo que los hace respetuosos con el medio ambiente y altamente rentables.",
-    "",
-  ],
-  "optional":[
-    "(opcional)"
-  ],
-  "bounty": "Recompensa de anuncios",
-  "more": "Mostrar más",
+  "bounty": "Cazarrecompensas",
   "complete": "terminado",
   "cancel": "Cancelar",
-  "submit": "Entregar",
   "confirm": "Confirmar"
 }

@@ -1,267 +1,214 @@
 <template>
   <div class="HomePage" id="app">
-    <Header></Header>
-    <section style="margin-top: 2rem">
-      <div class="container">
-        <div class="el-row">
-          <div class="el-col el-col-5"> <UserHeader></UserHeader></div>
-          <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-            <div >
-              <div class="el-row" style="position: relative; margin-top: 50px;">
-                <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary"
-                        style="background: rgb(255, 243, 214); color: black; font-weight: 500;"><!----><i
-                  class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
+    <UserHeader></UserHeader>
+    <div class="app-wrapper" style="width: calc(100% - 25rem);">
+      <div class="page-header">
+        <div class="page-title">{{$t('head[7]')}}</div>
+        <div class="el-dropdown">
+          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
+            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
+          </ul>
+        </div>
+      </div>
+      <div v-if="showPrice && siteBank.length>0" class="container">
+        <div class="box" style="position: relative;">
+          <div class="close" @click="showPrice = false" style="position: absolute;right: 5px;top: 5px;z-index: 999;">
+            <van-icon name="cross" size="30" color="#000"/>
+          </div>
+          <div class="title">
+            {{$t('deposit[0]')}} <span style="color: #1e45d4">{{InitData.currency}}{{postData.money}}</span>,
+            {{$t('deposit[1]')}}
+            <span style="color: #1e45d4">{{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></span>
+            {{$t('deposit[2]')}}
+          </div>
+          <div class="desc">
+            {{$t('deposit[3]')}}
+          </div>
+<!--          <div-->
+<!--            id="QRCode"-->
+<!--            class="qrcode ewm-img"-->
+<!--          >-->
+<!--          </div>-->
+          <div class="info-list">
+            <div class="info-item">
+              <div class="label">{{$t('walletAddress[0]')}}</div>
+              <div class="input-group">
+                <input disabled="disabled" v-model="siteBank[0].rececode" class="disabled-input" />
+                <div class="copy-btn copy" :data-clipboard-text="siteBank[0].rececode" @click="copy"><i class="el-icon-document-copy"></i></div>
               </div>
             </div>
-            <br>
-            <div v-if="showPrice && siteBank.length>0"  class="container">
-                <div class="">
-                  <div class="">
-                    <div class="card custom--card">
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col-md-12 text-center">
-                            <!--                    <h4 class="text-center mb-4">Please follow the instruction below</h4>-->
-                            <!--                    <p class="text-center mt-2">You have requested <b class="text-danger">333.00 {{InitData.currency}}</b> , Please pay <b class="text-danger">4.79343510 LTC </b> for successful payment </p>-->
-
-                            <!--                    <p class="my-4 text-center"><span style="color: rgb(51, 51, 51);line-height: 26px; background-color: rgb(247, 248, 250);"><b>-->
-                            <!--                      After the payment is successful, save the screenshot and upload the screenshot as prompted.</b></span></p>-->
-                            <div class="title">
-                              {{$t('deposit[0]')}} <span class="text-danger">{{InitData.currency}}{{postData.money}}</span>,
-                              {{$t('deposit[1]')}}
-                              <span class="text-danger">{{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></span>
-                              {{$t('deposit[2]')}}
-                            </div>
-                            <div class="my-4 text-center" style="color: rgb(51, 51, 51);background-color: rgb(247, 248, 250);">
-                              {{$t('deposit[3]')}}
-                            </div>
+<!--            <div class="info-item">-->
+<!--              <div class="label">{{$t('deposit[4]')}}</div>-->
+<!--              <div class="input-group">-->
+<!--                <input v-model.trim="postData.name"-->
+<!--                  :placeholder="$t('deposit[5]')"-->
+<!--                  class="input"-->
+<!--                />-->
+<!--              </div>-->
+<!--            </div>-->
+            <div class="info-item">
+              <div class="label">{{$t('deposit[6]')}}</div>
+              <div class="upload-box">
+                <div tabindex="0" class="el-upload el-upload--text">
+                  <van-uploader preview-size="25rem" class="upload" v-model="fileList" :max-count="1" :multiple="false" :after-read="afterRead" >
+                    <div class="upload"><i class="el-icon-upload"></i></div>
+                  </van-uploader>
+                </div>
+                <div style="padding: 1rem;font-size: 1.5rem;">
+                  {{$t('tips[0]')}} <span style="color:#bb2d3b"> {{$t('tips[1]')}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="submit-btn" @click="onSubmit">{{$t('deposit[7]')}}</div>
+        </div>
+      </div>
+      <div v-else class="container">
+<!--        <div class="balance-box">-->
+<!--          <div class="label">{{$t('deposit[8]')}}</div>-->
+<!--          <div class="num">{{InitData.currency}} {{UserInfo.balance}}</div>-->
+<!--        </div>-->
+        <div class="user-des">{{$t('loginpage[2]')}}</div>
+        <div class="main user-box">
+          <form class="el-form form el-form--label-top">
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required is-no-asterisk"><label for="type" class="el-form-item__label">
+                  {{$t('deposit[9]')}}</label>
+                  <div class="el-form-item__content">
+                    <div class="el-select" @click="showSelect = !showSelect">
+                      <div class="el-input el-input--suffix">
+                        <div  class="el-input__inner">
+                          <div>
+                            <img v-if="selectTypes.qrcode !=''" :src="InitData.setting.up_url + selectTypes.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">
+                            <span>{{selectTypes.name==''?$t('recharge.placeholder[1]'):selectTypes.name}}</span>
                           </div>
-<!--                          <div class="col-md-12 text-center">-->
-<!--                            <div-->
-<!--                              id="QRCode"-->
-<!--                              class="qrcode ewm-img"-->
-<!--                            >-->
-<!--                            </div>-->
-<!--                          </div>-->
-
-                          <div class="col-md-12 form-group mb-4">
-                            <br>
-                            <label>{{$t('walletAddress[0]')}}</label>
-                            <div class="input-group">
-                              <input readonly v-model="siteBank[0].rececode" class="form-control form--control" />
-                              <button class="input-group-text copytext copyBoard copy-btn copy" :data-clipboard-text="siteBank[0].rececode" @click="copy"><i class="fa fa-copy"></i></button>
-
+                          <div class="selectShow" v-show="showSelect">
+                            <div  :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
+                              <img :src="InitData.setting.up_url + item.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">
+                              {{item.name}}
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label><strong>{{$t('deposit[6]')}} <span class="text-danger">*</span> </strong></label>
-                              <van-uploader preview-size="5rem" class="upload" v-model="fileList" :max-count="1" :multiple="false" :after-read="afterRead" >
-                                <!--                        <input type="file" name="payment_voucher" class="form-control form&#45;&#45;control" required="">-->
-                                <div class="upload"><i class="fa fa-camera" style="font-size: 2rem"></i></div>
-                              </van-uploader>
-                            </div>
-                          </div>
-                        </div>
+                        <span
+                        class="el-input__suffix"><span class="el-input__suffix-inner"><i
+                        class="el-select__caret el-input__icon el-icon-arrow-up"></i></span>
+                        </span>
                       </div>
-                      <div class="card-footer">
-                        <button type="button" style="background:linear-gradient(90deg, #ddb443, #009d24)" class="btn btn--base btn-block btn-dark" @click="onSubmit">{{$t('deposit[7]')}}</button>
-                      </div>
-
                     </div>
                   </div>
                 </div>
               </div>
-            <div v-else class="container">
-                <div class="">
-                  <div class="">
-                    <form>
-                      <div class="card custom--card">
-                        <div class="card-body">
-                          <div class="form-group form" style="position: relative;">
-                            <label>{{$t('deposit[9]')}}</label>
-                            <div class="input-group" style="width: 100%">
-                              <div  class="item-control">
-                                <div  class="select row g-3">
-                                  <div  class="col-6 col-sm-3" :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">
-                                    <div  :class="'select-i '+(item.name ==selectTypes.name?'active':'')">
-                                      <img :src="InitData.setting.up_url + item.qrcode" style="width: 36px;vertical-align: middle;display: inline-block;">
-                                      <span >{{item.name}}</span></div>
-                                  </div>
-                                </div>
-                              </div>
-<!--                              <div class="el-form-item__content" style="width: 100%">-->
-<!--                                <div class="el-select" @click="showSelect = !showSelect">-->
-<!--                                  <div class="el-input el-input&#45;&#45;suffix">-->
-<!--                                    <div  class="el-input__inner">-->
-<!--                                      <div>-->
-<!--                                        <img v-if="selectTypes.qrcode !=''" :src="InitData.setting.up_url + selectTypes.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">-->
-<!--                                        <span>{{selectTypes.name==''?$t('recharge.placeholder[1]'):selectTypes.name}}</span>-->
-<!--                                      </div>-->
-<!--                                      <div class="selectShow" v-show="showSelect">-->
-<!--                                        <div  :value="item.id" v-for="(item,index) in rechargeList" :key="index" @click="chageRecharge(item)">-->
-<!--                                          <img :src="InitData.setting.up_url + item.qrcode" style="width: 20px;vertical-align: middle;display: inline-block;">-->
-<!--                                          {{item.name}}-->
-<!--                                        </div>-->
-<!--                                      </div>-->
-<!--                                    </div>-->
-<!--                                    <span-->
-<!--                                      class="el-input__suffix"><span class="el-input__suffix-inner"><i-->
-<!--                                      class="fa fa-angle-down"></i></span>-->
-<!--                        </span>-->
-<!--                                  </div>-->
-<!--                                </div>-->
-<!--                              </div>-->
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label>{{$t('deposit[10]')}}</label>
-                            <div class="input-group">
-                              <input type="text" name="amount" class="form-control form--control" autocomplete="off" v-model="postData.money">
-                              <span class="input-group-text">{{InitData.currency}}</span>
-                            </div>
-                          </div>
-                          <div class="mt-3">
-                            <ul class="list-group text-center">
-                              <li class="list-group-item d-flex justify-content-between">
-                                <span class="font-weight-bold">{{$t('deposit[11]')}}</span>
-                                <span><span class="min font-weight-bold">{{rechargeInfo.minPrice}} </span> {{InitData.currency}} - <span class="max font-weight-bold">{{rechargeInfo.maxPrice}}</span> {{InitData.currency}}</span>
-                              </li>
-                              <li class="list-group-item d-flex justify-content-between">
-                                <span class="font-weight-bold">{{$t('wallet.label[8]')}}</span>
-                                <span><span class="charge font-weight-bold">{{rechargeInfo.fee ||0}}%</span> </span>
-                              </li>
-                              <li class="list-group-item d-flex justify-content-between">
-                                <span class="font-weight-bold">{{$t('deposit[12]')}}</span> <span><span class="payable font-weight-bold">{{postData.money-parseFloat(postData.money*parseFloat(rechargeInfo.fee)/100)}}</span> {{InitData.currency}}</span>
-                              </li>
-                              <li class="list-group-item justify-content-between rate-element d-flex"><span class="font-weight-bold">{{$t('deposit[22]')}}</span> <span><span class="font-weight-bold">1 USDT ≈ <span class="rate">{{selectTypes.rate}}</span>  <span class="base-currency" v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span class="base-currency" v-else>{{selectTypes.name}}</span></span></span></li>
-                              <li class="list-group-item justify-content-between in-site-cur d-flex">
-                                <span class="font-weight-bold">≈  <span class="base-currency">{{selectTypes.name}}</span></span>
-                                <span class="final_amo font-weight-bold">{{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}}</span>
-                              </li>
-                              <!--                      <li class="list-group-item justify-content-center crypto_currency d-none">-->
-                              <!--                        <span>Conversion with <span class="method_currency">LTC</span> and final value will Show on next step</span>-->
-                              <!--                      </li>-->
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="card-footer">
-                          <button type="button" style="background: linear-gradient(90deg, #ddb443, #009d24)" class="btn btn--base btn-block btn-dark" @click="selectType()">{{$t('deposit[13]')}}</button>
-                        </div>
-<!--                        <div style="padding: 1rem;color: #e73329;">-->
-<!--                          {{$t('rechargefoot[0]')}}-->
-<!--                        </div>-->
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required is-no-asterisk"><label for="amount" class="el-form-item__label">{{$t('deposit[10]')}}</label>
+                  <div class="el-form-item__content">
+                    <div class="input-group">
+                      <div class="input el-input"><input type="number" autocomplete="off" v-model="postData.money"
+                                                                class="el-input__inner">
                       </div>
-                    </form>
-                  </div>
+                      <div class="sign">{{InitData.currency}}</div>
+                    </div></div>
                 </div>
               </div>
-            <div >
-              <section  class="section" style="padding-bottom: 0px;z-index: 1;">
-                <div  class="container">
-                  <div  class="el-row"><h4 >{{$t('wallet.default[3]')}}</h4></div>
-                  <div  class="row">
-                    <div  class="col-24" style="width: 100%; padding: 10px;">
-                      <div  class="table-responsive bg-white shadow rounded mt-4">
-                        <table  class="table mb-0 table-center">
-                          <thead  class="bg-light">
-                          <tr >
-                            <th class="text-center">{{$t('deposit[14]')}}</th>
-                            <th class="text-center">{{$t('deposit[15]')}}</th>
-                            <th class="text-center">{{$t('deposit[16]')}}</th>
-                            <th class="text-center">{{$t('deposit[17]')}}</th>
-                            <th class="text-center">{{$t('deposit[18]')}}</th>
-                            <th class="text-center">{{$t('deposit[19]')}}</th>
-                          </tr>
-                          </thead>
-                          <tbody >
-                          <tr class="tr" v-for="(item,index) in listData" :key="index">
-                            <td class="td">{{item.dan}}</td>
-                            <td class="td">{{item.pay_type}}</td>
-                            <td class="td">{{InitData.currency}}{{item.money}}</td>
-                            <td class="td">
-                              <div class="badge badge-warning" v-if="item.status==3">{{item.status_desc}}</div>
-                              <div class="badge badge-warning"  v-else-if="item.status==-1">{{item.status_desc}}</div>
-                              <div class="status-tag"  v-else>{{item.status_desc}}</div>
-                            </td>
-                            <td class="td">{{item.adddate}}</td>
-                            <td class="td">
-                              <div class="detail-btn" @click="showD(item)"><i class="el-icon-monitor"></i></div>
-                            </td>
-                          </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div  class="mt-3">
-                    <div  style="display: flex; justify-content: center;">
-                      <ul  role="menubar" aria-disabled="false" aria-label="Pagination"
-                           class="pagination b-pagination pagination-lg">
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(1)">
-                          <span role="menuitem" aria-label="Go to first page"  aria-disabled="true" class="page-link">First</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_current_page==1?'disabled':'')" @click="perPage"><span role="menuitem"
-                                                                                                                                                     aria-label="Go to previous page"
-                                                                                                                                                     aria-disabled="true"
-                                                                                                                                                     class="page-link">Prev</span>
-                        </li>
-                        <li role="presentation" class="page-item active">
-                          <button role="menuitemradio" type="button" @click="changePage(data_current_page)" :class="'number active'" class="page-link">{{data_current_page}}
-                          </button>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_total_page==data_current_page?'disabled':'')" @click="nextPage"><span role="menuitem"
-                                                                                                                                                                    aria-label="Go to next page"
-                                                                                                                                                                    aria-disabled="true"
-                                                                                                                                                                    class="page-link">Next</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(data_total_page)"><span role="menuitem"
-                                                                                                                                 aria-label="Go to last page"
-                                                                                                                                 aria-disabled="true"
-                                                                                                                                 class="page-link">Last</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div  class="mt-3" v-if="listData.length==0">
-                    <div  class="d-grid gap-2">
-                      <div
-                               class="btn btn btn-block">{{$t('vanPull[1]')}}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+            </div>
+          </form>
+          <div style="padding:0 1.2rem;font-size: 1.5rem;color: #e73329">
+            {{$t('deposit[26]')}}
+          </div>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="label">{{$t('deposit[11]')}}</div>
+              <div class="value">{{rechargeInfo.minPrice}} {{InitData.currency}} - {{rechargeInfo.maxPrice}} {{InitData.currency}}</div>
+            </div>
+<!--            <div class="info-item">-->
+<!--              <div class="label">Reward</div>-->
+<!--              <div class="value">0.00 {{InitData.currency}}</div>-->
+<!--            </div>-->
+            <div class="info-item" v-if="rechargeInfo.fee && rechargeInfo.fee>0">
+              <div class="label">{{$t('wallet.label[8]')}}</div>
+              <div class="value">{{rechargeInfo.fee ||0}}%</div>
+            </div>
+            <div class="info-item">
+              <div class="label">{{$t('deposit[12]')}}</div>
+              <div class="value">{{postData.money-parseFloat(postData.money*parseFloat(rechargeInfo.fee)/100)}} {{InitData.currency}}</div>
+            </div>
+            <div class="info-item">
+              <div class="label">{{$t('deposit[22]')}}</div>
+              <div class="value">1USD ≈ {{selectTypes.rate}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></div>
+            </div>
+            <div class="info-item">
+              <div class="label">{{$t('deposit[23]')}}</div>
+              <div class="value">{{parseFloat(parseFloat((postData.money*parseFloat(selectTypes.rate)).toFixed(8)*1000000)/1000000)}} <span v-if="selectTypes.name !='' && selectTypes.name.indexOf('USDT')==0">USDT</span><span v-else>{{selectTypes.name}}</span></div>
+            </div>
+          </div>
+          <div class="submit-btn" @click="selectType()">{{$t('deposit[13]')}}</div>
+        </div>
+        <div class="r-table">
+          <div class="tr">
+            <div class="th">{{$t('deposit[14]')}}</div>
+            <div class="th">{{$t('deposit[15]')}}</div>
+            <div class="th">{{$t('deposit[16]')}}</div>
+            <div class="th">{{$t('deposit[17]')}}</div>
+            <div class="th">{{$t('deposit[18]')}}</div>
+            <div class="th">{{$t('deposit[19]')}}</div>
+          </div>
+          <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
+          <div class="tr" v-for="(item,index) in listData" :key="index">
+            <div class="td">{{item.dan}}</div>
+            <div class="td">{{item.pay_type}}</div>
+            <div class="td">{{InitData.currency}}{{item.money}}</div>
+            <div class="td">
+              <div class="status-tag" style="background: rgb(13,110,253);" v-if="item.status==3">{{item.status_desc}}</div>
+              <div class="status-tag" style="background: rgb(234, 84, 85);" v-else-if="item.status==-1">{{item.status_desc}}</div>
+              <div class="status-tag" style="color:#000;" v-else>{{item.status_desc}}</div>
+            </div>
+            <div class="td">{{item.adddate}}</div>
+            <div class="td">
+              <div class="detail-btn" @click="showD(item)"><i class="el-icon-monitor"></i></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <div v-if="showDetail" id="__BVID__247___BV_modal_outer_" style="position: absolute; z-index: 1040;">
-      <div id="__BVID__247" role="dialog" aria-labelledby="__BVID__247___BV_modal_title_"
-           aria-describedby="__BVID__247___BV_modal_body_" class="modal fade show" aria-modal="true"
-           style="display: block;">
-        <div class="modal-dialog modal-md modal-dialog-centered"><span tabindex="0"></span>
-          <div id="__BVID__247___BV_modal_content_" tabindex="-1" class="modal-content">
-            <header id="__BVID__247___BV_modal_header_" class="modal-header"><h5 id="__BVID__247___BV_modal_title_"
-                                                                                 class="modal-title">{{$t('deposit[19]')}}</h5>
-              <button type="button" aria-label="Close" class="close" @click="showDetail = false">×</button>
-            </header>
-            <div id="__BVID__247___BV_modal_body_" class="modal-body">
+        <div class="pagination-box">
+          <div class="pagination-pc el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
+          <div class="pagination-h5 el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="mask" v-if="showDetail">
+          <div class="modal">
+            <div class="modal-header">
+              <div class="modal-title">{{$t('deposit[19]')}}</div>
+              <div class="close" @click="showDetail = false"><i class="el-icon-close"></i></div>
+            </div>
+            <div class="modal-body">
               <div class="deposit-info">
                 <div class="info">{{$t('deposit[14]')}}: {{detailItem.dan}}</div>
                 <div class="info">{{$t('deposit[15]')}}: {{detailItem.pay_type}}</div>
                 <div class="info">{{$t('deposit[16]')}}: {{InitData.currency}}{{detailItem.money}}</div>
                 <div class="info">{{$t('deposit[17]')}}: {{detailItem.status_desc}}</div>
                 <div class="info">{{$t('deposit[18]')}}: {{detailItem.adddate}}</div>
-                <!--                <div class="info">{{$t('deposit[20]')}}: $0.00</div>-->
-                <!--                <div class="info">{{$t('deposit[21]')}}: $423.00</div>-->
-                <!--                <div class="info">{{$t('deposit[22]')}}: 1 USD = 1 USDT-TRC20[Network:Tron]</div>-->
-                <!--                <div class="info">{{$t('deposit[23]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
-                <!--                <div class="info">{{$t('deposit[24]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
+<!--                <div class="info">{{$t('deposit[20]')}}: $0.00</div>-->
+<!--                <div class="info">{{$t('deposit[21]')}}: $423.00</div>-->
+<!--                <div class="info">{{$t('deposit[22]')}}: 1 USD = 1 USDT-TRC20[Network:Tron]</div>-->
+<!--                <div class="info">{{$t('deposit[23]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
+<!--                <div class="info">{{$t('deposit[24]')}}: 423.00000000 USDT-TRC20[Network:Tron]</div>-->
               </div>
               <div class="payment-info" v-if="detailItem.screenshots!=''" >
                 <div class="title">{{$t('deposit[25]')}}</div>
@@ -269,18 +216,13 @@
                      class="upload-img">
               </div>
             </div>
-            <footer id="__BVID__247___BV_modal_footer_" class="modal-footer">
-              <div  class="w-100">
-                <button @click="showDetail = false" type="button" class="btn float-left ml-2 btn-primary">{{$t('confirm')}}</button>
-              </div>
-            </footer>
+            <div class="modal-footer">
+              <div class="confirm-btn" @click="showDetail = false">{{$t('confirm')}}</div>
+            </div>
           </div>
-          <span tabindex="0"></span></div>
+        </div>
       </div>
-      <div id="__BVID__247___BV_modal_backdrop_" class="modal-backdrop"></div>
     </div>
-
-    <Footer></Footer>
   </div>
 </template>
 <script>
@@ -288,7 +230,7 @@
   import Clipboard from 'clipboard';
   import UserHeader from '@/components/UserHeader'
   export default {
-    name: 'deposit',
+    name: 'loginPassword',
     components: {
       UserHeader
     },
@@ -697,7 +639,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: rgb(251, 194, 65);
+    background-color: rgb(13,110,253);
   }
 
   .slide-enter-active, .slide-leave-active {
@@ -736,7 +678,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
   }
 
   .el-dropdown-menu__item {
@@ -746,7 +688,7 @@
   }
 
   .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(251, 194, 65) !important;
+    color: rgb(13,110,253) !important;
     background-color: rgb(255, 249, 240) !important;
   }
 
@@ -754,13 +696,13 @@
     font-family: myFont;
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253) !important;*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff !important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253) !important;*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem;
@@ -786,12 +728,12 @@
   }
 
   .el-menu-item.is-active, .el-menu-item:hover, .el-submenu__title:hover {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
     background-color: rgb(255, 249, 240) !important;
   }
 
   .el-menu-item:hover i, .el-submenu__title:hover i {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .lang-item {
@@ -822,16 +764,16 @@
   }
 
   .el-input {
-    font-size: 1rem !important;
+    font-size: 1.5rem !important;
   }
 
   .el-input .el-input__inner {
-    height: 50px;
-    line-height: 50px;
-    padding: 0px 1.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0px 2rem;
     font-family: myFont;
-    color: #000;
-    border: 1px solid #374161 !important;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(217, 217, 217) !important;
   }
 
   .el-textarea__inner {
@@ -876,12 +818,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(251, 194, 65) !important;
-    border-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   .el-checkbox__label {
@@ -894,7 +836,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(251, 194, 65) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -927,7 +869,7 @@
       width: 100%;
       font-size: 2rem;
       font-weight: 700;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       word-break: break-all;
     }
 
@@ -991,7 +933,7 @@
       font-size: 1.5rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
     }
 
     .container .main .info-list {
@@ -1030,13 +972,13 @@
       line-height: 5rem;
       box-sizing: border-box;
       padding: 0px 2rem;
-      border-radius: 4px;
+      border-radius: 10px;
       font-size: 1.7rem;
       font-weight: 700;
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);
       cursor: pointer;
     }
 
@@ -1054,7 +996,7 @@
 
     .container .r-table .tr:first-child {
       border-radius: 4px 4px 0px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: #f4f4f4;
       border-bottom: none !important;
     }
 
@@ -1105,7 +1047,7 @@
     .container .r-table .tr .td .el-icon-info {
       margin-left: 5px;
       font-size: 2.5rem;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       white-space: nowrap;
       cursor: pointer;
     }
@@ -1118,7 +1060,7 @@
       max-width: 4.5rem;
       height: 3.5rem;
       border-radius: 4px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -1228,7 +1170,7 @@
       width: 100%;
       font-size: 1.8rem;
       font-weight: 700;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       word-break: break-all;
     }
 
@@ -1292,7 +1234,7 @@
       font-size: 1.5rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
     }
 
     .container .main .info-list {
@@ -1337,7 +1279,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);
       cursor: pointer;
     }
 
@@ -1355,7 +1297,7 @@
 
     .container .r-table .tr:first-child {
       border-radius: 4px 4px 0px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: #f4f4f4;
       border-bottom: none !important;
     }
 
@@ -1407,7 +1349,7 @@
     .container .r-table .tr .td .el-icon-info {
       margin-top: 2px;
       font-size: 2.2rem;
-      color: rgb(251, 194, 65);
+      color: rgb(13,110,253);
       white-space: nowrap;
       cursor: pointer;
     }
@@ -1420,7 +1362,7 @@
       max-width: 3.8rem;
       height: 2.8rem;
       border-radius: 4px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -1524,7 +1466,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: rgb(251, 194, 65);
+    background-color: rgb(13,110,253);
   }
 
   .slide-enter-active, .slide-leave-active {
@@ -1563,7 +1505,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
   }
 
   .el-dropdown-menu__item {
@@ -1573,7 +1515,7 @@
   }
 
   .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(251, 194, 65) !important;
+    color: rgb(13,110,253) !important;
     background-color: rgb(255, 249, 240) !important;
   }
 
@@ -1581,13 +1523,13 @@
     font-family: myFont;
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253) !important;*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff !important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253) !important;*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem;
@@ -1613,12 +1555,12 @@
   }
 
   .el-menu-item.is-active, .el-menu-item:hover, .el-submenu__title:hover {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
     background-color: rgb(255, 249, 240) !important;
   }
 
   .el-menu-item:hover i, .el-submenu__title:hover i {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .lang-item {
@@ -1649,22 +1591,21 @@
   }
 
   .el-input {
-    font-size: 1rem !important;
-    color: #ffffff;
+    font-size: 1.5rem !important;
   }
 
   .el-input .el-input__inner {
-    height: 50px;
-    line-height: 50px;
-    padding: 0px 1.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0px 2rem;
     font-family: myFont;
-    color: #000;
-    border: 1px solid #374161 !important;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(217, 217, 217) !important;
   }
 
   .el-textarea__inner {
     font-family: myFont;
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
     color: rgb(0, 0, 0) !important;
   }
 
@@ -1704,12 +1645,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(251, 194, 65);
+    color: rgb(13,110,253);
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(251, 194, 65) !important;
-    border-color: rgb(251, 194, 65) !important;
+    background-color: rgb(13,110,253) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   .el-checkbox__label {
@@ -1722,7 +1663,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(251, 194, 65) !important;
+    border-color: rgb(13,110,253) !important;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -1831,7 +1772,7 @@
       box-sizing: border-box;
       padding: 0px 1.2rem;
       border-radius: 0px 4px 4px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -1853,12 +1794,12 @@
       width: 25rem;
       min-height: 25rem;
       border-radius: 4px;
-      background-color: rgb(239, 239, 239);
+      background-color: rgb(252 243 255);
     }
 
     .container .box .info-list .info-item .upload-box .upload i {
       font-size: 7.2rem;
-      color: rgb(119, 119, 119);
+      color: rgb(168 119 255);
       white-space: nowrap;
     }
 
@@ -1879,7 +1820,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);;
       cursor: pointer;
     }
   }
@@ -1990,7 +1931,7 @@
       box-sizing: border-box;
       padding: 0px 1.2rem;
       border-radius: 0px 4px 4px 0px;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
 
@@ -2011,12 +1952,12 @@
       width: 25rem;
       min-height: 25rem;
       border-radius: 4px;
-      background-color: rgb(239, 239, 239);
+      background-color: rgb(252 243 255);
     }
 
     .container .box .info-list .info-item .upload-box .upload i {
       font-size: 7.2rem;
-      color: rgb(119, 119, 119);
+      color: rgb(168 119 255);
       white-space: nowrap;
     }
 
@@ -2037,7 +1978,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, rgb(254, 149, 0), rgb(250, 222, 136));
+      background-image: linear-gradient(180deg, #329ae8 0%, #1e45d4 100%);;
       cursor: pointer;
     }
   }
@@ -2125,7 +2066,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
   }
@@ -2213,74 +2154,34 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
   }
 .selectShow {
   position: absolute;
-  top: 3.5rem;
+  top: 5rem;
   left: 0px;
   width: -webkit-fill-available;
   background: #fff;
   z-index: 999;
   padding: 0 2rem;
   border: 1px solid #ccc;
-  color: #000000;
 }
-.qrcode {
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-}
-.qrcode>>>img,.qrcode>>>canvas {
-    width: 40% !important;
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-    padding: 5%;
-    background: #fff;
+  .user-box {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  .van-uploader {
-    display: block;
-    width: 100%;
-  }
-
-  .form .item-control .select-i {
-    background: #f1f1f1;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    padding: 1.25rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all .3s ease
-  }
-
-  .form .item-control .select-i.active {
-    border-color: #009d24
-  }
-
-  .form .item-control .select-i span {
-    margin-top: .625rem;
-    font-size: .9375rem;
+  .user-des {
+    color: #000;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-style: normal;
     font-weight: 400;
-    color: #1c2a46;
-    line-height: 1.3125rem
+    line-height: normal;
+    margin: 0;
   }
-
-  .info-wrap {
-    background: #f4f4f4;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #1c2a46;
-    line-height: 1.375rem;
-    padding: 1rem
-  }
-
 </style>
 
 

@@ -1378,14 +1378,6 @@ const model = {
       diyApi: true
     }).then(getResponse);
   },
-  getCode1(data, callback) {
-    const getResponse = ({
-                           data
-                         }) => {
-      callback && callback(data);
-    }
-    axios.get('Account/code1?code_rand='+data, {}).then(getResponse);
-  },
 }
 
 

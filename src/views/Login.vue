@@ -1,13 +1,8 @@
-<!-- 仪表盘那边用这个组件 -->
 <template>
   <div class="HomePage">
     <Header></Header>
     <div class="app-wrapper">
-      <!-- <div class="container" style="background: url(./static/img/login_bg.gif) no-repeat;max-width: 100%;background-position:center;background-size: 100% 100%;"> -->
-      <div class="container">
-        <video  autoplay="autoplay" loop class="bg_video" muted='muted' >
-          <source :src="'./static/img/login_bg.mp4'" type="video/mp4"/>
-        </video>
+      <div class="container" style="background: url(./static/image/login_bg.png) no-repeat;background-position: center;">
         <div class="form-box">
           <div class="mt-9 px-4 lg:mt-[60px] lg:mr-[90px] lg:pr-0 lg:pl-10">
             <div class="form-title">{{$t('loginpage[0]')}}</div>
@@ -27,10 +22,10 @@
                       <input
                         v-model.trim="postData.username"
                         type="text"
-                        autocomplete="off"
+                      autocomplete="off"
                         :placeholder="$t('regLogin[2]')"
-                        class="el-input__inner"
-                      />
+                      class="el-input__inner"
+                    />
                     </div>
 
                   </div>
@@ -43,18 +38,18 @@
                 <div class="el-form-item is-required">
                   <h6>*{{$t('regLogin[5]')}}</h6>
                   <div class="el-form-item__content">
-                    <div class="el-input el-input--suffix password-input">
+                    <div class="el-input el-input--suffix">
                       <input
-                        :type="showPassWord ? 'text' : 'password'"
-                        v-model.trim="postData.password"
-                        autocomplete="off"
-                        :placeholder="$t('regLogin[6]')"
-                        class="el-input__inner"
-                      />
-                      <div class="showPassWordIcon" @click="showPassWord = !showPassWord">
-                        <van-icon name="eye" size="20" v-show="!showPassWord"/>
-                        <van-icon name="closed-eye" size="20" v-show="showPassWord" />
-                      </div>
+                      type="password"
+                      v-model.trim="postData.password"
+                      autocomplete="off"
+                      :placeholder="$t('regLogin[6]')"
+                      class="el-input__inner"
+                    /><span class="el-input__suffix"
+                    ><span class="el-input__suffix-inner"
+                    ></span
+                    ></span
+                    >
                     </div>
 
                   </div>
@@ -68,10 +63,8 @@
 
                   <div class="el-form-item__content">
                     <div class="other-operate">
-                      <!--                      <div class="reset-link">Forgot Password?</div>-->
-                      <van-checkbox shape="square"  v-model="keepUser" @change="changeKeepUser"  icon-size="14">
-                        <span style="color: #fff;">{{$t('login.text[0]')}}</span>
-                      </van-checkbox>
+<!--                      <div class="reset-link">Forgot Password?</div>-->
+                      <van-checkbox shape="square" v-model="keepUser" @change="changeKeepUser"  icon-size="14">{{$t('login.text[0]')}}</van-checkbox>
                     </div>
 
                   </div>
@@ -97,98 +90,96 @@
         </div>
       </div>
     </div>
-    <div class="pc">
-      <Footer/>
-    </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Login',
-    components: {
+export default {
+  name: 'Login',
+  components: {
 
-    },
-    props: [],
-    data() {
-      return {
-        showPassWord: false,
-        postData: {
-          username: localStorage['UserName']||'',
-          password: localStorage['PassWord']||''
-        },
-        keepUser: localStorage['KeepUser']=='1'?true:false,
-        isSubmit: false,
-        showPass: false,
-        docTitle: document.title,
-        areaList: areaList,
-        areaCode: areaList[0].id,
-      }
-    },
-    computed: {
-
-    },
-    watch: {
-
-    },
-    created() {
-      this.$Model.SmsCode((data) => {
-        this.areaList = data
-        this.areaCode = data[0].id
-      })
-    },
-    mounted() {
-      const html = document.querySelector('html');
-      let fontSize = 13.5 * document.documentElement.clientWidth / 1920;
-      if (fontSize < 10) {
-        fontSize = 10;
-      }
-      if (fontSize > 16) {
-        fontSize = 16;
-      }
-      html.style.fontSize = fontSize + 'px';
-    },
-    activated() {
-
-    },
-    destroyed() {
-
-    },
-    methods: {
-      onSubmit() {
-        if(!this.postData.username){
-          this.$Dialog.Toast(this.$t('regLogin[2]'))
-          return;
-        }
-        if(!this.postData.password){
-          this.$Dialog.Toast(this.$t('login.placeholder[1]'));
-          return;
-        }
-        this.isSubmit = true;
-        this.$Model.Login(this.postData,(data)=>{
-          this.isSubmit = false;
-          if(this.keepUser){
-            localStorage['UserName'] = this.postData.username;
-            localStorage['PassWord'] = this.postData.password;
-          }else{
-            localStorage.removeItem('UserName');
-            localStorage.removeItem('PassWord');
-          }
-        })
+  },
+  props: [],
+  data() {
+    return {
+      postData: {
+      	username: localStorage['UserName']||'',
+      	password: localStorage['PassWord']||''
       },
-      changeKeepUser() {
-        if(this.keepUser){
-          localStorage['KeepUser'] = 1;
-        }else{
-          localStorage.removeItem('KeepUser');
-        }
+      keepUser: localStorage['KeepUser']=='1'?true:false,
+      isSubmit: false,
+      showPass: false,
+      docTitle: document.title,
+      areaList: areaList,
+      areaCode: areaList[0].id,
+    }
+  },
+  computed: {
+
+  },
+  watch: {
+
+  },
+  created() {
+    this.$Model.SmsCode((data) => {
+      this.areaList = data
+      this.areaCode = data[0].id
+    })
+  },
+  mounted() {
+
+  },
+  activated() {
+
+  },
+  destroyed() {
+
+  },
+  methods: {
+    onSubmit() {
+    	if(!this.postData.username){
+        this.$Dialog.Toast(this.$t('regLogin[2]'))
+        return;
       }
+      if(!this.postData.password){
+        this.$Dialog.Toast(this.$t('login.placeholder[1]'));
+        return;
+      }
+      this.isSubmit = true;
+    	this.$Model.Login(this.postData,(data)=>{
+        this.isSubmit = false;
+        if(this.keepUser){
+          localStorage['UserName'] = this.postData.username;
+          localStorage['PassWord'] = this.postData.password;
+        }else{
+          localStorage.removeItem('UserName');
+          localStorage.removeItem('PassWord');
+        }
+    	})
+    },
+    changeKeepUser() {
+    	if(this.keepUser){
+    		localStorage['KeepUser'] = 1;
+    	}else{
+    		localStorage.removeItem('KeepUser');
+    	}
     }
   }
+}
 </script>
 <style scoped>
+  @media only screen and (min-width:1024px) {
+    html {
+      font-size: 10px
+    }
+  }
 
-  ::-webkit-scrollbar {
+  @media only screen and (max-width:1024px) {
+    html {
+      font-size: 10px
+    }
+  }::-webkit-scrollbar {
     width: 4px;
     height: 5px
   }::-webkit-scrollbar-corner,::-webkit-scrollbar-track {
@@ -423,13 +414,13 @@
       margin-bottom: 1.5rem;
       font-size: 4rem;
       font-weight: 700;
-      color: #fff;
+      color: #000;
       text-align: left;
       word-wrap: break-word
     }
     .bg-clip-text {
       font-size: 2rem;
-      color: #ccc;
+      color: rgba(27,27,27,0.64);
     }
     .container .form-box .form .register-link {
       width: 100%;
@@ -477,7 +468,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, #ddb443, #009d24);
+      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
       cursor: pointer
     }
   }
@@ -506,13 +497,13 @@
       margin-bottom: 1rem;
       font-size: 3rem;
       font-weight: 700;
-      color: #fff;
+      color: #000;
       text-align: left;
       word-wrap: break-word
     }
     .bg-clip-text {
       font-size: 1.3rem;
-      color: #ccc;
+      color: rgba(27,27,27,0.64);
     }
     .container .form-box .form .register-link {
       width: 100%;
@@ -559,7 +550,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg, #ddb443, #009d24);
+      background-image: linear-gradient(180deg, #579de5 0%, #0d6efd 100%);
       cursor: pointer
     }
   }
@@ -579,26 +570,5 @@
     /*-webkit-text-fill-color: transparent;*/
     /*background-clip: text;*/
     /*-webkit-text-fill-color: transparent;*/
-  }
-  .password-input{
-    position: relative;
-  }
-  .password-input .showPassWordIcon{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-  }
-  /*@media (max-width: 768px) {*/
-  /*  .pc {*/
-  /*    display: none;*/
-  /*  }*/
-  /*}*/
-  .bg_video{
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
   }
 </style>

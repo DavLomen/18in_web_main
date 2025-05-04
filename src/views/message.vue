@@ -1,91 +1,68 @@
 <template>
   <div class="HomePage" id="app">
-    <Header></Header>
-    <div class="container">
-      <div class="el-row">
-        <div class="el-col el-col-5">
-          <UserHeader></UserHeader>
+    <UserHeader></UserHeader>
+    <div class="app-wrapper" style="width: calc(100% - 25rem);">
+      <div class="page-header">
+        <div class="page-title">{{$t('head[13]')}}</div>
+        <div class="el-dropdown">
+          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
+            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
+          </ul>
         </div>
-        <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-          <section data-v-19c9d02c="" data-v-23f21a9a="" class="section pt-0" style="padding-bottom: 0px; margin-top: 50px;">
-            <div class="table-responsive--md">
-              <table class="table custom--table">
-                <thead>
-                <tr>
-                  <th>{{$t('messageInfo[3]')}}</th>
-                  <th>{{$t('messageInfo[4]')}}</th>
-                  <th>{{$t('messageInfo[5]')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-if="listData.length==0">
-                  <td colspan="100%" class="text-center">{{$t('vanPull[1]')}}</td>
-                </tr>
-                <tr v-for="(item,index) in listData" :key="index">
-                  <td :data-label="$t('messageInfo[3]')">
-                    <strong>{{item.createtime}}</strong>
-                  </td>
-
-                  <td :data-label="$t('messageInfo[4]')">
-                    <strong>{{item.title}}</strong>
-                  </td>
-
-                  <td :data-label="$t('messageInfo[5]')">
-                    <button v-if="item.read==1" class="btn btn--base btn-sm approveBtn" @click="clkItem(item,index)">
-                      <i class="fa fa-desktop"></i>
-                    </button>
-                    <button v-else style="background: red" class="btn btn--base btn-sm approveBtn" @click="clkItem(item,index)">
-                      <i class="fa fa-desktop"></i>
-                    </button>
-                  </td>
-
-                </tr>
-                </tbody>
-              </table>
+      </div>
+      <div class="container">
+        <div class="t-table">
+          <div class="tr">
+            <div class="th">{{$t('messageInfo[3]')}}</div>
+            <div class="th">{{$t('messageInfo[4]')}}</div>
+            <div class="th">{{$t('messageInfo[5]')}}</div>
+          </div>
+          <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
+          <div class="tr" v-for="(item,index) in listData" :key="index">
+            <div class="td">{{item.createtime}}</div>
+            <div class="td">{{item.title}}</div>
+            <div class="td">
+              <div class="detail-btn" @click="clkItem(item,index)"><i style="color: #ffffff" class="el-icon-monitor"></i></div>
             </div>
-            <div class="pagination-box">
-              <div class="pagination-pc el-pagination is-background">
-                <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev">
-                  <i class="fa fa-angle-left"></i>
-                </button>
-                <ul class="el-pager">
-                  <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-                </ul>
-                <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next">
-                  <i class="fa fa-angle-right"></i></button>
-              </div>
-              <div class="pagination-h5 el-pagination is-background">
-                <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev">
-                  <i class="fa fa-angle-left"></i>
-                </button>
-                <ul class="el-pager">
-                  <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-                </ul>
-                <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next">
-                  <i class="fa fa-angle-right"></i></button>
-              </div>
-            </div>
-          </section>
+          </div>
+        </div>
+        <div class="pagination-box">
+          <div class="pagination-pc el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
+          <div class="pagination-h5 el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
         </div>
       </div>
     </div>
-    <Footer></Footer>
-    <div id="approveModal" v-if="showNotice" class="modal custom--modal fade show" tabindex="-1" style="display: block; padding-left: 0px;" aria-modal="true" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{msg_title}}</h5>
-            <button type="button" class="btn btn--danger text-white" data-bs-dismiss="modal" aria-label="Close" @click="showNotice = false">
-              <i class="las la-times"></i>
-            </button>
+    <div class="mask" v-if="showNotice">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">{{msg_title}}</div>
+          <div class="close" @click="showNotice = false"><i class="el-icon-close"></i></div>
+        </div>
+        <div class="modal-body">
+          <div class="payment-info" v-html="msg_content">
           </div>
-          <div class="modal-body">
-            <div class="payment-info" v-html="msg_content">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" @click="showNotice = false" data-bs-dismiss="modal">{{$t('deposit[28]')}}</button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="confirm-btn" @click="showNotice= false">{{$t('confirm')}}</div>
         </div>
       </div>
     </div>
@@ -232,7 +209,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: rgb(13,110,253)
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -272,7 +249,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: rgb(13,110,253)!important
   }
 
   .el-dropdown-menu__item {
@@ -282,7 +259,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: rgb(13,110,253)!important;
     background-color: #fff9f0!important
   }
 
@@ -290,13 +267,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #fbc241!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253)!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fbc241!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253)!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -322,12 +299,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: rgb(13,110,253);
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .lang-item {
@@ -412,12 +389,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: rgb(13,110,253)!important;
+    border-color: rgb(13,110,253)!important
   }
 
   .el-checkbox__label {
@@ -430,7 +407,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: rgb(13,110,253)!important
   }
 
   @media only screen and (min-width: 1024px) {
@@ -449,7 +426,7 @@
     .container .t-table .tr:first-child {
       border-bottom: none!important;
       border-radius: 4px 4px 0 0;
-      background-color: #fbc241
+      background-color: #f4f4f4;
     }
 
     .container .t-table .tr:last-child {
@@ -523,7 +500,7 @@
     .container .t-table .tr:first-child {
       border-bottom: none!important;
       border-radius: 4px 4px 0 0;
-      background-color: #fbc241
+      background-color: #f4f4f4;
     }
 
     .container .t-table .tr:last-child {
@@ -588,7 +565,7 @@
     max-width: 4.5rem;
     height: 3.5rem;
     border-radius: 4px;
-    background-color: rgb(251, 194, 65);
+    background-color:rgb(13,110,253);
     cursor: pointer;
   }
   @media only screen and (min-width: 1024px) {
@@ -675,7 +652,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
   }
@@ -763,21 +740,14 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(251, 194, 65);
+      background-color: rgb(13,110,253);
       cursor: pointer;
     }
   }
   .payment-info {
     font-size: 1.2rem;
-    color: #000;
   }
   .payment-info img {
     width: 100%;
-  }
-  .modal {
-    display: block !important;
-  }
-  .modal-body {
-    color: #000000;
   }
 </style>

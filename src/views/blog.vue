@@ -6,11 +6,11 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2 class="title text-white">{{$t('foot[6]')}}</h2>
-              <ul class="page-breadcrumb justify-content-center mt-2">
-                <li><a href="javascript:;" @click="$router.push('/')">{{$t('head[0]')}}</a></li>
-                <li>{{$t('foot[6]')}}</li>
-              </ul>
+              <h2 class="title">{{$t('foot[6]')}}</h2>
+<!--              <ul class="page-breadcrumb justify-content-center mt-2">-->
+<!--                <li><a href="javascript:;" @click="$router.push('/')">{{$t('head[0]')}}</a></li>-->
+<!--                <li>{{$t('foot[6]')}}</li>-->
+<!--              </ul>-->
             </div>
           </div>
         </div>
@@ -169,7 +169,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: rgb(13,110,253)
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -209,7 +209,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: rgb(13,110,253)!important
   }
 
   .el-dropdown-menu__item {
@@ -219,7 +219,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: rgb(13,110,253)!important;
     background-color: #fff9f0!important
   }
 
@@ -227,13 +227,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color:#1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253)!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253)!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -259,12 +259,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: rgb(13,110,253);
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .lang-item {
@@ -349,12 +349,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: rgb(13,110,253)!important;
+    border-color: rgb(13,110,253)!important
   }
 
   .el-checkbox__label {
@@ -367,13 +367,10 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: rgb(13,110,253)!important
   }
 
   @media only screen and (min-width: 1024px) {
-    .container {
-      width:100%
-    }
 
     .container .box7 {
       width: 100%;
@@ -405,7 +402,7 @@
       width: 16rem;
       height: 4px;
       border-radius: 4px;
-      background-image: linear-gradient(90deg,#fe9500,#fade88)
+      background-image: linear-gradient(90deg,#6baaf7,#072f77)
     }
 
     .container .box7 .box-wrapper .faq-list {
@@ -450,7 +447,7 @@
       height: 3.8rem;
       margin-left: 3rem;
       border-radius: 50%;
-      background-color: #fbc241
+      background-color: rgb(13,110,253)
     }
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {
@@ -471,9 +468,6 @@
   }
 
   @media only screen and (max-width: 1024px) {
-    .container {
-      width:100%
-    }
 
     .container .box7 {
       width: 100%;
@@ -503,7 +497,7 @@
       width: 10rem;
       height: 4px;
       border-radius: 4px;
-      background-image: linear-gradient(90deg,#fe9500,#fade88)
+      background-image: linear-gradient(90deg,#6baaf7,#072f77)
     }
 
     .container .box7 .box-wrapper .faq-list {
@@ -548,7 +542,7 @@
       height: 3.2rem;
       margin-left: 1.5rem;
       border-radius: 50%;
-      background-color: #fbc241
+      background-color: rgb(13,110,253)
     }
 
     .container .box7 .box-wrapper .faq-list .faq-item .faq-title .right-icon i {
@@ -646,8 +640,8 @@
     width: calc(100% + 6px);
     height: calc(100% + 6px);
     border: 3px solid transparent;
-    border-top: 3px solid #F7C70B;
-    border-right: 3px solid #F7C70B;
+    border-top: 3px solid #5a90ff;
+    border-right: 3px solid #5a90ff;
     -webkit-animation: spiner 2s linear infinite;
     animation: spiner 2s linear infinite;
   }
@@ -1617,7 +1611,7 @@
 
   .header .sp_main_menu li.has_children:hover > a::before {
     content: "\f068";
-    color: #F7C70B;
+    color: #5a90ff;
   }
 
   .header .sp_main_menu li a {
@@ -1770,7 +1764,7 @@
   }
 
   .h-get-btn {
-    color: #F7C70B !important;
+    color: #5a90ff !important;
     font-weight: 500;
   }
 
@@ -2215,8 +2209,8 @@
   ==============================
   */
   .page-banner {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 11.25rem;
+    padding-bottom: 3.75rem;
   }
 
   .page-banner::before {
@@ -3468,6 +3462,7 @@
     color: #000;
     text-decoration: none;
     font-size: 1.5rem;
+    height: 3.5rem;
   }
 
   .blog-meta {
@@ -3945,8 +3940,8 @@
   }
 
   .sidebar-menu li a.active {
-    background-color: #F7C70B;
-    border-left-color: #F7C70B;
+    background-color: #5a90ff;
+    border-left-color: #5a90ff;
   }
 
   .sidebar-menu {
@@ -3995,7 +3990,7 @@
   }
 
   .d-card:hover {
-    border-color: #F7C70B;
+    border-color: #5a90ff;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
@@ -4835,9 +4830,9 @@
     color: #3b3b3b;
   }
   .pagination .page-item.active .page-link {
-    background-color: rgba(42, 234, 227, 0.47);
+    background-color: #5a90ff;
     color: #fff;
-    border-color: rgba(42, 234, 227, 0.47);
+    border-color: #5a90ff;
   }
   .row {
     --bs-gutter-x: 1.5rem;
@@ -4862,14 +4857,11 @@
   }
   @media (min-width: 1200px){
     .container, .container-lg, .container-md, .container-sm, .container-xl {
-      max-width: 1140px;
+      /*max-width: 1140px;*/
     }
   }
 .container {
   margin: 0 auto;
-}
-.page-banner {
-  background-color:#171717;
 }
   .text-center {
     text-align: center!important;
@@ -4887,7 +4879,6 @@
   h2 {
     font-size: 4.125rem;
     font-family: "Jost", sans-serif;
-    color: #fff;
     font-weight: 500;
     line-height: 1.3;
     margin: 0;

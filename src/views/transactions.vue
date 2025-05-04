@@ -1,136 +1,58 @@
 <template>
   <div class="HomePage" id="app">
-    <Header></Header>
-    <section style="margin-top: 2rem">
+    <UserHeader></UserHeader>
+    <div class="app-wrapper" style="width: calc(100% - 25rem);">
+      <div class="page-header">
+        <div class="page-title">{{$t('head[12]')}}</div>
+        <div class="el-dropdown">
+          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
+          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
+            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
+            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
+            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
+          </ul>
+        </div>
+      </div>
       <div class="container">
-        <div class="el-row">
-          <div class="el-col el-col-5"> <UserHeader></UserHeader></div>
-          <div class="el-col el-col-18 el-col-xs-24 el-col-lg-18 el-col-xl-18">
-            <div >
-              <section  class="section" style="margin-top: -100px;">
-                <div >
-                  <div class="el-row" style="position: relative; margin-top: 50px;">
-                    <button @click="$router.push('/dashboard')" type="button" class="el-button el-button--primary"
-                            style="background: rgb(255, 243, 214); color: black; font-weight: 500;"><!----><i
-                      class="el-icon-back"></i><span>{{$t('head[4]')}}</span></button>
-                  </div>
-                </div>
-                <br >
-                <div  class="container">
-<!--                  <div  class="el-row" style="margin-left: -10px; margin-right: -10px;">-->
-<!--                    <div  class="el-col el-col-2 el-col-xs-20"-->
-<!--                         style="padding-left: 10px; padding-right: 10px;">-->
-<!--                      <div >-->
-<!--                        <div  id="dropdown-1" class="dropdown b-dropdown m-md-3 btn-group">&lt;!&ndash;&ndash;&gt;-->
-<!--                          <button id="dropdown-1__BV_toggle_" aria-haspopup="menu" aria-expanded="false" type="button"-->
-<!--                                  class="btn dropdown-toggle btn-secondary btn-medium">Type-->
-<!--                          </button>-->
-<!--                          <ul role="menu" tabindex="-1" aria-labelledby="dropdown-1__BV_toggle_" class="dropdown-menu">-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item active">All</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">Withdrawal</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">Deposit</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">Capital</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">Buy</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">Referral</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">Reward</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">Trial</a></li>-->
-<!--                            <li  role="presentation"><a role="menuitem" href="#" target="_self"-->
-<!--                                                                          class="dropdown-item">System</a></li>-->
-<!--                          </ul>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-                  <div  class="row">
-                    <div  class="col-24" style="width: 100%; padding: 10px;">
-                      <div  class="table-responsive bg-white shadow rounded mt-4">
-                        <table  class="table mb-6 table-center">
-                          <thead  class="bg-light">
-                          <tr >
-                                          <th scope="col" class="text-center">{{$t('transaction[0]')}}</th>
-                                          <th scope="col" class="text-center">{{$t('transaction[1]')}}</th>
-                                          <th scope="col" class="text-center">{{$t('transaction[2]')}}</th>
-                                          <th scope="col" class="text-center">{{$t('transaction[3]')}}</th>
-                                          <th scope="col" class="text-center">{{$t('transaction[4]')}}</th>
-                          </tr>
-                          </thead>
-                          <tbody >
-                          <tr v-for="(item,index) in listData" :key="index">
-                              <td :data-label="$t('transaction[0]')" class="text-center small" style="font-size: 12px;">
-                                <strong>{{item.order_number}}</strong>
-                              </td>
-                              <td :data-label="$t('transaction[1]')">
-                                {{item.trade_time}}
-                              </td>
-                              <td :data-label="$t('transaction[2]')"  class="text-center small" style="font-size: 12px;">
-                                                <span class="font-weight-bold  text--success ">
-                                                   {{InitData.currency}} {{item.jj||''}}{{item.trade_amount}}
-                                                </span>
-                              </td>
-                              <td :data-label="$t('transaction[3]')" class="text-center small" style="font-size: 12px;">
-                                {{InitData.currency}} {{item.trade_amount}}
-                              </td>
-                              <td :data-label="$t('transaction[4]')" class="text-center small" style="font-size: 12px;">
-                                {{item.remarks}}
-                              </td>
-                          </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div  class="mt-3 ">
-                    <div  style="display: flex; justify-content: center;">
-                      <ul  role="menubar" aria-disabled="false" aria-label="Pagination"
-                          class="pagination b-pagination pagination-lg">
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(1)">
-                          <span role="menuitem" aria-label="Go to first page"  aria-disabled="true" class="page-link">First</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_current_page==1?'disabled':'')" @click="perPage"><span role="menuitem"
-                                                                                                    aria-label="Go to previous page"
-                                                                                                    aria-disabled="true"
-                                                                                                    class="page-link">Prev</span>
-                        </li>
-                        <li role="presentation" class="page-item active">
-                          <button role="menuitemradio" type="button" @click="changePage(data_current_page)" :class="'number active'" class="page-link">{{data_current_page}}
-                          </button>
-                        </li>
-                        <li role="presentation" aria-hidden="true" :class="'page-item '+(data_total_page==data_current_page?'disabled':'')" @click="nextPage"><span role="menuitem"
-                                                                                                    aria-label="Go to next page"
-                                                                                                    aria-disabled="true"
-                                                                                                    class="page-link">Next</span>
-                        </li>
-                        <li role="presentation" aria-hidden="true" class="page-item " @click="changePage(data_total_page)"><span role="menuitem"
-                                                                                                    aria-label="Go to last page"
-                                                                                                    aria-disabled="true"
-                                                                                                    class="page-link">Last</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div  class="mt-3 " v-if="listData.length==0">
-                    <div  class="d-grid gap-2">
-                      <button  type="button"
-                              class="btn btn btn-primary disabled btn-secondary btn-block">{{$t('vanPull[0]')}}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
+        <div class="t-table">
+          <div class="tr">
+            <div class="th">{{$t('transaction[0]')}}</div>
+            <div class="th">{{$t('transaction[1]')}}</div>
+            <div class="th">{{$t('transaction[2]')}}</div>
+            <div class="th">{{$t('transaction[3]')}}</div>
+            <div class="th">{{$t('transaction[4]')}}</div>
+          </div>
+          <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
+          <div class="tr" v-for="(item,index) in listData" :key="index">
+            <div class="td">{{item.order_number}}</div>
+            <div class="td">{{item.trade_time}}</div>
+            <div class="td" style="color: rgb(94,25,224);"> {{InitData.currency}} {{item.jj||''}}{{item.trade_amount}}</div>
+            <div class="td">{{InitData.currency}} {{item.trade_amount}}</div>
+            <div class="td">{{item.remarks}}</div>
+          </div>
+        </div>
+        <div class="pagination-box">
+          <div class="pagination-pc el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+          </div>
+          <div class="pagination-h5 el-pagination is-background">
+            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+            </button>
+            <ul class="el-pager">
+              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+            </ul>
+            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
           </div>
         </div>
       </div>
-    </section>
-    <Footer></Footer>
+    </div>
   </div>
 </template>
 <script>
@@ -225,5 +147,378 @@
   }
 </script>
 <style scoped>
+  @media only screen and (min-width: 1024px) {
+    html {
+      font-size:10px
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    html {
+      font-size:10px
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 5px
+  }
+
+  ::-webkit-scrollbar-corner,::-webkit-scrollbar-track {
+    background-color: #e2e2e2
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: rgb(13,110,253)
+  }
+
+  .slide-enter-active,.slide-leave-active {
+    transition: all .2s ease
+  }
+
+  .slide-enter,.slide-leave-to {
+    transform: translateY(10px);
+    opacity: 0
+  }
+
+  .slide-right-enter-active,.slide-right-leave-active {
+    transition: all .2s ease
+  }
+
+  .slide-right-enter,.slide-right-leave-to {
+    transform: translateX(-10px);
+    opacity: 0
+  }
+
+  @keyframes tobig-9afe708e {
+    0% {
+      transform: scale(1)
+    }
+
+    to {
+      transform: scale(1.5)
+    }
+  }
+
+  input::-webkit-inner-spin-button,input::-webkit-outer-spin-button {
+    -webkit-appearance: none!important
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield
+  }
+
+  .el-carousel__indicators--outside button {
+    background-color: rgb(13,110,253)!important
+  }
+
+  .el-dropdown-menu__item {
+    font-size: 1.5rem;
+    color: #000;
+    font-family: myFont
+  }
+
+  .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
+    color: rgb(13,110,253)!important;
+    background-color: #fff9f0!important
+  }
+
+  .el-pager li {
+    font-family: myFont
+  }
+
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253)!important*/
+  /*}*/
+
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253)!important*/
+  /*}*/
+
+  .el-message {
+    font-size: 1.6rem
+  }
+
+  .el-menu-item {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    font-weight: 700
+  }
+
+  .el-submenu__title {
+    font-size: 1.5rem!important;
+    font-weight: 700
+  }
+
+  .el-menu-item [class^=el-icon-],.el-submenu [class^=el-icon-] {
+    font-size: 2rem
+  }
+
+  .el-submenu__icon-arrow {
+    font-size: 1.4rem!important
+  }
+
+  .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
+    color: rgb(13,110,253);
+    background-color: #fff9f0!important
+  }
+
+  .el-menu-item:hover i,.el-submenu__title:hover i {
+    color: rgb(13,110,253)
+  }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap
+  }
+
+  .lang-item .flag {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .6rem
+  }
+
+  .option-label {
+    display: flex;
+    align-items: center;
+    width: 100%
+  }
+
+  .option-label .icon {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .6rem
+  }
+
+  .el-input {
+    font-size: 1.5rem!important
+  }
+
+  .el-input .el-input__inner {
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
+    font-family: myFont;
+    color: #000;
+    border: 1px solid #d9d9d9!important
+  }
+
+  .el-textarea__inner {
+    font-size: 1.5rem!important;
+    font-family: myFont;
+    color: #000!important
+  }
+
+  .el-form-item__label {
+    padding-bottom: 1rem!important;
+    line-height: normal!important;
+    font-size: 1.5rem!important;
+    color: #000!important;
+    word-wrap: break-word
+  }
+
+  .el-input.is-disabled .el-input__inner {
+    color: #000!important;
+    cursor: default!important
+  }
+
+  .el-radio {
+    color: #000!important
+  }
+
+  .el-radio__label {
+    font-size: 1.5rem!important
+  }
+
+  .el-select {
+    width: 100%
+  }
+
+  .el-select-dropdown__item {
+    font-size: 1.5rem;
+    font-family: myFont
+  }
+
+  .el-select-dropdown__empty {
+    font-size: 1.5rem!important;
+    font-family: myFont
+  }
+
+  .el-select-dropdown__item.selected {
+    color: rgb(13,110,253)
+  }
+
+  .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: rgb(13,110,253)!important;
+    border-color: rgb(13,110,253)!important
+  }
+
+  .el-checkbox__label {
+    font-size: 1.5rem!important;
+    color: #000
+  }
+
+  .el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #000!important
+  }
+
+  .el-checkbox__input.is-focus .el-checkbox__inner {
+    border-color: rgb(13,110,253)!important
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .container .t-table,.container {
+      width:100%
+    }
+
+    .container .t-table .tr {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff
+    }
+
+    .container .t-table .tr:first-child {
+      border-bottom: none !important;
+      border-radius: 4px 4px 0 0;
+      background-color: #f4f4f4;
+      color: #717171;
+    }
+
+    .container .t-table .tr:last-child {
+      border-radius: 0 0 4px 4px
+    }
+
+    .container .t-table .tr:not(:last-child) {
+      border-bottom: 1px solid #e9e9e9
+    }
+
+    .container .t-table .tr .th {
+      word-wrap: break-word
+    }
+
+    .container .t-table .tr .td,.container .t-table .tr .th {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      box-sizing: border-box;
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      color: #000;
+      text-align: center
+    }
+
+    .container .t-table .tr .td {
+      word-break: break-all
+    }
+
+    .container .t-table .no-data {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 5rem;
+      box-sizing: border-box;
+      font-size: 1.5rem;
+      color: #444;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #fff
+    }
+
+    .container .pagination-box {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 3rem 0 0
+    }
+
+    .container .pagination-box .pagination-h5 {
+      display: none
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .container .t-table,.container {
+      width:100%
+    }
+
+    .container .t-table .tr {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff
+    }
+
+    .container .t-table .tr:first-child {
+      border-bottom: none !important;
+      border-radius: 4px 4px 0 0;
+      background-color: #f4f4f4;
+      color: #717171;
+    }
+
+    .container .t-table .tr:last-child {
+      border-radius: 0 0 4px 4px
+    }
+
+    .container .t-table .tr:not(:last-child) {
+      border-bottom: 1px solid #e9e9e9
+    }
+
+    .container .t-table .tr .th {
+      word-wrap: break-word
+    }
+
+    .container .t-table .tr .td,.container .t-table .tr .th {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      box-sizing: border-box;
+      padding: .5rem;
+      font-size: 1.2rem;
+      color: #000;
+      text-align: center
+    }
+
+    .container .t-table .tr .td {
+      word-break: break-all
+    }
+
+    .container .t-table .no-data {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 5rem;
+      box-sizing: border-box;
+      font-size: 1.4rem;
+      color: #444;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #fff
+    }
+
+    .container .pagination-box {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 2rem 0 0
+    }
+
+    .container .pagination-box .pagination-pc {
+      display: none
+    }
+  }
 
 </style>

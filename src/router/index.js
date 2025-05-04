@@ -16,18 +16,7 @@ const router = new VueRouter({
       component: () => import('@/views/LuckyWheel.vue'),
       meta: {
         title: 'lucky',
-        active: 'lucky',
-        requiresAuth: true,
-      }
-    },
-    {
-      path: '/setting',
-      name: 'setting',
-      component: () => import('@/views/setting.vue'),
-      meta: {
-        title: 'setting',
-        active: 'setting',
-        requiresAuth: true,
+        active: 'lucky'
       }
     },
     {
@@ -131,6 +120,16 @@ const router = new VueRouter({
       }
     },
     {
+      path: '/pt/:articleType/:articleId',
+      name: 'privacy',
+      component:  () => import('@/views/Privacy.vue'),
+      meta: {
+        title: 'privacy',
+        active: 'privacy'
+      },
+      props: true
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component:  () => import('@/views/dashboard.vue'),
@@ -185,15 +184,6 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/Tutorial',
-      name: 'Tutorial',
-      component:  () => import('@/views/Tutorial.vue'),
-      meta: {
-        title: 'Tutorial',
-        active: 'Tutorial'
-      }
-    },
-    {
       path: '/deposit',
       name: 'deposit',
       component:  () => import('@/views/deposit.vue'),
@@ -221,6 +211,15 @@ const router = new VueRouter({
       }
     },
     {
+      path: '/teach',
+      name: 'teach',
+      component:  () => import('@/views/teach.vue'),
+      meta: {
+        title: 'teach',
+        active: 'teach'
+      }
+    },
+    {
       path: '/transactions',
       name: 'transactions',
       component:  () => import('@/views/transactions.vue'),
@@ -235,7 +234,6 @@ const router = new VueRouter({
       component:  () => import('@/views/affiliates.vue'),
       meta: {
         title: 'affiliates',
-        requiresAuth: true,
         active: 'affiliates'
       }
     },
@@ -293,26 +291,6 @@ const router = new VueRouter({
         title: 'withdraw',
         requiresAuth: true,
         active: 'withdraw'
-      }
-    },
-    {
-      path: '/withdrawList',
-      name: 'withdrawList',
-      component: () => import('@/views/withdrawList.vue'),
-      meta: {
-        title: 'withdrawList',
-        requiresAuth: true,
-        active: 'withdrawList'
-      }
-    },
-    {
-      path: '/depositList',
-      name: 'depositList',
-      component: () => import('@/views/depositList.vue'),
-      meta: {
-        title: 'depositList',
-        requiresAuth: true,
-        active: 'depositList'
       }
     },
     {

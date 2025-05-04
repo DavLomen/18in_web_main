@@ -1,809 +1,661 @@
 export default {
-  "line": "线",
-  "language": "语言",
+  "line": "Line",
+  "language": "Language",
   "common": [
-    "服务",
-    "取消暂停",
-    "幸运抽奖"
+    "Service",
+    "Cancel Suspension",
+    "lucky draw"
   ],
   "vanPull": [
-    "没有更多数据",
-    "没有数据"
-  ],
-  "upload": [
-    "上传中"
+    "No more data",
+    "No data"
   ],
   "login": {
     "text": [
-      "记住用户名/密码",
-      "正在记录...",
-      "现在登录"
+      "Remember username/password",
+      "Logging...",
+      "Log in now"
     ],
     "placeholder": [
-      "请输入用户名",
-      "请输入登录密码"
+      "Please enter username",
+      "Please enter login password"
     ],
     "i18n": [
-      "没有{title}帐户？ ",
-      "登记"
+      "No {title} account? {a} {line}",
+      "Register"
     ]
   },
   "register": {
     "text": [
-      "登记",
-      "短信代码发送...",
-      "获取短信代码",
-      "注册...",
-      "现在注册",
-      "已有账号，下载APP",
-      "同意免责条款"
+      "register",
+      "SMS code sending...",
+      "Get SMS code",
+      "Registering...",
+      "Register now",
+      "Have an account,download APP",
+      "Agree to the terms of the disclaimer"
     ],
     "placeholder": [
-      "请输入您的用户名",
-      "请输入短信验证码",
-      "请输入登录密码",
-      "请确认您的密码",
-      "请输入邀请码",
-      "两个密码不同",
-      "请输入验证码",
-      "请勾选同意免责条款",
-      "请输入电子邮件"
+      "Please enter your username",
+      "Please enter SMS verification code",
+      "Please enter the login password",
+      "Please confirm your password",
+      "Please enter the invitation code",
+      "Two passwords are different",
+      "Please enter the verification code",
+      "Please tick to agree to the terms of the disclaimer",
+      "Please input email"
     ],
     "i18n": [
-      "有一个账户？ ",
-      "登录"
+      "Have an account? {a} {line}",
+      "Login"
     ]
   },
   "user": {
     "default": [
-      "我的上级",
-      "帐户",
-      "邀请代码",
-      "退出登录",
-      "平衡",
-      "金子",
-      "我的钱包"
+      "My superior",
+      "Account",
+      "Invitation code",
+      "Exit login",
+      "Balance",
+      "Gold",
+      "My wallet"
     ]
   },
   "userInfo": {
     "default": [
-      "个人信息",
-      "头像",
-      "手机号码",
-      "银行卡",
-      "支付宝",
-      "详细资料",
-      "登录密码",
-      "资金密码",
-      "单击设置",
-      "换头像",
-      "更改登录密码",
-      "修改资金密码",
-      "提交",
-      "清空缓存"
+      "Personal information",
+      "Head portrait",
+      "Mobile number",
+      "Bank card",
+      "Alipay",
+      "Detailed information",
+      "Login password",
+      "Payment Password",
+      "Click Settings",
+      "Change head portrait",
+      "Change login password",
+      "Change Payment Password",
+      "Submit",
+      "Empty the cache"
     ],
     "label": [
-      "原始登录密码",
-      "新的登录密码",
-      "确认密码",
-      "原资金密码",
-      "新资金密码",
-      "确认密码"
+      "Original login password",
+      "New login password",
+      "Confirming password",
+      "Original Payment Password",
+      "New Payment Password",
+      "Confirm password"
     ],
     "placeholder": [
-      "请输入原登录密码",
-      "请输入新的登录密码",
-      "请确认登录密码",
-      "请输入原资金密码",
-      "请输入新资金密码",
-      "请确认资金密码"
+      "Please enter the original login password",
+      "Please enter a new login password",
+      "Please confirm the login password",
+      "Please enter the original Payment Password",
+      "Please enter the new Payment Password",
+      "Please confirm the Payment Password"
     ]
   },
   "userSet": {
     "default": [
-      "实名认证",
-      "详细资料",
-      "绑定支付宝",
-      "提交"
+      "Real name certification",
+      "Detailed information",
+      "Bind Alipay",
+      "Submit"
     ],
     "label": [
-      "真正的名字"
+      "Real name"
     ],
     "placeholder": [
-      "请输入真实姓名"
+      "Please enter a real name"
     ]
   },
   "bankCard": {
     "default": [
-      "绑定银行卡",
-      "立即验证",
-      "正在提交...",
-      "立即添加",
-      "添加银行卡"
+      "Bind bank card",
+      "Authenticate now",
+      "Submitting ...",
+      "Add it now",
+      "Add bank card"
     ],
     "tips": [
-      "请实名认证后添加您的银行卡",
-      "您绑定的银行卡开户名必须与您验证的真实姓名一致，否则您将无法取款成功。"
+      "Please add your bank card after real name authentication",
+      "The account opening name of your bound bank card must be the same as your verified real name, otherwise you will not be able to withdraw successfully."
     ],
     "label": [
-      "姓名",
-      "银行名",
-      "银行账户",
-      "国际金融服务委员会代码"
+      "Name",
+      "Bank name",
+      "Bank account",
+      "IFSC code"
     ],
     "placeholder": [
-      "请输入银行名称",
-      "请输入银行账户",
-      "请输入IFSC代码",
-      "请输入姓名"
+      "Please enter the bank name",
+      "Please enter the Bank account",
+      "Please enter the IFSC code",
+      "Please enter Name"
     ]
   },
   "wallet": {
     "default": [
-      "我的钱包",
-      "充值",
-      "退出",
-      "充值记录",
-      "提币记录"
+      "My wallet",
+      "Recharge",
+      "Withdrawal",
+      "Recharge record",
+      "Withdrawal record"
     ],
     "label": [
-      "提款方式",
-      "提款金额",
-      "资金密码",
-      "提交",
-      "电话号码",
-      "电子邮件",
-      "国际金融服务中心",
-      "提款银行",
-      "手续费"
+      "Withdrawal method",
+      "Withdrawal amount",
+      "Payment Password",
+      "Submit",
+      "Phone number",
+      "Email",
+      "IFSC",
+      "Withdrawal bank",
+      "Handling fee"
     ],
     "pix_type": [
-      "PIX 密钥类型",
+      "PIX key type",
       "PIX",
-      "公积金",
-      "帐户类型",
-      "分行",
-      "银行代码",
-      "分行编号",
-      "银行账户"
+      "CPF",
+      "Account type",
+      "Branch bank",
+      "Bank Code",
+      "Branch number",
+      "Bank Account"
     ],
     "pix_type_placeholder": [
-      "请选择PIX类型",
-      "请输入正确的PIX",
-      "请输入公积金",
-      "请选择账户类型",
-      "请输入分行",
-      "请输入 "
+      "Please select PIX type",
+      "Please enter the right PIX",
+      "Please enter the CPF",
+      "Please select account type",
+      "Please enter the branch bank",
+      "Please enter the "
     ],
     "placeholder": [
-      "选择提款方式",
-      "请输入提款金额",
-      "请输入资金密码",
-      "请选择提款方式",
-      "请输入收款人手机号码",
-      "请输入收款人的电子邮件地址",
-      "请输入收款人IFSC",
-      "请选择提款银行"
+      "Select withdrawal method",
+      "Please input the withdrawal amount",
+      "Please input Payment Password",
+      "Please select the withdrawal method",
+      "Please enter the payee's mobile phone number",
+      "Please enter the payee's email address",
+      "Please enter the payee IFSC",
+      "Please select the withdrawal bank"
     ],
     "msg": [
-      "您尚未设置资金密码，请先设置",
-      "您尚未绑定提币地址，请先绑定"
+      "You haven't set Payment Password, please set it first",
+      "You have not bound your withdrawal address, please bind it first"
     ]
   },
   "recharge": {
     "default": [
-      "充值",
-      "充值详情",
-      "充值记录",
-      "可用余额{money}，请选择充值方式",
-      "单笔最低金额为{currency} {min}，最高金额为{currency} {max}",
-      "正在提交...",
-      "立即充电",
-      "返回",
-      "加载中..."
+      "Recharge",
+      "Recharge details",
+      "Recharge record",
+      "Available balance {money}, please choose recharge method",
+      "Single minimum amount is {currency} {min}, maximum {currency} {max}",
+      "Submitting...",
+      "Recharge now",
+      "Return",
+      "Loading..."
     ],
     "label": [
-      "充值金额",
-      "充值通道",
-      "转让名称",
-      "付款人姓名",
-      "付款人手机",
-      "付款人 UPI 账户",
-      "付款人的电子邮件"
+      "Recharge amount",
+      "Recharge channel",
+      "Name of transfer",
+      "Payer's Name",
+      "Payer's Mobile Phone",
+      "Payer UPI Account",
+      "Payer's Email"
     ],
     "placeholder": [
-      "请输入充值金额",
-      "请选择充值渠道",
-      "请输入转账名称",
-      "单笔最低金额为 {currency} {min}",
-      "单笔最高金额为 {currency} {max}",
-      "请输入付款人姓名",
-      "请输入付款人的手机号码，号码前加上国际区号，如+86",
-      "请输入付款人的UPI账户",
-      "请输入付款人的电子邮件地址"
+      "Please enter the recharge amount",
+      "Please select recharge channel",
+      "Please enter the name of the transfer",
+      "Single minimum amount is {currency} {min}",
+      "Single maximum amount is {currency} {max}",
+      "Please enter the name of the payer",
+      "Please enter the payer's mobile phone number, prefix the number with the international area code, such as +86",
+      "Please enter the UPI account of the payer",
+      "Please enter the payer's email address"
     ],
     "info": [
-      "充值金额",
-      "订单号",
-      "银行",
-      "户口号码",
-      "姓名",
-      "复制",
-      "{类型} 传输",
-      "传输截图",
-      "提交",
-      "IFSC 代码",
-      "帐户类型",
-      "加工说明"
+      "Recharge amount",
+      "Order number",
+      "Bank",
+      "Account no",
+      "Name",
+      "Copy",
+      "{type} Transfer",
+      "Transfer screenshot",
+      "Submit",
+      "IFSC Code",
+      "Account type",
+      "Processing instructions"
     ],
     "tips": [
-      "请选择以下方式转账匹配金额，以免财务支票延误。<br>转账后，请上传转账截图作为验证凭证",
-      "无需加好友，扫描二维码即可转账给我",
-      "请根据以下信息完成转账",
-      "提示：付款成功后，请联系在线服务提供您的会员账号、充值金额、订单号、存款账号、充值时间，方便财务部门及时为您充值。",
-      "注：每次转账请一次性付款",
-      "转账后，请上传转账截图作为验证凭证",
-      "请选择以下方式转账匹配金额",
-      "请上传转账截图"
+      "Please select the following method to transfer the matching amount to avoid delay in the financial check.<br>After the transfer, please upload the transfer screenshot as a verification certificate",
+      "No need to add friends, scan the QR code to transfer money to me",
+      "Please complete the transfer according to the information below",
+      "Hint: After successful payment, please contact online service to provide your member account number, recharge amount, order number, depositor account number, recharge time, convenient for financial department to add funds for you in time.",
+      "Note: please submit one payment for each transfer",
+      "After the transfer, please upload the transfer screenshot as a verification certificate",
+      "Please select the following method to transfer the matching amount",
+      "Please upload a screenshot of the transfer"
     ]
   },
   "fundRecord": {
     "default": [
-      "支出记录",
-      "充值记录",
-      "收入记录"
+      "Expenditure record",
+      "Recharge record",
+      "Revenue records"
     ],
     "tabs": [
-      "收入",
-      "支出",
-      "充值"
+      "Revenue",
+      "Expenditure",
+      "Recharge"
     ]
   },
   "help": [
-    "帮助手册",
-    "无法使用"
+    "Helpbook",
+    "Not available"
   ],
   "dialog": [
-    "温馨提示",
-    "确认",
-    "正在提交...",
-    "复制成功",
-    "IOS系统版本低，不支持",
-    "注册...",
-    "数据加载中..."
+    "Kind Tips",
+    "Confirm",
+    "Submitting...",
+    "Copy succeeded",
+    "IOS system version is low and not supported",
+    "Registering...",
+    "Data loading..."
   ],
-  "messageInfo": [
-    "您有新消息，点击查看",
-    "查看留言",
-    "注意",
-    "日期",
-    "标题",
-    "细节"
+  "messageInfo":[
+    "You have new news, click here to view",
+    "View message",
+    "Notice",
+    "Date",
+    "Title",
+    "Detail"
   ],
-  "lucky": [
-    "剩余抽奖次数：",
-    "遗憾的是，您没有获奖！",
-    "获奖用户记录",
-    "抽奖记录",
-    "获得奖品",
-    "抽奖规则",
-    "邀请星级1，下属首次激活星级，成为公司员工，可参与抽奖一次",
-    "恭喜您获奖！ ",
-    "抱歉，您不符合抽奖资格！",
-    "幸运转盘"
+  "lucky":[
+    "Remaining number of draws:",
+    "Unfortunately, you did not win the prize! keep working hard~",
+    "Winning User Record",
+    "Raffle Record",
+    "Get prizes",
+    "Lottery rules",
+    "Invite a star level 1, subordinates activate the star level for the first time and become a company employee and can participate in the lottery once",
+    "Congratulations on winning the prize! Prize ",
+    "Sorry, you are not eligible for the lottery!",
+    "Turntable of Luck"
   ],
-  "usdt": [
-    "货币",
-    "链",
-    "钱包地址",
-    "添加钱包地址",
-    "转账地址",
-    "交易编号(TxID)",
-    "钱包地址"
+  "usdt":[
+    "Currency",
+    "Chain",
+    "Wallet address",
+    "Add Wallet address",
+    "Transfer address",
+    "Transaction number(TxID)",
+    "Wallet address"
   ],
-  "usdtp": [
-    "请输入钱包地址",
-    "请选择货币类型",
-    "请输入交易ID(TxID)"
+  "usdtp":[
+    "Please enter Wallet address",
+    "Please select Currency type",
+    "Please enter Transaction ID(TxID)"
   ],
-  "foot": [
-    "自2016年以来，{WT}已成为全球知名的加密货币云挖矿中心，是一家多元化的公司，其目标非常简单：我们提供您在数字资产领域取得成功所需的工具和服务。",
-    "网站链接",
-    "合同",
-    "关于",
-    "常问问题",
-    "联盟计划",
-    "博客",
-    "接触",
-    "快速链接",
-    "隐私和政策",
-    "服务条款",
-    "版权所有 © 2016-2024 {WT}。 <a href=\"{WS}\" class=\"text--base\">{WT}</a>"
+  "foot":[
+    "Since 2018, {WT} has cooperated with the world's top data centers and has advanced cloud computing technology and powerful mining computing power. Whether it's Bitcoin or other cryptocurrencies, we have a variety of cloud mining options for you.",
+    "Site Links",
+    "Plans",
+    "About",
+    "FAQ",
+    "Referral",
+    "Blog",
+    "Contact",
+    "Important Links",
+    "Privacy and Policy",
+    "Terms of Services",
+    "Copyright © 2018-2024 {WT}"
   ],
-  "head": [
-    "家",
-    "应用程序",
-    "报名",
-    "登入",
-    "仪表板",
-    "登出",
-    "菜单",
-    "订金",
-    "提取",
-    "合同",
-    "所有合约",
-    "我的合同",
-    "交易",
-    "信息",
-    "设置",
-    "钱包地址",
-    "登录密码",
-    "支付密码",
-    "存钱",
-    "我的存款",
-    "提款",
-    "我的提款",
-    "账单",
-    "佣金",
-    "推荐人"
+  "head":[
+    "Home",
+    "APP",
+    "Sign Up",
+    "Sign In",
+    "Dashboard",
+    "Logout",
+    "Menu",
+    "Deposit",
+    "Withdraw",
+    "Packages",
+    "Mining Packages",
+    "My Packages",
+    "Transactions",
+    "Message",
+    "Settings",
+    "Wallet Address",
+    "Login Password",
+    "Payment Password"
   ],
-  "say": [
-    "阿米莉亚",
-    "护士",
-    "这是一家很棒的公司。",
-    "比尔·克林顿",
-    "服装设计师",
-    "赚到了，这是我访问过的最好的云挖矿投资平台，我从 100 美元的计划开始，现在已经增加资金购买更高的计划",
-    "凯特琳",
-    "医生",
-    "{WT} 是一家认真的科技公司，帮助挖掘加密货币并从事 ICO 项目的开发。我信任整个公司并祝愿他们取得巨大的成长和成功。",
+  "about":[
+    "Certificate Of Incorporation",
+    "Company number",
+    "Registered office address",
+    "Company type",
+    "Incorporated on",
+    "Check Online",
+    "Download PDF",
+    "A Trusted Cloud Mining platform",
+    "Top Hashrate Service",
+    "12+ Global Mining centers in Several Countries",
+    "100+ Countries Service Coverage",
+    "Hashrate Under Management 10EH/s+",
+    "Best hardware",
+    "We use the newest mining gear from Bitmain, Canaan and Nvidia and advanced cooling technologies.",
+    "Low Threshold",
+    "No need to install or run your own mining software and hardware, we host everything on your behalf.",
+    "Expert team",
+    "We have an excellent team of blockchain engineers and IT experts to provide you with the most professional technical services.",
+    "Stable profits",
+    "Your mining earnings is automatically settled to your platform account every 24 hours.",
+    "24/7 live support",
+    "Contact our customer support with your questions at any time."
+  ],
+  "walletAddress":[
+    "Wallet Address",
+    "Login Password",
+    "Payment Password",
+    "Currency",
+    "Please enter your wallet address",
+    "Submit"
+  ],
+  "transaction":[
+    "TXID",
+    "Transacted",
+    "Amount",
+    "Post Balance",
+    "Wallet Type"
+  ],
+  "regLogin":[
+    "Already have an account?",
+    "Username",
+    "Please input Username",
+    "Email",
+    "Please input email",
+    "Password",
+    "Password at least 6 characters",
+    "Confirm Password",
+    "Referral Code (Optional)",
+    "Enter Captcha",
+    "I accept",
+    "Sign Up Now",
+    "Don't have an account?",
+    "Sign Up Now"
+  ],
+  "product":[
+    "Contract Price",
+    "Enter amount",
+    "Contract Term",
+    "Daily Profit",
+    "Total Profit",
+    "Fixed Income",
+    "Settle Interests",
+    "Every 24 Hours",
+    "Hash Power",
+    "Miner",
+    "Affiliate Bonus",
+    "Hash Lease Contract",
+    "Start Now",
+    "Sold Out",
+    "Package Details",
+    "Days",
+    "Hash Power Marketplace",
+    "Return after expiry"
+  ],
+  "password":[
+    "Current Password",
+    "New Password",
+    "Confirm Password",
+    "Confirm changes"
+  ],
+  "package":[
+    "TXID | Time",
+    "Package",
+    "Return",
+    "Amount",
+    "Mining Earnings",
+    "Date",
+    "From Investment",
+    "Mining Earnings"
+  ],
+  "affliliate":[
+
+  ],
+  "affiliates":[
+    "Affiliates",
+    "Affiliate Program",
+    "Your Email",
+    "Your Username",
+    "Your Referral Code",
+    "Your Affiliate Link",
+    "Earn Bonus Shares",
+    "As an affiliate partner of our website,you have the opportunity to earn money by sharing your referral link with friends and family.Even if you do not invest,you can still start earning up to 3%of each purchase made by the users you refer.Simply copy and share your unique referral link with your friends,and watch your referral rewards grow.Follow the link above to access your referral link and start earning.",
+    "Learn More",
+    "Partners List",
+    "Total Partners",
+    "Date",
+    "From",
+    "Level",
+    "Amount",
+    "Type"
+  ],
+  "appDown":[
+    "START MINING JOURNEY",
+    "Manage your {WT} activities on the go using our mobile apps. With access to real-time data and the ability to track your mining portfolio anywhere, anytime, the {WT} app offers a convenient, simple solution for buying and managing mining plans and building your revenue.",
+    "Manage your revenue anytime, anywhere",
+    "Easy start with mining",
+    "We've simplified all the steps you'll need to start with cloud mining on app.",
+    "One-click mining",
+    "Effortlessly order long and short-term mining plans with low thresholds and low fees.",
+    "Real-time manage",
+    "Whether onsite or away, effortlessly monitor and manage your mining plans assets.",
+    "24/7 Chat Support",
+    "Contact our customer support with your questions at any time."
+  ],
+  "contact":[
+    "Get in Touch Us",
+    "Name",
+    "Email",
+    "Subject",
+    "Message",
+    "Enter Captcha",
+    "Submit Now",
+    "Chat to support",
+    "Speak to our friendly team",
+    "Chat to online",
+    "24/7 Live Support",
+    "Contact our customer support with your questions at any time.",
+    "Visit us",
+    "Visit our office HQ"
+  ],
+  "dashboard":[
+    "View All",
+    "Available Balance",
+    "Total Commission",
+    "Active Orders",
+    "Expired Orders",
+    "Total Orders",
+    "Total Deposits",
+    "Total Withdrawals",
+    "Your Username",
+    "Your Referral Code",
+    "Your Affiliate Link"
+  ],
+  "faq":[
+    "Frequently Asked Questions"
+  ],
+  "home":[
+    "Welcome to {WT}",
+    "At the forefront of the global hashpower marketplace,{WT} leverages cutting-edge technology to streamline mining operations,guaranteeing stable,cost-effective,and profitable returns.Say goodbye to tedious mining tasks–join us to unlock the power of our hashpower and effortlessly grow your mining earnings.",
+    "Sign up get $10.00",
+    "Invite friends to get 3% reward permanently",
+    "How it Works?",
+    "Fill in the form and get ready to start mining in under than 1 minute",
+    "PURCHASE A CONTRACT",
+    "Choose one of the most profitable contracts and start cloud mining",
+    "GET PAID",
+    "Withdraw your mining income on a daily basis to your crypto wallet",
+    "WHY CHOOSE US?",
+    "<strong>Stable profits</strong><br/>We offer steady Fixed Income that is automatically deposited into your account every day.<br/><br/><strong>Fast Regular Payouts</strong><br/>All withdrawal requests will be automatically processed by the system within five minutes.<br/><br/><strong>Inclusivity</strong><br/>Our experienced investment team and IT experts will provide you with the best market-leading technology.<br/><br/><strong>Expert team</strong><br/>Our platform offers cloud mining investment support for everyone,even if you're a beginner,you can quickly get started and benefit from it.",
+    "What You Will Get As An Affiliate Partner",
+    "Join our lucrative referral program today and earn up to 3%lifetime commission while running your own successful business!You don't even need to invest to start earning money.With unlimited referrals,your earning potential is limitless,making this an opportunity not to be missed.Take control of your financial future and join our referral program now.",
+    "Our Latest Transactions",
+    "Name",
+    "Date",
+    "Amount",
+    "Details",
+    "Successfully recharged {M} {C}",
+    "Successfully withdraw {M} {C}",
+    "Our Customers Say",
+    "LISA DELANEY",
+    "photographer",
+    "This mining website has a visually appealing interface with clear and understandable images and charts.My mining experience here has been smooth,allowing me to focus on my photography work while earning some additional income.",
+    "SUZANNE BURSIEK",
+    "Web Administrator",
+    "This mining website is highly reliable,with stable servers,strong security measures,outstanding performance,minimal downtime,and responsive customer support.",
+    "MATTHEW LOMBARDI",
+    "Teacher",
+    "If you need a dependable mining website,this one surpasses expectations.I've used it for months,and its consistent payouts and stable mining rigs make it a top choice for crypto mining.",
+    "TIM MARTIN",
+    "Inside Upholsterer",
+    "I've tried various mining websites,but this one is exceptional.Strong mining power,minimal downtime,transparent operations,and fair fees have significantly boosted my crypto holdings.",
+    "JAMES HECKMAN",
+    "Emergency Medicine Physician",
+    "This mining website is really great!They provide powerful hashing power,and the payments are prompt.I've been mining here for several months,and the earnings are quite good.Highly recommend!",
     ""
   ],
-  "about": [
-    "关于我们",
-    "{WT} 于 2016 年在英国成为一家加密货币挖矿领域的公司。",
-    "愿景和使命",
-    "{WT}作为优秀的算力提供商，为新手、感兴趣的家庭矿工和大投资者提供各种范围的加密货币挖矿能力。",
-    "加入我们",
-    "想成为我们社区的一部分吗？",
-    "公司注册证书",
-    "公司号码",
-    "公司类型",
-    "合并于",
-    "网上查询",
-    "下载PDF"
-  ],
-  "walletAddress": [
-    "钱包地址",
-    "登录密码",
-    "支付密码",
-    "货币",
-    "请输入您的钱包地址",
-    "提交"
-  ],
-  "transaction": [
+  "withdraw":[
+    "Available Balance",
+    "Withdrawal method",
+    "Amount",
+    "Payment Password",
+    "Receivable",
+    "Submit",
     "TXID",
-    "已成交",
-    "数量",
-    "后期余额",
-    "钱包类型"
+    "Amount",
+    "Status",
+    "Time"
   ],
-  "regLogin": [
-    "已经有帐户？",
-    "用户名",
-    "请输入用户名",
-    "电子邮件",
-    "请输入电子邮件",
-    "密码",
-    "密码至少6个字符",
-    "确认密码",
-    "推荐码",
-    "输入验证码",
-    "我接受",
-    "立即注册",
-    "没有帐户？",
-    "立即注册",
-    "你好！",
-    "输入您的详细信息即可开始。"
-  ],
-  "product": [
-    "单笔投资金额",
-    "投资金额",
-    "投资期限",
-    "每日利润率",
-    "每日净利润",
-    "净利润总额",
-    "解决利益",
-    "每 24 小时一次",
-    "算力",
-    "矿工",
-    "联盟奖金",
-    "算力租赁合约",
-    "现在开始",
-    "售罄",
-    "套餐详情",
-    "天",
-    "算力市场",
-    "到期后返回",
-    "采购计划",
-    "合约说明",
-    "计算合同和售后服务说明。<br><br>云计算合约为机构客户提供最简单、最高效的挖矿解决方案。<br><br>温馨提示：（算力合约10美元套餐）每日限购1次，（算力合约100美元套餐）每个账户限购1次。<br><br>产品描述<br><br>1、合同采购须知<br>请您在投资前仔细了解该产品。<br><br>2、产品说明<br>合约：算力<br>矿工：BTC算力<br>投资货币：美元<br>付款地址：第三方（USDT BTC ETH LTC USDC BCH）<br>投资时间：按合同时间起止<br>准时率：100%<br><br>3. 结算说明<br>收益预计来自于数字资产网络的实时运行，并且会发生动态变化。<br><br><br>4. 合同终止<br>合同期满后将自动终止。<br><br>5、风险提示<br>数字资产的价格波动较大，各币种的挖矿难度也定期调整。<br><br>{DT}<br>免责声明和支持<br><br>1. 根据{WT}的使用条款，订单一旦付款，不可更改，不可退款。<br><br>2. {WT}不对因无法控制的风险而产生的任何结果负责，包括但不限于自然灾害，如洪水、火山爆发、地震、山体滑坡、火灾、风暴、其他不可预见或高风险的天气事件、政府法令<br><br>3、云计算算力波动不可避免。 <br><br>4、静态产出根据当前难度静态计算，随市场波动。"
-  ],
-  "password": [
-    "当前密码",
-    "新密码",
-    "确认密码",
-    "确认更改"
-  ],
-  "package": [
-    "TXID |",
-    "包裹",
-    "返回",
-    "数量",
-    "挖矿收益",
-    "日期",
-    "来自投资",
-    "挖矿收益"
-  ],
-  "affliliate": [
-    "附属计划",
-    "立即注册",
-    "加入我们的社区，注册帐户，获取您的推荐链接。",
-    "邀请新用户",
-    "邀请新用户，通过社交媒体分享您的链接。",
-    "赚取佣金",
-    "根据初始投资金额获得3%的奖金。",
-    "加入我们的推荐计划（合作伙伴计划）并根据其初始投资金额获得 3% 的奖金！",
-    "加入我们"
-  ],
-  "affiliates": [
-    "附属公司",
-    "推荐计划",
-    "你的邮件",
-    "您的用户名",
-    "推荐码",
-    "推荐链接",
-    "赚取红利股票",
-    "分享网站给其他人。您将根据他们的初始投资额获得3%的奖金。",
-    "了解更多",
-    "推荐名单",
-    "伙伴",
-    "日期",
-    "从",
-    "等级",
-    "数量",
-    "类型",
-    "复制链接",
-    "推荐"
-  ],
-  "appDown": [
-    "开始采矿之旅",
-    "使用我们的移动应用随时随地管理您的 {WT} 活动。",
-    "随时随地管理您的收入",
-    "轻松开始挖矿",
-    "我们简化了您在应用程序上开始云挖掘所需的所有步骤。",
-    "一键挖矿",
-    "轻松订购低门槛、低费用的长期和短期采矿计划。",
-    "实时管理",
-    "无论是在现场还是在外，都可以轻松监控和管理您的采矿计划资产。",
-    "24/7 聊天支持",
-    "如果您有任何疑问，请随时联系我们的客户支持。"
-  ],
-  "contact": [
-    "联系我们",
-    "姓名",
-    "电子邮件",
-    "主题",
-    "信息",
-    "输入验证码",
-    "现在提交",
-    "聊天支持",
-    "与我们友好的团队交谈",
-    "在线聊天",
-    "24/7 实时支持",
-    "如果您有任何疑问，请随时联系我们的客户支持。",
-    "探望我们",
-    "参观我们的办公室总部"
-  ],
-  "dashboard": [
-    "查看全部",
-    "可用余额",
-    "佣金总额",
-    "活跃订单",
-    "过期订单",
-    "订单总数",
-    "存款总额",
-    "提款总额",
-    "您的用户名",
-    "您的推荐码",
-    "您的附属链接",
-    "欢迎",
-    "总余额",
-    "兴趣",
-    "委员会",
-    "近期活动",
-    "收到注册奖金。",
-    "利润总额",
-    "我的订单"
-  ],
-  "faq": [
-    "常见问题"
-  ],
-  "home": [
-    "全球领先的加密货币云挖矿平台，深受650万客户信赖，提供全系列云挖矿合约。",
-    "● 立即注册即可获得 10 美元奖金<br>● 每日签到可获 0.5 美元<br>● 邀请好友永久获得3%奖励",
-    "立即注册",
-    "我们的承诺",
-    "我们将以非常安全的方式让您的投资回报稳步增长。",
-    "变得简单",
-    "方便的工具包和简单的提款——仪表板对于新手和专业人士来说都可以直观地理解",
-    "安全且私密",
-    "我们支持促进隐私的加密货币，因此我们努力将收集的用户数据保持在最低限度，并且仅要求从监管角度强制提供的信息",
-    "联盟推荐计划",
-    "如果任何用户通过您的推荐链接注册并进行购买，那么您将收到他们所有购买的 4.5% 的佣金。",
-    "高回报",
-    "专业的技术和人员保障您的本金安全并产生高额回报",
-    "强力防护",
-    "客户安全是我们的首要任务。",
-    "受保护的网站",
-    "我们正在使用最有经验、最专业、最值得信赖的 DDoS 防护和缓解提供商之一。",
-    "云挖矿为您带来被动收入",
-    "云挖矿允许您使用托管在专门数据中心的挖矿设备的计算能力，而无需拥有或维护设备。",
-    "报名",
-    "填写表格以创建您自己的帐户",
-    "选择合约",
-    "选择一份或多份云挖矿合约",
-    "获取利润",
-    "对于您选择的合约，每日利润将及时存入您的账户",
-    "获取利润",
-    "对于您选择的合约，每日利润将及时存入您的账户",
-    "每日利润率",
-    "每 24 小时结算一次利息",
-    "资本到期返还",
-    "24/7 支持",
-    "单笔投资金额",
-    "投资期限",
-    "天",
-    "净利润总额",
-    "立即投资",
-    "利润计算器",
-    "计算您的挖矿收入",
-    "计划",
-    "数量",
-    "净利润总额",
-    "每日利润率",
-    "为什么选择我们",
-    "我们的目标是利用投资者的资金并为他们提供高收入来源，同时最大限度地减少风险的可能性。",
-    "全球的",
-    "我们是一家国际公司，拥有来自世界各地不同国家的客户。",
-    "用户至上",
-    "我们所有的工作都以用户为中心，我们提供 24/7 的客户服务",
-    "资金安全",
-    "在监管机构的监管下，采取严格措施遵守并实现完全透明",
-    "已认证",
-    "我们是一家经过认证的公司，在法律领域从事合法业务。",
-    "安全的",
-    "我们不断致力于改进我们的系统和安全水平，以最大程度地减少任何潜在风险。",
-    "可持续发展",
-    "所有矿场均使用清洁能源电力，让云挖矿加入碳中和行列",
-    "加入我们",
-    "想成为我们社区的一部分吗？",
-    "立即加入",
-    "常见问题",
-    "我们会回答您有关我们平台的一些常见问题。",
-    "什么是云挖矿？",
-    "如果您想通过加密货币赚钱，云挖掘是您的最佳选择。云挖掘是利用具有共享处理能力的远程数据中心进行加密货币挖掘的过程。这种类型的云挖掘使用户无需管理硬件即可挖掘比特币或替代加密货币",
-    "如何开始在{WT}上挖矿？",
-    "要在 {WT} 上开始加密货币挖矿，您所需要做的就是注册并购买合约，每天轻松赚取被动收入。",
-    "服务费用是多少？",
-    "无需额外收费，服务费已包含在合同中。",
-    "我如何存款？",
-    "选择存款选项卡并按照页面提示操作。",
-    "我如何提取我的挖矿收入？",
-    "选择提款选项卡以请求提款。",
-    "为什么将我的挖矿利润再投资有意义？",
-    "{WT}在世界各地经营矿山，能够使用相对较低的电价。",
-    "我忘记了密码，我该怎么办？",
-    "在登录页面点击“忘记密码”。<br>请在下一个屏幕中输入您注册的电子邮件地址，然后单击“提交”。 <br>您将在 5 分钟内收到一封密码重置电子邮件，但如果您没有及时看到它，请记得检查您的垃圾邮件文件夹。<br>您的密码经过 MD5 加密并存储在数据库中。",
-    "什么是会员推荐计划？",
-    "您可以在您的帐户中找到推荐人，复制推荐链接并分享此链接即可获得奖金。",
-    "我丢失了双因素验证码（2FA），我该怎么办？",
-    "如果由于某种原因您无法通过二步验证，我们可以在验证您的帐户所有权后将其删除。<br>以下是删除 2FA 时需要填写的信息：<br>1. 注册邮箱地址：<br>2.您账户注册的BTC钱包地址：<br>警告！",
-    "如何备份谷歌验证器？",
-    "我们收到很多取消 Google 2FA 认证的请求。",
-    "我可以信任{WT}吗？",
-    "{WT}成立于2016年，总部位于英国。",
-    "我们的客户怎么说",
-    "看看我们的专家团队努力工作以确保您获利。",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-  ],
-  "withdraw": [
-    "可用余额",
-    "提款方式",
-    "数量",
-    "支付密码",
-    "应收账款",
-    "提交",
+  "deposit":[
+    "You have requested",
+    "Please pay",
+    "for successful payment",
+    "After the payment is successful, save the screenshot and upload the screenshot as prompted.",
+    "Transaction ID / Hash number",
+    "Please fill out Transaction ID / Hash number",
+    "Upload transfer screenshot",
+    "Submit",
+    "Available Balance",
+    "Deposit Method",
+    "Amount",
+    "Limit",
+    "Payable",
+    "Submit",
     "TXID",
-    "数量",
-    "地位",
-    "时间"
+    "Deposit Method",
+    "Amount",
+    "Status",
+    "Time",
+    "Details",
+    "Reward",
+    "After Reward",
+    "Conversion Rate",
+    "Payable Amount",
+    "Actual Amount",
+    "Upload transfer screenshot",
+    "Warm reminder: The minimum deposit amount starts from $100."
   ],
-  "deposit": [
-    "你已经请求",
-    "请付款",
-    "付款成功",
-    "支付成功后，保存截图并根据提示上传截图。",
-    "交易ID/哈希数",
-    "请填写交易ID/哈希号",
-    "上传传输截图",
-    "我付了",
-    "可用余额",
-    "网关",
-    "数量",
-    "限制",
-    "应付",
-    "提交",
-    "TXID",
-    "存款方式",
-    "数量",
-    "地位",
-    "时间",
-    "细节",
-    "报酬",
-    "奖励后",
-    "兑换率",
-    "应付金额",
-    "实际金额",
-    "上传传输截图",
-    "确认存款",
-    "支付信息",
-    "关闭"
+  "productDetail":[
+    "Details",
+    "Each account is limited to one purchase per day",
+    "Each account can only purchase 1 copy",
+    "Purchase instructions",
+    "The computing power and after-sales service are provided by MAR Mining. <br>The cloud computing power plan provides institutional customers with simple and efficient mining solutions. You don't need to own, run or maintain your own mining equipment to enjoy high-performance mining. Additionally, cloud computing plans give you the flexibility to choose your preferred mining rig model, plan duration, and computing capacity. You can start mining with just a few clicks and monitor your mining output at any time.",
+    "Product Description",
+    "1. Purchase instructions",
+    "Please understand the product carefully before placing an order. If you have any questions, please consult customer service. Once an order is placed, it means that the product has been approved and no refunds will be given.",
+    "2. Output settlement",
+    "Earnings are expected to come from the real-time operation of the digital asset network and will undergo dynamic changes. for reference only. Actual mining revenue depends on actual output, and mining machine operating profits are settled every 24 hours. Users can only withdraw earnings after reaching the specified amount set by the platform.",
+    "3. Termination of contract",
+    "The contract will be automatically terminated upon expiration. The mining contract comes into effect immediately after payment is confirmed. All purchases are final and non-refundable unless otherwise provided by applicable law or a specific offer. Thank you for your understanding.",
+    "4. Risk warning",
+    "The prices of digital assets often fluctuate greatly, and the mining difficulty of each currency is also adjusted regularly. A drop in currency prices or an increase in difficulty will cause the output of each mining machine to drop. Users need to carefully evaluate their risk tolerance and invest in digital asset mining within acceptable risk control.",
+    "5.MAR Mining is not responsible for any results arising from risks beyond its control, including but not limited to natural disasters such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or high-risk weather events, government Acts, or instructions, municipal power grid power supply incidents, and social acts or conflicts such as wars, strikes, and riots.",
+    "6. Fluctuations in computing power are inevitable. MAR Mining is not responsible for fluctuations caused by network instability, network failures, mining machine performance, etc.",
+    "7. Static output is calculated statically based on the current difficulty and fluctuates with the market. When the difficulty goes up or down, it will be lower or higher. Therefore, for informational purposes only, MAR Mining does not make any promises or guarantees regarding production volumes.",
+    "The platform reserves the right of final interpretation of the terms of this contract."
   ],
-  "productDetail": [
-    "细节",
-    "每个账户每天仅限购买一次",
-    "每个账号只能购买1份",
-    "购买须知",
-    "算力和售后服务由{WT}提供。 <br>云算力计划为机构客户提供简单高效的挖矿解决方案。",
-    "产品描述",
-    "1. 购买须知",
-    "请您在下单前仔细了解产品。",
-    "2. 产出结算",
-    "收益预计来自于数字资产网络的实时运行，并且会发生动态变化。",
-    "3. 合同终止",
-    "合同期满后自动终止。",
-    "四、风险提示",
-    "数字资产的价格经常波动较大，各币种的挖矿难度也定期调整。",
-    "5.{WT}对其无法控制的风险所产生的任何结果不承担任何责任，包括但不限于自然灾害，如洪水、火山爆发、地震、山体滑坡、火灾、风暴、其他不可预见或高风险的天气事件、政府",
-    "6、算力波动不可避免。 ",
-    "7、静态产出根据当前难度静态计算，随市场波动。",
-    "平台保留对本合同条款的最终解释权。"
+  "blog":[
+    "Recent Blog",
+    "Recent Blog Posts",
+    "Read More"
   ],
-  "blog": [
-    "最近的博客",
-    "最近的博客文章",
-    "阅读更多"
+  "welfare":[
+    "Vip Club"
   ],
-  "welfare": [
-    "贵宾俱乐部"
+  "tips":[
+    "After successful payment, please save the payment screenshot to your mobile phone and upload the screenshot to the page before submitting the order. If the screenshot is unclear or wrong, the recharge will not be completed.",
+    "The screenshot must contain the transaction hash, otherwise the system cannot recognize it."
   ],
-  "tips": [
-    "支付成功后，请将支付截图保存至手机，并在提交订单前将截图上传至页面。"
+  "next":"Next pay",
+  "placehoder":[
+    "Please enter amount",
+    "Please enter payment password",
+    "The login password and payment password are recommended to be different, please remember the password."
   ],
-  "next": "下次付款",
-  "placehoder": [
-    "请输入金额",
-    "请输入支付密码",
-    "登录密码和支付密码建议不同，请记住密码。"
+  "dep":[
+    "Warm reminder: The minimum recharge amount starts at US$100. If you don’t know how to recharge or don’t have the password, you can contact online customer service for help."
   ],
-  "dep": [
-    "温馨提示：最低充值金额为100美元起。"
+  "cryptocurrency":[
+    "What is cryptocurrency"
   ],
-  "payment": [
-    "接受多种付款方式",
-    "为了确保投资者的便利，{WT}提供了多种存入资金和接收付款的付款方式。"
+  "loginpage":[
+    "Hi, Welcome Back!",
+    "Create You Account",
+    "We offer the following payment methods.",
+    "Accept &amp; Continue"
   ],
-  "latest": [
-    "最新成交",
-    "最后存款",
-    "最后提款"
+  "newhome":[
+    "Exploring cloud mining starts with {WT}",
+    "{WT} is the world's top cloud mining service provider, which is simple and convenient, and has rich expertise in cloud mining system operation and cutting-edge technology. Join us and start your cloud mining journey.",
+    "Sign up now and get a $12 bonus",
+    "",
+    "Our Mining Contracts",
+    "We offer you the most profitable and reliable cloud mining contracts by providing daily payouts for all the contracts in the currency of the contract. Start cryptocurrency and stablecoins cloud mining today, and get the first payout tomorrow!"
   ],
-  "loginpage": [
-    "你好，欢迎回来！",
-    "创建您的帐户",
-    "我们提供以下付款方式。",
-    "接受并继续",
-    "输入您的详细信息以登录。"
+  "settle":[
+    "Settle Interests",
+    "Every 24 Hours",
+    "Daily Income",
+    "Fixed Income",
+    "View Detail",
+    "Buy Now",
+    "Checkout",
+    "Quantity",
+    "Amount",
+    "Payment Password",
+    "Pay"
   ],
-  "vipfoot": [
-    "详情请咨询7x24在线客服。"
+  "latest":[
+    "Latest Transaction",
+    "Latest Payment",
+    "Last Withdraw"
   ],
-  "power": [
-    "市场算力",
-    "全新升级2.0版新能源“风能”、“太阳能”绿色循环发电，体验零成本电费和矿机收益高回报。"
+  "teach":[
+    "Tutorial"
   ],
-  "aboutf": [
-    "活跃会员",
-    "支持国家",
-    "全球矿产",
-    "采矿设备",
-    "我们的数据中心",
-    "我们不断改进的服务",
-    "数据中心位置",
-    "我们的采矿数据中心位于巴西温得和克哈萨克斯坦。",
-    "数据中心硬件",
-    "15,000+ 最新的 ASIC 矿机、GPU 设备已准备好进行挖矿。",
-    "电源系统",
-    "我们使用水力发电和风力发电，总容量为 300,000 KW.0.05 $/kWh。",
-    "冷却系统",
-    "风冷系统和水冷系统保持温度：20-24℃。 ",
-    "安全/消防",
-    "24/7 现场警卫、入侵检测系统、IP-DVR 摄像机。",
-    "我们的队伍",
-    "我们的挖矿团队来自区块链行业和IT工程师。"
-  ],
-  "affliate": [
-    "附属机构",
-    "我们的联属网络营销计划提供众多好处。",
-    "<p></p><div>我们提供卓越的联盟计划，带来众多优势。</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">无需押金</span></div><div>即使没有存款，您也可以成为会员并利用我们的计划。</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">高级委员会</span></div><div>对于您推荐的用户的每次购买，您将获得高达 1.5-3% 的丰厚推荐奖励。</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">即时付款</span></div><div>我们以加密货币提供推荐奖励的即时支付，该奖励将记入您的账户余额。</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">无限的收入潜力</span></div><div>您可以引入的推荐数量没有限制，因此您的收入潜力是无限的。</div><p></p>",
-    "它是如何工作的？",
-    "立即注册",
-    "注册并获取推荐链接。",
-    "邀请新用户",
-    "邀请您的朋友使用推荐链接。",
-    "买卖同意书",
-    "推荐购买合同。",
-    "赚取佣金",
-    "新用户注册。您将获得他们购买的 4.5%。",
-    "作为附属合作伙伴您将获得什么？",
-    "加入我们的推荐计划（合作伙伴计划），终身赚取高达 4.5% 的佣金！ <br><br>首先，注册一个帐户并获取您自己的推荐链接/URL。 <br><br>接下来，通过社交媒体或您自己的网站分享您的推荐链接来邀请新用户。<br>",
-    "立即加入"
-  ],
-  "cryptocurrency": [
-    "什么是加密货币",
-    "什么是Web3"
-  ],
-  "rechargefoot": [
-    "温馨提示：最低充值金额为100美元起。",
-    "温馨提示：最低提款金额从100美元起。"
-  ],
-  "settle": [
-    "解决利益",
-    "每 24 小时一次",
-    "每日收入",
-    "固定收入",
-    "查看更多",
-    "立即购买",
-    "查看",
-    "数量",
-    "数量",
-    "支付密码",
-    "支付",
-    "100% 售空"
-  ],
-  "tip100": [
-    "温馨提示：本算力合约套餐每个账户限购一次。",
-    "温馨提示：该算力合约套餐每天仅限购买1次。"
-  ],
-  "tutorial": [
-    "教程"
-  ],
-  "newHome": [
-    "世界各地的数据中心",
-    "我们的网络托管、WordPress 托管和云托管计划提供的服务器位置位于：美国、英国、法国、印度、新加坡、印度尼西亚、巴西、立陶宛和荷兰。",
-    ""
-  ],
-  "bounty": "广告赏金",
-  "more": "显示更多",
-  "complete": "完全的",
-  "cancel": "取消",
-  "submit": "提交",
-  "confirm": "确认"
+  "bounty":"Bounty Hunter",
+  "complete":"completed",
+  "cancel": "Cancel",
+  "confirm": "Confirm"
 }

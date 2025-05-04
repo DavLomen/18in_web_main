@@ -4,14 +4,11 @@ export default {
   "common": [
     "Service",
     "Annuler la suspension",
-    "Tirage au sort"
+    "tirage au sort"
   ],
   "vanPull": [
     "Plus de données",
     "Pas de données"
-  ],
-  "upload": [
-    "Téléchargement"
   ],
   "login": {
     "text": [
@@ -22,10 +19,6 @@ export default {
     "placeholder": [
       "Veuillez saisir votre nom d'utilisateur",
       "Veuillez saisir le mot de passe de connexion"
-    ],
-    "i18n": [
-      "Pas de compte {title} ? ",
-      "Registre"
     ]
   },
   "register": {
@@ -48,10 +41,6 @@ export default {
       "entrez le code de vérification S'il vous plait",
       "Veuillez cocher pour accepter les termes de la clause de non-responsabilité",
       "Veuillez saisir votre e-mail"
-    ],
-    "i18n": [
-      "Avoir un compte? ",
-      "Se connecter"
     ]
   },
   "user": {
@@ -74,11 +63,11 @@ export default {
       "Alipay",
       "Des informations détaillées",
       "Mot de passe",
-      "Mot de passe du fonds",
+      "Mot de passe de paiement",
       "Cliquez sur Paramètres",
       "Changer le portrait de la tête",
       "Changer le mot de passe de connexion",
-      "Changer le mot de passe du fonds",
+      "Changer le mot de passe de paiement",
       "Soumettre",
       "Vider le cache"
     ],
@@ -86,17 +75,17 @@ export default {
       "Mot de passe de connexion d'origine",
       "Nouveau mot de passe de connexion",
       "Confirmation du mot de passe",
-      "Mot de passe original du fonds",
-      "Nouveau mot de passe du fonds",
+      "Mot de passe de paiement d'origine",
+      "Nouveau mot de passe de paiement",
       "Confirmez le mot de passe"
     ],
     "placeholder": [
       "Veuillez saisir le mot de passe de connexion d'origine",
       "Veuillez saisir un nouveau mot de passe de connexion",
       "Veuillez confirmer le mot de passe de connexion",
-      "Veuillez saisir le mot de passe d'origine du fonds",
-      "Veuillez saisir le nouveau mot de passe du fonds",
-      "Veuillez confirmer le mot de passe du fonds"
+      "Veuillez saisir le mot de passe de paiement original",
+      "Veuillez saisir le nouveau mot de passe de paiement",
+      "Veuillez confirmer le mot de passe de paiement"
     ]
   },
   "userSet": {
@@ -149,7 +138,7 @@ export default {
     "label": [
       "Méthode de retrait",
       "Montant de retrait",
-      "Mot de passe du fonds",
+      "Mot de passe de paiement",
       "Soumettre",
       "Numéro de téléphone",
       "E-mail",
@@ -178,7 +167,7 @@ export default {
     "placeholder": [
       "Sélectionnez la méthode de retrait",
       "Veuillez saisir le montant du retrait",
-      "Veuillez saisir le mot de passe du fonds",
+      "Veuillez saisir le mot de passe de paiement",
       "Veuillez sélectionner la méthode de retrait",
       "Veuillez saisir le numéro de téléphone portable du bénéficiaire",
       "Veuillez saisir l'adresse e-mail du bénéficiaire",
@@ -186,7 +175,7 @@ export default {
       "Veuillez sélectionner la banque de retrait"
     ],
     "msg": [
-      "Vous n'avez pas défini le mot de passe du fonds, veuillez d'abord le définir",
+      "Vous n'avez pas défini de mot de passe de paiement, veuillez d'abord le définir",
       "Vous n'avez pas lié votre adresse de retrait, veuillez d'abord la lier"
     ]
   },
@@ -218,7 +207,7 @@ export default {
       "Le montant minimum unique est de {currency} {min}",
       "Le montant maximum unique est de {currency} {max}.",
       "Veuillez entrer le nom du payeur",
-      "Veuillez saisir le numéro de téléphone portable du payeur, en préfixant le numéro avec l'indicatif régional international, tel que +86.",
+      "Veuillez saisir le numéro de téléphone portable du payeur, en préfixant le numéro avec l'indicatif régional international, tel que 86.",
       "Veuillez saisir le compte UPI du payeur",
       "Veuillez saisir l'adresse e-mail du payeur"
     ],
@@ -260,7 +249,7 @@ export default {
     ]
   },
   "help": [
-    "Manuel d'aide",
+    "Livre d'aide",
     "Pas disponible"
   ],
   "dialog": [
@@ -307,18 +296,18 @@ export default {
     "Veuillez saisir l'ID de transaction (TxID)"
   ],
   "foot": [
-    "Depuis 2016, {WT} est devenu un centre de cloud mining de crypto-monnaie de renommée mondiale et est une entreprise diversifiée avec un objectif très simple : nous fournissons les outils et les services dont vous avez besoin pour réussir dans le domaine des actifs numériques. ",
+    "Depuis 2018, {WT} coopère avec les plus grands centres de données au monde et dispose d'une technologie de cloud computing avancée et d'une puissante puissance de calcul minière. ",
     "Liens vers les sites",
-    "Contracter",
+    "Des plans",
     "À propos",
     "FAQ",
-    "Affilier",
+    "Référence",
     "Blog",
     "Contact",
-    "Liens rapides",
+    "Liens importants",
     "Confidentialité et politique",
     "Conditions de services",
-    "Droits d'auteur © 2016-2024 {WT}.  <a href=\"{WS}\" class=\"text--base\">{WT}</a>"
+    "Droits d'auteur © 2018-2024 {WT}"
   ],
   "head": [
     "Maison",
@@ -331,46 +320,42 @@ export default {
     "Dépôt",
     "Retirer",
     "Contracter",
-    "Tous les contrats",
+    "Contrat minier",
     "Mon contrat",
-    "facture",
+    "Transactions",
     "Message",
     "Paramètres",
     "Adresse du portefeuille",
     "Mot de passe",
-    "Mot de passe de paiement",
-    "Déposer de l'argent",
-    "Mes dépôts",
-    "Retirer de l'argent",
-    "Mes retraits",
-    "Factures",
-    "Commissions",
-    "Références"
-  ],
-  "say": [
-    "Amélie",
-    "infirmière",
-    "C'est une merveilleuse entreprise. ",
-    "Bill Clinton",
-    "Créateur de vêtements",
-    "Gagné, c'est la meilleure plateforme d'investissement dans le cloud mining que j'ai visitée, j'ai commencé avec un plan de 100 $ et j'ai maintenant augmenté mes fonds pour acheter des plans plus élevés.",
-    "Katrin",
-    "médecin",
-    "{WT} est une entreprise technologique sérieuse qui aide à extraire des crypto-monnaies et est engagée dans le développement de projets ICO. Je fais confiance à toute l'entreprise et je lui souhaite une grande croissance et un grand succès.",
-    ""
+    "Mot de passe de paiement"
   ],
   "about": [
-    "À propos de nous",
-    "{WT} est devenue une entreprise dans le domaine du crypto-mining en 2016 au Royaume-Uni. ",
-    "Vision et mission",
-    "{WT}, en tant qu'excellent fournisseur de puissance de calcul, propose diverses gammes de capacités d'extraction de cryptomonnaies pour les novices, les mineurs intéressés et les grands investisseurs. ",
-    "Rejoignez-nous",
-    "Voulez-vous faire partie de notre communauté? ",
-    "Certificat d'incorporation",
-    "Numéro d'entreprise",
-    "type de compagnie",
-    "Incorporé le",
-    "Vérifiez en ligne",
+    "À propos",
+    "Maison",
+    "service",
+    "Plateforme internationale de cloud computing",
+    "MAR Mining est un fournisseur de services d'extraction d'actifs numériques en croissance rapide et le premier fournisseur mondial de services d'exploration de cloud. ",
+    "Infrastructure",
+    "Leader mondial du secteur minier",
+    "Depuis 2018, MAR Mining construit des fermes minières pour faciliter et traiter de manière fiable les actifs numériques. ",
+    "entreprise",
+    "Disposition globale de l'entreprise",
+    "MAR Mining possède des fermes de cloud mining à grande échelle au Canada, au Royaume-Uni, en Russie, aux États-Unis et dans d'autres régions. ",
+    "Faites le premier pas pour devenir un passionné de cloud mining dès aujourd'hui !",
+    "Vous pouvez désormais commencer à générer des bénéfices miniers rapidement, facilement et en toute sécurité, où que vous soyez. ",
+    "Retraits rapides 24h/24 et 7j/7",
+    "Plateforme fiable et sécurisée",
+    "Plateforme légale et stable",
+    "protection",
+    "L'équipe technique de MAR Mining dispose d'une technologie blockchain de pointe et assure la sécurité grâce à un consensus décentralisé et un cryptage cryptographique. ",
+    "Société juridique autorisée",
+    "MAR Mining est une plateforme de crypto-monnaie de cloud mining autorisée et enregistrée au Royaume-Uni. ",
+    "Simple et rapide",
+    "MAR Mining est connu pour sa simplicité de fonctionnement. ",
+    "ferme minière d'un million de charges",
+    "Jusqu'à présent, MAR Mining possède de grandes fermes minières aux États-Unis, au Canada, au Royaume-Uni, en Russie et dans d'autres pays, avec une mine d'un million de charges. ",
+    "Certificat",
+    "Recherche en ligne",
     "Télécharger le PDF"
   ],
   "walletAddress": [
@@ -383,10 +368,10 @@ export default {
   ],
   "transaction": [
     "IDTX",
-    "Transacté",
+    "Transactionné",
     "Montant",
     "Publier le solde",
-    "Type de portefeuille"
+    "Type de transaction"
   ],
   "regLogin": [
     "Vous avez déjà un compte?",
@@ -397,7 +382,7 @@ export default {
     "Mot de passe",
     "Mot de passe d'au moins 6 caractères",
     "Confirmez le mot de passe",
-    "Code de recommandation",
+    "Code de référence (facultatif)",
     "Entrez le Captcha",
     "J'accepte",
     "S'inscrire maintenant",
@@ -407,12 +392,12 @@ export default {
     "Entrez vos coordonnées pour commencer."
   ],
   "product": [
-    "Montant d'investissement unique",
-    "Investir Montant",
-    "Période d'investissement",
-    "Taux de profit quotidien",
-    "Bénéfice net quotidien",
-    "Bénéfice net total",
+    "Le prix du contrat",
+    "Entrer le montant",
+    "Terme du contrat",
+    "Bénéfice quotidien",
+    "Bénéfice total",
+    "Revenu fixe",
     "Régler les intérêts",
     "Toutes les 24 heures",
     "Puissance de hachage",
@@ -421,13 +406,11 @@ export default {
     "Contrat de location de hachage",
     "Commencez maintenant",
     "Épuisé",
-    "Détails du forfait",
+    "Détails du contrat",
     "Jours",
     "Marché de puissance de hachage",
     "Retour après expiration",
-    "Plan d'achat",
-    "Description du contrat",
-    "Contrat de calcul et notice du service après-vente.<br><br>Les contrats de cloud computing offrent aux clients institutionnels la solution de minage la plus simple et la plus efficace. <br><br>Rappel chaleureux : (Forfait Hash Power Contract 10 USD) est limité à un achat par jour, (Forfait Hash Power Contract 100 USD) est limité à un achat par compte.<br><br>Description du produit<br><br>1. Instructions pour l'achat d'un contrat<br>Veuillez comprendre attentivement le produit avant d'investir. <br><br>2. Description du produit<br>Contrat : puissance de calcul<br>Mineurs : puissance de calcul BTC<br>Devise d'investissement : dollars américains<br>Adresse de paiement : Tiers (USDT BTC ETH LTC USDC BCH)<br>Temps d'investissement : début-fin selon durée du contrat<br>À l'heure : 100%<br><br>3. Instructions de règlement<br>Les revenus devraient provenir de l’exploitation en temps réel du réseau d’actifs numériques et subiront des changements dynamiques. <br><br><br>4. Fin du contrat<br>Le contrat prendra automatiquement fin à son expiration. <br><br>5. Rappel des risques<br>Le prix des actifs numériques fluctue considérablement et la difficulté de minage de chaque devise est également ajustée régulièrement. <br><br>{DT}<br>Avis de non-responsabilité et assistance<br><br>1. Selon les conditions d'utilisation de {WT}, une fois qu'une commande est payée, elle ne peut être modifiée ni remboursée.<br><br>2. {WT} n'est pas responsable des résultats résultant de risques incontrôlables, y compris, mais sans s'y limiter, les catastrophes naturelles, telles que les inondations, les éruptions volcaniques, les tremblements de terre, les glissements de terrain, les incendies, les tempêtes, d'autres événements météorologiques imprévus ou à haut risque, les lois gouvernementales. <br><br>3. Les fluctuations de la puissance du cloud computing sont inévitables. <br><br>4. La production statique est calculée de manière statique en fonction de la difficulté actuelle et fluctue en fonction du marché. "
+    "Choisissez votre forfait"
   ],
   "password": [
     "Mot de passe actuel",
@@ -437,7 +420,7 @@ export default {
   ],
   "package": [
     "TXID | ",
-    "Emballer",
+    "Contracter",
     "Retour",
     "Montant",
     "Bénéfices miniers",
@@ -446,35 +429,37 @@ export default {
     "Bénéfices miniers"
   ],
   "affliliate": [
-    "Programme d'affiliation",
-    "S'inscrire maintenant",
-    "Rejoignez notre communauté, créez un compte, obtenez votre lien de parrainage.",
+    "Comment ça marche?",
+    "S'inscrire",
+    "Inscrivez-vous et obtenez un lien de parrainage.",
     "Inviter de nouveaux utilisateurs",
-    "Invitez de nouveaux utilisateurs en partageant votre lien via les réseaux sociaux.",
+    "Invitez vos amis à utiliser le lien de parrainage.",
+    "Acheter des forfaits",
+    "Les références achètent des forfaits.",
     "Gagnez des commissions",
-    "Obtenez un bonus de 3 % en fonction du montant de leur investissement initial.",
-    "Join our referral program (Partner Program) and receive a 3% bonus based on your initial investment! You can run it like a boss and start making money without investing a penny. 3% for first-level agents and 1.5% for second-level agents. For example, if someone invests $5,000 in the program using your referral code, you’ll get $150 for free. With unlimited referrals, your earning potential is unlimited! So why wait? Sign up now and start making money by sharing your referral link with friends and family.",
-    "REJOIGNEZ-NOUS"
+    "Un nouvel utilisateur s'inscrit et achète. ",
+    "Rejoignez notre programme de parrainage (Programme Partenaire) et gagnez jusqu'à 4,5% de commission à vie ! ",
+    "Vous pouvez le gérer comme un patron et commencer à gagner de l’argent sans investir un centime. ",
+    "Alors pourquoi attendre ? ",
+    "Rejoignez-nous"
   ],
   "affiliates": [
     "Affiliés",
-    "Programme de parrainage",
+    "Programme d'affiliation",
     "Votre e-mail",
     "Ton nom d'utilisateur",
-    "Code de Parrainage",
-    "Lien de référence",
+    "Votre code de parrainage",
+    "Votre lien d'affiliation",
     "Gagnez des actions bonus",
-    "Partagez le site Web avec d'autres personnes. Vous obtiendrez un bonus de 3 % en fonction du montant de leur investissement initial. ",
+    "En tant que partenaire affilié de notre site Web, vous avez la possibilité de gagner de l'argent en partageant votre lien de parrainage avec vos amis et votre famille. Même si vous n'investissez pas, vous pouvez toujours commencer à gagner jusqu'à 3 % de chaque achat effectué par les utilisateurs que vous parrainez. ",
     "Apprendre encore plus",
-    "Liste de référence",
-    "Les partenaires",
+    "Liste des partenaires",
+    "Total des partenaires",
     "Date",
     "Depuis",
     "Niveau",
     "Montant",
-    "Taper",
-    "Copier le lien",
-    "Référence"
+    "Taper"
   ],
   "appDown": [
     "COMMENCER UN VOYAGE MINIER",
@@ -517,111 +502,13 @@ export default {
     "Ton nom d'utilisateur",
     "Votre code de parrainage",
     "Votre lien d'affiliation",
-    "ACCUEILLIR",
-    "SOLDE TOTAL",
-    "Intérêts",
-    "Commission",
-    "Activité récente",
-    "Bonus de registre reçu.",
-    "Bénéfice total",
-    "Mes commandes"
+    "Avez-vous des questions?",
+    "Nous vous recommandons fortement de rechercher les informations nécessaires dans la section FAQ. ",
+    "Obtenez de l'aide maintenant",
+    "Mon lien de parrainage"
   ],
   "faq": [
-    "Problème commun"
-  ],
-  "home": [
-    "La première plateforme mondiale de cloud mining de cryptomonnaies, à laquelle font confiance 6,5 millions de clients, propose une gamme complète de contrats de cloud mining. ",
-    "● Inscrivez-vous maintenant et obtenez un bonus de 10 $<br>● Obtenez 0,5 $ pour l'enregistrement quotidien<br>● Invitez des amis pour obtenir une récompense permanente de 3 %",
-    "S'inscrire maintenant",
-    "Notre engagement",
-    "Nous ferons croître régulièrement vos retours sur investissement de manière très sûre.",
-    "Conçu pour être facile",
-    "Une boîte à outils pratique et des retraits simples — le tableau de bord est intuitivement compréhensible aussi bien pour les novices que pour les professionnels",
-    "Sécurisé et privé",
-    "Nous soutenons les crypto-monnaies qui favorisent la confidentialité. Nous nous efforçons donc de limiter au minimum les données utilisateur collectées et de demander uniquement les informations obligatoires d'un point de vue réglementaire.",
-    "Programme de parrainage de l'Alliance",
-    "Si un utilisateur s'inscrit via vos liens de parrainage et effectue des achats, vous recevez une commission de 4,5 % sur tous les achats qu'il effectue.",
-    "Des rendements élevés",
-    "Une technologie et un personnel professionnels assurent la sécurité de votre client et génèrent des rendements élevés",
-    "Forte protection",
-    "La sécurité des clients est une grande priorité pour nous. ",
-    "Site Web protégé",
-    "Nous faisons appel à l’un des fournisseurs de protection et d’atténuation DDoS les plus expérimentés, professionnels et fiables.",
-    "Le cloud mining vous donne un revenu passif",
-    "Le cloud mining vous permet d'utiliser la puissance de calcul d'équipements miniers hébergés dans des centres de données spécialisés sans posséder ni entretenir l'équipement. ",
-    "S'inscrire",
-    "Remplissez le formulaire pour créer votre propre compte",
-    "Sélectionnez le contrat",
-    "Choisissez un ou plusieurs contrats de cloud mining",
-    "Obtenez des bénéfices",
-    "Pour le contrat que vous choisissez, les bénéfices quotidiens seront rapidement crédités sur votre compte",
-    "Obtenez des bénéfices",
-    "Pour le contrat que vous choisissez, les bénéfices quotidiens seront rapidement crédités sur votre compte",
-    "Taux de profit quotidien",
-    "Règlement des intérêts toutes les 24 heures",
-    "Le capital est restitué à l'échéance",
-    "Assistance 24h/24 et 7j/7",
-    "Montant d'investissement unique",
-    "Période d'investissement",
-    "Jours",
-    "Bénéfice net total",
-    "Investissez maintenant",
-    "Calculateur de bénéfices",
-    "Calculez vos revenus miniers",
-    "Plan",
-    "Montant",
-    "Bénéfice net total",
-    "Taux de profit quotidien",
-    "Pourquoi nous choisir",
-    "Notre objectif est d'utiliser l'argent de nos investisseurs et de leur fournir une source de revenus élevés tout en minimisant toute possibilité de risque.",
-    "Mondial",
-    "Nous sommes une entreprise internationale ayant des clients de différents pays du monde.",
-    "L'utilisateur d'abord",
-    "Tout notre travail est centré sur l'utilisateur et nous fournissons un service client 24h/24 et 7j/7.",
-    "Sécurité du fonds",
-    "Sous la supervision des agences de régulation, des mesures strictes ont été prises pour respecter et atteindre une transparence totale.",
-    "Agréé",
-    "Nous sommes une entreprise certifiée exerçant des activités juridiques dans le domaine juridique. ",
-    "Sécurisé",
-    "Nous travaillons constamment à l'amélioration de notre système et de notre niveau de sécurité afin de minimiser tout risque potentiel.",
-    "Durabilité",
-    "Toutes les mines utilisent de l'électricité propre, ce qui permet au cloud mining de rejoindre les rangs de la neutralité carbone",
-    "Rejoignez-nous",
-    "Voulez-vous faire partie de notre communauté? ",
-    "Adhérer maintenant",
-    "Problème commun",
-    "Nous répondons à certaines de vos questions fréquemment posées concernant notre plateforme. ",
-    "Qu’est-ce que le cloud mining ?",
-    "Si vous souhaitez gagner de l'argent grâce à la crypto-monnaie, le cloud mining est la voie à suivre. Le cloud mining est le processus d'extraction de crypto-monnaie utilisant un centre de données distant avec une puissance de traitement partagée. Ce type de cloud mining permet aux utilisateurs d'extraire des bitcoins ou des crypto-monnaies alternatives sans gérer le matériel. ",
-    "Comment démarrer le minage sur {WT} ?",
-    "Tout ce que vous devez faire pour démarrer le minage de crypto-monnaie sur {WT} est de vous inscrire et d'acheter votre contrat pour gagner facilement un revenu passif chaque jour.",
-    "Combien coûte la prestation ?",
-    "Il n'y a pas de frais supplémentaires, les frais de service sont déjà inclus dans le contrat.",
-    "Comment effectuer un dépôt ?",
-    "Sélectionnez l'onglet Dépôt et suivez les invites de la page. ",
-    "Comment retirer mes revenus miniers ?",
-    "Sélectionnez l'onglet Retrait pour demander un retrait. ",
-    "Pourquoi est-il judicieux de réinvestir mes bénéfices miniers ?",
-    "{WT} exploite des mines dans le monde entier et peut bénéficier de prix d'électricité relativement bas. ",
-    "J'ai oublié mon mot de passe, que dois-je faire ?",
-    "Cliquez sur « Mot de passe oublié » sur la page de connexion.<br>Veuillez entrer votre adresse e-mail enregistrée sur l'écran suivant et cliquez sur Soumettre. <br>Vous recevrez un e-mail de réinitialisation de mot de passe dans les 5 minutes, mais n'oubliez pas de vérifier vos dossiers spam si vous ne le voyez pas à temps.<br>Votre mot de passe est crypté MD5 et stocké dans la base de données. ",
-    "Qu'est-ce que le programme de parrainage d'affiliation ?",
-    "Vous pouvez trouver le parrain dans votre compte, copier le lien de parrainage et partager ce lien pour obtenir un bonus. ",
-    "J'ai perdu mon code de vérification à deux facteurs (2FA), que dois-je faire ?",
-    "Si, pour une raison quelconque, vous ne parvenez pas à passer l'authentification à 2 facteurs, nous pouvons la supprimer après avoir vérifié la propriété de votre compte.<br>Voici les informations que vous devez remplir pour supprimer 2FA :<br>1. Adresse e-mail enregistrée :<br>2. Adresse BTC Wallet enregistrée sur votre compte :<br>Avertissement! ",
-    "Comment sauvegarder l'authentificateur Google ?",
-    "Nous recevons de nombreuses demandes d’annulation de la certification Google 2FA. ",
-    "Puis-je faire confiance à {WT} ?",
-    "{WT} a été fondée en 2016 et son siège est au Royaume-Uni. ",
-    "Ce que disent nos clients",
-    "Jetez un œil à notre équipe d’experts qui travaille dur pour vous assurer de réaliser des bénéfices.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Questions fréquemment posées"
   ],
   "withdraw": [
     "Solde disponible",
@@ -632,7 +519,7 @@ export default {
     "Soumettre",
     "IDTX",
     "Montant",
-    "Statut",
+    "statut commercial",
     "Temps"
   ],
   "deposit": [
@@ -643,9 +530,9 @@ export default {
     "ID de transaction / numéro de hachage",
     "Veuillez remplir l'ID de transaction / le numéro de hachage",
     "Télécharger la capture d'écran du transfert",
-    "J'ai payé",
+    "Soumettre",
     "Solde disponible",
-    "passerelle",
+    "Méthode de dépôt",
     "Montant",
     "Limite",
     "Payable",
@@ -653,7 +540,7 @@ export default {
     "IDTX",
     "Méthode de dépôt",
     "Montant",
-    "Statut",
+    "statut commercial",
     "Temps",
     "Détails",
     "Récompense",
@@ -662,16 +549,14 @@ export default {
     "Montant payable",
     "Montant actuel",
     "Télécharger la capture d'écran du transfert",
-    "Confirmer le dépôt",
-    "Informations de paiement",
-    "Fermer"
+    "Rappel chaleureux : le montant minimum du dépôt commence à partir de 100 $."
   ],
   "productDetail": [
     "Détails",
     "Chaque compte est limité à un achat par jour",
     "Chaque compte ne peut acheter qu'un seul exemplaire",
     "Instructions d'achat",
-    "La puissance de calcul et le service après-vente sont assurés par {WT}. <br>Le plan de puissance de cloud computing offre aux clients institutionnels des solutions de minage simples et efficaces. ",
+    "La puissance de calcul et le service après-vente sont assurés par MAR Mining. <br>Le plan de puissance de cloud computing offre aux clients institutionnels des solutions de minage simples et efficaces. ",
     "Description du produit",
     "1. Instructions d'achat",
     "Veuillez comprendre attentivement le produit avant de passer une commande. ",
@@ -681,7 +566,7 @@ export default {
     "Le contrat sera automatiquement résilié à son expiration. ",
     "4. Avertissement sur les risques",
     "Les prix des actifs numériques fluctuent souvent considérablement et la difficulté de minage de chaque devise est également ajustée régulièrement. ",
-    "5.{WT} n'est pas responsable des résultats résultant de risques indépendants de sa volonté, y compris, mais sans s'y limiter, les catastrophes naturelles telles que les inondations, les éruptions volcaniques, les tremblements de terre, les glissements de terrain, les incendies, les tempêtes, d'autres événements météorologiques imprévus ou à haut risque, le gouvernement. ",
+    "5.MAR Mining n'est pas responsable des résultats résultant de risques indépendants de sa volonté, y compris, mais sans s'y limiter, les catastrophes naturelles telles que les inondations, les éruptions volcaniques, les tremblements de terre, les glissements de terrain, les incendies, les tempêtes, d'autres événements météorologiques imprévus ou à haut risque, les lois gouvernementales. ",
     "6. Les fluctuations de la puissance de calcul sont inévitables. ",
     "7. La production statique est calculée de manière statique en fonction de la difficulté actuelle et fluctue en fonction du marché. ",
     "La plateforme se réserve le droit d'interprétation finale des termes de ce contrat."
@@ -695,7 +580,9 @@ export default {
     "Club VIP"
   ],
   "tips": [
-    "Une fois le paiement réussi, veuillez enregistrer la capture d'écran du paiement sur votre téléphone mobile et télécharger la capture d'écran sur la page avant de soumettre la commande. "
+    "Une fois le paiement réussi, veuillez enregistrer la capture d'écran du paiement sur votre téléphone mobile et télécharger la capture d'écran sur la page avant de soumettre la commande. ",
+    "La capture d'écran doit contenir le hachage de la transaction, sinon le système ne pourra pas le reconnaître.",
+    "Rappel chaleureux : le montant minimum de retrait commence à partir de 100 $."
   ],
   "next": "prochain paiement",
   "placehoder": [
@@ -706,123 +593,122 @@ export default {
   "dep": [
     "Rappel chaleureux : le montant minimum de recharge commence à 100 $ US. "
   ],
-  "payment": [
-    "ACCEPTER UNE VARIÉTÉ DE MÉTHODES DE PAIEMENT",
-    "Pour garantir la commodité de nos investisseurs, {WT} propose une gamme diversifiée de méthodes de paiement pour déposer des fonds et recevoir des paiements."
-  ],
-  "latest": [
-    "Dernière transaction",
-    "Dernier dépôt",
-    "Dernier retrait"
+  "cryptocurrency": [
+    "Qu'est-ce que la crypto-monnaie"
   ],
   "loginpage": [
     "Bonjour, bon retour !",
     "Créez votre compte",
-    "Nous proposons les méthodes de paiement suivantes.",
-    "Accepter et continuer",
+    "Nous proposons les modes de paiement suivants.",
+    "Accepter",
     "Entrez vos coordonnées pour vous connecter."
   ],
-  "vipfoot": [
-    "Veuillez consulter le service client en ligne 7x24 pour plus de détails. "
-  ],
-  "power": [
-    "Puissance de calcul du marché",
-    "La version 2.0 récemment améliorée de la nouvelle production d'énergie à cycle vert « énergie éolienne » et « énergie solaire » offre une électricité à coût nul et des rendements élevés sur les revenus des machines minières."
-  ],
-  "aboutf": [
-    "Membres actifs",
-    "Pays d'assistance",
-    "Minéraux mondiaux",
-    "Équipement de minage",
-    "Notre centre de rendez-vous",
-    "Des services que nous continuons d'améliorer",
-    "Emplacements des centres de données",
-    "Nos centres miniers sont situés en Islande, en Norvège, au Kazakhstan, etc.",
-    "Matériel de centre de données",
-    "Plus de 1 000 000 derniers mineurs ASIC et appareils GPU sont prêts pour l'exploitation minière.",
-    "Système du pouvoir",
-    "Nous utilisons l'énergie éolienne, hydroélectrique et solaire, d'une capacité totale de 700 000 kilowatts.",
-    "Système de refroidissement",
-    "Système de refroidissement par air et système de refroidissement par eau gardant la température : 20-24 ℃. ",
-    "Sécurité/Protection incendie",
-    "Gardiens sur place 24h/24 et 7j/7, systèmes de détection d'intrusion, caméras IP-DVR.",
-    "Notre équipe",
-    "Notre équipe minière est issue de l’industrie de la blockchain et d’ingénieurs informatiques."
-  ],
-  "affliate": [
-    "Affilier",
-    "Notre programme d'affiliation offre de nombreux avantages.",
-    "<p></p><div>Nous proposons un programme d'affiliation exceptionnel qui apporte de nombreux avantages.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">AUCUN DÉPÔT NÉCESSAIRE</span></div><div>Vous pouvez devenir affilié et profiter de notre programme même sans effectuer de dépôt.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">HAUTS COMMISSIONS</span></div><div>Pour chaque achat effectué par un utilisateur que vous avez recommandé, vous recevrez une généreuse récompense de parrainage allant jusqu'à 1,5 à 3 %.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">PAIEMENTS INSTANTANÉS</span></div><div>Nous fournissons des paiements instantanés de récompenses de parrainage en crypto-monnaie, qui sont créditées sur le solde de votre compte.</div><div><span style=\"font-weight:bolder;\"><br></span></div><div><span style=\"font-weight:bolder;\">POTENTIEL DE GAIN ILLIMITÉ</span></div><div>Il n'y a pas de limite au nombre de références que vous pouvez apporter, votre potentiel de gains est donc illimité.</div><p></p>",
-    "Comment ça marche?",
-    "S'inscrire maintenant",
-    "Inscrivez-vous et obtenez un lien de parrainage.",
-    "Inviter de nouveaux utilisateurs",
-    "Invitez vos amis à utiliser le lien de parrainage.",
-    "Contrat d'achat",
-    "Contrat d'achat de références.",
-    "Gagnez des commissions",
-    "Un nouvel utilisateur s'inscrit. Vous obtenez 4,5 % de son achat.",
+  "newhome": [
+    "L'exploration du cloud mining commence avec {WT}",
+    "{WT} est le premier fournisseur mondial de services de cloud mining, simples et pratiques, et possède une riche expertise dans le fonctionnement des systèmes de cloud mining et la technologie de pointe. ",
+    "Inscrivez-vous maintenant et obtenez un bonus de 12 $",
+    "Comment ça fonctionne?",
+    "Nos contrats miniers",
+    "Nous vous proposons les contrats de cloud mining les plus rentables et les plus fiables en fournissant des paiements quotidiens pour tous les contrats dans la devise du contrat. ",
+    "Découvrez notre processus de travail. ",
+    "Créer un compte",
+    "Remplissez le formulaire en utilisant l'option d'inscription et commencez votre parcours de cloud mining",
+    "Choisissez des forfaits",
+    "Choisissez votre plan de contrat préféré",
+    "Commencer l'exploitation minière",
+    "Achetez un plan contractuel et gagnez un revenu passif",
+    "Obtenez la production minière",
+    "Votre revenu stable est automatiquement mis à jour sur votre compte chaque jour",
+    "Pourquoi nous? ",
+    "Conçu pour être facile",
+    "Une boîte à outils pratique et des retraits simples — le tableau de bord est intuitivement compréhensible aussi bien pour les novices que pour les professionnels",
+    "Sécurisé et privé",
+    "Nous soutenons les crypto-monnaies qui favorisent la confidentialité. Nous nous efforçons donc de limiter au minimum les données utilisateur collectées et de demander uniquement les informations obligatoires d'un point de vue réglementaire.",
+    "Programme de parrainage de l'Alliance",
+    "Si un utilisateur s'inscrit via vos liens de parrainage et effectue des achats, vous recevez une commission de 4,5 % sur tous les achats qu'il effectue.",
+    "Frais fixes",
+    "Pas de frais ni commissions cachés, chaque transaction est transparente et visible sur votre tableau de bord",
+    "Forte protection",
+    "La sécurité des clients est une grande priorité pour nous. ",
+    "Site Web protégé",
+    "Nous faisons appel à l’un des fournisseurs de protection et d’atténuation DDoS les plus expérimentés, professionnels et fiables.",
     "Qu'obtiendrez-vous en tant que partenaire affilié ?",
-    "Rejoignez notre programme de parrainage (Programme Partenaire) et gagnez jusqu'à 4,5% de commission à vie !  <br><br>Pour commencer, créez un compte et obtenez votre propre lien/URL de parrainage. <br><br>Ensuite, invitez de nouveaux utilisateurs en partageant votre lien de parrainage via les réseaux sociaux ou votre propre site Web. <br>",
-    "Adhérer maintenant"
-  ],
-  "cryptocurrency": [
-    "Qu'est-ce que la crypto-monnaie",
-    "Qu'est-ce que le Web3"
-  ],
-  "rechargefoot": [
-    "Rappel chaleureux : le montant minimum de recharge commence à 100 $ US. ",
-    "Rappel chaleureux : le montant minimum de retrait commence à partir de 100 $. "
+    "Rejoignez notre programme de parrainage (Programme Partenaire) et gagnez jusqu'à 4,5% de commission à vie !  <br><br>Tout d’abord, créez un compte et obtenez votre propre lien/URL de parrainage. <br><br>Ensuite, invitez de nouveaux utilisateurs en partageant votre lien de parrainage via les réseaux sociaux ou votre propre site Web. ",
+    "Adhérer maintenant",
+    "Site de cloud mining de confiance",
+    "Seuil bas",
+    "Pas besoin d'acheter du matériel, accès immédiat au minage BTC.",
+    "Nœuds globaux",
+    "Déploie des nœuds miniers en Europe, en Amérique, etc. ",
+    "Paiements quotidiens",
+    "En BTC, ETH, USDT, LTC, gagnez des sorties quotidiennement.",
+    "Assistance en direct 24h/24 et 7j/7",
+    "Avec un temps de réponse inférieur à 2 min.",
+    "Utilisateur",
+    "Montant",
+    "Temps",
+    "Facilitez le cloud mining et ouvrez la porte à la richesse.",
+    "Nous sommes une société spécialisée dans le cloud mining, fournissant des services de cloud mining pour les machines de minage de crypto-monnaie ASIC et GPU, éliminant les processus compliqués pour tous les passionnés de crypto-monnaie,<br>Vous donnant plus de temps pour vous concentrer sur l’augmentation de vos revenus et la constitution de votre portefeuille minier sans avoir besoin de configurations complexes et d’investissements en équipement lourd.",
+    "Notre plateforme a soigneusement recherché et compilé une liste des fournisseurs de services de cloud mining les plus réputés et les plus efficaces, garantissant une expérience transparente pour les mineurs de tous niveaux. Le minage MAR est accessible et retiré à tout moment, 24 heures sur 24. ",
+    "Les gains quotidiens peuvent être retirés sans limite supérieure. ",
+    "Continuer",
+    "Ce que les gens disent de nous",
+    "Un grand nombre de personnes nous font confiance et voici les propos de certains d'entre eux.",
+    "Bill Clinton",
+    "employés de bureau",
+    "C'est la meilleure plateforme d'investissement dans le cloud mining que j'ai jamais visitée, j'ai commencé avec le plan de 100 $ et j'ai maintenant augmenté mes fonds pour acheter des plans plus élevés.",
+    "Amilia",
+    "modèle",
+    "Il s'agit d'une société sérieuse de technologie de cloud mining qui aide à extraire des crypto-monnaies et s'engage dans le développement de projets ICO. ",
+    "Jonathan Smith",
+    "Homme d'affaire",
+    "J'utilise cette plateforme et j'ai reçu d'excellents retours. ",
+    "Matthias van den Ede",
+    "Qui quo excepteur ni",
+    "La connexion qui m'a été recommandée par mon bon ami Moomin génère actuellement un revenu stable et j'attends avec impatience de meilleurs packages de la plateforme.",
+    "M. Kamal Le",
+    "Qui qui qui sed est",
+    "J'ai reçu un retrait de cette société en moins de 10 minutes. ",
+    "Caitline",
+    "Rerum excepteur volume",
+    "C'est une excellente entreprise. ",
+    "Paul Brignadero",
+    "ingénieur",
+    "MAR Mining est la meilleure plateforme de cloud mining que j'ai jamais utilisée. ",
+    "Natasha DeLoach",
+    "employés de bureau",
+    "J'ai vu une publicité vidéo sur Twitter et effectué un petit achat initial. ",
+    "Aspinas Amet",
+    "modèle",
+    "J'utilise la plateforme de cloud mining partagée par ma sœur européenne depuis plus de 8 mois et elle est désormais devenue une source de revenus familiaux.",
+    "Crom Sponde",
+    "modèle",
+    "J'ai vu l'article qu'ils ont partagé sur l'actualité crypto et j'ai pensé que c'était une opportunité. ",
+    ""
   ],
   "settle": [
     "Régler les intérêts",
     "Toutes les 24 heures",
     "Revenu quotidien",
     "Revenu fixe",
-    "Voir plus",
+    "Voir les détails",
     "Acheter maintenant",
     "Vérifier",
     "Quantité",
     "Montant",
     "Mot de passe de paiement",
-    "Payer",
-    "Vendu à 100%"
+    "Payer"
   ],
-  "tip100": [
-    "Rappel chaleureux : ce contrat de puissance de calcul est limité à un achat par compte.",
-    "Rappel chaleureux : ce forfait de contrat de puissance de calcul est limité à un achat par jour."
+  "latest": [
+    "Dernière transaction",
+    "Dernier paiement",
+    "Dernier retrait"
   ],
-  "tutorial": [
+  "teach": [
     "Didacticiel"
   ],
-  "newHome": [
-    "Centres de données partout dans le monde",
-    "Nos plans d'hébergement Web, d'hébergement WordPress et d'hébergement cloud proposent des emplacements de serveurs aux États-Unis, au Royaume-Uni, en France, en Inde, à Singapour, en Indonésie, au Brésil, en Lituanie et aux Pays-Bas.",
-    "progression des ventes"
-  ],
-  "newss":[
-    "Contrat minier",
-    "Commencez à miner maintenant et obtenez des revenus contractuels chaque jour ! Profitez des bénéfices miniers les plus fiables et les plus généreux et gagnez facilement des revenus en crypto-monnaie et en stablecoin ! Rejoignez-nous aujourd'hui et obtenez votre premier revenu demain !",
-    "Ce contrat ne peut être acheté qu'une seule fois",
-    "Ce contrat ne peut être acheté qu'une fois par jour",
-    "notre engage",
-    "Nos mesures de gestion des risques sont conçues pour protéger vos actifs et nos systèmes sont équipés des meilleures mesures de sécurité pour protéger vos investissements et vos informations personnelles, minimisant ainsi tout risque potentiel.",
-    "① Faites simple",
-    "Il permet aussi bien aux novices qu'aux professionnels de réaliser l'opération de manière simple, rapide, intuitive et compréhensible.",
-    "② Bénéfices stables",
-    "Une fois votre contrat de cloud mining activé, vos gains quotidiens seront distribués sur votre compte de minage après 24 heures.",
-    "③ Sûr et privé",
-    "Nous soutenons les crypto-monnaies qui favorisent la confidentialité, c'est pourquoi nous nous efforçons de limiter au minimum les données utilisateur que nous collectons.",
-    "④ Exploitation minière en nuage respectueuse de l'environnement",
-    "Nos équipements et systèmes de refroidissement sont alimentés par l’énergie solaire et éolienne, ce qui les rend à la fois écologiques et hautement rentables.",
-  ],
-  "optional":[
-    "(facultatif)"
-  ],
-  "bounty": "Prime publicitaire",
-  "more": "Afficher plus",
+  "bounty": "Chasseur de primes",
   "complete": "complété",
   "cancel": "Annuler",
-  "submit": "Soumettre",
   "confirm": "Confirmer"
 }

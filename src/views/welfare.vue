@@ -2,13 +2,21 @@
   <div class="HomePage">
     <Header></Header>
     <div class="app-wrapper">
+      <section namespace="referral_image">
+        <div class="">
+          <div class="" style="padding: 0 16px">
+            <div class="image_main">
+              <img :src="'./static/image/vvvvv.jpg'">
+              <div class="white_image_effect"></div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="container">
-<!--        <img :src="'./static/images/viptop.png'">-->
         <div class="box">
           <div class="title">{{showInfo.title}}</div>
           <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
         </div>
-<!--        <div v-html="$t('vipfoot[0]',{WT:InitData.setting.web_title})"></div>-->
       </div>
     </div>
     <Footer></Footer>
@@ -37,7 +45,7 @@
       }
     },
     created() {
-      this.getListData(19);
+      this.getListData(14);
     },
     mounted() {
 
@@ -83,7 +91,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: rgb(13,110,253)
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -123,7 +131,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: rgb(13,110,253)!important
   }
 
   .el-dropdown-menu__item {
@@ -133,7 +141,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: rgb(13,110,253)!important;
     background-color: #fff9f0!important
   }
 
@@ -141,13 +149,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253)!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253)!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -173,12 +181,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: rgb(13,110,253);
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .lang-item {
@@ -263,12 +271,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: rgb(13,110,253)!important;
+    border-color: rgb(13,110,253)!important
   }
 
   .el-checkbox__label {
@@ -281,13 +289,14 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: rgb(13,110,253)!important
   }
 
   @media only screen and (min-width: 1024px) {
     .container {
       width:100%;
       box-sizing: border-box;
+      padding: 8rem 3rem
     }
 
     .container .box {
@@ -299,24 +308,12 @@
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       font-size: 3rem;
       font-weight: 700;
       color: #000;
       text-align: center;
       word-wrap: break-word
-    }
-
-    .container .box .title:after {
-      position: absolute;
-      bottom: 0rem;
-      left: 50%;
-      transform: translateX(-50%);
-      content: "";
-      width: 16rem;
-      height: 4px;
-      border-radius: 4px;
-      background-image: linear-gradient(90deg, #00fefe, #88dafa)
     }
 
     .container .box .content {
@@ -338,24 +335,12 @@
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 4.5rem;
+      margin-bottom: 1rem;
       font-size: 2.2rem;
       font-weight: 700;
       color: #000;
       text-align: center;
       word-wrap: break-word
-    }
-
-    .container .box .title:after {
-      position: absolute;
-      bottom: -1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      content: "";
-      width: 10rem;
-      height: 4px;
-      border-radius: 4px;
-      background-image: linear-gradient(90deg,#fe9500,#fade88)
     }
 
     .container .box .content {
@@ -380,5 +365,21 @@
     margin: 0 auto;
     display: block;
   }
-
+  .image_main {
+    width: 100%;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .image_main img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  /*.white_image_effect {*/
+  /*  width: 100%;*/
+  /*  position: absolute;*/
+  /*  height: 284px;*/
+  /*  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);*/
+  /*  bottom: 0;*/
+  /*}*/
 </style>

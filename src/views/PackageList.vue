@@ -56,17 +56,17 @@
                     <div class="label">{{$t('product[6]')}}</div>
                     <div class="value rebate">{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
                   </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[9]')}}</div>
-                    <div class="value">{{item.miner}}</div>
-                  </div>
-                  <div class="info-item">
-                    <div class="label">{{$t('product[8]')}}</div>
-                    <div class="value">{{item.hash_power}}</div>
-                  </div>
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[9]')}}</div>-->
+<!--                    <div class="value">{{item.miner}}</div>-->
+<!--                  </div>-->
+<!--                  <div class="info-item">-->
+<!--                    <div class="label">{{$t('product[8]')}}</div>-->
+<!--                    <div class="value">{{item.hash_power}}</div>-->
+<!--                  </div>-->
                 </div>
                 <div class="right-actions">
-                  <div class="bonus">
+                  <div class="bonus" v-if="item.amount!=12">
                     <div class="label">{{$t('product[10]')}}</div>
                     <ul class="plan-referral justify-content-center mb-2">
                       <div class="single-referral" v-for="(aa,i) in item.affiliate_bonus">
@@ -82,7 +82,7 @@
 
             </div>
             <div class="progress">
-              <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, #fe9500, #fade88)"/>
+              <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc" color="linear-gradient(to right, rgb(170, 170, 170), rgb(3 117 235))"/>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #fbc241
+    background-color: rgb(13,110,253)
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -202,7 +202,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #fbc241!important
+    background-color: rgb(13,110,253)!important
   }
 
   .el-dropdown-menu__item {
@@ -212,7 +212,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #fbc241!important;
+    color: rgb(13,110,253)!important;
     background-color: #fff9f0!important
   }
 
@@ -220,13 +220,13 @@
     font-family: myFont
   }
 
-  .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #1ab5ff!important;
-  }
+  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
+  /*  background-color: rgb(13,110,253)!important*/
+  /*}*/
 
-  .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
-  }
+  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
+  /*  color: rgb(13,110,253)!important*/
+  /*}*/
 
   .el-message {
     font-size: 1.6rem
@@ -252,12 +252,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #fbc241;
+    color: rgb(13,110,253);
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .lang-item {
@@ -310,7 +310,7 @@
     /*手机*/
     position: absolute;
     left: 2rem;
-    bottom: 1rem;
+    bottom: 0rem;
     width: calc(100% - 4rem);
   }
   .el-form-item__label {
@@ -349,12 +349,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #fbc241
+    color: rgb(13,110,253)
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #fbc241!important;
-    border-color: #fbc241!important
+    background-color: rgb(13,110,253)!important;
+    border-color: rgb(13,110,253)!important
   }
 
   .el-checkbox__label {
@@ -367,7 +367,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #fbc241!important
+    border-color: rgb(13,110,253)!important
   }
 
   @media only screen and (min-width: 1024px) {
@@ -382,7 +382,7 @@
     .container .product-list .product-item .progress {
       position: absolute;
       left: 34rem;
-      bottom: 1rem;
+      bottom: 0rem;
       width: calc(100% - 36rem);
     }
     .container .product-list .product-item:not(:last-child) {
@@ -519,7 +519,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      background-image: linear-gradient(90deg,#6baaf7,#072f77);
       cursor: pointer
     }
 
@@ -654,7 +654,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      background-image: linear-gradient(90deg,#6baaf7,#072f77);
       cursor: pointer
     }
 
@@ -665,5 +665,8 @@
   }
   .container .product-list .product-item {
     position: relative;
+  }
+  .bottom {
+    padding-bottom: 1rem;
   }
 </style>
