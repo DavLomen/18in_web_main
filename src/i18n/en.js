@@ -570,19 +570,19 @@ export default {
   ],
   "accept": [
     "ACCEPT A VARIETY OF PAYMENT METHODS",
-    "To ensure convenience for our investors, SIX MINING provides a diverse range of payment methods for both depositing funds and receiving payments.",
+    "To ensure convenience for our investors, RPPLECOIN Mining provides a diverse range of payment methods for both depositing funds and receiving payments.",
     ""
   ],
   "about": [
-    "About SIX MINING",
-    "Founded in 2018 and headquartered in the UK, SIX MINING is a global cryptocurrency investment company. Utilize clean energy to provide cloud computing services to global users, and provide simple mining steps for initial users with no experience at all. With the user's good record, they can easily access and use it. We will continue to explore new mining opportunities and technologies to improve our services and enhance users' mining experience.",
+    "About RPPLECOIN Mining",
+    "Founded in 2018 and headquartered in the UK, RPPLECOIN Mining is a global cryptocurrency investment company. Utilize clean energy to provide cloud computing services to global users, and provide simple mining steps for initial users with no experience at all. With the user's good record, they can easily access and use it. We will continue to explore new mining opportunities and technologies to improve our services and enhance users' mining experience.",
     "Our professional certification",
-    "As a global investment company, SIX MINING has obtained the certification of the UK Financial Conduct Authority (FCA), ensuring that our platform meets the highest standards and can provide a safe and compliant investment environment",
+    "As a global investment company, RPPLECOIN Mining has obtained the certification of the UK Financial Conduct Authority (FCA), ensuring that our platform meets the highest standards and can provide a safe and compliant investment environment",
     "Technology and team advantages",
     "Use EV SSL encryption: All user data will not be shared with any third party",
     "Clean energy issues: All mining industries are powered by renewable resources such as solar and wind energy, focusing on a sustainable mining ecological environment.",
     "Our mission: Create a sustainable green energy environment",
-    "Millionaire Plan: Join SIX MINING, we believe in the potential of the digital economy and the transformative power of cryptocurrency. Our platform is designed to help you easily unlock the future of digital currency, providing a profitable, safe and sustainable way to participate in the world of cloud mining. Guarantee the maximum benefit of user returns, help achieve wealth freedom in the next decade, and step into the ranks of millionaires or even multi-millionaires.",
+    "Millionaire Plan: Join RPPLECOIN Mining, we believe in the potential of the digital economy and the transformative power of cryptocurrency. Our platform is designed to help you easily unlock the future of digital currency, providing a profitable, safe and sustainable way to participate in the world of cloud mining. Guarantee the maximum benefit of user returns, help achieve wealth freedom in the next decade, and step into the ranks of millionaires or even multi-millionaires.",
     "User Returns: Our platform provides a seamless and secure way for anyone, whether experienced investors or novices, to easily participate in cryptocurrency mining and get rewards.",
     "Technical Field: Have a professional core technology team",
     "Our Vision: Become the world's leading cloud mining platform.",
@@ -608,7 +608,7 @@ export default {
     "Join Date"
   ],
   "appdown": [
-    "Download SIX MINING and start mining",
+    "Download RPPLECOIN Mining and start mining",
     "Check out the latest products and services on the app",
     "Scan QR code to download",
     "App Store",
@@ -621,7 +621,7 @@ export default {
     "Read More"
   ],
   "contact": [
-    "SIX MINING",
+    "RPPLECOIN Mining",
     "Contact Us",
     "Full Name",
     "Email",
@@ -855,5 +855,11 @@ export default {
     "Wallet Address",
     "Login Password",
     "Payment Password"
+  ],
+  "newreg":[
+    "I accept",
+    "Privacy Policy",
+    "and",
+    "Terms",
   ],
 }

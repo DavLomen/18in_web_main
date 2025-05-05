@@ -10,7 +10,8 @@
           <div class="form-group mb-3">
             <div class="input-wrapper">
               <i class="bi bi-envelope"></i>
-              <input v-model.trim="postData.username" type="email" class="form-control custom-input" id="username" :placeholder="$t('logpage[1]')" data-sharkid="__0" data-sharklabel="email">
+              <input v-model.trim="postData.username" type="email" class="form-control custom-input" id="username"
+                     :placeholder="$t('login.placeholder[0]')" data-sharkid="__0" data-sharklabel="email">
             </div>
           </div>
           <div class="form-group mb-3">
@@ -22,6 +23,9 @@
           <!-- <div class="text-end">
               <a href="#" class="fs-6 text-red" ><span class="text-primary">Forget Password?</span> Service</a>
           </div> -->
+          <div class="text-end">
+            <van-checkbox shape="square" v-model="keepUser" @change="changeKeepUser" checked-color="#5c9fe7"  icon-size="14">{{$t('login.text[0]')}}</van-checkbox>
+          </div>
           <div class="text-center py-4">
             <button @click="onSubmit" class="login-btn" id="sm">
               <span>{{$t('logpage[3]')}}</span>

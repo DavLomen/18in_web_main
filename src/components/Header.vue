@@ -56,7 +56,7 @@
           </div>
           <div class="btn-group ">
             <button @click="showPcLan = !showPcLan" class="btn  dropdown-toggle p-1 ms-3 col-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img v-if="$i18n.locale=='en-US'" :src="'./static/images/uploads/20241117/cd3300dc91a25db0b825e2a43cc7304d.png'" style="width: 2rem;">
+              <img v-if="$i18n.locale=='en-US'" :src="'./static/images/en-US.png'" style="width: 2rem;">
               <img v-if="$i18n.locale=='ar-AR'" :src="'./static/images/uploads/20250218/4b617811af41d0445973e6de96b878cb.png'" style="width: 2rem;">
               <img v-if="$i18n.locale=='es-ES'" :src="'./static/images/uploads/20250214/e861c808006e9bd7e71d2a4c688e5920.png'" style="width: 2rem;">
               <img v-if="$i18n.locale=='de-DE'"  :src="'./static/images/uploads/20250214/c3f5ae27f6c2c8825893cad0e770f0f5.png'" style="width: 2rem;">
@@ -71,7 +71,7 @@
               <img v-if="$i18n.locale=='yd-YD'" :src="'./static/images/yd-YD.png'" style="width: 2rem;">
             </button>
             <ul :class="showPcLan?'dropdown-menu show':'dropdown-menu'" style="left: -6rem;top: 3rem;">
-              <li><a class="dropdown-item" v-if="InitData.setting.en==1" href="javascript:;" @click="changeLanguage('en-US')"><img :src="'./static/images/uploads/20241117/cd3300dc91a25db0b825e2a43cc7304d.png'" style="width: 2rem;"> English</a></li>
+              <li><a class="dropdown-item" v-if="InitData.setting.en==1" href="javascript:;" @click="changeLanguage('en-US')"><img :src="'./static/images/en-US.png'" style="width: 2rem;"> English</a></li>
               <li><a class="dropdown-item" v-if="InitData.setting.ar==1" href="javascript:;" @click="changeLanguage('ar-AR')"><img :src="'./static/images/uploads/20250218/4b617811af41d0445973e6de96b878cb.png'" style="width: 2rem;"> اللغة العربية</a></li>
               <!--                <li><a class="dropdown-item" href="javascript:;" @click="changeLanguage('kr')"><img :src="'./static/images/uploads/20250214/6425da9d1f95c1df115d27caa4e900a0.png'" style="width: 2rem;"> 한국인</a></li>-->
               <li><a class="dropdown-item" v-if="InitData.setting.es==1" href="javascript:;" @click="changeLanguage('es-ES')"><img :src="'./static/images/uploads/20250214/e861c808006e9bd7e71d2a4c688e5920.png'" style="width: 2rem;"> Español</a></li>
@@ -223,7 +223,7 @@
               <img :src="'./static/images/uploads/20241117/cd3300dc91a25db0b825e2a43cc7304d.png'" style="width: 2rem;">
             </button>
             <ul :class="showMobileLan?'dropdown-menu show':'dropdown-menu'" style="left: -6.5rem;top: 3rem;">
-              <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.en==1" @click="changeLanguage('en-US')"><img :src="'./static/images/uploads/20241117/cd3300dc91a25db0b825e2a43cc7304d.png'" style="width: 2rem;"> English</a></li>
+              <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.en==1" @click="changeLanguage('en-US')"><img :src="'./static/images/en-US.png'" style="width: 2rem;"> English</a></li>
               <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.ar==1" @click="changeLanguage('ar-AR')"><img :src="'./static/images/uploads/20250218/4b617811af41d0445973e6de96b878cb.png'" style="width: 2rem;"> اللغة العربية</a></li>
               <!--                <li><a class="dropdown-item" href="javascript:;" @click="changeLanguage('kr')"><img :src="'./static/images/uploads/20250214/6425da9d1f95c1df115d27caa4e900a0.png'" style="width: 2rem;"> 한국인</a></li>-->
               <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.es==1" @click="changeLanguage('es-ES')"><img :src="'./static/images/uploads/20250214/e861c808006e9bd7e71d2a4c688e5920.png'" style="width: 2rem;"> Español</a></li>
@@ -252,7 +252,7 @@
 
             <div class="btn-group">
               <button @click="showMobileLan = !showMobileLan" class="btn  dropdown-toggle p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img v-if="$i18n.locale=='en-US'" :src="'./static/images/uploads/20241117/cd3300dc91a25db0b825e2a43cc7304d.png'" style="width: 2rem;">
+                <img v-if="$i18n.locale=='en-US'" :src="'./static/images/en-US.png'" style="width: 2rem;">
                 <img v-if="$i18n.locale=='ar-AR'" :src="'./static/images/uploads/20250218/4b617811af41d0445973e6de96b878cb.png'" style="width: 2rem;">
                 <img v-if="$i18n.locale=='es-ES'" :src="'./static/images/uploads/20250214/e861c808006e9bd7e71d2a4c688e5920.png'" style="width: 2rem;">
                 <img v-if="$i18n.locale=='de-DE'"  :src="'./static/images/uploads/20250214/c3f5ae27f6c2c8825893cad0e770f0f5.png'" style="width: 2rem;">
@@ -354,7 +354,7 @@
 
               </div>
               <ul :class="showMobileLan?'dropdown-menu show':'dropdown-menu'" style="left: -6.5rem;top: 3rem;">
-                <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.en==1" @click="changeLanguage('en-US')"><img :src="'./static/images/uploads/20241117/cd3300dc91a25db0b825e2a43cc7304d.png'" style="width: 2rem;"> English</a></li>
+                <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.en==1" @click="changeLanguage('en-US')"><img :src="'./static/images/en-US.png'" style="width: 2rem;"> English</a></li>
                 <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.ar==1" @click="changeLanguage('ar-AR')"><img :src="'./static/images/uploads/20250218/4b617811af41d0445973e6de96b878cb.png'" style="width: 2rem;"> اللغة العربية</a></li>
 <!--                <li><a class="dropdown-item" href="javascript:;" @click="changeLanguage('kr')"><img :src="'./static/images/uploads/20250214/6425da9d1f95c1df115d27caa4e900a0.png'" style="width: 2rem;"> 한국인</a></li>-->
                 <li><a class="dropdown-item" href="javascript:;" v-if="InitData.setting.es==1" @click="changeLanguage('es-ES')"><img :src="'./static/images/uploads/20250214/e861c808006e9bd7e71d2a4c688e5920.png'" style="width: 2rem;"> Español</a></li>

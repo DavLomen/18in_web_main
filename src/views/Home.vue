@@ -24,7 +24,7 @@
               </div>
               <div  class="col-lg-6 col-md-6" style="    color: #fff;">
                 <div  class="hero-content pb-0 pt-md-0 pe-lg-4" >
-                  <h1  class="hero-title mb-4" >
+                  <h1  class="hero-title mb-4" style="color: #d7c800">
                     {{$t('home[0]')}}
                   </h1>
                   <p  class="hero-text mb-4 pb-1" style="color:#fff;font-size: 1rem;">
@@ -429,7 +429,7 @@
                   <swiper-slide v-if="index<20" v-for="(item,index) in InitData.fundList.filter(item=>item.type==3)" :key="index" :index="index">
                     <div class="table-row text-bhs text-center">
                       <div class="col-4">{{item.username}}</div>
-                      <div class="col-4 dmoney">12 USD</div>
+                      <div class="col-4 dmoney">{{item.money}} USD</div>
                       <div class="col-4 fs-8">{{item.time}}</div>
                     </div>
                   </swiper-slide>

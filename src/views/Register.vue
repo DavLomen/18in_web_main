@@ -61,6 +61,11 @@
                 :placeholder="$t('regpage[7]')"
                 class="form-control custom-input"
               />
+              <div  class="code-img" style="position: absolute;right: 0;top: 0;
+    height: 100%;display: flex;align-items: center;" @click="getCodes">
+                <SIdentify :identifyCode="identifyCode" >
+                </SIdentify>
+              </div>
             </div>
 <!--            <img-->
 <!--              style="position: absolute;right: 0;top: 0;max-width: 40%;-->
@@ -68,18 +73,29 @@
 <!--              :src="codeImg" @click="getCode"-->
 <!--              class="code-img password-toggle"-->
 <!--            />-->
-            <div  class="code-img password-toggle" style="position: absolute;right: 0;top: 0;max-width: 40%;
-    height: 100%;display: flex;align-items: center;" @click="getCodes">
-              <SIdentify :identifyCode="identifyCode" >
-              </SIdentify>
-            </div>
+
           </div>
           <div class="text-center py-4">
             <button @click="onSubmit" class="login-btn" id="register">
               <span>{{$t('regpage[8]')}}</span>
             </button>
           </div>
+
+          <div class="el-form-item__content" style="display: flex;align-items: center;justify-content: center">
+            <van-checkbox style="display: flex;" v-model="isAgree" checked-color="#5c9fe7" icon-size="20" shape="square">
+              {{$t('newreg[0]')}}
+            </van-checkbox>
+            <div style="display: inline-block">
+              <a  href="javascript:;" @click="$router.push('/article/privacy/detail')" style="font-weight: bold;">{{$t('newreg[1]')}}</a> {{$t('newreg[2]')}}
+              <a  href="javascript:;" @click="$router.push('/article/terms/detail')" style="font-weight: bold;">{{$t('newreg[3]')}}</a>
+            </div>
+          </div>
           <h6 class="text-bhs">{{$t('regpage[9]')}}<a href="javascript:;" @click="$router.push('/login')" class="fs-6">{{$t('regpage[10]')}}</a></h6>
+
+          <div class="" style="margin:2rem 0;justify-content: center;display: flex">
+            <img @click="downloadApp('andriod')" :src="'./static/images/d_android.bd8613ec.png'" style="height: 3rem;">
+            <img @click="downloadApp('ios')" :src="'./static/images/d_ios.fc9d4780.png'" style="height: 3rem;margin-left: 1rem">
+          </div>
         </div>
       </div>
     </div>
@@ -179,9 +195,16 @@
 
   },
   methods: {
-    toDownload () {
-      //this.$router.push({path:'/appDown'})
-        this.$router.push('/AppDown')
+    downloadApp (app) {
+      if(app == 'ios')
+      {
+        this.$Util.OpenUrl(this.InitData.setting.app_down_ios)
+      }
+      else if (app == 'andriod') {
+        this.$Util.OpenUrl(this.InitData.setting.app_down_android);
+      } else {
+        this.$Util.OpenUrl(this.InitData.setting.app_down_google);
+      }
     },
     openArticle() {
       this.$router.push(`/article/terms/${this.InitData.disclaimerList.length?this.InitData.disclaimerList[0].id:''}`)

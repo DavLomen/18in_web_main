@@ -1,10 +1,14 @@
 <template>
   <div class="HomePage">
     <Header></Header>
-    <div class="container">
-      <div class="box">
-        <div class="title">{{showInfo.title}}</div>
-        <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
+    <div class="container mt-lg-7" style="font-size: 1rem;">
+      <div class="row mt-lg-7">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-center" style="color: #000000;">{{showInfo.title}}</h1>
+        </div>
+      </div>
+      <div style="color: #000000" class="col-lg-10 mx-auto mt-lg-5" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')">
+
       </div>
     </div>
     <Footer></Footer>
