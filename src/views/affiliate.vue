@@ -65,6 +65,26 @@
         </div>
       </div>
       <div class="container border border-0 rounded-4 bg-zhs p-4">
+        <div class="el-row">
+          <div class="text-center el-col-24 mtb-10">
+            <h1 class="fontza text-zah mt-3">{{$t('affliliate[29]')}}</h1>
+          </div>
+          <div class="el-col-24">
+            <ul class="referral_bounty_table">
+              <li class="referral_bounty_cloum referral_bounty_cloum_h data-flex">
+                <div class="left flex-1 el-content-text-h4">{{$t('affliliate[30]')}}</div>
+                <div class="right el-content-text-h4">{{$t('affliliate[31]')}}</div>
+              </li>
+              <li class="referral_bounty_cloum data-flex" v-for="(el ,index) in referralBountyList" :key="index">
+                <div class="left flex-1 el-content-text-h4 fontza text-zah">{{el.key}}</div>
+                <div class="right el-content-text-h4 fontza text-zah">${{el.value}}</div>
+              </li>
+            </ul>
+            <div class="font-intr el-content-text-h3">({{ $t('affliliate[32]') }})</div>
+          </div>
+        </div>
+      </div>
+      <div class="container border border-0 rounded-4 bg-zhs p-4">
         <h1 class="fontza text-zah  ps-lg-5">{{$t('affliliate[23]')}}</h1>
         <div class="row">
           <div class="col-lg-6 mt-5 ps-lg-5">
@@ -105,6 +125,12 @@
     },
     data() {
       return {
+        referralBountyList:[
+          { key: '10', value: '1000' },
+          { key: '30', value: '5000' },
+          { key: '50', value: '10000' },
+          { key: '100', value: '100000' },
+        ],
       }
     },
 
@@ -273,5 +299,23 @@
   }
   .text-white {
     color: #fff !important;
+  }
+
+  .referral_bounty_table{
+    background: #212121;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .referral_bounty_table .referral_bounty_cloum{
+    color: linear-gradient(0deg, #FED504 -30%, #f0cd0b 30%, #FF7D10 90%);
+    padding: 5px 10px;
+  }
+  .referral_bounty_table .referral_bounty_cloum_h{
+    background: rgb(54, 61, 80);
+    color: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
 </style>

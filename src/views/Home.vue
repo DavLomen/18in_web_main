@@ -103,29 +103,33 @@
             <div class="box2-title">{{$t('home[4]')}}</div>
             <div class="tab-list">
               <div class="tab-item" @click="$router.push('/register')">
+                <span class="tab-item_num font-title-h1">1</span>
                 <img :src="'./static/image/home1.png?t=1'" class="img" />
-                <div class="title" >1. {{$t('register.text[0]')}}</div>
+                <div class="title" >{{$t('register.text[0]')}}</div>
                 <div class="desc">
                   {{$t('home[5]',{WT:InitData.setting.web_title})}}
                 </div>
               </div>
               <div class="tab-item" @click="$router.push('/product')">
+                <span class="tab-item_num font-title-h1">2</span>
                 <img :src="'./static/image/home2.png?t=1'" class="img" />
-                <div class="title">2. {{$t('home[6]')}}</div>
+                <div class="title">{{$t('home[6]')}}</div>
                 <div class="desc">
                   {{$t('home[7]')}}
                 </div>
               </div>
-              <div class="tab-item" @click="jumper">
+              <!-- <div class="tab-item" @click="jumper">
+                <span class="tab-item_num font-title-h1">3</span>
                 <img  :src="'./static/image/home3.png?t=1'" class="img" />
-                <div class="title">3. {{$t('home[8]')}}</div>
+                <div class="title">{{$t('home[8]')}}</div>
                 <div class="desc">
                   {{$t('home[9]')}}
                 </div>
-              </div>
+              </div> -->
               <div class="tab-item">
+                <span class="tab-item_num font-title-h1">3</span>
                 <img  :src="'./static/image/home4.png?t=1'" class="img" />
-                <div class="title">4. {{$t('home[23]')}}</div>
+                <div class="title">{{$t('home[23]')}}</div>
                 <div class="desc">
                   {{$t('home[24]')}}
                 </div>
@@ -133,8 +137,7 @@
             </div>
           </div>
         </div>
-
-        <section namespace="affiliate">
+        <!-- <section namespace="affiliate">
           <div class="container">
             <div class="box3 box-wrapper">
               <div class="row">
@@ -175,14 +178,15 @@
 
             </div>
           </div>
-        </section>
+        </section> -->
 
         <div class="container box3">
           <div class="box-wrapper">
             <div class="box3-title">{{$t('newhome[4]')}}</div>
             <div style="font-size: 1.5rem;padding: 2rem;line-height: 2.5rem;color: #000000;text-align: center;">{{$t('newhome[5]')}}</div>
-            <div class="product-list">
-              <div class="product-item" v-for="(item,index) in listData" :key="index">
+            <div class="product-list el-row">
+              <div class="el-col-xs-24 el-col-sm-12 el-col-md-8" v-for="(item,index) in listData" :key="index">
+                <div class="product-item">
                 <div class="img-box">
                   <img
                     :src="InitData.setting.up_url + item.icon"
@@ -191,9 +195,9 @@
                 </div>
                 <div class="right">
                   <img v-if="item.progress>=100" :src="'./static/image/out.png'" style="position: absolute;
-    right: 1rem;
-    bottom: 8rem;
-    width: 10rem;">
+                    right: 1rem;
+                    bottom: 8rem;
+                    width: 10rem;">
                   <div class="name">
                     {{item.title}}
                   </div>
@@ -263,6 +267,59 @@
                   <div role="progressbar" aria-valuemin="0" aria-valuemax="100" :aria-valuenow="item.progress"
                        class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
                        :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="figure"></div>
+        <div class="section profit-section" style="margin: 10px 0;">
+          <div id="particles-2">
+          </div>
+          <div class="section__head">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-6">
+                  <h2 class="mt-0 text-center title-main">{{$t('calculator[0]')}}</h2>
+                  <p class="mb-0 mx-auto text-center t-short-para" style="font-size: 16px">
+                    {{$t('calculator[1]')}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="max-width: 90%;margin: 0 auto;">
+            <div class="row">
+              <div class="col-12">
+                <div class="profit-calculator">
+                  <div class="el-row g-3">
+                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                      <div class="form-group">
+                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[2]')}}</label>
+                        <select name="plan_id" style="width: 21.5rem;" class="form-select form--select" v-model="selectM" @change="handelChange">
+                          <option :value="item.id" v-for="(item,index) in listData" :key="index">
+                            {{item.title}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                      <div class="form-group">
+                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[3]')}}</label>
+                        <input style="width: 20rem" type="text" v-model="selectP.amount" name="amount" class="form-control form--control" autocomplete="off">
+                        <code class="limit"></code>
+                      </div>
+                    </div>
+                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                      <div class="form-group">
+                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[4]')}}</label>
+                        <input style="width: 20rem" v-if="selectP.daily_rate !=''" type="text" v-model="((selectP.daily_rate)/100*selectP.amount*selectP.cycle).toFixed(4)" class="form-control form--control" readonly>
+                        <input style="width: 20rem" v-else type="text" class="form-control form--control">
+                      </div>
+                      <code class="msg">{{$t('calculator[5]')}}: {{selectP.daily_rate}}%</code>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -345,7 +402,7 @@
                       </p></div>
                   </div>
                 </div>
-                <div  class="col-lg-3 col-md-6 mt-4 ">
+                <div  class="col-lg-4 col-md-6 mt-4 ">
                   <div  class="card border-0 text-center features feature-primary feature-clean px-3">
                     <div  class="icons text-center mx-auto"><i
                       class="avatar avatar-md-md rounded-md"><img
@@ -356,7 +413,7 @@
                       </p></div>
                   </div>
                 </div>
-                <div  class="col-lg-3 col-md-6 mt-4 ">
+                <!-- <div  class="col-lg-3 col-md-6 mt-4 ">
                   <div  class="card border-0 text-center features feature-primary feature-clean px-3">
                     <div  class="icons text-center mx-auto"><i
                       class="avatar avatar-md-md rounded-md"><img
@@ -366,8 +423,8 @@
                         {{$t('home[29]')}}
                       </p></div>
                   </div>
-                </div>
-                <div  class="col-lg-3 col-md-6 mt-4 ">
+                </div> -->
+                <div  class="col-lg-4 col-md-6 mt-4 ">
                   <div  class="card border-0 text-center features feature-primary feature-clean px-3">
                     <div  class="icons text-center mx-auto"><i
                       class="avatar avatar-md-md rounded-md"><img
@@ -378,7 +435,7 @@
                       </p></div>
                   </div>
                 </div>
-                <div  class="col-lg-3 col-md-6 mt-4 ">
+                <div  class="col-lg-4 col-md-6 mt-4 ">
                   <div  class="card border-0 text-center features feature-primary feature-clean px-3">
                     <div  class="icons text-center mx-auto"><i
                       class="avatar avatar-md-md rounded-md"><img
@@ -387,65 +444,6 @@
                       <p  class="text-muted mb-0">
                         {{$t('home[33]')}}
                       </p></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="figure"></div>
-            <div class="section profit-section">
-              <div id="particles-2">
-              </div>
-              <div class="section__head">
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-md-8 col-xl-6">
-                      <h2 class="mt-0 text-center title-main">{{$t('calculator[0]')}}</h2>
-                      <p class="mb-0 mx-auto text-center t-short-para" style="font-size: 16px">
-                        {{$t('calculator[1]')}}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="container" style="max-width: 90%;margin: 0 auto;">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="profit-calculator">
-                      <div class="el-row g-3">
-                        <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                          <div class="form-group">
-                            <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[2]')}}</label>
-<!--                            <input readonly @click="selcets = !selcets" name="plan_id" class="form-select form&#45;&#45;select form&#45;&#45;control" v-model="selcett" />-->
-
-<!--                            <div v-if="selcets" style="width: 100%" name="plan_id" class="form-select form&#45;&#45;select form&#45;&#45;control">-->
-<!--                              <div :value="item.id" v-for="(item,index) in listData" :key="index" @click="handelChange(item)">-->
-<!--                                {{item.title}}-->
-<!--                              </div>-->
-<!--                            </div>-->
-                            <select name="plan_id" style="width: 21.5rem;" class="form-select form--select" v-model="selectM" @change="handelChange">
-                              <option :value="item.id" v-for="(item,index) in listData" :key="index">
-                                {{item.title}}
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                          <div class="form-group">
-                            <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[3]')}}</label>
-                            <input style="width: 20rem" type="text" v-model="selectP.amount" name="amount" class="form-control form--control" autocomplete="off">
-                            <code class="limit"></code>
-                          </div>
-                        </div>
-                        <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                          <div class="form-group">
-                            <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[4]')}}</label>
-                            <input style="width: 20rem" v-if="selectP.daily_rate !=''" type="text" v-model="((selectP.daily_rate)/100*selectP.amount*selectP.cycle).toFixed(4)" class="form-control form--control" readonly>
-                            <input style="width: 20rem" v-else type="text" class="form-control form--control">
-                          </div>
-                          <code class="msg">{{$t('calculator[5]')}}: {{selectP.daily_rate}}%</code>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1807,15 +1805,186 @@
   .el-checkbox__input.is-focus .el-checkbox__inner {
     border-color: #662282!important
   }
-  .container .box3 .product-list .product-item {
-    position: relative;
-  }
   .container .box-wrapper {
     position: relative;
     max-width: 1300px;
     z-index: 2;
     color: #000000;
   }
+  .container .box2 .tab-list .tab-item .tab-item_num {
+      position: absolute;
+      right: 10px;
+    }
+
+  /* 产品样式挪到这边 */
+  .container .box3 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem 1rem
+    }
+
+    .container .box3 .box3-title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #000;
+      text-align: center;
+      word-wrap: break-word
+    }
+    .container .box3 .product-list .product-item {
+      position: relative;
+      width: 95% !important;
+      margin: 10px auto;
+    }
+    .container .box3 .product-list .product-item,.container .box3 .product-list {
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item:not(:last-child) {
+      margin-bottom: 2rem
+    }
+
+    .container .box3 .product-list .product-item .img-box {
+      position: relative;
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item .img-box .img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .container .box3 .product-list .product-item .right {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem 1rem 1.5rem;
+      background-color: #efefef
+    }
+
+    .container .box3 .product-list .product-item .right .name {
+      width: 100%;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      word-wrap: break-word;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      height: 80px;
+    }
+
+    .container .box3 .product-list .product-item .right .name .countdown {
+      display: block;
+      font-size: 1.5rem;
+      color: #28c76f
+    }
+
+    .container .box3 .product-list .product-item .right .name .countdown i {
+      margin-right: 2px;
+      font-size: 1.6rem;
+      font-weight: 700
+    }
+
+    .container .box3 .product-list .product-item .right .bottom {
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 2rem;
+      height: 270px;
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item {
+      width: 50%;
+      box-sizing: border-box;
+      padding-right: 1rem
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item:nth-child(n+3) {
+      margin-top: 1.2rem
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .label {
+      width: 100%;
+      margin-bottom: .8rem;
+      font-size: 1.5rem;
+      color: #333;
+      word-wrap: break-word
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .value {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      word-break: break-all
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus {
+      width: 100%;
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .label {
+      width: 100%;
+      margin-bottom: .8rem;
+      font-size: 1.5rem;
+      color: #333;
+      word-wrap: break-word
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .value {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      word-break: break-all
+    }
+    .container .box3 .product-list .product-item .progress {
+      /*手机*/
+      position: absolute;
+      left: 2rem;
+      bottom: 7rem;
+      width: calc(100% - 4rem);
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .buy-btn {
+      margin-top: 2rem;
+      width: 100%;
+      height: 4.5rem;
+      line-height: 4.5rem;
+      box-sizing: border-box;
+      padding: 0 2rem;
+      border-radius: 4.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      cursor: pointer
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .disabled-btn {
+      color: #333!important;
+      background-image: linear-gradient(90deg,#c5c5c5,#c5c5c5)
+    }
   @media only screen and (min-width: 1024px) {
 
     .container .mask {
@@ -1984,6 +2153,7 @@
     }
 
     .container .box2 .tab-list .tab-item {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -2031,180 +2201,6 @@
       text-align: center;
       word-wrap: break-word
     }
-
-    .container .box3 {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 2rem 3rem
-    }
-
-    .container .box3 .box3-title {
-      position: relative;
-      width: 100%;
-      margin-bottom: 1rem;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list {
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item {
-      display: flex;
-      width: 100%
-    }
-    .container .box3 .product-list .product-item .progress {
-      position: absolute;
-      left: 44rem;
-      bottom: 1rem;
-      width: calc(100% - 46rem);
-    }
-    .container .box3 .product-list .product-item:not(:last-child) {
-      margin-bottom: 3rem
-    }
-
-    .container .box3 .product-list .product-item .img-box {
-      position: relative;
-      min-width: 40rem;
-      max-width: 40rem;
-      height: 26rem;
-      overflow: hidden
-    }
-
-    .container .box3 .product-list .product-item .img-box .img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: fill;
-    }
-
-    .container .box3 .product-list .product-item .right {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-      height: 26rem;
-      box-sizing: border-box;
-      padding: 0 3rem;
-      background-color: #efefef
-    }
-
-    .container .box3 .product-list .product-item .right .name {
-      width: 100%;
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #000;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .name .countdown {
-      font-size: 1.8rem;
-      color: #28c76f
-    }
-
-    .container .box3 .product-list .product-item .right .name .countdown i {
-      margin-right: 2px;
-      font-size: 1.9rem;
-      font-weight: 700
-    }
-
-    .container .box3 .product-list .product-item .right .bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item {
-      width: 25%;
-      box-sizing: border-box;
-      padding-right: 2rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item:nth-child(n+5) {
-      margin-top: 2.5rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .label {
-      width: 100%;
-      margin-bottom: .8rem;
-      font-size: 1.5rem;
-      color: #333;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .value {
-      width: 100%;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #000;
-      word-break: break-all
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .rebate {
-      word-break: keep-all
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus {
-      min-width: 20rem;
-      max-width: 20rem;
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .label {
-      width: 100%;
-      margin-bottom: .8rem;
-      font-size: 1.5rem;
-      color: #333;
-      text-align: center;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .value {
-      width: 100%;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      word-break: break-all
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .buy-btn {
-      height: 5rem;
-      line-height: 5rem;
-      box-sizing: border-box;
-      padding: 0 2.5rem;
-      border-radius: 5rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #fff;
-      text-align: center;
-      white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
-      cursor: pointer
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .disabled-btn {
-      color: #333!important;
-      background-image: linear-gradient(90deg,#c5c5c5,#c5c5c5)
-    }
-
     .container .box4,.container .box5 {
       width: 100%;
       box-sizing: border-box;
@@ -2688,6 +2684,7 @@
     }
 
     .container .box2 .tab-list .tab-item {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -2736,162 +2733,6 @@
       color: #000;
       text-align: center;
       word-wrap: break-word
-    }
-
-    .container .box3 {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 1rem 1rem
-    }
-
-    .container .box3 .box3-title {
-      position: relative;
-      width: 100%;
-      margin-bottom: 0.5rem;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item,.container .box3 .product-list {
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item:not(:last-child) {
-      margin-bottom: 2rem
-    }
-
-    .container .box3 .product-list .product-item .img-box {
-      position: relative;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .img-box .img {
-      display: block;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 1rem 1rem 1.5rem;
-      background-color: #efefef
-    }
-
-    .container .box3 .product-list .product-item .right .name {
-      width: 100%;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #000;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .name .countdown {
-      display: block;
-      font-size: 1.5rem;
-      color: #28c76f
-    }
-
-    .container .box3 .product-list .product-item .right .name .countdown i {
-      margin-right: 2px;
-      font-size: 1.6rem;
-      font-weight: 700
-    }
-
-    .container .box3 .product-list .product-item .right .bottom {
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      margin-bottom: 2rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item {
-      width: 50%;
-      box-sizing: border-box;
-      padding-right: 1rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item:nth-child(n+3) {
-      margin-top: 1.2rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .label {
-      width: 100%;
-      margin-bottom: .8rem;
-      font-size: 1.5rem;
-      color: #333;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .value {
-      width: 100%;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      word-break: break-all
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus {
-      width: 100%;
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .label {
-      width: 100%;
-      margin-bottom: .8rem;
-      font-size: 1.5rem;
-      color: #333;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .value {
-      width: 100%;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      word-break: break-all
-    }
-    .container .box3 .product-list .product-item .progress {
-      /*手机*/
-      position: absolute;
-      left: 2rem;
-      bottom: 7rem;
-      width: calc(100% - 4rem);
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .buy-btn {
-      margin-top: 2rem;
-      width: 100%;
-      height: 4.5rem;
-      line-height: 4.5rem;
-      box-sizing: border-box;
-      padding: 0 2rem;
-      border-radius: 4.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      text-align: center;
-      white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
-      cursor: pointer
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .disabled-btn {
-      color: #333!important;
-      background-image: linear-gradient(90deg,#c5c5c5,#c5c5c5)
     }
 
     .container .box4,.container .box5 {

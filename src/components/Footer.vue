@@ -103,7 +103,38 @@
           <div><p class="text footer_text__qoC0V">
             <img v-lazy="'./static/image/local.png?t=1'" style="border-radius: 5px;width: 20px;margin: 5px;">
             C/O Venture Finance Management, Suite 101, Cotton Exchange, Old Hall Street, Liverpool, England, L3 9LQ</p></div>
-          <div class="footer_wrapperSocial__pLVxZ"><a target="_blank" class="footer_socialIcon__w14Es" itemprop="sameAs"
+        </div>
+        <div class="footer_linkBlock__k1gY5">
+          <div class="footer_linkColumn__wFHMA"><p class="footer_columnTitle__aoNF3">{{$t('foot[13]')}}</p>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/blog')">{{$t('foot[6]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/energy/detail')">{{$t('foot[14]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/bit/detail')">{{$t('foot[16]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/who/detail')">{{$t('foot[17]')}}</a>
+          </div>
+
+          <div class="footer_linkColumn__wFHMA"><p class="footer_columnTitle__aoNF3">{{$t('foot[18]')}}</p>
+            <a
+                    class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/about')">{{$t('foot[3]')}}</a>
+            <a
+                    class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/terms/detail')">{{$t('foot[10]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/cryptocurrency/detail')">{{$t('cryptocurrency[0]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/web3/detail')">{{$t('cryptocurrency[1]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/FAQ')">{{$t('foot[4]')}}</a>
+            <!-- <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/contact')">{{$t('foot[7]')}}</a> -->
+          </div>
+          <div class="footer_emailColumnDesktop__KuLss"><p class="footer_columnTitle__aoNF3 footer_entry__Pf_Xw">
+            {{$t('foot[7]')}}</p>
+            <div class="footer_entry__Pf_Xw"><p class="text footer_text__qoC0V">
+              <img v-lazy="'./static/image/footchat.png?t=1'" style="border-radius: 5px;width: 20px;margin: 5px;">
+              {{$t('foot[19]')}}</p>
+              <a
+              href="mailto:info@cryptominingfirm.com"><img v-lazy="'./static/image/footeamil.png?t=1'" style="border-radius: 5px;width: 20px;margin: 5px;">info@cryptominingfirm.com</a>
+            </div>
+            <div class="footer_linkColumn__wFHMA">
+              <a class="text footer_text__qoC0V" style="margin:10px 0;" href="javascript:" @click="$router.push('/contact')">{{$t('foot[7]')}}</a>
+            </div>
+            <div class="footer_wrapperSocial__pLVxZ"><a target="_blank" class="footer_socialIcon__w14Es" itemprop="sameAs"
                                                       href="https://web.facebook.com/profile.php?id=100064491949358"><span
             style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
             style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
@@ -150,34 +181,6 @@
             data-nimg="intrinsic"
             style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
           </div>
-        </div>
-        <div class="footer_linkBlock__k1gY5">
-          <div class="footer_linkColumn__wFHMA"><p class="footer_columnTitle__aoNF3">{{$t('foot[13]')}}</p>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/blog')">{{$t('foot[6]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/energy/detail')">{{$t('foot[14]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/bit/detail')">{{$t('foot[16]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/who/detail')">{{$t('foot[17]')}}</a>
-          </div>
-
-          <div class="footer_linkColumn__wFHMA"><p class="footer_columnTitle__aoNF3">{{$t('foot[18]')}}</p>
-            <a
-                    class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/about')">{{$t('foot[3]')}}</a>
-            <a
-                    class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/terms/detail')">{{$t('foot[10]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/cryptocurrency/detail')">{{$t('cryptocurrency[0]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/web3/detail')">{{$t('cryptocurrency[1]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/FAQ')">{{$t('foot[4]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/contact')">{{$t('foot[7]')}}</a>
-          </div>
-          <div class="footer_emailColumnDesktop__KuLss"><p class="footer_columnTitle__aoNF3 footer_entry__Pf_Xw">
-            {{$t('foot[7]')}}</p>
-            <div class="footer_entry__Pf_Xw"><p class="text footer_text__qoC0V">
-              <img v-lazy="'./static/image/footchat.png?t=1'" style="border-radius: 5px;width: 20px;margin: 5px;">
-              {{$t('foot[19]')}}</p>
-              <a
-              href="mailto:info@cryptominingfirm.com"><img v-lazy="'./static/image/footeamil.png?t=1'" style="border-radius: 5px;width: 20px;margin: 5px;">info@cryptominingfirm.com</a>
-            </div>
             <div class="footer_entry__Pf_Xw">
                         <div class="link-item markss" style="margin-top: 10px">
 <!--                          <a @click="downloadApp('google')" id="google" target="blank_" class="mt-10 block">-->
@@ -191,7 +194,7 @@
           </div>
         </div>
       </div>
-      <div class="footer_lower_line__6vj6_"><p class="text footer_text__qoC0V">{{$t('foot[11]')}}</p>
+      <div class="footer_lower_line__6vj6_ text-center"><p class="text footer_text__qoC0V">{{$t('foot[11]')}}</p>
       </div>
     </div>
   </footer>
@@ -320,8 +323,7 @@ export default {
     margin-top: 13px;
     display: flex
   }
-
-  .footer_footer__7PBRV .footer_wrapperLeftBlock__FPLX3 .footer_wrapperSocial__pLVxZ .footer_socialIcon__w14Es {
+  .footer_wrapperSocial__pLVxZ .footer_socialIcon__w14Es {
     margin-right: 20px
   }
 

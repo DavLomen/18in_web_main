@@ -12,9 +12,9 @@
                 class="app-content">
                 {{$t('appDown[1]')}}
                 </span></div>
-              <div class="app-img">
+              <!-- <div class="app-img">
                 <img :src="'./static/images/qrcode.png?t=1'" >
-              </div>
+              </div> -->
               <div class="app-img">
                 <img @click="downloadApp('andriod')" :src="'./static/images/google-play.png'" >
                 <img @click="downloadApp('ios')" :src="'./static/images/apple-store.png'" class="apple">
@@ -59,6 +59,20 @@
           <div class="bt_desc">
             <h3>{{$t('appDown1[9]')}}</h3>
             <p>{{$t('appDown1[10]')}}</p>
+          </div>
+        </div>
+        <div class="bt_block">
+          <img :src="'./static/images/app1.png'" class="bt_round">
+          <div class="bt_desc">
+            <h3>{{$t('appDown1[11]')}}</h3>
+            <p>{{$t('appDown1[12]')}}</p>
+          </div>
+        </div>
+        <div class="bt_block">
+          <img :src="'./static/images/app2.png'" class="bt_round">
+          <div class="bt_desc">
+            <h3>{{$t('appDown1[13]')}}</h3>
+            <p>{{$t('appDown1[14]')}}</p>
           </div>
         </div>
       </div>

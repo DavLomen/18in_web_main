@@ -4,21 +4,19 @@
     <div>
       <section namespace="referral_image">
         <div class="container">
-          <div class="box7">
+          <!-- <div class="box7">
             <div class="image_main">
               <img :src="'./static/images/aboutt.png'" style="object-fit:cover">
-<!--              <div class="white_image_effect"></div>-->
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
       <section namespace="weare">
         <div class="container">
           <div class="box7">
             <h1 class="titled_2" style="text-align: left; color: #7D2483;" v-html="showInfo.title"></h1>
-            <div class="content" v-html="showInfo.content">
-
-            </div>
+            <jrArticle ref="jrArticle" :data="articleData"></jrArticle>
+            <!-- <div class="content" v-html="showInfo.content"></div> -->
           </div>
         </div>
       </section>
@@ -231,26 +229,183 @@
 <!--        </div>-->
 <!--        &lt;!&ndash; .container end &ndash;&gt;-->
 <!--      </section>-->
-
+      <section namespace="platform">
+        <div class="font-title-h1 text-center mtb-10">{{ $t('i18n.aboutUs.platform.text1') }}</div>
+        <div class="container platform_max mtb-10 max960">
+          <!-- pc端展示内容 -->
+          <div class="data-flex platform_m_logo_show">
+            <div class="el-row flex-1">
+              <div class="platform_cbox">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/11.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text2') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text3') }}</p>
+                    <p class="text font-intr el-content-text-h3">{{ $t('i18n.aboutUs.platform.text4') }}</p>
+                    <p class="text font-intr el-content-text-h3">{{ $t('i18n.aboutUs.platform.text5') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/22.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text8') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text9') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/33.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text12') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text13') }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row flex-1">
+              <div class="data-flex">
+                <img :src="'./static/image/platform/platform_m.png'" alt="" style="width: 100%;object-fit: contain;">
+              </div>
+            </div>
+            <div class="el-row flex-1">
+              <div class="platform_cbox">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/44.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text6') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text7') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/55.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text10') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text11') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/66.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text14') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text15') }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- h5端展示内容 -->
+          <div class="platform_m_logo_not_show">
+             <div class="el-row">
+              <div class="platform_cbox el-col-xs-24 el-col-sm-12 ">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/11.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text2') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text3') }}</p>
+                    <p class="text font-intr el-content-text-h3">{{ $t('i18n.aboutUs.platform.text4') }}</p>
+                    <p class="text font-intr el-content-text-h3">{{ $t('i18n.aboutUs.platform.text5') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox  el-col-xs-24 el-col-sm-12 ">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/22.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text6') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text7') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox  el-col-xs-24 el-col-sm-12 ">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/33.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text8') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text9') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox  el-col-xs-24 el-col-sm-12 ">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/44.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text10') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text11') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox  el-col-xs-24 el-col-sm-12 ">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/55.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text12') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text13') }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="platform_cbox  el-col-xs-24 el-col-sm-12 ">
+                <div class="c_item data-flex">
+                  <div class="c_item_img mlr-5">
+                    <img :src="'./static/image/platform/66.png'" alt="" style="width: 80px;min-height: 60px;object-fit: contain;">
+                  </div>
+                  <div class="content flex-1">
+                    <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text14') }}</div>
+                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text15') }}</p>
+                  </div>
+                </div>
+              </div>
+             </div>
+          </div>
+        </div>
+      </section>
       <section namespace="stats">
         <div class="container">
           <div class="box7">
             <div class="about-stats">
               <div class="about-item">
                 <div>
-                  <h1>97+ </h1>
+                  <h1>100+ </h1>
                   <p>{{$t('about2[0]')}}</p>
                 </div>
               </div>
               <div class="about-item" style="background: #ED5C2E;">
                 <div>
-                  <h1>9,390,000+</h1>
+                  <h1>9,000,000+</h1>
                   <p>{{$t('about2[1]')}}</p>
                 </div>
               </div>
               <div class="about-item" style="background: #FF971E;">
                 <div>
-                  <h1>180+</h1>
+                  <h1>195+</h1>
                   <p>{{$t('about2[2]')}}</p>
                 </div>
               </div>
@@ -277,7 +432,7 @@
         </div>
       </section>
 
-      <section namespace="data_centers">
+      <!-- <section namespace="data_centers">
         <div class="container">
           <div class="box7">
             <h1 class="fontza text-zah">{{$t('about2[6]')}}</h1>
@@ -319,7 +474,7 @@
           </div>
         </div>
 
-      </section>
+      </section> -->
 
       <section namespace="data_centers">
         <div class="container">
@@ -365,54 +520,74 @@
             <div class="about-data">
               <div class="about-item-data">
                 <img :src="'./static/image/aaa1.jpg'">
-                <h1>{{$t('about[14]')}}</h1>
-                <p>{{$t('about[15]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[14]')}}</h1>
+                  <p>{{$t('about[15]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa2.jpg'">
-                <h1>{{$t('about[16]')}}</h1>
-                <p>{{$t('about[17]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[16]')}}</h1>
+                  <p>{{$t('about[17]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa3.jpg'">
-                <h1>{{$t('about[18]')}}</h1>
-                <p>{{$t('about[19]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[18]')}}</h1>
+                  <p>{{$t('about[19]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa4.jpg'">
-                <h1>{{$t('about[20]')}}</h1>
-                <p>{{$t('about[21]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[20]')}}</h1>
+                  <p>{{$t('about[21]')}}</p>
+                </div>
               </div>
 
               <div class="about-item-data">
                 <img :src="'./static/image/aaa5.jpg'">
-                <h1>{{$t('about[22]')}}</h1>
-                <p>{{$t('about[23]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[22]')}}</h1>
+                  <p>{{$t('about[23]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa6.jpg'">
-                <h1>{{$t('about[24]')}}</h1>
-                <p>{{$t('about[25]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[24]')}}</h1>
+                  <p>{{$t('about[25]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa7.jpg'">
-                <h1>{{$t('about[26]')}}</h1>
-                <p>{{$t('about[27]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[26]')}}</h1>
+                  <p>{{$t('about[27]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa8.jpg'">
-                <h1>{{$t('about[28]')}}</h1>
-                <p>{{$t('about[29]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[28]')}}</h1>
+                  <p>{{$t('about[29]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa9.jpg'">
-                <h1>{{$t('about[30]')}}</h1>
-                <p>{{$t('about[31]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[30]')}}</h1>
+                  <p>{{$t('about[31]')}}</p>
+                </div>
               </div>
               <div class="about-item-data">
                 <img :src="'./static/image/aaa10.jpg'">
-                <h1>{{$t('about[32]')}}</h1>
-                <p>{{$t('about[33]')}}</p>
+                <div class="about-item-text">
+                  <h1>{{$t('about[32]')}}</h1>
+                  <p>{{$t('about[33]')}}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -420,7 +595,7 @@
         </div>
       </section>
 
-      <div  class="section choice-section max960"
+      <!-- <div  class="section choice-section max960"
            style="background-image: url('./static/images/frontend/choose_us/61f237c71bfe21643263943.jpg');">
         <div  class="section__head">
           <div  class="container">
@@ -523,7 +698,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
@@ -531,16 +706,50 @@
   </div>
 </template>
 <script>
+import jrArticle from '@/components/common/jr_article.vue';
   export default {
     name: 'about',
     components: {
+      jrArticle
     },
     data() {
       return {
         showInfo:{
           title: '',
           content:'',
-        }
+        },
+        articleData: {
+          content_1: {
+            align: 'TM',
+            list: [
+              { type: 'title', text: this.$t('i18n.aboutUs.article.text1') },
+              { type: 'content', text: this.$t('i18n.aboutUs.article.text2') },
+              { type: 'title', text: this.$t('i18n.aboutUs.article.text3') },
+              { type: 'content', text: this.$t('i18n.aboutUs.article.text4') },
+              { type: 'title', text: this.$t('i18n.aboutUs.article.text5') },
+              { type: 'content', text: this.$t('i18n.aboutUs.article.text6') },
+            ],
+            image: {
+              type: 'video',
+              url: require('../../static/img/login_bg.mp4'),
+            },
+          },
+          content_2: {
+            align: 'MT',
+            list: [
+              { type: 'title', text: this.$t('i18n.aboutUs.article.text7') },
+              { type: 'content', text: this.$t('i18n.aboutUs.article.text8') },
+              { type: 'title', text: this.$t('i18n.aboutUs.article.text9') },
+              { type: 'content', text: this.$t('i18n.aboutUs.article.text10') },
+              { type: 'title', text: this.$t('i18n.aboutUs.article.text11') },
+              { type: 'content', text: this.$t('i18n.aboutUs.article.text12') },
+            ],
+            image: {
+              type: 'img',
+              url: require('../../static/img/location.1704fed8_new.png'),
+            },
+          },
+        },
       }
     },
 
@@ -765,7 +974,39 @@
     margin: 0.5rem;
     border: 1px solid #DFDFDF;
     border-radius: 10px;
+    position: relative;
+    cursor: pointer;
   }
+
+  .about-item-data .about-item-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.70);
+    color: #fff;
+    padding: 10px 0;
+    opacity: 0;
+    transition: all 1s ease;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .about-item-data p {
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    height: 70px;
+
+  }
+
+  .about-item-data:hover .about-item-text{
+    opacity: 1;
+    display: block;
+  }
+
 
   .about-item-data img {
     width: 100%;
@@ -1632,7 +1873,25 @@
     font-size: 1.5rem;
   }
 
-
+  @media (min-width: 1200px) {
+    .platform_m_logo_show{
+      display: flex !important;
+    }
+    .platform_m_logo_not_show{
+      display: none !important;
+    }
+  }
+  @media (max-width: 1200px) {
+    .platform_m_logo_show{
+      display: none !important;
+    }
+    .platform_cbox{
+      height:200px
+    }
+    .platform_m_logo_not_show{
+      display: block;
+    }
+  }
 </style>
 
 

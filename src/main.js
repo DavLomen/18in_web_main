@@ -13,6 +13,7 @@ import i18n,{SetLanguage} from './i18n'
 // import '@/assets/css/bootstrap.min.css'
 import 'vant/lib/index.css'
 import '@/assets/css/style.css'
+import '@/assets/css/common.css'
 import "babel-polyfill";
 
 /*APP*/
