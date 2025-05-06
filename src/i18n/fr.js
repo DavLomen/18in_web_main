@@ -765,8 +765,8 @@ export default {
     "Veuillez consulter le service client en ligne 7x24 pour plus de détails. "
   ],
   "power": [
-    "Marché des systèmes d'énergie renouvelable",
-    "Les systèmes d'énergie renouvelable All4 sont des technologies et des infrastructures qui utilisent des sources d'énergie renouvelables telles que l'énergie solaire, éolienne et hydroélectrique pour alimenter les opérations d'extraction.\n"
+    "Contrat d'exploitation minière en nuage d'énergie verte",
+      "ALL4 Mining utilise l'énergie verte telle que l'énergie solaire, l'énergie éolienne et l'énergie hydraulique comme énergie pour le cloud mining, ce qui rend le cloud mining plus sobre en carbone et plus respectueux de l'environnement."
   ],
   "aboutf": [
     "Membres actifs",
@@ -894,7 +894,7 @@ export default {
     "Toutes les demandes de retrait seront automatiquement traitées par le système dans les cinq minutes.",
     "100% de sécurité monétaire",
     "La plupart des fonds sont stockés en toute sécurité dans des portefeuilles froids hors ligne. ",
-    "Équipe d'experts",
+    "Simple et facile à comprendre",
     "Notre plateforme offre un support d'investissement dans le cloud Mining pour tout le monde, même si vous êtes un débutant, vous pouvez rapidement démarrer et en bénéficier.",
     "Écoles écologique",
     "Nos mineurs et nos systèmes de refroidissement sont alimentés par les meilleurs panneaux solaires monocristallins ainsi respectueux de l'environnement et très rentables."

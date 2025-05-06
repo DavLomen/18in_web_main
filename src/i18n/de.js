@@ -765,8 +765,8 @@ export default {
     "Bitte wenden Sie sich an 7x24 Online -Kundendienst für Details. "
   ],
   "power": [
-    "Markt für erneuerbare Energiensysteme",
-    "All4 Mining Renewable Energy Systems sind Technologien und Infrastrukturen, die erneuerbare Energiequellen wie Solar-, Wind- und Wasserkraftleistung für die Leistungsabbauoperationen verwenden.\n"
+    "Green Energy Cloud Mining-Vertrag",
+    "ALL4 Mining nutzt grüne Energie wie Solarenergie, Windenergie und Wasserkraft als Antrieb für das Cloud-Mining, wodurch das Cloud-Mining kohlenstoffärmer und umweltfreundlicher wird."
   ],
   "aboutf": [
     "Aktive Mitglieder",
@@ -894,7 +894,7 @@ export default {
     "Alle Auszahlungsanfragen werden innerhalb von fünf Minuten automatisch vom System bearbeitet.",
     "100% Geldsicherheit",
     "Die meisten Mittel werden sicher in Offline -Kaltbriefen aufbewahrt. ",
-    "Expertenteam",
+    "Einfach und leicht verständlich",
     "Unsere Plattform bietet Cloud Mining Investment -Support für alle, auch wenn Sie Anfänger sind, können Sie schnell beginnen und davon profitieren.",
     "Umweltfreundlicher Bergbau",
     "Unsere Bergleute und Kühlsysteme werden von den besten monokristallinen Sonnenkollektoren angetrieben, die so umweltfreundlich und sehr profitabel."

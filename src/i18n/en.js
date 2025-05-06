@@ -765,8 +765,8 @@ export default {
     "Please consult 7x24 online customer service for details. The final explanation belongs to ALL4Mining."
   ],
   "power": [
-    "Mining Renewable Energy Systems Market",
-    "ALL4 Mining Renewable Energy Systems are technologies and infrastructure that use renewable energy sources such as solar, wind and hydroelectric power to power mining operations.\n"
+    "Green Energy Cloud Mining Contract",
+    "ALL4 mining uses green energy such as solar energy, wind energy and hydropower as the power for cloud mining, making cloud mining lower carbon and environmentally friendly."
   ],
   "aboutf": [
     "Active Members",
@@ -894,7 +894,7 @@ export default {
     "All withdrawal requests will be automatically processed by the system within five minutes.",
     "100% Money Security",
     "Most funds are safely stored in offline, cold wallets. Enhanced security protocols like McAfee® SECURE and Cloudflare® SECURE are also in place to ensure maximum protection.",
-    "Expert team",
+    "Simple and easy to understand",
     "Our platform offers cloud mining investment support for everyone, even if you're a beginner, you can quickly get started and benefit from it.",
     "Eco-friendly mining",
     "Our miners and cooling systems are powered by the best monocrystalline solar panels thus environment-friendly and very profitable."

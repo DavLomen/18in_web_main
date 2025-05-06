@@ -765,8 +765,8 @@ export default {
     "Consulte el servicio al cliente en línea 7x24 para más detalles. "
   ],
   "power": [
-    "Mercado de sistemas de energía renovable minera",
-    "Los sistemas de energía renovable de Minería All4 son tecnologías e infraestructura que utilizan fuentes de energía renovable como energía solar, eólica e hidroeléctrica para alimentar las operaciones de minería.\n"
+    "Contrato de minería en la nube de energía verde",
+      "ALL4 Mining utiliza energía verde, como energía solar, energía eólica y energía hidroeléctrica, como energía para la minería en la nube, lo que hace que la minería en la nube sea más baja en carbono y respetuosa con el medio ambiente."
   ],
   "aboutf": [
     "Miembros activos",
@@ -894,7 +894,7 @@ export default {
     "El sistema procesará automáticamente todas las solicitudes de retiro en cinco minutos.",
     "100% de seguridad monetaria",
     "La mayoría de los fondos se almacenan de forma segura en billeteras frías fuera de línea. ",
-    "Equipo de expertos",
+    "Sencillo y fácil de entender",
     "Nuestra plataforma ofrece soporte de inversión minera en la nube para todos, incluso si usted es un principiante, puede comenzar rápidamente y beneficiarse de ella.",
     "Minería ecológica",
     "Nuestros mineros y sistemas de enfriamiento están impulsados ​​por los mejores paneles solares monocristalinos, así amigables con el medio ambiente y muy rentables."
