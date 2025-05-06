@@ -40,6 +40,10 @@
     font-size: 2.3rem !important;
     font-weight: 700 !important;
   }
+  .font-title-lg{
+    font-size: 4.6rem !important;
+    font-weight: 700 !important;
+  }
 
   .font-title-h1{
     font-size: 3.3rem !important;
@@ -53,6 +57,9 @@
   .el-content-label{
     font-size: 1.3rem !important;
     font-weight: 700 !important;
+  }
+  .el-content-text-lg{
+    font-size: 3rem !important;
   }
   .el-content-text-h1{
     font-size: 2rem !important;
@@ -132,6 +139,12 @@
   background: #fff;
 }
 
+.el-width-card{
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 15px;
+}
+
 .el_com_card_np{
   position: relative;
   padding:0;
@@ -167,6 +180,22 @@
   border: 1px solid #ccc;
 }
 
+.mt-20{
+  margin-top: 20px !important;
+}
+
+.mt-40{
+  margin-top: 40px !important;
+}
+
+.mb-20{
+  margin-bottom: 20px !important;
+}
+
+.mb-40{
+  margin-bottom: 40px !important;
+}
+
 .mtb-5{
     margin: 5px 0;
 }
@@ -179,4 +208,19 @@
 }
 .mlr-10{
     margin: 0 10px;
+}
+
+.option_button{
+    display: inline-block;
+    color: #FFFFFF;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 20px 35px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
 }

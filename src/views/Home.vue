@@ -98,6 +98,65 @@
             </div>
           </div>
         </div>
+        <!-- 新增收益用户数据 -->
+        <div class="mb-20 mt-20">
+          <div class="container el-mx-auto-90">
+            <div class="el-row">
+              <div class="el-col-xs-24 el-col-sm-24 el-col-md-12">
+                <div class="label font-title-lg">{{ $t("i18n.Home.banner.text1") }}</div>
+                <div class="option mt-40 data-flex" style="align-items: center;">
+                  <div class="left flex-1">
+                    <div class="option_button" style="background: #F7931A;">{{ $t("i18n.Home.banner.text2") }}</div>
+                  </div>
+                  <div class="right data-flex flex-1" style="align-items: center;">
+                    <img style="width: 80px; object-fit: cover;transform: rotate(90deg);" :src="`./static/image/homeBanner/arrow_anim.gif`" alt=""> 
+                    <div class="flex-1 font-intr el-content-label" style="text-align: center;">{{ $t("i18n.Home.banner.text3") }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="el-col-xs-24 el-col-sm-24 el-col-md-12" style="position: relative;">
+                <img :src="'./static/image/homeBanner/header_bg.png'"alt="" style="position: absolute; width: 100%; object-fit: contain;top:0;left: 0;z-index: -1;">
+                <div class="table el-width-card el-mx-auto-70">
+                  <div class="item data-flex" style="align-items: center;border-bottom: 1px solid #ebebeb; padding-bottom: 5px;">
+                    <div class="left flex-1">
+                      <div class="label el-content-text-lg mt-20 mb-20" style="color:#F7931A">
+                        <span>339 205.3</span>
+                        <span>TH/s</span>
+                      </div>
+                      <div class="el-content-text-h3 el-content-text-color">{{ $t("i18n.Home.banner.text4") }}</div>
+                    </div>
+                    <div class="right">
+                      <img style="width: 20px;object-fit: cover;" :src="`./static/image/homeBanner/header_cart.png`">
+                    </div>
+                  </div>
+                  <div class="item data-flex" style="align-items: center;border-bottom: 1px solid #ebebeb; padding-bottom: 5px;">
+                    <div class="left flex-1">
+                      <div class="label el-content-text-lg mt-20 mb-20" style="color:#F7931A">
+                        <span>527 315</span>
+                      </div>
+                      <div class="el-content-text-h3 el-content-text-color">{{ $t("i18n.Home.banner.text5") }}</div>
+                    </div>
+                    <div class="right">
+                      <img style="width: 20px;object-fit: cover;" :src="`./static/image/homeBanner/header_client.png`">
+                    </div>
+                  </div>
+                  <div class="item data-flex" style="align-items: center;border-bottom: 1px solid #ebebeb; padding-bottom: 5px;">
+                    <div class="left flex-1">
+                      <div class="label el-content-text-lg mt-20 mb-20" style="color:#F7931A">
+                        <span>311.404</span>
+                        <span>BTC</span>
+                      </div>
+                      <div class="el-content-text-h3 el-content-text-color">{{ $t("i18n.Home.banner.text5") }}</div>
+                    </div>
+                    <div class="right">
+                      <img style="width: 20px;object-fit: cover;" :src="`./static/image/homeBanner/header_partners.png`">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
         <div class="container box2" style="padding-top: 0 !important;">
           <div class="box-wrapper">
             <div class="box2-title">{{$t('home[4]')}}</div>

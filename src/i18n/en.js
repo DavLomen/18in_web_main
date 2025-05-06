@@ -1169,6 +1169,16 @@ export default {
   "cancel": "Cancel",
   "confirm": "Confirm",
   "i18n": {
+    "Home": {
+      "banner": {
+        "text1": "Buy a Mining Contract Now and Stay Ahead of Difficulty Decreases in 2024",
+        "text2": "START MINING",
+        "text3": "You Are One Step Away from Getting Results",
+        "text4": "Total volume of TH/s sold",
+        "text5": "Number of clients served",
+        "text6": "Affiliate rewards paid out",
+      },
+    },
     "aboutUs": {
       "platform": {
         "text1": "A Trusted Cloud Mining platform",
