@@ -1,95 +1,133 @@
 <template>
-  <div class="HomePage">
+  <div class="HomePage" style="overflow:hidden;">
     <Header></Header>
-    <div class="container" style="max-width: 1280px; margin-top: 80px;">
-      <div class="row">
-        <div class="row align-items-center" style="gap: 140px;">
-          <div class="col">
-            <div class="oglav">
-              <h1>{{$t('appDown[0]')}}</h1>
+    <div class="container" style="max-width: 1280px;">
+      <div class="box7">
+        <div class="box-wrapper">
+          <section namespace="referral_image" style="margin-bottom: 1rem;">
+            <div class="container">
+              <div class="image_main">
+                <img :src="'./static/image/apptop.jpg'">
+                <div class="white_image_effect"></div>
+              </div>
             </div>
-            <div class="feats">
-              <div class="feat">
-                <div class="headef">
-                  <img :src="'./static/image/appicon1.png'" class="screen" style="width: 40px;max-width: 100%;">
-                  <p>{{$t('appDown[3]')}}</p>
-                </div>
-                <div class="bodyf">
-                  <p>{{$t('appDown[4]')}}</p>
-                </div>
-              </div>
-              <div class="feat">
-                <div class="headef">
-                  <img :src="'./static/image/appicon2.png'" class="screen" style="width: 40px;max-width: 100%;">
-                  <p>{{$t('appDown[5]')}}</p>
-                </div>
-                <div class="bodyf">
-                  <p>{{$t('appDown[6]')}}</p>
-                </div>
-              </div>
-              <div class="d-flex" style="gap: 20px;">
-                <a href="javascript:;" @click="downloadApp('andriod')" target="blank_" class="block">
-                  <img style="width: 150px" :src="'./static/images/download/android.png?t=3'"></a>
-                <a @click="downloadApp('ios')" id="downloadappIos" target="blank_" class="mt-10 block">
-                  <img style="width: 150px" :src="'./static/images/download/iphone.png?t=3'"></a>
-              </div>
-              <!--              <div class="d-flex" style="gap: 20px;">-->
-              <!--                <a href="#">-->
-              <!--                  <img src="https://chart.googleapis.com/chart?chs=300x300&amp;cht=qr&amp;chl=https://arkmining.com/app&amp;choe=UTF-8" class="qr_app">-->
-              <!--                </a>-->
-              <!--              </div>-->
-            </div>
-          </div>
-          <div class="col d11">
-<!--            <div class="blockd"></div>-->
-            <img :src="'./static/image/screen1.png?t=3'" class="screen" style="width: 100%;max-width: 100%;min-width: 10rem;">
-          </div>
-
+          </section>
         </div>
       </div>
+      <div style="    display: flex;
+    padding:1rem 2rem;
+    justify-content: space-around;
+    max-width: 750px;
+    margin: 0 auto;">
+          <img :src="'./static/image/google.png'" @click="downloadApp('google')" style="height: 5rem;">
+          <img :src="'./static/image/ios.png'" @click="downloadApp('ios')" style="height: 5rem;margin-left: 1rem;">
+      </div>
+      <div style="    display: flex;
+    padding:1rem 2rem;
+    justify-content: space-around;
+    max-width: 750px;
+    margin: 0 auto;">
+          <img :src="'./static/image/andriod.png'" @click="downloadApp('andriod')" style="height: 5rem;">
+          <img :src="'./static/image/start.png'" @click="$router.push('/login')" style="height: 5rem;margin-left: 1rem;">
+      </div>
     </div>
-    <div class="container" style="max-width: 1280px; margin-top: 150px; margin-bottom: 100px;">
-      <div class="row">
-        <div class="row align-items-center" style="gap: 140px;">
-          <div class="col d11 dr2">
-            <!--            <div class="blockd b2s"></div>-->
-            <img :src="'./static/image/screen2.png?t=3'" class="screen" style="width: 100%;">
-          </div>
-          <div class="col">
-            <div class="oglav og2">
-              <h1>{{$t('appdown1[0]')}}</h1>
-            </div>
-            <div class="feats f2">
-              <div class="feat">
-                <div class="headef">
-                  <img :src="'./static/image/appicon3.png'" class="screen" style="width: 40px;max-width: 100%;">
-                  <p>{{$t('appdown1[1]')}}</p>
-                </div>
-                <div class="bodyf">
-                  <p>{{$t('appdown1[2]')}}</p>
-                </div>
-              </div>
-              <div class="feat">
-                <div class="headef">
-                  <img :src="'./static/image/appicon4.png'" class="screen" style="width: 40px;max-width: 100%;">
-                  <p>{{$t('appdown1[3]')}}</p>
-                </div>
-                <div class="bodyf">
-                  <p>{{$t('appdown1[4]')}}</p>
-                </div>
+      <div style="text-align: left;font-size: 2rem;margin: 0 auto;max-width: 750px;padding: 1rem">
+        <p>Real-time Quotes ，Trade at any time</p>
+        <p>Multiple protection，Asset Security</p>
 
-              </div>
-<!--              <div class="d-flex" style="gap: 20px;">-->
-<!--                <a href="#">-->
-<!--                  <img src="https://chart.googleapis.com/chart?chs=300x300&amp;cht=qr&amp;chl=https://arkmining.com/app&amp;choe=UTF-8" class="qr_app">-->
-<!--                </a>-->
+        <p>Trade Safely and Securely</p>
+        <p>Anytime. Anywhere.</p>
+
+        <p>download-page-mobile-title. Become a better investor on the go, right in the app</p>
+      </div>
+<!--      <div class="row">-->
+<!--        <div class="row align-items-center" style="gap: 140px;">-->
+<!--          <div class="col">-->
+<!--            <div class="oglav">-->
+<!--              <h1>{{$t('appDown[0]')}}</h1>-->
+<!--            </div>-->
+<!--            <div class="feats">-->
+<!--              <div class="feat">-->
+<!--                <div class="headef">-->
+<!--                  <img :src="'./static/image/appicon1.png'" class="screen" style="width: 40px;max-width: 100%;">-->
+<!--                  <p>{{$t('appDown[3]')}}</p>-->
+<!--                </div>-->
+<!--                <div class="bodyf">-->
+<!--                  <p>{{$t('appDown[4]')}}</p>-->
+<!--                </div>-->
 <!--              </div>-->
-            </div>
-          </div>
+<!--              <div class="feat">-->
+<!--                <div class="headef">-->
+<!--                  <img :src="'./static/image/appicon2.png'" class="screen" style="width: 40px;max-width: 100%;">-->
+<!--                  <p>{{$t('appDown[5]')}}</p>-->
+<!--                </div>-->
+<!--                <div class="bodyf">-->
+<!--                  <p>{{$t('appDown[6]')}}</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="d-flex" style="gap: 20px;">-->
+<!--                <a href="javascript:;" @click="downloadApp('andriod')" target="blank_" class="block">-->
+<!--                  <img style="width: 150px" :src="'./static/images/download/android.png?t=3'"></a>-->
+<!--                <a @click="downloadApp('ios')" id="downloadappIos" target="blank_" class="mt-10 block">-->
+<!--                  <img style="width: 150px" :src="'./static/images/download/iphone.png?t=3'"></a>-->
+<!--              </div>-->
+<!--              &lt;!&ndash;              <div class="d-flex" style="gap: 20px;">&ndash;&gt;-->
+<!--              &lt;!&ndash;                <a href="#">&ndash;&gt;-->
+<!--              &lt;!&ndash;                  <img src="https://chart.googleapis.com/chart?chs=300x300&amp;cht=qr&amp;chl=https://arkmining.com/app&amp;choe=UTF-8" class="qr_app">&ndash;&gt;-->
+<!--              &lt;!&ndash;                </a>&ndash;&gt;-->
+<!--              &lt;!&ndash;              </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col d11">-->
+<!--&lt;!&ndash;            <div class="blockd"></div>&ndash;&gt;-->
+<!--            <img :src="'./static/image/screen1.png?t=3'" class="screen" style="width: 100%;max-width: 100%;min-width: 10rem;">-->
+<!--          </div>-->
 
-        </div>
-      </div>
-    </div>
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="container" style="max-width: 1280px; margin-top: 150px; margin-bottom: 100px;">-->
+<!--      <div class="row">-->
+<!--        <div class="row align-items-center" style="gap: 140px;">-->
+<!--          <div class="col d11 dr2">-->
+<!--            &lt;!&ndash;            <div class="blockd b2s"></div>&ndash;&gt;-->
+<!--            <img :src="'./static/image/screen2.png?t=3'" class="screen" style="width: 100%;">-->
+<!--          </div>-->
+<!--          <div class="col">-->
+<!--            <div class="oglav og2">-->
+<!--              <h1>{{$t('appdown1[0]')}}</h1>-->
+<!--            </div>-->
+<!--            <div class="feats f2">-->
+<!--              <div class="feat">-->
+<!--                <div class="headef">-->
+<!--                  <img :src="'./static/image/appicon3.png'" class="screen" style="width: 40px;max-width: 100%;">-->
+<!--                  <p>{{$t('appdown1[1]')}}</p>-->
+<!--                </div>-->
+<!--                <div class="bodyf">-->
+<!--                  <p>{{$t('appdown1[2]')}}</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="feat">-->
+<!--                <div class="headef">-->
+<!--                  <img :src="'./static/image/appicon4.png'" class="screen" style="width: 40px;max-width: 100%;">-->
+<!--                  <p>{{$t('appdown1[3]')}}</p>-->
+<!--                </div>-->
+<!--                <div class="bodyf">-->
+<!--                  <p>{{$t('appdown1[4]')}}</p>-->
+<!--                </div>-->
+
+<!--              </div>-->
+<!--&lt;!&ndash;              <div class="d-flex" style="gap: 20px;">&ndash;&gt;-->
+<!--&lt;!&ndash;                <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <img src="https://chart.googleapis.com/chart?chs=300x300&amp;cht=qr&amp;chl=https://arkmining.com/app&amp;choe=UTF-8" class="qr_app">&ndash;&gt;-->
+<!--&lt;!&ndash;                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
     <Footer></Footer>
   </div>
 </template>
@@ -125,7 +163,10 @@
         {
           this.$Util.OpenUrl(this.InitData.setting.app_down_ios)
         }
-        else
+        else if(app=='google')
+        {
+          this.$Util.OpenUrl((this.InitData.setting.app_down_google || this.InitData.setting.app_down_android))
+        }else
         {
           this.$Util.OpenUrl(this.InitData.setting.app_down_android)
         }
@@ -255,4 +296,15 @@
   display: flex;
 
 }
+
+  .image_main {
+    width: 100%;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .image_main img {
+    width: 100%;
+    border-radius: 5px;
+  }
 </style>

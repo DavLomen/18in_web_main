@@ -268,7 +268,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: rgb(124 58 237)
+    background-color: #00bfff
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -308,7 +308,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(124 58 237) !important
+    background-color: #00bfff !important
   }
 
   .el-dropdown-menu__item {
@@ -318,7 +318,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(124 58 237) !important;
+    color: #00bfff !important;
     background-color: #fff9f0!important
   }
 
@@ -327,11 +327,11 @@
   }
 
   /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: rgb(124 58 237) !important*/
+  /*  background-color: #00bfff !important*/
   /*}*/
 
   /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: rgb(124 58 237) !important*/
+  /*  color: #00bfff !important*/
   /*}*/
 
   .el-message {
@@ -358,12 +358,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: rgb(124 58 237) ;
+    color: #00bfff ;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: rgb(124 58 237)
+    color: #00bfff
   }
 
   .lang-item {
@@ -448,12 +448,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(124 58 237)
+    color: #00bfff
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(124 58 237) !important;
-    border-color: rgb(124 58 237) !important
+    background-color: #00bfff !important;
+    border-color: #00bfff !important
   }
 
   .el-checkbox__label {
@@ -466,7 +466,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(124 58 237) !important
+    border-color: #00bfff !important
   }
 
   @media only screen and (min-width: 1024px) {
@@ -497,7 +497,7 @@
       font-weight: 700;
       color: #fff;
       word-wrap: break-word;
-      background-color: rgb(124 58 237)
+      background-color: #00bfff
     }
 
     .container .box .box-item .user-info {
@@ -564,7 +564,7 @@
       box-sizing: border-box;
       padding: 0 1.2rem;
       border-radius: 0 4px 4px 0;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer
     }
 
@@ -601,7 +601,7 @@
     .container .box .box-item .partner-list .cur-title .num {
       margin-left: 6px;
       font-size: 2rem;
-      color: rgb(124 58 237)
+      color: #00bfff
     }
 
     .container .box .box-item .partner-list .list-item {
@@ -641,7 +641,7 @@
     .container .c-table .tr:first-child {
       border-bottom: none!important;
       border-radius: 4px 4px 0 0;
-      background-color: rgb(124 58 237)
+      background-color: #00bfff
     }
 
     .container .c-table .tr:last-child {
@@ -725,7 +725,7 @@
       font-weight: 700;
       color: #fff;
       word-wrap: break-word;
-      background-color: rgb(124 58 237)
+      background-color: #00bfff
     }
 
     .container .box .box-item .user-info {
@@ -792,7 +792,7 @@
       box-sizing: border-box;
       padding: 0 1.2rem;
       border-radius: 0 4px 4px 0;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer
     }
 
@@ -829,7 +829,7 @@
     .container .box .box-item .partner-list .cur-title .num {
       margin-left: 5px;
       font-size: 1.8rem;
-      color: rgb(124 58 237)
+      color: #00bfff
     }
 
     .container .box .box-item .partner-list .list-item {
@@ -869,7 +869,7 @@
     .container .c-table .tr:first-child {
       border-bottom: none!important;
       border-radius: 4px 4px 0 0;
-      background-color: rgb(124 58 237)
+      background-color: #00bfff
     }
 
     .container .c-table .tr:last-child {

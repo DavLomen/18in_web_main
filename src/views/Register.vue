@@ -751,7 +751,7 @@ export default {
     }
 
     .container .form-box .form .login-link .link {
-      color: #9C27B0;
+      color: #00bfff;
       cursor: pointer
     }
 
@@ -799,7 +799,7 @@ export default {
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(110deg, #9C27B0, #8647af 59%, #6c4982);
+      background-image: linear-gradient(110deg, #0d6efd, #409eff 59%, #fff);
       cursor: pointer
     }
   }
@@ -847,7 +847,7 @@ export default {
     }
 
     .container .form-box .form .login-link .link {
-      color: #9C27B0;
+      color: #00bfff;
       cursor: pointer
     }
 
@@ -894,7 +894,7 @@ export default {
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(110deg, #9C27B0, #8647af 59%, #6c4982);
+      background-image: linear-gradient(110deg, #0d6efd, #409eff 59%, #fff);
       cursor: pointer
     }
   }

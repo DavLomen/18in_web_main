@@ -23,17 +23,25 @@
 <!--      </router-link>-->
     </div>
     <div class="mobile-bottom-tabs">
-      <div @click="$router.push('/')" :class="'mobile-tab '+(footIndex==0?'active':'')"><i class="el-icon-house"></i>
+      <div @click="$router.push('/')" :class="'mobile-tab '+(footIndex==0?'active':'')">
+        <img :src="`./static/image/f_index_select.png`" style="height: 2rem;" v-if="footIndex==0">
+        <img :src="`./static/image/f_index.png`" style="height: 2rem;" v-else>
         <div class="name">{{$t('head[0]')}}</div>
       </div>
-      <div @click="$router.push('/contract')" :class="'mobile-tab '+(footIndex==1?'active':'')"><i class="el-icon-files"></i>
+      <div @click="$router.push('/contract')" :class="'mobile-tab '+(footIndex==1?'active':'')">
+        <img :src="`./static/image/f_hy_select.png`" style="height: 2rem;" v-if="footIndex==1">
+        <img :src="`./static/image/f_hy.png`" style="height: 2rem;" v-else>
         <div class="name">{{$t('foot[2]')}}</div>
       </div>
-      <div @click="$router.push('/affiliate')" :class="'mobile-tab '+(footIndex==2?'active':'')"><i class="el-icon-office-building"></i>
-        <div class="name">{{$t('foot[5]')}}</div>
-      </div>
-      <div @click="$router.push('/dashboard')" :class="'mobile-tab '+(footIndex==3?'active':'')"><i class="el-icon-user"></i>
+      <div @click="$router.push('/dashboard')" :class="'mobile-tab '+(footIndex==3?'active':'')">
+        <img :src="`./static/image/f_dash_select.png`" style="height: 2rem;" v-if="footIndex==3">
+        <img :src="`./static/image/f_dash.png`" style="height: 2rem;" v-else>
         <div class="name">{{$t('head[4]')}}</div>
+      </div>
+      <div @click="$router.push('/affiliate')" :class="'mobile-tab '+(footIndex==2?'active':'')">
+        <img :src="`./static/image/f_re_select.png`" style="height: 2rem;" v-if="footIndex==2">
+        <img :src="`./static/image/f_re.png`" style="height: 2rem;" v-else>
+        <div class="name">{{$t('foot[5]')}}</div>
       </div>
     </div>
 	</div>

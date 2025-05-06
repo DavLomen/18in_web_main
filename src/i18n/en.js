@@ -976,5 +976,8 @@ export default {
       "text11": "Expert Team",
       "text12": "Our mining team consists of professionals from the blockchain industry and IT engineers, ensuring that our team possesses the necessary knowledge and skills to meet your needs.",
     }
-  }
+  },
+  "adv":[
+    "Advantages of Cryptocurrency"
+  ],
 }

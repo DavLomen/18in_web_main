@@ -7,7 +7,7 @@
             <img :src="'./static/image/dashboard.png?t=2'" style="height: 50px;" alt="footer logo">
           </a>
           <p> {{$t('foot[0]')}}</p>
-          <a  class="button button-primary" style="max-width: 225px; margin: 32px 0;background-color:#7c3aed;border: none;" href="javascript:;" @click="$router.push('/register')">{{$t('head[2]')}}</a>
+          <a  class="button button-primary" style="max-width: 225px; margin: 32px 0;background-color:#00bfff;border: none;" href="javascript:;" @click="$router.push('/register')">{{$t('head[2]')}}</a>
         </div>
         <div class="footer-col" style="text-transform: uppercase;">
           <div style="font-weight: bolder;font-size: 20px">{{$t('foot[1]')}} </div>
@@ -26,7 +26,8 @@
             <li id="menu-item-781" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-781">
               <a href="mailto:info@paladinmining.com" class="link-item">{{$t('foot[7]')}}</a>
             </li>
-<!--            <li id="menu-item-770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-770"><a href="javascript:;">Sitemap</a></li>-->
+            <li id="menu-item-770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-770">
+              <a href="javascript:;" @click="$router.push('/article/adv/detail')">{{$t('adv[0]')}}</a></li>
           </ul></nav> </div>
         <div class="footer-col">
 <!--          <div class="mark-wrapper">-->
@@ -110,10 +111,10 @@
             <!--              <img :src="'./static/images/google-play-1.svg'" alt="">-->
             <!--            </a>-->
             <a href="javascript:;" @click="downloadApp('andriod')" target="_blank" rel="nofollow external noopener noreferrer">
-              <img :src="'./static/images/download/android.png?t=3'" alt="" style="height: 40px">
+              <img :src="'./static/image/andriod.png'" alt="" style="height: 40px">
             </a>
             <a href="javascript:;" @click="downloadApp('ios')" target="_blank" rel="nofollow external noopener noreferrer">
-              <img :src="'./static/images/download/iphone.png?t=3'" alt="" style="height: 40px">
+              <img :src="'./static/image/ios.png'" alt="" style="height: 40px">
             </a>
           </div>
         </div>

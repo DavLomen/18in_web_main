@@ -69,7 +69,7 @@
 /*}*/
 /*::-webkit-scrollbar-thumb {*/
 /*  border-radius:0;*/
-/*  background-color:rgb(124, 58, 237)*/
+/*  background-color:#00bfff*/
 /*}*/
 .slide-enter-active,.slide-leave-active {
   transition:all .2s ease
@@ -99,7 +99,7 @@ input[type=number] {
   -moz-appearance:textfield
 }
 .el-carousel__indicators--outside button {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-dropdown-menu__item {
   font-size:1.5rem;
@@ -107,17 +107,17 @@ input[type=number] {
   font-family:myFont
 }
 .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-  color:rgb(124, 58, 237) !important;
+  color:#00bfff !important;
   background-color:#fff9f0 !important
 }
 .el-pager li {
   font-family:myFont
 }
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-pagination.is-background .el-pager li:not(.active):hover {
-  color:rgb(124, 58, 237) !important
+  color:#00bfff !important
 }
 .el-message {
   font-size:1.6rem
@@ -138,11 +138,11 @@ input[type=number] {
   font-size:1.4rem !important
 }
 .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-  color:rgb(124, 58, 237);
+  color:#00bfff;
   /*background-color:#fff9f0 !important*/
 }
 .el-menu-item:hover i,.el-submenu__title:hover i {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .lang-item {
   display:flex;
@@ -212,11 +212,11 @@ input[type=number] {
   font-family:myFont
 }
 .el-select-dropdown__item.selected {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color:rgb(124, 58, 237) !important;
-  border-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important;
+  border-color:#00bfff !important
 }
 .el-checkbox__label {
   font-size:1.5rem !important;
@@ -226,7 +226,7 @@ input[type=number] {
   color:#000 !important
 }
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color:rgb(124, 58, 237) !important
+  border-color:#00bfff !important
 }
 body,html {
   padding:0;
@@ -267,18 +267,19 @@ body,html {
     justify-content:center;
     align-items:center;
     height:inherit;
-    color:#666
+    color:#00BFFF;
   }
   #common-app .mobile-bottom-tabs .mobile-tab i {
     font-size:2rem
   }
   #common-app .mobile-bottom-tabs .mobile-tab .name {
-    margin-top:.4rem;
-    font-size:1.3rem;
-    white-space:nowrap
+    margin-top: .4rem;
+    font-size: 1.3rem;
+    white-space: nowrap;
+
   }
   #common-app .mobile-bottom-tabs .active {
-    color:#00BFFF;
+    color:#000;
     font-weight: bold;
   }
 }#app {
@@ -323,7 +324,7 @@ body,html {
 /*}*/
 /*::-webkit-scrollbar-thumb {*/
 /*  border-radius:0;*/
-/*  background-color:rgb(124, 58, 237)*/
+/*  background-color:#00bfff*/
 /*}*/
 .slide-enter-active,.slide-leave-active {
   transition:all .2s ease
@@ -353,7 +354,7 @@ input[type=number] {
   -moz-appearance:textfield
 }
 .el-carousel__indicators--outside button {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-dropdown-menu__item {
   font-size:1.5rem;
@@ -361,17 +362,17 @@ input[type=number] {
   font-family:myFont
 }
 .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-  color:rgb(124, 58, 237) !important;
+  color:#00bfff !important;
   background-color:#fff9f0 !important
 }
 .el-pager li {
   font-family:myFont
 }
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-pagination.is-background .el-pager li:not(.active):hover {
-  color:rgb(124, 58, 237) !important
+  color:#00bfff !important
 }
 .el-message {
   font-size:1.6rem
@@ -392,11 +393,11 @@ input[type=number] {
   font-size:1.4rem !important
 }
 .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-  color:rgb(124, 58, 237);
+  color:#00bfff;
   /*background-color:#fff9f0 !important*/
 }
 .el-menu-item:hover i,.el-submenu__title:hover i {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .lang-item {
   display:flex;
@@ -466,11 +467,11 @@ input[type=number] {
   font-family:myFont
 }
 .el-select-dropdown__item.selected {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color:rgb(124, 58, 237) !important;
-  border-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important;
+  border-color:#00bfff !important
 }
 .el-checkbox__label {
   font-size:1.5rem !important;
@@ -480,7 +481,7 @@ input[type=number] {
   color:#000 !important
 }
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color:rgb(124, 58, 237) !important
+  border-color:#00bfff !important
 }
 @media only screen and (min-width:1024px) {
   .app-wrapper {
@@ -509,7 +510,7 @@ input[type=number] {
 }
 ::-webkit-scrollbar-thumb {
   border-radius:0;
-  background-color:rgb(124, 58, 237)
+  background-color:#00bfff
 }
 .slide-enter-active,.slide-leave-active {
   transition:all .2s ease
@@ -539,7 +540,7 @@ input[type=number] {
   -moz-appearance:textfield
 }
 .el-carousel__indicators--outside button {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-dropdown-menu__item {
   font-size:1.5rem;
@@ -547,17 +548,17 @@ input[type=number] {
   font-family:myFont
 }
 .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-  color:rgb(124, 58, 237) !important;
+  color:#00bfff !important;
   background-color:#fff9f0 !important
 }
 .el-pager li {
   font-family:myFont
 }
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-pagination.is-background .el-pager li:not(.active):hover {
-  color:rgb(124, 58, 237) !important
+  color:#00bfff !important
 }
 .el-message {
   font-size:1.6rem
@@ -578,11 +579,11 @@ input[type=number] {
   font-size:1.4rem !important
 }
 .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-  color:rgb(124, 58, 237);
+  color:#00bfff;
   /*background-color:#fff9f0 !important*/
 }
 .el-menu-item:hover i,.el-submenu__title:hover i {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .lang-item {
   display:flex;
@@ -652,11 +653,11 @@ input[type=number] {
   font-family:myFont
 }
 .el-select-dropdown__item.selected {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color:rgb(124, 58, 237) !important;
-  border-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important;
+  border-color:#00bfff !important
 }
 .el-checkbox__label {
   font-size:1.5rem !important;
@@ -666,7 +667,7 @@ input[type=number] {
   color:#000 !important
 }
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color:rgb(124, 58, 237) !important
+  border-color:#00bfff !important
 }
 @media only screen and (min-width:1024px) {
   #app {
@@ -726,7 +727,7 @@ input[type=number] {
     max-width:100%;
     font-size:2.4rem;
     font-weight:700;
-    color:rgb(124, 58, 237);
+    color:#00bfff;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis
@@ -827,7 +828,7 @@ input[type=number] {
     line-height:110%;
     font-size:1.9rem;
     font-weight:700;
-    color:rgb(124, 58, 237);
+    color:#00bfff;
     word-wrap:break-word
   }
   #app .app-wrapper .page-header .right-icon {
@@ -884,7 +885,7 @@ input[type=number] {
   -moz-appearance:textfield
 }
 .el-carousel__indicators--outside button {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-dropdown-menu__item {
   font-size:1.5rem;
@@ -892,17 +893,17 @@ input[type=number] {
   font-family:myFont
 }
 .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-  color:rgb(124, 58, 237) !important;
+  color:#00bfff !important;
   background-color:#fff9f0 !important
 }
 .el-pager li {
   font-family:myFont
 }
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important
 }
 .el-pagination.is-background .el-pager li:not(.active):hover {
-  color:rgb(124, 58, 237) !important
+  color:#00bfff !important
 }
 .el-message {
   font-size:1.6rem
@@ -925,10 +926,10 @@ input[type=number] {
 }
 .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
   /*background: #1f2033 !important;*/
-  color: rgb(124, 58, 237);
+  color: #00bfff;
 }
 .el-menu-item:hover i,.el-submenu__title:hover i {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .lang-item {
   display:flex;
@@ -998,11 +999,11 @@ input[type=number] {
   font-family:myFont
 }
 .el-select-dropdown__item.selected {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color:rgb(124, 58, 237) !important;
-  border-color:rgb(124, 58, 237) !important
+  background-color:#00bfff !important;
+  border-color:#00bfff !important
 }
 .el-checkbox__label {
   font-size:1.5rem !important;
@@ -1012,7 +1013,7 @@ input[type=number] {
   color:#000 !important
 }
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color:rgb(124, 58, 237) !important
+  border-color:#00bfff !important
 }
 @media only screen and (min-width:1024px) {
   .notice-wrapper {
@@ -12872,7 +12873,7 @@ input[type=number] {
 }
 ::-webkit-scrollbar-thumb {
   border-radius:0;
-  background-color:rgb(124, 58, 237)
+  background-color:#00bfff
 }
 .slide-enter-active,.slide-leave-active {
   transition:all .2s ease
@@ -12902,7 +12903,7 @@ input[type=number] {
   -moz-appearance:textfield
 }
 .el-carousel__indicators--outside button {
-  background-color:rgb(124, 58, 237)!important
+  background-color:#00bfff!important
 }
 .el-dropdown-menu__item {
   font-size:1.5rem;
@@ -12910,17 +12911,17 @@ input[type=number] {
   font-family:myFont
 }
 .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-  color:rgb(124, 58, 237)!important;
+  color:#00bfff!important;
   background-color:#fff9f0!important
 }
 .el-pager li {
   font-family:myFont
 }
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color:rgb(124, 58, 237)!important
+  background-color:#00bfff!important
 }
 .el-pagination.is-background .el-pager li:not(.active):hover {
-  color:rgb(124, 58, 237)!important
+  color:#00bfff!important
 }
 .el-message {
   font-size:1.6rem
@@ -12942,11 +12943,11 @@ input[type=number] {
 }
 .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
   /*background: #fffee0 !important;*/
-  color: rgb(124, 58, 237);
+  color: #00bfff;
   border-radius: 10px;
 }
 .el-menu-item:hover i,.el-submenu__title:hover i {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .lang-item {
   display:flex;
@@ -13016,11 +13017,11 @@ input[type=number] {
   font-family:myFont
 }
 .el-select-dropdown__item.selected {
-  color:rgb(124, 58, 237)
+  color:#00bfff
 }
 .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color:rgb(124, 58, 237)!important;
-  border-color:rgb(124, 58, 237)!important
+  background-color:#00bfff!important;
+  border-color:#00bfff!important
 }
 .el-checkbox__label {
   font-size:1.5rem!important;
@@ -13030,7 +13031,7 @@ input[type=number] {
   color:#000!important
 }
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color:rgb(124, 58, 237)!important
+  border-color:#00bfff!important
 }
 @media only screen and (min-width:1024px) {
   .footer {
@@ -13283,7 +13284,7 @@ input[type=number] {
  }
 input[type="number"] {
 }.el-carousel__indicators--outside button {
-   background-color:rgb(124, 58, 237) !important;
+   background-color:#00bfff !important;
  }
 .el-dropdown-menu__item {
   font-size:1.5rem;
@@ -13291,17 +13292,17 @@ input[type="number"] {
   font-family:myFont;
 }
 .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-  color:rgb(124, 58, 237) !important;
+  color:#00bfff !important;
   background-color:rgb(255,249,240) !important;
 }
 .el-pager li {
   font-family:myFont;
 }
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color:rgb(124, 58, 237) !important;
+  background-color:#00bfff !important;
 }
 .el-pagination.is-background .el-pager li:not(.active):hover {
-  color:rgb(124, 58, 237) !important;
+  color:#00bfff !important;
 }
 .el-message {
   font-size:1.6rem;
@@ -13324,10 +13325,10 @@ input[type="number"] {
 }
 .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
   /*background: #fffee0 !important;*/
-  color: rgb(124, 58, 237);
+  color: #00bfff;
 }
 .el-menu-item:hover i,.el-submenu__title:hover i {
-  color:rgb(124, 58, 237);
+  color:#00bfff;
 }
 .lang-item {
   display:flex;
@@ -13397,11 +13398,11 @@ input[type="number"] {
   font-size:1.5rem !important;
 }
 .el-select-dropdown__item.selected {
-  color:rgb(124, 58, 237);
+  color:#00bfff;
 }
 .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color:rgb(124, 58, 237) !important;
-  border-color:rgb(124, 58, 237) !important;
+  background-color:#00bfff !important;
+  border-color:#00bfff !important;
 }
 .el-checkbox__label {
   color:rgb(0,0,0);
@@ -13411,7 +13412,7 @@ input[type="number"] {
   color:rgb(0,0,0) !important;
 }
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color:rgb(124, 58, 237) !important;
+  border-color:#00bfff !important;
 }
 @keyframes mymove-1409c966 {
   0% {
@@ -13518,7 +13519,7 @@ input[type="number"] {
     color:rgb(255,255,255);
     text-align:center;
     white-space:nowrap;
-    background-color:rgb(124, 58, 237);
+    background-color:#00bfff;
     cursor:pointer;
   }
   .container .cal-item .label {
@@ -13565,7 +13566,7 @@ input[type="number"] {
     box-sizing:border-box;
     padding:0px 1.2rem;
     border-radius:0px 4px 4px 0px;
-    background-color:rgb(124, 58, 237);
+    background-color:#00bfff;
     cursor:pointer;
   }
   .container .user-box .input-group .copy-btn i {
@@ -13671,7 +13672,7 @@ input[type="number"] {
     color:rgb(255,255,255);
     text-align:center;
     white-space:nowrap;
-    background-color:rgb(124, 58, 237);
+    background-color:#00bfff;
     cursor:pointer;
   }
   .container .cal-item .label {
@@ -13718,7 +13719,7 @@ input[type="number"] {
     box-sizing:border-box;
     padding:0px 1.2rem;
     border-radius:0px 4px 4px 0px;
-    background-color:rgb(124, 58, 237);
+    background-color:#00bfff;
     cursor:pointer;
   }
   .container .user-box .input-group .copy-btn i {
@@ -13879,7 +13880,7 @@ input[type="number"] {
     max-width: 3.8rem;
     height: 3.8rem;
     margin-left: 3rem;
-    background-color: #7c3aed
+    background-color: #00bfff
   }
 
   .container .box7 .faq-list .faq-item .faq-title .right-icon i {
@@ -13965,7 +13966,7 @@ input[type="number"] {
     max-width: 3.2rem;
     height: 3.2rem;
     margin-left: 1.5rem;
-    background-color:#7c3aed
+    background-color:#00bfff
   }
 
   .container .box7 .faq-list .faq-item .faq-title .right-icon i {
@@ -14009,7 +14010,7 @@ input[type="number"] {
 }
 
 .VuePagination .pagination .page-item.active .page-link {
-  background: linear-gradient(180deg, rgb(124 58 237) 0%, rgb(124 58 237) 100%);
+  background: #00bfff;
   color: #fff
 }
 
@@ -14160,10 +14161,10 @@ img, video {
 .from-red-600 {
   --tw-gradient-from: #dc2626 var(--tw-gradient-from-position) !important;
   --tw-gradient-to: rgba(220,38,38,0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: #dc2626, #7c3aed !important;
+  --tw-gradient-stops: #dc2626, #00bfff !important;
 }
 .to-violet-600 {
-  --tw-gradient-to: #7c3aed var(--tw-gradient-to-position) !important;
+  --tw-gradient-to: #00bfff var(--tw-gradient-to-position) !important;
 }
 .group {
   background: #000;

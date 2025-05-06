@@ -163,7 +163,7 @@
             <div class="td">{{item.pay_type}}</div>
             <div class="td">{{InitData.currency}}{{item.money}}</div>
             <div class="td">
-              <div class="status-tag" style="background: rgb(124 58 237) ;" v-if="item.status==3">{{item.status_desc}}</div>
+              <div class="status-tag" style="background: #00bfff ;" v-if="item.status==3">{{item.status_desc}}</div>
               <div class="status-tag" style="background: rgb(234, 84, 85);" v-else-if="item.status==-1">{{item.status_desc}}</div>
               <div class="status-tag" style="color:#000;" v-else>{{item.status_desc}}</div>
             </div>
@@ -669,7 +669,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: rgb(124 58 237) ;
+    background-color: #00bfff ;
   }
 
   .slide-enter-active, .slide-leave-active {
@@ -708,7 +708,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(124 58 237)  !important;
+    background-color: #00bfff  !important;
   }
 
   .el-dropdown-menu__item {
@@ -718,7 +718,7 @@
   }
 
   .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(124 58 237)  !important;
+    color: #00bfff  !important;
     background-color: rgb(255, 249, 240) !important;
   }
 
@@ -727,11 +727,11 @@
   }
 
   /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: rgb(124 58 237)  !important;*/
+  /*  background-color: #00bfff  !important;*/
   /*}*/
 
   /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: rgb(124 58 237)  !important;*/
+  /*  color: #00bfff  !important;*/
   /*}*/
 
   .el-message {
@@ -758,12 +758,12 @@
   }
 
   .el-menu-item.is-active, .el-menu-item:hover, .el-submenu__title:hover {
-    color: rgb(124 58 237) ;
+    color: #00bfff ;
     background-color: rgb(255, 249, 240) !important;
   }
 
   .el-menu-item:hover i, .el-submenu__title:hover i {
-    color: rgb(124 58 237) ;
+    color: #00bfff ;
   }
 
   .lang-item {
@@ -848,12 +848,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(124 58 237) ;
+    color: #00bfff ;
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(124 58 237)  !important;
-    border-color: rgb(124 58 237)  !important;
+    background-color: #00bfff  !important;
+    border-color: #00bfff  !important;
   }
 
   .el-checkbox__label {
@@ -866,7 +866,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(124 58 237)  !important;
+    border-color: #00bfff  !important;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -899,7 +899,7 @@
       width: 100%;
       font-size: 2rem;
       font-weight: 700;
-      color: rgb(124 58 237) ;
+      color: #00bfff ;
       word-break: break-all;
     }
 
@@ -963,7 +963,7 @@
       font-size: 1.5rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
     }
 
     .container .main .info-list {
@@ -1008,7 +1008,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, rgb(124 58 237)  0%, rgb(124 58 237)  100%);
+      background-image: linear-gradient(180deg, #00bfff  0%, #00bfff  100%);
       cursor: pointer;
     }
 
@@ -1077,7 +1077,7 @@
     .container .r-table .tr .td .el-icon-info {
       margin-left: 5px;
       font-size: 2.5rem;
-      color: rgb(124 58 237) ;
+      color: #00bfff ;
       white-space: nowrap;
       cursor: pointer;
     }
@@ -1090,7 +1090,7 @@
       max-width: 4.5rem;
       height: 3.5rem;
       border-radius: 4px;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer;
     }
 
@@ -1200,7 +1200,7 @@
       width: 100%;
       font-size: 1.8rem;
       font-weight: 700;
-      color: rgb(124 58 237) ;
+      color: #00bfff ;
       word-break: break-all;
     }
 
@@ -1264,7 +1264,7 @@
       font-size: 1.5rem;
       color: rgb(255, 255, 255);
       white-space: nowrap;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
     }
 
     .container .main .info-list {
@@ -1309,7 +1309,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, rgb(124 58 237)  0%, rgb(124 58 237)  100%);
+      background-image: linear-gradient(180deg, #00bfff  0%, #00bfff  100%);
       cursor: pointer;
     }
 
@@ -1379,7 +1379,7 @@
     .container .r-table .tr .td .el-icon-info {
       margin-top: 2px;
       font-size: 2.2rem;
-      color: rgb(124 58 237) ;
+      color: #00bfff ;
       white-space: nowrap;
       cursor: pointer;
     }
@@ -1392,7 +1392,7 @@
       max-width: 3.8rem;
       height: 2.8rem;
       border-radius: 4px;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer;
     }
 
@@ -1496,7 +1496,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: rgb(124 58 237) ;
+    background-color: #00bfff ;
   }
 
   .slide-enter-active, .slide-leave-active {
@@ -1535,7 +1535,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: rgb(124 58 237)  !important;
+    background-color: #00bfff  !important;
   }
 
   .el-dropdown-menu__item {
@@ -1545,7 +1545,7 @@
   }
 
   .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover {
-    color: rgb(124 58 237)  !important;
+    color: #00bfff  !important;
     background-color: rgb(255, 249, 240) !important;
   }
 
@@ -1554,11 +1554,11 @@
   }
 
   /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: rgb(124 58 237)  !important;*/
+  /*  background-color: #00bfff  !important;*/
   /*}*/
 
   /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: rgb(124 58 237)  !important;*/
+  /*  color: #00bfff  !important;*/
   /*}*/
 
   .el-message {
@@ -1585,12 +1585,12 @@
   }
 
   .el-menu-item.is-active, .el-menu-item:hover, .el-submenu__title:hover {
-    color: rgb(124 58 237) ;
+    color: #00bfff ;
     background-color: rgb(255, 249, 240) !important;
   }
 
   .el-menu-item:hover i, .el-submenu__title:hover i {
-    color: rgb(124 58 237) ;
+    color: #00bfff ;
   }
 
   .lang-item {
@@ -1675,12 +1675,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: rgb(124 58 237) ;
+    color: #00bfff ;
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: rgb(124 58 237)  !important;
-    border-color: rgb(124 58 237)  !important;
+    background-color: #00bfff  !important;
+    border-color: #00bfff  !important;
   }
 
   .el-checkbox__label {
@@ -1693,7 +1693,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: rgb(124 58 237)  !important;
+    border-color: #00bfff  !important;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -1802,7 +1802,7 @@
       box-sizing: border-box;
       padding: 0px 1.2rem;
       border-radius: 0px 4px 4px 0px;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer;
     }
 
@@ -1850,7 +1850,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, rgb(124 58 237)  0%, rgb(124 58 237)  100%);;
+      background-image: linear-gradient(180deg, #00bfff  0%, #00bfff  100%);;
       cursor: pointer;
     }
   }
@@ -1961,7 +1961,7 @@
       box-sizing: border-box;
       padding: 0px 1.2rem;
       border-radius: 0px 4px 4px 0px;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer;
     }
 
@@ -2008,7 +2008,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-image: linear-gradient(180deg, rgb(124 58 237)  0%, rgb(124 58 237)  100%);;
+      background-image: linear-gradient(180deg, #00bfff  0%, #00bfff  100%);;
       cursor: pointer;
     }
   }
@@ -2096,7 +2096,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer;
     }
   }
@@ -2184,7 +2184,7 @@
       color: rgb(255, 255, 255);
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(124 58 237) ;
+      background-color: #00bfff ;
       cursor: pointer;
     }
   }

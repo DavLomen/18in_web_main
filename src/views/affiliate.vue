@@ -6,51 +6,60 @@
         <div class="container">
           <div class="box7">
             <div class="image_main">
-<!--              <img :src="'./static/image/64ea25d8a58bf1693066712.png?t=1'">-->
-              <div class="white_image_effect"></div>
+              <img :src="'./static/image/affliatetop.png'">
+<!--              <div class="white_image_effect"></div>-->
             </div>
           </div>
         </div>
       </section>
-
-      <div class="box2">
-        <div class="box-wrapper">
-          <div class="box2-title">{{$t('affliliate[0]')}}</div>
-          <div class="tab-list">
-            <div class="tab-item"><img :src="'./static/image/aff1.png'"
-                                                          class="img">
-              <div class="line"></div>
-              <div class="title">{{$t('affliliate[1]')}}</div>
-              <div class="desc">
-                {{$t('affliliate[2]')}}
-              </div>
-            </div>
-            <div class="tab-item"><img :src="'./static/image/aff2.png'"
-                                                          class="img">
-              <div class="line"></div>
-              <div class="title">{{$t('affliliate[3]')}}</div>
-              <div class="desc">
-                {{$t('affliliate[4]')}}
-              </div>
-            </div>
-            <div class="tab-item"><img :src="'./static/image/aff3.png'"
-                                                          class="img">
-              <div class="line"></div>
-              <div class="title">{{$t('affliliate[5]')}}</div>
-              <div class="desc">
-                {{$t('affliliate[6]')}}
-              </div>
-            </div>
-            <div class="tab-item"><img :src="'./static/image/aff4.png'"
-                                                          class="img">
-              <div class="line"></div>
-              <div class="title">{{$t('affliliate[7]')}}</div>
-              <div class="desc">{{$t('affliliate[8]')}}
-              </div>
-            </div>
-          </div>
+      <div style="text-align: left;font-size: 2rem;margin: 0 auto;max-width: 750px;padding: 1rem">
+        <p>Register for a member account.</p>
+        <p>Open [Dashboard] --- [Referral] --- copy [your member link] and send it to your friends for registration, or share it on social media. Register and invest in contracts through your member link, and you will receive corresponding rewards. Start your journey to wealth.</p>
+      </div>
+      <div class="container">
+        <div class="box">
+          <div class="title">{{showInfo.title}}</div>
+          <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
         </div>
       </div>
+<!--      <div class="box2">-->
+<!--        <div class="box-wrapper">-->
+<!--          <div class="box2-title">{{$t('affliliate[0]')}}</div>-->
+<!--          <div class="tab-list">-->
+<!--            <div class="tab-item"><img :src="'./static/image/aff1.png'"-->
+<!--                                                          class="img">-->
+<!--              <div class="line"></div>-->
+<!--              <div class="title">{{$t('affliliate[1]')}}</div>-->
+<!--              <div class="desc">-->
+<!--                {{$t('affliliate[2]')}}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="tab-item"><img :src="'./static/image/aff2.png'"-->
+<!--                                                          class="img">-->
+<!--              <div class="line"></div>-->
+<!--              <div class="title">{{$t('affliliate[3]')}}</div>-->
+<!--              <div class="desc">-->
+<!--                {{$t('affliliate[4]')}}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="tab-item"><img :src="'./static/image/aff3.png'"-->
+<!--                                                          class="img">-->
+<!--              <div class="line"></div>-->
+<!--              <div class="title">{{$t('affliliate[5]')}}</div>-->
+<!--              <div class="desc">-->
+<!--                {{$t('affliliate[6]')}}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="tab-item"><img :src="'./static/image/aff4.png'"-->
+<!--                                                          class="img">-->
+<!--              <div class="line"></div>-->
+<!--              <div class="title">{{$t('affliliate[7]')}}</div>-->
+<!--              <div class="desc">{{$t('affliliate[8]')}}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <section namespace="referral-info">
         <div class="container">
@@ -92,6 +101,10 @@
     },
     data() {
       return {
+        showInfo:{
+          content:'',
+          title:''
+        }
       }
     },
 
@@ -100,6 +113,7 @@
     watch: {
     },
     created() {
+      this.getListData(17);
     },
     mounted() {
     },
@@ -110,6 +124,13 @@
 
     },
     methods: {
+      getListData(type){
+        this.$Model.noticeList({gropid: type, page_no: this.pageNo}, data => {
+          if (data.code == 1 && data.info.length>0) {
+            this.showInfo = data.info[0];
+          }
+        });
+      }
     }
   }
 </script>
@@ -168,27 +189,7 @@
     display: flex;
     justify-content: space-between;
   }
-  .box {
-    width: 100px;
-    position: absolute;
-    height: 90px;
-    background-color: #dd4f39;
-    border-top-left-radius: 10px;
-    transform: translateY(-30px);
-    left: 11px;
-    clip-path: polygon(94% 0%, 40% 61%, 1% 100%, 0 100%, 0 53%, 0% 0%);
-    padding-left: 16px;
-    padding-top: 18px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 28px;
-    color: #FFFFFF;
-  }
-  .box {
-    left: -9px;
-  }
+
   .item-3 h1 {
     font-family: 'Roboto';
     font-style: normal;
@@ -215,7 +216,6 @@
     border-radius: 10px;
     color: #FAF9F9;
     padding: 28px;
-    margin-top: 54px;
     font-size: 1.75rem;
   }
   .centered {
@@ -225,7 +225,7 @@
   .main-btnNew {
     display: inline-block;
     border-radius: 10px;
-    background: linear-gradient(90deg, #9C27B0, #673AB7);
+    background: #00bfff;
     padding: 14px 30px 14px 30px;
     text-align: center;
     color: #fff;
@@ -836,5 +836,85 @@
       background-color: #fbc241;
       cursor: pointer
     }
+  }
+  @media only screen and (min-width: 1024px) {
+    .container {
+      box-sizing: border-box;
+      padding: 8rem 3rem
+    }
+
+    .container .box {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .container .box .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box .title:after {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 16rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #FFEB3B, #FF9800)
+    }
+
+    .container .box .content {
+      width: 100%
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .container {
+      box-sizing: border-box;
+      padding: 3rem 1rem
+    }
+
+    .container .box {
+      width: 100%
+    }
+
+    .container .box .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 4.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box .title:after {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 10rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #FFEB3B, #FF9800)
+    }
+
+    .container .box .content {
+      width: 100%
+    }
+  }
+  .content img {
+    width: 100%;
   }
 </style>

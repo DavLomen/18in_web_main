@@ -61,7 +61,7 @@ export default {
     if(this.articleType=='hash'){
       this.getListData(13);
     }
-    if(this.articleType=='cryptocurrency'){
+    if(this.articleType=='adv'){
       this.getListData(18);
     }
   },

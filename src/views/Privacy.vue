@@ -5,9 +5,9 @@
       <section namespace="referral_image">
         <div class="container">
           <div class="image_main" style=" margin-top: 22px; height: 352px;">
-            <img v-if="articleType=='privacy'" :src="'./static/images/private.jpg'" style="height: 352px;">
-            <img v-if="articleType=='terms'" :src="'./static/images/term.jpg'" style="height: 352px;">
-            <div class="white_image_effect"></div>
+            <img v-if="articleType=='privacy'" :src="'./static/image/private.jpg'" style="height: 352px;">
+            <img v-if="articleType=='terms'" :src="'./static/image/term.jpg'" style="height: 352px;">
+<!--            <div class="white_image_effect"></div>-->
           </div>
         </div>
       </section>
@@ -422,7 +422,7 @@ export default {
   .main-btnNew {
     display: inline-block;
     border-radius: 10px;
-    background: linear-gradient(110deg, #9C27B0, #8647af 59%, #6c4982);
+    background: linear-gradient(110deg, #00BFFF, #00BFFF 59%, #00BFFF);
     padding: 14px 30px 14px 30px;
     text-align: center;
     color: #fff;

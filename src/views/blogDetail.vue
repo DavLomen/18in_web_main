@@ -4945,7 +4945,7 @@
     font-size: 2.75rem;
   }
   .sp_separator_bg, .contact-item, .blog-widget, .referral-section {
-    background-color: #F8F6FF;
+    background-color: #00bfff;
   }
   short-post{
     display: -ms-flexbox;

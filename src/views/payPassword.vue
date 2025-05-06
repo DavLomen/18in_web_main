@@ -419,7 +419,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background: rgb(124 58 237) ;
+      background: #00bfff ;
       cursor: pointer
     }
   }
@@ -489,7 +489,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background: rgb(124 58 237) ;
+      background: #00bfff ;
       cursor: pointer
     }
   }

@@ -9,7 +9,7 @@
             <section namespace="referral_image" style="margin-bottom: 1rem;">
               <div class="container">
                 <div class="image_main">
-                  <img :src="'./static/images/faqs.jpg'">
+                  <img :src="'./static/image/faqs.jpg'">
                   <div class="white_image_effect"></div>
                 </div>
               </div>
@@ -356,13 +356,13 @@
     width: 100%;
     border-radius: 5px;
   }
-  .white_image_effect {
-    width: 100%;
-    position: absolute;
-    height: 284px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
-    bottom: 0;
-  }
+  /*.white_image_effect {*/
+  /*  width: 100%;*/
+  /*  position: absolute;*/
+  /*  height: 284px;*/
+  /*  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);*/
+  /*  bottom: 0;*/
+  /*}*/
   .faq-content {
     color: #000000;
   }

@@ -1,163 +1,185 @@
 <template>
   <div style="color: #000;font-size: 16px;">
     <Header></Header>
+
+    <div class="app-wrapper">
+      <div class="box7">
+        <div class="box-wrapper">
+          <section namespace="referral_image" style="margin-bottom: 1rem;">
+            <div class="container">
+              <div class="image_main">
+                <img :src="'./static/image/abouttop.jpg'">
+                <div class="white_image_effect"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="container">
+        <div class="box">
+          <div class="title">{{showInfo.title}}</div>
+          <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="    color: #fff;font-size: 1.4rem"></div>
+        </div>
+      </div>
+    </div>
+
     <div style="color:#fff">
-      <div  class="container md:mt-24 mt-16">
-        <div  class="grid md:grid-cols-2 grid-cols-1 gap-4">
-          <div  class="flex justify-center items-center"><img
-                                                                                class="object-cover about-img"
-                                                                                :src="'./static/image/about-2.60fd0022.png'" alt="">
-          </div>
-          <div  class="about-style">
-            <div  class="text-left"><span class="section-title mb-2"
-                                                            >{{$t('about[0]')}}</span>
-              <h3 class="md:text-[30px] text-[26px] font-semibold mb-3" >{{$t('about[1]')}}</h3>
-              <p class="mt-5" >{{$t('about[2]')}}</p>
-              <p class="mt-5" >{{$t('about[3]')}}</p>
-              <p class="mt-5" >{{$t('about[4]')}}</p>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div  class="container md:mt-24 mt-16">
-        <div  class="grid grid-cols-1 text-center"><span
-                                                                           class="section-title mb-2">{{$t('say[0]')}}</span>
-          <h3  class="md:text-[30px] text-[26px] font-semibold mb-3"> {{$t('say[1]')}} </h3></div>
-        <div  class="w-full">
-          <div  class="md:col-span-5 relative">
-            <div class="tns-outer" id="tns1-ow">
-              <div id="tns1-mw" class="tns-ovh">
-                <div class="tns-inner" id="tns1-iw">
-                  <vue-tiny-slider v-bind="tinySliderOptions">
-                    <!--                <div class="tiny-slide ">-->
-                    <!--                  <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">-->
-                    <!--                    <div class="rating mb-5"></div>-->
-                    <!--                    <div class="mb-4"><p> Reliable and Steady </p>-->
-                    <!--                      <p> Bsvcloud provides consistent returns. No issues with withdrawals, and everything works-->
-                    <!--                        as promised. </p></div>-->
-                    <!--                    <div class="flex items-center gap-2"><img :src="'./static/image/1.dfd8cdbb.png'"-->
-                    <!--                                                              class="rounded-full size-12" alt="user">-->
-                    <!--                      <div class=""><p class="text-[15px] font-medium text-white m-0">Benedict Louis</p></div>-->
-                    <!--                    </div>-->
-                    <!--                  </div>-->
-                    <!--                </div>-->
-                    <div class="tiny-slide tns-item tns-slide-active" id="tns2-item0">
-                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">
-                        <div class="rating mb-5"></div>
-                        <div class="mb-4"><p> {{$t('say[2]')}} </p>
-                          <p> {{$t('say[3]')}} </p></div>
-                        <div class="flex items-center gap-2"><img :src="'./static/image/1.dfd8cdbb.png'" class="rounded-full size-12"
-                                                                  alt="user">
-                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[4]')}}</p></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-item1" aria-hidden="true" tabindex="-1">
-                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">
-                        <div class="rating mb-5"></div>
-                        <div class="mb-4"><p> {{$t('say[5]')}} </p>
-                          <p> {{$t('say[6]')}} </p></div>
-                        <div class="flex items-center gap-2"><img :src="'./static/image/2.caef3def.png'" class="rounded-full size-12"
-                                                                  alt="user">
-                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[7]')}}</p></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-item2" aria-hidden="true" tabindex="-1">
-                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">
-                        <div class="rating mb-5"></div>
-                        <div class="mb-4"><p> {{$t('say[8]')}} </p>
-                          <p> {{$t('say[9]')}} </p>
-                        </div>
-                        <div class="flex items-center gap-2"><img :src="'./static/image/3.e5bf84e2.png'" class="rounded-full size-12"
-                                                                  alt="user">
-                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[10]')}}</p></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-item3" aria-hidden="true" tabindex="-1">
-                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">
-                        <div class="rating mb-5"></div>
-                        <div class="mb-4"><p>{{$t('say[11]')}}</p>
-                          <p> {{$t('say[12]')}} </p></div>
-                        <div class="flex items-center gap-2"><img :src="'./static/image/4.2b76d810.png'" class="rounded-full size-12"
-                                                                  alt="user">
-                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[13]')}}</p></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-item4" aria-hidden="true" tabindex="-1">
-                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">
-                        <div class="rating mb-5"></div>
-                        <div class="mb-4"><p>{{$t('say[14]')}}</p>
-                          <p> {{$t('say[15]')}} </p></div>
-                        <div class="flex items-center gap-2"><img :src="'./static/image/5.a423c4a8.png'" class="rounded-full size-12"
-                                                                  alt="user">
-                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[16]')}}</p></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-item5" aria-hidden="true" tabindex="-1">
-                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">
-                        <div class="rating mb-5"></div>
-                        <div class="mb-4"><p>{{$t('say[17]')}}</p>
-                          <p> {{$t('say[18]')}} </p></div>
-                        <div class="flex items-center gap-2"><img :src="'./static/image/6.6c1e9e4a.png'" class="rounded-full size-12"
-                                                                  alt="user">
-                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[19]')}}</p></div>
-                        </div>
-                      </div>
-                    </div>
-                  </vue-tiny-slider>
-                </div>
-              </div>
-            </div>
-            <div
-              class="overflow-hidden after:content-[''] after:absolute after:h-14 after:w-14 after:bg-violet-600/10 dark:after:bg-violet-600/30 after:-top-[50px] after:start-[30%] after:-z-1 after:rounded-lg after:animate-[spin_10s_linear_infinite]"></div>
-          </div>
-        </div>
-      </div>
-      <div  class="container md:mt-24 mt-16">
-        <div  class="grid grid-cols-1 text-center">
-          <div  class="flex items-center justify-center"><span
-                                                                                 class="section-title section-tag-title mb-2">{{$t('partners[0]')}}</span>
-          </div>
-        </div>
-        <div  class="w-full">
-          <div  class="md:col-span-5 relative">
-            <div class="tns-outer" id="tns2-ow">
-              <div id="tns2-mw" class="tns-ovh">
-                <vue-tiny-slider v-bind="tinySliderOptions1">
-                    <div class="tiny-slide tns-item" id="tns2-ite1m0" aria-hidden="true" tabindex="-1">
-                      <div class="relative"><img :src="'./static/image/111.bd3abf23.png'" class="w-full h-auto object-cover"
-                                                 style="aspect-ratio:900/480;" alt="user"></div>
-                    </div>
-                    <div class="tiny-slide tns-item tns-slide-active" id="tns2-ite1m1">
-                      <div class="relative"><img :src="'./static/image/222.3af3191b.png'" class="w-full h-auto object-cover"
-                                                 style="aspect-ratio:900/480;" alt="user"></div>
-                    </div>
-                    <div class="tiny-slide tns-item tns-slide-active" id="tns2-it1em2">
-                      <div class="relative"><img :src="'./static/image/333.fb0556c9.png'" class="w-full h-auto object-cover"
-                                                 style="aspect-ratio:900/480;" alt="user"></div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-it1em3" aria-hidden="true" tabindex="-1">
-                      <div class="relative"><img :src="'./static/image/444.c6c76b1d.png'" class="w-full h-auto object-cover"
-                                                 style="aspect-ratio:900/480;" alt="user"></div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-it1em4" aria-hidden="true" tabindex="-1">
-                      <div class="relative"><img :src="'./static/image/666.31759700.png'" class="w-full h-auto object-cover"
-                                                 style="aspect-ratio:900/480;" alt="user"></div>
-                    </div>
-                    <div class="tiny-slide tns-item" id="tns2-ite1m5" aria-hidden="true" tabindex="-1">
-                      <div class="relative"><img :src="'./static/image/555.6871b960.png'" class="w-full h-auto object-cover"
-                                                 style="aspect-ratio:900/480;" alt="user"></div>
-                    </div>
-                </vue-tiny-slider>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!--      <div  class="container md:mt-24 mt-16">-->
+<!--        <div  class="grid md:grid-cols-2 grid-cols-1 gap-4">-->
+<!--          <div  class="flex justify-center items-center"><img-->
+<!--                                                                                class="object-cover about-img"-->
+<!--                                                                                :src="'./static/image/about-2.60fd0022.png'" alt="">-->
+<!--          </div>-->
+<!--          <div  class="about-style">-->
+<!--            <div  class="text-left"><span class="section-title mb-2"-->
+<!--                                                            >{{$t('about[0]')}}</span>-->
+<!--              <h3 class="md:text-[30px] text-[26px] font-semibold mb-3" >{{$t('about[1]')}}</h3>-->
+<!--              <p class="mt-5" >{{$t('about[2]')}}</p>-->
+<!--              <p class="mt-5" >{{$t('about[3]')}}</p>-->
+<!--              <p class="mt-5" >{{$t('about[4]')}}</p>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div  class="container md:mt-24 mt-16">-->
+<!--        <div  class="grid grid-cols-1 text-center"><span-->
+<!--                                                                           class="section-title mb-2">{{$t('say[0]')}}</span>-->
+<!--          <h3  class="md:text-[30px] text-[26px] font-semibold mb-3"> {{$t('say[1]')}} </h3></div>-->
+<!--        <div  class="w-full">-->
+<!--          <div  class="md:col-span-5 relative">-->
+<!--            <div class="tns-outer" id="tns1-ow">-->
+<!--              <div id="tns1-mw" class="tns-ovh">-->
+<!--                <div class="tns-inner" id="tns1-iw">-->
+<!--                  <vue-tiny-slider v-bind="tinySliderOptions">-->
+<!--                    &lt;!&ndash;                <div class="tiny-slide ">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                  <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <div class="rating mb-5"></div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <div class="mb-4"><p> Reliable and Steady </p>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                      <p> Bsvcloud provides consistent returns. No issues with withdrawals, and everything works&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        as promised. </p></div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <div class="flex items-center gap-2"><img :src="'./static/image/1.dfd8cdbb.png'"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                                                              class="rounded-full size-12" alt="user">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                      <div class=""><p class="text-[15px] font-medium text-white m-0">Benedict Louis</p></div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                    <div class="tiny-slide tns-item tns-slide-active" id="tns2-item0">-->
+<!--                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">-->
+<!--                        <div class="rating mb-5"></div>-->
+<!--                        <div class="mb-4"><p> {{$t('say[2]')}} </p>-->
+<!--                          <p> {{$t('say[3]')}} </p></div>-->
+<!--                        <div class="flex items-center gap-2"><img :src="'./static/image/1.dfd8cdbb.png'" class="rounded-full size-12"-->
+<!--                                                                  alt="user">-->
+<!--                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[4]')}}</p></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-item1" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">-->
+<!--                        <div class="rating mb-5"></div>-->
+<!--                        <div class="mb-4"><p> {{$t('say[5]')}} </p>-->
+<!--                          <p> {{$t('say[6]')}} </p></div>-->
+<!--                        <div class="flex items-center gap-2"><img :src="'./static/image/2.caef3def.png'" class="rounded-full size-12"-->
+<!--                                                                  alt="user">-->
+<!--                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[7]')}}</p></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-item2" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">-->
+<!--                        <div class="rating mb-5"></div>-->
+<!--                        <div class="mb-4"><p> {{$t('say[8]')}} </p>-->
+<!--                          <p> {{$t('say[9]')}} </p>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center gap-2"><img :src="'./static/image/3.e5bf84e2.png'" class="rounded-full size-12"-->
+<!--                                                                  alt="user">-->
+<!--                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[10]')}}</p></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-item3" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">-->
+<!--                        <div class="rating mb-5"></div>-->
+<!--                        <div class="mb-4"><p>{{$t('say[11]')}}</p>-->
+<!--                          <p> {{$t('say[12]')}} </p></div>-->
+<!--                        <div class="flex items-center gap-2"><img :src="'./static/image/4.2b76d810.png'" class="rounded-full size-12"-->
+<!--                                                                  alt="user">-->
+<!--                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[13]')}}</p></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-item4" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">-->
+<!--                        <div class="rating mb-5"></div>-->
+<!--                        <div class="mb-4"><p>{{$t('say[14]')}}</p>-->
+<!--                          <p> {{$t('say[15]')}} </p></div>-->
+<!--                        <div class="flex items-center gap-2"><img :src="'./static/image/5.a423c4a8.png'" class="rounded-full size-12"-->
+<!--                                                                  alt="user">-->
+<!--                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[16]')}}</p></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-item5" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="m-2 p-3 bg-white dark:bg-slate-900 rounded-lg shadow dark:shadow-gray-800">-->
+<!--                        <div class="rating mb-5"></div>-->
+<!--                        <div class="mb-4"><p>{{$t('say[17]')}}</p>-->
+<!--                          <p> {{$t('say[18]')}} </p></div>-->
+<!--                        <div class="flex items-center gap-2"><img :src="'./static/image/6.6c1e9e4a.png'" class="rounded-full size-12"-->
+<!--                                                                  alt="user">-->
+<!--                          <div class=""><p class="text-[15px] font-medium text-white m-0">{{$t('say[19]')}}</p></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </vue-tiny-slider>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div-->
+<!--              class="overflow-hidden after:content-[''] after:absolute after:h-14 after:w-14 after:bg-violet-600/10 dark:after:bg-violet-600/30 after:-top-[50px] after:start-[30%] after:-z-1 after:rounded-lg after:animate-[spin_10s_linear_infinite]"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div  class="container md:mt-24 mt-16">-->
+<!--        <div  class="grid grid-cols-1 text-center">-->
+<!--          <div  class="flex items-center justify-center"><span-->
+<!--                                                                                 class="section-title section-tag-title mb-2">{{$t('partners[0]')}}</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div  class="w-full">-->
+<!--          <div  class="md:col-span-5 relative">-->
+<!--            <div class="tns-outer" id="tns2-ow">-->
+<!--              <div id="tns2-mw" class="tns-ovh">-->
+<!--                <vue-tiny-slider v-bind="tinySliderOptions1">-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-ite1m0" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="relative"><img :src="'./static/image/111.bd3abf23.png'" class="w-full h-auto object-cover"-->
+<!--                                                 style="aspect-ratio:900/480;" alt="user"></div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item tns-slide-active" id="tns2-ite1m1">-->
+<!--                      <div class="relative"><img :src="'./static/image/222.3af3191b.png'" class="w-full h-auto object-cover"-->
+<!--                                                 style="aspect-ratio:900/480;" alt="user"></div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item tns-slide-active" id="tns2-it1em2">-->
+<!--                      <div class="relative"><img :src="'./static/image/333.fb0556c9.png'" class="w-full h-auto object-cover"-->
+<!--                                                 style="aspect-ratio:900/480;" alt="user"></div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-it1em3" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="relative"><img :src="'./static/image/444.c6c76b1d.png'" class="w-full h-auto object-cover"-->
+<!--                                                 style="aspect-ratio:900/480;" alt="user"></div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-it1em4" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="relative"><img :src="'./static/image/666.31759700.png'" class="w-full h-auto object-cover"-->
+<!--                                                 style="aspect-ratio:900/480;" alt="user"></div>-->
+<!--                    </div>-->
+<!--                    <div class="tiny-slide tns-item" id="tns2-ite1m5" aria-hidden="true" tabindex="-1">-->
+<!--                      <div class="relative"><img :src="'./static/image/555.6871b960.png'" class="w-full h-auto object-cover"-->
+<!--                                                 style="aspect-ratio:900/480;" alt="user"></div>-->
+<!--                    </div>-->
+<!--                </vue-tiny-slider>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
       <section class="about-section sp_pt_60 sp_pb_120 overflow-hidden">
         <div class="container">
           <div class="row justify-content-center">
@@ -188,11 +210,11 @@
   </div>
 </template>
 <script>
-  import VueTinySlider from 'vue-tiny-slider';
+  // import VueTinySlider from 'vue-tiny-slider';
   export default {
     name: 'about',
     components: {
-      VueTinySlider
+      // VueTinySlider
     },
     data() {
       return {
@@ -6791,6 +6813,477 @@
   }
   .clr {
     clear: both;
+  }
+
+  .image_main {
+    width: 100%;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .image_main img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  /*.white_image_effect {*/
+  /*  width: 100%;*/
+  /*  position: absolute;*/
+  /*  height: 284px;*/
+  /*  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);*/
+  /*  bottom: 0;*/
+  /*}*/
+
+  @media only screen and (min-width: 1024px) {
+    .container {
+      width:100%
+    }
+
+    .container .box-wrapper {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .container .box1 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 4rem 1.5rem
+    }
+
+    .container .box1 .box-wrapper {
+      display: flex;
+      align-items: center
+    }
+
+    .container .box1 .box-wrapper .img {
+      min-width: 25rem;
+      max-width: 25rem
+    }
+
+    .container .box1 .box-wrapper .right {
+      width: 100%;
+      margin-left: 5rem
+    }
+
+    .container .box1 .box-wrapper .right .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 6rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      word-wrap: break-word
+    }
+
+    .container .box1 .box-wrapper .right .title:after {
+      position: absolute;
+      bottom: -2rem;
+      left: 0;
+      content: "";
+      width: 16rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #9C27B0, #673AB7)
+    }
+
+    .container .box1 .box-wrapper .right .desc {
+      width: 100%;
+      line-height: 160%;
+      font-size: 1.1rem;
+
+      word-wrap: break-word
+    }
+
+    .container .box2 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 1.5rem 4rem
+    }
+
+    .container .box2 .box2-title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box2 .box2-title:after {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 16rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #9C27B0, #673AB7)
+    }
+
+    .container .box2 .tab-list {
+      display: flex;
+      justify-content: space-between;
+      width: 100%
+    }
+
+    .container .box2 .tab-list .tab-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      box-sizing: border-box;
+      padding: 0 1.4rem
+    }
+
+    .container .box2 .tab-list .tab-item .img {
+      min-width: 7rem;
+      max-width:7rem;
+      height: 7rem;
+    }
+
+    .container .box2 .tab-list .tab-item .line {
+      width: 8rem;
+      height: 2px;
+      margin: 2rem 0;
+      border-radius: 2px;
+      background-image: linear-gradient(90deg, #9C27B0, #673AB7)
+    }
+
+    .container .box2 .tab-list .tab-item .title {
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box2 .tab-list .tab-item .desc {
+      width: 100%;
+      line-height: 160%;
+      font-size: 1.6rem;
+
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .join-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 25rem;
+      box-sizing: border-box;
+      padding: 0 3rem;
+      background-position: 100%;
+
+    }
+
+    .container .join-box .inner-area {
+      min-width: 35rem;
+      width: 60%
+    }
+
+    .container .join-box .inner-area .title {
+      width: 100%;
+      line-height: 110%;
+      font-size: 1.5rem;
+      font-weight: 700;
+
+      word-wrap: break-word
+    }
+
+    .container .join-box .inner-area .content {
+      width: 100%;
+      margin: 1.5rem 0 3rem;
+      line-height: 160%;
+      font-size: 1.1rem;
+
+      word-wrap: break-word
+    }
+
+    .container .join-box .inner-area .join-btn {
+      display: inline-block;
+      height: 4rem;
+      line-height: 4rem;
+      box-sizing: border-box;
+      padding: 0 2rem;
+      border-radius: .5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #1c2b46;
+      cursor: pointer
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .container {
+      width:100%
+    }
+
+    .container .box1 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 3rem 1rem
+    }
+
+    .container .box1 .box-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%
+    }
+
+    .container .box1 .box-wrapper .img {
+      width: 100%
+    }
+
+    .container .box1 .box-wrapper .right {
+      width: 100%;
+      margin-top: 1rem
+    }
+
+    .container .box1 .box-wrapper .right .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 4.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+
+      word-wrap: break-word
+    }
+
+    .container .box1 .box-wrapper .right .title:after {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      content: "";
+      width: 10rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #9C27B0, #673AB7)
+    }
+
+    .container .box1 .box-wrapper .right .desc {
+      width: 100%;
+      line-height: 160%;
+      font-size: 1.1rem;
+
+      word-wrap: break-word
+    }
+
+    .container .box2 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 0.5rem 1rem
+    }
+
+    .container .box2 .box2-title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 4.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box2 .box2-title:after {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 10rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #9C27B0, #673AB7)
+    }
+
+    .container .box2 .tab-list {
+      width: 100%
+    }
+
+    .container .box2 .tab-list .tab-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%
+    }
+
+    .container .box2 .tab-list .tab-item:not(:last-child) {
+      margin-bottom: 2rem
+    }
+
+    .container .box2 .tab-list .tab-item .img {
+      min-width: 12rem;
+      max-width: 12rem;
+      height: 12rem
+    }
+
+    .container .box2 .tab-list .tab-item .line {
+      width: 8rem;
+      height: 2px;
+      margin: 1.5rem 0;
+      border-radius: 2px;
+      background-image: linear-gradient(90deg, #9C27B0, #673AB7)
+    }
+
+    .container .box2 .tab-list .tab-item .title {
+      width: 100%;
+      margin-bottom: .8rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box2 .tab-list .tab-item .desc {
+      width: 100%;
+      line-height: 160%;
+      font-size: 1.3rem;
+
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .join-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 45rem;
+      box-sizing: border-box;
+      padding: 0 1rem;
+      background: none !important;
+    }
+
+    .container .join-box .inner-area {
+      width: 100%
+    }
+
+    .container .join-box .inner-area .title {
+      width: 100%;
+      line-height: 110%;
+      font-size: 1.2rem;
+      font-weight: 700;
+
+      word-wrap: break-word
+    }
+
+    .container .join-box .inner-area .content {
+      width: 100%;
+      margin: 1rem 0 2rem;
+      line-height: 160%;
+      font-size: 1rem;
+
+      word-wrap: break-word
+    }
+
+    .container .join-box .inner-area .join-btn {
+      display: inline-block;
+      height: 4rem;
+      line-height: 4rem;
+      box-sizing: border-box;
+      padding: 0 2rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #fbc241;
+      cursor: pointer
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .container {
+      box-sizing: border-box;
+      padding: 8rem 3rem
+    }
+
+    .container .box {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .container .box .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box .title:after {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 16rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #FFEB3B, #FF9800)
+    }
+
+    .container .box .content {
+      width: 100%
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .container {
+      box-sizing: border-box;
+      padding: 3rem 1rem
+    }
+
+    .container .box {
+      width: 100%
+    }
+
+    .container .box .title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 4.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      word-wrap: break-word
+    }
+
+    .container .box .title:after {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 10rem;
+      height: 4px;
+      border-radius: 4px;
+      background-image: linear-gradient(90deg, #FFEB3B, #FF9800)
+    }
+
+    .container .box .content {
+      width: 100%
+    }
+  }
+  .content img {
+    width: 100%;
   }
 </style>
 

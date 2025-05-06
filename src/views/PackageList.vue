@@ -91,7 +91,7 @@
 
             </div>
             <div class="progress">
-              <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc"  text-color="#000" color="linear-gradient(to right, rgb(124, 58, 237), rgb(124, 58, 237))"/>
+              <van-progress :percentage="item.progress" stroke-width="8" track-color="#ccc"  text-color="#fff" color="#00bfff"/>
             </div>
           </div>
         </div>
@@ -528,13 +528,13 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background: rgb(124 58 237) ;
+      background: #00bfff ;
       cursor: pointer
     }
 
     .container .product-list .product-item .right .bottom .right-actions .disabled-btn {
       color: #333!important;
-      background: rgb(124 58 237)
+      background: #00bfff
     }
   }
 
@@ -663,7 +663,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background: rgb(124 58 237);
+      background: #00bfff;
       cursor: pointer
     }
 
