@@ -5,7 +5,7 @@
       <div class="container">
         <div class="box">
           <div class="title">{{showInfo.title}}</div>
-          <div class="content imgWW" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem;overflow: hidden"></div>
+          <div class="content" v-html="showInfo.content.replace(/text-wrap: nowrap;/ig,'')" style="font-size: 1.4rem"></div>
         </div>
       </div>
     </div>
@@ -14,91 +14,85 @@
 </template>
 
 <script>
-export default {
-  name: 'Info',
-  components: {
-  },
-  props: ['articleType','articleId'],
-  data() {
-    return {
-      showInfo: {
-        title: '',
-        content:'',
-      },
-    }
-  },
-  computed: {
+  export default {
+    name: 'Info',
+    components: {
+    },
+    props: ['articleType','articleId'],
+    data() {
+      return {
+        showInfo: {
+          title: '',
+          content:'',
+        },
+      }
+    },
+    computed: {
 
-  },
-  watch: {
-    '$route'(to, from) {
-      this.$router.go(0)
-    }
-  },
-  created() {
-    let _this = this;
-    if(this.articleType=='video'){
-      this.showInfo = this.InitData.videovTutorial.find(item=>item.id==this.articleId)
-      setTimeout(function () {
-        document.getElementsByTagName('video')[0].play();
-      },1000)
-    }
-    if(this.articleType=='article'){
-      _this.$Model.noticeDetail({id:_this.articleId}, data => {
-        _this.showInfo.content = data.info.content;
-        _this.showInfo.title = data.info.title;
-      })
-    }
-    if(this.articleType=='privacy'){
-      this.getListData(11);
-    }
-    if(this.articleType=='about'){
-      this.getListData(6);
-    }
-    if(this.articleType=='terms'){
-      this.getListData(12);
-    }
-    if(this.articleType=='hash'){
-      this.getListData(13);
-    }
-    if(this.articleType=='cryptocurrency'){
-      this.getListData(18);
-    }
-    if(this.articleType=='web3'){
-      this.getListData(20);
-    }
-    // if(this.articleType=='service'){
-    //   this.getListData(20);
-    // }
-    if(this.articleType=='energy'){
-      this.getListData(21);
-    }
-    if(this.articleType=='bit'){
-      this.getListData(22);
-    }
-    if(this.articleType=='who'){
-      this.getListData(23);
-    }
-  },
-  mounted() {
+    },
+    watch: {
+      '$route'(to, from) {
+        this.$router.go(0)
+      }
+    },
+    created() {
+      let _this = this;
+      if(this.articleType=='video'){
+        this.showInfo = this.InitData.videovTutorial.find(item=>item.id==this.articleId)
+        setTimeout(function () {
+          document.getElementsByTagName('video')[0].play();
+        },1000)
+      }
+      if(this.articleType=='article'){
+        _this.$Model.noticeDetail({id:_this.articleId}, data => {
+          _this.showInfo.content = data.info.content;
+          _this.showInfo.title = data.info.title;
+        })
+      }
+      if(this.articleType=='privacy'){
+        this.getListData(11);
+      }
+      if(this.articleType=='about'){
+        this.getListData(6);
+      }
+      if(this.articleType=='terms'){
+        this.getListData(12);
+      }
+      if(this.articleType=='hash'){
+        this.getListData(13);
+      }
+      if(this.articleType=='cryptocurrency'){
+        this.getListData(18);
+      }
+      if(this.articleType=='web3'){
+        this.getListData(20);
+      }
+      if(this.articleType=='service'){
+        this.getListData(21);
+      }
+      if(this.articleType=='cookie'){
+        this.getListData(22);
+      }
+    },
+    mounted() {
 
-  },
-  activated() {
+    },
+    activated() {
 
-  },
-  destroyed() {
+    },
+    destroyed() {
 
-  },
-  methods: {
-    getListData(type){
-      this.$Model.noticeList({gropid: type, page_no: this.pageNo}, data => {
-        if (data.code == 1 && data.info.length>0) {
-          this.showInfo = data.info[0];
-        }
-      });
+    },
+    methods: {
+      getListData(type){
+        this.$Model.noticeList({gropid: type, page_no: this.pageNo}, data => {
+          if (data.code == 1 && data.info.length>0) {
+            this.showInfo = data.info[0];
+          }
+        });
+      }
     }
   }
-}
 </script>
 <style scoped>
   @media only screen and (min-width: 1024px) {
@@ -124,7 +118,7 @@ export default {
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #662282
+    background-color: #fbc241
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -164,7 +158,7 @@ export default {
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #662282!important
+    background-color: #fbc241!important
   }
 
   .el-dropdown-menu__item {
@@ -174,7 +168,7 @@ export default {
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #662282!important;
+    color: #fbc241!important;
     background-color: #fff9f0!important
   }
 
@@ -182,13 +176,13 @@ export default {
     font-family: myFont
   }
 
-  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: #662282!important*/
-  /*}*/
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #fbc241!important
+  }
 
-  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: #662282!important*/
-  /*}*/
+  .el-pagination.is-background .el-pager li:not(.active):hover {
+    color: #fbc241!important
+  }
 
   .el-message {
     font-size: 1.6rem
@@ -214,12 +208,12 @@ export default {
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #662282;
+    color: #fbc241;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #662282
+    color: #fbc241
   }
 
   .lang-item {
@@ -304,12 +298,12 @@ export default {
   }
 
   .el-select-dropdown__item.selected {
-    color: #662282
+    color: #fbc241
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #662282!important;
-    border-color: #662282!important
+    background-color: #fbc241!important;
+    border-color: #fbc241!important
   }
 
   .el-checkbox__label {
@@ -322,11 +316,12 @@ export default {
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #662282!important
+    border-color: #fbc241!important
   }
 
   @media only screen and (min-width: 1024px) {
     .container {
+      width:100%;
       box-sizing: border-box;
       padding: 8rem 3rem
     }
@@ -340,7 +335,7 @@ export default {
     .container .box .title {
       position: relative;
       width: 100%;
-      margin-bottom: 10rem;
+      margin-bottom: 4rem;
       font-size: 3rem;
       font-weight: 700;
       color: #000;
@@ -357,7 +352,7 @@ export default {
       width: 16rem;
       height: 4px;
       border-radius: 4px;
-      background-image: linear-gradient(90deg,#fe9500,#fade88)
+      background-image: linear-gradient(90deg, #1f1c17, #8897fa)
     }
 
     .container .box .content {
@@ -367,6 +362,7 @@ export default {
 
   @media only screen and (max-width: 1024px) {
     .container {
+      width:100%;
       box-sizing: border-box;
       padding: 3rem 1rem
     }
@@ -395,61 +391,23 @@ export default {
       width: 10rem;
       height: 4px;
       border-radius: 4px;
-      background-image: linear-gradient(90deg,#fe9500,#fade88)
+      background-image: linear-gradient(90deg, #1f1c17, #8897fa)
     }
 
     .container .box .content {
       width: 100%
     }
-
-    .imgWW img {
-      width: 100% !important;
-    }
-    .imgWW>>>img {
-      width: 100% !important;
-    }
-    .imgWW>>>p>>>img {
-      width: 100% !important;
-    }
-    .imgWW p img {
-      width: 100% !important;
-    }
-    .imgWW p span img {
-      width: 100% !important;
-    }
-    .imgWW >>>p >>>span>>> img {
-      width: 100% !important;
-    }
-
   }
-  .imgWW img {
-    width: 100% !important;
+  .content>>> img {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    display: block;
   }
-  .imgWW>>>img {
-    width: 100% !important;
+  .content>>> video {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    display: block;
   }
-  .imgWW>>>p>>>img {
-    width: 100% !important;
-  }
-  .imgWW p img {
-    width: 100% !important;
-  }
-  .imgWW p span img {
-    width: 100% !important;
-  }
-  .imgWW >>>p >>>span>>> img {
-    width: 100% !important;
-  }
-  /*.content video {*/
-  /*  width: 100%;*/
-  /*  max-width: 960px;*/
-  /*  display: block;*/
-  /*  margin: 0 auto;*/
-  /*}*/
-  /*.content >>> video {*/
-  /*  width: 100%;*/
-  /*  max-width: 960px;*/
-  /*  display: block;*/
-  /*  margin: 0 auto;*/
-  /*}*/
 </style>

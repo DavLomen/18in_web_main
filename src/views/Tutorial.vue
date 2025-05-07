@@ -2,19 +2,19 @@
   <div class="HomePage">
     <Header></Header>
     <div class="app-wrapper">
-<!--      <section class="page-banner">-->
-<!--        <div class="container">-->
-<!--          <div class="row justify-content-center">-->
-<!--            <div class="col-lg-6 text-center">-->
-<!--              <h2 class="title text-white">{{$t('foot[6]')}}</h2>-->
-<!--              <ul class="page-breadcrumb justify-content-center mt-2">-->
-<!--                <li><a href="javascript:;" @click="$router.push('/')">{{$t('head[0]')}}</a></li>-->
-<!--                <li>{{$t('foot[6]')}}</li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </section>-->
+      <section class="page-banner">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2 class="title text-white">{{$t('tutorial[0]')}}</h2>
+              <ul class="page-breadcrumb justify-content-center mt-2">
+                <li><a href="javascript:;" @click="$router.push('/')">{{$t('head[0]')}}</a></li>
+                <li>{{$t('tutorial[0]')}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="blog-section sp_pt_100 sp_pb_100" style="padding-top: 5rem;overflow: hidden;">
         <div class="container">
           <div class="row gy-4">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="blog-content">
                   <ul class="blog-meta mb-2">
-                    <!--                    <li><van-icon name="clock" class="fas fa-clock" color="#CD9F34"/>{{item.add_time}}</li>-->
+<!--                    <li><van-icon name="clock" class="fas fa-clock" color="#CD9F34"/>{{item.add_time}}</li>-->
                   </ul>
                   <h4 class="blog-title"><a href="javascript:;" @click="$router.push(`/article/video/${item.id}`)">{{item.title}}</a></h4>
                   <a href="javascript:;" class="blog-btn" @click="$router.push(`/article/video/${item.id}`)">
@@ -228,11 +228,11 @@
   }
 
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color:#1ab5ff!important;
+    background-color: #fbc241!important
   }
 
   .el-pagination.is-background .el-pager li:not(.active):hover {
-    color: #fff!important
+    color: #fbc241!important
   }
 
   .el-message {
@@ -2215,7 +2215,7 @@
   ==============================
   */
   .page-banner {
-    padding-top: 11.25rem;
+    padding-top: 1.25rem;
     padding-bottom: 3.75rem;
   }
 
@@ -3468,6 +3468,7 @@
     color: #000;
     text-decoration: none;
     font-size: 1.5rem;
+    height: 3.5rem;
   }
 
   .blog-meta {
@@ -3670,10 +3671,6 @@
 
   .contact-item .content .caption {
     color: #b3b3b3;
-  }
-
-  .map-area {
-    filter: grayscale(1);
   }
 
   .map-area iframe {
@@ -4835,9 +4832,9 @@
     color: #3b3b3b;
   }
   .pagination .page-item.active .page-link {
-    background-color: rgba(42, 234, 227, 0.47);
+    background-color: #F7C70B;
     color: #fff;
-    border-color: rgba(42, 234, 227, 0.47);
+    border-color: #F7C70B;
   }
   .row {
     --bs-gutter-x: 1.5rem;
@@ -4865,12 +4862,12 @@
       max-width: 1140px;
     }
   }
-  .container {
-    margin: 0 auto;
-  }
-  .page-banner {
-    background-color:#171717;
-  }
+.container {
+  margin: 0 auto;
+}
+.page-banner {
+  background-color:#171717;
+}
   .text-center {
     text-align: center!important;
   }

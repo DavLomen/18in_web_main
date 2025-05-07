@@ -1,5 +1,6 @@
 <template>
-	<div class="Body" id="common-app" >
+
+	<div class="Body" id="common-app" style="overflow-x: hidden;">
 <!--    <van-notice-bar-->
 <!--      style="position: absolute;left: 0;width: 100%;z-index: 99;"-->
 <!--      mode="closeable"-->
@@ -22,20 +23,50 @@
 <!--        {{$t('common[0]')}}-->
 <!--      </router-link>-->
     </div>
-    <div class="mobile-bottom-tabs">
-        <div @click="$router.push('/')" :class="'mobile-tab '+(footIndex==0?'active':'')"><i class="el-icon-house"></i>
-          <div class="name">{{$t('head[0]')}}</div>
-        </div>
-        <div @click="$router.push('/product')" :class="'mobile-tab '+(footIndex==1?'active':'')"><i class="el-icon-files"></i>
-          <div class="name">{{$t('foot[2]')}}</div>
-        </div>
-        <div @click="$router.push('/affiliate')" :class="'mobile-tab '+(footIndex==2?'active':'')"><i class="el-icon-office-building"></i>
-          <div class="name">{{$t('foot[5]')}}</div>
-        </div>
-        <div @click="$router.push('/dashboard')" :class="'mobile-tab '+(footIndex==3?'active':'')"><i class="el-icon-user"></i>
-          <div class="name">{{$t('head[4]')}}</div>
-        </div>
+    <div  class="footer-bar-wrap">
+      <div  id="footer-bar" class="footer-bar-5">
+        <a  id="fhome" href="javascript:;" @click="$router.push('/')" class="">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-home1"></use>
+          </svg>
+          <span  class="foot-bar-span">HOME</span></a>
+        <a  id="fplans" href="javascript:;" @click="$router.push('/contracts')" class="footer_iconfire">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-collections"></use>
+          </svg>
+          <span  class="foot-bar-span">CONTRACTS</span></a>
+        <a  href="javascript:;" @click="$router.push('/dashboard')"  class="router-link-active router-link-exact-active" id="fdashboard" aria-current="page">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-dashboard1"></use>
+          </svg>
+          <span  class="foot-bar-span">DASHBOARD</span></a>
+        <a  id="freferral"  href="javascript:;" @click="$router.push('/affiliate')" class="">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-affiliates"></use>
+          </svg>
+          <span  class="foot-bar-span">AFFILIATES</span></a>
+        <a  id="ffaqs" href="javascript:;" @click="$router.push('/FAQ')" class="">
+          <svg   class="svg-icon" aria-hidden="true">
+            <use  xlink:href="#icon-faq"></use>
+          </svg>
+          <span  class="foot-bar-span">FAQ</span></a>
+        <!---->
+        <!----></div>
     </div>
+<!--    <div class="mobile-bottom-tabs">-->
+<!--      <div @click="$router.push('/')" :class="'mobile-tab '+(footIndex==0?'active':'')"><i class="el-icon-house"></i>-->
+<!--        <div class="name">{{$t('head[0]')}}</div>-->
+<!--      </div>-->
+<!--      <div @click="$router.push('/product')" :class="'mobile-tab '+(footIndex==1?'active':'')"><i class="el-icon-files"></i>-->
+<!--        <div class="name">{{$t('foot[2]')}}</div>-->
+<!--      </div>-->
+<!--      <div @click="$router.push('/affiliate')" :class="'mobile-tab '+(footIndex==2?'active':'')"><i class="el-icon-office-building"></i>-->
+<!--        <div class="name">{{$t('foot[5]')}}</div>-->
+<!--      </div>-->
+<!--      <div @click="$router.push('/dashboard')" :class="'mobile-tab '+(footIndex==3?'active':'')"><i class="el-icon-user"></i>-->
+<!--        <div class="name">{{$t('head[4]')}}</div>-->
+<!--      </div>-->
+<!--    </div>-->
 	</div>
 
 </template>
@@ -115,7 +146,7 @@
         if (to.path == '/') {
           this.footIndex = 0;
         }
-        if (to.path == '/product') {
+        if (to.path == '/contracts') {
           this.footIndex = 1;
         }
         if (to.path == '/affiliate') {
@@ -142,7 +173,6 @@
 		},
 
 		mounted() {
-
 
 		},
 
@@ -183,4 +213,5 @@
 </script>
 
 <style scoped>
+
 </style>

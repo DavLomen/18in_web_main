@@ -20,6 +20,7 @@ import AR from './ar'
 import DE from './de'
 import RU from './ru'
 import FR from './fr'
+import ITL from './it'
 
 import zhCN from 'vant/lib/locale/lang/zh-CN'
 import zhTW from 'vant/lib/locale/lang/zh-TW'
@@ -28,7 +29,6 @@ import viVN from './vi'
 import thTH from './th'
 import idID from './id'
 import ydYD from './yd'
-import IT from './it'
 // import ydYD from 'vant/lib/locale/lang/en-US'
 import esES from 'vant/lib/locale/lang/es-ES'
 import jaJP from 'vant/lib/locale/lang/ja-JP'
@@ -109,9 +109,9 @@ switch (lang) {
   	Locale.use('ru-RU', RU)
   	break;
   case 'it':
-  	locale = 'it-IT'
-  	Locale.use('it-IT', IT)
-  	break;
+    locale = 'it-IT'
+    Locale.use('it-IT', ITL)
+    break;
 }
 
 Vue.use(VueI18n)
@@ -135,8 +135,9 @@ const i18n = new VueI18n({
     "fr-FR": FR,
     "ur-UR": UR,
     "ru-RU": RU,
-    "it-IT": IT,
-	}
+    "it-IT": ITL,
+
+  }
 })
 
 /*切換*/
@@ -212,9 +213,9 @@ export function SetLanguage(lang) {
     	Locale.use('ru-RU', RU)
     	break;
     case 'it-IT':
-    	localStorage['Language'] = 'it'
-    	Locale.use('it-IT', IT)
-    	break;
+      localStorage['Language'] = 'it'
+      Locale.use('it-IT', ITL)
+      break;
 	}
 }
 export default i18n

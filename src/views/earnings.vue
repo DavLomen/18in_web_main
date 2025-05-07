@@ -1,6 +1,6 @@
 <template>
   <div class="HomePage" id="app">
-    <UserHeader></UserHeader>
+    <Header></Header>
     <div class="app-wrapper" style="width: calc(100% - 25rem);">
       <div class="page-header">
         <div class="page-title">{{$t('package[4]')}}</div>
@@ -49,14 +49,13 @@
         </div>
       </div>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 <script>
-  import UserHeader from '@/components/UserHeader'
   export default {
     name: 'transaction',
     components: {
-      UserHeader
     },
     data() {
       return {
@@ -166,7 +165,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #662282
+    background-color: #fbc241
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -206,7 +205,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #662282!important
+    background-color: #fbc241!important
   }
 
   .el-dropdown-menu__item {
@@ -216,7 +215,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #662282!important;
+    color: #fbc241!important;
     background-color: #fff9f0!important
   }
 
@@ -224,13 +223,13 @@
     font-family: myFont
   }
 
-  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: #662282!important*/
-  /*}*/
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #fbc241!important
+  }
 
-  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: #662282!important*/
-  /*}*/
+  .el-pagination.is-background .el-pager li:not(.active):hover {
+    color: #fbc241!important
+  }
 
   .el-message {
     font-size: 1.6rem
@@ -256,12 +255,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #662282;
+    color: #fbc241;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #662282
+    color: #fbc241
   }
 
   .lang-item {
@@ -346,12 +345,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #662282
+    color: #fbc241
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #662282!important;
-    border-color: #662282!important
+    background-color: #fbc241!important;
+    border-color: #fbc241!important
   }
 
   .el-checkbox__label {
@@ -364,7 +363,7 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #662282!important
+    border-color: #fbc241!important
   }
 
   @media only screen and (min-width: 1024px) {
@@ -383,7 +382,7 @@
     .container .t-table .tr:first-child {
       border-bottom: none!important;
       border-radius: 4px 4px 0 0;
-      background-color: #662282
+      background-color: #fbc241
     }
 
     .container .t-table .tr:last-child {
@@ -457,7 +456,7 @@
     .container .t-table .tr:first-child {
       border-bottom: none!important;
       border-radius: 4px 4px 0 0;
-      background-color: #662282
+      background-color: #fbc241
     }
 
     .container .t-table .tr:last-child {

@@ -1,3 +1,4 @@
+import 'jquery'
 import Vue from 'vue'
 
 import App from '@/App.vue'
@@ -5,20 +6,25 @@ import App from '@/App.vue'
 import router from '@/router'
 
 import store from '@/store'
-import Vant,{Locale,ImagePreview,Lazyload} from 'vant'
+import Vant,{Locale,ImagePreview} from 'vant'
 import Model from '@/common/Model'
 import Dialog from '@/common/Dialog'
 import Util from '@/common/Util'
 import i18n,{SetLanguage} from './i18n'
-// import '@/assets/css/bootstrap.min.css'
 import 'vant/lib/index.css'
 import '@/assets/css/style.css'
-import '@/assets/css/common.css'
 import "babel-polyfill";
 
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
+// Vue.use(ElementUI);
 /*APP*/
 import Toasted from 'vue-toasted';
-Vue.use(Lazyload);
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+// Vue.use(ElementUI)
+
 Vue.use(Vant)
 Vue.use(Toasted)
 
@@ -57,24 +63,28 @@ Vue.component('Header', Header)
 //Model.GetLanguage()
 
 Model.GetBackData()
-// Model.HasNewMessage(data=>{
-//   localStorage.setItem("noReadNum",data.data);
-//   if (data.data == 1) {
-//     Dialog.Confirm(i18n.t('messageInfo[0]'), () => {
-//       router.push(`/message`)
-//     }, i18n.t('messageInfo[1]'));
-//   }
-// })
+Model.HasNewMessage(data=>{
+  localStorage.setItem("noReadNum",data.data);
+})
 
 router.beforeEach((to, from, next) => {
 
   document.body.scrollTop = 0
   // firefox
   document.documentElement.scrollTop = 0
+  if(from.name=='line'){
+
+    Model.GetBackData()
+  }
+
   if(from.name!='login'&&from.name!='register'){
+
     localStorage['FromPage'] = from.fullPath;
+
   }else{
+
     localStorage.removeItem('FromPage');
+
   }
 
   if (to.name!='login'&&!localStorage['Token']&&to.matched.some(record => record.meta.requiresAuth)) {

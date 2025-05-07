@@ -1,121 +1,152 @@
 <template>
   <div class="HomePage" id="app">
-    <UserHeader></UserHeader>
-    <div class="app-wrapper" style="width: calc(100% - 25rem);">
-      <div class="page-header">
-        <div class="page-title">{{$t('affiliates[0]')}}</div>
-        <div class="el-dropdown">
-          <div @click="showUserDown = !showUserDown" class="right-icon el-dropdown-selfdefine" aria-haspopup="list" aria-controls="dropdown-menu-8265" role="button" tabindex="0" x-placement="bottom-end"><i class="el-icon-user"></i></div>
-          <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8265" v-show="showUserDown">
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/walletAddress')"><i class="el-icon-wallet"></i> {{$t('walletAddress[0]')}} </li>
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/loginPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[1]')}} </li>
-            <li tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$router.push('/payPassword')"><i class="el-icon-lock"></i> {{$t('walletAddress[2]')}} </li>
-            <li  tabindex="-1" class="el-dropdown-menu__item" style="font-weight: bold;" @click="$Model.Logout()"><i class="el-icon-switch-button"></i> {{$t('head[5]')}} </li>
-            <div x-arrow="" class="popper__arrow" style="left: 142.5px;"></div>
-          </ul>
-        </div>
-      </div>
+    <Header></Header>
+    <section class="user-panel-section" style="padding: 20px 0px;">
       <div class="container">
-        <div class="box">
-          <div class="box-item">
-            <div class="title">{{$t('affiliates[1]')}}</div>
-            <div class="user-info">
-              <div class="info-item1">
-                {{$t('affiliates[2]')}}: <span class="value">{{UserInfo.email}}</span>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="sidebar-head d-flex flex-wrap align-items-center justify-content-between">
+              <h3 class="sidebar-head-title"></h3>
+            </div>
+            <div class="sidebar sidebar-user-mobile">
+              <a href="javascript:;" class="icon-btn menu-toggler-user-close">
+                <em class="ni ni-cross"></em>
+              </a>
+              <div class="sidebar-widget">
+                <ul class="user-nav">
+                  <li class="">
+                    <a aria-current="page" href="javascript:;" @click="$router.push('/dashboard')" class="router-link-active router-link-exact-active">
+                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[1]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/transactions')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[2]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/deposit')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[3]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;"  @click="$router.push('/withdraw')">
+                      <em class="ni me-2 ni-exchange"></em>{{$t('header[4]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/MyPackages')">
+                      <em class="ni me-2 ni-file-text"></em>{{$t('header[5]')}}</a>
+                  </li>
+<!--                  <li class="">-->
+<!--                    <a href="javascript:;" @click="$router.push('/contracts')">-->
+<!--                      <em class="ni me-2 ni-puzzle"></em>{{$t('header[6]')}}</a>-->
+<!--                  </li>-->
+                  <li class="active">
+                    <a href="javascript:;" @click="$router.push('/affiliates')">
+                      <em class="ni me-2 ni-money"></em>{{$t('header[7]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/loginPassword')">
+                      <em class="ni me-2 ni-account-setting"></em>{{$t('header[8]')}}</a>
+                  </li>
+                  <li class="">
+                    <a href="javascript:;" @click="$router.push('/message')">
+                      <em class="ni me-2 ni-megento"></em>{{$t('head[13]')}}</a>
+                  </li>
+                </ul>
               </div>
-              <div class="info-item1">
-                {{$t('affiliates[3]')}}: <span class="value">{{UserInfo.username}}</span>
-              </div>
-              <div class="info-item1">
-                {{$t('affiliates[4]')}}: <span class="value">{{UserInfo.idcode}}</span>
-              </div>
-              <div class="info-item2">
-                <div class="label">{{$t('affiliates[5]')}}</div>
-                <div class="input-group">
-                  <div class="input el-input is-disabled">
-                    <input
-                      v-model="promoteUrl"
-                    type="text"
-                    disabled="disabled"
-                    autocomplete="off"
-                    placeholder=""
-                    class="el-input__inner"
-                  />
+            </div>
+          </div>
+          <div class="col-lg-10 ps-xl-5">
+            <div class="referrals">
+              <div class="">
+                <div class="user-panel-title-box">
+                  <h2 class="mb-3">{{$t('affiliates[1]')}}</h2>
+                  <p style="margin-top: 4px; line-height: 22px;">{{$t('affiliates[7]')}}</p>
+                </div>
+                <div class="profile-setting-panel-wrap">
+                  <div class="row row-1 gy-4 gx-3">
+                    <div class="col-12 col-sm-8">
+                      <div class="item">
+                        <div class="label">{{$t('affiliates[5]')}}</div>
+                        <div class="relink_box" style="margin-top: 6px;">
+                          <div class="relink">
+                            <div class="path">{{promoteUrl}}</div>
+                            <div class="button window d-none d-sm-block copy-btn copy" size="sm" @click="copy" :data-clipboard-text="promoteUrl">{{$t('affiliates[16]')}}</div></div>
+                          <div class="copy-but d-block d-sm-none mt-4 text-center copy-btn copy" size="sm" @click="copy" :data-clipboard-text="promoteUrl">{{$t('affiliates[16]')}}</div></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                      <div class="item">
+                        <div class="label">{{$t('affiliates[10]')}}</div>
+                        <div class="value">{{teamNum}}</div></div>
+                    </div>
                   </div>
-                  <div class="copy-btn copy" @click="copy" :data-clipboard-text="promoteUrl"><i class="el-icon-document-copy"></i></div>
+                  <div class="row row-2 mt-gs g-3">
+                    <div class="col-12 col-sm-8">
+                      <div class="row row-2_1 g-0">
+                        <div class="col-12 col-sm-7 my-3">
+                          <div class="item">
+                            <div class="label">{{$t('affiliates[3]')}}</div>
+                            <div class="value">{{UserInfo.username}}</div></div>
+                        </div>
+                        <div class="col-12 col-sm-5 my-3">
+                          <div class="item">
+                            <div class="label">{{$t('affiliates[4]')}}</div>
+                            <div class="value">{{UserInfo.idcode}}</div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row-2 mt-gs g-3">
+                    <div class="c-table">
+                      <div class="tr">
+                        <div class="th">{{$t('affiliates[11]')}}</div>
+                        <div class="th">{{$t('affiliates[12]')}}</div>
+                        <div class="th">{{$t('affiliates[13]')}}</div>
+                        <div class="th">{{$t('affiliates[14]')}}</div>
+                        <div class="th">{{$t('affiliates[15]')}}</div>
+                      </div>
+                      <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
+                      <div class="tr" v-for="(item,index) in listData" :key="index">
+                        <div class="td">{{item.trade_time}}</div>
+                        <div class="td">{{item.from}}</div>
+                        <div class="td">{{item.vip_level}}</div>
+                        <div class="td">{{InitData.currency}} {{item.trade_amount}}</div>
+                        <div class="td">{{item.remarks}}</div>
+                      </div>
+                    </div>
+                    <div class="pagination-box">
+                      <div class="pagination-pc el-pagination is-background">
+                        <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+                        </button>
+                        <ul class="el-pager">
+                          <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+                        </ul>
+                        <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+                      </div>
+                      <div class="pagination-h5 el-pagination is-background">
+                        <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
+                        </button>
+                        <ul class="el-pager">
+                          <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
+                        </ul>
+                        <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="info-item1">
-                <i class="el-icon-coin" style="margin-right: 4px"></i>{{$t('affiliates[6]')}}
-              </div>
-              <div class="info-item3" v-html="$t('affiliates[7]')">
-
-              </div>
-              <div
-                class="info-item1" @click="$router.push('/affiliate')"
-                style="color: rgb(251, 194, 65); cursor: pointer"
-              >
-                {{$t('affiliates[8]')}}
-              </div>
             </div>
-          </div>
-          <div class="box-item">
-            <div class="title">{{$t('affiliates[9]')}}</div>
-            <div class="partner-list" style="height: 50rem;overflow-y: scroll;">
-              <div class="cur-title">{{$t('affiliates[10]')}}: <span class="num">{{teamNum}}</span></div>
-              <div class="list-item" v-for="(item,index) in reportData" :key="index">
-                {{item.username}}
-              </div>
-              <div class="pagination"></div>
-            </div>
-          </div>
-        </div>
-        <div class="c-table">
-          <div class="tr">
-            <div class="th">{{$t('affiliates[11]')}}</div>
-            <div class="th">{{$t('affiliates[12]')}}</div>
-            <div class="th">{{$t('affiliates[13]')}}</div>
-            <div class="th">{{$t('affiliates[14]')}}</div>
-            <div class="th">{{$t('affiliates[15]')}}</div>
-          </div>
-          <div class="no-data" v-if="listData.length==0">{{$t('vanPull[1]')}}</div>
-          <div class="tr" v-for="(item,index) in listData" :key="index">
-            <div class="td">{{item.trade_time}}</div>
-            <div class="td">{{item.from}}</div>
-            <div class="td">{{item.vip_level}}</div>
-            <div class="td">{{InitData.currency}} {{item.trade_amount}}</div>
-            <div class="td">{{item.remarks}}</div>
-          </div>
-        </div>
-        <div class="pagination-box">
-          <div class="pagination-pc el-pagination is-background">
-            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
-            </button>
-            <ul class="el-pager">
-              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-            </ul>
-            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
-          </div>
-          <div class="pagination-h5 el-pagination is-background">
-            <button @click="perPage" type="button" :disabled="data_current_page==1?true:false" class="btn-prev"><i class="el-icon el-icon-arrow-left"></i>
-            </button>
-            <ul class="el-pager">
-              <li @click="changePage(item)" :class="'number '+(item==data_current_page?'active':'')" v-for="item in data_total_page">{{item}}</li>
-            </ul>
-            <button @click="nextPage" :disabled="data_total_page==data_current_page?true:false" type="button" class="btn-next"><i class="el-icon el-icon-arrow-right"></i></button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <Footer></Footer>
   </div>
 </template>
 <script>
   import Clipboard from 'clipboard';
-  import UserHeader from '@/components/UserHeader'
   export default {
     name: 'transaction',
     components: {
-      UserHeader
     },
     data() {
       return {
@@ -268,7 +299,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: #662282
+    background-color: #fbc241
   }
 
   .slide-enter-active,.slide-leave-active {
@@ -308,7 +339,7 @@
   }
 
   .el-carousel__indicators--outside button {
-    background-color: #662282!important
+    background-color: #fbc241!important
   }
 
   .el-dropdown-menu__item {
@@ -318,7 +349,7 @@
   }
 
   .el-dropdown-menu__item:focus,.el-dropdown-menu__item:not(.is-disabled):hover {
-    color: #662282!important;
+    color: #fbc241!important;
     background-color: #fff9f0!important
   }
 
@@ -326,13 +357,13 @@
     font-family: myFont
   }
 
-  /*.el-pagination.is-background .el-pager li:not(.disabled).active {*/
-  /*  background-color: #662282!important*/
-  /*}*/
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #1c2b46!important
+  }
 
-  /*.el-pagination.is-background .el-pager li:not(.active):hover {*/
-  /*  color: #662282!important*/
-  /*}*/
+  .el-pagination.is-background .el-pager li:not(.active):hover {
+    color: #1c2b46!important
+  }
 
   .el-message {
     font-size: 1.6rem
@@ -358,12 +389,12 @@
   }
 
   .el-menu-item.is-active,.el-menu-item:hover,.el-submenu__title:hover {
-    color: #662282;
+    color: #fbc241;
     background-color: #fff9f0!important
   }
 
   .el-menu-item:hover i,.el-submenu__title:hover i {
-    color: #662282
+    color: #fbc241
   }
 
   .lang-item {
@@ -448,12 +479,12 @@
   }
 
   .el-select-dropdown__item.selected {
-    color: #662282
+    color: #fbc241
   }
 
   .el-checkbox__input.is-checked .el-checkbox__inner,.el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #662282!important;
-    border-color: #662282!important
+    background-color: #fbc241!important;
+    border-color: #fbc241!important
   }
 
   .el-checkbox__label {
@@ -466,10 +497,13 @@
   }
 
   .el-checkbox__input.is-focus .el-checkbox__inner {
-    border-color: #662282!important
+    border-color: #fbc241!important
   }
 
   @media only screen and (min-width: 1024px) {
+    .container {
+      width:100%
+    }
 
     .container .box {
       display: flex;
@@ -497,7 +531,7 @@
       font-weight: 700;
       color: #fff;
       word-wrap: break-word;
-      background-color: #662282
+      background-color: #fbc241
     }
 
     .container .box .box-item .user-info {
@@ -564,7 +598,7 @@
       box-sizing: border-box;
       padding: 0 1.2rem;
       border-radius: 0 4px 4px 0;
-      background-color: #662282;
+      background-color: #fbc241;
       cursor: pointer
     }
 
@@ -601,7 +635,7 @@
     .container .box .box-item .partner-list .cur-title .num {
       margin-left: 6px;
       font-size: 2rem;
-      color: #662282
+      color: #fbc241
     }
 
     .container .box .box-item .partner-list .list-item {
@@ -638,11 +672,6 @@
       background-color: #fff
     }
 
-    .container .c-table .tr:first-child {
-      border-bottom: none!important;
-      border-radius: 4px 4px 0 0;
-      background-color: #662282
-    }
 
     .container .c-table .tr:last-child {
       border-radius: 0 0 4px 4px
@@ -664,7 +693,7 @@
       height: inherit;
       box-sizing: border-box;
       padding: 1rem 2rem;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #000;
       text-align: center
     }
@@ -680,7 +709,7 @@
       width: 100%;
       height: 5rem;
       box-sizing: border-box;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: #444;
       text-align: center;
       white-space: nowrap;
@@ -700,6 +729,9 @@
   }
 
   @media only screen and (max-width: 1024px) {
+    .container {
+      width:100%
+    }
 
     .container .box {
       width: 100%;
@@ -725,7 +757,7 @@
       font-weight: 700;
       color: #fff;
       word-wrap: break-word;
-      background-color: #662282
+      background-color: #fbc241
     }
 
     .container .box .box-item .user-info {
@@ -792,7 +824,7 @@
       box-sizing: border-box;
       padding: 0 1.2rem;
       border-radius: 0 4px 4px 0;
-      background-color: #662282;
+      background-color: #fbc241;
       cursor: pointer
     }
 
@@ -829,7 +861,7 @@
     .container .box .box-item .partner-list .cur-title .num {
       margin-left: 5px;
       font-size: 1.8rem;
-      color: #662282
+      color: #fbc241
     }
 
     .container .box .box-item .partner-list .list-item {
@@ -864,12 +896,6 @@
       width: 100%;
       box-sizing: border-box;
       background-color: #fff
-    }
-
-    .container .c-table .tr:first-child {
-      border-bottom: none!important;
-      border-radius: 4px 4px 0 0;
-      background-color: #662282
     }
 
     .container .c-table .tr:last-child {
@@ -908,7 +934,7 @@
       width: 100%;
       height: 5rem;
       box-sizing: border-box;
-      font-size: 1.4rem;
+      font-size: 1rem;
       color: #444;
       text-align: center;
       white-space: nowrap;
@@ -926,5 +952,81 @@
       display: none
     }
   }
+  .relink_box .relink {
+    height: 35px;
+    border-radius: 8px;
+    opacity: .8;
+    border: 1px solid #3a516c;
+    display: flex;
+    align-items: center
+  }
 
+  .relink_box .relink .path {
+    flex: 1;
+    width: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1c2a46;
+    line-height: 18px;
+    padding: 0 13px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all
+  }
+
+  .relink_box .relink .button {
+    padding: 0 13px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #00b301;
+    line-height: 26px;
+    cursor: pointer
+  }
+
+  .relink_box .copy-but {
+    cursor: pointer;
+    margin: 0 auto;
+    font-size: 18px;
+    width: 90%;
+    border-radius: 30px;
+    background-color: #00b300;
+    color: #fff;
+    border: none;
+    padding: 7px 0
+  }
+
+  .item {
+    color: #1c2a46;
+    margin: .5rem 0;
+    height: 100%;
+    font-weight: 600;
+    padding: 1.25rem 1rem;
+    background: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.08);
+    border-radius: 8px
+  }
+
+  .item .label {
+    font-size: .875rem;
+    line-height: 1.25rem
+  }
+
+  .item .value {
+    font-size: 1.5rem;
+    line-height: 2.125rem
+  }
+
+  .row-2_1 {
+    background: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.08);
+    border-radius: 8px
+  }
+
+  .row-2_1 .item {
+    box-shadow: none
+  }
+  .btn-prev>>>.el-icon,.btn-next>>>.el-icon {
+    width: 100%;
+    text-align: center;
+  }
 </style>
