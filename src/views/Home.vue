@@ -595,15 +595,16 @@
 <script>
   import { swiper, swiperSlide } from "vue-awesome-swiper";
   import 'swiper/dist/css/swiper.css';
-  import VueSlickCarousel from 'vue-slick-carousel'
-  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  // import VueSlickCarousel from 'vue-slick-carousel'
+  // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
   // optional style for arrows & dots
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+  // import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   export default {
     name: 'Home',
     inject: ['reloadHtml'],
     components: {
-      swiper, swiperSlide,VueSlickCarousel
+      swiper, swiperSlide
+      // ,VueSlickCarousel
     },
 
     data() {
