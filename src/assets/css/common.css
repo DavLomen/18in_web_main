@@ -145,6 +145,13 @@
   padding: 10px 15px;
 }
 
+.el-black-card{
+  background: #000;
+  border-radius: 4px;
+  padding: 10px 15px;
+  color: #fff;
+}
+
 .el_com_card_np{
   position: relative;
   padding:0;
@@ -174,6 +181,23 @@
 
 .qustion_card .card_item:hover{
   background: #f5f5f5;
+}
+
+.box-shadow-card {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px;
+  padding: 30px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.round-box-50{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
 }
 
 .border-b-1{
@@ -215,7 +239,7 @@
     color: #FFFFFF;
     border-radius: 2px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 17px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -223,4 +247,39 @@
     margin-bottom: 10px;
     text-align: center;
     cursor: pointer;
+}
+
+.option_button-radius-24{
+  display: inline-block;
+  color: #FFFFFF;
+  border-radius: 24px;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 20px 35px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.option_button-radius-30{
+  display: inline-block;
+  color: #FFFFFF;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.option_button-radius-30:hover{
+  background: rgba(22, 196, 127, 0.1);
+  color: #fff;
 }
