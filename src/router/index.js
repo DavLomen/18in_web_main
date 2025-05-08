@@ -162,6 +162,7 @@ const router = new VueRouter({
       path: '/dashboard',
       name: 'dashboard',
       component:  () => import('@/views/new/dashboard.vue'),
+      // component:  () => import('@/views/dashboard.vue'),
       meta: {
         title: 'dashboard',
         active: 'dashboard'

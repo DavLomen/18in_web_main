@@ -304,7 +304,7 @@ export default {
     "Wprowadź identyfikator transakcji (TXID)"
   ],
   "foot": [
-    "Założona w 2021 r. I z siedzibą w Wielkiej Brytanii, firma Crypto Mining Firma jest pionierskim liderem w branży wydobycia w chmurze. ",
+    "Założona w 2021 r. I z siedzibą w Wielkiej Brytanii, firma Sunny Mininga jest pionierskim liderem w branży wydobycia w chmurze. ",
     "Linki witryny",
     "Umowa",
     "O nas",
@@ -1102,7 +1102,7 @@ export default {
   ],
   "productDetailL": [
     "Przegląd umowy",
-    "Firma Crypto Mining Firma Cloud Computing Power umowa zapewnia użytkownikom wydajne i wygodne rozwiązania wydobywcze. ",
+    "Firma Sunny Mininga Cloud Computing Power umowa zapewnia użytkownikom wydajne i wygodne rozwiązania wydobywcze. ",
     "1. Szczegóły umowy",
     "(1) Typ kontraktu: Umowa o prawach do przetwarzania w chmurze",
     "(2) Metoda płatności: Obsługiwane kryptowaluty obejmują Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Dogecoin (Doge), Bitcoin Cash (BCH), USDT, USDC, BNB, Sol (Solana), XRP, Trump (Solana), Ada (Cardano) i inne waluty cyfrowe.",

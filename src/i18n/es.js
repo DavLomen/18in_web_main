@@ -626,7 +626,7 @@ export default {
     "Nuestra plataforma proporciona soporte de inversión minera en la nube a todos los usuarios de todo el mundo, incluso si usted es un principiante, puede comenzar rápidamente y beneficiarse de ella.",
     "Recibir principal después de la expiración del contrato",
     "Usted es libre de elegir retirar o reinvertir en el contrato.",
-    "En Crypto Mining Firm estamos enfocados en ofrecer resultados reales y medibles. ",
+    "En Sunny Mining estamos enfocados en ofrecer resultados reales y medibles. ",
     "Minería ecológica",
     "Nuestros mineros y sistemas de enfriamiento están impulsados ​​por los mejores paneles solares monocristalinos, por lo que ambos son ecológicos y rentables.",
     "Ganancias automáticas",
@@ -1016,7 +1016,7 @@ export default {
     "Precio de contrato",
     "Comprar ahora",
     "La minería de nubes líder del mundo",
-    "Crypto Mining Firm es la plataforma minera superior del mundo, utilizamos energía limpia para ayudar a los inversores de criptomonedas a obtener rendimientos eficientes y estables al proporcionar una forma perfecta, ecológica y eficiente de minería de criptomonedas, lo que permite a las personas unirse fácilmente a la economía criptográfica sin barreras tradicionales."
+    "Sunny Mining es la plataforma minera superior del mundo, utilizamos energía limpia para ayudar a los inversores de criptomonedas a obtener rendimientos eficientes y estables al proporcionar una forma perfecta, ecológica y eficiente de minería de criptomonedas, lo que permite a las personas unirse fácilmente a la economía criptográfica sin barreras tradicionales."
   ],
   "ttt": [
     "【Solo para experiencia en prueba】"
@@ -1102,7 +1102,7 @@ export default {
   ],
   "productDetailL": [
     "Descripción general del contrato",
-    "Crypto Mining Firm Cloud Computing Power Contract proporciona a los usuarios soluciones mineras eficientes y convenientes. ",
+    "Sunny Mining Cloud Computing Power Contract proporciona a los usuarios soluciones mineras eficientes y convenientes. ",
     "1. Detalles del contrato",
     "(1) Tipo de contrato: Contrato de derechos de computación en la nube",
     "(2) Método de pago: las criptomonedas admitidas incluyen Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Dogecoin (Doge), Bitcoin Cash (BCH), USDT, USDC, BNB, SOL (Solana), XRP, Trump (Solana), Ada (Cardano) y otras monedas digitales.",
@@ -1144,8 +1144,8 @@ export default {
     "Descargue la aplicación de minería de Crypto para Android/iOS",
     "¡Descargue la aplicación de minería criptográfica hoy para obtener una experiencia minera segura y eficiente! ",
     "¡Únase a Crypto Mining y deje que sus activos digitales funcionen para usted con recompensas de minería de primer nivel!",
-    "Crypto Mining Firm es la mejor plataforma minera del mundo. ",
-    "Crypto Mining Firm construye la marca número uno del mundo, ayudando a los usuarios globales a lograr una apreciación de la riqueza a largo plazo y desbloquear el código de riqueza con un solo clic.",
+    "Sunny Mining es la mejor plataforma minera del mundo. ",
+    "Sunny Mining construye la marca número uno del mundo, ayudando a los usuarios globales a lograr una apreciación de la riqueza a largo plazo y desbloquear el código de riqueza con un solo clic.",
     ""
   ],
   "online": "Usuarios en línea",

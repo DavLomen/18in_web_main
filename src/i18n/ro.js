@@ -304,7 +304,7 @@ export default {
     "Vă rugăm să introduceți ID -ul tranzacției (TXID)"
   ],
   "foot": [
-    "Fondată în 2021 și cu sediul central în Marea Britanie, Crypto Mining Firm este un lider de pionierat în industria minieră în cloud. ",
+    "Fondată în 2021 și cu sediul central în Marea Britanie, Sunny Mining este un lider de pionierat în industria minieră în cloud. ",
     "Link -uri de site",
     "Contracta",
     "Despre noi",
@@ -1016,7 +1016,7 @@ export default {
     "Prețul contractului",
     "Cumpărați acum",
     "Cele mai importante minerite din lume din lume",
-    "Crypto Mining Firm este cea mai bună platformă minieră din lume, utilizăm energie curată pentru a ajuta investitorii de criptocurrency să obțină randamente eficiente și stabile, oferind un mod perfect, ecologic și eficient de a explora criptomonedele, permițând indivizilor să se alăture cu ușurință economiei cripto -cripto fără bariere tradiționale."
+    "Sunny Mining este cea mai bună platformă minieră din lume, utilizăm energie curată pentru a ajuta investitorii de criptocurrency să obțină randamente eficiente și stabile, oferind un mod perfect, ecologic și eficient de a explora criptomonedele, permițând indivizilor să se alăture cu ușurință economiei cripto -cripto fără bariere tradiționale."
   ],
   "ttt": [
     "【Doar pentru experiență de încercare】"
@@ -1144,8 +1144,8 @@ export default {
     "Descărcați aplicația Crypto Mining pentru Android/iOS",
     "Descărcați astăzi aplicația Crypto Mining pentru o experiență minieră sigură și eficientă! ",
     "Alăturați-vă Crypto Mining și lăsați-vă activele digitale să funcționeze pentru dvs. cu recompense miniere de top!",
-    "Crypto Mining Firm este cea mai bună platformă minieră din lume. Cu inovația tehnologică și protecția mediului Ca obiective de bază, se angajează să creeze un ecosistem minier eficient și cu costuri reduse. ",
-    "Crypto Mining Firm construiește marca numărul unu din lume, ajutând utilizatorii globali să obțină aprecierea de avere pe termen lung și să deblocheze codul de avere cu un singur clic.",
+    "Sunny Mining este cea mai bună platformă minieră din lume. Cu inovația tehnologică și protecția mediului Ca obiective de bază, se angajează să creeze un ecosistem minier eficient și cu costuri reduse. ",
+    "Sunny Mining construiește marca numărul unu din lume, ajutând utilizatorii globali să obțină aprecierea de avere pe termen lung și să deblocheze codul de avere cu un singur clic.",
     ""
   ],
   "online": "Utilizatori online",

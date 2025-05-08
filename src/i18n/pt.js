@@ -697,7 +697,7 @@ export default {
     "5. Saída de potência de computação\n",
     "Para cálculo de renda de mineração, consulte Poolin Mining Pool: https://www.poolin.com\n",
     "6. Aviso de risco\n",
-    "CRYPTO MINING FIRM is not responsible for any consequences caused by uncontrollable risks, including but not limited to natural disasters such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or high-risk weather events, government actions or instructions, municipal power supply accidents, and social actions or conflicts such as wars, strikes, riots, etc.\n",
+    "Sunny Mining is not responsible for any consequences caused by uncontrollable risks, including but not limited to natural disasters such as floods, volcanic eruptions, earthquakes, landslides, fires, storms, other unforeseen or high-risk weather events, government actions or instructions, municipal power supply accidents, and social actions or conflicts such as wars, strikes, riots, etc.\n",
     "7. Preços e benefícios\n",
     "Os benefícios dependem do preço e do prazo do contrato, que devem estar sujeitos à página de detalhes do contrato. \n",
     "8. Suporte ao cliente\n",

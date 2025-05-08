@@ -108,6 +108,8 @@
           <div class="footer_linkColumn__wFHMA"><p class="footer_columnTitle__aoNF3">{{$t('foot[13]')}}</p>
             <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/blog')">{{$t('foot[6]')}}</a>
             <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/energy/detail')">{{$t('foot[14]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/cryptocurrency/detail')">{{$t('cryptocurrency[0]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/web3/detail')">{{$t('cryptocurrency[1]')}}</a>
             <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/bit/detail')">{{$t('foot[16]')}}</a>
             <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/who/detail')">{{$t('foot[17]')}}</a>
           </div>
@@ -115,11 +117,8 @@
           <div class="footer_linkColumn__wFHMA"><p class="footer_columnTitle__aoNF3">{{$t('foot[18]')}}</p>
             <a
                     class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/about')">{{$t('foot[3]')}}</a>
-            <a
-                    class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/terms/detail')">{{$t('foot[10]')}}</a>
+            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/terms/detail')">{{$t('foot[10]')}}</a>
             <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/privacy/detail')">{{$t('foot[9]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/cryptocurrency/detail')">{{$t('cryptocurrency[0]')}}</a>
-            <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/article/web3/detail')">{{$t('cryptocurrency[1]')}}</a>
             <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/FAQ')">{{$t('foot[4]')}}</a>
             <!-- <a class="text footer_text__qoC0V" href="javascript:" @click="$router.push('/contact')">{{$t('foot[7]')}}</a> -->
           </div>
@@ -178,6 +177,18 @@
             style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
             alt="Steady Mining photo" title=""
             :src="'./static/images/d3959f4238aa2ea71866d1a732615b01.png'" decoding="async"
+            data-nimg="intrinsic"
+            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
+            <a
+            target="_blank" class="footer_socialIcon__w14Es" itemprop="sameAs"
+            href=""><span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+            alt="" aria-hidden="true"
+            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2724%27%20height=%2724%27/%3e"
+            style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
+            alt="Steady Mining photo" title=""
+            :src="'./static/images/IG.png'" decoding="async"
             data-nimg="intrinsic"
             style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span></a>
           </div>

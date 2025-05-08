@@ -30,6 +30,10 @@
         {{$t('account[1]')}}:<span style="font-size: 2.5rem;font-weight: bolder;color: rgb(221 181 0)">{{UserInfo.useridentity}}</span>
       </div> -->
       <div class="container" style="max-width: 100% !important;">
+        <div style="font-size: 2rem;width: 100%;margin-bottom: 10px">
+        {{$t('credit[0]')}}:<span style="font-size: 2.5rem;font-weight: bolder;color: rgb(221 181 0)">{{UserInfo.credit}}</span><br>
+        {{$t('account[1]')}}:<span style="font-size: 2.5rem;font-weight: bolder;color: rgb(221 181 0)">{{UserInfo.useridentity}}</span>
+      </div>
         <div class="bal mobile">
           <img :src="'./static/image/bg-div.png'">
           <div class="bal-c">
@@ -107,7 +111,7 @@
                     <div class="item-content-right el-content-text-h1">0$</div>
                   </div>
                 </div>
-                <div class="option_button-radius-30 data-flex mt-20 option_button-radius-hover_1" style="background: #fff; justify-content: center;align-items: center; color:#ffa62f;">
+                <div class="option_button-radius-30 data-flex mt-20 option_button-radius-hover_1" style="background: #fff; justify-content: center;align-items: center; color:#ffa62f;" @click="$router.push('/product')">
                 {{ $t("i18n.Dashboard.card.text5") }}
                 <van-icon name="share-o" class="mlr-10"/>
                 </div>
@@ -135,7 +139,7 @@
                     <div class="item-content-right el-content-text-h1">0$</div>
                   </div>
                 </div>
-                <div class="option_button-radius-30 data-flex mt-20 option_button-radius-hover_1" style="background: #fff; justify-content: center;align-items: center; color:#ffa62f;">
+                <div class="option_button-radius-30 data-flex mt-20 option_button-radius-hover_1" style="background: #fff; justify-content: center;align-items: center; color:#ffa62f;" @click="$router.push('/deposit')">
                 {{ $t("i18n.Dashboard.card.text10") }}
                 <van-icon name="share-o" class="mlr-10"/>
                 </div>
@@ -163,7 +167,7 @@
                     <div class="item-content-right el-content-text-h1">0$</div>
                   </div>
                 </div>
-                <div class="option_button-radius-30 data-flex mt-20 option_button-radius-hover_1" style="background: #fff; justify-content: center;align-items: center; color:#ffa62f;">
+                <div class="option_button-radius-30 data-flex mt-20 option_button-radius-hover_1" style="background: #fff; justify-content: center;align-items: center; color:#ffa62f;" @click="$router.push('/withdraw')">
                 {{ $t("i18n.Dashboard.card.text15") }}
                 <van-icon name="share-o" class="mlr-10"/>
                 </div>
@@ -176,7 +180,7 @@
                 <div class="box-shadow-card mlr-5">
                   <div class="commissions-header data-flex el-content-text-h1">
                     <div class="flex-1 el-content-text-h1">{{ $t("i18n.Dashboard.card.text16") }}</div>
-                    <div class="data-flex" style="align-items: center;">
+                    <div class="data-flex" style="align-items: center;" @click="$router.push('/affiliate')">
                       <span>{{ $t("i18n.Dashboard.card.text17") }}</span>
                       <van-icon class="mlr-10" name="down" style="transform: rotate(-90deg);"/>
                     </div>
@@ -209,10 +213,10 @@
                 <div class="box-shadow-card mlr-5">
                   <div class="commissions-header data-flex el-content-text-h1">
                     <div class="flex-1 el-content-text-h1">{{ $t("i18n.Dashboard.card.text21") }}</div>
-                    <div class="data-flex" style="align-items: center;">
-                      <span>{{ $t("i18n.Dashboard.card.text22") }}</span>
-                      <van-icon class="mlr-10" name="down" style="transform: rotate(-90deg);"/>
-                    </div>
+                      <!-- <div class="data-flex" style="align-items: center;">
+                        <span>{{ $t("i18n.Dashboard.card.text22") }}</span>
+                        <van-icon class="mlr-10" name="down" style="transform: rotate(-90deg);"/>
+                      </div> -->
                   </div>
                   <div class="el-row mt-20">
                     <div class="el-col-12">
@@ -290,8 +294,8 @@
             </div>
           </div>
           <div class="user-title" style="margin-bottom: 1rem;margin-left: 1rem;">{{$t('dashboard[19]')}}</div>
-          <div class=" el-col-md-8" style="padding-left: 12px; padding-right: 12px;">
-            <div class="cal-item flex">
+          <div class=" el-col-md-8" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
+            <div class="cal-item flex" style="cursor: pointer;">
               <div>
                 <img :src="'./static/images/das5.png'" style="width: 5rem;">
               </div>
@@ -301,8 +305,8 @@
               </div>
             </div>
           </div>
-          <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;">
-            <div class="cal-item flex">
+          <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
+            <div class="cal-item flex" style="cursor: pointer;">
               <div>
                 <img :src="'./static/images/das6.png'" style="width: 5rem;">
               </div>
@@ -312,8 +316,8 @@
               </div>
             </div>
           </div>
-          <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;">
-            <div class="cal-item flex">
+          <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
+            <div class="cal-item flex" style="cursor: pointer;">
               <div>
                 <img :src="'./static/images/das7.png'" style="width: 5rem;">
               </div>

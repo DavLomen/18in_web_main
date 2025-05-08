@@ -304,7 +304,7 @@ export default {
     "Voer de transactie -ID in (TXID) in"
   ],
   "foot": [
-    "Opgericht in 2021 en met hoofdkantoor in het VK, is Crypto Mining Firm een ​​pioniersleider in de cloud mining -industrie. ",
+    "Opgericht in 2021 en met hoofdkantoor in het VK, is Sunny Mining een ​​pioniersleider in de cloud mining -industrie. ",
     "Site Links",
     "Contract",
     "Over ons",
@@ -422,7 +422,7 @@ export default {
     "Om innovatie in de cloud computing -industrie te stimuleren en te transformeren hoe de mensheid energie gebruikt.",
     "Om de benchmark in te stellen voor groene technologie en duurzame ontwikkeling, waardoor de langetermijnwaarde voor gebruikers wordt gecreëerd.",
     "Om innovatie in de cloud computing -industrie te stimuleren en te transformeren hoe de mensheid energie gebruikt.",
-    "Word vandaag lid van Crypto Mining Firm en ervaar het krachtigste cloud miningplatform ter wereld!",
+    "Word vandaag lid van Sunny Mining en ervaar het krachtigste cloud miningplatform ter wereld!",
     "Onze visie",
     "Het toonaangevende merk voor cloud computing worden van de wereld",
     "Technologische innovatie",
@@ -626,7 +626,7 @@ export default {
     "Ons platform biedt cloud mining investeringsondersteuning aan alle gebruikers over de hele wereld, zelfs als u een beginner bent, kunt u snel aan de slag gaan en ervan profiteren.",
     "Ontvang hoofdsom na het vervallen van contract",
     "U bent vrij om ervoor te kiezen om het contract in te trekken of opnieuw te investeren.",
-    "Bij Crypto Mining Firm zijn we gericht op het leveren van echte, meetbare resultaten. ",
+    "Bij Sunny Mining zijn we gericht op het leveren van echte, meetbare resultaten. ",
     "Milieuvriendelijke mijnbouw",
     "Onze mijnwerkers en koelsystemen worden aangedreven door de beste monokristallijne zonnepanelen, dus ze zijn zowel milieuvriendelijk als winstgevend.",
     "Automatische winst",
@@ -704,7 +704,7 @@ export default {
     "Als u vragen heeft, neem dan contact op met het Crypto Mining Support Team. \n",
     "9. Tips\n",
     "Crypto -mijnbouwplatform herinnert u hierbij eraan om rationeel contracten te kopen en volgens uw eigen behoeften om goed rendement en winst te behalen.\n",
-    "Crypto Mining Firm behoudt zich het recht voor op de definitieve interpretatie van de voorwaarden van dit contract.\n",
+    "Sunny Mining behoudt zich het recht voor op de definitieve interpretatie van de voorwaarden van dit contract.\n",
     ""
   ],
   "tables": [
@@ -764,7 +764,7 @@ export default {
     "Speciale notities",
     "Contante beloningen worden automatisch naar uw account verzonden",
     "Tariefbonussen zijn van toepassing op alle actieve projecten, met nieuwe tarieven die de volgende dag van kracht worden",
-    "Crypto Mining Firm behoudt zich het uiteindelijke interpretatierecht voor dit systeem voor",
+    "Sunny Mining behoudt zich het uiteindelijke interpretatierecht voor dit systeem voor",
     ""
   ],
   "tips": [
@@ -1016,7 +1016,7 @@ export default {
     "Contractprijs",
     "Nu kopen",
     "'S werelds toonaangevende cloud mining",
-    "Crypto Mining Firm is 's werelds topmijnplatform, we gebruiken schone energie om cryptocurrency -beleggers te helpen een efficiënte en stabiele rendementen te verdienen door een naadloze, milieuvriendelijke en efficiënte manier om cryptocurrencies te ontginnen, waardoor individuen gemakkelijk bij de crypto -economie kunnen deelnemen zonder traditionele barrières."
+    "Sunny Mining is 's werelds topmijnplatform, we gebruiken schone energie om cryptocurrency -beleggers te helpen een efficiënte en stabiele rendementen te verdienen door een naadloze, milieuvriendelijke en efficiënte manier om cryptocurrencies te ontginnen, waardoor individuen gemakkelijk bij de crypto -economie kunnen deelnemen zonder traditionele barrières."
   ],
   "ttt": [
     "【Alleen voor proefervaring】"
@@ -1144,8 +1144,8 @@ export default {
     "Download de Crypto Mining -app voor Android/iOS",
     "Download vandaag nog de crypto -mijnbouw -app voor een veilige en efficiënte mijnervaring! ",
     "Word lid van crypto-mijnbouw en laat uw digitale activa voor u werken met topbeloningen van de topklasse!",
-    "Crypto Mining Firm is 's werelds topmijnplatform. Met technologische innovatie en milieubescherming als kerndoelen is het toegewijd aan het creëren van een efficiënt en goedkoop mijnbouwecosysteem. ",
-    "Crypto Mining Firm bouwt 's werelds nummer één merk, helpt wereldwijde gebruikers om vermogens waardering op de lange termijn te bereiken en de vermogenscode te ontgrendelen met één klik.",
+    "Sunny Mining is 's werelds topmijnplatform. Met technologische innovatie en milieubescherming als kerndoelen is het toegewijd aan het creëren van een efficiënt en goedkoop mijnbouwecosysteem. ",
+    "Sunny Mining bouwt 's werelds nummer één merk, helpt wereldwijde gebruikers om vermogens waardering op de lange termijn te bereiken en de vermogenscode te ontgrendelen met één klik.",
     ""
   ],
   "online": "Online gebruikers",

@@ -304,7 +304,7 @@ export default {
     "Veuillez saisir l'ID de transaction (TXID)"
   ],
   "foot": [
-    "Fondée en 2021 et dont le siège est au Royaume-Uni, Crypto Mining Firm est un leader pionnier de l'industrie des mines du cloud. ",
+    "Fondée en 2021 et dont le siège est au Royaume-Uni, Sunny Mining est un leader pionnier de l'industrie des mines du cloud. ",
     "Liens de site",
     "Contracter",
     "À propos de nous",
@@ -1102,7 +1102,7 @@ export default {
   ],
   "productDetailL": [
     "Aperçu du contrat",
-    "Crypto Mining Firm Cloud Computing Power Contract fournit aux utilisateurs des solutions minières efficaces et pratiques. ",
+    "Sunny Mining Cloud Computing Power Contract fournit aux utilisateurs des solutions minières efficaces et pratiques. ",
     "1. Détails du contrat",
     "(1) Type de contrat: Contrat de droits de cloud computing",
     "(2) Méthode de paiement: les crypto-monnaies prises en charge incluent Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC), Dogecoin (Doge), Bitcoin Cash (BCH), USDT, USDC, BNB, Sol (Solilana), XRP, Trump (Solana), ADA (Cardano) et autres monnaies numériques.",
@@ -1144,7 +1144,7 @@ export default {
     "Téléchargez l'application Mining Crypto pour Android / iOS",
     "Téléchargez l'application Mining Crypto aujourd'hui pour une expérience minière sécurisée et efficace! ",
     "Rejoignez Crypto Mining et laissez vos actifs numériques fonctionner pour vous avec des récompenses d'extraction de haut niveau!",
-    "Crypto Mining Firm est la principale plate-forme minière mondiale. Avec l'innovation technologique et la protection de l'environnement en tant qu'objectifs principaux, il s'est engagé à créer un écosystème minier efficace et à faible coût. ",
+    "Sunny Mining est la principale plate-forme minière mondiale. Avec l'innovation technologique et la protection de l'environnement en tant qu'objectifs principaux, il s'est engagé à créer un écosystème minier efficace et à faible coût. ",
     "La société d'extraction de crypto construit la marque numéro un au monde, aidant les utilisateurs mondiaux à réaliser une appréciation à long terme de la richesse et à déverrouiller le code de richesse en un seul clic.",
     ""
   ],

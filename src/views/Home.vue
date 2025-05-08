@@ -106,7 +106,7 @@
                 <div class="label font-title-lg">{{ $t("i18n.Home.banner.text1") }}</div>
                 <div class="option mt-40 data-flex" style="align-items: center;">
                   <div class="left flex-1">
-                    <div class="option_button" style="background: #F7931A;">{{ $t("i18n.Home.banner.text2") }}</div>
+                    <div class="option_button" style="background: #F7931A;" @click="$router.push('/product')">{{ $t("i18n.Home.banner.text2") }}</div>
                   </div>
                   <div class="right data-flex flex-1" style="align-items: center;">
                     <img style="width: 80px; object-fit: cover;transform: rotate(90deg);" :src="`./static/image/homeBanner/arrow_anim.gif`" alt=""> 
@@ -121,7 +121,7 @@
                     <div class="left flex-1">
                       <div class="label el-content-text-lg mt-20 mb-20" style="color:#F7931A">
                         <span>339 205.3</span>
-                        <span>TH/s</span>
+                        <span>PH/s</span>
                       </div>
                       <div class="el-content-text-h3 el-content-text-color">{{ $t("i18n.Home.banner.text4") }}</div>
                     </div>
@@ -132,7 +132,7 @@
                   <div class="item data-flex" style="align-items: center;border-bottom: 1px solid #ebebeb; padding-bottom: 5px;">
                     <div class="left flex-1">
                       <div class="label el-content-text-lg mt-20 mb-20" style="color:#F7931A">
-                        <span>527 315</span>
+                        <span>6861 364</span>
                       </div>
                       <div class="el-content-text-h3 el-content-text-color">{{ $t("i18n.Home.banner.text5") }}</div>
                     </div>
@@ -328,58 +328,6 @@
                        :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
                 </div>
               </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="figure"></div>
-        <div class="section profit-section" style="margin: 10px 0;">
-          <div id="particles-2">
-          </div>
-          <div class="section__head">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-md-8 col-xl-6">
-                  <h2 class="mt-0 text-center title-main">{{$t('calculator[0]')}}</h2>
-                  <p class="mb-0 mx-auto text-center t-short-para" style="font-size: 16px">
-                    {{$t('calculator[1]')}}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container" style="max-width: 90%;margin: 0 auto;">
-            <div class="row">
-              <div class="col-12">
-                <div class="profit-calculator">
-                  <div class="el-row g-3">
-                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                      <div class="form-group">
-                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[2]')}}</label>
-                        <select name="plan_id" style="width: 21.5rem;" class="form-select form--select" v-model="selectM" @change="handelChange">
-                          <option :value="item.id" v-for="(item,index) in listData" :key="index">
-                            {{item.title}}
-                          </option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                      <div class="form-group">
-                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[3]')}}</label>
-                        <input style="width: 20rem" type="text" v-model="selectP.amount" name="amount" class="form-control form--control" autocomplete="off">
-                        <code class="limit"></code>
-                      </div>
-                    </div>
-                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
-                      <div class="form-group">
-                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[4]')}}</label>
-                        <input style="width: 20rem" v-if="selectP.daily_rate !=''" type="text" v-model="((selectP.daily_rate)/100*selectP.amount*selectP.cycle).toFixed(4)" class="form-control form--control" readonly>
-                        <input style="width: 20rem" v-else type="text" class="form-control form--control">
-                      </div>
-                      <code class="msg">{{$t('calculator[5]')}}: {{selectP.daily_rate}}%</code>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -1043,10 +991,6 @@
       return {
         selcets:'',
         selcett:'',
-        selectM:'',
-        selectP:{
-          daily_rate:''
-        },
         index:0,
         showMask:false,
         showMobileLan: false,
@@ -1482,10 +1426,6 @@
 
         }
       },
-      handelChange() {
-        let id = this.selectM;
-        this.selectP = this.listData.filter(item=>item.id==id)[0];
-      },
       resize() {
         let that = this;
         let w = window.innerWidth;
@@ -1896,6 +1836,7 @@
       position: relative;
       width: 95% !important;
       margin: 10px auto;
+      box-shadow: 2px 2px 5px 0 rgba(0,0,0,.5);
     }
     .container .box3 .product-list .product-item,.container .box3 .product-list {
       width: 100%

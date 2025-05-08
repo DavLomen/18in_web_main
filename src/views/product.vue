@@ -3,23 +3,13 @@
     <Header></Header>
     <div class="app-wrapper">
       <div class="container">
-        <div class="box3">
+        <div class="container box3">
           <div class="box-wrapper">
-            <img :src="'./static/images/cont.png'" style="object-fit:cover;width: 100%;margin: 0 auto;display: block;">
-            <div class="carousel-container1 info-block">
-              <div class="carousel1 info-block">
-                <div class="carousel-item1">
-<!--                  <img v-lazy="'./static/images/cont.png'" style="width: 100%;height: 100%;">-->
-                  <div class="carousel-desc info-block-title">
-<!--                    {{$t('product[18]')}}-->
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div style="font-size: 3.5rem;line-height: 4rem;text-align: center;font-weight: bolder;margin-bottom: 1rem">{{$t('newP[7]')}}</div>
-            <div style="font-size: 2rem;line-height: 2.5rem;text-align: center;    padding: 2rem;"> {{$t('newP[8]')}}</div>
-            <div class="product-list">
-              <div class="product-item" v-for="(item,index) in listData" :key="index">
+            <div class="box3-title">{{$t('newhome[4]')}}</div>
+            <div style="font-size: 1.5rem;padding: 2rem;line-height: 2.5rem;color: #000000;text-align: center;">{{$t('newhome[5]')}}</div>
+            <div class="product-list el-row">
+              <div class="el-col-xs-24 el-col-sm-12 el-col-md-8" v-for="(item,index) in listData" :key="index">
+                <div class="product-item">
                 <div class="img-box">
                   <img
                     :src="InitData.setting.up_url + item.icon"
@@ -28,9 +18,9 @@
                 </div>
                 <div class="right">
                   <img v-if="item.progress>=100" :src="'./static/image/out.png'" style="position: absolute;
-    right: 1rem;
-    top: 8rem;
-    width: 10rem;">
+                    right: 1rem;
+                    bottom: 8rem;
+                    width: 10rem;">
                   <div class="name">
                     {{item.title}}
                   </div>
@@ -60,15 +50,16 @@
                       </div>
                       <div class="info-item">
                         <div class="label">{{$t('product[6]')}}</div>
+<!--                        <div class="label">{{$t('product[6]')}}</div>-->
                         <div class="value rebate">{{item.type==1?$t('product[7]'):$t('product[17]')}}</div>
                       </div>
-                      <div class="info-item">
-                        <div class="label">{{$t('product[9]')}}</div>
-                        <div class="value">{{item.miner}}</div>
-                      </div>
-                      <div class="info-item">
-                        <div class="label">{{$t('bbbx[0]')}}</div>
-                      </div>
+                                        <div class="info-item">
+                                          <div class="label">{{$t('product[9]')}}</div>
+                                          <div class="value">{{item.miner}}</div>
+                                        </div>
+                                        <div class="info-item">
+                                          <div class="label">{{$t('bbbx[0]')}}</div>
+                                        </div>
                     </div>
                     <div class="right-actions">
                       <div class="bonus" v-if="item.amount!=10">
@@ -101,10 +92,63 @@
                        :style="`min-width: fit-content;width: ${item.progress}%;`"><span><strong v-html="$t('sold[0]',{P:item.progress})"></strong></span></div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="figure"></div>
+        <div class="section profit-section" style="margin: 10px 0;">
+          <div id="particles-2">
+          </div>
+          <div class="section__head">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-md-8 col-xl-6">
+                  <h2 class="mt-0 text-center title-main">{{$t('calculator[0]')}}</h2>
+                  <p class="mb-0 mx-auto text-center t-short-para mtb-10" style="font-size: 16px">
+                    {{$t('calculator[1]')}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="max-width: 90%;margin: 0 auto;">
+            <div class="">
+              <div class="col-24">
+                <div class="profit-calculator">
+                  <div class="el-row g-3">
+                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                      <div class="form-group">
+                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[2]')}}</label>
+                        <select name="plan_id" style="" class="form-select form--select el-mx-auto-90" v-model="selectM" @change="handelChange">
+                          <option :value="item.id" v-for="(item,index) in listData" :key="index">
+                            {{item.title}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                      <div class="form-group">
+                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[3]')}}</label>
+                        <input style="" type="text" v-model="selectP.amount" name="amount" class="form-control form--control el-mx-auto-90" autocomplete="off">
+                        <code class="limit"></code>
+                      </div>
+                    </div>
+                    <div class="el-col el-col-24 el-col-xs-24 el-col-sm-24 el-col-md-8">
+                      <div class="form-group">
+                        <label class="d-inline-block mb-2 t-heading-font fw-md">{{$t('calculator[4]')}}</label>
+                        <input style="" v-if="selectP.daily_rate !=''" type="text" v-model="((selectP.daily_rate)/100*selectP.amount*selectP.cycle).toFixed(4)" class="form-control form--control el-mx-auto-90" readonly>
+                        <input style="" v-else type="text" class="form-control form--control el-mx-auto-90">
+                      </div>
+                      <code class="msg">{{$t('calculator[5]')}}: {{selectP.daily_rate}}%</code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
 
@@ -395,6 +439,10 @@
         showDialog:false,
         password:'',
         money:'',
+        selectM:'',
+        selectP:{
+          daily_rate:''
+        },
         showPass: false,
         listData:[],
         swiperOption: {
@@ -486,6 +534,10 @@
 
     },
     methods: {
+      handelChange() {
+        let id = this.selectM;
+        this.selectP = this.listData.filter(item=>item.id==id)[0];
+      },
       buyProduct(){
         if (!this.UserInfo) {
           this.$router.push("/login");
@@ -599,6 +651,180 @@
   .container {
     overflow: hidden;
   }
+  .profit-calculator {
+    -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  /* 产品样式挪到这边 */
+  .container .box3 {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem 1rem
+    }
+
+    .container .box3 .box3-title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #000;
+      text-align: center;
+      word-wrap: break-word
+    }
+    .container .box3 .product-list .product-item {
+      position: relative;
+      width: 95% !important;
+      margin: 10px auto;
+      box-shadow: 2px 2px 5px 0 rgba(0,0,0,.5);
+    }
+    .container .box3 .product-list .product-item,.container .box3 .product-list {
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item:not(:last-child) {
+      margin-bottom: 2rem
+    }
+
+    .container .box3 .product-list .product-item .img-box {
+      position: relative;
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item .img-box .img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .container .box3 .product-list .product-item .right {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem 1rem 1.5rem;
+      background-color: #efefef
+    }
+
+    .container .box3 .product-list .product-item .right .name {
+      width: 100%;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      word-wrap: break-word;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      height: 80px;
+    }
+
+    .container .box3 .product-list .product-item .right .name .countdown {
+      display: block;
+      font-size: 1.5rem;
+      color: #28c76f
+    }
+
+    .container .box3 .product-list .product-item .right .name .countdown i {
+      margin-right: 2px;
+      font-size: 1.6rem;
+      font-weight: 700
+    }
+
+    .container .box3 .product-list .product-item .right .bottom {
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 2rem;
+      height: 270px;
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item {
+      width: 50%;
+      box-sizing: border-box;
+      padding-right: 1rem
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item:nth-child(n+3) {
+      margin-top: 1.2rem
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .label {
+      width: 100%;
+      margin-bottom: .8rem;
+      font-size: 1.5rem;
+      color: #333;
+      word-wrap: break-word
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .value {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      word-break: break-all
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus {
+      width: 100%;
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .label {
+      width: 100%;
+      margin-bottom: .8rem;
+      font-size: 1.5rem;
+      color: #333;
+      word-wrap: break-word
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .value {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      word-break: break-all
+    }
+    .container .box3 .product-list .product-item .progress {
+      /*手机*/
+      position: absolute;
+      left: 2rem;
+      bottom: 7rem;
+      width: calc(100% - 4rem);
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .buy-btn {
+      margin-top: 2rem;
+      width: 100%;
+      height: 4.5rem;
+      line-height: 4.5rem;
+      box-sizing: border-box;
+      padding: 0 2rem;
+      border-radius: 4.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background-image: linear-gradient(90deg,#fe9500,#fade88);
+      cursor: pointer
+    }
+
+    .container .box3 .product-list .product-item .right .bottom .right-actions .disabled-btn {
+      color: #333!important;
+      background-image: linear-gradient(90deg,#c5c5c5,#c5c5c5)
+    }
   @media only screen and (min-width: 1024px) {
     html {
       font-size:10px
@@ -1048,7 +1274,7 @@
       word-wrap: break-word
     }
 
-    .container .box3 {
+    /* .container .box3 {
       width: 100%;
       box-sizing: border-box;
       padding: 2rem 3rem
@@ -1219,7 +1445,7 @@
     .container .box3 .product-list .product-item .right .bottom .right-actions .disabled-btn {
       color: #333!important;
       background-image: linear-gradient(90deg,#c5c5c5,#c5c5c5)
-    }
+    } */
 
     .container .box4,.container .box5 {
       width: 100%;
@@ -1749,162 +1975,6 @@
       color: #000;
       text-align: left;
       word-wrap: break-word
-    }
-
-    .container .box3 {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 1rem 1rem
-    }
-
-    .container .box3 .box3-title {
-      position: relative;
-      width: 100%;
-      margin-bottom: 0.5rem;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item,.container .box3 .product-list {
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item:not(:last-child) {
-      margin-bottom: 2rem
-    }
-
-    .container .box3 .product-list .product-item .img-box {
-      position: relative;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .img-box .img {
-      display: block;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 1rem 1rem 1.5rem;
-      background-color: #efefef
-    }
-
-    .container .box3 .product-list .product-item .right .name {
-      width: 100%;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #000;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .name .countdown {
-      display: block;
-      font-size: 1.5rem;
-      color: #28c76f
-    }
-
-    .container .box3 .product-list .product-item .right .name .countdown i {
-      margin-right: 2px;
-      font-size: 1.6rem;
-      font-weight: 700
-    }
-
-    .container .box3 .product-list .product-item .right .bottom {
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      margin-bottom: 2rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item {
-      width: 50%;
-      box-sizing: border-box;
-      padding-right: 1rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item:nth-child(n+3) {
-      margin-top: 1.2rem
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .label {
-      width: 100%;
-      margin-bottom: .8rem;
-      font-size: 1.5rem;
-      color: #333;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .info-list .info-item .value {
-      width: 100%;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      word-break: break-all
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus {
-      width: 100%;
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .label {
-      width: 100%;
-      margin-bottom: .8rem;
-      font-size: 1.5rem;
-      color: #333;
-      word-wrap: break-word
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .bonus .value {
-      width: 100%;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      word-break: break-all
-    }
-    .container .box3 .product-list .product-item .progress {
-      /*手机*/
-      position: absolute;
-      left: 2rem;
-      bottom: 7rem;
-      width: calc(100% - 4rem);
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .buy-btn {
-      margin-top: 2rem;
-      width: 100%;
-      height: 4.5rem;
-      line-height: 4.5rem;
-      box-sizing: border-box;
-      padding: 0 2rem;
-      border-radius: 4.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      text-align: center;
-      white-space: nowrap;
-      background-image: linear-gradient(90deg,#fe9500,#fade88);
-      cursor: pointer
-    }
-
-    .container .box3 .product-list .product-item .right .bottom .right-actions .disabled-btn {
-      color: #333!important;
-      background-image: linear-gradient(90deg,#c5c5c5,#c5c5c5)
     }
 
     .container .box4,.container .box5 {
@@ -3526,8 +3596,19 @@
       flex: 0 0 auto;
       width: 50%;
     }
+    .profit-calculator {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 30px;
+      border: 1px solid rgba(240, 19, 19, 0.3);
+      border-radius: 15px;
+    }
   }
   @media (min-width: 992px) {
+    .profit-calculator {
+      padding: 40px 60px 50px;
+    }
     .row--15 .col-lg-4 {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
@@ -3535,6 +3616,20 @@
       flex: 0 0 auto;
       width: 30%;
     }
+  }
+  .profit-calculator .form--control,.profit-calculator .form-select {
+    padding: 5px;
+    border-radius: 6px;
+
+  }
+  .profit-calculator .form--control[readonly] {
+    color: #000;
+
+  }
+  .form-group {
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #000000;
   }
   .row--15>[class*=col] {
     padding-left: 15px;

@@ -3,18 +3,18 @@
     <Header></Header>
     <div  class="app-wrapper" >
 
-      <div class="container">
+      <div class="" style="margin-top: 0;">
         <div class="row">
-          <div class="col-lg-8 py-4 ps-4">
-            <h1 class="fontza text-zah  ">{{$t('affliliate[0]')}}</h1>
-            <h2 class="text-hh pt-2">{{$t('affliliate[1]')}}</h2>
-            <h6 class="text-ls pt-2" style="line-height: 1.8;">{{$t('affliliate[2]')}}</h6>
-          </div>
-          <div class="col-lg-4 d-lg-block d-none" style="padding-right: 0rem !important;">
-            <img :src="'./static/images/af1.png'" alt="" class="img-fluid">
+          <div class="col-lg-24 d-lg-block d-none text-center" style="padding-right: 0rem !important;">
+            <img style="width: 40%;object-fit: cover;" :src="'./static/images/af1.png'" alt="" class="img-fluid">
           </div>
         </div>
       </div>
+
+      <jrAffiliateAbout
+        ref="jrAffiliateAbout"
+        :data="jrAffiliateAboutData"
+      ></jrAffiliateAbout>
 
       <div class="container border border-0 rounded-4 bg-zhs p-4">
         <h1 class="fontza text-zah  ">{{$t('affliliate[3]')}}</h1>
@@ -23,7 +23,7 @@
         <h6 class="text-hh pt-2">{{$t('affliliate[6]')}}</h6>
         <h6 class="text-hh pt-2">{{$t('affliliate[7]')}}</h6>
         <div class="row mt-3">
-          <div class="col-lg-4 p-3">
+          <div class="col-lg-6 p-3">
             <div class="light-border px-2 py-4 text-center" style="background-color: rgb(33, 33, 33) !important; height: 320px; --x: 84.16852542332241%;">
               <img :src="'./static/images/af2.png'" alt="" style="width: 22%">
               <h1 class="fontza text-zah mt-3 ">{{$t('affliliate[8]')}}</h1>
@@ -31,20 +31,12 @@
               <h6 class="text-white pt-2 col-10 mx-auto text-start">{{$t('affliliate[10]')}}</h6>
             </div>
           </div>
-          <div class="col-lg-4 p-3">
+          <div class="col-lg-6 p-3">
             <div class="light-border px-2 py-4 text-center" style="background-color: rgb(33, 33, 33) !important; height: 320px; --x: 16.669758387974333%;">
               <img :src="'./static/images/af3.png'" alt="" style="width: 22%">
               <h1 class="fontza text-zah mt-3 ">{{$t('affliliate[11]')}}</h1>
               <h5 class="text-white pt-2">{{$t('affliliate[12]')}}</h5>
               <h6 class="text-white pt-2 col-10 mx-auto text-start">{{$t('affliliate[13]')}}</h6>
-            </div>
-          </div>
-          <div class="col-lg-4 p-3">
-            <div class="light-border px-2 py-4 text-center" style="background-color: rgb(33, 33, 33) !important; height: 320px; --x: 6.313847133091517%;">
-              <img :src="'./static/images/af4.png'" alt="" style="width: 22%">
-              <h1 class="fontza text-zah mt-3 ">{{$t('affliliate[14]')}}</h1>
-              <h5 class="text-white pt-2">{{$t('affliliate[15]')}}</h5>
-              <h6 class="text-white pt-2 col-10 mx-auto text-start">{{$t('affliliate[16]')}}</h6>
             </div>
           </div>
         </div>
@@ -58,7 +50,6 @@
             <h1 class="fontza text-zah mt-3 ">{{$t('affliliate[17]')}}</h1>
             <h6 class="text-hh pt-2">{{$t('affliliate[18]')}}</h6>
             <h6 class="text-hh pt-2">{{$t('affliliate[19]')}}</h6>
-            <h6 class="text-hh pt-2">{{$t('affliliate[20]')}}</h6>
             <h6 class="text-bhs ">{{$t('affliliate[21]')}}</h6>
             <h6 class="text-bhs ">{{$t('affliliate[22]')}}</h6>
           </div>
@@ -69,7 +60,12 @@
           <div class="text-center el-col-24 mtb-10">
             <h1 class="fontza text-zah mt-3">{{$t('affliliate[29]')}}</h1>
           </div>
-          <div class="el-col-24">
+          <jrNormalTable
+            ref="jrNormalTable"
+            col="12"
+            :data="jrNormalTableData"
+          ></jrNormalTable>
+          <!-- <div class="el-col-24">
             <ul class="referral_bounty_table">
               <li class="referral_bounty_cloum referral_bounty_cloum_h data-flex">
                 <div class="left flex-1 el-content-text-h4">{{$t('affliliate[30]')}}</div>
@@ -81,28 +77,49 @@
               </li>
             </ul>
             <div class="font-intr el-content-text-h3">({{ $t('affliliate[32]') }})</div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="container border border-0 rounded-4 bg-zhs p-4">
-        <h1 class="fontza text-zah  ps-lg-5">{{$t('affliliate[23]')}}</h1>
-        <div class="row">
-          <div class="col-lg-6 mt-5 ps-lg-5">
-            <div class="d-flex align-items-center">
-              <img :src="'./static/images/afs1.png'" alt="" class="img-fluid">
-              <span class="text-hh fs-3 ms-4">{{$t('affliliate[24]')}}</span>
+        <div class="row data-flex">
+          <div class="flex-1">
+            <h1 class="fontza text-zah  ps-lg-5">{{$t('affliliate[23]')}}</h1>
+            <div class="col-lg-6 mt-5 ps-lg-5">
+              <div class="d-flex align-items-center">
+                <img :src="'./static/images/afs1.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('affliliate[24]')}}</span>
+              </div>
+              <div class="d-flex align-items-center mt-4">
+                <img :src="'./static/images/afs2.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('affliliate[25]')}}</span>
+              </div>
+              <div class="d-flex align-items-center mt-4">
+                <img :src="'./static/images/afs3.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('affliliate[26]')}}</span>
+              </div>
+              <div class="d-flex align-items-center mt-4">
+                <img :src="'./static/images/afs4.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('affliliate[27]')}}</span>
+              </div>
             </div>
-            <div class="d-flex align-items-center mt-4">
-              <img :src="'./static/images/afs2.png'" alt="" class="img-fluid">
-              <span class="text-hh fs-3 ms-4">{{$t('affliliate[25]')}}</span>
-            </div>
-            <div class="d-flex align-items-center mt-4">
-              <img :src="'./static/images/afs3.png'" alt="" class="img-fluid">
-              <span class="text-hh fs-3 ms-4">{{$t('affliliate[26]')}}</span>
-            </div>
-            <div class="d-flex align-items-center mt-4">
-              <img :src="'./static/images/afs4.png'" alt="" class="img-fluid">
-              <span class="text-hh fs-3 ms-4">{{$t('affliliate[27]')}}</span>
+            <h1 class="fontza text-zah  ps-lg-5 mt-20">{{$t('i18n.affiliate.text9')}}</h1>
+            <div class="col-24 mt-5 ps-lg-5">
+              <div class="d-flex align-items-center">
+                <img :src="'./static/images/afs1.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('i18n.affiliate.text10')}}</span>
+              </div>
+              <div class="d-flex align-items-center mt-4">
+                <img :src="'./static/images/afs2.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('i18n.affiliate.text11')}}</span>
+              </div>
+              <div class="d-flex align-items-center mt-4">
+                <img :src="'./static/images/afs3.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('i18n.affiliate.text12')}}</span>
+              </div>
+              <div class="d-flex align-items-center mt-4">
+                <img :src="'./static/images/afs4.png'" alt="" class="img-fluid">
+                <span class="text-hh fs-3 ms-4">{{$t('i18n.affiliate.text13')}}</span>
+              </div>
             </div>
           </div>
           <div class="col-lg-6 text-center mt-5">
@@ -110,7 +127,6 @@
           </div>
         </div>
       </div>
-
       <div class="text-center my-5">
         <a href="javascript:" @click="$router.push('/affiliates')" type="button" class="btn-join py-3 text-hh fw-bold col-lg-3 col-6 fs-6">{{$t('affliliate[28]')}}</a>
       </div>
@@ -119,18 +135,46 @@
   </div>
 </template>
 <script>
+import jrAffiliateAbout from '@/components/common/jr_affiliate_about.vue';
+import jrNormalTable from '../components/common/jr_normal_table.vue';
+
   export default {
     name: 'affiliate',
     components: {
+      jrAffiliateAbout,
+      jrNormalTable
     },
     data() {
       return {
-        referralBountyList:[
+        jrNormalTableData: {
+          table: [
+            {
+              prop: 'key',
+              name: this.$t('affliliate[30]')
+            },
+            {
+              prop: 'value',
+              name: this.$t('affliliate[31]'),
+              className: 'vip-level',
+              unit: '$'
+            },
+          ],
+          listData:[
           { key: '10', value: '1000' },
           { key: '30', value: '5000' },
           { key: '50', value: '10000' },
           { key: '100', value: '100000' },
-        ],
+        ]
+        },
+        jrAffiliateAboutData: {
+          title: this.$t('i18n.affiliate.text1'),
+          tip: this.$t('i18n.affiliate.text2'),
+          listData: [
+            { label: this.$t('i18n.affiliate.text3'), text: this.$t('i18n.affiliate.text4'), labelColor: '#e77916', triangleColor: '#e77916' },
+            { label: this.$t('i18n.affiliate.text5'), text: this.$t('i18n.affiliate.text6'), labelColor: '#bc2929', triangleColor: '#bc2929' },
+            { label: this.$t('i18n.affiliate.text7'), text: this.$t('i18n.affiliate.text8'), labelColor: '#7249f8', triangleColor: '#7249f8' },
+          ]
+        }
       }
     },
 

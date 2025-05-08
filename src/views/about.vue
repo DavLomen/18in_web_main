@@ -4,6 +4,7 @@
     <div>
       <section namespace="referral_image">
         <div class="container">
+          <video :src="'./static/img/login_bg.mp4'" autoplay :controls="false" loop style="width:100%;max-width: 900px;display: block;margin: 0 auto;"></video>
           <!-- <div class="box7">
             <div class="image_main">
               <img :src="'./static/images/aboutt.png'" style="object-fit:cover">
@@ -58,7 +59,7 @@
 <!--        </div>-->
 <!--      </div>-->
 
-      <section id="featured1" class="featured featured-1 bg-overlay bg-overlay-dark2 bg-parallax bg-section" style="background-image: url('./static/image/aboutss.png');">
+      <!-- <section id="featured1" class="featured featured-1 bg-overlay bg-overlay-dark2 bg-parallax bg-section" style="background-image: url('./static/image/aboutss.png');">
 
         <div class="container max960">
           <div class="row">
@@ -69,7 +70,7 @@
                 <p class="heading--desc text-gray mb-20">
                   {{$t('about1[12]')}}
                 </p>
-              </div><!-- .heading end -->
+              </div>
               <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-4">
                   <div class="feature-card">
@@ -80,7 +81,7 @@
                       <h3 class="feature-card-title text-white">{{$t('about1[13]')}}</h3>
                     </div>
                   </div>
-                </div><!-- .col-lg-4 end -->
+                </div>
                 <div class="col-sm-12 col-md-12 col-lg-4">
                   <div class="feature-card">
                     <div class="feature-card-icon">
@@ -90,7 +91,7 @@
                       <h3 class="feature-card-title text-white">{{$t('about1[14]')}}</h3>
                     </div>
                   </div>
-                </div><!-- .col-lg-4 end -->
+                </div>
                 <div class="col-sm-12 col-md-12 col-lg-4">
                   <div class="feature-card">
                     <div class="feature-card-icon">
@@ -100,20 +101,76 @@
                       <h3 class="feature-card-title text-white">{{$t('about1[15]')}}</h3>
                     </div>
                   </div>
-                </div><!-- .col-lg-4 end -->
-              </div><!-- .row end -->
-            </div><!-- .col-lg-5 end -->
+                </div>
+              </div>
+            </div>
             <div class="col-sm-12 col-md-12 col-lg-6" style="display: flex;align-content: center;align-items: center;">
               <div class="featured-img">
                 <img :src="'./static/image/65f18b0da62c51710328589.png'" alt="Laptop Mockup">
               </div>
             </div>
           </div>
-          <!-- .row end -->
         </div>
-        <!-- .container end -->
+      </section> -->
+      <section class="section mt-20 mb-20">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
+              <div class="section-title text-center">
+                <h1 class="title font-title-lg">{{$t('home_comment[0]')}}</h1>
+                <div class="para-desc videoDiv text-center el-mx-auto-80">
+                  <p class="el-content-text-h2">
+                    {{$t('home_comment[1]')}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+              <div class="el-col-24 el-col-lg-24 mt-5 mt-sm-0">
+                <div class="comment_container">
+                  <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
+                      <swiper-slide v-for="el in Array.from({ length: 10 }, (_, i) => i)" :key="el">
+                        <div class="comment_card">
+                          <div class="comment_head">
+                            <img :src="`./static/img/user/user_${el + 1}.png`" alt="">
+                          </div>
+                          <div class="msg el-mx-auto-80">
+                            <div class="msg el-mx-auto-80">
+                            <div class="name el-content-text-h3">{{$t(`commentList[${el}].name`)}}</div>
+                            <div class="content">{{$t(`commentList[${el}].text`)}}</div>
+                          </div>
+                          </div>
+                        </div>
+                      </swiper-slide>
+                  </swiper>
+                </div>
+              </div>
+              <!-- 第二個評論 -->
+              <div class="el-col-24 el-col-lg-24 mt-sm-0 mt-20">
+                <div class="comment_container">
+                  <swiper ref="mySwiper" class="swiper" :options="commenSwiperOptions">
+                    <swiper-slide v-for="el in Array.from({ length: 10 }, (_, i) => i + 10)" :key="el">
+                        <div class="comment_card">
+                          <div class="comment_head">
+                            <img :src="`./static/img/user/user_${el + 1}.png`" alt="">
+                          </div>
+                          <div class="msg el-mx-auto-80">
+                            <div class="msg el-mx-auto-80">
+                            <div class="name el-content-text-h3">{{$t(`commentList[${el}].name`)}}</div>
+                            <div class="content">{{$t(`commentList[${el}].text`)}}</div>
+                          </div>
+                          </div>
+                        </div>
+                      </swiper-slide>
+                  </swiper>
+                </div>
+              </div>
+            </div>
+        </div>
       </section>
-
       <section id="infoCards" class="info-cards">
         <div class="container max960">
 <!--          <div  class="box6">-->
@@ -242,9 +299,7 @@
                   </div>
                   <div class="content flex-1">
                     <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text2') }}</div>
-                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text3') }}</p>
-                    <p class="text font-intr el-content-text-h3">{{ $t('i18n.aboutUs.platform.text4') }}</p>
-                    <p class="text font-intr el-content-text-h3">{{ $t('i18n.aboutUs.platform.text5') }}</p>
+                    <p class="text font-intr mtb-10 el-content-text-h3 ft_lh-20">{{ $t('i18n.aboutUs.platform.text3') }}</p>
                   </div>
                 </div>
               </div>
@@ -255,7 +310,7 @@
                   </div>
                   <div class="content flex-1">
                     <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text8') }}</div>
-                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text9') }}</p>
+                    <p class="text font-intr mtb-10 el-content-text-h3 ft_lh-20">{{ $t('i18n.aboutUs.platform.text9') }}</p>
                   </div>
                 </div>
               </div>
@@ -266,7 +321,7 @@
                   </div>
                   <div class="content flex-1">
                     <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text12') }}</div>
-                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text13') }}</p>
+                    <p class="text font-intr mtb-10 el-content-text-h3 ft_lh-20">{{ $t('i18n.aboutUs.platform.text13') }}</p>
                   </div>
                 </div>
               </div>
@@ -284,7 +339,7 @@
                   </div>
                   <div class="content flex-1">
                     <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text6') }}</div>
-                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text7') }}</p>
+                    <p class="text font-intr mtb-10 el-content-text-h3 ft_lh-20">{{ $t('i18n.aboutUs.platform.text7') }}</p>
                   </div>
                 </div>
               </div>
@@ -295,7 +350,7 @@
                   </div>
                   <div class="content flex-1">
                     <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text10') }}</div>
-                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text11') }}</p>
+                    <p class="text font-intr mtb-10 el-content-text-h3 ft_lh-20">{{ $t('i18n.aboutUs.platform.text11') }}</p>
                   </div>
                 </div>
               </div>
@@ -306,7 +361,7 @@
                   </div>
                   <div class="content flex-1">
                     <div class="label el-content-label el-content-text-h1">{{ $t('i18n.aboutUs.platform.text14') }}</div>
-                    <p class="text font-intr mtb-10 el-content-text-h3">{{ $t('i18n.aboutUs.platform.text15') }}</p>
+                    <p class="text font-intr mtb-10 el-content-text-h3 ft_lh-20">{{ $t('i18n.aboutUs.platform.text15') }}</p>
                   </div>
                 </div>
               </div>
@@ -494,7 +549,7 @@
                     <h6 class="text-hh p-3 border border-2 border-zah rounded-3 mt-3 col-lg-10">{{$t('about[4]')}}: 23 February 2021</h6>
                     <div class="d-flex">
                       <div class="text-center mt-3 col-lg-3 col-6">
-                        <a href="https://find-and-update.company-information.service.gov.uk/company/13219561" target="_blank" type="button" class="btn-join p-3 text-hh fw-bold  fs-6">{{$t('about2[20]')}}</a>
+                        <a href="https://find-and-update.company-information.service.gov.uk/company/11880006" target="_blank" type="button" class="btn-join p-3 text-hh fw-bold  fs-6">{{$t('about2[20]')}}</a>
                       </div>
                       <div class="text-center mt-3 col-lg-3 col-6">
                         <a href="./static/companies_house_document.pdf?t=1" target="_blank" type="button" class="btn-join p-3 text-hh fw-bold  fs-6">{{$t('about2[21]')}}</a>
@@ -601,7 +656,7 @@
           <div  class="container">
             <div  class="row justify-content-center">
               <div  class="col-md-8 col-xl-6"><h2  class="mt-0 text-center">{{$t('why[0]')}}</h2>
-                <p  class="mb-0 mx-auto text-center t-short-para">
+                <p  class="mb-0 el-mx-auto-80 text-center t-short-para">
                   {{$t('why[1]')}}
                 </p></div>
             </div>
@@ -706,17 +761,54 @@
   </div>
 </template>
 <script>
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 import jrArticle from '@/components/common/jr_article.vue';
+import 'swiper/dist/css/swiper.css';
   export default {
     name: 'about',
     components: {
-      jrArticle
+      jrArticle,
+      swiper,
+      swiperSlide,
     },
     data() {
       return {
         showInfo:{
           title: '',
           content:'',
+        },
+        commenSwiperOptions: {
+          loop: true,
+          speed: 2500,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            stopOnLastSlide: false,
+          },
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          breakpoints: {
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            }
+          }
         },
         articleData: {
           content_1: {
@@ -1891,6 +1983,46 @@ import jrArticle from '@/components/common/jr_article.vue';
     .platform_m_logo_not_show{
       display: block;
     }
+  }
+
+  .comment_card{
+    background: -webkit-gradient(linear, left top, left bottom, from(#afceed), to(#3d4355)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(2.95%, #a3631f), color-stop(54.04%, #f9f790), color-stop(105.51%, #a3631f)) border-box;
+    background: linear-gradient(#afceed, #3d4355) padding-box, linear-gradient(180deg, #a3631f 2.95%, #f9f790 54.04%, #a3631f 105.51%) border-box;
+    border: 2px solid transparent;
+    padding: 10px 8px 10px 0;
+    border-radius: 15px;
+    position: relative;
+    margin-left: 32px;
+    position: relative;
+    height: 200px;
+  }
+  .comment_card .comment_head{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6fadf0), to(#7695f9)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(2.95%, #a3631f), color-stop(54.04%, #f9f790), color-stop(105.51%, #a3631f)) border-box;
+    background: linear-gradient(#6fadf0, #7695f9) padding-box, linear-gradient(180deg, #a3631f 2.95%, #f9f790 54.04%, #a3631f 105.51%) border-box;
+    border: 2px solid transparent;
+    margin-left: -32px;
+    left: 0px;
+    top: 10px;
+  }
+  .comment_card .comment_head img{
+    width: 100%;
+    height: 100%;
+  }
+  .comment_card .msg{
+    width: 70%;
+    height: 100%;
+  }
+  .comment_card .msg .name{
+    color: #fff;
+  }
+  .comment_card .msg .content{
+    height: 150px;
+    overflow: hidden;
   }
 </style>
 
