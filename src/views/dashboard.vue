@@ -26,7 +26,7 @@
                         </div>
                         <div class="el-col-lg-6 el-col-sm-12 el-col-xs-12 mb-1 pl-2 pr-2">
                           <div class="pc_color_card el-mx-auto-90" style="background: rgb(253 195 19); color: #fff;">
-                            <div class="amt fs-5 fw-bold">{{InitData.currency}} 10</div>
+                            <div class="amt fs-5 fw-bold">{{InitData.currency}} 15</div>
                             <div class="label fs-5 fw-bold mt-3">{{ $t("withdraw[10]") }}</div>
                           </div>
                         </div>

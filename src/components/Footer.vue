@@ -84,7 +84,7 @@
                     </li>
                     <li>
                       <img class="" :src="'./static/images/mail.png'" alt="location" style="width:30px;margin-right:10px;">
-                      <a href="mailto:info@sixmining.com">info@sixmining.com</a></li>
+                      <a href="mailto:info@ripplecoinmining.com">info@ripplecoinmining.com</a></li>
                     <li>
                       <ul class="styled-icon mt-2">
                         <li>

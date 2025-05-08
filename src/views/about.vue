@@ -76,7 +76,7 @@
           <div class="certificate-info px-3">
             <h2 class="mb-4">{{  $t("i18nlan.aboutUs.text1") }}</h2>
             <div class="info-group mb-4">
-              <h6 class="mb-2">{{$t("i18nlan.aboutUs.text2")}}: 10689012</h6>
+              <h6 class="mb-2">{{$t("i18nlan.aboutUs.text2")}}: 10695081</h6>
             </div>
             <div class="info-group mb-4">
               <h6 class="fw-bold mb-2">{{$t('about[14]')}}: </h6>
@@ -91,7 +91,7 @@
               <h6>{{$t("i18nlan.aboutUs.text7")}}</h6>
             </div>
             <div class="mt-4">
-              <a href="https://find-and-update.company-information.service.gov.uk/company/10689012" target="_blank" class="btn btn-primary me-3 mb-3">{{$t('about[17]')}}</a>
+              <a href="https://find-and-update.company-information.service.gov.uk/company/10695081" target="_blank" class="btn btn-primary me-3 mb-3">{{$t('about[17]')}}</a>
               <a target="_blank" href="./static/companies_house_document.pdf"  class="btn btn-primary mb-3">{{$t('about[18]')}}</a>
             </div>
           </div>

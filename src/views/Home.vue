@@ -38,8 +38,8 @@
                   </ul>
                   <ul  class="btns-group hero-btns justify-content-md-start justify-content-center mb-3">
                     <li>
-                      <a href="javascript:;" style="background: #FE9500" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/register')">{{$t('home[4]')}}</a>
-                      <a href="javascript:;" style="background: #B62283; margin-left: 10px;" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/login')">{{$t('home[5]')}}</a>
+                      <a href="javascript:;" style="background: #00d71c" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/register')">{{$t('home[4]')}}</a>
+                      <a href="javascript:;" style="background: #00d71c; margin-left: 10px;" class="btn btn-lg btn_common btn-dark fw-600" @click="$router.push('/login')">{{$t('home[5]')}}</a>
                     </li>
                   </ul>
                   <p  class="hero-text pb-1" style="color:#f0b603;font-size: 1.2rem;">{{$t('home[6]')}}</p>

@@ -515,7 +515,7 @@ export default {
   ],
   "home": [
     "Welcome to RIPPLECOIN Mining, the global leader in cryptocurrency mining",
-    "RIPPLECOIN Mining is the world's leading cloud mining platform. With its security, stability, efficiency and authority, it is trusted by more than 8 million users around the world. With just a few simple clicks, you can easily achieve your future wealth freedom!",
+    "RIPPLECOIN Mining is the world's leading cloud mining platform. With its security, stability, efficiency and authority, it is trusted by more than 9 million users around the world. With just a few simple clicks, you can easily achieve your future wealth freedom!",
     "Register now",
     "Sign In",
     "Recharge",
@@ -607,28 +607,9 @@ export default {
     "Total Deposit",
     "Join Date"
   ],
-  "appdown": [
-    "Download RPPLECOIN Mining and start mining",
-    "Check out the latest products and services on the app",
-    "Scan QR code to download",
-    "App Store",
-    "Google Play",
-    "Download Android",
-    "Version"
-  ],
   "blogs": [
     "Blogs",
     "Read More"
-  ],
-  "contact": [
-    "RPPLECOIN Mining",
-    "Contact Us",
-    "Full Name",
-    "Email",
-    "Subject",
-    "Type Message Here",
-    "Send Now",
-    ""
   ],
   "blog": [
     "Recent Blog",
@@ -792,13 +773,13 @@ export default {
   "confirm": "Confirm",
   "i18nlan": {
     "aboutUs": {
-      "text1": "ENTRE-WEALTH LIMITED",
+      "text1": "BOLTON INVESTMENTS LIMITED",
       "text2": "Company number",
       "text3": "Company Type",
       "text4": "Limited Liability Company",
-      "text5": "Preston Park House, South Road, Brighton, East Sussex, BN1 6SB",
+      "text5": "Flat 1 27 Bolton Gardens, London, SW5 0AQ, United Kingdom",
       "text6": "Private Limited Company",
-      "text7": " March 24, 2017",
+      "text7": " 28 March 2017",
       "text8": "24/7 Chat Support",
       "text9": "United Kingdom Date of establishment",
     },
@@ -861,5 +842,38 @@ export default {
     "Privacy Policy",
     "and",
     "Terms",
+  ],
+  "contact":[
+    "Get in Touch Us",
+    "Name",
+    "Email",
+    "Subject",
+    "Message",
+    "Enter Captcha",
+    "Submit Now",
+    "Chat to support",
+    "Speak to our friendly team",
+    "Chat to online",
+    "24/7 Live Support",
+    "Contact our customer support with your questions at any time.",
+    "Visit us",
+    "Visit our office HQ"
+  ],
+  "appDown":[
+    "Download the RIPPLECOIN Mining APP for Android/iOS",
+    "Scan the QR code now to download the Ripple Mining App and manage your earnings anytime, anywhere. A smoother, latency-free network allows you to enjoy a simpler, faster, safer and more efficient mining experience!"
+  ],
+  "appDown1":[
+    "START MINING JOURNEY",
+    "Manage your {WT} activities on the go using our mobile apps. With access to real-time data and the ability to track your mining portfolio anywhere, anytime, the {WT} app offers a convenient, simple solution for buying and managing mining plans and building your revenue.",
+    "Manage your revenue anytime, anywhere",
+    "Easy start with mining",
+    "We've simplified all the steps you'll need to start with cloud mining on app.",
+    "One-click mining",
+    "Effortlessly order long and short-term mining plans with low thresholds and low fees.",
+    "Real-time manage",
+    "Whether onsite or away, effortlessly monitor and manage your mining plans assets.",
+    "24/7 Chat Support",
+    "Contact our customer support with your questions at any time."
   ],
 }
