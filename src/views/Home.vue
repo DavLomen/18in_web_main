@@ -1,18 +1,18 @@
 <template>
   <div class="HomePage">
-    <div class="app-wrapper">
+    <div class="app-wrapper" style="background: #e0f2ff">
       <Header></Header>
       <div class="container hero-wrap ">
         <div
           class="box1 cover first-box-wraper"
-          style="position: relative;background: url(./static/images/bg.jpg) no-repeat;background-size: 100% 100%"
+          style="position: relative;background-size: 100% 100%"
         >
 <!--          <img :src="'./static/images/bg.jpg'" class="first-box-wraper-img-layer" data-v-27b24e63="">-->
-<!--          <div class="video">-->
-<!--            <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">-->
-<!--              <source :src="'./static/images/bg.mp4?t=15'" type="video/mp4"  />-->
-<!--            </video>-->
-<!--          </div>-->
+          <div class="video">
+            <video id="v1" autoplay loop muted playsinline webkit-playsinline="true" style="width: 100%;height: 100%;">
+              <source :src="'./static/images/bg.mp4'" type="video/mp4"  />
+            </video>
+          </div>
 
           <div class="box-wrapper top-wraper" style="    max-width: 1500px;">
             <div class="box1-inner-area left-info-area" style="overflow-x: hidden">
@@ -109,7 +109,7 @@
                     <div class="option_button" style="background: #F7931A;" @click="$router.push('/product')">{{ $t("i18n.Home.banner.text2") }}</div>
                   </div>
                   <div class="right data-flex flex-1" style="align-items: center;">
-                    <img style="width: 80px; object-fit: cover;transform: rotate(90deg);" :src="`./static/image/homeBanner/arrow_anim.gif`" alt=""> 
+                    <img style="width: 80px; object-fit: cover;transform: rotate(90deg);" :src="`./static/image/homeBanner/arrow_anim.gif`" alt="">
                     <div class="flex-1 font-intr el-content-label" style="text-align: center;">{{ $t("i18n.Home.banner.text3") }}</div>
                   </div>
                 </div>
