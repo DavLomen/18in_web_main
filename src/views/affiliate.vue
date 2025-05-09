@@ -10,16 +10,23 @@
       <div class="mt-3 text-start ">
         <div class="border border-0 rounded-3 p-2 bg-hs1 p-4 single-settings-box top-flashlight light-xl leftside mt-4">
           <h5 class="text-ls">How It Works:</h5>
-          <h6 class="text-ls">Share Your Link: Send your unique referral link to your network.<br>
+          <div>
+            <jr_normal_card
+              :listData="jrNormalCardData"
+              colName="el-col-xs-24 el-col-sm-24 el-col-md-24 el-col-lg-8"
+              ref="jrNormalCard"
+            ></jr_normal_card>
+          </div>
+          <!-- <h6 class="text-ls">Share Your Link: Send your unique referral link to your network.<br>
             Earn Commissions: Receive a 5% commission for every investment made by your direct referrals.<br>
             Multi-Level Rewards: Additionally, earn 1% commissions from the investments of referrals brought in by your network.<br>
-            Three-Level Reward System Example:</h6>
+            Three-Level Reward System Example:</h6> -->
           <div class="row border-top border-0 border-hhs mt-3 pt-3">
             <div class="col-12 d-flex">
               <img :src="'./static/images/img/af1.png'" alt="" width="48px" height="48px" style="margin-right: 10px;">
               <div>
                 <h6 class="text-ls fw-bold">Level 1 (Direct Referral Rewards):</h6>
-                <h6 class="text-bhs">When a user A, referred directly by you, makes an investment, you earn 5% of their investment amount.</h6>
+                <h6 class="text-bhs">{{ $t('i18n.Affiliate.text7') }}</h6>
               </div>
             </div>
           </div>
@@ -28,11 +35,11 @@
               <img :src="'./static/images/img/af2.png'" alt="" width="48px" height="48px" style="margin-right: 10px;">
               <div>
                 <h6 class="text-ls fw-bold">Level 2 (Indirect Referral Rewards):</h6>
-                <h6 class="text-bhs">When user A refers B, you earn 1% on all investments made by B.</h6>
+                <h6 class="text-bhs">{{$t('i18n.Affiliate.text8')}}</h6>
               </div>
             </div>
           </div>
-          <div class="row  border-0  mt-3 pt-3">
+          <!-- <div class="row  border-0  mt-3 pt-3">
             <div class="col-12 d-flex">
               <img :src="'./static/images/img/af3.png'" alt="" width="48px" height="48px" style="margin-right: 10px;">
               <div>
@@ -40,7 +47,7 @@
                 <h6 class="text-bhs">When user B refers C, you earn 1% on all investments made by C.</h6>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="mt-3 text-start ">
           <div class="border border-0 rounded-3 p-2 bg-hs1 p-4 single-settings-box top-flashlight light-xl leftside mt-4">
@@ -132,12 +139,19 @@
   </div>
 </template>
 <script>
+import jr_normal_card from '../components/common/jr_normal_card.vue';
   export default {
     name: 'affiliate',
     components: {
+      jr_normal_card
     },
     data() {
       return {
+        jrNormalCardData: [
+          { imageUrl: require('../../static/images/img/4.png'), title: this.$t('i18n.Affiliate.text1'), content: this.$t('i18n.Affiliate.text2') },
+          { imageUrl: require('../../static/images/img/5.png'), title: this.$t('i18n.Affiliate.text3'), content: this.$t('i18n.Affiliate.text4') },
+          { imageUrl: require('../../static/images/img/6.png'), title: this.$t('i18n.Affiliate.text5'), content: this.$t('i18n.Affiliate.text6') },
+        ],
       }
     },
 

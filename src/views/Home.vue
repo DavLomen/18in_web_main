@@ -36,44 +36,48 @@
         <div class="light-border bg-hs1" style="--x: 13.101851851851851%;">
           <div class="row">
             <div class="col-lg-4 py-5" style="padding-left: 0px; padding-right: 0px;">
-              <h5>{{ $t("i18n.Home.text2") }}</h5>
+              <h5 class="mb-40">{{ $t("i18n.Home.text2") }}</h5>
               <div class="progress-line d-none d-lg-block" style="width: 50%; left: 50%;">
                 <div class="line-inner" style="background-color: #8B2AB8;"></div>
               </div>
               <div class="progress-dot d-none d-lg-block">
-                <div class="dot-level">
-                  <div class="dot-inner" style="background-color: #8B2AB8;  "></div>
+                <div class="dot-level dot-level-home">
+                  <img :src="'./static/images/img/1.png'" alt="" style="width: 100%; object-fit: cover; z-index: 99;">
+                  <div class="dot-inner dot-inner-home" style="background-color: #8B2AB8;  ">
+                  </div>
                 </div>
               </div>
-              <div class="col-6 mx-auto pt-2">
+              <div class="col-6 mx-auto pt-2 mt-20">
                 <span class="text-ls fw-bold fs-6" style="font-size: 13px;">{{ $t("i18n.Home.text3") }}</span>
               </div>
             </div>
             <div class="col-lg-4 py-5" style="padding-left: 0px; padding-right: 0px;">
-              <h5>{{ $t("i18n.Home.text4") }}</h5>
+              <h5  class="mb-40">{{ $t("i18n.Home.text4") }}</h5>
               <div class="progress-line d-none d-lg-block" style="width: 100%; ">
                 <div class="line-inner" style="background-color: #8B2AB8;"></div>
               </div>
               <div class="progress-dot d-none d-lg-block">
-                <div class="dot-level">
-                  <div class="dot-inner" style="background-color: #8B2AB8;"></div>
+                <div class="dot-level dot-level-home">
+                  <img :src="'./static/images/img/2.png'" alt="" style="width: 100%; object-fit: cover; z-index: 99;">
+                  <div class="dot-inner dot-inner-home" style="background-color: #8B2AB8;"></div>
                 </div>
               </div>
-              <div class="col-6 mx-auto pt-2">
+              <div class="col-6 mx-auto pt-2 mt-20">
                 <span class="text-ls fw-bold fs-6" style="font-size: 13px;">{{ $t("i18n.Home.text5") }}</span>
               </div>
             </div>
             <div class="col-lg-4 py-5" style="padding-left: 0px; padding-right: 0px;">
-              <h5>{{ $t("i18n.Home.text6") }}</h5>
+              <h5  class="mb-40">{{ $t("i18n.Home.text6") }}</h5>
               <div class="progress-line d-none d-lg-block" style="width: 50%;">
                 <div class="line-inner" style="background-color: #8B2AB8;"></div>
               </div>
               <div class="progress-dot d-none d-lg-block">
-                <div class="dot-level">
-                  <div class="dot-inner" style="background-color: #8B2AB8;"></div>
+                <div class="dot-level dot-level-home">
+                  <img :src="'./static/images/img/3.png'" alt="" style="width: 100%; object-fit: cover; z-index: 99;">
+                  <div class="dot-inner dot-inner-home" style="background-color: #8B2AB8;"></div>
                 </div>
               </div>
-              <div class="col-6 mx-auto pt-2">
+              <div class="col-6 mx-auto pt-2 mt-20">
                 <span class="text-ls fw-bold fs-6" style="font-size: 13px;">{{ $t("i18n.Home.text7") }}</span>
               </div>
             </div>
@@ -171,22 +175,23 @@
     </jrCalculator>
     <div class="container mb-5">
       <div class="mt-3 text-center">
-        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">ABOUT US</span></h6>
-        <h2 class="text-lh pt-2">About JAMining</h2>
-        <h6 class="text-ls pt-2" style="line-height: 1.8;">JA FINANCIAL SERVICES LIMITED【 JAMINING 】 was founded in 2004 and is headquartered in the UK,is a pioneering leader in the cloud mining industry. With a strong focus on sustainability, we leverage clean energy to power cloud mining and build a secure, compliant, and transparent blockchain infrastructure. Our mission is to provide global users with efficient, intelligent cloud computing and seamless, one-click mining services.</h6>
+        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">{{ $t('i18n.AboutUs.text1') }}</span></h6>
+        <h2 class="text-lh pt-2">{{ $t('i18n.AboutUs.text2') }}</h2>
+        <h6 class="text-ls pt-2" style="line-height: 1.8;">{{ $t('i18n.AboutUs.text3') }}</h6>
       </div>
       <div class="row mt-5 p-3" style="gap:100px;">
-        <div class="col-lg-6 text-ls">
+        <video :src="'./static/img/login_bg.mp4'" :controls="false" autoplay loop style="width: 100%;"></video>
+        <!-- <div class="col-lg-6 text-ls">
           <h5>Our Professional Certification</h5>
           <h6 style="line-height: 1.5rem;">As an industry leader, JAMINING is proudly certified by the Financial Conduct Authority (FCA) in the UK, ensuring our platform meets the highest international standards and offers a safe and compliant investment environment.</h6>
           <h5>Technological Advantages</h5>
           <h6 style="line-height: 1.5rem;">Cutting-Edge GPU Technology: Utilizing the latest high-performance GPUs from NVIDIA and AMD, we achieve unparalleled mining efficiency with minimal energy consumption.</h6>
           <h6 style="line-height: 1.5rem;">Global Data Center Network: Over 100 advanced data centers strategically located across Europe, North America, and Asia, ensuring 24/7 seamless operations.</h6>
           <h6 style="line-height: 1.5rem;">Clean Energy Solutions: All mining operations are powered by renewable energy sources such as solar and wind, creating an eco-friendly and sustainable mining ecosystem.</h6>
-        </div>
-        <div class="col-lg-5">
+        </div> -->
+        <!-- <div class="col-lg-5">
           <img class="border border-0 rounded-3" :src="'./static/images/img/ab1.jpg'" alt="" width="100%">
-        </div>
+        </div> -->
       </div>
     </div>
     <div class=" w-100">
@@ -986,6 +991,21 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%,  rgba(111, 100, 233, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
     backdrop-filter: blur(20px);
     animation: separateline 5s ease-in-out infinite;
+  }
+  .dot-level-home{
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .dot-level-home img{
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    top:2.5px
+  }
+  .dot-inner-home{
+    width: 50px!important;
+    height: 50px!important;
   }
   @keyframes separateline {
     0% {

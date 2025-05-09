@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top d-none d-lg-block">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top d-none d-lg-block" :class="showBorderLink ? 'nav-border-bottom' : ''">
       <div class="container" style="margin-top: 0px !important">
         <a class="navbar-brand" href="javascript:;" @click="$router.push('/')">
           <img :src="'./static/images/img/logo.png'" alt="OkayCoin">
@@ -18,6 +18,10 @@
             </li>
             <li class="nav-item">
               <a :class="'nav-link '+(index=='/affiliate'?'active':'')"  @click="$router.push('/affiliate')" href="javascript:;">{{$t('header[2]')}}
+              </a>
+            </li>
+            <li class="nav-item">
+              <a :class="'nav-link '+(index=='/welfare'?'active':'')"  @click="$router.push('/welfare')" href="javascript:;">{{$t('header[26]')}}
               </a>
             </li>
             <li class="nav-item">
@@ -93,8 +97,8 @@
       </div>
     </nav>
     <!--    mobile contauner-->
-    <div class=" text-center fixed-top d-block d-lg-none">
-      <nav class="navbar" style="padding-top: 0px; padding-bottom: 0px;">
+    <div class=" text-center fixed-top d-block d-lg-none" >
+      <nav class="navbar" style="padding-top: 0px; padding-bottom: 0px;" :class="showBorderLink ? 'nav-border-bottom' : ''">
         <div v-if="UserInfo" class="container-fluid p-2 ">
           <div class="d-flex justify-content-between align-items-center">
             <button @click="showMobileMenu = true" class="btn " type="button"><i class="bi bi-sliders text-dark fs-3"></i></button>
@@ -391,6 +395,9 @@
 
     },
     props: [],
+    computed: {
+    
+    },
     data() {
       return {
         index:0,
@@ -401,6 +408,7 @@
         showPcMenu: false,
         showNext:false,
         showSet:false,
+        showBorderLink: false,
       }
     },
     computed: {
@@ -412,7 +420,7 @@
     },
     mounted() {
       this.index = localStorage.getItem("pageIndex");
-      console.log(this.index)
+      window.addEventListener('scroll', this.handleScroll);
     },
     activated() {
 
@@ -421,6 +429,9 @@
 
     },
     methods: {
+      handleScroll(){
+        this.showBorderLink = document.documentElement.scrollTop !== 0;
+      },
       downloadApp() {
         var ua = navigator.userAgent;
         if (/(iPod|iPhone|iPad)/.test(ua)) {
@@ -445,6 +456,10 @@
   .navbar {
     background-color: #000;
     padding: 1rem 0;
+  }
+
+  .nav-border-bottom{
+    border-bottom: 1px solid #c6a662;
   }
 
   .navbar-brand img {

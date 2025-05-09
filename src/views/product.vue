@@ -3,9 +3,9 @@
     <Header></Header>
     <div class="container text-center">
       <div class="mt-3">
-        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold fs-5">Our Mining Plan</span></h6>
-        <h2 class="text-lh pt-2">JAMINING Cloud Mining Contract</h2>
-        <h5 class="text-ls pt-2" style="line-height: 1.8;">We offer a variety of contract models to help you achieve your financial goals and select the one that best suits your needs for investment and returns.</h5>
+        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold fs-5">{{ $t('i18n.Contracts.text1') }}</span></h6>
+        <h2 class="text-lh pt-2">{{ $t('i18n.Contracts.text2') }}</h2>
+        <h5 class="text-ls pt-2" style="line-height: 1.8;">{{ $t('i18n.Contracts.text3') }}</h5>
       </div>
       <div class="row mt-4">
         <div class="col-lg-4 p-3" v-for="(item,index) in listData" :key="index">

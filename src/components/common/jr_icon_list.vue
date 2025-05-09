@@ -1,3 +1,4 @@
+<!-- 支持的币种 -->
 <template>
   <div>
     <div class="mt-40 mb-40">

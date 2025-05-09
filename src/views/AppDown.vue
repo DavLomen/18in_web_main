@@ -7,9 +7,9 @@
       </div>
       <div class="row mt-5">
         <div class="col-lg-6">
-          <h1 class="text-z-fs fw-bold mt-3">Let's start the mining journey!</h1>
-          <p class="col-8 mt-3" style="font-size: 0.8rem;">JAMINING is dedicated to providing a reliable and secure top-tier mining experience for users worldwide.</p>
-          <p class="col-8 mt-3" style="font-size: 0.8rem;">Join JAMINING and let your digital assets work for you while you enjoy mining rewards!</p>
+          <h1 class="text-z-fs fw-bold mt-3">Let's start the mining journey ! - Download  RI Mining App</h1>
+          <p class="col-8 mt-3" style="font-size: 0.8rem;">Experience smoother responsiveness,access real-time data anytime anywhere, seamlessly manage mining plans, and enjoy an intuitive interface.</p>
+          <p class="col-8 mt-3" style="font-size: 0.8rem;">Whether you're a novice or an expert,effortlessly join the journey toward financial freedom through cryptocurrency cloud mining.</p>
           <!--<a href="/assets/index/app/fullsign.mobileconfig" class="col-8 mt-3" style="font-size: 0.8rem;">下载</a>-->
           <div class="row ">
             <div class="col-6 ">
