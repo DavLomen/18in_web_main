@@ -30,14 +30,13 @@
     </div>
     <div class="container text-center">
       <div class="mt-3">
-        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold fs-5">How does JAMining work?</span></h6>
-        <h2 class="text-lh pt-2">Learn about our work process. You need to follow the steps below to start your first mining.</h2>
+        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold fs-5">{{ $t("i18n.Home.text1") }}</span></h6>
       </div>
       <div class="col-lg-10 mx-auto my-4">
         <div class="light-border bg-hs1" style="--x: 13.101851851851851%;">
           <div class="row">
             <div class="col-lg-4 py-5" style="padding-left: 0px; padding-right: 0px;">
-              <h5>create Account</h5>
+              <h5>{{ $t("i18n.Home.text2") }}</h5>
               <div class="progress-line d-none d-lg-block" style="width: 50%; left: 50%;">
                 <div class="line-inner" style="background-color: #8B2AB8;"></div>
               </div>
@@ -47,11 +46,11 @@
                 </div>
               </div>
               <div class="col-6 mx-auto pt-2">
-                <span class="text-ls fw-bold fs-6" style="font-size: 13px;">Create your account on JAMINING and start your cloud mining journey.</span>
+                <span class="text-ls fw-bold fs-6" style="font-size: 13px;">{{ $t("i18n.Home.text3") }}</span>
               </div>
             </div>
             <div class="col-lg-4 py-5" style="padding-left: 0px; padding-right: 0px;">
-              <h5>Choose plan</h5>
+              <h5>{{ $t("i18n.Home.text4") }}</h5>
               <div class="progress-line d-none d-lg-block" style="width: 100%; ">
                 <div class="line-inner" style="background-color: #8B2AB8;"></div>
               </div>
@@ -61,11 +60,11 @@
                 </div>
               </div>
               <div class="col-6 mx-auto pt-2">
-                <span class="text-ls fw-bold fs-6" style="font-size: 13px;">Choose your preferred contract plan, buy and earn passive income.</span>
+                <span class="text-ls fw-bold fs-6" style="font-size: 13px;">{{ $t("i18n.Home.text5") }}</span>
               </div>
             </div>
             <div class="col-lg-4 py-5" style="padding-left: 0px; padding-right: 0px;">
-              <h5>Get mining output</h5>
+              <h5>{{ $t("i18n.Home.text6") }}</h5>
               <div class="progress-line d-none d-lg-block" style="width: 50%;">
                 <div class="line-inner" style="background-color: #8B2AB8;"></div>
               </div>
@@ -75,7 +74,7 @@
                 </div>
               </div>
               <div class="col-6 mx-auto pt-2">
-                <span class="text-ls fw-bold fs-6" style="font-size: 13px;">Your stable profitable income is automatically updated in your account every day.</span>
+                <span class="text-ls fw-bold fs-6" style="font-size: 13px;">{{ $t("i18n.Home.text7") }}</span>
               </div>
             </div>
           </div>
@@ -86,15 +85,16 @@
     <div class=" w-100">
       <img :src="'./static/images/img/separator-bottom.svg'" alt="" class="img-fluid w-100">
     </div>
-    <div class="container text-center">
+    <div class="text-center container">
       <div class="mt-3">
-        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold fs-5">Our Mining Plan</span></h6>
-        <h2 class="text-lh pt-2">JAMINING Cloud Mining Contract</h2>
-        <h5 class="text-ls pt-2" style="line-height: 1.8;">We offer a variety of contract models to help you achieve your financial goals and select the one that best suits your needs for investment and returns.</h5>
+        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold fs-5">{{ $t("i18n.Home.text8") }}</span></h6>
+        <h2 class="text-lh pt-2 el-mx-auto-70">{{ $t("i18n.Home.text9") }}</h2>
+        <h2 class="text-lh pt-2 el-mx-auto-70">{{ $t("i18n.Home.text10") }}</h2>
+        <h5 class="text-ls pt-2" style="line-height: 1.8;">{{ $t("i18n.Home.text11") }}</h5>
       </div>
       <div class="row mt-4">
         <div class="col-lg-4 p-3" v-for="(item,index) in listData" :key="index">
-          <div class="light-border p-3" style="--x: 88.84803921568627%;">
+          <div class="light-border p-3" style="--x: 88.84803921568627%; height: 53rem">
             <div class="staking-plan-img">
               <img  :src="InitData.setting.up_url + item.icon" alt="" class="img-fluid rounded-3">
             </div>
@@ -162,6 +162,13 @@
     <div class=" w-100">
       <img :src="'./static/images/img/separator-bottom.svg'" alt="" class="img-fluid w-100">
     </div>
+    <jrCalculator 
+      ref="jrCalculator" 
+      :listData="listData"
+      :label="[$t('calculator[2]'), $t('calculator[3]'), $t('calculator[4]')]"
+      :title='$t("i18n.Home.text12")' 
+      :tip='$t("i18n.Home.text13")'>
+    </jrCalculator>
     <div class="container mb-5">
       <div class="mt-3 text-center">
         <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">ABOUT US</span></h6>
@@ -187,50 +194,51 @@
     </div>
     <div class="container text-center my-5">
       <div class="mt-3">
-        <h2 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">Our advantages</span></h2>
-        <h6 class="text-lh pt-2">Why choose JA Mining</h6>
+        <h2 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">{{ $t('i18n.Home.text30') }}</span></h2>
+        <h6 class="text-lh pt-2">{{ $t('i18n.Home.text31') }}</h6>
+        <h6 class="text-lh pt-2">{{ $t('i18n.Home.text32') }}</h6>
       </div>
       <div class="row mt-4">
         <div class="col-lg-4 mt-3">
           <div class="light-border p-3" style="height: 21rem; --x: 26.08173076923077%;">
             <img :src="'./static/images/img/aq11.png'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
-            <h5 class="fw-bold mb-3">Latest Hardware</h5>
-            <h6 class="text-ls" style="line-height: 1.8;">We use the latest ASIC miners, GPU equipment. We have extensive experience in cloud mining operations and competitive mining technology.</h6>
+            <h5 class="fw-bold mb-3">{{ $t('i18n.Home.text18') }}</h5>
+            <h6 class="text-ls" style="line-height: 1.8;">{{ $t('i18n.Home.text19') }}</h6>
           </div>
         </div>
         <div class="col-lg-4 mt-3">
           <div class="light-border p-3" style="height: 21rem;">
             <img :src="'./static/images/img/aq22.png'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
-            <h5 class="fw-bold mb-3">Fund Security</h5>
-            <h6 class="text-ls" style="line-height: 1.8;">Most funds are securely stored in offline cold wallets. Strong security measures such as McAfee® SECURE protection and Cloudflare® SECURE protection.</h6>
+            <h5 class="fw-bold mb-3">{{ $t('i18n.Home.text20') }}</h5>
+            <h6 class="text-ls" style="line-height: 1.8;">{{ $t('i18n.Home.text21') }}</h6>
           </div>
         </div>
         <div class="col-lg-4 mt-3">
           <div class="light-border p-3" style="height: 21rem;">
             <img :src="'./static/images/img/aq33.png'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
-            <h5 class="fw-bold mb-3">Automatic earnings</h5>
-            <h6 class="text-ls" style="line-height: 1.8;">Once you place an order, our system will automatically start working and process payments every 24 hours.</h6>
+            <h5 class="fw-bold mb-3">{{ $t('i18n.Home.text22') }}</h5>
+            <h6 class="text-ls" style="line-height: 1.8;">{{ $t('i18n.Home.text23') }}</h6>
           </div>
         </div>
         <div class="col-lg-4 mt-3">
           <div class="light-border p-3" style="height: 21rem;">
             <img :src="'./static/images/img/aq44.png'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
-            <h5 class="fw-bold mb-3">Expert Team</h5>
-            <h6 class="text-ls" style="line-height: 1.8;">Our mining team is composed of professionals in the blockchain industry and IT engineers, ensuring that our team has the necessary knowledge and skills to meet your needs.</h6>
+            <h5 class="fw-bold mb-3">{{ $t('i18n.Home.text24') }}</h5>
+            <h6 class="text-ls" style="line-height: 1.8;">{{ $t('i18n.Home.text25') }}</h6>
           </div>
         </div>
         <div class="col-lg-4 mt-3">
           <div class="light-border p-3" style="height: 21rem;">
             <img :src="'./static/images/img/aq55.png'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
-            <h5 class="fw-bold mb-3">Simple Mining</h5>
-            <h6 class="text-ls" style="line-height: 1.8;">No hardware required, we provide the computing power and the platform takes care of the mining process. All you need to do is buy a package, relax, and wait for huge profits!</h6>
+            <h5 class="fw-bold mb-3">{{ $t('i18n.Home.text26') }}</h5>
+            <h6 class="text-ls" style="line-height: 1.8;">{{ $t('i18n.Home.text27') }}</h6>
           </div>
         </div>
         <div class="col-lg-4 mt-3">
           <div class="light-border p-3" style="height: 21rem;">
             <img :src="'./static/images/img/aq66.png'" alt="" class="img-fluid my-4" style="width: 80px; height: 80px;">
-            <h5 class="fw-bold mb-3">Environmentally friendly mining</h5>
-            <h6 class="text-ls" style="line-height: 1.8;">Our miners and cooling systems are not only powered by the best monocrystalline solar panels, but also utilize large-scale wind power, which is both environmentally friendly and profitable.</h6>
+            <h5 class="fw-bold mb-3">{{ $t('i18n.Home.text28') }}</h5>
+            <h6 class="text-ls" style="line-height: 1.8;">{{ $t('i18n.Home.text29') }}</h6>
           </div>
         </div>
       </div>
@@ -280,17 +288,18 @@
     <div class=" w-100">
       <img :src="'./static/images/img/separator-bottom.svg'" alt="" class="img-fluid w-100">
     </div>
-    <div class="col-10 mx-auto my-4 d-lg-flex justify-content-around">
-      <div class="col-lg-5">
-        <h2 class="text-center mb-5 text-z-fs">Latest payment</h2>
+    <div class="col-12 mx-auto my-4 d-lg-flex justify-content-around">
+      <div class="col-12">
+        <h2 class="text-center mb-5 text-z-fs">{{ $t('i18n.Home.text14') }}</h2>
         <div class="border border-1 border-hhs rounded-4 table-wrapper">
           <div class="table-header bg-hs">
             <table class="w-100">
               <thead>
               <tr class="text-bhs text-center" style="height: 73px;">
-                <th class="col-4 fs-6">Username</th>
-                <th class="col-4 fs-6">Quantity</th>
-                <th class="col-4 fs-6">Time</th>
+                <th class="col-3 fs-6">Username</th>
+                <th class="col-3 fs-6">Option</th>
+                <th class="col-3 fs-6">Quantity</th>
+                <th class="col-3 fs-6">Date</th>
               </tr>
               </thead>
             </table>
@@ -300,43 +309,12 @@
               <swiper v-if="InitData.fundList"
                       :options="swiperOption0" ref="mySwiper" style="height: 35rem"
               >
-                <swiper-slide v-if="index<20" v-for="(item,index) in InitData.fundList.filter(item=>item.type==1)" :key="index" :index="index">
+                <swiper-slide v-if="index<20" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
                   <div class="table-row text-bhs text-center">
-                    <div class="col-4">{{item.username}}</div>
-                    <div class="col-4 dmoney">{{item.money}} {{item.currency}}</div>
-                    <div class="col-4 fs-8">{{item.time}}</div>
-                  </div>
-                </swiper-slide>
-              </swiper>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-5">
-        <h2 class="text-center  my-5 mt-lg-0 text-z-fs">Latest deposit</h2>
-        <div class="border border-1 border-hhs rounded-4 table-wrapper">
-          <div class="table-header bg-hs">
-            <table class="w-100">
-              <thead>
-              <tr class="text-bhs text-center" style="height: 73px;">
-                <th class="col-4 fs-6">Username</th>
-                <th class="col-4 fs-6">Quantity</th>
-                <th class="col-4 fs-6">Time</th>
-              </tr>
-              </thead>
-            </table>
-          </div>
-          <div class="table-body-wrapper">
-            <div class="table-body-content">
-              <swiper v-if="InitData.fundList"
-                :options="swiperOption0" ref="mySwiper" style="height: 35rem"
-              >
-                <swiper-slide v-if="index<20" v-for="(item,index) in InitData.fundList.filter(item=>item.type==2)" :key="index" :index="index">
-                  <div class="table-row text-bhs text-center">
-                    <div class="col-4">{{item.username}}</div>
-                    <div class="col-4 dmoney">{{item.money}} {{item.currency}}</div>
-                    <div class="col-4 fs-8">{{item.time}}</div>
+                    <div class="col-3">{{item.username}}</div>
+                    <div class="col-3 fs-8">{{ item.type === '1' ? $t('i18n.Home.text34') : $t('i18n.Home.text33') }}</div>
+                    <div class="col-3 dmoney">{{item.money}} {{item.currency}}</div>
+                    <div class="col-3 fs-8">{{item.time.split(' ')[1]}}</div>
                   </div>
                 </swiper-slide>
               </swiper>
@@ -383,56 +361,21 @@
     </div>
     <div class="container  my-5">
       <div class="mt-3  text-center">
+        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">ACCEPT A VARIETY OF PAYMENT METHODS</span></h6>
+      </div>
+      <jr-icon-list
+        ref="jrIconList"
+      ></jr-icon-list>
+    </div>
+    <div class="container  my-5">
+      <div class="mt-3  text-center">
         <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">Our Partners</span></h6>
       </div>
-      <div class="row mt-4">
-        <div class="col-lg-12">
-          <ul class="brand-style-2">
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/google.png'" alt="Partner 1" class="img-fluid ">
-              </a>
-            </li>
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/ngular.png'" alt="Partner 1" class="img-fluid ">
-              </a>
-            </li>
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/laravel.png'" alt="Partner 1" class="img-fluid">
-              </a>
-            </li>
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/woo.png'" alt="Partner 1" class="img-fluid">
-              </a>
-            </li>
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/magento.png'" alt="Partner 1" class="img-fluid">
-              </a>
-            </li>
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/pingdom.png'" alt="Partner 1" class="img-fluid">
-              </a>
-            </li>
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/envato.png'" alt="Partner 1" class="img-fluid">
-              </a>
-            </li>
-            <li class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center">
-              <a target="_blank">
-                <img :src="'./static/images/img/colorlib.png'" alt="Partner 1" class="img-fluid">
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <jrPartners
+        ref="jrPartners"
+        :listData="jrPartnersData"
+      ></jrPartners>
     </div>
-
     <Footer></Footer>
     <div v-if="showNotice" id="__BVID__247___BV_modal_outer_" style="position: absolute; z-index: 99999999;">
       <div id="__BVID__247" role="dialog" aria-labelledby="__BVID__247___BV_modal_title_"
@@ -477,14 +420,31 @@
 <script>
   import { swiper, swiperSlide } from "vue-awesome-swiper";
   import 'swiper/dist/css/swiper.css';
+  import jrCalculator from '@/components/common/jr_calculator.vue'
+  import jrPartners from '@/components/common/jr_partners.vue'
+  import jrIconList from '../components/common/jr_icon_list.vue';
   export default {
     name: 'Home',
     inject: ['reloadHtml'],
     components: {
-      swiper, swiperSlide
+      swiper,
+      swiperSlide,
+      jrCalculator,
+      jrPartners,
+      jrIconList
     },
     data() {
       return {
+        jrPartnersData: [
+          { url: require('../../static/images/img/google.png') },
+          { url: require('../../static/images/img/ngular.png') },
+          { url: require('../../static/images/img/laravel.png') },
+          { url: require('../../static/images/img/woo.png') },
+          { url: require('../../static/images/img/magento.png') },
+          { url: require('../../static/images/img/pingdom.png') },
+          { url: require('../../static/images/img/envato.png') },
+          { url: require('../../static/images/img/colorlib.png') },
+        ],
         email:'',
         number:1,
         detailData:{},

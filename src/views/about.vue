@@ -3,22 +3,23 @@
     <Header></Header>
     <div class="container mb-5">
       <div class="mt-3 text-center">
-        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">ABOUT US</span></h6>
-        <h2 class="text-lh pt-2">About JAMining</h2>
-        <h6 class="text-ls pt-2" style="line-height: 1.8;">JA FINANCIAL SERVICES LIMITED【 JAMINING 】 was founded in 2004 and is headquartered in the UK,is a pioneering leader in the cloud mining industry. With a strong focus on sustainability, we leverage clean energy to power cloud mining and build a secure, compliant, and transparent blockchain infrastructure. Our mission is to provide global users with efficient, intelligent cloud computing and seamless, one-click mining services.</h6>
+        <h6 class="border border-0 rounded-3 p-2  bg-hs1" style="display: inline-block;"><span class="text-z-fs fw-bold">{{ $t('i18n.AboutUs.text1') }}</span></h6>
+        <h2 class="text-lh pt-2">{{ $t('i18n.AboutUs.text2') }}</h2>
+        <h6 class="text-ls pt-2" style="line-height: 1.8;">{{ $t('i18n.AboutUs.text3') }}</h6>
       </div>
       <div class="row mt-5 p-3" style="gap:100px;">
-        <div class="col-lg-6 text-ls">
+        <video :src="'./static/img/login_bg.mp4'" :controls="false" autoplay loop style="width: 100%;"></video>
+        <!-- <div class="col-lg-6 text-ls">
           <h5>Our Professional Certification</h5>
           <h6 style="line-height: 1.5rem;">As an industry leader, JAMINING is proudly certified by the Financial Conduct Authority (FCA) in the UK, ensuring our platform meets the highest international standards and offers a safe and compliant investment environment.</h6>
           <h5>Technological Advantages</h5>
           <h6 style="line-height: 1.5rem;">Cutting-Edge GPU Technology: Utilizing the latest high-performance GPUs from NVIDIA and AMD, we achieve unparalleled mining efficiency with minimal energy consumption.</h6>
           <h6 style="line-height: 1.5rem;">Global Data Center Network: Over 100 advanced data centers strategically located across Europe, North America, and Asia, ensuring 24/7 seamless operations.</h6>
           <h6 style="line-height: 1.5rem;">Clean Energy Solutions: All mining operations are powered by renewable energy sources such as solar and wind, creating an eco-friendly and sustainable mining ecosystem.</h6>
-        </div>
-        <div class="col-lg-5">
+        </div> -->
+        <!-- <div class="col-lg-5">
           <img class="border border-0 rounded-3" :src="'./static/images/img/ab1.jpg'" alt="" width="100%">
-        </div>
+        </div> -->
       </div>
     </div>
     <div class=" w-100">

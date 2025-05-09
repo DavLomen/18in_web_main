@@ -629,7 +629,7 @@ export default {
     "Log out",
     "APP Download",
     "Affiliate",
-    ""
+    "Oline User"
   ],
   "side": [
     "Dashboard",
@@ -700,5 +700,53 @@ export default {
   "complete": "completed",
   "submit": "Submit",
   "cancel": "Cancel",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  "i18n": {
+    "Home": {
+      "text1": "How to become a miner - 3 Simple Steps to Start Your Mining Journey Today!",
+      "text2": "RegiSign up",
+      "text3": "Register an account using email RImining offers free mining to new users",
+      "text4": "Select Contract",
+      "text5": "Deposit and select mining contract",
+      "text6": "Start mining",
+      "text7": "Buy contract Generate profits immediately",
+      "text8": "RI Mining Cloud Hashpower Blockchain Mining Contracts",
+      "text9": "Simplify your mining process. Choose your ideal contract model to achieve your financial goals.",
+      "text10": "Multiple hashpower options available. Maximize mining efficiency and earn more crypto coins.",
+      "text11": "Tip: Use the calculator below to estimate your future earnings.",
+      "text12": "Profit Calculator",
+      "text13": "Calculate your mining income",
+      "text14": "Our Latest Transactions",
+      "text15": "Username",
+      "text16": "Quantity",
+      "text17": "Time",
+      "text18": "Hardware Advantages",
+      "text19": "The latest ASIC and GPU mining equipnent and advanced technologies from Bitmain,Canaan, and Nvidia.",
+      "text20": "Fund Security",
+      "text21": "All-round fund protection: offline cold wallet with McAfee® and Cloudflare® security!Reliable & Trustworthy!",
+      "text22": "Automatic Earnings",
+      "text23": "Automatic payment: Settle your earnings every 24 hours, easy to obtain!",
+      "text24": "Professional Team",
+      "text25": "Expert team: Composed of blockchain professionals and IT engineers, providing you with the most professional services!",
+      "text26": "Easy Mining",
+      "text27": "Easy mining: No need to configure hardware, just select a package and automatically earn profits!",
+      "text28": "Environmentally-friendly Mining",
+      "text29": "Green energy + efficient mining: Solar and wind energy provide clean electricity for mining machines!",
+      "text30": "Our advantages",
+      "text31": "Why Choose RI Mining ?",
+      "text32": "We operate state-of-the-art data centers in globally optimized locations Cutting-edge technology sharing Committed to advancing a sustainable future for cloud mining through green energy initiatives.",
+      "text33": "Successful Recharge",
+      "text34": "Successful Withdrawal",
+    },
+    "AboutUs": {
+      "text1": "ABOUT US",
+      "text2": "Company Overview",
+      "text3": "FAIR VIEW WEALTH MANAGEMENT LIMITEDRI Mining (RI Mining) was established in 2014, headquartered in the UK, and is a leading enterprise in global cryptocurrency cloud mining. With a powerful distributed energy network and intelligent AI scheduling system, we provide efficient and transparent cloud mining services to 8.73 million users in 177 countries and regions worldwide, with hashrate scale ranking among the top globally."
+    },
+    "Footer": {
+      "text1": "Start Your First Mining with RIMining",
+      "text2": "Get Start",
+      "text3": "RIMining is a global leader in cloud mining, focused on delivering high-performance, low-barriercryptocurrency mining solutions. By integrating global clean energy with intelligenthashrate scheduling technology, we are committed to building efficient, transparent, and sustainable mining services — Collective Intelligence Era, trusted by users across the globe."
+    },
+  },
 }

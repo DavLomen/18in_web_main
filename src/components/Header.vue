@@ -39,6 +39,17 @@
               <a :class="'nav-link '+(index=='/app'?'active':'')" @click="$router.push('/app')" href="javascript:;">{{$t('header[7]')}}</a>
             </li>
           </ul>
+          <div data-v-2c1eb916="" class="nav-item text-center mlr-10"
+            style="border: 1px solid rgb(202, 45, 134);border-radius: 10px;padding: 5px;display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <div
+              style="color: rgb(202, 45, 134);font-size: 16px;font-weight: 700;text-align: center;white-space: nowrap">
+              {{$t('header[25]')}}
+            </div>
+            <div
+              style="color: rgb(202, 45, 134);font-size: 16px;font-weight: 700;text-align: center;white-space: nowrap">
+              {{InitData.setting.online || 0}}
+            </div>
+          </div>
           <div class="d-flex gap-3" v-if="UserInfo">
             <a href="javascript:;" @click="$router.push('/dashboard')" class="btn btn-join">{{$t('header[8]')}}</a>
           </div>
