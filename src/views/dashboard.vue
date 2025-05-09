@@ -159,6 +159,7 @@
 
                         </div>
                       </div>
+                      <div class="h3">{{$t('credit[0]')}} <span style="margin-left: 3rem">{{UserInfo.credit}}</span></div>
                       <div class="h3">{{$t('dashboard[10]')}} <span style="margin-left: 3rem">{{UserInfo.useridentity}}</span></div>
 
 

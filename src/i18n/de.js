@@ -981,5 +981,8 @@ export default {
     "product": {
       "text1": "USDT"
     }
-  }
+  },
+  "credit":[
+    "Kredit-Score"
+  ],
 }

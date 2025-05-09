@@ -984,6 +984,9 @@ export default {
     "product": {
       "text1": "USDT"
     }
-  }
+  },
+  "credit":[
+    "Credit score"
+  ],
 }
 //英语，法语，日语，韩语，葡萄牙语，西班牙语，德语，俄语，阿拉伯语，意大利语
