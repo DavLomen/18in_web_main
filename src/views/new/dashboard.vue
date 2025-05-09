@@ -210,40 +210,37 @@
                 </div>
               </div>
               <div class="el-col-12">
-                <div class="box-shadow-card mlr-5">
-                  <div class="commissions-header data-flex el-content-text-h1">
-                    <div class="flex-1 el-content-text-h1">{{ $t("i18n.Dashboard.card.text21") }}</div>
-                      <!-- <div class="data-flex" style="align-items: center;">
-                        <span>{{ $t("i18n.Dashboard.card.text22") }}</span>
-                        <van-icon class="mlr-10" name="down" style="transform: rotate(-90deg);"/>
-                      </div> -->
-                  </div>
-                  <div class="el-row mt-20">
-                    <div class="el-col-12">
-                      <div class="el-black-card el-mx-auto-95">
-                        <div class="flex-1 el-content-text-h2 mt-20">{{ $t("i18n.Dashboard.card.text23") }}</div>
-                        <div class="flex-1 font-title mtb-10">0$</div>
-                      </div>
+                <div class="user-title" style="margin-bottom: 1rem;margin-left: 1rem;">{{$t('dashboard[19]')}}</div>
+                <div class=" el-col-md-12" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
+                  <div class="cal-item flex" style="cursor: pointer;">
+                    <div>
+                      <img :src="'./static/images/das5.png'" style="width: 5rem;">
                     </div>
-                    <div class="el-col-12">
-                      <div class="el-black-card el-mx-auto-95">
-                        <div class="flex-1 el-content-text-h2 mt-20">{{ $t("i18n.Dashboard.card.text24") }}</div>
-                        <div class="flex-1 font-title mtb-10">0$</div>
-                      </div>
+                    <div>
+                      <div class="num">{{$t('dashboard[3]')}}</div>
+                      <div class="label">{{statisticalData.activity_task}}</div>
                     </div>
                   </div>
-                  <div class="el-row mt-20">
-                    <div class="el-col-12">
-                      <div class="el-black-card el-mx-auto-95">
-                        <div class="flex-1 el-content-text-h2 mt-20">{{ $t("i18n.Dashboard.card.text25") }}</div>
-                        <div class="flex-1 font-title mtb-10">0$</div>
-                      </div>
+                </div>
+                <div class="el-col-md-12" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
+                  <div class="cal-item flex" style="cursor: pointer;">
+                    <div>
+                      <img :src="'./static/images/das6.png'" style="width: 5rem;">
                     </div>
-                    <div class="el-col-12">
-                      <div class="el-black-card el-mx-auto-95">
-                        <div class="flex-1 el-content-text-h2 mt-20">{{ $t("i18n.Dashboard.card.text26") }}</div>
-                        <div class="flex-1 font-title mtb-10">0$</div>
-                      </div>
+                    <div>
+                      <div class="num">{{$t('dashboard[4]')}}</div>
+                      <div class="label">{{statisticalData.expired_task }}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="el-col-md-12" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
+                  <div class="cal-item flex" style="cursor: pointer;">
+                    <div>
+                      <img :src="'./static/images/das7.png'" style="width: 5rem;">
+                    </div>
+                    <div>
+                      <div class="num">{{$t('dashboard[5]')}}</div>
+                      <div class="label">{{statisticalData.total_task}}</div>
                     </div>
                   </div>
                 </div>
@@ -293,40 +290,7 @@
               </div>
             </div>
           </div>
-          <div class="user-title" style="margin-bottom: 1rem;margin-left: 1rem;">{{$t('dashboard[19]')}}</div>
-          <div class=" el-col-md-8" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
-            <div class="cal-item flex" style="cursor: pointer;">
-              <div>
-                <img :src="'./static/images/das5.png'" style="width: 5rem;">
-              </div>
-              <div>
-              <div class="num">{{$t('dashboard[3]')}}</div>
-              <div class="label">{{statisticalData.activity_task}}</div>
-              </div>
-            </div>
-          </div>
-          <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
-            <div class="cal-item flex" style="cursor: pointer;">
-              <div>
-                <img :src="'./static/images/das6.png'" style="width: 5rem;">
-              </div>
-              <div>
-              <div class="num">{{$t('dashboard[4]')}}</div>
-              <div class="label">{{statisticalData.expired_task }}</div>
-              </div>
-            </div>
-          </div>
-          <div class="el-col-md-8" style="padding-left: 12px; padding-right: 12px;" @click="$router.push('/MyPackages')">
-            <div class="cal-item flex" style="cursor: pointer;">
-              <div>
-                <img :src="'./static/images/das7.png'" style="width: 5rem;">
-              </div>
-              <div>
-              <div class="num">{{$t('dashboard[5]')}}</div>
-              <div class="label">{{statisticalData.total_task}}</div>
-              </div>
-            </div>
-          </div>
+
         </div>
         <div class="user-title">
           <div style="width: fit-content">
