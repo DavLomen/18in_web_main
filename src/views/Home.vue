@@ -12,7 +12,7 @@
             <div class="box1-inner-area left-info-area" style="overflow-x: hidden">
               <div class="row reve" style="overflow-x: hidden">
                 <div class="col-md-6">
-                  <div class="box1-title hero-title mb-4" v-html="$t('newhome[0]',{WT:InitData.setting.web_title})">
+                  <div class="box1-title hero-title mb-4 zsez" v-html="$t('newhome[0]',{WT:InitData.setting.web_title})">
 
                   </div>
                   <p class="hero-text mb-4 pb-1" v-html="$t('newhome[1]',{WT:InitData.setting.web_title})">
@@ -22,11 +22,11 @@
                     <div class="btn zse" @click="$router.push('/register')">{{$t('head[2]')}}</div>
                     <div class="btn zse" @click="$router.push('/login')">{{$t('head[3]')}}</div>
                   </div>
-                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: #f30606;margin-bottom: 0.5rem" v-html="$t('newhome[2]')">
+                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;margin-bottom: 0.5rem" v-html="$t('newhome[2]')">
                   </p>
-                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: #f30606;margin-top: 0.5rem" v-html="$t('adda[1]')">
+                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;margin-top: 0.5rem" v-html="$t('adda[1]')">
                   </p>
-                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;color: #f30606;margin-top: 0.5rem" v-html="$t('adda[2]')">
+                  <p class="hero-text mb-4 pb-1" style="padding-left: 1rem;margin-top: 0.5rem" v-html="$t('adda[2]')">
                   </p>
 <!--                  <div style="margin-bottom: 10px;display: flex;">-->
 <!--                    <div class="btn" @click="downloadApp('andriod')">-->
@@ -79,14 +79,9 @@
             <div class="Cosmi GTPZ Righleftc minelooking owningeco row gy-4">
               <div @click="$router.push('/register')" class="Cosmi GTPZ Righleftc minelooking owningeco col-xl-3 col-sm-6">
                 <div class="Cosmi GTPZ Righleftc minelooking owningeco work-item">
-							<span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__border">
+                  	<span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__border">
 							</span>
-              <!-- <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
-							</span>
-                  <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
-								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-user-edit">
-								</i>
-							</span> -->
+                  <img :src="'./static/images/homet1.png'" class="las" style="width: 6rem">
                   <h4 class="Cosmi GTPZ Righleftc minelooking owningeco work-item__title">
                     {{$t('how[2]')}}
                   </h4>
@@ -99,12 +94,7 @@
                 <div class="Cosmi GTPZ Righleftc minelooking owningeco work-item">
 							<span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__border">
 							</span>
-              <!-- <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
-							</span>
-                  <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
-								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-coins">
-								</i>
-							</span> -->
+                  <img :src="'./static/images/homet2.png'" class="las" style="width: 6rem">
                   <h4 class="Cosmi GTPZ Righleftc minelooking owningeco work-item__title">
                     {{$t('how[6]')}}
                   </h4>
@@ -117,12 +107,7 @@
                 <div class="Cosmi GTPZ Righleftc minelooking owningeco work-item">
 							<span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__border">
 							</span>
-              <!-- <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__number">
-							</span>
-                  <span class="Cosmi GTPZ Righleftc minelooking owningeco work-item__icon">
-								<i class="Cosmi GTPZ Righleftc minelooking owningeco las la-wallet">
-								</i>
-							</span> -->
+                  <img :src="'./static/images/homet3.png'" class="las" style="width: 6rem">
                   <h4 class="Cosmi GTPZ Righleftc minelooking owningeco work-item__title">
                     {{$t('how[8]')}}
                   </h4>
@@ -227,7 +212,7 @@
                   <div class="el-content-text mt-3" style="margin-left: 5px;">{{ $t(`i18n.qustion_card.text${i+1}`) }}</div>
                 </div>
               </div>
-              
+
             </div>
           </div>
           <!-- ----------------2025-04-30  注释下面的内容------------------- -->
@@ -354,7 +339,7 @@
                   <swiper
                     :options="swiperOption2" ref="mySwiper" style="height: 35rem"
                   >
-                    <swiper-slide v-if="item.type==1" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
+                    <swiper-slide v-if="item.type==1 && index<=30" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
                       <div class="col-lg-12 col-sm-12" style="overflow:hidden;">
                         <div class="card card-creator-s1">
                           <div class="card-body"><img :src="`./static/head/${item.header}?t=2`" alt="avatar" width="46">
@@ -376,7 +361,7 @@
                   <swiper
                     :options="swiperOption4" ref="mySwiper" style="height: 35rem"
                   >
-                    <swiper-slide v-if="item.type==2" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
+                    <swiper-slide v-if="item.type==2 && index<=30" v-for="(item,index) in InitData.fundList" :key="index" :index="index">
                       <div class="col-lg-12 col-sm-12" style="overflow:hidden;">
                         <div class="card card-creator-s1">
                           <div class="card-body"><img :src="`./static/head/${item.header}?t=2`" alt="avatar" width="46">
@@ -739,12 +724,12 @@
 <script>
   import { swiper, swiperSlide } from "vue-awesome-swiper";
   import 'swiper/dist/css/swiper.css';
-  import VueTinySlider from 'vue-tiny-slider';
+  // import VueTinySlider from 'vue-tiny-slider';
   export default {
     name: 'Home',
     inject: ['reloadHtml'],
     components: {
-      swiper, swiperSlide,VueTinySlider
+      swiper, swiperSlide
     },
 
     data() {
@@ -1596,7 +1581,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(124 58 237);
+      background-color: #00bfff;
       cursor: pointer
     }
 
@@ -2298,7 +2283,7 @@
       color: #fff;
       text-align: center;
       white-space: nowrap;
-      background-color: rgb(124 58 237);
+      background-color: #00bfff;
       cursor: pointer
     }
 
@@ -3773,17 +3758,17 @@
 
     text-align: center;
     white-space: nowrap;
-    background: linear-gradient(110deg,#f7deb9,rgb(124 58 237) 59%,#e4be83);
+    background: linear-gradient(110deg,#f7deb9,#00bfff 59%,#e4be83);
     cursor: pointer;
     border: none;
   }
   .dasbtn {
-    background: linear-gradient(110deg,#f7deb9,rgb(124 58 237) 59%,#e4be83) !important;
+    background: linear-gradient(110deg,#f7deb9,#00bfff 59%,#e4be83) !important;
   }
   .main-btnNew1 {
     display: inline-block;
     border-radius: 10px;
-    background: linear-gradient(110deg,#f7deb9,rgb(124 58 237) 59%,#e4be83);
+    background: linear-gradient(110deg,#f7deb9,#00bfff 59%,#e4be83);
     padding: 14px 30px 14px 30px;
     text-align: center;
 
@@ -4423,7 +4408,7 @@
   }
   .hero-text {
     font-size: 2rem;
-    color:#FFD700;
+    color:#fff;
   }
 
 
@@ -4933,7 +4918,7 @@
     height: 2px;
     left: 0;
     top: 0;
-    background-color: rgb(124 58 237);
+    background-color: #00bfff;
     -webkit-transition: .3s linear;
     transition: .3s linear;
   }
@@ -4943,7 +4928,7 @@
     content: "";
     width: 2px;
     height: 0;
-    background-color: rgb(124 58 237);
+    background-color: #00bfff;
     -webkit-transition: .3s linear;
     transition: .3s linear;
     top: 0;
@@ -4955,7 +4940,7 @@
   /*}*/
   .work-item:hover .work-item__icon {
     background-color: #fff;
-    color: rgb(124 58 237);
+    color: #00bfff;
   }
 
   .work-item:hover .work-item__number {
@@ -4979,7 +4964,7 @@
     height: 0px;
     right: 0;
     bottom: 0;
-    background-color: rgb(124 58 237);
+    background-color: #00bfff;
     -webkit-transition: .3s linear;
     transition: .3s linear;
   }
@@ -4989,7 +4974,7 @@
     content: "";
     width: 0;
     height: 2px;
-    background-color: rgb(124 58 237);
+    background-color: #00bfff;
     -webkit-transition: .3s linear;
     transition: .3s linear;
     bottom: 0;
@@ -5024,7 +5009,7 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: rgb(124 58 237);
+    background-color: #00bfff;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5049,7 +5034,7 @@
   }
 
   .work-item__title {
-    margin-top: 25px;
+    margin-top: 0px;
     margin-bottom: 15px;
   }
 
@@ -5068,7 +5053,7 @@
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    background-color: rgb(124 58 237);
+    background-color: #00bfff;
     bottom: 0;
     z-index: -1;
   }
@@ -5081,7 +5066,7 @@
     left: 50%;
     -webkit-transform: translateX(-50%) rotate(-45deg);
     transform: translateX(-50%) rotate(-45deg);
-    background-color: rgb(124 58 237);
+    background-color: #00bfff;
     bottom: -4px;
     z-index: -1;
   }

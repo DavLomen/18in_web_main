@@ -635,7 +635,7 @@
     }
 
     .header .header-wrapper .nav-list .active,.header .header-wrapper .nav-list .nav-item:hover {
-      color: #fff
+      color: #00bfff
     }
 
     .header .header-wrapper .nav-list .cur-lang {
@@ -862,7 +862,7 @@
   .underlined {
     position: absolute;
     border-radius: 5px;
-    background: #fff;
+    background: #00bfff;
     width: 0%;
     height: 2px;
     margin-top: 2px;

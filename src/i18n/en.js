@@ -751,7 +751,7 @@ export default {
     "Each user can only purchase once a day"
   ],
   "newhome":[
-    "BCC Mining one-stop service   Leader of cloud mining",
+    "The leader in the Bcc Mining industry ",
     "Simple, efficient, energy-saving, safe and environmentally friendly, start your cloud mining wealth journey!",
     "Sign up as a new user and receive a $15 bonus!",
     "How it Works?",
